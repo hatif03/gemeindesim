@@ -6,6 +6,7 @@
 - **Track:** [Track 2B — Own Project](track_2b/README.md) (template layout from [HackApertus/project-template](https://github.com/HackApertus/project-template))  
 - **Study notes & probe report:** [track_2b/docs/PROBE-AND-PLAN.md](track_2b/docs/PROBE-AND-PLAN.md)  
 - **Hackathon context:** [track_2b/docs/HACKATHON.md](track_2b/docs/HACKATHON.md)
+- **Sibling submission (2A):** [OpenParlData Extract](https://github.com/hatif03/openparldata-extract)
 
 ## Repository layout
 
