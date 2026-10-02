@@ -1,10 +1,11 @@
 services:
-  gemeindesim:
+  backend:
     build:
-      context: .
+      context: ./src/backend
       dockerfile: Dockerfile
+      target: prod
     ports:
-      - "8080:8080"
+      - "8000:8000"
     env_file:
       - path: .env
         required: false
@@ -12,5 +13,30 @@ services:
       LLM_NAME: ${LLM_NAME:-apertus-v1.5-70b}
       LLM_BASE_URL: ${LLM_BASE_URL:-https://hackapertus.livemap.sh/v1}
       LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_CONCURRENCY: ${LLM_CONCURRENCY:-6}
+      SWARM: ${SWARM:-true}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:8080}
     volumes:
       - ./data:/app/data:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/docs')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+      target: prod
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+      - "8080:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
