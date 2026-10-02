@@ -1,16 +1,16 @@
-# Technical report — `project name`
+# Technical report — GemeindeSim
 
 A deeper write-up than the README: what you built, how it works, and what the
 numbers say.
 
-- **Track:** `Track 2B — project name`
-- **Event:** Online
-- **Team:** `team name` — `member`, `member`, `member`
-- **Demo:** `link to video`
+- **Track:** Track 2B — Own Project (GemeindeSim)
+- **Event:** Hack Apertus online stage, October 2026
+- **Team:** _TBD_
+- **Demo:** _TBD (max. 2 min video URL)_
 
 ## 1. Summary
 
-The problem, your approach, and the headline result in one paragraph.
+_GemeindeSim simulates how German- and French-speaking residents in a Swiss Gemeinde might discuss an official vote or municipal budget, with every factual claim tied to a closed corpus (Abstimmungsbüchlein excerpts or budget tables). Apertus 1.5-70B generates one schema-valid resident action per turn; the application owns retrieval, arithmetic, and validation. Headline result: TBD after eval harness (see `docs/PROBE-AND-PLAN.md` §8)._
 
 ## 2. Architecture
 
@@ -19,20 +19,17 @@ reference them here.
 
 ### Target architecture (mandatory)
 
-State which of the three architectures your project is deployable in, and how
-it meets that constraint:
+**Primary:** **(c) Sovereign Swiss cloud** — app container + on-disk corpus; inference via Swiss-hosted OpenAI-compatible endpoint (`LLM_BASE_URL`, hackathon: `https://hackapertus.livemap.sh/v1`).
 
-- **a) On-premise** — on the organisation's own infrastructure, under its own administration.
-- **b) Air-gapped** — with no external network connection at runtime.
-- **c) Sovereign Swiss cloud** — on a cloud platform operated in Switzerland, under Swiss jurisdiction, with Swiss data residency.
+**Also supported:** **(a) On-premise** / **(b) Air-gapped** by pointing `LLM_BASE_URL` to local vLLM serving `swiss-ai/Apertus-v1.5-70B` and disabling outbound network in compose.
 
-List any external dependencies, and separate build time from runtime.
+Build-time: Docker image build, optional `pip install`. Runtime: HTTP to configured LLM only; no open-web retrieval.
 
 ## 3. Use of Apertus
 
-- **Model:** `e.g. swiss-ai/Apertus-v1.5-8B`
-- **How it is used:** inference | fine-tuning | evaluation | red-teaming | agents / tool use
-- **Where it runs:** `local weights, hosted endpoint, ...`
+- **Model:** `apertus-v1.5-70b` (gateway id); weights `swiss-ai/Apertus-v1.5-70B` on Hugging Face
+- **How it is used:** inference — structured JSON resident turns; optional thinking pass for explanations (separate from tools)
+- **Where it runs:** Hack Apertus hosted endpoint for development; production story = Swiss sovereign provider or on-prem vLLM
 
 Prompts, adapters, quantisation, serving stack — whatever a reader needs to
 rebuild your setup.

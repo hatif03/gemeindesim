@@ -1,60 +1,45 @@
-# Hack Apertus — project template
+# GemeindeSim
 
-Template repository for [Hack Apertus](https://hackapertus.ch/) submissions.
-Every project keeps almost the same layout, so organizers and judges find the
-same things in the same place.
+**GemeindeSim** is our Hack Apertus submission: a multilingual civic simulation built on [Apertus 1.5](https://www.apertus-ai.org/). Residents in a Swiss Gemeinde react to an official **vote** (Vorlage / Abstimmungsbüchlein) or a **municipal budget** in German and French, grounded in a closed corpus—not the open web.
 
-## Select your track
+- **Hackathon:** [Hack Apertus](https://hackapertus.ch/) online stage, 1–16 October 2026  
+- **Track:** [Track 2B — Own Project](track_2b/README.md) (template layout from [HackApertus/project-template](https://github.com/HackApertus/project-template))  
+- **Study notes & probe report:** [track_2b/docs/PROBE-AND-PLAN.md](track_2b/docs/PROBE-AND-PLAN.md)  
+- **Hackathon context:** [track_2b/docs/HACKATHON.md](track_2b/docs/HACKATHON.md)
 
-This repository holds one example project per track:
+## Repository layout
 
-- `track_1a/`
-- `track_1b/`
-- `track_2a/`
-- `track_2b/`
-
-Keep the directory for the track you are competing in **exactly as it is** —
-don't rename it or move its files — and delete the other track directories.
-That directory is your project root. Keep the files and directories as shown
-below.
-
-## The structure
-
-| Path | What it is |
+| Path | Purpose |
 | --- | --- |
-| `README.md` | The challenge description and submission requirements for your track |
-| `technical_report.md` | The deeper write-up: architecture, evaluation, limitations |
-| `Makefile` | `make run` must spin up your project |
-| `src/` | Your code |
-| `data/` | Datasets — `track_1a`, `track_2a` and `track_2b` only; max. 100 MB |
-| `findings/` | Issue files — `track_1a` only |
-| `docs/` | Diagrams, notes, longer write-ups |
+| `track_2b/` | **Project root** for judges—do not rename this folder |
+| `track_2b/src/` | Application code |
+| `track_2b/data/` | Corpus samples (max. 100 MB) |
+| `track_2b/docs/` | Architecture, hackathon links, probe notes |
+| `track_2b/technical_report.md` | Submission write-up (export to PDF for upload) |
 
-## Run it
+## Quick start
 
-Judges run `make run` from the root of the project, on a clean checkout:
+1. Copy `track_2b/.env.example` to `track_2b/.env` and set your Hack Apertus inference key (never commit `.env`).
+2. From this repository root:
 
 ```bash
 make run
 ```
 
-`make run` is expected to run the project using Docker, since that
-is how the judges will run it.
-- If you used other local open-weight models, include instructions for running the project in your technical report.
-- Use the following environment variables:
-```
-LLM_NAME — name and version of the model
-LLM_BASE_URL — endpoint base URL
-LLM_API_KEY — your API key
-```
+`make run` delegates to `track_2b/` and is expected to start the project via Docker once implemented.
 
-## Getting started
+## Environment variables (required by organizers)
 
-1. Click **Use this template** to create your own repository.
-2. Delete the other track directories. Don't rename or restructure yours.
-3. Read its `README.md` and fill in `technical_report.md`.
-4. Make `make run` work from the root of the project, on a clean checkout.
+| Variable | Example |
+| --- | --- |
+| `LLM_NAME` | `apertus-v1.5-70b` |
+| `LLM_BASE_URL` | `https://hackapertus.livemap.sh/v1` |
+| `LLM_API_KEY` | Your hackathon API key |
+
+## Related material
+
+Local crash-course notes (not part of this submission repo): `C:\Users\mdhat\Desktop\apertus\` on this machine.
 
 ## License
 
-All Hack Apertus projects are open-sourced. Please check our Terms & Conditions for specific licensing details (6. What you build is open source): https://hackapertus.ch/terms-and-conditions
+Apache-2.0 for template-derived files; see [LICENSE](LICENSE) and [Hack Apertus Terms](https://hackapertus.ch/terms-and-conditions).

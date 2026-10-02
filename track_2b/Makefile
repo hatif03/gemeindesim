@@ -1,6 +1,10 @@
-.PHONY: run
+.PHONY: run build
 
-# Replace with the command that starts the project in a Docker container,
-# e.g. `docker compose up`. It must work from a clean checkout.
+# Judges: `make run` from repo root delegates here.
+# Expects track_2b/.env with LLM_API_KEY (see .env.example).
+
 run:
-	@echo "make run is not implemented yet — edit this Makefile"; exit 1
+	docker compose up --build
+
+build:
+	docker compose build
