@@ -134,8 +134,7 @@ If we borrow datasets or rubrics from Track 2A partners, their sessions were adv
 
 ## Next actions for this repo
 
-1. Implement `src/gemeindesim` client + schema gate (see PROBE-AND-PLAN §6–9)  
-2. Wire `docker-compose.yml` + working `make run`  
-3. Add sample corpus under `data/` with licences  
-4. Fill `technical_report.md` and record eval metrics  
-5. Fork on GitHub, set `origin` to your fork, push before submission  
+1. Demo video ≤ 2 minutes
+2. Export `TeamName_Report.pdf` from `technical_report.md`
+3. Public GitHub + [submission form](http://hackapertus.ch/online-hack/submissions)
+4. Native-speaker review of DE/FR resident lines (see `docs/FOR-JUDGES.md`)

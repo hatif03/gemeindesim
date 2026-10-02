@@ -2,9 +2,9 @@
 
 Reference for the **GemeindeSim** build (`C:\Users\mdhat\Desktop\gemeindesim`). Written 2 October 2026 after live calls against the Hack Apertus inference endpoint.
 
-This is not a Simulacra clone. [Simulacra](https://github.com/0xABAN/simulacra) is the reference for a generative-agent town (memory, rounds, a map). We keep that shape only where it helps, and point it at Swiss civic situations: a national or cantonal vote, a municipal budget, and residents who speak German or French. The model is used for what Apertus 1.5 is actually good at: multilingual instruction following, long context, and a single structured step. Everything it is weak at stays in our code.
+GemeindeSim is a generative-agent town-sim (memory, rounds, a Phaser map, economic events) running on Apertus 1.5. The research foundations are Park et al. 2023 (*Generative Agents: Interactive Simulacra of Human Behavior*, arXiv:2304.03442) and Peralta et al. 2022 (opinion dynamics). The model is used for what Apertus 1.5 is actually good at: multilingual instruction following, long context, and a single structured step. Everything it is weak at stays in our code. We do not strip game features because of model limits; we put a gate in front of the model.
 
-The product explains official material. It does not write campaign copy, pick a side, or tell a user how to vote. That matches the Apertus Charter constraints already noted in `track-2a/fact-checking/README.md` (cite sources, no partisan side-taking, not legal advice).
+The product explains official material and shows livelihood effects. It does not write campaign copy, pick a side, or tell a user how to vote. That matches the Apertus Charter (cite sources, no partisan side-taking, not legal advice).
 
 ## 1. What we already know about the model
 
@@ -121,10 +121,10 @@ Apertus on this endpoint is a reliable single-step function caller and a decent 
 | Invented enums | Mood, stance, language, action type. | A resident “mood” the UI cannot draw, or a stance outside the vote question. |
 | Shallow economics and generic voice | 15 rounds of the same shopkeeper or tenant. | The map moves and the German/French flattens into textbook sentences. |
 | Mid-pack factual recall | “What does a Yes do to this Gemeinde budget?” | Invented percentages that are not in the Erläuterungen. |
-| US-default framing | Prompts that say “town” and “minimum wage” the way Simulacra does. | Residents talk like an American city even when the corpus is Swiss. |
+| US-default framing | English-only Millfield prompts when the demo is a Swiss Gemeinde. | Residents talk like an American city even when the corpus is Swiss. |
 | One completion, two languages | “Answer in German and French.” | Code-switching, or one language silently winning. |
 
-Simulacra’s `backend/graph/llm.py` already fights a different model’s failure mode (K2 Think dumps reasoning, echoes schemas, wraps one object in an array, so they retry three times and scan for JSON). We should copy the idea of a gate in front of the model, and change the gate to match Apertus: single tool call, example instance, thinking split into its own request, closed enums, no parallel fan-out.
+`graph/llm.py` is the Apertus-specific gate: filled example instance, thinking split into its own request, closed enums, no parallel tool fan-out, then parse, Pydantic repair, and a bounded retry. Parallel `asyncio.gather` over NPCs stays — that is many completions, not one message with many tools.
 
 ## 6. Engineering: what our code owns
 
@@ -164,12 +164,12 @@ Every resident and report call goes through the same function:
 
 1. Prompt includes a **filled example object**, with every required key present. The first probe showed the 8B dropping `message` when the example was casual.
 2. Send `response_format: {"type": "json_object"}` and thinking off.
-3. Parse JSON. On failure, scan for the first balanced object (Simulacra already does this; keep it).
-4. Validate with Pydantic. Enums are closed: `lang` is `de` or `fr`, `action` is a small set (`say`, `ask`, `move`, `shift_stance`), `stance` is `yes` / `no` / `undecided` / `abstain` for a vote, or a signed integer the budget rules allow. Mood, if we keep it, is the same closed list the UI can draw.
+3. Parse JSON. On failure, scan for the first balanced object.
+4. Validate with Pydantic. Keep the five event types (`chat`, `move`, `protest`, `mood_shift`, `price_change`). `lang` is `de`, `fr`, or `en`. Mood is the closed list the UI can draw (`angry|anxious|worried|neutral|hopeful|excited`). Unknown moods map to `neutral` so Phaser never dies.
 5. On validation error, one repair call. The user message is the invalid JSON plus the Pydantic error. Same mode, no new facts.
-6. After two failures, use a deterministic fallback line from the persona card (“I want to read the official explanation again before I decide.”) in that resident’s language. A round must not block on a bad sample.
+6. After two failures, emit a deterministic in-character fallback event in that resident’s language. A round must not block on a bad sample.
 
-Do not ask the model to copy a JSON Schema. Simulacra found that K2 echoed the schema; a concrete example is the more reliable prompt for this class of model too.
+Do not ask the model to copy a JSON Schema. Apertus (and similar instruction-tuned models) will echo the schema; a concrete example is the more reliable prompt.
 
 Numeric fields that come from the world (tax rate, deficit, turnout) are **not** model outputs. They are inputs the model may quote. The checker drops any numeral in the utterance that is not in the retrieved pack or the calculator output.
 
@@ -196,23 +196,21 @@ We do not ask one call to produce both languages. If the UI needs the other lang
 
 Swiss German dialect is optional flavor, not the default. The official documents are Standard German and French. Dialect in the mouth of a resident is a later experiment, and only if a spot check shows the 70B staying understandable. Audio understanding in 1.5 is experimental; this prototype stays text.
 
-### 6.6 Shrink the cognitive loop
+### 6.6 Keep the cognitive loop; gate the model
 
-Simulacra runs perceive, retrieve, reflect, plan, and act as model calls, for 25 people, for 15 rounds. That volume is where a mid-pack model goes generic. We keep the memory stream and the opinion update, and we delete model work that code can do.
+The engine runs retrieve → reflect → plan → act, for up to 25 people and 15 rounds. We **keep that loop**. Apertus limits are handled by the JSON gate, a retrieved pack, a concurrency semaphore, and fallback events — not by deleting protests, the dashboard, or swarm.
 
 Per round, per resident, the model sees a pack assembled in code:
 
-- Frozen persona card (name, role, language, household situation, one concrete stake). Written once by the 70B, then not rewritten.
-- At most three retrieved memories.
-- The passages retrieved for this Vorlage or budget line.
+- Frozen persona card (name, role, language, household situation, life-story block, one concrete stake). Written once by the 70B, then not rewritten.
+- Retrieved memories (existing memory stream).
+- Passages retrieved for this policy / Vorlage / budget line.
 - Who is nearby, as ids the model is allowed to address.
-- The phase: official text just published, discussion, vote week or budget hearing.
+- The phase: shock / adaptation / equilibrium (existing frontend labels).
 
-The model returns **one** action. Code applies it: append memory, update stance with a bounded shift, move on the grid if the coordinates are in range, record a chat only if the target was in the nearby list. Opinion dynamics (bounded confidence, compromise with people they know) stay numeric, as in Simulacra. The model does not do the math of social influence.
+The model still returns **1–3 events** from the existing types. Code applies them: append memory, clamp moves, record a chat only if the target was nearby, run opinion dynamics in numeric code. The model does not do the math of social influence.
 
-Reflections are rare. Trigger them the way Park et al. do, from an importance sum, and run them on the 70B in `json` mode. Most rounds have no reflection call.
-
-Who speaks is also code. Not every resident needs a model call every round. A round can sample the residents whose stake matches the agenda item, plus one neighbor conversation. That keeps the 70B on the lines a user will actually read.
+Reflections stay Park-style: trigger from an importance sum, `json` mode, 70B. Swarm stays an env flag with code-side initiator scoring; add a semaphore so the hackathon gateway is not flooded.
 
 ### 6.7 Which size, when
 
@@ -226,21 +224,17 @@ Who speaks is also code. Not every resident needs a model call every round. A ro
 
 The 8B is good enough to keep a schema alive. It is the wrong default for the sentences we show. Use it when a turn is low-stakes and heavily constrained (a one-line reaction that must mention a supplied number). Do not use it to invent the persona.
 
-### 6.8 Module sketch
+### 6.8 Where this lives in the shipped engine
 
-When we build, these are the pieces. Names can change; the boundaries should not.
+Adapter work maps onto the existing engine tree, not a greenfield package:
 
-- `client.py` — endpoint, the three modes, thinking-span splitter, single pseudo-call repair, no key in logs.
-- `schema.py` — Pydantic models and the validate-then-repair-then-fallback function.
-- `corpus.py` — DE/FR booklet chunks and budget rows, each with `source_id`.
-- `retrieve.py` — lexical or embedding search over that corpus only.
-- `planner.py` — JSON list of retrieval steps, executed in code.
-- `residents.py` — frozen cards, language, stance, memory.
-- `round.py` — assemble the pack, one `json` call, apply the action in code.
-- `report.py` — 70B narrative over aggregates the simulator already computed.
-- `eval/` — the checks in section 8, runnable without the Phaser map.
-
-The map, if we keep one, is a view of state the round loop already produced. It is not part of making the model reliable.
+- `graph/llm.py` + `config.py` — `LLM_*` endpoint, json / think modes, thinking-span splitter, repair + fallback
+- `models/schemas.py` — Pydantic event contract (keep five types)
+- `services/context_store.py` + corpus retrieve — closed-corpus chunks with `source_id`
+- `graph/memory.py` + `graph/nodes/run_round.py` — Park loop, opinion math, swarm
+- `services/economic_report.py` — 70B narrative over aggregates the simulator already computed
+- Phaser frontend — view of state the round loop already produced
+- `tests/` / eval fixtures — schema, language, citation checks without the map
 
 ## 7. Scenario shape
 
@@ -252,14 +246,9 @@ One simulation has a **situation** and **residents**. The situation is one of:
 
 The user pastes or selects the situation. They do not get a free-form “make the town conservative” control. The objective line, if we keep one, is a question (“what happens to tenants if this passes”), and the report answers it from the trace.
 
-Suggested first prototype, small on purpose:
+Shipped UI/API defaults stay **5 NPCs / 3 rounds**. The engine still supports 25 NPCs and 15 rounds. Default demo: bilingual Swiss municipal policy (DE/FR residents) plus the original English tariff path as a second scenario.
 
-- 8 residents, 4 German and 4 French.
-- 5 rounds, not 15.
-- One real Vorlage with both language PDFs, or one municipal budget with a two-page extract.
-- No tools API in the round loop at all, until the schema eval is green. Retrieval is a function we call ourselves.
-
-That is enough to see whether the engineering holds. Scaling toward 25 residents is a concurrency change, not a new model strategy.
+No tools API in the round loop. Retrieval is a function we call ourselves. Scaling NPC count is a concurrency change, not a new model strategy.
 
 ## 8. Eval we run before any UI
 
@@ -281,14 +270,14 @@ Hand-read 10 German and 10 French lines for US framing (“city council” inste
 
 ## 9. Build order
 
-1. Client and schema gate, with the fixtures in section 8. No town yet.
-2. One Vorlage, DE and FR, chunked, with retrieval and the numeral check.
-3. Eight frozen personas from the 70B, reviewed by us once, then locked.
-4. Five-round loop in the terminal: print utterances, stances, and source ids.
-5. Only then a small UI. The map is optional. A list of residents and a source panel is enough to judge the model.
-6. Budget scenario as a second corpus and the same loop. Do not fork the prompt stack.
+1. Keep the town-sim in `track_2b/src` and wire `LLM_*` so `make run` serves the Phaser UI.
+2. Apertus JSON gate (example instance, inner-span strip, repair, semaphore). Confirm all five event types still parse.
+3. Keep swarm; add concurrency limits.
+4. Additive `lang` + Swiss sample + retrieval pack + translation hop.
+5. Interview-style persona enrichment; citation marks; numeral check.
+6. Rebrand GemeindeSim; latin-ext fonts; eval fixtures + technical report.
 
-Out of scope until the eval is green: parallel tool use, thinking inside the round loop, dialect, audio, Italian, 25 agents, 15 rounds, campaign-style persuasion, web search.
+Out of scope unless a feature is truly impossible: dropping Phaser or economic metrics, collapsing to one event, Italian, dialect, audio, native parallel tool_calls, thinking inside the round JSON call, web search.
 
 ## 10. Risks we are not pretending to have solved
 
@@ -301,9 +290,9 @@ Out of scope until the eval is green: parallel tool use, thinking inside the rou
 
 ## 11. Decision log
 
-- We will not port Simulacra’s K2 prompt stack unchanged. We will port the idea of a JSON gate, memory, and code-side social math.
-- We will not use native parallel tool calls.
+- We keep the full town-sim. We retarget the JSON gate, memory, and code-side social math to Apertus rather than copying another model’s prompt stack.
+- We will not use native parallel tool calls. We will keep parallel NPC completions with a semaphore.
 - We will not combine thinking and tools.
-- We will not let the model emit budget or vote numbers that were not retrieved or computed.
-- Default resident model is the 70B, thinking off. Thinking is a pre-pass for explanations only.
-- First demo is 8 residents, 5 rounds, German and French, one official text.
+- We will not let the model emit budget or vote numbers that were not retrieved or computed. Dashboard metrics stay code-side.
+- Default resident model is the 70B, thinking off. Thinking is a pre-pass for explanations / thin reports only.
+- UI defaults stay 5 NPCs / 3 rounds; 25 / 15 remain available. Default demo is bilingual Swiss plus an English tariff scenario.

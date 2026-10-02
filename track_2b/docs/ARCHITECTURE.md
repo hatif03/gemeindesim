@@ -1,47 +1,50 @@
-# GemeindeSim architecture (draft)
+# GemeindeSim architecture
 
-High-level design aligned with [PROBE-AND-PLAN.md](PROBE-AND-PLAN.md). Update as `src/` lands.
+The shipped engine is FastAPI + LangGraph + Phaser, with an Apertus 1.5 adapter.
 
 ```text
-User selects Vorlage / budget
+User pastes / uploads policy (DE/FR/EN)
         │
         ▼
 ┌───────────────────┐
-│ Corpus + retrieve │  data/ + source_id chunks (DE/FR)
+│ PDF/CSV/notes     │  routers/extract.py + context_store
+│ chunk + retrieve  │  graph/corpus.py (closed corpus)
 └─────────┬─────────┘
           │
           ▼
-┌───────────────────┐     LLM json mode (70B)
-│ Persona seed      │────► frozen resident cards (de | fr)
-└─────────┬─────────┘
-          │
-          ▼
-┌───────────────────┐
-│ Round loop        │  code: memory, nearby ids, stance math
-│  └► one action   │────► Apertus: single ResidentAction JSON
+┌───────────────────┐     Apertus json mode (70B)
+│ parse_policy      │
+│ generate_npcs     │──── frozen cards + life_story (de|fr|en)
 └─────────┬─────────┘
           │
           ▼
 ┌───────────────────┐
-│ Report            │────► cited summary (no vote recommendation)
+│ run_round         │  Park loop: retrieve → reflect → plan → act
+│  (or swarm)       │  1–3 events: chat/move/protest/mood/price
+│                   │  opinion dynamics in code
+└─────────┬─────────┘
+          │ Socket.IO
+          ▼
+┌───────────────────┐
+│ Phaser + dashboard│  Egg Index, prices, unrest, social graph
+│ economic report   │  no vote recommendation
 └───────────────────┘
 ```
 
-## Planned `src/` modules
+## Code map (`src/`)
 
-| Module | Role |
+| Path | Role |
 | --- | --- |
-| `gemeindesim/client.py` | `LLM_*` env, json / tool_one / think modes |
-| `gemeindesim/schema.py` | Pydantic + repair + fallback line |
-| `gemeindesim/corpus.py` | Chunk store |
-| `gemeindesim/retrieve.py` | Search over corpus only |
-| `gemeindesim/residents.py` | Personas, memory, stance |
-| `gemeindesim/round.py` | One action per speaking resident |
-| `gemeindesim/report.py` | Final narrative from aggregates |
-| `gemeindesim/eval/` | Schema, language, citation checks |
+| `src/backend/config.py` | `LLM_*`, swarm, concurrency, grid |
+| `src/backend/graph/llm.py` | json / think modes, inner-span strip, repair, semaphore |
+| `src/backend/graph/corpus.py` | chunk + lexical retrieve |
+| `src/backend/graph/language.py` | glossaries, translation hop, numeral check |
+| `src/backend/graph/nodes/run_round.py` | cognitive loop + five event types |
+| `src/backend/models/schemas.py` | Pydantic contract |
+| `src/frontend/` | Next.js + Phaser |
 
 ## Sovereign deployability (Track 2B)
 
-**Primary story:** Dockerized app + on-disk corpus; `LLM_BASE_URL` points to a **Swiss-hosted** Apertus endpoint (hackathon gateway for demo, CSCS / Swiss provider in production).
+**Primary:** Dockerized app + on-disk corpus; `LLM_BASE_URL` is a Swiss-hosted OpenAI-compatible endpoint (hackathon gateway now).
 
-**Air-gapped variant:** swap endpoint for local vLLM serving `swiss-ai/Apertus-v1.5-70B` weights; no outbound network at runtime.
+**Air-gapped / on-prem:** point `LLM_BASE_URL` at local vLLM serving `swiss-ai/Apertus-v1.5-70B`; no outbound network except that URL.
