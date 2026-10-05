@@ -275,8 +275,8 @@ the hosted deployment; the same probe table must be re-measured on a local vLLM 
 ## 8. Reproducibility
 
 All scripts in `track_2b/research/`, all raw calls in `research/results/*.jsonl`, the per-run simulation state in
-`research/results/sims/`. `make run` starts the application; `uv run --project src/backend pytest` runs the 114
-offline tests (46 pin a finding from this paper). The Swissvotes extract used in E8 comes from Swissvotes
+`research/results/sims/`. `make run` starts the application; `uv run --project src/backend pytest` runs the 120
+offline tests (52 pin a finding from this paper). The Swissvotes extract used in E8 comes from Swissvotes
 (University of Bern), trimmed to the needed columns.
 
 ## 9. Conclusion

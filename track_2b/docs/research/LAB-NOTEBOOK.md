@@ -1035,3 +1035,11 @@ seeds** (start −0.19, end −0.28 against the same seeds without them): the mo
 the case against, and the computed cost also gains a second worked example. *Limits:* n = 3 paired runs, 8B only, three-round runs; this shows the
 tool works as a *what-if comparer*, it is not an estimate of how real residents would react. Not built: an in-app control for it
 (the harness and `docs/research` are the interface).
+
+## 2026-10-05 — E18b: end-to-end through the real UI (Docker) found one more defect
+
+Drove the repo's own Playwright script against the Docker stack built from a fresh clone (UI :3000, API :8000). **The first attempt failed:
+`POST /simulate` returned HTTP 422** for the balanced bilingual sample, because `PolicyInput.notes_text` was capped at 4 000 characters
+(the balanced DE+FR text is ≈ 4 500) and the UI only logged a console error. Anyone pasting a longer text (a booklet section) would hit the same
+silent failure. Fixed: cap 30 000 (whole documents still go through the PDF upload path), regression test added, backend rebuilt, capture rerun.
+(Not fixed: the UI shows no message when the API rejects a request; noted in `06-next-steps.md`.)

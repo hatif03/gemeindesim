@@ -376,3 +376,14 @@ def test_undecided_binding_names_both_arguments_and_forbids_copying():
     assert "word for word" in b and "never take a side" in b
     # without both arguments it falls back to the generic wording
     assert "torn" in stance_binding({"stance": 0.0, "stance_reason": ""})
+
+
+def test_notes_accept_the_balanced_bilingual_sample():
+    from pathlib import Path
+
+    from models.schemas import PolicyInput
+
+    d = Path(__file__).resolve().parents[3] / "data"
+    text = (d / "steuerfuss_linden_balanced_de.txt").read_text(encoding="utf-8") + (d / "steuerfuss_linden_balanced_fr.txt").read_text(encoding="utf-8")
+    assert len(text) > 4000  # the old cap
+    assert PolicyInput(notes_text=text, situation_kind="vote").num_npcs == 5

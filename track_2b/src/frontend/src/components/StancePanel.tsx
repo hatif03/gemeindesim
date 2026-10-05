@@ -82,7 +82,7 @@ export function StancePanel({ npcs, version }: StancePanelProps) {
         <Counts poll={now} />
         {changed && (
           <div style={{ color: "#8B7355" }} className="font-mono">
-            start: {start.for}/{start.undecided}/{start.against}
+            start (for/undecided/against): {start.for}/{start.undecided}/{start.against}
           </div>
         )}
         <p className="leading-snug" style={{ color: "#A0824A" }}>

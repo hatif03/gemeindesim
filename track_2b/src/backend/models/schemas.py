@@ -112,7 +112,9 @@ class PolicyInput(BaseModel):
 
     primary_policy_source_id: str | None = None
     policy_source_ids: list[str] = Field(default_factory=list)
-    notes_text: str = Field(default="", max_length=4000)
+    # 30 000: the balanced bilingual Linden sample is ~4 500 characters and a pasted booklet section more; the old cap of 4 000 made
+    # the UI fail silently with HTTP 422 (found by the live screenshot run). Whole documents go through the PDF upload path.
+    notes_text: str = Field(default="", max_length=30000)
     trend_source_ids: list[str] = Field(default_factory=list)
     num_rounds: int = 3
     num_npcs: int = 5

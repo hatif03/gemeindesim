@@ -69,7 +69,7 @@ Experiment ids refer to `LAB-NOTEBOOK.md`. "v2" = the code after this work.
 | B7 dashboard "computed from events" | Partly (`price_pressure` dead) | Economy bars hidden when a stance poll exists; `price_pressure` still always 0 (documented) |
 | B8 report "does not recommend a vote" | Partly | Conditional wording, localised disclaimer, language fixed (0/8 mixed, 0/8 asserted in the final runs) |
 | B9 default concurrency 6, silent 8B fallback | Refuted | **Fixed** in code and in `docker-compose.yml` (default 4); 429 retried on the same model |
-| B10 "schema fixtures 20/20" | Unsupported | Replaced by measured first-attempt validity (49/49) and 48 regression tests tied to findings |
+| B10 "schema fixtures 20/20" | Unsupported | Replaced by measured first-attempt validity (49/49) and 52 regression tests tied to findings |
 | B12 `invoke_llm_think` pre-pass | Unsupported | Still unused; stated as such |
 | B13 value / scalability | Supported | Quantified (E10, probe): linear to ≈ 4 in flight; 8B ≈ 4× faster per simulation |
 | B14 sovereign deployability | Not testable | **Still not measured on a local model** (no GPU; the Docker VM here has ≈ 7 GB). Prepared: `research/probe_endpoint.py` (validated on the hosted 8B) and a clean-clone Docker stack that starts and serves |

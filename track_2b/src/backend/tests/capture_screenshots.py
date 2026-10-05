@@ -19,8 +19,8 @@ def shot(page, name: str) -> None:
 
 
 def notes() -> str:
-    de = (DATA / "steuerfuss_linden_de.txt").read_text(encoding="utf-8")
-    fr = (DATA / "steuerfuss_linden_fr.txt").read_text(encoding="utf-8")
+    de = (DATA / "steuerfuss_linden_balanced_de.txt").read_text(encoding="utf-8")
+    fr = (DATA / "steuerfuss_linden_balanced_fr.txt").read_text(encoding="utf-8")
     return de.strip() + "\n\n" + fr.strip()
 
 

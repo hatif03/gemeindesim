@@ -26,13 +26,13 @@
 <h2>1. Summary</h2>
 <p>GemeindeSim reads a Swiss municipal vote in German and French and spawns a small town of residents who talk, move, change mood and
 form a stance on a pixel-art map; a closing report says who is affected and why, never how to vote. We also used the town as a <b>test bench for
-Apertus 1.5</b> (8B and 70B): about 5,000 logged gateway calls in 18 experiments and 30 instrumented simulations. Apertus is an excellent
+Apertus 1.5</b> (8B and 70B): about 10,800 logged model calls in 25 experiments (with follow-ups) and 48 instrumented simulations. Apertus is an excellent
 <i>speaker</i> (112/112 residents' lines in the right language; it abstains when a premise is missing; it never gave voting advice in 30
 tests). It is an unreliable <i>decider</i>: asked for a stance, every resident said <b>yes</b> (15/15, also with no persona); on 54 real Swiss
 federal votes the simulated electorate was 34–37 points too favourable and the 8B followed an official recommendation 98 % of the time;
 both sizes defined <i>Steuerfuss</i> wrongly and failed a one-step percentage. The design follows: <b>the model voices; the application owns
-the stance, the arithmetic and the sources</b>. Result: valid citations 0 → 99–100 %, invented outcomes in reports 12/30 → 0/30, a town that
-starts with real disagreement, and residents whose words match their stance (≈ 50 % → ≈ 80 %).</p>
+the stance, the arithmetic and the sources</b>. Result: valid citations 0 → 100 %, invented outcomes in reports 12/30 → 0/30, a town that
+starts with real disagreement, and residents whose words match their stance (≈ 0.5 → ≈ 0.9). On a real 48-page Federal Council booklet the pipeline answered 12/14 questions correctly and abstained on all unanswerable ones.</p>
 
 <h2>2. Architecture and target deployment</h2>
 <div class="arch">policy text (DE/FR/EN) ─► chunk + BM25 (closed corpus, per-chunk language, ballot question pinned)
@@ -88,34 +88,35 @@ For evaluation only: Swissvotes (Univ. Bern), 54 federal votes 2021–2026 with 
 <h3>5.3 Defects found beyond the model, and the fix (identical seeds)</h3>
 <table>
 <tr><th>Defect</th><th>Before</th><th>After</th></tr>
-<tr><td>Cited source ids that exist</td><td class="n">0 / 159</td><td class="n">99–100 %</td></tr>
+<tr><td>Cited source ids that exist</td><td class="n">0 / 159</td><td class="n">100 % (16 runs)</td></tr>
 <tr><td>Ballot question in the resident's prompt</td><td class="n">13–30 %</td><td class="n">100 %</td></tr>
 <tr><td>Reports asserting "the measure passed"</td><td class="n">12 / 30</td><td class="n">0 / 30</td></tr>
-<tr><td>Reports mixing German and English</td><td class="n">5 / 5 runs</td><td class="n">0 / 5</td></tr>
+<tr><td>Reports mixing German and English</td><td class="n">5 / 5 runs</td><td class="n">0 / 16 runs</td></tr>
 <tr><td>Chats opening with a self-introduction (70B)</td><td class="n">27 %</td><td class="n">0 %</td></tr>
 <tr><td>Polarisation of a town where nobody talks (15 rounds)</td><td class="n">|x| 0.51 → 0.69</td><td class="n">0 (drift needs a conversation)</td></tr>
 <tr><td>Numeral gate, 12 edge cases</td><td class="n">8/12</td><td class="n">10/12</td></tr>
-<tr><td>Influence log reaching the UI</td><td class="n">never (dropped by LangGraph)</td><td class="n">49 / 39 outcomes (70B / 8B)</td></tr>
-<tr><td>Residents' words match their stance</td><td class="n">0.46–0.55 (70B), 0.50–0.52 (8B)</td><td class="n">0.80 (70B), 0.73–0.76 (8B)</td></tr>
+<tr><td>Influence log reaching the UI</td><td class="n">never (dropped by LangGraph)</td><td class="n">49–77 outcomes per group</td></tr>
+<tr><td>Residents' words match their stance</td><td class="n">0.46–0.55 (70B), 0.50–0.52 (8B)</td><td class="n">0.88–0.91 (70B), 0.85–0.87 (8B)</td></tr>
 <tr><td>Undecided residents sounding undecided ("mixed")</td><td class="n">0.47 (70B)</td><td class="n">0.74 (70B), 8B 0.53 → 0.68</td></tr>
+<tr><td>Retrieval on a real booklet (recall@4, 14 questions)</td><td class="n">10/14 (old retriever)</td><td class="n">11/14; QA 12/14 hand-graded</td></tr>
 <tr><td><code>make run</code> on a clean checkout</td><td>failed (no Linux native packages in either lockfile)</td><td>builds; concurrency 4; alt-port configurable</td></tr>
 </table>
 
 <h3>5.4 Real booklet and spread across seeds</h3>
-<p>@@REAL_BOOKLET@@</p>
-<p>@@ENSEMBLE@@</p>
+<p><b>Real booklet.</b> On the 48-page Federal Council booklet of 28 Sept 2025 (83 k characters, 209 chunks, two measures) the retriever puts the gold evidence into the four passages for 11 of 14 questions (old retriever 10/14; 12/14 with six passages). With those passages the 70B answered 12/14 correctly (hand-graded; an automatic regex undercounted), abstained on 3/3 unanswerable questions and abstained wrongly only where the evidence was not retrieved: <i>retrieval, not the model, is the bottleneck</i> (lexical, exact-term). The French edition could not be tested.</p>
+<p><b>Spread across seeds and conditions.</b> Personas and the stance prior are drawn per seed and <code>T=0</code> is not reproducible, so one run is not a result: across five 70B seeds the final share <i>for</i> ranges 0.00–0.80 (8B: 0.00–0.40; its towns are systematically more negative), and the poll did not change in 4 of 5 runs within three rounds. The harness also compares conditions (E19, 8B, three paired seeds): adding the referendum committee's counter-arguments lowers the mean stance in all three seeds (−0.28 at the end); a yes or no council recommendation does not move it consistently, because the stance never reads it.<br><img src="../docs/research/ensemble_final_70.svg" alt="stance poll start and end per seed" style="width:62%;margin-top:3px"><br><span class="small">Stance poll (for / undecided / against) at the start and end of five 70B runs of the same town.</span></p>
 
 <h2>6. Limitations</h2>
 <ul>
 <li><b>Not a vote predictor</b> (54 real votes; weak signal after bias correction). Stance weights are modelling assumptions, not calibrated; the stance prior <i>produces</i> disagreement and is not evidence that real residents would split that way.</li>
 <li>Small n: 3–5 simulations per group, 15 residents in population tests, 15 held-out votes; ranges, no significance tests. LLM classifiers (79–91 % mutual agreement) score the speech tests.</li>
-<li>One endpoint, one day; latency drifts several-fold. Sovereign parity not measured (no GPU). German/French register: native-speaker review pack prepared (<code>docs/review/</code>); status: @@REVIEW@@.</li>
+<li>One endpoint, one day; latency drifts several-fold. Sovereign parity not measured (no GPU). German/French register: native-speaker review pack prepared (<code>docs/review/</code>); corrections from the native-speaker review are applied before submission (status in <code>docs/SUBMISSION-CHECKLIST.md</code>).</li>
 <li>Open: <code>price_pressure</code> indicator is always 0; <code>invoke_llm_think</code> is unused; the 8B never emits <code>move</code>; the Linden sample is synthetic and short.</li>
 </ul>
 
 <h2>7. Reproducibility</h2>
 <p><code>cp track_2b/.env.example track_2b/.env</code> (set <code>LLM_API_KEY</code>), then <code>make run</code> → UI <code>localhost:3000</code> (second port <code>UI_ALT_PORT</code>, default 8080).
-Tests: <code>cd track_2b/src/backend &amp;&amp; uv run pytest --deselect tests/test_e2e.py</code> (119 offline). Every experiment is a script in <code>research/</code> with raw call logs in
+Tests: <code>cd track_2b/src/backend &amp;&amp; uv run pytest --deselect tests/test_e2e.py</code> (offline). Every experiment is a script in <code>research/</code> with raw call logs in
 <code>research/results/</code>; <code>docs/research/LAB-NOTEBOOK.md</code> records every decision, including failed attempts. Python 3.12, Docker.</p>
 
 <h2>8. Next steps</h2>

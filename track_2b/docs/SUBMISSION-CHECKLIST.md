@@ -20,7 +20,7 @@ Requirements are from `docs/HACKATHON.md`. **Done** = verified in this repositor
 
 1. `git pull` the final branch into a fresh directory, copy `.env`, run `make run`, wait for healthy, open http://localhost:3000.
 2. Run the Linden DE+FR sample once (5 residents, 3 rounds). Expect: stance panel, citation chips, a German report with no outcome.
-3. `cd track_2b/src/backend && uv run pytest --deselect tests/test_e2e.py` (119 offline tests).
+3. `cd track_2b/src/backend && uv run pytest --deselect tests/test_e2e.py` (120 offline tests).
 4. Check the PDF page count and that the numbers equal `docs/research/03-results.md`.
 5. Submit.
 
