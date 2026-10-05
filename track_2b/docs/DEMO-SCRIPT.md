@@ -33,4 +33,6 @@ browser at 100 %, English narration, German/French shown on screen. Total target
 * Say "fictional town", "what-if explainer", never "predicts the vote".
 * Do not claim sovereign parity: say it is configured, and the probe script is ready for a local deployment.
 * If asked about German and French quality: it was reviewed by a native speaker (fill in after the review).
-* Fallback if the live run misbehaves: play the saved replay; the stance panel and report still work from it.
+* Fallback if the live run misbehaves: play the saved replay; the stance panel, event feed, citation chips and resident profiles work from it.
+  **The report does not**: the saved JSON holds only the init message and the rounds (`SavedSimulation` in `types/backend.ts`); the report arrives
+  as a separate Socket.IO event and a replay shows "Report Pending". Film the report shot from a live run (or screen-record it once and cut it in).

@@ -70,25 +70,10 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { delay: 1.0, duration: 2.0 },
-                }}
-                className="flex justify-center gap-12"
-              >
-                <span className="font-normal">{"\u00A9"}2025</span>
-                <span className="font-bold" style={{ color: "#D4A520" }}>
-                  GemeindeSim.
-                </span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
                   transition: { delay: 1.5, duration: 2.0 },
                 }}
               >
-                <span className="font-normal">{"\u00A9"}2025-2026</span>{" "}
+                <span className="font-normal">{"\u00A9"}2026</span>{" "}
                 <span className="font-bold" style={{ color: "#D4A520" }}>
                   Hack Apertus
                 </span>
