@@ -17,7 +17,7 @@ uv run uvicorn main:app --reload --host 0.0.0.0 --port 8000
 | `LLM_NAME` | Gateway id, default `apertus-v1.5-70b` |
 | `LLM_BASE_URL` | OpenAI-compatible endpoint |
 | `LLM_API_KEY` | Hackathon / sovereign provider key |
-| `LLM_CONCURRENCY` | In-flight completions (default 6) |
+| `LLM_CONCURRENCY` | In-flight completions (default 4; the hosted gateway returns 429 above ~4) |
 | `SWARM` | `true` for two-phase initiator/reactor rounds |
 | `ALLOWED_ORIGINS` | CORS origins (3000 and 8080) |
 

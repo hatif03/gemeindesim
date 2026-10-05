@@ -10,6 +10,7 @@ from graph.builder import build_graph
 from config import SWARM
 from graph.builder_swarm import build_swarm_graph
 from graph.chat import generate_npc_chat_response
+from graph.nodes.stance import stance_summary
 from models.schemas import EconomicReportResponse, PolicyInput
 from models.state import SimState
 from services.context_store import get_source
@@ -42,6 +43,7 @@ class SimulationRecord:
     error_message: str | None = None
     economic_report: EconomicReportResponse | None = None
     memory_streams: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
+    initial_stance: dict[str, Any] | None = None
 
 
 simulations: dict[str, SimulationRecord] = {}
@@ -228,6 +230,7 @@ async def start_sim(sid: str, data: dict) -> None:
             elif "generate_npcs" in chunk:
                 update = chunk["generate_npcs"]
                 record.final_npcs = update.get("npcs", [])
+                record.initial_stance = stance_summary(record.final_npcs)
                 record.relationships = update.get("relationships", [])
                 logger.info(
                     "sim=%s  generate_npcs  npcs=%d  rels=%d",
@@ -278,6 +281,7 @@ async def start_sim(sid: str, data: dict) -> None:
                 completed_rounds=record.current_round,
                 max_rounds=record.policy.num_rounds,
                 situation_kind=record.policy.situation_kind,
+                stance_summary={"initial": record.initial_stance, "final": stance_summary(record.final_npcs)},
             )
             record.economic_report = report
             await sio.emit("economic_report", report.model_dump(), to=sid)
@@ -319,6 +323,7 @@ async def get_economic_report(simulation_id: str):
         completed_rounds=record.current_round,
         max_rounds=record.policy.num_rounds,
         situation_kind=record.policy.situation_kind,
+        stance_summary={"initial": record.initial_stance, "final": stance_summary(record.final_npcs)},
     )
     return record.economic_report
 

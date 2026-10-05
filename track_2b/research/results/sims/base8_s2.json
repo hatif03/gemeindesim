@@ -1,0 +1,1238 @@
+{
+ "args": {
+  "tag": "base8_s2",
+  "seed": 2,
+  "npcs": 5,
+  "rounds": 3,
+  "model": "apertus-v1.5-8b",
+  "sample": "linden",
+  "objective": "How the Steuerfuss and school credit land on households and shops"
+ },
+ "t_sim_s": 27.8,
+ "t_report_s": 2.6,
+ "entities": [
+  {
+   "sectors": [
+    "Retail",
+    "Construction",
+    "Education"
+   ],
+   "stakeholders": [
+    "Households (taxpayers)",
+    "Small business owners (shops on Dorfstrasse)",
+    "School staff and students",
+    "Municipal government"
+   ],
+   "economic_impacts": [
+    "Households face a 6-percentage-point tax increase, raising annual tax bills by ~CHF 240 for an income of CHF 80,000.",
+    "Small shops on Dorfstrasse may see slightly higher demand if the daycare hires more staff.",
+    "Construction sector benefits from a CHF 4.8 million school-building credit, boosting local building activity and employment.",
+    "Potential short-term price increases for building materials (steel and concrete) due to budgeted +8% cost escalation.",
+    "Delayed school construction under a 'No' vote could reduce long-term educational capacity and affect future workforce quality."
+   ],
+   "controversy_level": "high",
+   "kind": "vote"
+  }
+ ],
+ "npcs0": [
+  {
+   "name": "François Girard",
+   "gender": "nonbinary",
+   "mbti": "ISTP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "tenant",
+   "income_level": "high",
+   "political_leaning": 0.72,
+   "x": 8,
+   "y": 6,
+   "mood": "excited",
+   "life_story": "J'ai grandi dans un immeuble de Linden où chaque réparation était une négociation avec le propriétaire. Après des études d'architecture, j'ai travaillé sur des projets scolaires qui m'ont appris à équilibrer esthétique et budget. Aujourd'hui, je vis dans un appartement spacieux au centre-ville, où j'organise des ateliers pour les étudiants. Mon revenu élevé me permet de voyager, mais je reste engagé dans la communauté. Le vote sur les écoles me préoccupe car il menace l'avenir des jeunes et la stabilité du secteur de la construction.",
+   "expert_reflection": "En tant que psychologue social, François présente un profil ISTP caractérisé par une pensée analytique et une communication pragmatique. Son approche factuelle et son aversion pour l'émotivité peuvent le rendre perçu comme distant ou inflexible, ce qui risque d'exacerber les tensions lors de débats politiques sensibles. Sa croyance secrète en la gestion d'entreprises scolaires révèle une vision utilitariste qui, bien que rationnelle, entre en conflit avec les valeurs d'équité et de solidarité qui animent la majorité de la population, créant ainsi un potentiel de polarisation durable.",
+   "id": "npc_02",
+   "category": "tenant",
+   "profession": "architect",
+   "bio": "François Girard a grandi dans un petit immeuble de Linden, où il a appris à lire les plans et à négocier les réparations avec les propriétaires. Après des études d'architecture, il a travaillé sur plusieurs projets de construction scolaire, ce qui lui a valu une réputation de précision et d'efficacité. Aujourd'hui, il occupe un appartement spacieux au centre-ville, où il accueille régulièrement des collègues et des étudiants pour des ateliers de design. Son revenu élevé lui permet de voyager et de soutenir des causes locales, tout en restant ancré dans la communauté.",
+   "persona": "François est direct et factuel, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication concise, logique et parfois perçue comme distante, mais il sait adapter son ton pour convaincre les clients ou les autorités. Il est respecté pour son expertise technique, mais certains le trouvent trop rigide ou peu enclin à la diplomatie.",
+   "beliefs": [
+    "L'efficacité technique doit toujours primer sur les considérations politiques.",
+    "Les investissements dans l'infrastructure éducative sont essentiels pour la prospérité à long terme.",
+    "La transparence budgétaire est un droit citoyen non négociable."
+   ],
+   "controversial_ideas": [
+    "Il croit secrètement que les écoles devraient être gérées comme des entreprises, avec des budgets basés sur la rentabilité plutôt que sur l'équité sociale."
+   ],
+   "interested_topics": [
+    "urbanisme durable",
+    "optimisation des coûts de construction",
+    "gestion des ressources publiques"
+   ],
+   "reputation": 0.6,
+   "perception": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles.",
+   "current_plan": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles."
+  },
+  {
+   "name": "Céline Bonnet",
+   "gender": "female",
+   "mbti": "INFP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "farmer",
+   "income_level": "low",
+   "political_leaning": -0.54,
+   "x": 9,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Quand j'étais petite, je passais mes étés à aider mon père dans les champs, apprenant que chaque graine plantée était un engagement envers l'avenir. Après avoir terminé l'école primaire, j'ai travaillé aux côtés de ma famille, perfectionnant les techniques de culture et de gestion des animaux. Aujourd'hui, je me lève à l'aube pour préparer les parcelles, et je rentre tard le soir, épuisée mais satisfaite. Mon mari est parti depuis des années, laissant une maison vide et des enfants qui grandissent. J'ai deux filles qui fréquentent l'école du village, et je rêve qu'elles puissent un jour reprendre la ferme. Ce vote sur les écoles me fait peur : si les travaux sont retardés, nos enfants devront peut-être partir ailleurs pour étudier, brisant le cycle de vie que nous avons construit ici depuis des générations.",
+   "expert_reflection": "Céline Bonnet, avec son MBTI INFP, présente une combinaison de sensibilité profonde et de pensée conceptuelle qui la pousse à chercher des solutions équilibrées et éthiques. Son expérience de vie en tant que fermière dans une petite communauté lui confère une perspective unique sur l'interdépendance sociale et économique, ce qui pourrait la rendre particulièrement sensible aux impacts sociaux des décisions politiques. Cependant, son idée controversée de financer l'éducation par les revenus agricoles locaux révèle une pensée radicale qui pourrait la mettre en tension avec les structures établies, créant un potentiel de conflit entre son idéalisme et la réalité pratique des besoins financiers de la communauté.",
+   "id": "npc_04",
+   "category": "farmer",
+   "profession": "fermière rurale",
+   "bio": "J'ai grandi sur la ferme familiale près de Linden, où j'ai appris le rythme des saisons et la valeur du travail honnête. Aujourd'hui, je cultive des légumes et élève quelques vaches pour nourrir ma petite communauté. Le vote sur les écoles me préoccupe particulièrement, car mes enfants grandissent et je souhaite qu'ils aient accès à une éducation de qualité dans notre village.",
+   "persona": "Céline est une personne discrète mais profondément réfléchie, parlant avec une douceur qui cache une détermination inébranlable. Son MBTI INFP se traduit par une communication empathique et une réflexion intérieure intense, ce qui la pousse à chercher des solutions équilibrées plutôt que des compromis superficiels.",
+   "beliefs": [
+    "La terre nourrit le corps et l'esprit, et chaque décision politique doit respecter ce lien fondamental.",
+    "L'éducation est le seul investissement qui rapporte des récoltes pour toute la communauté.",
+    "La simplicité et l'autonomie locale sont les clés d'une vie digne."
+   ],
+   "controversial_ideas": [
+    "Je crois secrètement que le système scolaire devrait être entièrement financé par les revenus agricoles locaux plutôt que par les impôts généraux, car cela renforcerait notre autonomie et réduirait notre dépendance aux politiques extérieures."
+   ],
+   "interested_topics": [
+    "agriculture durable",
+    "éducation rurale",
+    "justice fiscale"
+   ],
+   "reputation": 0.45,
+   "perception": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations.",
+   "current_plan": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations."
+  },
+  {
+   "name": "Gemeinde Linden",
+   "category": "municipal_employee",
+   "role": "municipal_employee",
+   "gender": "nonbinary",
+   "bio": "Aufgewachsen in Linden, habe ich nach dem Abitur 2003 die Fachhochschule für Raumplanung besucht und bin 2006 ins Bauamt eingetreten. Seit 2012 leite ich das Team für kommunale Infrastrukturprojekte, das gerade an der Umsetzung des umstrittenen Schulbaukredits arbeitet. Meine Arbeit dreht sich um die Balance zwischen Haushaltsdisziplin und langfristiger Stadtentwicklung, besonders im Kontext der aktuellen Schulbau-Debatte.",
+   "persona": "Gemeinde Linden wirkt sachlich, präzise und zurückhaltend. Sie spricht in kurzen, klaren Sätzen, vermeidet Emotionen und stützt sich auf Daten und Verordnungen. Die ISTJ-Art prägt eine strukturierte, ordnungsgemäße Kommunikation, bei der jedes Argument auf Fakten und Vorgaben basiert, was sie als zuverlässig, aber auch als unnachgiebig erscheinen lässt.",
+   "mbti": "ISTJ",
+   "country": "Switzerland",
+   "profession": "Stadtplaner im Bauamt der Gemeinde Linden",
+   "interested_topics": [
+    "Stadtentwicklung",
+    "Finanzplanung kommunaler Projekte",
+    "Bildungsinfrastruktur"
+   ],
+   "income_level": "medium",
+   "political_leaning": 0.0,
+   "lang": "de",
+   "x": 10,
+   "y": 6,
+   "mood": "excited",
+   "life_story": "Meine Kindheit verbrachte ich in Linden, wo ich die Dorfstrasse und die alte Schule kannte, bevor sie abgerissen wurde. Nach dem Abitur studierte ich Raumplanung und begann 2006 im Bauamt, wo ich zunächst technische Zeichnungen erstellte und später Projekte leitete. Meine Familie unterstützt mich, und ich lebe in einer kleinen Wohnung nahe dem Rathaus, um schnell erreichbar zu sein. Die aktuelle Schulbau-Debatte beschäftigt mich besonders, weil ich die Zahlen genau prüfe und die langfristigen Auswirkungen für die Kinder abwäge. Ich versuche, objektiv zu bleiben, auch wenn die Emotionen in der Gemeinde hochkochen.",
+   "expert_reflection": "Als ISTJ zeigt Gemeinde Linden eine ausgeprägte Präferenz für Ordnung, Regelhaftigkeit und bewährte Verfahren, was sie in ihrer Rolle als Stadtplanerin zu einer verlässlichen, aber potenziell rigiden Akteurin macht. Ihre starke Orientierung an Fakten und Vorgaben kann dazu führen, dass sie emotionale oder komplexe gesellschaftliche Aspekte der Schulbau-Debatte weniger flexibel verarbeitet, was zu einer scheinbaren Unnachgiebigkeit führt. In Stresssituationen mit hohem Kontroversenlevel könnte sie sich auf ihre strukturierten Prozesse zurückziehen, um Entscheidungen nach klaren Kriterien zu treffen, was ihre Glaubwürdigkeit stärkt, aber auch die Bereitschaft zur Kompromissbereitschaft einschränkt.",
+   "id": "npc_01",
+   "beliefs": [
+    "Disziplinierte Haushaltsführung ist essenziell für die langfristige Stabilität der Gemeinde.",
+    "Investitionen in Bildung sichern die Zukunftsfähigkeit der Region.",
+    "Transparente Entscheidungsprozesse stärken das Vertrauen der Bürger in die Verwaltung."
+   ],
+   "controversial_ideas": [
+    "Ich glaube privat, dass die Steuererhöhung für Haushalte gerechtfertigt ist, weil sie kurzfristig schmerzt, aber langfristig die Schulqualität sichert, und ich würde diese Ansicht nur in vertrauensvollen Gesprächen äußern."
+   ],
+   "reputation": 0.5,
+   "perception": "Die Dorfstrasse ist ruhig, doch die Diskussion um den Schulbaukredit wirft Schatten. Die Zahlen sind eindeutig, doch die emotionale Belastung für Familien ist spürbar. Ich muss die Fakten klar kommunizieren, ohne die Sorgen der Bürger zu ignorieren.",
+   "current_plan": "Die Dorfstrasse ist ruhig, doch die Diskussion um den Schulbaukredit wirft Schatten. Die Zahlen sind eindeutig, doch die emotionale Belastung für Familien ist spürbar. Ich muss die Fakten klar kommunizieren, ohne die Sorgen der Bürger zu ignorieren."
+  },
+  {
+   "name": "Sabine Graf",
+   "gender": "female",
+   "mbti": "INTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "shopkeeper",
+   "income_level": "low",
+   "political_leaning": -0.27,
+   "x": 11,
+   "y": 6,
+   "mood": "neutral",
+   "life_story": "Als Kind habe ich jeden Samstag die Dorfstrasse entlang gelaufen, während meine Mutter Stoffe für Kleider schnitt und ich ihr beim Sortieren half. Nach der Lehre übernahm ich die Boutique, weil ich Unabhängigkeit wollte und keine Lust auf einen 9-zu-5-Job hatte. Heute sitze ich hinter dem Tresen, während ich die Rechnungen prüfe und die Gemeindeversammlung im Radio höre, wo die Schulbauten diskutiert werden. Meine Kunden kommen immer seltener, weil sie ihr Geld für Grundbedürfnisse brauchen, und ich muss jeden Rabatt kalkulieren. Die Steuererhöhung zwingt mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Ich habe Angst, dass die neue Generation, die in den Schulen sitzt, nie genug verdienen wird, um meine Boutique zu besuchen. Trotzdem hoffe ich, dass die Gemeinde eines Tages wieder investiert, und ich bleibe hier, weil Linden mein Zuhause ist.",
+   "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken wird Sabine Graf wahrscheinlich die komplexen wirtschaftlichen Zusammenhänge der Schulbau-Debatte besonders intensiv verarbeiten. Ihre Tendenz, abstrakte Zusammenhänge zu erkennen und zu strukturieren, könnte sie dazu bringen, die langfristigen Konsequenzen der Steuererhöhung und der Schulbauentscheidung rational abzuwägen, während sie gleichzeitig die emotionalen Belastungen für ihre Kunden und die lokale Wirtschaft spürt. Die Tatsache, dass sie ein kontroverses, aber logisch fundiertes Gedankenexperiment über eine progressive Besteuerung der Grundbesitzer hegt, zeigt, wie ihr introvertiertes, intellektuelles Profil sie zu einer Person macht, die zwar zurückhaltend in der Öffentlichkeit spricht, aber in privaten Gesprächen oder schriftlichen Beiträgen ihre kritischen Einsichten scharf formuliert.",
+   "id": "npc_03",
+   "category": "shopkeeper",
+   "profession": "Dorfstrasse-Boutiqueinhaberin",
+   "bio": "Ich bin Sabine Graf, geboren und aufgewachsen in Linden, wo ich die Dorfstrasse schon als Kind kannte. Nach der Lehre habe ich die kleine Boutique meiner Mutter übernommen, die heute mein Lebensunterhalt sichert. Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich, weil ich kaum noch Kunden für teure Accessoires habe. Meine Familie und ich müssen jeden Franken zählen, und die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+   "persona": "Sabine kommt als scharfsinnige, analytische Frau daher, die komplexe Zusammenhänge sofort erkennt und in ruhigen, präzisen Sätzen formuliert. Ihre INTP-Art zeigt sich in einer Vorliebe für logische Argumentationsketten und gelegentlichen Momenten der distanzierten Beobachtung, was sie bei Kunden manchmal als kühl oder abweisend erscheinen lässt. Sie spricht mit einer gewissen Gelehrsamkeit, als würde sie jedes Thema wie ein Puzzle analysieren, und ihre Mimik bleibt meist neutral, bis sie eine emotionale Verbindung herstellt.",
+   "beliefs": [
+    "Nachhaltigkeit und langfristige Planung sind wichtiger als kurzfristige Sparmaßnahmen",
+    "Die Gemeinde muss Investitionen in Bildung tätigen, um die Kaufkraft zukünftiger Generationen zu sichern",
+    "Kleinunternehmer brauchen klare, vorhersehbare Rahmenbedingungen"
+   ],
+   "controversial_ideas": [
+    "Ich glaube, dass die Steuererhöhung für Haushalte gezielt gegen die Mittelschicht gerichtet ist und dass die Gemeinde stattdessen die reichen Grundbesitzer stärker besteuern sollte, auch wenn ich das öffentlich nicht sage."
+   ],
+   "interested_topics": [
+    "Steuerrecht und kommunale Haushaltsplanung",
+    "Bildungsökonomie und langfristige Arbeitsmarktprognosen",
+    "Nachhaltige Konsummodelle für kleine Geschäfte"
+   ],
+   "reputation": 0.45,
+   "perception": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+   "current_plan": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird."
+  },
+  {
+   "name": "Stefan Müller",
+   "gender": "male",
+   "mbti": "ESFJ",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "teacher",
+   "income_level": "high",
+   "political_leaning": 0.35,
+   "x": 12,
+   "y": 6,
+   "mood": "neutral",
+   "life_story": "Meine Kindheit verbrachte ich in den 70ern in einem alten Schulgebäude am Dorfplatz, wo die Fenster kalt waren und die Heizung oft ausfiel, aber die Lehrer uns trotzdem Wissen einflößten. Nach dem Abitur und dem Lehramtsstudium zog ich zurück, um hier zu unterrichten, und habe seitdem Generationen von Schülern durch die Pubertät begleitet, während ich selbst die Veränderungen der Dorfwirtschaft miterlebte. Meine Frau und ich haben zwei Kinder, die heute selbst in der Schule sind, und ich habe gesehen, wie die Qualität der Bildung direkt mit der Kaufkraft der Familien korreliert. Die aktuelle Schulbau-Kreditfrage treibt mich um, weil ich weiß, dass die neuen Klassenräume und Laboratorien nicht nur Bänke und Tische sind, sondern die Zukunft unserer Kinder und damit die Stabilität unserer Gemeinde sichern. Ich habe in den letzten Jahren mit Eltern gesprochen, die sich Sorgen um die Überfüllung machen, und ich habe die Zahlen der Arbeitslosenentwicklung studiert, die zeigt, dass gut ausgebildete Fachkräfte genau das sind, was unsere lokalen Betriebe brauchen.",
+   "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine ausgeprägte Orientierung an sozialen Normen und kollektiven Werten zeigen, was ihn zu einem integrativen und kooperativen Akteur in der Schulgemeinschaft macht. Seine hohe Empathie und sein Bedürfnis nach Anerkennung könnten ihn dazu veranlassen, die Steuererhöhung als notwendiges Übel zu rechtfertigen, um den Konsens zu wahren, auch wenn er im Stillen radikale Überlegungen hegt. Die Spannung zwischen seiner öffentlichen, konsensorientierten Haltung und seinen privaten, möglicherweise polarisierenden Überzeugungen könnte zu einer inneren Konfliktdynamik führen, die sich in seiner Kommunikation als vorsichtige, aber leidenschaftliche Verteidigung der Schulbau-Investition äußert.",
+   "id": "npc_05",
+   "category": "teacher",
+   "profession": "Sekundarlehrer an der Linden-Gesamtschule",
+   "bio": "Ich bin 1978 in einer kleinen Dorfschule aufgewachsen, habe nach dem Lehramtsstudium in den 90ern hier unterrichtet und bin seit 2005 festes Mitglied des Lehrkörpers der Linden-Gesamtschule. Meine Klassen 9 und 10 bilden die Basis für die Zukunft unserer Gemeinde, und ich habe gesehen, wie die Infrastruktur der Schule die Lebensqualität der Familien direkt beeinflusst. Die aktuelle Schulbau-Kreditfrage ist für mich nicht nur eine Haushaltsfrage, sondern eine Investition in die nächste Generation von Fachkräften, die unser Dorf langfristig wirtschaftlich tragen wird.",
+   "persona": "Stefan Müller tritt als warmherziger, strukturierter und kollegialer Lehrer auf, der stets höflich und sachlich argumentiert. Seine ESFJ-Artikulation macht ihn zu einem geschätzten Vermittler zwischen Schülern, Eltern und Behörden, wobei er durch seine ausgeprägte Empathie und Pflichtbewusstsein oft als verlässlicher Anker in der Schulgemeinschaft wahrgenommen wird. Er vermeidet polarisierende Sprache und bevorzugt pragmatische Lösungen, die den Konsens suchen, auch wenn er im Stillen eigene, radikale Überlegungen hegt.",
+   "beliefs": [
+    "Bildung ist der einzige Weg aus der Armut und der Schlüssel für soziale Mobilität",
+    "Die langfristige Investition in Schulen sichert die wirtschaftliche Zukunft der Gemeinde",
+    "Transparente Haushaltsführung schafft Vertrauen zwischen Bürgern und Verwaltung"
+   ],
+   "controversial_ideas": [
+    "Ich glaube, dass die Steuererhöhung für Bildung gerechtfertigt ist, weil sie die einzige Möglichkeit ist, die wachsende Ungleichheit in der Region zu bremsen, und ich würde sie sogar als temporäre Maßnahme für mindestens fünf Jahre verteidigen, auch wenn es die Wähler nicht hören wollen."
+   ],
+   "interested_topics": [
+    "Schulfinanzierung und Infrastruktur",
+    "Jugendliche Berufsorientierung",
+    "Lokale Wirtschaftsentwicklung durch Bildung"
+   ],
+   "reputation": 0.6,
+   "perception": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung.",
+   "current_plan": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung."
+  }
+ ],
+ "relationships": [
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_05",
+   "affinity": 0.13,
+   "trust": 0.54
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_04",
+   "affinity": -0.25,
+   "trust": 0.42
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_01",
+   "affinity": -0.14,
+   "trust": 0.46
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_03",
+   "affinity": 0.13,
+   "trust": 0.63
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_03",
+   "affinity": -0.2,
+   "trust": 0.44
+  },
+  {
+   "source_id": "npc_04",
+   "target_id": "npc_01",
+   "affinity": -0.11,
+   "trust": 0.47
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_05",
+   "affinity": -0.06,
+   "trust": 0.61
+  }
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "events": [
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Pouvez-vous m'expliquer comment le crédit de 4,8 millions CHF sera réparti entre les différentes infrastructures et quels sont les délais exacts pour le chantier?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "5"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Pouvez-vous m'expliquer comment le crédit de 4,8 millions CHF sera réparti entre les différentes infrastructures et quels sont les délais exacts pour le chantier?"
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Pouvez-vous m'expliquer comment ce crédit de 4,8 millions CHF sera utilisé et quels sont les coûts exacts pour notre commune ?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "5"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Pouvez-vous m'expliquer comment ce crédit de 4,8 millions CHF sera utilisé et quels sont les coûts exacts pour notre commune ?"
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+      "target_npc_id": "npc_03",
+      "dialogue": "Die Zahlen zeigen einen Steuerfussanstieg von 6 Prozentpunkten und einen Kredit von 4.8 Millionen CHF. Für ein Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr jährlich. Gleichzeitig bleibt ein Defizit von 1.2 Millionen CHF bestehen, falls wir Nein stimmen.",
+      "to_x": 2,
+      "to_y": 3,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "0"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Stadtplaner, ich bin Sabine Graf von der Dorfstrasse-Boutique. Die steigenden Steuern zwingen mich, Preise zu erhöhen, was meine Stammkunden vergrault. Wie können wir sicherstellen, dass die Gemeinde nicht nur Schulbauten, sondern auch den Lebensunterhalt der Kleinunternehmer berücksichtigt?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "5"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit dem Stadtplaner der Gemeinde Linden sprechen, um die langfristigen Auswirkungen des Schulbau-Kredits auf die lokale Wirtschaft zu verstehen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit dem Stadtplaner der Gemeinde Linden sprechen, um die langfristigen Auswirkungen des Schulbau-Kredits auf die lokale Wirtschaft zu verstehen.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Herr Stadtplaner, ich bin Stefan Müller, Lehrer an der Linden-Gesamtschule. Ich habe gesehen, wie die Infrastruktur der Schule die Lebensqualität der Familien direkt beeinflusst. Können Sie mir erklären, wie der neue Schulbau die Arbeitsplätze im Bauwesen und die Nachfrage der kleinen Geschäfte an der Dorfstrasse langfristig stärken wird?",
+      "to_x": 1,
+      "to_y": 6,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "0"
+      ],
+      "grounded": true
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.7397,
+     "x": 8,
+     "y": 6,
+     "mood": "excited",
+     "life_story": "J'ai grandi dans un immeuble de Linden où chaque réparation était une négociation avec le propriétaire. Après des études d'architecture, j'ai travaillé sur des projets scolaires qui m'ont appris à équilibrer esthétique et budget. Aujourd'hui, je vis dans un appartement spacieux au centre-ville, où j'organise des ateliers pour les étudiants. Mon revenu élevé me permet de voyager, mais je reste engagé dans la communauté. Le vote sur les écoles me préoccupe car il menace l'avenir des jeunes et la stabilité du secteur de la construction.",
+     "expert_reflection": "En tant que psychologue social, François présente un profil ISTP caractérisé par une pensée analytique et une communication pragmatique. Son approche factuelle et son aversion pour l'émotivité peuvent le rendre perçu comme distant ou inflexible, ce qui risque d'exacerber les tensions lors de débats politiques sensibles. Sa croyance secrète en la gestion d'entreprises scolaires révèle une vision utilitariste qui, bien que rationnelle, entre en conflit avec les valeurs d'équité et de solidarité qui animent la majorité de la population, créant ainsi un potentiel de polarisation durable.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "François Girard a grandi dans un petit immeuble de Linden, où il a appris à lire les plans et à négocier les réparations avec les propriétaires. Après des études d'architecture, il a travaillé sur plusieurs projets de construction scolaire, ce qui lui a valu une réputation de précision et d'efficacité. Aujourd'hui, il occupe un appartement spacieux au centre-ville, où il accueille régulièrement des collègues et des étudiants pour des ateliers de design. Son revenu élevé lui permet de voyager et de soutenir des causes locales, tout en restant ancré dans la communauté.",
+     "persona": "François est direct et factuel, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication concise, logique et parfois perçue comme distante, mais il sait adapter son ton pour convaincre les clients ou les autorités. Il est respecté pour son expertise technique, mais certains le trouvent trop rigide ou peu enclin à la diplomatie.",
+     "beliefs": [
+      "L'efficacité technique doit toujours primer sur les considérations politiques.",
+      "Les investissements dans l'infrastructure éducative sont essentiels pour la prospérité à long terme.",
+      "La transparence budgétaire est un droit citoyen non négociable."
+     ],
+     "controversial_ideas": [
+      "Il croit secrètement que les écoles devraient être gérées comme des entreprises, avec des budgets basés sur la rentabilité plutôt que sur l'équité sociale."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.61,
+     "perception": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles.",
+     "current_plan": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.5591,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Quand j'étais petite, je passais mes étés à aider mon père dans les champs, apprenant que chaque graine plantée était un engagement envers l'avenir. Après avoir terminé l'école primaire, j'ai travaillé aux côtés de ma famille, perfectionnant les techniques de culture et de gestion des animaux. Aujourd'hui, je me lève à l'aube pour préparer les parcelles, et je rentre tard le soir, épuisée mais satisfaite. Mon mari est parti depuis des années, laissant une maison vide et des enfants qui grandissent. J'ai deux filles qui fréquentent l'école du village, et je rêve qu'elles puissent un jour reprendre la ferme. Ce vote sur les écoles me fait peur : si les travaux sont retardés, nos enfants devront peut-être partir ailleurs pour étudier, brisant le cycle de vie que nous avons construit ici depuis des générations.",
+     "expert_reflection": "Céline Bonnet, avec son MBTI INFP, présente une combinaison de sensibilité profonde et de pensée conceptuelle qui la pousse à chercher des solutions équilibrées et éthiques. Son expérience de vie en tant que fermière dans une petite communauté lui confère une perspective unique sur l'interdépendance sociale et économique, ce qui pourrait la rendre particulièrement sensible aux impacts sociaux des décisions politiques. Cependant, son idée controversée de financer l'éducation par les revenus agricoles locaux révèle une pensée radicale qui pourrait la mettre en tension avec les structures établies, créant un potentiel de conflit entre son idéalisme et la réalité pratique des besoins financiers de la communauté.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "fermière rurale",
+     "bio": "J'ai grandi sur la ferme familiale près de Linden, où j'ai appris le rythme des saisons et la valeur du travail honnête. Aujourd'hui, je cultive des légumes et élève quelques vaches pour nourrir ma petite communauté. Le vote sur les écoles me préoccupe particulièrement, car mes enfants grandissent et je souhaite qu'ils aient accès à une éducation de qualité dans notre village.",
+     "persona": "Céline est une personne discrète mais profondément réfléchie, parlant avec une douceur qui cache une détermination inébranlable. Son MBTI INFP se traduit par une communication empathique et une réflexion intérieure intense, ce qui la pousse à chercher des solutions équilibrées plutôt que des compromis superficiels.",
+     "beliefs": [
+      "La terre nourrit le corps et l'esprit, et chaque décision politique doit respecter ce lien fondamental.",
+      "L'éducation est le seul investissement qui rapporte des récoltes pour toute la communauté.",
+      "La simplicité et l'autonomie locale sont les clés d'une vie digne."
+     ],
+     "controversial_ideas": [
+      "Je crois secrètement que le système scolaire devrait être entièrement financé par les revenus agricoles locaux plutôt que par les impôts généraux, car cela renforcerait notre autonomie et réduirait notre dépendance aux politiques extérieures."
+     ],
+     "interested_topics": [
+      "agriculture durable",
+      "éducation rurale",
+      "justice fiscale"
+     ],
+     "reputation": 0.463,
+     "perception": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations.",
+     "current_plan": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations."
+    },
+    {
+     "name": "Gemeinde Linden",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "nonbinary",
+     "bio": "Aufgewachsen in Linden, habe ich nach dem Abitur 2003 die Fachhochschule für Raumplanung besucht und bin 2006 ins Bauamt eingetreten. Seit 2012 leite ich das Team für kommunale Infrastrukturprojekte, das gerade an der Umsetzung des umstrittenen Schulbaukredits arbeitet. Meine Arbeit dreht sich um die Balance zwischen Haushaltsdisziplin und langfristiger Stadtentwicklung, besonders im Kontext der aktuellen Schulbau-Debatte.",
+     "persona": "Gemeinde Linden wirkt sachlich, präzise und zurückhaltend. Sie spricht in kurzen, klaren Sätzen, vermeidet Emotionen und stützt sich auf Daten und Verordnungen. Die ISTJ-Art prägt eine strukturierte, ordnungsgemäße Kommunikation, bei der jedes Argument auf Fakten und Vorgaben basiert, was sie als zuverlässig, aber auch als unnachgiebig erscheinen lässt.",
+     "mbti": "ISTJ",
+     "country": "Switzerland",
+     "profession": "Stadtplaner im Bauamt der Gemeinde Linden",
+     "interested_topics": [
+      "Stadtentwicklung",
+      "Finanzplanung kommunaler Projekte",
+      "Bildungsinfrastruktur"
+     ],
+     "income_level": "medium",
+     "political_leaning": 0.0205,
+     "lang": "de",
+     "x": 10,
+     "y": 6,
+     "mood": "hopeful",
+     "life_story": "Meine Kindheit verbrachte ich in Linden, wo ich die Dorfstrasse und die alte Schule kannte, bevor sie abgerissen wurde. Nach dem Abitur studierte ich Raumplanung und begann 2006 im Bauamt, wo ich zunächst technische Zeichnungen erstellte und später Projekte leitete. Meine Familie unterstützt mich, und ich lebe in einer kleinen Wohnung nahe dem Rathaus, um schnell erreichbar zu sein. Die aktuelle Schulbau-Debatte beschäftigt mich besonders, weil ich die Zahlen genau prüfe und die langfristigen Auswirkungen für die Kinder abwäge. Ich versuche, objektiv zu bleiben, auch wenn die Emotionen in der Gemeinde hochkochen.",
+     "expert_reflection": "Als ISTJ zeigt Gemeinde Linden eine ausgeprägte Präferenz für Ordnung, Regelhaftigkeit und bewährte Verfahren, was sie in ihrer Rolle als Stadtplanerin zu einer verlässlichen, aber potenziell rigiden Akteurin macht. Ihre starke Orientierung an Fakten und Vorgaben kann dazu führen, dass sie emotionale oder komplexe gesellschaftliche Aspekte der Schulbau-Debatte weniger flexibel verarbeitet, was zu einer scheinbaren Unnachgiebigkeit führt. In Stresssituationen mit hohem Kontroversenlevel könnte sie sich auf ihre strukturierten Prozesse zurückziehen, um Entscheidungen nach klaren Kriterien zu treffen, was ihre Glaubwürdigkeit stärkt, aber auch die Bereitschaft zur Kompromissbereitschaft einschränkt.",
+     "id": "npc_01",
+     "beliefs": [
+      "Disziplinierte Haushaltsführung ist essenziell für die langfristige Stabilität der Gemeinde.",
+      "Investitionen in Bildung sichern die Zukunftsfähigkeit der Region.",
+      "Transparente Entscheidungsprozesse stärken das Vertrauen der Bürger in die Verwaltung."
+     ],
+     "controversial_ideas": [
+      "Ich glaube privat, dass die Steuererhöhung für Haushalte gerechtfertigt ist, weil sie kurzfristig schmerzt, aber langfristig die Schulqualität sichert, und ich würde diese Ansicht nur in vertrauensvollen Gesprächen äußern."
+     ],
+     "reputation": 0.512,
+     "perception": "Die Dorfstrasse ist ruhig, doch die Diskussion um den Schulbaukredit wirft Schatten. Die Zahlen sind eindeutig, doch die emotionale Belastung für Familien ist spürbar. Ich muss die Fakten klar kommunizieren, ohne die Sorgen der Bürger zu ignorieren.",
+     "current_plan": "Die Dorfstrasse ist ruhig, doch die Diskussion um den Schulbaukredit wirft Schatten. Die Zahlen sind eindeutig, doch die emotionale Belastung für Familien ist spürbar. Ich muss die Fakten klar kommunizieren, ohne die Sorgen der Bürger zu ignorieren."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.3009,
+     "x": 11,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich jeden Samstag die Dorfstrasse entlang gelaufen, während meine Mutter Stoffe für Kleider schnitt und ich ihr beim Sortieren half. Nach der Lehre übernahm ich die Boutique, weil ich Unabhängigkeit wollte und keine Lust auf einen 9-zu-5-Job hatte. Heute sitze ich hinter dem Tresen, während ich die Rechnungen prüfe und die Gemeindeversammlung im Radio höre, wo die Schulbauten diskutiert werden. Meine Kunden kommen immer seltener, weil sie ihr Geld für Grundbedürfnisse brauchen, und ich muss jeden Rabatt kalkulieren. Die Steuererhöhung zwingt mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Ich habe Angst, dass die neue Generation, die in den Schulen sitzt, nie genug verdienen wird, um meine Boutique zu besuchen. Trotzdem hoffe ich, dass die Gemeinde eines Tages wieder investiert, und ich bleibe hier, weil Linden mein Zuhause ist.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken wird Sabine Graf wahrscheinlich die komplexen wirtschaftlichen Zusammenhänge der Schulbau-Debatte besonders intensiv verarbeiten. Ihre Tendenz, abstrakte Zusammenhänge zu erkennen und zu strukturieren, könnte sie dazu bringen, die langfristigen Konsequenzen der Steuererhöhung und der Schulbauentscheidung rational abzuwägen, während sie gleichzeitig die emotionalen Belastungen für ihre Kunden und die lokale Wirtschaft spürt. Die Tatsache, dass sie ein kontroverses, aber logisch fundiertes Gedankenexperiment über eine progressive Besteuerung der Grundbesitzer hegt, zeigt, wie ihr introvertiertes, intellektuelles Profil sie zu einer Person macht, die zwar zurückhaltend in der Öffentlichkeit spricht, aber in privaten Gesprächen oder schriftlichen Beiträgen ihre kritischen Einsichten scharf formuliert.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Dorfstrasse-Boutiqueinhaberin",
+     "bio": "Ich bin Sabine Graf, geboren und aufgewachsen in Linden, wo ich die Dorfstrasse schon als Kind kannte. Nach der Lehre habe ich die kleine Boutique meiner Mutter übernommen, die heute mein Lebensunterhalt sichert. Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich, weil ich kaum noch Kunden für teure Accessoires habe. Meine Familie und ich müssen jeden Franken zählen, und die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+     "persona": "Sabine kommt als scharfsinnige, analytische Frau daher, die komplexe Zusammenhänge sofort erkennt und in ruhigen, präzisen Sätzen formuliert. Ihre INTP-Art zeigt sich in einer Vorliebe für logische Argumentationsketten und gelegentlichen Momenten der distanzierten Beobachtung, was sie bei Kunden manchmal als kühl oder abweisend erscheinen lässt. Sie spricht mit einer gewissen Gelehrsamkeit, als würde sie jedes Thema wie ein Puzzle analysieren, und ihre Mimik bleibt meist neutral, bis sie eine emotionale Verbindung herstellt.",
+     "beliefs": [
+      "Nachhaltigkeit und langfristige Planung sind wichtiger als kurzfristige Sparmaßnahmen",
+      "Die Gemeinde muss Investitionen in Bildung tätigen, um die Kaufkraft zukünftiger Generationen zu sichern",
+      "Kleinunternehmer brauchen klare, vorhersehbare Rahmenbedingungen"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Haushalte gezielt gegen die Mittelschicht gerichtet ist und dass die Gemeinde stattdessen die reichen Grundbesitzer stärker besteuern sollte, auch wenn ich das öffentlich nicht sage."
+     ],
+     "interested_topics": [
+      "Steuerrecht und kommunale Haushaltsplanung",
+      "Bildungsökonomie und langfristige Arbeitsmarktprognosen",
+      "Nachhaltige Konsummodelle für kleine Geschäfte"
+     ],
+     "reputation": 0.463,
+     "perception": "Die steigenden Steuern zwingen mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Gleichzeitig verspricht der Schulbau neue Arbeitsplätze im Bauwesen und könnte die Nachfrage an der Dorfstrasse stärken, doch die Unsicherheit um die Finanzierung belastet mich schwer. Ich hoffe, dass die Gemeinde langfristig investiert, auch wenn ich kurzfristig jeden Franken zählen muss.",
+     "current_plan": "Die steigenden Steuern zwingen mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Gleichzeitig verspricht der Schulbau neue Arbeitsplätze im Bauwesen und könnte die Nachfrage an der Dorfstrasse stärken, doch die Unsicherheit um die Finanzierung belastet mich schwer. Ich hoffe, dass die Gemeinde langfristig investiert, auch wenn ich kurzfristig jeden Franken zählen muss."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.3668,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Meine Kindheit verbrachte ich in den 70ern in einem alten Schulgebäude am Dorfplatz, wo die Fenster kalt waren und die Heizung oft ausfiel, aber die Lehrer uns trotzdem Wissen einflößten. Nach dem Abitur und dem Lehramtsstudium zog ich zurück, um hier zu unterrichten, und habe seitdem Generationen von Schülern durch die Pubertät begleitet, während ich selbst die Veränderungen der Dorfwirtschaft miterlebte. Meine Frau und ich haben zwei Kinder, die heute selbst in der Schule sind, und ich habe gesehen, wie die Qualität der Bildung direkt mit der Kaufkraft der Familien korreliert. Die aktuelle Schulbau-Kreditfrage treibt mich um, weil ich weiß, dass die neuen Klassenräume und Laboratorien nicht nur Bänke und Tische sind, sondern die Zukunft unserer Kinder und damit die Stabilität unserer Gemeinde sichern. Ich habe in den letzten Jahren mit Eltern gesprochen, die sich Sorgen um die Überfüllung machen, und ich habe die Zahlen der Arbeitslosenentwicklung studiert, die zeigt, dass gut ausgebildete Fachkräfte genau das sind, was unsere lokalen Betriebe brauchen.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine ausgeprägte Orientierung an sozialen Normen und kollektiven Werten zeigen, was ihn zu einem integrativen und kooperativen Akteur in der Schulgemeinschaft macht. Seine hohe Empathie und sein Bedürfnis nach Anerkennung könnten ihn dazu veranlassen, die Steuererhöhung als notwendiges Übel zu rechtfertigen, um den Konsens zu wahren, auch wenn er im Stillen radikale Überlegungen hegt. Die Spannung zwischen seiner öffentlichen, konsensorientierten Haltung und seinen privaten, möglicherweise polarisierenden Überzeugungen könnte zu einer inneren Konfliktdynamik führen, die sich in seiner Kommunikation als vorsichtige, aber leidenschaftliche Verteidigung der Schulbau-Investition äußert.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Sekundarlehrer an der Linden-Gesamtschule",
+     "bio": "Ich bin 1978 in einer kleinen Dorfschule aufgewachsen, habe nach dem Lehramtsstudium in den 90ern hier unterrichtet und bin seit 2005 festes Mitglied des Lehrkörpers der Linden-Gesamtschule. Meine Klassen 9 und 10 bilden die Basis für die Zukunft unserer Gemeinde, und ich habe gesehen, wie die Infrastruktur der Schule die Lebensqualität der Familien direkt beeinflusst. Die aktuelle Schulbau-Kreditfrage ist für mich nicht nur eine Haushaltsfrage, sondern eine Investition in die nächste Generation von Fachkräften, die unser Dorf langfristig wirtschaftlich tragen wird.",
+     "persona": "Stefan Müller tritt als warmherziger, strukturierter und kollegialer Lehrer auf, der stets höflich und sachlich argumentiert. Seine ESFJ-Artikulation macht ihn zu einem geschätzten Vermittler zwischen Schülern, Eltern und Behörden, wobei er durch seine ausgeprägte Empathie und Pflichtbewusstsein oft als verlässlicher Anker in der Schulgemeinschaft wahrgenommen wird. Er vermeidet polarisierende Sprache und bevorzugt pragmatische Lösungen, die den Konsens suchen, auch wenn er im Stillen eigene, radikale Überlegungen hegt.",
+     "beliefs": [
+      "Bildung ist der einzige Weg aus der Armut und der Schlüssel für soziale Mobilität",
+      "Die langfristige Investition in Schulen sichert die wirtschaftliche Zukunft der Gemeinde",
+      "Transparente Haushaltsführung schafft Vertrauen zwischen Bürgern und Verwaltung"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Bildung gerechtfertigt ist, weil sie die einzige Möglichkeit ist, die wachsende Ungleichheit in der Region zu bremsen, und ich würde sie sogar als temporäre Maßnahme für mindestens fünf Jahre verteidigen, auch wenn es die Wähler nicht hören wollen."
+     ],
+     "interested_topics": [
+      "Schulfinanzierung und Infrastruktur",
+      "Jugendliche Berufsorientierung",
+      "Lokale Wirtschaftsentwicklung durch Bildung"
+     ],
+     "reputation": 0.61,
+     "perception": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung.",
+     "current_plan": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung."
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 59.0,
+    "business_climate": 50.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 71.3
+   }
+  },
+  {
+   "round": 1,
+   "events": [
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Comment la commune prévoit-elle de gérer le déficit de 1,2 million CHF si le crédit est refusé?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Wie plant die Gemeinde, das Defizit von 1,2 Millionen CHF zu bewirtschaften, wenn der Kredit verweigert wird?"
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Gemeinde Linden, comment ce crédit de 4,8 millions CHF va-t-il réellement soutenir l'éducation de nos enfants sans alourdir notre charge fiscale ?",
+      "to_x": 6,
+      "to_y": 9,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Gemeinde Linden, wie wird dieser Kredit von 4,8 Millionen CHF die Bildung unserer Kinder wirklich unterstützen, ohne unsere Steuerlast zu erhöhen?"
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+      "target_npc_id": "npc_03",
+      "dialogue": "Die Zahlen sind eindeutig: ein Ja bedeutet einen Steuerfussanstieg von 6 Prozentpunkten und eine Investition von 4,8 Millionen CHF in Schulinfrastruktur. Ein Nein verschiebt den Bau um mindestens drei Jahre und belässt ein Defizit von 1,2 Millionen CHF, das durch Sparaufträge kompensiert werden müsste. Wie können wir sicherstellen, dass die Gemeinde nicht nur Schulbauten, sondern auch den Lebensunterhalt der Kleinunternehmer berücksichtigt?",
+      "to_x": 0,
+      "to_y": 0,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "3"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Gemeinderat, ich bin Sabine Graf von der Dorfstrasse-Boutique. Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Können Sie mir erklären, wie die Steuererhöhung die Kaufkraft der Familien in Linden langfristig beeinflusst?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "6",
+       "2",
+       "3"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit dem Stadtplaner der Gemeinde Linden sprechen, um die langfristigen Auswirkungen des Schulbau-Kredits auf die lokale Wirtschaft zu verstehen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit dem Stadtplaner der Gemeinde Linden sprechen, um die langfristigen Auswirkungen des Schulbau-Kredits auf die lokale Wirtschaft zu verstehen.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Herr Stadtplaner, ich bin besorgt über die Auswirkungen des Schulbau-Kredits auf die kleinen Geschäfte an der Dorfstrasse. Können Sie mir erklären, wie die Investition in neue Klassenräume und Laboratorien langfristig die Kaufkraft der Gemeinde stabilisieren kann?",
+      "to_x": 0,
+      "to_y": 0,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.7595,
+     "x": 8,
+     "y": 6,
+     "mood": "excited",
+     "life_story": "J'ai grandi dans un immeuble de Linden où chaque réparation était une négociation avec le propriétaire. Après des études d'architecture, j'ai travaillé sur des projets scolaires qui m'ont appris à équilibrer esthétique et budget. Aujourd'hui, je vis dans un appartement spacieux au centre-ville, où j'organise des ateliers pour les étudiants. Mon revenu élevé me permet de voyager, mais je reste engagé dans la communauté. Le vote sur les écoles me préoccupe car il menace l'avenir des jeunes et la stabilité du secteur de la construction.",
+     "expert_reflection": "En tant que psychologue social, François présente un profil ISTP caractérisé par une pensée analytique et une communication pragmatique. Son approche factuelle et son aversion pour l'émotivité peuvent le rendre perçu comme distant ou inflexible, ce qui risque d'exacerber les tensions lors de débats politiques sensibles. Sa croyance secrète en la gestion d'entreprises scolaires révèle une vision utilitariste qui, bien que rationnelle, entre en conflit avec les valeurs d'équité et de solidarité qui animent la majorité de la population, créant ainsi un potentiel de polarisation durable.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "François Girard a grandi dans un petit immeuble de Linden, où il a appris à lire les plans et à négocier les réparations avec les propriétaires. Après des études d'architecture, il a travaillé sur plusieurs projets de construction scolaire, ce qui lui a valu une réputation de précision et d'efficacité. Aujourd'hui, il occupe un appartement spacieux au centre-ville, où il accueille régulièrement des collègues et des étudiants pour des ateliers de design. Son revenu élevé lui permet de voyager et de soutenir des causes locales, tout en restant ancré dans la communauté.",
+     "persona": "François est direct et factuel, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication concise, logique et parfois perçue comme distante, mais il sait adapter son ton pour convaincre les clients ou les autorités. Il est respecté pour son expertise technique, mais certains le trouvent trop rigide ou peu enclin à la diplomatie.",
+     "beliefs": [
+      "L'efficacité technique doit toujours primer sur les considérations politiques.",
+      "Les investissements dans l'infrastructure éducative sont essentiels pour la prospérité à long terme.",
+      "La transparence budgétaire est un droit citoyen non négociable."
+     ],
+     "controversial_ideas": [
+      "Il croit secrètement que les écoles devraient être gérées comme des entreprises, avec des budgets basés sur la rentabilité plutôt que sur l'équité sociale."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.62,
+     "perception": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles.",
+     "current_plan": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.5783,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Quand j'étais petite, je passais mes étés à aider mon père dans les champs, apprenant que chaque graine plantée était un engagement envers l'avenir. Après avoir terminé l'école primaire, j'ai travaillé aux côtés de ma famille, perfectionnant les techniques de culture et de gestion des animaux. Aujourd'hui, je me lève à l'aube pour préparer les parcelles, et je rentre tard le soir, épuisée mais satisfaite. Mon mari est parti depuis des années, laissant une maison vide et des enfants qui grandissent. J'ai deux filles qui fréquentent l'école du village, et je rêve qu'elles puissent un jour reprendre la ferme. Ce vote sur les écoles me fait peur : si les travaux sont retardés, nos enfants devront peut-être partir ailleurs pour étudier, brisant le cycle de vie que nous avons construit ici depuis des générations.",
+     "expert_reflection": "Céline Bonnet, avec son MBTI INFP, présente une combinaison de sensibilité profonde et de pensée conceptuelle qui la pousse à chercher des solutions équilibrées et éthiques. Son expérience de vie en tant que fermière dans une petite communauté lui confère une perspective unique sur l'interdépendance sociale et économique, ce qui pourrait la rendre particulièrement sensible aux impacts sociaux des décisions politiques. Cependant, son idée controversée de financer l'éducation par les revenus agricoles locaux révèle une pensée radicale qui pourrait la mettre en tension avec les structures établies, créant un potentiel de conflit entre son idéalisme et la réalité pratique des besoins financiers de la communauté.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "fermière rurale",
+     "bio": "J'ai grandi sur la ferme familiale près de Linden, où j'ai appris le rythme des saisons et la valeur du travail honnête. Aujourd'hui, je cultive des légumes et élève quelques vaches pour nourrir ma petite communauté. Le vote sur les écoles me préoccupe particulièrement, car mes enfants grandissent et je souhaite qu'ils aient accès à une éducation de qualité dans notre village.",
+     "persona": "Céline est une personne discrète mais profondément réfléchie, parlant avec une douceur qui cache une détermination inébranlable. Son MBTI INFP se traduit par une communication empathique et une réflexion intérieure intense, ce qui la pousse à chercher des solutions équilibrées plutôt que des compromis superficiels.",
+     "beliefs": [
+      "La terre nourrit le corps et l'esprit, et chaque décision politique doit respecter ce lien fondamental.",
+      "L'éducation est le seul investissement qui rapporte des récoltes pour toute la communauté.",
+      "La simplicité et l'autonomie locale sont les clés d'une vie digne."
+     ],
+     "controversial_ideas": [
+      "Je crois secrètement que le système scolaire devrait être entièrement financé par les revenus agricoles locaux plutôt que par les impôts généraux, car cela renforcerait notre autonomie et réduirait notre dépendance aux politiques extérieures."
+     ],
+     "interested_topics": [
+      "agriculture durable",
+      "éducation rurale",
+      "justice fiscale"
+     ],
+     "reputation": 0.476,
+     "perception": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations.",
+     "current_plan": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations."
+    },
+    {
+     "name": "Gemeinde Linden",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "nonbinary",
+     "bio": "Aufgewachsen in Linden, habe ich nach dem Abitur 2003 die Fachhochschule für Raumplanung besucht und bin 2006 ins Bauamt eingetreten. Seit 2012 leite ich das Team für kommunale Infrastrukturprojekte, das gerade an der Umsetzung des umstrittenen Schulbaukredits arbeitet. Meine Arbeit dreht sich um die Balance zwischen Haushaltsdisziplin und langfristiger Stadtentwicklung, besonders im Kontext der aktuellen Schulbau-Debatte.",
+     "persona": "Gemeinde Linden wirkt sachlich, präzise und zurückhaltend. Sie spricht in kurzen, klaren Sätzen, vermeidet Emotionen und stützt sich auf Daten und Verordnungen. Die ISTJ-Art prägt eine strukturierte, ordnungsgemäße Kommunikation, bei der jedes Argument auf Fakten und Vorgaben basiert, was sie als zuverlässig, aber auch als unnachgiebig erscheinen lässt.",
+     "mbti": "ISTJ",
+     "country": "Switzerland",
+     "profession": "Stadtplaner im Bauamt der Gemeinde Linden",
+     "interested_topics": [
+      "Stadtentwicklung",
+      "Finanzplanung kommunaler Projekte",
+      "Bildungsinfrastruktur"
+     ],
+     "income_level": "medium",
+     "political_leaning": 0.05,
+     "lang": "de",
+     "x": 10,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Meine Kindheit verbrachte ich in Linden, wo ich die Dorfstrasse und die alte Schule kannte, bevor sie abgerissen wurde. Nach dem Abitur studierte ich Raumplanung und begann 2006 im Bauamt, wo ich zunächst technische Zeichnungen erstellte und später Projekte leitete. Meine Familie unterstützt mich, und ich lebe in einer kleinen Wohnung nahe dem Rathaus, um schnell erreichbar zu sein. Die aktuelle Schulbau-Debatte beschäftigt mich besonders, weil ich die Zahlen genau prüfe und die langfristigen Auswirkungen für die Kinder abwäge. Ich versuche, objektiv zu bleiben, auch wenn die Emotionen in der Gemeinde hochkochen.",
+     "expert_reflection": "Als ISTJ zeigt Gemeinde Linden eine ausgeprägte Präferenz für Ordnung, Regelhaftigkeit und bewährte Verfahren, was sie in ihrer Rolle als Stadtplanerin zu einer verlässlichen, aber potenziell rigiden Akteurin macht. Ihre starke Orientierung an Fakten und Vorgaben kann dazu führen, dass sie emotionale oder komplexe gesellschaftliche Aspekte der Schulbau-Debatte weniger flexibel verarbeitet, was zu einer scheinbaren Unnachgiebigkeit führt. In Stresssituationen mit hohem Kontroversenlevel könnte sie sich auf ihre strukturierten Prozesse zurückziehen, um Entscheidungen nach klaren Kriterien zu treffen, was ihre Glaubwürdigkeit stärkt, aber auch die Bereitschaft zur Kompromissbereitschaft einschränkt.",
+     "id": "npc_01",
+     "beliefs": [
+      "Disziplinierte Haushaltsführung ist essenziell für die langfristige Stabilität der Gemeinde.",
+      "Investitionen in Bildung sichern die Zukunftsfähigkeit der Region.",
+      "Transparente Entscheidungsprozesse stärken das Vertrauen der Bürger in die Verwaltung."
+     ],
+     "controversial_ideas": [
+      "Ich glaube privat, dass die Steuererhöhung für Haushalte gerechtfertigt ist, weil sie kurzfristig schmerzt, aber langfristig die Schulqualität sichert, und ich würde diese Ansicht nur in vertrauensvollen Gesprächen äußern."
+     ],
+     "reputation": 0.524,
+     "perception": "Die Dorfstrasse wirkt ruhig, doch die emotionale Spannung um den Schulbaukredit ist spürbar. Die Fakten sind klar, doch die Sorgen der Familien über die Steuererhöhung und die Unsicherheit über die langfristige Schulentwicklung bleiben präsent. Ich muss die Zahlen transparent kommunizieren, ohne die menschlichen Bedenken zu vernachlässigen.",
+     "current_plan": "Die Dorfstrasse wirkt ruhig, doch die emotionale Spannung um den Schulbaukredit ist spürbar. Die Fakten sind klar, doch die Sorgen der Familien über die Steuererhöhung und die Unsicherheit über die langfristige Schulentwicklung bleiben präsent. Ich muss die Zahlen transparent kommunizieren, ohne die menschlichen Bedenken zu vernachlässigen."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.3237,
+     "x": 11,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich jeden Samstag die Dorfstrasse entlang gelaufen, während meine Mutter Stoffe für Kleider schnitt und ich ihr beim Sortieren half. Nach der Lehre übernahm ich die Boutique, weil ich Unabhängigkeit wollte und keine Lust auf einen 9-zu-5-Job hatte. Heute sitze ich hinter dem Tresen, während ich die Rechnungen prüfe und die Gemeindeversammlung im Radio höre, wo die Schulbauten diskutiert werden. Meine Kunden kommen immer seltener, weil sie ihr Geld für Grundbedürfnisse brauchen, und ich muss jeden Rabatt kalkulieren. Die Steuererhöhung zwingt mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Ich habe Angst, dass die neue Generation, die in den Schulen sitzt, nie genug verdienen wird, um meine Boutique zu besuchen. Trotzdem hoffe ich, dass die Gemeinde eines Tages wieder investiert, und ich bleibe hier, weil Linden mein Zuhause ist.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken wird Sabine Graf wahrscheinlich die komplexen wirtschaftlichen Zusammenhänge der Schulbau-Debatte besonders intensiv verarbeiten. Ihre Tendenz, abstrakte Zusammenhänge zu erkennen und zu strukturieren, könnte sie dazu bringen, die langfristigen Konsequenzen der Steuererhöhung und der Schulbauentscheidung rational abzuwägen, während sie gleichzeitig die emotionalen Belastungen für ihre Kunden und die lokale Wirtschaft spürt. Die Tatsache, dass sie ein kontroverses, aber logisch fundiertes Gedankenexperiment über eine progressive Besteuerung der Grundbesitzer hegt, zeigt, wie ihr introvertiertes, intellektuelles Profil sie zu einer Person macht, die zwar zurückhaltend in der Öffentlichkeit spricht, aber in privaten Gesprächen oder schriftlichen Beiträgen ihre kritischen Einsichten scharf formuliert.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Dorfstrasse-Boutiqueinhaberin",
+     "bio": "Ich bin Sabine Graf, geboren und aufgewachsen in Linden, wo ich die Dorfstrasse schon als Kind kannte. Nach der Lehre habe ich die kleine Boutique meiner Mutter übernommen, die heute mein Lebensunterhalt sichert. Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich, weil ich kaum noch Kunden für teure Accessoires habe. Meine Familie und ich müssen jeden Franken zählen, und die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+     "persona": "Sabine kommt als scharfsinnige, analytische Frau daher, die komplexe Zusammenhänge sofort erkennt und in ruhigen, präzisen Sätzen formuliert. Ihre INTP-Art zeigt sich in einer Vorliebe für logische Argumentationsketten und gelegentlichen Momenten der distanzierten Beobachtung, was sie bei Kunden manchmal als kühl oder abweisend erscheinen lässt. Sie spricht mit einer gewissen Gelehrsamkeit, als würde sie jedes Thema wie ein Puzzle analysieren, und ihre Mimik bleibt meist neutral, bis sie eine emotionale Verbindung herstellt.",
+     "beliefs": [
+      "Nachhaltigkeit und langfristige Planung sind wichtiger als kurzfristige Sparmaßnahmen",
+      "Die Gemeinde muss Investitionen in Bildung tätigen, um die Kaufkraft zukünftiger Generationen zu sichern",
+      "Kleinunternehmer brauchen klare, vorhersehbare Rahmenbedingungen"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Haushalte gezielt gegen die Mittelschicht gerichtet ist und dass die Gemeinde stattdessen die reichen Grundbesitzer stärker besteuern sollte, auch wenn ich das öffentlich nicht sage."
+     ],
+     "interested_topics": [
+      "Steuerrecht und kommunale Haushaltsplanung",
+      "Bildungsökonomie und langfristige Arbeitsmarktprognosen",
+      "Nachhaltige Konsummodelle für kleine Geschäfte"
+     ],
+     "reputation": 0.476,
+     "perception": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+     "current_plan": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.3839,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Meine Kindheit verbrachte ich in den 70ern in einem alten Schulgebäude am Dorfplatz, wo die Fenster kalt waren und die Heizung oft ausfiel, aber die Lehrer uns trotzdem Wissen einflößten. Nach dem Abitur und dem Lehramtsstudium zog ich zurück, um hier zu unterrichten, und habe seitdem Generationen von Schülern durch die Pubertät begleitet, während ich selbst die Veränderungen der Dorfwirtschaft miterlebte. Meine Frau und ich haben zwei Kinder, die heute selbst in der Schule sind, und ich habe gesehen, wie die Qualität der Bildung direkt mit der Kaufkraft der Familien korreliert. Die aktuelle Schulbau-Kreditfrage treibt mich um, weil ich weiß, dass die neuen Klassenräume und Laboratorien nicht nur Bänke und Tische sind, sondern die Zukunft unserer Kinder und damit die Stabilität unserer Gemeinde sichern. Ich habe in den letzten Jahren mit Eltern gesprochen, die sich Sorgen um die Überfüllung machen, und ich habe die Zahlen der Arbeitslosenentwicklung studiert, die zeigt, dass gut ausgebildete Fachkräfte genau das sind, was unsere lokalen Betriebe brauchen.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine ausgeprägte Orientierung an sozialen Normen und kollektiven Werten zeigen, was ihn zu einem integrativen und kooperativen Akteur in der Schulgemeinschaft macht. Seine hohe Empathie und sein Bedürfnis nach Anerkennung könnten ihn dazu veranlassen, die Steuererhöhung als notwendiges Übel zu rechtfertigen, um den Konsens zu wahren, auch wenn er im Stillen radikale Überlegungen hegt. Die Spannung zwischen seiner öffentlichen, konsensorientierten Haltung und seinen privaten, möglicherweise polarisierenden Überzeugungen könnte zu einer inneren Konfliktdynamik führen, die sich in seiner Kommunikation als vorsichtige, aber leidenschaftliche Verteidigung der Schulbau-Investition äußert.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Sekundarlehrer an der Linden-Gesamtschule",
+     "bio": "Ich bin 1978 in einer kleinen Dorfschule aufgewachsen, habe nach dem Lehramtsstudium in den 90ern hier unterrichtet und bin seit 2005 festes Mitglied des Lehrkörpers der Linden-Gesamtschule. Meine Klassen 9 und 10 bilden die Basis für die Zukunft unserer Gemeinde, und ich habe gesehen, wie die Infrastruktur der Schule die Lebensqualität der Familien direkt beeinflusst. Die aktuelle Schulbau-Kreditfrage ist für mich nicht nur eine Haushaltsfrage, sondern eine Investition in die nächste Generation von Fachkräften, die unser Dorf langfristig wirtschaftlich tragen wird.",
+     "persona": "Stefan Müller tritt als warmherziger, strukturierter und kollegialer Lehrer auf, der stets höflich und sachlich argumentiert. Seine ESFJ-Artikulation macht ihn zu einem geschätzten Vermittler zwischen Schülern, Eltern und Behörden, wobei er durch seine ausgeprägte Empathie und Pflichtbewusstsein oft als verlässlicher Anker in der Schulgemeinschaft wahrgenommen wird. Er vermeidet polarisierende Sprache und bevorzugt pragmatische Lösungen, die den Konsens suchen, auch wenn er im Stillen eigene, radikale Überlegungen hegt.",
+     "beliefs": [
+      "Bildung ist der einzige Weg aus der Armut und der Schlüssel für soziale Mobilität",
+      "Die langfristige Investition in Schulen sichert die wirtschaftliche Zukunft der Gemeinde",
+      "Transparente Haushaltsführung schafft Vertrauen zwischen Bürgern und Verwaltung"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Bildung gerechtfertigt ist, weil sie die einzige Möglichkeit ist, die wachsende Ungleichheit in der Region zu bremsen, und ich würde sie sogar als temporäre Maßnahme für mindestens fünf Jahre verteidigen, auch wenn es die Wähler nicht hören wollen."
+     ],
+     "interested_topics": [
+      "Schulfinanzierung und Infrastruktur",
+      "Jugendliche Berufsorientierung",
+      "Lokale Wirtschaftsentwicklung durch Bildung"
+     ],
+     "reputation": 0.62,
+     "perception": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung.",
+     "current_plan": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung."
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 54.0,
+    "business_climate": 50.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 67.8
+   }
+  },
+  {
+   "round": 2,
+   "events": [
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre l'impact réel de cette hausse du taux d'imposition sur les projets de construction scolaire et les familles de Linden.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Comment la commune prévoit-elle de gérer le déficit de 1,2 million CHF si le crédit est refusé?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Wie plant die Gemeinde, das Defizit von 1,2 Millionen CHF zu bewirtschaften, wenn der Kredit verweigert wird?"
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre les implications de ce crédit pour l'école de nos enfants et comment cela affectera notre budget familial.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Gemeinde Linden, comment ce crédit de 4,8 millions CHF va-t-il réellement soutenir l'éducation de nos enfants sans alourdir notre charge fiscale ?",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true,
+      "translated_dialogue": "Gemeinde Linden, wie wird dieser Kredit von 4,8 Millionen CHF die Bildung unserer Kinder wirklich unterstützen, ohne unsere Steuerlast zu erhöhen?"
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Ihnen über die Auswirkungen des Schulbaukredits sprechen. Wie sehen Sie die Balance zwischen Steuererhöhung und langfristigem Schulbau?",
+      "target_npc_id": "npc_03",
+      "dialogue": "Die Zahlen zeigen einen Steuerfuss-Anstieg von 6 Prozentpunkten, was für ein Einkommen von 80'000 CHF rund 240 CHF mehr pro Jahr bedeutet. Gleichzeitig profitieren lokale Handwerker und der Baukredit von 4,8 Millionen CHF, was die Dorfstrasse und Werkhöfe stärkt. Wie bewerten Sie diese Abwägung?",
+      "to_x": 2,
+      "to_y": 5,
+      "new_mood": "neutral",
+      "used_source_ids": [
+       "3",
+       "7"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit dem Gemeinderat sprechen, um zu verstehen, wie die Steuererhöhung die lokale Wirtschaft wirklich beeinflusst. Die Kunden kommen immer seltener, und ich kann kaum noch Rabatte gewähren.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Gemeinderat, ich bin Sabine Graf von der Dorfstrasse-Boutique. Die steigenden Steuern zwingen mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Gleichzeitig verspricht der Schulbau neue Arbeitsplätze im Bauwesen und könnte die Nachfrage an der Dorfstrasse stärken, doch die Unsicherheit um die Finanzierung belastet mich schwer. Ich hoffe, dass die Gemeinde langfristig investiert, auch wenn ich kurzfristig jeden Franken zählen muss.",
+      "to_x": 6,
+      "to_y": 6,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "7"
+      ],
+      "grounded": true
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit Sabine Graf sprechen, um ihre Sicht auf die Auswirkungen des Schulbau-Kredits auf die Geschäfte an der Dorfstrasse zu verstehen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Sabine Graf sprechen, um ihre Sicht auf die Auswirkungen des Schulbau-Kredits auf die Geschäfte an der Dorfstrasse zu verstehen.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Sabine, wie sehen Sie die Auswirkungen des geplanten Schulbau-Kredits auf die Nachfrage in Ihrem Geschäft?",
+      "to_x": 2,
+      "to_y": 5,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Sabine Graf"
+      ],
+      "grounded": true
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.7793,
+     "x": 8,
+     "y": 6,
+     "mood": "excited",
+     "life_story": "J'ai grandi dans un immeuble de Linden où chaque réparation était une négociation avec le propriétaire. Après des études d'architecture, j'ai travaillé sur des projets scolaires qui m'ont appris à équilibrer esthétique et budget. Aujourd'hui, je vis dans un appartement spacieux au centre-ville, où j'organise des ateliers pour les étudiants. Mon revenu élevé me permet de voyager, mais je reste engagé dans la communauté. Le vote sur les écoles me préoccupe car il menace l'avenir des jeunes et la stabilité du secteur de la construction.",
+     "expert_reflection": "En tant que psychologue social, François présente un profil ISTP caractérisé par une pensée analytique et une communication pragmatique. Son approche factuelle et son aversion pour l'émotivité peuvent le rendre perçu comme distant ou inflexible, ce qui risque d'exacerber les tensions lors de débats politiques sensibles. Sa croyance secrète en la gestion d'entreprises scolaires révèle une vision utilitariste qui, bien que rationnelle, entre en conflit avec les valeurs d'équité et de solidarité qui animent la majorité de la population, créant ainsi un potentiel de polarisation durable.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "François Girard a grandi dans un petit immeuble de Linden, où il a appris à lire les plans et à négocier les réparations avec les propriétaires. Après des études d'architecture, il a travaillé sur plusieurs projets de construction scolaire, ce qui lui a valu une réputation de précision et d'efficacité. Aujourd'hui, il occupe un appartement spacieux au centre-ville, où il accueille régulièrement des collègues et des étudiants pour des ateliers de design. Son revenu élevé lui permet de voyager et de soutenir des causes locales, tout en restant ancré dans la communauté.",
+     "persona": "François est direct et factuel, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication concise, logique et parfois perçue comme distante, mais il sait adapter son ton pour convaincre les clients ou les autorités. Il est respecté pour son expertise technique, mais certains le trouvent trop rigide ou peu enclin à la diplomatie.",
+     "beliefs": [
+      "L'efficacité technique doit toujours primer sur les considérations politiques.",
+      "Les investissements dans l'infrastructure éducative sont essentiels pour la prospérité à long terme.",
+      "La transparence budgétaire est un droit citoyen non négociable."
+     ],
+     "controversial_ideas": [
+      "Il croit secrètement que les écoles devraient être gérées comme des entreprises, avec des budgets basés sur la rentabilité plutôt que sur l'équité sociale."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.63,
+     "perception": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles.",
+     "current_plan": "Le vote sur le budget scolaire et la hausse du taux d'imposition représente un enjeu crucial pour l'avenir de la commune. Les chiffres montrent un déficit de 1,2 million CHF et un chantier reporté de trois ans en cas de refus. L'augmentation de 6 points du taux d'imposition touche directement les contribuables, et l'investissement dans l'éducation est vital pour la prospérité à long terme, mais la pression fiscale immédiate inquiète les familles."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.5976,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Quand j'étais petite, je passais mes étés à aider mon père dans les champs, apprenant que chaque graine plantée était un engagement envers l'avenir. Après avoir terminé l'école primaire, j'ai travaillé aux côtés de ma famille, perfectionnant les techniques de culture et de gestion des animaux. Aujourd'hui, je me lève à l'aube pour préparer les parcelles, et je rentre tard le soir, épuisée mais satisfaite. Mon mari est parti depuis des années, laissant une maison vide et des enfants qui grandissent. J'ai deux filles qui fréquentent l'école du village, et je rêve qu'elles puissent un jour reprendre la ferme. Ce vote sur les écoles me fait peur : si les travaux sont retardés, nos enfants devront peut-être partir ailleurs pour étudier, brisant le cycle de vie que nous avons construit ici depuis des générations.",
+     "expert_reflection": "Céline Bonnet, avec son MBTI INFP, présente une combinaison de sensibilité profonde et de pensée conceptuelle qui la pousse à chercher des solutions équilibrées et éthiques. Son expérience de vie en tant que fermière dans une petite communauté lui confère une perspective unique sur l'interdépendance sociale et économique, ce qui pourrait la rendre particulièrement sensible aux impacts sociaux des décisions politiques. Cependant, son idée controversée de financer l'éducation par les revenus agricoles locaux révèle une pensée radicale qui pourrait la mettre en tension avec les structures établies, créant un potentiel de conflit entre son idéalisme et la réalité pratique des besoins financiers de la communauté.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "fermière rurale",
+     "bio": "J'ai grandi sur la ferme familiale près de Linden, où j'ai appris le rythme des saisons et la valeur du travail honnête. Aujourd'hui, je cultive des légumes et élève quelques vaches pour nourrir ma petite communauté. Le vote sur les écoles me préoccupe particulièrement, car mes enfants grandissent et je souhaite qu'ils aient accès à une éducation de qualité dans notre village.",
+     "persona": "Céline est une personne discrète mais profondément réfléchie, parlant avec une douceur qui cache une détermination inébranlable. Son MBTI INFP se traduit par une communication empathique et une réflexion intérieure intense, ce qui la pousse à chercher des solutions équilibrées plutôt que des compromis superficiels.",
+     "beliefs": [
+      "La terre nourrit le corps et l'esprit, et chaque décision politique doit respecter ce lien fondamental.",
+      "L'éducation est le seul investissement qui rapporte des récoltes pour toute la communauté.",
+      "La simplicité et l'autonomie locale sont les clés d'une vie digne."
+     ],
+     "controversial_ideas": [
+      "Je crois secrètement que le système scolaire devrait être entièrement financé par les revenus agricoles locaux plutôt que par les impôts généraux, car cela renforcerait notre autonomie et réduirait notre dépendance aux politiques extérieures."
+     ],
+     "interested_topics": [
+      "agriculture durable",
+      "éducation rurale",
+      "justice fiscale"
+     ],
+     "reputation": 0.488,
+     "perception": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations.",
+     "current_plan": "Le vote sur l'école me fait une grande inquiétude. Si le taux augmente, cela réduira notre pouvoir d'achat et mes filles pourraient devoir quitter le village pour étudier, brisant le lien avec la terre et la communauté que nous avons cultivées depuis des générations."
+    },
+    {
+     "name": "Gemeinde Linden",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "nonbinary",
+     "bio": "Aufgewachsen in Linden, habe ich nach dem Abitur 2003 die Fachhochschule für Raumplanung besucht und bin 2006 ins Bauamt eingetreten. Seit 2012 leite ich das Team für kommunale Infrastrukturprojekte, das gerade an der Umsetzung des umstrittenen Schulbaukredits arbeitet. Meine Arbeit dreht sich um die Balance zwischen Haushaltsdisziplin und langfristiger Stadtentwicklung, besonders im Kontext der aktuellen Schulbau-Debatte.",
+     "persona": "Gemeinde Linden wirkt sachlich, präzise und zurückhaltend. Sie spricht in kurzen, klaren Sätzen, vermeidet Emotionen und stützt sich auf Daten und Verordnungen. Die ISTJ-Art prägt eine strukturierte, ordnungsgemäße Kommunikation, bei der jedes Argument auf Fakten und Vorgaben basiert, was sie als zuverlässig, aber auch als unnachgiebig erscheinen lässt.",
+     "mbti": "ISTJ",
+     "country": "Switzerland",
+     "profession": "Stadtplaner im Bauamt der Gemeinde Linden",
+     "interested_topics": [
+      "Stadtentwicklung",
+      "Finanzplanung kommunaler Projekte",
+      "Bildungsinfrastruktur"
+     ],
+     "income_level": "medium",
+     "political_leaning": 0.0944,
+     "lang": "de",
+     "x": 10,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Meine Kindheit verbrachte ich in Linden, wo ich die Dorfstrasse und die alte Schule kannte, bevor sie abgerissen wurde. Nach dem Abitur studierte ich Raumplanung und begann 2006 im Bauamt, wo ich zunächst technische Zeichnungen erstellte und später Projekte leitete. Meine Familie unterstützt mich, und ich lebe in einer kleinen Wohnung nahe dem Rathaus, um schnell erreichbar zu sein. Die aktuelle Schulbau-Debatte beschäftigt mich besonders, weil ich die Zahlen genau prüfe und die langfristigen Auswirkungen für die Kinder abwäge. Ich versuche, objektiv zu bleiben, auch wenn die Emotionen in der Gemeinde hochkochen.",
+     "expert_reflection": "Als ISTJ zeigt Gemeinde Linden eine ausgeprägte Präferenz für Ordnung, Regelhaftigkeit und bewährte Verfahren, was sie in ihrer Rolle als Stadtplanerin zu einer verlässlichen, aber potenziell rigiden Akteurin macht. Ihre starke Orientierung an Fakten und Vorgaben kann dazu führen, dass sie emotionale oder komplexe gesellschaftliche Aspekte der Schulbau-Debatte weniger flexibel verarbeitet, was zu einer scheinbaren Unnachgiebigkeit führt. In Stresssituationen mit hohem Kontroversenlevel könnte sie sich auf ihre strukturierten Prozesse zurückziehen, um Entscheidungen nach klaren Kriterien zu treffen, was ihre Glaubwürdigkeit stärkt, aber auch die Bereitschaft zur Kompromissbereitschaft einschränkt.",
+     "id": "npc_01",
+     "beliefs": [
+      "Disziplinierte Haushaltsführung ist essenziell für die langfristige Stabilität der Gemeinde.",
+      "Investitionen in Bildung sichern die Zukunftsfähigkeit der Region.",
+      "Transparente Entscheidungsprozesse stärken das Vertrauen der Bürger in die Verwaltung."
+     ],
+     "controversial_ideas": [
+      "Ich glaube privat, dass die Steuererhöhung für Haushalte gerechtfertigt ist, weil sie kurzfristig schmerzt, aber langfristig die Schulqualität sichert, und ich würde diese Ansicht nur in vertrauensvollen Gesprächen äußern."
+     ],
+     "reputation": 0.536,
+     "perception": "Die Dorfstrasse wirkt ruhig, doch die emotionale Spannung um den Schulbaukredit ist spürbar. Die Fakten sind klar, doch die Sorgen der Familien über die Steuererhöhung und die Unsicherheit über die langfristige Schulentwicklung bleiben präsent. Ich muss die Zahlen transparent kommunizieren, ohne die menschlichen Bedenken zu vernachlässigen.",
+     "current_plan": "Die Dorfstrasse wirkt ruhig, doch die emotionale Spannung um den Schulbaukredit ist spürbar. Die Fakten sind klar, doch die Sorgen der Familien über die Steuererhöhung und die Unsicherheit über die langfristige Schulentwicklung bleiben präsent. Ich muss die Zahlen transparent kommunizieren, ohne die menschlichen Bedenken zu vernachlässigen."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.3342,
+     "x": 11,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich jeden Samstag die Dorfstrasse entlang gelaufen, während meine Mutter Stoffe für Kleider schnitt und ich ihr beim Sortieren half. Nach der Lehre übernahm ich die Boutique, weil ich Unabhängigkeit wollte und keine Lust auf einen 9-zu-5-Job hatte. Heute sitze ich hinter dem Tresen, während ich die Rechnungen prüfe und die Gemeindeversammlung im Radio höre, wo die Schulbauten diskutiert werden. Meine Kunden kommen immer seltener, weil sie ihr Geld für Grundbedürfnisse brauchen, und ich muss jeden Rabatt kalkulieren. Die Steuererhöhung zwingt mich, Preise zu erhöhen, was die wenigen Stammkunden vergrault. Ich habe Angst, dass die neue Generation, die in den Schulen sitzt, nie genug verdienen wird, um meine Boutique zu besuchen. Trotzdem hoffe ich, dass die Gemeinde eines Tages wieder investiert, und ich bleibe hier, weil Linden mein Zuhause ist.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken wird Sabine Graf wahrscheinlich die komplexen wirtschaftlichen Zusammenhänge der Schulbau-Debatte besonders intensiv verarbeiten. Ihre Tendenz, abstrakte Zusammenhänge zu erkennen und zu strukturieren, könnte sie dazu bringen, die langfristigen Konsequenzen der Steuererhöhung und der Schulbauentscheidung rational abzuwägen, während sie gleichzeitig die emotionalen Belastungen für ihre Kunden und die lokale Wirtschaft spürt. Die Tatsache, dass sie ein kontroverses, aber logisch fundiertes Gedankenexperiment über eine progressive Besteuerung der Grundbesitzer hegt, zeigt, wie ihr introvertiertes, intellektuelles Profil sie zu einer Person macht, die zwar zurückhaltend in der Öffentlichkeit spricht, aber in privaten Gesprächen oder schriftlichen Beiträgen ihre kritischen Einsichten scharf formuliert.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Dorfstrasse-Boutiqueinhaberin",
+     "bio": "Ich bin Sabine Graf, geboren und aufgewachsen in Linden, wo ich die Dorfstrasse schon als Kind kannte. Nach der Lehre habe ich die kleine Boutique meiner Mutter übernommen, die heute mein Lebensunterhalt sichert. Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich, weil ich kaum noch Kunden für teure Accessoires habe. Meine Familie und ich müssen jeden Franken zählen, und die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+     "persona": "Sabine kommt als scharfsinnige, analytische Frau daher, die komplexe Zusammenhänge sofort erkennt und in ruhigen, präzisen Sätzen formuliert. Ihre INTP-Art zeigt sich in einer Vorliebe für logische Argumentationsketten und gelegentlichen Momenten der distanzierten Beobachtung, was sie bei Kunden manchmal als kühl oder abweisend erscheinen lässt. Sie spricht mit einer gewissen Gelehrsamkeit, als würde sie jedes Thema wie ein Puzzle analysieren, und ihre Mimik bleibt meist neutral, bis sie eine emotionale Verbindung herstellt.",
+     "beliefs": [
+      "Nachhaltigkeit und langfristige Planung sind wichtiger als kurzfristige Sparmaßnahmen",
+      "Die Gemeinde muss Investitionen in Bildung tätigen, um die Kaufkraft zukünftiger Generationen zu sichern",
+      "Kleinunternehmer brauchen klare, vorhersehbare Rahmenbedingungen"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Haushalte gezielt gegen die Mittelschicht gerichtet ist und dass die Gemeinde stattdessen die reichen Grundbesitzer stärker besteuern sollte, auch wenn ich das öffentlich nicht sage."
+     ],
+     "interested_topics": [
+      "Steuerrecht und kommunale Haushaltsplanung",
+      "Bildungsökonomie und langfristige Arbeitsmarktprognosen",
+      "Nachhaltige Konsummodelle für kleine Geschäfte"
+     ],
+     "reputation": 0.488,
+     "perception": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird.",
+     "current_plan": "Die steigenden Steuern und die Unsicherheit um die Schulbauten belasten mich schwer. Die Kunden kommen immer seltener, und ich muss jeden Franken zählen. Die politische Debatte um die Schulkredite macht mir Sorgen um die Zukunft der Gemeinde. Trotz allem bleibe ich optimistisch, dass die neue Generation eines Tages wieder mehr Geld ausgeben wird."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.4014,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Meine Kindheit verbrachte ich in den 70ern in einem alten Schulgebäude am Dorfplatz, wo die Fenster kalt waren und die Heizung oft ausfiel, aber die Lehrer uns trotzdem Wissen einflößten. Nach dem Abitur und dem Lehramtsstudium zog ich zurück, um hier zu unterrichten, und habe seitdem Generationen von Schülern durch die Pubertät begleitet, während ich selbst die Veränderungen der Dorfwirtschaft miterlebte. Meine Frau und ich haben zwei Kinder, die heute selbst in der Schule sind, und ich habe gesehen, wie die Qualität der Bildung direkt mit der Kaufkraft der Familien korreliert. Die aktuelle Schulbau-Kreditfrage treibt mich um, weil ich weiß, dass die neuen Klassenräume und Laboratorien nicht nur Bänke und Tische sind, sondern die Zukunft unserer Kinder und damit die Stabilität unserer Gemeinde sichern. Ich habe in den letzten Jahren mit Eltern gesprochen, die sich Sorgen um die Überfüllung machen, und ich habe die Zahlen der Arbeitslosenentwicklung studiert, die zeigt, dass gut ausgebildete Fachkräfte genau das sind, was unsere lokalen Betriebe brauchen.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine ausgeprägte Orientierung an sozialen Normen und kollektiven Werten zeigen, was ihn zu einem integrativen und kooperativen Akteur in der Schulgemeinschaft macht. Seine hohe Empathie und sein Bedürfnis nach Anerkennung könnten ihn dazu veranlassen, die Steuererhöhung als notwendiges Übel zu rechtfertigen, um den Konsens zu wahren, auch wenn er im Stillen radikale Überlegungen hegt. Die Spannung zwischen seiner öffentlichen, konsensorientierten Haltung und seinen privaten, möglicherweise polarisierenden Überzeugungen könnte zu einer inneren Konfliktdynamik führen, die sich in seiner Kommunikation als vorsichtige, aber leidenschaftliche Verteidigung der Schulbau-Investition äußert.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Sekundarlehrer an der Linden-Gesamtschule",
+     "bio": "Ich bin 1978 in einer kleinen Dorfschule aufgewachsen, habe nach dem Lehramtsstudium in den 90ern hier unterrichtet und bin seit 2005 festes Mitglied des Lehrkörpers der Linden-Gesamtschule. Meine Klassen 9 und 10 bilden die Basis für die Zukunft unserer Gemeinde, und ich habe gesehen, wie die Infrastruktur der Schule die Lebensqualität der Familien direkt beeinflusst. Die aktuelle Schulbau-Kreditfrage ist für mich nicht nur eine Haushaltsfrage, sondern eine Investition in die nächste Generation von Fachkräften, die unser Dorf langfristig wirtschaftlich tragen wird.",
+     "persona": "Stefan Müller tritt als warmherziger, strukturierter und kollegialer Lehrer auf, der stets höflich und sachlich argumentiert. Seine ESFJ-Artikulation macht ihn zu einem geschätzten Vermittler zwischen Schülern, Eltern und Behörden, wobei er durch seine ausgeprägte Empathie und Pflichtbewusstsein oft als verlässlicher Anker in der Schulgemeinschaft wahrgenommen wird. Er vermeidet polarisierende Sprache und bevorzugt pragmatische Lösungen, die den Konsens suchen, auch wenn er im Stillen eigene, radikale Überlegungen hegt.",
+     "beliefs": [
+      "Bildung ist der einzige Weg aus der Armut und der Schlüssel für soziale Mobilität",
+      "Die langfristige Investition in Schulen sichert die wirtschaftliche Zukunft der Gemeinde",
+      "Transparente Haushaltsführung schafft Vertrauen zwischen Bürgern und Verwaltung"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass die Steuererhöhung für Bildung gerechtfertigt ist, weil sie die einzige Möglichkeit ist, die wachsende Ungleichheit in der Region zu bremsen, und ich würde sie sogar als temporäre Maßnahme für mindestens fünf Jahre verteidigen, auch wenn es die Wähler nicht hören wollen."
+     ],
+     "interested_topics": [
+      "Schulfinanzierung und Infrastruktur",
+      "Jugendliche Berufsorientierung",
+      "Lokale Wirtschaftsentwicklung durch Bildung"
+     ],
+     "reputation": 0.63,
+     "perception": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung.",
+     "current_plan": "Die aktuelle Abstimmungsfrage über den Steuerfuss und den Schulbaukredit wirft viele Fragen auf. Die Erhöhung des Steuerfusses um 6 Prozentpunkte bedeutet für viele Familien eine spürbare Belastung, doch der geplante Schulbau könnte langfristig die Kaufkraft der Gemeinde stabilisieren. Die Informationen über die Investition von 4.8 Millionen CHF für neue Klassenräume und Laboratorien zeigen, dass es sich um eine strategische Entscheidung für die Zukunft unserer Fachkräfte handelt. Die Unsicherheit über die Auswirkungen auf die kleinen Geschäfte an der Dorfstrasse macht mich besorgt, doch die Möglichkeit, Arbeitsplätze im Bauwesen zu schaffen, gibt mir Hoffnung."
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 54.0,
+    "business_climate": 50.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 67.8
+   }
+  }
+ ],
+ "report": {
+  "headline": "Steuerfuss-Höhe und Schulbaukredit belasten Haushalte, stärken lokale Bauwirtschaft",
+  "summary": "Die 6-prozentige Steuerfuss-Erhöhung verteuert die jährlichen Steuerrechnungen für Haushalte, während der 4,8-Millionen-Franken-Kredit für den Schulneubau die lokale Bauwirtschaft kurzfristig ankurbelt. Die Stimmung bleibt überwiegend neutral, mit vereinzelten Anzeichen von Unruhe über die Steuerbelastung. This report does not recommend how anyone should vote.",
+  "livelihood_impact": "Haushalte mit einem Einkommen von 80.000 CHF müssen ihre jährlichen Steuerrechnungen um rund 240 CHF erhöhen, was den Haushaltsplan strafft. Kleinunternehmer auf der Dorfstrasse könnten von zusätzlichem Personalbedarf in der Tagesschule profitieren, während Bauunternehmen durch den Kredit Aufträge und Beschäftigung erhalten.",
+  "top_impacts": [
+   {
+    "title": "Steuerbelastung für Haushalte",
+    "description": "Eine 6-prozentige Erhöhung des Steuerfusses verteuert die jährlichen Steuerrechnungen für Haushalte mit 80.000 CHF Einkommen um rund 240 CHF.",
+    "direction": "negative",
+    "severity": "medium"
+   },
+   {
+    "title": "Bauwirtschaftliche Aufträge",
+    "description": "Der 4,8-Millionen-Franken-Kredit für den Schulneubau generiert kurzfristig Aufträge für lokale Bauunternehmen und schafft Arbeitsplätze im Bauwesen.",
+    "direction": "positive",
+    "severity": "medium"
+   }
+  ],
+  "key_stats": [
+   {
+    "label": "Rounds Simulated",
+    "value": "3",
+    "trend": "flat"
+   },
+   {
+    "label": "Residents Tracked",
+    "value": "5",
+    "trend": "flat"
+   },
+   {
+    "label": "Dominant Mood",
+    "value": "Neutral (60%)",
+    "trend": "mixed"
+   },
+   {
+    "label": "Residents Under Strain",
+    "value": "20%",
+    "trend": "up"
+   },
+   {
+    "label": "Residents Feeling Positive",
+    "value": "20%",
+    "trend": "up"
+   },
+   {
+    "label": "Price Change Events",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Protests Logged",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Layoff / Closure Signals",
+    "value": "0",
+    "trend": "flat"
+   }
+  ],
+  "pie_chart": {
+   "title": "Final Town Sentiment",
+   "slices": [
+    {
+     "label": "Neutral",
+     "value": 3
+    },
+    {
+     "label": "Anxious",
+     "value": 1
+    },
+    {
+     "label": "Excited",
+     "value": 1
+    }
+   ]
+  },
+  "bar_chart": {
+   "title": "Pressure Signals During The Run",
+   "bars": [
+    {
+     "label": "No Major Shock Signals",
+     "value": 0
+    }
+   ]
+  },
+  "notable_events": [
+   "Einwohner diskutieren die Steuererhöhung und die langfristigen Schulbaupläne in lokalen Gesprächen.",
+   "Kleinunternehmer auf der Dorfstrasse äußern Bedenken über mögliche Preissteigerungen durch die Steuerbelastung."
+  ]
+ }
+}

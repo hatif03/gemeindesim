@@ -23,12 +23,24 @@ from typing import Any
 from langchain_openai import ChatOpenAI
 
 from config import MAX_X, MAX_Y
-from graph.corpus import chunk_policy_document, detect_setting, format_passages, retrieve_passages
+import re
+
+from graph.calculator import household_line
+from graph.corpus import (
+    chunk_policy_document,
+    default_top_k,
+    detect_setting,
+    format_passages,
+    passage_labels,
+    retrieve_passages,
+)
 from graph.language import (
     TOWN,
     fallback_utterance,
     glossary_for,
+    has_figures,
     strip_ungrounded_numerals,
+    swissify,
     translate_utterance,
     ungrounded_numerals,
 )
@@ -41,6 +53,7 @@ from graph.memory import (
     maybe_reflect,
     retrieve_memories,
 )
+from graph.nodes.stance import stance_binding, stance_label, stance_line, stance_summary
 from graph.prompts import MBTI_DESC, NPC_ROUND_PROMPT_V2
 from graph.utils import clamp, normalize_npc_id
 from models.schemas import NPCEvent, NPCRoundResponse
@@ -278,7 +291,7 @@ def _format_nearby_npcs(
     for other in all_npcs:
         oid = other.get("id")
         if oid in id_set:
-            line = f"- {other.get('name', '?')} ({other.get('profession', '?')}) [Rep: {other.get('reputation', 0.5):.2f}]"
+            line = f"- {other.get('name', '?')} [{oid}] ({other.get('profession', '?')}) [Rep: {other.get('reputation', 0.5):.2f}]"
             if oid in rel_lookup:
                 affinity, trust = rel_lookup[oid]
                 line += f" [Known, Like: {affinity:.1f}, Trust: {trust:.1f}]"
@@ -460,10 +473,23 @@ async def _simulate_single_npc(
     social_targets_str = _format_social_targets(npc, npc_rels, neighbor_ids, all_npcs)
     mbti = npc.get("mbti", "")
     lang = npc.get("lang", "en")
-    query = f"{policy_text} {' '.join(neighbor_names)} {round_context} {npc.get('profession', '')}"
-    passages = retrieve_passages(policy_chunks or [], query, top_k=4, lang=lang)
+    # Query in the resident's own language: who they are, why they care, what they remember.
+    # (The English LLM policy summary used to dominate this query and matched nothing.)
+    query = (
+        f"{npc.get('profession', '')} {npc.get('bio', '')[:300]} {npc.get('stance_reason', '')} "
+        f"{' '.join(neighbor_names)} {memories_str[:600]}"
+    )
+    passages = retrieve_passages(policy_chunks or [], query, top_k=default_top_k(policy_chunks or []), lang=lang)
     pack = format_passages(passages)
-    pack_plus_policy = f"{pack}\n{policy_text}"
+    labels = passage_labels(passages)
+    pack_text = "\n".join(p.get("text", "") for p in passages)  # figures are grounded here only
+    # The model cannot do the booklet's own arithmetic (E7), so the resident's personal figure is
+    # computed in code and enters both the prompt and the grounding pack.
+    personal = household_line("\n".join(c.get("text", "") for c in (policy_chunks or [])), npc.get("income_level", "medium"), lang)
+    if personal:
+        pack = f"{pack}\n\n{personal}"
+        pack_text = f"{pack_text}\n{personal}"
+    swiss = town == TOWN["ch"]
 
     prompt = NPC_ROUND_PROMPT_V2.format(
         npc_name=npc_name,
@@ -478,6 +504,8 @@ async def _simulate_single_npc(
         npc_x=npc.get("x", 0),
         npc_y=npc.get("y", 0),
         npc_lang=lang,
+        stance_line=stance_line(npc),
+        stance_binding=stance_binding(npc),
         town=town,
         glossary=glossary_for(lang),
         life_story=(npc.get("life_story") or "")[:1200],
@@ -494,7 +522,7 @@ async def _simulate_single_npc(
     )
 
     try:
-        result = await invoke_llm_structured(prompt, NPCRoundResponse, llm=llm)
+        result = await invoke_llm_structured(prompt, NPCRoundResponse, llm=llm, lang=lang)
     except Exception as exc:
         logger.warning("NPC %s structured call failed (%s) — using fallback event", npc_id, exc)
         result = NPCRoundResponse(
@@ -508,7 +536,7 @@ async def _simulate_single_npc(
             ],
             perception="",
         )
-    perception = result.perception
+    perception = swissify(result.perception, lang) if swiss else result.perception
 
     # Tag each event with round and NPC id, and validate chat targets.
     sim_events: list[dict[str, Any]] = []
@@ -517,12 +545,22 @@ async def _simulate_single_npc(
         raw_target = ev_dict.get("target_npc_id")
         if raw_target:
             ev_dict["target_npc_id"] = normalize_npc_id(raw_target, name_to_id)
-        message = strip_ungrounded_numerals(ev_dict.get("message", "") or "", pack_plus_policy)
-        dialogue = strip_ungrounded_numerals(ev_dict.get("dialogue", "") or "", pack_plus_policy)
+        message = strip_ungrounded_numerals(ev_dict.get("message", "") or "", pack_text)
+        dialogue = strip_ungrounded_numerals(ev_dict.get("dialogue", "") or "", pack_text)
+        if swiss:  # Swiss Standard German has no ß
+            message, dialogue = swissify(message, lang), swissify(dialogue, lang)
         ev_dict["message"] = message
         ev_dict["dialogue"] = dialogue
-        extra = ungrounded_numerals(f"{message} {dialogue}", pack_plus_policy)
-        ev_dict["grounded"] = not extra and bool(ev_dict.get("used_source_ids") or pack)
+        # Citations: the model copies labels (P1..); keep only those that exist in THIS pack.
+        raw_cites = [str(c) for c in (ev_dict.get("used_source_ids") or [])]
+        keys = [f"P{m.group(1)}" for c in raw_cites if (m := re.search(r"(\d+)", c))]
+        ev_dict["used_source_ids"] = [labels[k] for k in keys if k in labels]
+        ev_dict["invalid_cites"] = len(raw_cites) - len(ev_dict["used_source_ids"])
+        snippets = {labels[f"P{i}"]: p.get("text", "")[:240] for i, p in enumerate(passages, 1)}
+        ev_dict["sources"] = [{"id": sid, "text": snippets.get(sid, "")} for sid in ev_dict["used_source_ids"]]  # for the UI tooltip
+        extra = ungrounded_numerals(f"{message} {dialogue}", pack_text)
+        needs_cite = has_figures(f"{message} {dialogue}", pack_text)
+        ev_dict["grounded"] = not extra and (bool(ev_dict["used_source_ids"]) or not needs_cite)
         target_id = ev_dict.get("target_npc_id") or ""
         target_npc = next((n for n in all_npcs if n.get("id") == target_id), None)
         if (
@@ -532,9 +570,10 @@ async def _simulate_single_npc(
             and target_npc.get("lang") != lang
             and (dialogue or message)
         ):
-            ev_dict["translated_dialogue"] = await translate_utterance(
+            translated = await translate_utterance(
                 dialogue or message, str(target_npc.get("lang")), llm
             )
+            ev_dict["translated_dialogue"] = strip_ungrounded_numerals(translated, pack_text)
         sim_event = {
             "round": current_round,
             "npc_id": npc_id,
@@ -617,6 +656,7 @@ def _apply_opinion_dynamics(
 
     alpha = _CONTROVERSY_ALPHA.get(controversy, 2.0)
     influence_log: list[dict[str, Any]] = []
+    touched: set[str] = set()  # residents who actually conversed; only they drift (E4)
 
     chat_events = [
         e
@@ -653,6 +693,16 @@ def _apply_opinion_dynamics(
         old_political = float(target.get("political_leaning", 0.0))
         old_mood = _mood_to_continuous(target.get("mood", "neutral"))
         behavior = "adopt" if i_ij >= _ADOPT_THRESHOLD else "compromise"
+        touched.update((speaker_id, target_id))
+
+        # --- Stance update (the variable the Vorlage is actually about) ---
+        s_i = (float(speaker.get("stance", 0.0)) + 1.0) / 2.0
+        s_j = (float(target.get("stance", 0.0)) + 1.0) / 2.0
+        if abs(s_i - s_j) < _EPSILON_POLITICAL:
+            new_s = s_i if i_ij >= _ADOPT_THRESHOLD else s_j + _MU_POLITICAL * i_ij * (s_i - s_j)
+            centered_s = 2.0 * new_s - 1.0
+            new_s = clamp(new_s + 0.05 * math.tanh(alpha * centered_s), 0.0, 1.0)
+            npc_lookup[target_id]["stance"] = round(new_s * 2.0 - 1.0, 4)
 
         # --- Political leaning update ---
         x_i = (float(speaker.get("political_leaning", 0.0)) + 1.0) / 2.0
@@ -735,9 +785,11 @@ def _apply_opinion_dynamics(
             }
         )
 
-    # Apply Baumann controversy drift for everyone
+    # Baumann controversy drift, interaction-gated: the old "everyone, every round" version
+    # polarised a silent town (research E4: mean |x| 0.51 -> 0.69 in 15 rounds, zero chats).
     if alpha > 1.5:
-        for npc in npc_lookup.values():
+        for nid in touched:
+            npc = npc_lookup[nid]
             x = float(npc.get("political_leaning", 0.0))
             drift = 0.02 * math.tanh(alpha * x)
             npc["political_leaning"] = round(clamp(x + drift, -1.0, 1.0), 4)
@@ -769,8 +821,12 @@ def _compute_economic_indicators(
     events: list[dict[str, Any]],
     round_num: int,
     max_rounds: int,
+    kind: str = "policy",
 ) -> dict[str, float]:
-    """Derive economic metrics from NPC state and events this round."""
+    """Derive economic metrics from NPC state and events this round.
+
+    For a vote, ``policy_approval`` is the stance poll (for + half of undecided), not a mood proxy.
+    """
     total = len(npcs) or 1
 
     mood_scores = {
@@ -793,13 +849,22 @@ def _compute_economic_indicators(
     worker_sentiment = sum(mood_scores.get(n.get("mood", "neutral"), 0.5) for n in worker_npcs) / max(len(worker_npcs), 1)
 
     protest_rate = protests / total
+    st = stance_summary(npcs)
+    approval = (avg_sentiment * 0.7 + (1 - protest_rate) * 0.3) * 100
+    if kind == "vote" and any("stance" in n for n in npcs):
+        approval = (st["for"] + 0.5 * st["undecided"]) / total * 100
     return {
         "consumer_confidence": round(avg_sentiment * 100, 1),
         "business_climate": round(biz_sentiment * 100, 1),
         "worker_welfare": round(worker_sentiment * 100, 1),
         "price_pressure": round(avg_price_change, 1),
         "social_unrest_index": round(protest_rate * 100, 1),
-        "policy_approval": round((avg_sentiment * 0.7 + (1 - protest_rate) * 0.3) * 100, 1),
+        "policy_approval": round(approval, 1),
+        "stance_for": float(st["for"]),
+        "stance_against": float(st["against"]),
+        "stance_undecided": float(st["undecided"]),
+        "stance_mean": st["mean"],
+        "stance_spread": st["spread"],
     }
 
 
@@ -868,7 +933,8 @@ def _apply_post_round(
             npc_copy["x"], npc_copy["y"] = move_updates[npc_id]
         updated_npcs.append(npc_copy)
 
-    indicators = _compute_economic_indicators(updated_npcs, all_events, current_round, max_rounds)
+    kind = entities[0].get("kind", "policy") if entities else "policy"
+    indicators = _compute_economic_indicators(updated_npcs, all_events, current_round, max_rounds, kind)
     return updated_npcs, updated_rels, influence_log, indicators
 
 

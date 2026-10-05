@@ -24,6 +24,9 @@ class SimState(TypedDict):
     num_npcs: int
     map_id: NotRequired[str]
     economic_indicators: dict[str, float]
+    # Declared so LangGraph keeps it: undeclared keys are silently dropped, which left the frontend's
+    # influence view and the keep/compromise/adopt log permanently empty (research E3/F41).
+    influence_events: NotRequired[list[dict[str, Any]]]
     memory_streams: dict[str, list[dict[str, Any]]]
     npc_stream_callback: NotRequired[Callable[[list[dict[str, Any]]], Awaitable[None]] | None]
     npc_added_callback: NotRequired[Callable[[dict[str, Any]], Awaitable[None]] | None]

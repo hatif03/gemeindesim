@@ -1,0 +1,114 @@
+[
+ {
+  "case": "grounded integer",
+  "utterance": "Der Steuerfuss steigt auf 124 %.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Der Steuerfuss steigt auf 124 %.",
+  "correct": true
+ },
+ {
+  "case": "Swiss thousands sep",
+  "utterance": "Bei 80'000 CHF Einkommen sind es 240 CHF.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Bei 80'000 CHF Einkommen sind es 240 CHF.",
+  "correct": true
+ },
+ {
+  "case": "decimal comma in DE text (std DE)",
+  "utterance": "Der Kredit beträgt 4,8 Millionen.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Der Kredit beträgt 4,8 Millionen.",
+  "correct": true
+ },
+ {
+  "case": "typographic apostrophe thousands",
+  "utterance": "Sparauftrag von 400’000 CHF.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Sparauftrag von 400’000 CHF.",
+  "correct": true
+ },
+ {
+  "case": "narrow nbsp thousands (fr)",
+  "utterance": "économies de 400 000 CHF",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "économies de 400 000 CHF",
+  "correct": true
+ },
+ {
+  "case": "correct derived: 240/12=20 per month",
+  "utterance": "Das sind 20 CHF pro Monat.",
+  "flagged": true,
+  "should_flag": false,
+  "ungrounded": [
+   "20"
+  ],
+  "output": "Das sind [n] CHF pro Monat.",
+  "correct": false
+ },
+ {
+  "case": "correct derived: 124-118=6",
+  "utterance": "Das sind 6 Punkte mehr.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Das sind 6 Punkte mehr.",
+  "correct": true
+ },
+ {
+  "case": "hallucinated percent",
+  "utterance": "Die Steuern steigen um 15 %.",
+  "flagged": true,
+  "should_flag": true,
+  "ungrounded": [
+   "15"
+  ],
+  "output": "Die Steuern steigen um [n] %.",
+  "correct": true
+ },
+ {
+  "case": "hallucinated amount",
+  "utterance": "Die Gemeinde spart 2 Millionen CHF.",
+  "flagged": false,
+  "should_flag": true,
+  "ungrounded": [],
+  "output": "Die Gemeinde spart 2 Millionen CHF.",
+  "correct": false
+ },
+ {
+  "case": "substring collision (4 in 124)",
+  "utterance": "Ich zahle 4 Franken mehr, bei 124 %.",
+  "flagged": false,
+  "should_flag": true,
+  "ungrounded": [],
+  "output": "Ich zahle 4 Franken mehr, bei 124 %.",
+  "correct": false
+ },
+ {
+  "case": "year grounded",
+  "utterance": "Seit 2019 unverändert.",
+  "flagged": false,
+  "should_flag": false,
+  "ungrounded": [],
+  "output": "Seit 2019 unverändert.",
+  "correct": true
+ },
+ {
+  "case": "spelled-out number",
+  "utterance": "Sechzig Prozent der Haushalte sind betroffen.",
+  "flagged": false,
+  "should_flag": true,
+  "ungrounded": [],
+  "output": "Sechzig Prozent der Haushalte sind betroffen.",
+  "correct": false
+ }
+]

@@ -12,7 +12,7 @@ numbers say.
 
 GemeindeSim is a generative-agent town simulation (Park et al. 2023 memory/retrieve/reflect/plan/act; Peralta et al. 2022 opinion dynamics) running on Apertus 1.5-70B. Users paste a Swiss municipal policy (bilingual Steuerfuss sample in `data/`) or an English tariff scenario. Residents act on a Phaser map with chat, move, protest, mood, and price events. Apertus emits schema-valid JSON; the application owns retrieval, dashboard arithmetic, validation, and social math.
 
-Headline eval: offline schema fixtures 20/20. Live 70B Linden run (5 NPCs, 3 rounds): PolicyAnalysis valid (`controversy=medium`, `kind=vote`), DE/FR in-character chat on the map, economic report with no vote recommendation.
+Headline eval (measured, `research/`, logged calls): on 49 real resident prompts the instruction-placeholder example gives 49/49 schema-valid first attempts on both sizes (the original gate: 86 % on the 70B); 112/112 utterances in the resident's language; on identical seeds v2.1 vs the first version: cited ids that exist 0 → 99–100 %, ballot question present in the resident prompt 13–30 % → 100 %, reports asserting an invented outcome 12/30 → 0/30. Model limits we measured: no parallel tool calls (11/11), thinking unusable with JSON mode, `T=0` not reproducible, 4 requests in flight, yes-biased and authority-deferential electorate on 54 real Swiss votes. Details: `docs/research/`.
 
 Judge briefing: `docs/FOR-JUDGES.md`.
 
@@ -33,10 +33,10 @@ policy upload → chunk/retrieve → parse → NPCs → N× run_round → Socket
 ## 3. Use of Apertus
 
 - **Model:** `apertus-v1.5-70b` (gateway id); `apertus-v1.5-8b` on overflow
-- **How:** `json` mode (thinking off, `response_format: json_object`, filled example object) for rounds, personas, and the economic report. Optional thinking pre-pass for hard explanations, never combined with tools. One language per completion; cross-language chat uses a separate translation call.
+- **How:** `json` mode (thinking off, `response_format: json_object`, a three-event example with `<instruction>` placeholders in the resident's language) for rounds, personas, stance arguments and the economic report. No thinking pre-pass is wired (the helper exists, unused); thinking is never combined with JSON mode (it silently skips the reasoning, research E1). One language per completion; cross-language chat uses a separate translation call. The model **voices**; the application **owns** the stance, the household arithmetic (a deterministic calculator) and the sources (validated citation labels).
 - **Where:** Hack Apertus hosted endpoint for development; production story = Swiss provider or on-prem vLLM.
 
-Concurrency is a semaphore around completions (not native parallel `tool_calls`). Dashboard metrics are computed in code. Probe details: `docs/PROBE-AND-PLAN.md`.
+Concurrency is a semaphore (default 4: the hosted gateway returns 429 above ≈ 4 in flight) around completions, not native parallel `tool_calls`; a 429 is retried on the same model. Dashboard metrics are computed in code. Probe details: `docs/PROBE-AND-PLAN.md` (replicated and corrected in `docs/research/`).
 
 ## 4. Data
 
@@ -44,13 +44,26 @@ Synthetic bilingual Linden Steuerfuss/school-credit excerpts (`data/steuerfuss_l
 
 ## 5. Evaluation
 
-Offline pytest: schema fixtures, mood enum mapping, numeral grounding, language detection (`src/backend/tests/test_apertus_gate.py`, `test_eval_schema.py`).
+Offline pytest (116 tests; 48 pin a research finding, `tests/test_research_fixes.py`). The earlier "schema fixtures 20/20" validated hand-written objects, not model output, and is no longer cited.
 
-Live 70B (hackathon gateway, 3 October 2026): parse ~13s; 5 personalities; 3 rounds with 9–10 events each; reflections produced 3 insights per reflecting NPC; economic report narrative ~11s. Residents used Swiss names and mixed DE/FR chat (e.g. tenant Steuerfuss discussion vs. French shop-owner reply).
+Measured on the live hackathon gateway (5 October 2026; every call logged in `research/results/`; method and caveats in `docs/research/05-paper-draft.md`):
+
+| Question | Result |
+| --- | --- |
+| Structured output on 49 real resident prompts | 49/49 first-attempt valid (both sizes) with `<instruction>` example; old gate 86 % on the 70B (nulls in string fields) |
+| Language fidelity | 112/112 utterances in the resident's language |
+| Retrieval / grounding, baseline → v2.1 | ballot question in prompt 13–30 % → 100 %; valid citations 0 → 99–100 % |
+| Report (6 objectives × 5 samples) | invented outcome 12/30 → 0/30; explicit vote advice 0/30 before and after |
+| Swiss civic facts (15 questions) | 70B 12/15, 8B 9/15; both wrong on *Steuerfuss* and on 4 000 × 6 % |
+| Stance when asked directly | 15/15 "yes" under every persona condition, also with a balanced booklet (stance is therefore code-owned) |
+| 54 real federal votes, ballot title only | simulated yes-share 34–37 pp too high; Spearman 0.25–0.38 (70B personas); Federal Council position alone: 0.63 |
+| Throughput | 4 requests in flight; 70B ≈ 156 tok/s, 8B ≈ 555 tok/s at that limit |
+
+Baseline vs v2.1 on identical seeds (5 residents × 3 rounds; 70B n = 3, 8B n = 2): events 27 → 33 (70B), 15 → 30 (8B); self-introductions 29 % → 2 %; influence log 0 → 49 outcomes (it had been silently dropped).
 
 ## 6. Limitations
 
-Apertus does not emit parallel tool calls in one completion; thinking markers stay in `content` on this gateway; factual recall is mid-pack so numbers must appear in the retrieved pack. Swarm remains code-side initiator scoring. German/French administrative register still needs native-speaker review.
+Model: no parallel tool calls in one completion (11/11); thinking markers stay in `content` and thinking is skipped under JSON mode; `temperature 0` is not reproducible; a strong *yes* default and near-total deference to an official recommendation (8B: 98 %); elementary Swiss facts and arithmetic are unreliable, so numbers come from the corpus or the calculator. Application: **not a vote predictor** (54 real votes; only a weak signal after bias correction); the stance prior weights are assumptions, not calibrated; the Linden sample (1.6 k characters per language) does not stress retrieval; n is small (3 and 2 simulations per group, 15 residents in population tests). German/French register still needs native-speaker review (Swiss orthography is enforced in code). Gateway behaviour must be re-probed on a local vLLM before claiming sovereign parity. Open defects: `price_pressure` indicator is always 0, `invoke_llm_think` is unused. Swarm remains code-side initiator scoring.
 
 ## 7. Reproducibility
 

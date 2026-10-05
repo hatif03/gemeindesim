@@ -458,6 +458,19 @@ export function EconomicReportModal({
                 >
                   {report.summary}
                 </p>
+                {report.stance_summary?.initial && report.stance_summary?.final && (
+                  <p
+                    className="mt-3 max-w-4xl text-[11px] font-mono leading-6"
+                    style={{ color: "#8B7355" }}
+                    data-testid="report-stance"
+                  >
+                    Stance poll (for / undecided / against): start {report.stance_summary.initial.for}/
+                    {report.stance_summary.initial.undecided}/{report.stance_summary.initial.against} → end{" "}
+                    {report.stance_summary.final.for}/{report.stance_summary.final.undecided}/
+                    {report.stance_summary.final.against} of {report.stance_summary.final.n} residents. A small
+                    fictional town, not a forecast of the vote.
+                  </p>
+                )}
               </div>
 
               <Divider label="Analysis" />

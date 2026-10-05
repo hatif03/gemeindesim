@@ -1,5 +1,17 @@
 # Apertus probe and GemeindeSim plan
 
+> **Erratum, 5 October 2026.** This document is the 2 October *plan*. The probes were replicated with n = 11 per cell and
+> the plan was audited against the code in [`research/`](research/README.md); where they disagree, the research record
+> wins. Corrections: (1) §4.2 parallel tool calls: confirmed (11/11 per model), also with `tool_choice="required"`;
+> (2) "Tool calling and thinking are officially mutually exclusive": a request with both is *accepted* (one call, no
+> visible reasoning); what really cannot be combined is **thinking + `json_object`** (reasoning silently skipped);
+> (3) §6.3 "filled example object": the shipped gate used a *placeholder* instance, a filled example is parroted by the
+> 8B (53 %), and `<instruction>` placeholders are what we now use (E2/E2b); (4) §6.4 "calculator": it did not exist and
+> now does (`graph/calculator.py`); (5) §6.4 "a numeral check drops any numeral not in the pack": the gate passed 8/12
+> edge cases and is now 10/12; (6) §8 "temperature 0, regression run": `T=0` is not reproducible on this endpoint (3 and 5
+> distinct outputs from 5 identical prompts); (7) §10 "rate limits were not measured": the gateway allows ≈ 4 requests in
+> flight, the plan assumed 6.
+
 Reference for the **GemeindeSim** build (`C:\Users\mdhat\Desktop\gemeindesim`). Written 2 October 2026 after live calls against the Hack Apertus inference endpoint.
 
 GemeindeSim is a generative-agent town-sim (memory, rounds, a Phaser map, economic events) running on Apertus 1.5. The research foundations are Park et al. 2023 (*Generative Agents: Interactive Simulacra of Human Behavior*, arXiv:2304.03442) and Peralta et al. 2022 (opinion dynamics). The model is used for what Apertus 1.5 is actually good at: multilingual instruction following, long context, and a single structured step. Everything it is weak at stays in our code. We do not strip game features because of model limits; we put a gate in front of the model.

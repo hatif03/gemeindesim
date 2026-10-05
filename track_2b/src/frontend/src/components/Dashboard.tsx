@@ -18,6 +18,11 @@ interface DashboardProps {
   phase: number;
   round: number;
   maxRounds: number;
+  /**
+   * Hide the template's tariff-economy bars (egg price, prices, unemployment, interest rate, businesses).
+   * They are heuristics over moods and mean nothing for a municipal vote, so votes show only unrest and support.
+   */
+  hideEconomy?: boolean;
 }
 
 /* ─── Severity helpers ─── */
@@ -86,6 +91,7 @@ export function Dashboard({
   phase,
   round,
   maxRounds,
+  hideEconomy = false,
 }: DashboardProps) {
   return (
     <div
@@ -113,6 +119,8 @@ export function Dashboard({
 
       {/* Stats */}
       <div className="flex flex-col px-1 py-1">
+        {!hideEconomy && (
+          <>
         <PixelStatBar
           icon={<EggIcon />}
           label="Egg Index"
@@ -149,6 +157,8 @@ export function Dashboard({
           fillRatio={normalizeInterestRate(metrics.interestRate)}
           trend={computeTrend(metricsHistory, (m) => m.interestRate)}
         />
+          </>
+        )}
         <PixelStatBar
           icon={<FistIcon />}
           label="Social Unrest"
@@ -158,18 +168,20 @@ export function Dashboard({
           fillRatio={metrics.socialUnrest}
           trend={computeTrend(metricsHistory, (m) => m.socialUnrest)}
         />
-        <PixelStatBar
-          icon={<ShopIcon />}
-          label="Businesses Open"
-          value={metrics.businessSurvival}
-          formatValue={(v) => `${(v * 100).toFixed(0)}%`}
-          severity={zeroOneSeverity(metrics.businessSurvival)}
-          fillRatio={metrics.businessSurvival}
-          trend={computeTrend(metricsHistory, (m) => m.businessSurvival)}
-        />
+        {!hideEconomy && (
+          <PixelStatBar
+            icon={<ShopIcon />}
+            label="Businesses Open"
+            value={metrics.businessSurvival}
+            formatValue={(v) => `${(v * 100).toFixed(0)}%`}
+            severity={zeroOneSeverity(metrics.businessSurvival)}
+            fillRatio={metrics.businessSurvival}
+            trend={computeTrend(metricsHistory, (m) => m.businessSurvival)}
+          />
+        )}
         <PixelStatBar
           icon={<CrownIcon />}
-          label="Gov. Approval"
+          label={hideEconomy ? "Support" : "Gov. Approval"}
           value={metrics.govApproval}
           formatValue={(v) => `${(v * 100).toFixed(0)}%`}
           severity={zeroOneSeverity(metrics.govApproval)}

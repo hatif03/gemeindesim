@@ -124,6 +124,9 @@ export function adaptEvent(
     usedSourceIds: Array.isArray(backendEvent.data?.used_source_ids)
       ? (backendEvent.data.used_source_ids as string[])
       : undefined,
+    sources: Array.isArray(backendEvent.data?.sources)
+      ? (backendEvent.data.sources as { id: string; text: string }[])
+      : undefined,
     data: backendEvent.data,
   };
 }

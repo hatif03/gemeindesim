@@ -50,10 +50,10 @@ Default model: **`apertus-v1.5-70b`** at `temperature: 0`. The 8B is a fallback 
 
 Implementation lives in `src/backend/graph/llm.py`:
 
-- Filled **example JSON instance** in the prompt (not a JSON Schema dump — the model echoes schemas).
+- An **example JSON instance** in the prompt (not a JSON Schema dump — the model echoes schemas). Measured (research E2/E2b, 49 real prompts): a placeholder example (`"..."`, `0`) is echoed; a *filled* example is parroted (8B copied 53 % of its dialogue); **instruction placeholders** (`<what you do, one sentence>`) gave 0 % copying. The example also sets the event mix, so we choose it on purpose.
 - Strip `<|inner_prefix|>…<|inner_suffix|>` (and `<think>`) so reasoning never reaches the UI.
 - Balanced-object scan, trailing-comma strip, Pydantic validate, **one repair call**, then a deterministic in-character fallback so a round cannot stall.
-- **Semaphore** (`LLM_CONCURRENCY`, default 6) around completions. Parallelism is many requests, not one message with many tools.
+- **Semaphore** (`LLM_CONCURRENCY`, default **4**) around completions. Parallelism is many requests, not one message with many tools. The gateway answers HTTP 429 above ≈ 4 requests in flight (research E10); on 429 we back off and retry the *same* model (the earlier code silently switched to the 8B, which collapses event diversity).
 
 LangGraph nodes:
 
@@ -70,11 +70,41 @@ Prompts are XML-tagged, one language per system line, with a short official-term
 
 **Tools.** We do **not** let the model fan out tools. Retrieval is a Python function on a closed lexical corpus (`graph/corpus.py`). If we ever expose a single tool, `tool_choice` is forced to that name. A planner that needs three lookups returns JSON `{"steps": [...]}`; the executor runs those lookups in code.
 
-**Opinion dynamics (code, not LLM).** After chats, we apply Deffuant bounded confidence, Baumann controversy drift, and keep/compromise/adopt from Chacoma & Zanette (via Peralta et al. 2022). Influence uses relationship type × strength. Chat radius is Chebyshev distance ≤ 2. The model does not update `political_leaning` by fiat.
+**Stance (code, not LLM).** Each resident has a `stance ∈ [−1, 1]` on the question, computed once in code from the measure's ideological valence × the resident's leaning, the model's judged household impact and a *computed* cost (a small calculator reads the booklet's worked example and scales it by income band). Apertus writes the best argument for and against, in the resident's language; the code decides which one the resident holds. Why: asked directly, Apertus 1.5 answers *yes* for every resident (15/15, also with no persona and with a balanced corpus; research E11/E11c) and, re-asked at the end with the resident's own memories, turns 3 of 4 opponents into "yes" (E13).
+
+**Opinion dynamics (code, not LLM).** After chats, we apply Deffuant bounded confidence to the stance, Baumann controversy drift (only for residents who actually conversed — the earlier global drift polarised a *silent* town, E4) and keep/compromise/adopt from Chacoma & Zanette (via Peralta et al. 2022). Influence uses relationship type × strength. Chat radius is Chebyshev distance ≤ 2. The model does not update stance or `political_leaning` by fiat.
 
 **Dashboard math (code).** Egg Index, prices, unemployment, unrest, approval — computed from events, not generated as prose numbers.
 
 This split is the core product claim: **Apertus narrates one grounded step; the application decides, retrieves, computes, and checks.**
+
+## What we measured (5 October; full record in [`research/`](research/README.md))
+
+We used the town as a test bench for the model. Every number is from a logged run (`track_2b/research/`).
+
+| Finding | Evidence |
+| --- | --- |
+| Native parallel tool calls fail; forcing `tool_choice="required"` does not help; the 70B emits the second call as *text* | 11/11 trials per model (E1) |
+| Thinking + `json_object` silently skips the reasoning (the 70B then answers a trap puzzle wrongly in 15 tokens); tools + thinking is accepted but shows no reasoning | E1 |
+| `temperature: 0` is not reproducible | 5 identical prompts → 3 (70B) / 5 (8B) distinct outputs (E1) |
+| The hosted gateway tolerates **4** requests in flight (advertised 5); beyond that 429 | E10 |
+| German/French fidelity is excellent: every utterance stayed in the resident's language | 112/112 events (E3) |
+| Swiss civic knowledge is weak: both sizes define *Steuerfuss* as a rate on income and fail 4 000 × 6 % | 70B 12/15, 8B 9/15 (E7) |
+| Asked for a stance, every resident says **yes**, whatever the persona (also none, also with a balanced booklet) | 15/15 (E11, E11c) |
+| On 54 real federal votes the simulated electorate is 34–37 points too favourable; persona detail adds little; the 8B follows an official recommendation 98 % of the time; German prompts are 19 points more favourable than French | E8 (3 672 calls) |
+| Residents' *speech* leaned worried/against even though direct questioning says yes; the stance line controlled speech only for opponents. A reminder as the last prompt paragraph raised speech–stance agreement from ≈ 0.5 to 0.80 (70B) / 0.75 (8B) at no measurable cost; "undecided" residents still sound like opponents | E14, E15, E15b |
+| The model never gave explicit vote advice (0/30) but, with the old prompt, asserted an invented outcome ("the measure passed") in most reports | E9; fixed 12/30 → 0/30 (E9b) |
+| Citations were decorative (0 of 159 ids existed) and are now validated (99–100 %) | E3 |
+
+**What this changes in how we describe the product.** GemeindeSim is a bilingual, grounded *what-if explainer*, not a
+vote predictor, and not a source of Swiss facts. Apertus is the speaker; the application owns stance, arithmetic
+and sources. Corrections to earlier statements in this repo are listed in
+[`research/04-pitch-audit.md`](research/04-pitch-audit.md).
+
+**For the Apertus team** (things we could not resolve from outside): is the silent skipping of reasoning under
+`json_object` the intended vLLM behaviour? Is the 4-in-flight limit a gateway or a deployment property? Would a
+`reasoning` field be exposed (our splitter already no-ops)? Is the strong *yes* default on civic proposals a known
+effect of the charter alignment?
 
 ## Innovation we want reviewed
 

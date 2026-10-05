@@ -5,6 +5,7 @@
 The product **explains** official material and livelihood effects. It does not campaign, recommend a vote, or replace legal advice. Design aligns with the [Apertus Charter](https://www.apertus-ai.org/pages/charter/).
 
 **Judge briefing:** [docs/FOR-JUDGES.md](docs/FOR-JUDGES.md)  
+**Research record (measured limits of Apertus 1.5, validity tests, audit, paper draft):** [docs/research/](docs/research/README.md)  
 **Research foundations:** Park et al. 2023 (generative agents, arXiv:2304.03442); Park et al. 2024 interview grounding (arXiv:2411.10109); Peralta et al. 2022 (opinion dynamics); Apertus probe in `docs/PROBE-AND-PLAN.md`.
 
 ---

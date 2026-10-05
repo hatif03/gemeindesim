@@ -6,12 +6,13 @@ import asyncio
 import json
 import logging
 import re
+from collections import Counter
 from typing import Any, TypeVar
 
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, ValidationError
 
-from config import LLM_API_KEY, LLM_BASE_URL, LLM_CONCURRENCY, LLM_FALLBACK_NAME, LLM_NAME
+from config import LLM_API_KEY, LLM_BASE_URL, LLM_CONCURRENCY, LLM_FALLBACK_NAME, LLM_NAME, LLM_TEMPERATURE
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +23,9 @@ _INNER = re.compile(
     flags=re.DOTALL,
 )
 _SEMA: asyncio.Semaphore | None = None
+# Observability for the paper: how often did the gateway push back / did we downgrade?
+STATS: Counter[str] = Counter()
+_RATE_RETRIES = 6  # ponytail: fixed 1.5s..20s back-off; the hackathon gateway allows ~4 in flight
 
 
 def _semaphore() -> asyncio.Semaphore:
@@ -36,6 +40,7 @@ def get_llm(
     *,
     enable_thinking: bool = False,
     model: str | None = None,
+    temperature: float | None = None,
     **_kwargs: Any,
 ) -> ChatOpenAI:
     """Create a ChatOpenAI instance pointed at the configured Apertus endpoint.
@@ -47,7 +52,7 @@ def get_llm(
         "model": model or LLM_NAME,
         "api_key": LLM_API_KEY,
         "base_url": LLM_BASE_URL,
-        "temperature": 0,
+        "temperature": LLM_TEMPERATURE if temperature is None else temperature,
         "extra_body": {
             "chat_template_kwargs": {"enable_thinking": bool(enable_thinking)}
         },
@@ -208,13 +213,31 @@ def _schema_to_example(schema: dict[str, Any]) -> Any:
     return None
 
 
+def _status(exc: BaseException) -> int | None:
+    return getattr(exc, "status_code", None) or getattr(getattr(exc, "response", None), "status_code", None)
+
+
 async def _ainvoke(llm: ChatOpenAI, prompt: str) -> Any:
-    async with _semaphore():
+    """One completion in json_object mode. 429 -> back off and retry the SAME model (never
+    downgrade); the plain (non-json) call is only for endpoints that reject response_format."""
+    for attempt in range(_RATE_RETRIES):
         try:
-            json_llm = llm.bind(response_format={"type": "json_object"})
-            return await json_llm.ainvoke(prompt)
-        except Exception:
-            return await llm.ainvoke(prompt)
+            async with _semaphore():
+                try:
+                    return await llm.bind(response_format={"type": "json_object"}).ainvoke(prompt)
+                except Exception as exc:
+                    overloaded = _status(exc) in (429, 500, 502, 503, 504) or "timeout" in type(exc).__name__.lower()
+                    if overloaded:  # a second call would only add load exactly when the gateway is saturated
+                        raise
+                    STATS["json_mode_rejected"] += 1
+                    return await llm.ainvoke(prompt)
+        except Exception as exc:
+            if _status(exc) == 429 and attempt < _RATE_RETRIES - 1:
+                STATS["rate_limited"] += 1
+                await asyncio.sleep(min(20.0, 1.5 * 2**attempt))  # outside the semaphore
+                continue
+            raise
+    raise RuntimeError("unreachable")
 
 
 async def invoke_llm_structured(
@@ -222,6 +245,7 @@ async def invoke_llm_structured(
     response_model: type[T],
     max_tokens: int = 4096,
     llm: ChatOpenAI | None = None,
+    lang: str | None = None,
     **_kwargs: Any,
 ) -> T:
     """Invoke Apertus and parse the response into a Pydantic model.
@@ -231,14 +255,23 @@ async def invoke_llm_structured(
     if llm is None:
         llm = get_llm(max_tokens=max_tokens, enable_thinking=False)
 
-    schema = _flatten_schema(response_model.model_json_schema())
-    example = _schema_to_example(schema)
-    augmented_prompt = (
-        f"{prompt}\n\n"
-        f"Output ONLY the following JSON with the placeholder values filled in. "
-        f"No explanation, no reasoning, no other text — just the completed JSON:\n"
-        f"{json.dumps(example, indent=2)}"
-    )
+    # A model may supply its own example: the example is the behaviour policy (research E2/F22),
+    # so the generic placeholder ("...", 0, true) is only the default.
+    custom = getattr(response_model, "prompt_example", None)
+    example = (custom(lang) if lang else custom()) if callable(custom) else _schema_to_example(_flatten_schema(response_model.model_json_schema()))
+    shown = json.dumps(example, indent=2, ensure_ascii=False)
+    if callable(custom) and "events" in response_model.model_fields:  # wording validated in research E2b
+        augmented_prompt = (
+            f"{prompt}\n\nOutput ONLY a JSON object of this shape. Replace every <...> with your own content; "
+            f"use 1-3 events of the types that fit you (not necessarily the ones shown):\n{shown}"
+        )
+    else:
+        augmented_prompt = (
+            f"{prompt}\n\n"
+            f"Output ONLY the following JSON with the placeholder values filled in. "
+            f"No explanation, no reasoning, no other text — just the completed JSON:\n"
+            f"{shown}"
+        )
 
     logger.info(
         "LLM structured call → %s (prompt %d chars)",
@@ -275,8 +308,18 @@ async def invoke_llm_structured(
                         f"Invalid JSON:\n{content[:2000]}\n"
                         f"Error:\n{exc}"
                     )
+                elif isinstance(exc, json.JSONDecodeError):
+                    # identical prompt at temperature 0 repeats the same mistake; say what was wrong
+                    current_prompt = (
+                        f"{augmented_prompt}\n\nYour previous answer was not a JSON object. "
+                        f"Reply with the JSON object only, nothing before or after it."
+                    )
                 err = str(exc).lower()
-                if any(k in err for k in ("429", "rate", "overloaded", "timeout", "503")):
+                # Rate limits are handled (and retried on the same model) in _ainvoke; only a
+                # slow/unavailable gateway justifies the smaller model, and we count it.
+                if any(k in err for k in ("timeout", "timed out", "502", "503", "504", "overloaded")):
+                    STATS["downgraded_to_fallback_model"] += 1
+                    logger.warning("DOWNGRADE to %s after: %s", LLM_FALLBACK_NAME, exc)
                     llm = get_llm(
                         max_tokens=min(max_tokens, 2048),
                         enable_thinking=False,

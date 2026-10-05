@@ -60,6 +60,10 @@ export interface BackendNPC {
   life_story?: string;
   expert_reflection?: string;
   mood: BackendMood;
+  /** Code-owned stance on the question: -1 (against) .. +1 (for). Present in v2 backends. */
+  stance?: number;
+  stance_reason?: string;
+  impact?: "benefit" | "harm" | "mixed" | "none" | "";
   // Internal state from generative agents architecture (populated after round 1+)
   perception?: string;
   current_plan?: string;
@@ -245,6 +249,26 @@ export interface EconomicReport {
     bars: BarChartEntry[];
   };
   notable_events: string[];
+  /** Stance tallies computed in code at the start and end of the run (v2 backends). */
+  stance_summary?: {
+    initial?: StanceTally | null;
+    final?: StanceTally | null;
+  } | null;
+}
+
+export interface StanceTally {
+  for: number;
+  against: number;
+  undecided: number;
+  mean: number;
+  spread: number;
+  entropy_bits: number;
+  n: number;
+}
+
+export interface BackendSource {
+  id: string;
+  text: string;
 }
 
 export type WSMessage =

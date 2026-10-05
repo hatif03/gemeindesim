@@ -6,6 +6,8 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
+import { StancePanel } from "@/components/StancePanel";
+import { stancePoll } from "@/lib/stance";
 import { EconomicReportModal } from "@/components/EconomicReportModal";
 import { EventFeed } from "@/components/EventFeed";
 import { NPCInteractionModal } from "@/components/NPCInteractionModal";
@@ -771,14 +773,16 @@ function SimulateContent() {
 
       {/* Viewport-fixed dashboard so it stays fully visible instead of being clipped by the canvas area */}
       <div
-        className={`fixed bottom-3 right-3 z-40 pointer-events-auto ${focusMode ? "opacity-0 pointer-events-none" : ""}`}
+        className={`fixed bottom-3 right-3 z-40 pointer-events-auto flex flex-col gap-2 ${focusMode ? "opacity-0 pointer-events-none" : ""}`}
       >
+        <StancePanel npcs={sim.graphData.npcs} version={sim.graphData.version} />
         <Dashboard
           metrics={sim.metrics}
           metricsHistory={sim.metricsHistory}
           phase={sim.phase}
           round={sim.round}
           maxRounds={sim.maxRounds}
+          hideEconomy={stancePoll(sim.graphData.npcs) !== null}
         />
       </div>
 

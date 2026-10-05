@@ -29,6 +29,8 @@ export interface SimEvent {
   targetNpcId?: string;
   grounded?: boolean;
   usedSourceIds?: string[];
+  /** Passage text behind each valid citation (for the tooltip). */
+  sources?: { id: string; text: string }[];
   /** Arbitrary event-specific data (e.g. sentiment score for phase_change) */
   data?: Record<string, unknown>;
 }

@@ -206,13 +206,27 @@ export function EventFeed({ events, onEventClick }: EventFeedProps) {
                       {event.agentCategory}
                     </span>
                   )}
-                  {event.grounded && (
+                  {(event.sources && event.sources.length > 0
+                    ? event.sources
+                    : (event.usedSourceIds || []).map((id) => ({ id, text: "" }))
+                  ).map((src) => (
+                    <span
+                      key={src.id}
+                      className="text-[8px] font-mono tracking-wide"
+                      style={{ color: "#3E7C34", cursor: "help" }}
+                      title={src.text ? `${src.id}: ${src.text}` : src.id}
+                      data-testid="citation"
+                    >
+                      [{src.id.split("#").pop()}]
+                    </span>
+                  ))}
+                  {event.grounded === false && (
                     <span
                       className="text-[8px] font-mono uppercase tracking-wide"
-                      style={{ color: "#3E7C34" }}
-                      title={(event.usedSourceIds || []).join(", ")}
+                      style={{ color: "#B8860B" }}
+                      title="Quotes a figure without a valid citation"
                     >
-                      policy
+                      uncited
                     </span>
                   )}
                   <span

@@ -318,6 +318,45 @@ export function NPCProfileModal({ npc, onClose, onOpenChat }: NPCProfileModalPro
                 />
               </div>
             </div>
+            {typeof npc.stance === "number" && (
+              <div className="flex flex-col gap-1" data-testid="npc-stance">
+                <div className="flex items-center justify-between">
+                  <span
+                    className="text-[9px] font-mono uppercase tracking-widest"
+                    style={{ color: "#A0824A" }}
+                  >
+                    Stance on the question
+                  </span>
+                  <span
+                    className="text-[9px] font-mono"
+                    style={{ color: npc.stance > 0.15 ? "#3E7C34" : npc.stance < -0.15 ? "#B83A52" : "#7A6A48" }}
+                  >
+                    {npc.stance > 0.15 ? "for" : npc.stance < -0.15 ? "against" : "undecided"} ({npc.stance >= 0 ? "+" : ""}
+                    {npc.stance.toFixed(2)})
+                  </span>
+                </div>
+                {/* Bar: left half = against (red), right half = for (green) */}
+                <div
+                  className="relative h-2 w-full overflow-hidden"
+                  style={{ background: "#E8D5A3", border: "1px solid #C4A46C", borderRadius: "2px" }}
+                >
+                  <div
+                    className="absolute top-0 h-full"
+                    style={
+                      npc.stance < 0
+                        ? { right: "50%", width: `${Math.abs(npc.stance) * 50}%`, background: "#B83A52" }
+                        : { left: "50%", width: `${npc.stance * 50}%`, background: "#3E7C34" }
+                    }
+                  />
+                  <div className="absolute top-0 h-full w-px" style={{ left: "50%", background: "#C4A46C" }} />
+                </div>
+                {npc.stance_reason && (
+                  <p className="text-[9px] font-mono leading-snug" style={{ color: "#6B4C2A" }}>
+                    {npc.stance_reason}
+                  </p>
+                )}
+              </div>
+            )}
             <StatRow label="Position" value={`(${npc.x}, ${npc.y})`} />
           </div>
         </div>

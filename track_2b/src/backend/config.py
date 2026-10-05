@@ -37,10 +37,15 @@ LLM_NAME = os.environ.get("LLM_NAME", "apertus-v1.5-70b")
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "https://hackapertus.livemap.sh/v1")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "")
 LLM_FALLBACK_NAME = os.environ.get("LLM_FALLBACK_NAME", "apertus-v1.5-8b")
+# The hackathon gateway answers 429 above ~4 requests in flight (research E10), so default to 4.
 try:
-    LLM_CONCURRENCY = max(1, int(os.environ.get("LLM_CONCURRENCY", "6")))
+    LLM_CONCURRENCY = max(1, int(os.environ.get("LLM_CONCURRENCY", "4")))
 except ValueError:
-    LLM_CONCURRENCY = 6
+    LLM_CONCURRENCY = 4
+try:
+    LLM_TEMPERATURE = float(os.environ.get("LLM_TEMPERATURE", "0"))
+except ValueError:
+    LLM_TEMPERATURE = 0.0
 
 if not LLM_API_KEY:
     warnings.warn("LLM_API_KEY is not set — LLM calls will fail", stacklevel=1)

@@ -12,6 +12,7 @@ Given the policy text below, perform a thorough analysis and extract structured 
 <dimension name="stakeholders">People, groups, or institutions impacted. Include a mix of powerful actors (corporations, government bodies) and everyday people (workers, consumers, small business owners).</dimension>
 <dimension name="economic_impacts">Be specific. Think about employment, prices, trade, investment, innovation, housing, wages, and inequality. Include both intended and unintended consequences.</dimension>
 <dimension name="controversy_level">How politically divisive is this policy? Consider who wins and who loses.</dimension>
+<dimension name="ideological_valence">A number from -1 to 1: which political side would usually favour this measure? -1 = left/progressive voters, +1 = right/conservative voters, 0 = no clear lean. Example: a tax increase for schools is about -0.4; a tax cut is about 0.5.</dimension>
 </dimensions>
 
 <policy_text>
@@ -38,7 +39,8 @@ Respond ONLY with valid JSON (no markdown fences, no commentary):
   "sectors": ["Manufacturing", "Retail", "Agriculture"],
   "stakeholders": ["Factory workers face job displacement", "Small business owners bear higher input costs", "Consumers see rising prices"],
   "economic_impacts": ["Consumer prices rise 5-10% in the short term", "Domestic manufacturing employment grows long-term", "Trade deficits narrow as imports become more expensive"],
-  "controversy_level": "high"
+  "controversy_level": "high",
+  "ideological_valence": -0.4
 }}
 </output_format>"""
 
@@ -87,7 +89,7 @@ You are writing the personality for a resident of {town}.
 <character_facts>
 Name: {name}
 Gender: {gender}
-Role: {role} (FIXED — profession and bio must match this role; do not change it)
+Role: {role} (FIXED — profession and bio must match this role; do not change it. "tenant" = rents their home, any job; "worker" = employed in a trade or factory; "municipal_employee" = works for the Gemeinde)
 Language: {lang} (write bio, persona, beliefs, life_story in this language only)
 Income: {income_level}
 Political leaning: {political_leaning} (-1 = far left, 1 = far right)
@@ -100,7 +102,7 @@ MBTI: {mbti}
 
 <task>
 Given these fixed attributes, write this person's personality. Their profession and interests should be grounded in the policy world above.
-BE SPECIFIC. Avoid generic traits. Give them unique, potentially polarizing beliefs and at least one controversial idea they truly believe in (even if they keep it secret).
+BE SPECIFIC. Avoid generic traits. Vary the background: not everyone grew up in {town} or studied at the same school; use Swiss terms (Matura, Berufslehre, Fachhochschule, Gemeinderat), never German-German ones (Abitur, Gesamtschule). Give them unique, potentially polarizing beliefs and at least one controversial idea they truly believe in (even if they keep it secret).
 Also write a short interview-style life story (as if they told you about childhood, work, family, and what this policy means for them) and one expert reflection paragraph (as a social psychologist) about how they might react.
 </task>
 
@@ -161,6 +163,7 @@ Policy affecting your town (retrieved passages — quote numbers only if they ap
 
 Policy summary: {policy_summary}
 Round {current_round}/{max_rounds}. {round_context}
+Your position on the question right now: {stance_line}
 
 Nearby people (within 2 tiles):
 {nearby_npcs}
@@ -177,13 +180,15 @@ Choose 1-3 events from these types. Be specific, personal, and in-character — 
 If Nearby is empty, do NOT chat: move toward someone you know, and/or mood_shift / protest / price_change.
 Prefer at least two events when it fits (for example move + mood_shift, or chat + price_change).
 Shopkeepers and business owners may emit price_change. Workers, tenants, and activists may protest.
-- "chat": speak to someone in the Nearby list → target_npc_id (their ID), dialogue (your exact words), message (what you do), used_source_ids (ids in [brackets] you used)
+- "chat": speak to someone in the Nearby list → target_npc_id (their ID in [brackets]), dialogue (your exact words), message (what you do), used_source_ids (labels such as "P1", "P3" of the passages above that your words rely on; [] if none)
 - "move": go somewhere → to_x, to_y (grid coords), message (where and why)
 - "protest": take public action → message (what you do and why)
 - "mood_shift": emotional shift → new_mood (angry/anxious/worried/neutral/hopeful/excited only), message
 - "price_change": change a price → message (what you change and why)
 
-Chat targets must be in the Nearby list. Stay in character. new_mood must be one of: angry, anxious, worried, neutral, hopeful, excited."""
+Chat targets must be in the Nearby list. You already know the people listed above: never introduce yourself or repeat your own name or job, continue naturally from your memories. Stay in character. new_mood must be one of: angry, anxious, worried, neutral, hopeful, excited.
+
+{stance_binding}"""
 
 REFLECTION_PROMPT = """\
 You are {npc_name}, a {npc_profession} in {town}. Below are your recent memories and experiences from the policy simulation.
@@ -213,6 +218,7 @@ You are an economic reporter writing the final post-game summary for a simulatio
 
 <task>
 Write a concise but concrete report about how the policy affected people's livelihoods, the town's mood, and the biggest downstream impacts. Use the simulation evidence below. Do not invent metrics or events that are not supported by the evidence. Do not recommend how anyone should vote.
+The vote or decision has NOT taken place and this simulation does not predict its result: never say the measure was approved, rejected, passed or implemented; describe what it would change and who would feel it (conditional: "würde", "serait", "would"). Write the whole report in {report_language}.
 </task>
 
 <focus>
@@ -233,6 +239,10 @@ Write a concise but concrete report about how the policy affected people's livel
 <simulation_aggregates>
 {aggregate_summary}
 </simulation_aggregates>
+
+<resident_stance_poll>
+{stance_summary}
+</resident_stance_poll>
 
 <trend_context>
 {trend_context}

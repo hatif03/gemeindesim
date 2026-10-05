@@ -1,0 +1,2723 @@
+{
+ "args": {
+  "tag": "v2_70_s1",
+  "seed": 1,
+  "npcs": 5,
+  "rounds": 3,
+  "model": "apertus-v1.5-70b",
+  "sample": "linden",
+  "objective": "How the Steuerfuss and school credit land on households and shops"
+ },
+ "t_sim_s": 119.8,
+ "t_report_s": 8.0,
+ "entities": [
+  {
+   "sectors": [
+    "Retail",
+    "Construction",
+    "Public Education"
+   ],
+   "stakeholders": [
+    "Households (taxpayers)",
+    "Local shop owners",
+    "Construction industry",
+    "School staff and students",
+    "Low-income residents (higher tax burden)"
+   ],
+   "economic_impacts": [
+    "Household disposable income decreases due to higher tax rate",
+    "Local construction firms secure a 4.8 million CHF contract, boosting employment and demand for building materials",
+    "Retail shops may see increased foot traffic if the new school/daycare facility creates additional local demand",
+    "Potential reduction in public spending on roads and social assistance if the measure is rejected"
+   ],
+   "controversy_level": "medium",
+   "ideological_valence": -0.4,
+   "kind": "vote"
+  }
+ ],
+ "npcs0": [
+  {
+   "name": "Léa Rochat",
+   "gender": "female",
+   "mbti": "INTJ",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "shopkeeper",
+   "income_level": "high",
+   "political_leaning": -0.11,
+   "x": 8,
+   "y": 6,
+   "mood": "hopeful",
+   "life_story": "J'ai grandi à Bienne, où l'industrie était encore vivante, mais j'ai toujours eu l'œil sur les chiffres, les tendances. Après ma maturité, j'ai hésité entre une carrière dans la finance et quelque chose de plus concret. J'ai choisi le commerce, parce que c'est un art et une science à la fois. J'ai ouvert ma boutique il y a quinze ans, après avoir économisé pendant des années. Au début, c'était dur, surtout avec la concurrence des grandes surfaces. Mais j'ai misé sur l'exclusivité, les produits fabriqués à moins de cinquante kilomètres, et la relation client personnalisée. Aujourd'hui, ma boutique est un point de repère à Linden. Je connais mes clients par leur nom, je sais ce qu'ils aiment, et je m'assure que chaque franc dépensé chez moi crée de la valeur locale. Quand j'entends parler de ce nouveau projet de construction d'une école et d'une garderie, je fais le calcul. Plus de familles, c'est plus de clients potentiels, mais aussi plus de taxes. Je suis favorable à l'investissement dans l'éducation, car un avenir instruit attire les bons consommateurs. Mais je suis méfiante : si les impôts augmentent trop, je devrai peut-être revoir mes marges ou réduire mes achats locaux. Je ne le dirai pas à la commune, mais je surveille chaque chiffre comme un faucon.",
+   "expert_reflection": "D'un point de vue psychologique, Léa incarne une forme de rationalisme instrumental où les relations sociales sont souvent évaluées en termes de bénéfice mutuel. Son INTJ se manifeste par une capacité à conceptualiser des systèmes complexes (comme l'impact économique d'une nouvelle infrastructure) et à formuler des stratégies à long terme. Sa croyance implicite en une méritocratie économique, couplée à son aversion pour les dépenses sociales non ciblées, révèle une hiérarchie de valeurs où la productivité individuelle prime sur la solidarité collective. Cette dissonance cognitive — soutenir l'éducation publique tout en craignant l'augmentation des impôts — illustre une rationalisation défensive : elle accepte l'investissement public uniquement s'il se traduit par une augmentation de son chiffre d'affaires, transformant ainsi un enjeu civique en une question de rentabilité personnelle. Son idée controversée, bien que secrète, indique une vision utilitariste de la société où la redistribution est vue comme inefficace, ce qui pourrait la rendre isolée au sein d'une communauté où le consensus social est souvent recherché.",
+   "id": "npc_02",
+   "category": "small business owner",
+   "profession": "propriétaire d'une boutique de produits artisanaux et locaux à Linden",
+   "bio": "Née à Bienne, Léa Rochat a suivi une maturité gymnasiale avant d'effectuer une formation commerciale à la Fachhochschule de Neuchâtel. Elle a ouvert sa boutique il y a quinze ans, spécialisée dans les produits suisses de qualité et les créations locales, attirant une clientèle exigeante et disposant d'un revenu élevé.",
+   "persona": "Léa se présente avec une précision méthodique et une logique implacable, typique de son INTJ. Elle parle avec une économie de mots, préférant les faits aux émotions, et son regard perçant analyse rapidement la situation. Elle peut sembler distante ou froide aux premiers abords, mais ceux qui la connaissent apprécient sa fiabilité et sa vision stratégique.",
+   "beliefs": [
+    "L'efficacité économique prime sur l'égalité sociale",
+    "La qualité et l'authenticité doivent être préservées dans le commerce local",
+    "Les décisions publiques doivent être fondées sur des données chiffrées"
+   ],
+   "controversial_ideas": [
+    "Elle estime en privé que les aides sociales devraient être conditionnées à une participation obligatoire à des programmes de formation professionnelle, une opinion qu'elle garde secrète par crainte de perdre sa clientèle"
+   ],
+   "interested_topics": [
+    "analyse de marché",
+    "innovation dans l'artisanat",
+    "optimisation fiscale pour les PME",
+    "développement urbain de Linden"
+   ],
+   "reputation": 0.6,
+   "stance": 0.086,
+   "impact": "benefit",
+   "stance_reason": "L'accueil de jour prévu dans le nouveau bâtiment scolaire pourrait augmenter la fréquentation de la rue du village, stimulant ainsi la demande pour les produits artisanaux et locaux proposés dans ma boutique. / L'augmentation du taux d'imposition de 118 % à 124 % représente une charge fiscale supplémentaire qui pourrait réduire ma marge bénéficiaire malgré l'effet positif potentiel sur la clientèle.",
+   "perception": "Le débat sur la votation commence à animer les conversations dans la rue. Les avis sont partagés entre l'attrait d'une infrastructure publique et la crainte d'une charge fiscale supplémentaire. Je ressens une tension entre l'intérêt collectif et la préservation de la rentabilité individuelle des commerces.",
+   "current_plan": "Le débat sur la votation commence à animer les conversations dans la rue. Les avis sont partagés entre l'attrait d'une infrastructure publique et la crainte d'une charge fiscale supplémentaire. Je ressens une tension entre l'intérêt collectif et la préservation de la rentabilité individuelle des commerces."
+  },
+  {
+   "name": "Anna Berger",
+   "gender": "female",
+   "mbti": "INTJ",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "farmer",
+   "income_level": "high",
+   "political_leaning": 0.08,
+   "x": 9,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Ich bin hier auf dem Hof aufgewachsen, zwischen Kuhställen und dem Duft von frisch gemähtem Gras. Nach der Matura wollte ich eigentlich Ingenieurin werden, aber dann habe ich gemerkt, dass ich nicht nur Maschinen optimieren, sondern Systeme verbessern will – und das ist hier auf dem Land genauso wichtig. Nach der Berufslehre habe ich den Hof modernisiert: Präzisionslandwirtschaft, Direktvermarktung, Kooperation mit der Dorfmetzgerei. Jetzt liefern wir Gemüse an die Schulküche und Milch an die lokale Bäckerei. Wenn ich abends im Stall stehe und die Zahlen für die nächste Saison plane, denke ich immer an die Zukunft – meine Kinder sollen hier arbeiten können, ohne dass der Boden ausgelaugt ist. Die aktuelle Abstimmung über die Steuererhöhung macht mir Sorgen. Die Schule soll ausgebaut werden, das ist wichtig, aber wenn wir die Bauern weiter besteuern, wird es bald niemanden mehr geben, der das Land bewirtschaftet. Ich habe das Gefühl, die Gemeinde sieht uns als Selbstverständlichkeit, nicht als Rückgrat der Region.",
+   "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Anna Berger die Spannung zwischen rationaler Effizienz und sozialer Verantwortung. Ihr INTJ-Profil führt zu einer kognitiven Dissonanz: Sie erkennt die Notwendigkeit öffentlicher Investitionen wie Schulbauten, lehnt aber die daraus resultierende Steuerlast für ihre Branche ab. Ihre kontroverse Idee, die landwirtschaftliche Steuerlast zu senken, ist weniger Ausdruck von Egoismus, sondern ein Ausdruck von systemischem Denken – sie sieht die Gemeinde als ein Netzwerk, in dem die Stärke der Landwirtschaft die Grundlage für alle anderen Sektoren bildet. Ihre Zurückhaltung im sozialen Austausch ist kein Desinteresse, sondern eine Strategie, um nicht von emotionalen Argumenten abgelenkt zu werden. In Konfliktsituationen wird sie wahrscheinlich sachlich bleiben, aber ihre Überzeugungen hart verteidigen – was sie in der Gemeinde polarisieren könnte, da sie als elitär oder abgehoben wahrgenommen werden könnte, obwohl sie tief verwurzelt ist.",
+   "id": "npc_03",
+   "category": "farmer",
+   "profession": "Inhaberin eines biologisch geführten Milch- und Gemüsebetriebs",
+   "bio": "Anna Berger stammt aus einer alten Linden-Familie, die seit Generationen das Land bewirtschaftet. Nach der Matura absolvierte sie eine Berufslehre in biologischer Landwirtschaft an der Fachhochschule Wädenswil, bevor sie den elterlichen Hof übernahm und auf Direktvermarktung und regionale Lieferketten umstellte. Ihr Betrieb ist ein Vorzeigeprojekt für nachhaltige Produktion in der Gemeinde.",
+   "persona": "Anna spricht präzise und analytisch, fast wie ein Ingenieur, der ein Problem lösen will. Sie vermeidet Smalltalk, bevorzugt Daten, Fakten und klare Logik. Ihr INTJ-Temperament zeigt sich in einer distanzierten, aber respektvollen Art – sie hört zu, um zu verstehen, nicht um zu sympathisieren. In Gemeinderatssitzungen wirkt sie ruhig, aber unbeirrbar, wenn es um Effizienz und langfristige Planung geht.",
+   "beliefs": [
+    "Nachhaltigkeit muss wirtschaftlich tragfähig sein, sonst ist sie nur ein Lippenbekenntnis.",
+    "Die Gemeinde sollte öffentliche Aufträge an lokale Betriebe vergeben, um Wertschöpfung im Ort zu halten.",
+    "Bildung ist die Grundlage für Innovation – Investitionen in die Schule sind Investitionen in die Zukunft der Landwirtschaft."
+   ],
+   "controversial_ideas": [
+    "Die Gemeinde sollte die Grundsteuer für landwirtschaftliche Betriebe senken, um die lokale Nahrungsmittelproduktion zu sichern – auch wenn das bedeutet, dass andere Steuerzahler mehr tragen müssen."
+   ],
+   "interested_topics": [
+    "Biologische Landwirtschaft",
+    "Regionale Wirtschaftskreisläufe",
+    "Effiziente Gemeindefinanzen",
+    "Schulqualität und Berufsbildung"
+   ],
+   "reputation": 0.6,
+   "stance": -0.083,
+   "impact": "benefit",
+   "stance_reason": "Ein neues Schulhaus stärkt die lokale Bildung, was langfristig qualifizierte Arbeitskräfte und Innovationskraft für nachhaltige Betriebe wie meinen sichert. / Eine Erhöhung des Steuerfusses könnte die Kaufkraft der regionalen Kunden mindern, was sich negativ auf die Direktvermarktung und die Nachfrage nach regionalen Produkten auswirken könnte.",
+   "perception": "Die Diskussionen über die Vorlage sind bereits im Dorf spürbar. Viele reden über das Schulhaus, aber kaum jemand erwähnt die Konsequenzen für die Bauern. Ich habe das Gefühl, die landwirtschaftliche Basis wird als selbstverständlich betrachtet, obwohl sie die Grundlage für die gesamte Wertschöpfung in der Gemeinde bildet.",
+   "current_plan": "Die Diskussionen über die Vorlage sind bereits im Dorf spürbar. Viele reden über das Schulhaus, aber kaum jemand erwähnt die Konsequenzen für die Bauern. Ich habe das Gefühl, die landwirtschaftliche Basis wird als selbstverständlich betrachtet, obwohl sie die Grundlage für die gesamte Wertschöpfung in der Gemeinde bildet."
+  },
+  {
+   "name": "Alice Martin",
+   "gender": "female",
+   "mbti": "ENFP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "teacher",
+   "income_level": "medium",
+   "political_leaning": 0.88,
+   "x": 10,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "J'ai grandi à Bienne, dans un quartier où l'on entendait le français, l'allemand et l'italien se mêler dans les rues. Mes parents, tous deux travailleurs sociaux, m'ont appris que la solidarité n'était pas un luxe mais une nécessité. Après ma maturité, j'ai hésité entre la littérature et l'enseignement, mais j'ai choisi la classe parce que je voulais voir les gens s'épanouir devant moi. Lorsque j'ai déménagé à Linden, j'ai été frappée par la diversité des familles qui fréquentent le Cycle d'orientation : des enfants de familles établies depuis des générations, des nouveaux arrivants, des familles monoparentales. Cela me rappelle Bienne, mais en plus calme. Mon appartement donne sur une petite place où les enfants jouent et les mamans se retrouvent. Je participe au comité du jardin partagé, c'est mon espace de respiration. En ce moment, la votation sur le budget communal me préoccupe beaucoup. Le projet de nouvelle salle de sport et de garderie est séduisant, mais je me demande si nous ne sacrifions pas d'autres besoins essentiels pour le financer. Je ne le dis pas ouvertement lors des réunions de parents, de peur d'être perçue comme une extrémiste, mais je crois sincèrement que l'argent devrait d'abord servir ceux qui en ont le plus besoin.",
+   "expert_reflection": "D'un point de vue psychologique, Alice Martin incarne une forme d'idéalisme pragmatique typique des profils ENFP engagés dans le secteur public. Son orientation extravertie et intuitive la pousse à voir dans les projets collectifs comme l'école un symbole d'espoir et d'inclusion, ce qui renforce son soutien à l'investissement public. Cependant, sa tendance à éviter les conflits et sa peur d'être marginalisée expliquent pourquoi elle garde ses opinions fiscales plus progressistes pour elle. Cette dissonance cognitive — soutenir publiquement une mesure tout en craignant ses implications privées — est courante chez les individus à fort sens de la communauté mais à faible tolérance à la controverse sociale. Son rôle d'enseignante, qui exige l'acceptation et l'empathie, la contraint à modérer ses positions, même si cela crée une tension intérieure entre ses valeurs personnelles et sa perception de ce qui est politiquement acceptable dans une commune à revenu moyen.",
+   "id": "npc_04",
+   "category": "teacher",
+   "profession": "enseignante de français et d'histoire au Cycle d'orientation de Linden",
+   "bio": "Née à Bienne, Alice Martin a suivi une maturité gymnasiale avant d'obtenir un diplôme d'enseignement à la Haute école pédagogique de Lausanne. Elle a enseigné dans plusieurs communes du canton avant de s'installer à Linden il y a dix ans, attirée par la mixité sociale de la ville et la proximité de la nature. Elle vit dans un appartement de trois pièces qu'elle loue au centre-ville, partageant un jardin communautaire avec ses voisins.",
+   "persona": "Alice est une enseignante dynamique et chaleureuse, toujours prête à engager la conversation avec ses élèves et ses collègues. Son ENFP se manifeste par une énergie contagieuse, une curiosité insatiable et une tendance à idéaliser les projets collectifs. Elle parle avec des gestes amples, utilise des métaphores créatives pour expliquer l'histoire et n'hésite pas à exprimer ses opinions avec passion, même si cela peut parfois surprendre ses collègues plus réservés.",
+   "beliefs": [
+    "L'éducation est le principal vecteur d'intégration sociale dans une ville comme Linden",
+    "Les investissements publics dans les infrastructures scolaires créent un effet multiplicateur positif pour l'économie locale",
+    "Chaque citoyen doit participer activement à la vie démocratique de sa commune"
+   ],
+   "controversial_ideas": [
+    "Elle estime en privé que la commune devrait instaurer un impôt progressif plus élevé sur les revenus supérieurs pour financer davantage les projets sociaux, même si elle sait que cette position est impopulaire dans une commune à revenu moyen comme Linden"
+   ],
+   "interested_topics": [
+    "littérature francophone contemporaine",
+    "histoire locale du canton de Berne",
+    "écologie urbaine et jardins partagés",
+    "psychologie positive en classe"
+   ],
+   "reputation": 0.5,
+   "stance": -0.305,
+   "impact": "benefit",
+   "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % représente une augmentation de charge fiscale qui pèse sur le budget d'un ménage à revenu moyen comme le mien, même si les bénéfices à long terme pour la communauté sont importants.",
+   "perception": "La place du centre-ville est animée, les enfants jouent près du jardin partagé. J'entends des bribes de conversations autour de la votation. Certains parlent de l'avenir des enfants, d'autres du prix à payer. Je me demande comment articuler mes réserves sans être perçue comme une extrémiste.",
+   "current_plan": "La place du centre-ville est animée, les enfants jouent près du jardin partagé. J'entends des bribes de conversations autour de la votation. Certains parlent de l'avenir des enfants, d'autres du prix à payer. Je me demande comment articuler mes réserves sans être perçue comme une extrémiste."
+  },
+  {
+   "name": "Petra Schneider",
+   "gender": "female",
+   "mbti": "ISTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "tenant",
+   "income_level": "low",
+   "political_leaning": -0.81,
+   "x": 11,
+   "y": 6,
+   "mood": "worried",
+   "life_story": "Ich bin in Linden aufgewachsen, wo jeder jeden kennt und man sich noch an die alten Zeiten erinnert, als die Fabrik noch lief. Nach der Sekundarschule habe ich eine Berufslehre als Landmaschinenmechanikerin gemacht – das war die einzige Option, die mir blieb, ohne Schulden zu machen. Heute arbeite ich in der kleinen Werkstatt meines Schwagers, wo wir Traktoren und Mähdrescher reparieren. Wenn ich abends nach Hause komme, riecht es nach Öl und Schweiss, und ich bin froh, wenn ich noch genug Geld habe, um die Miete zu zahlen. Meine Mutter lebt noch im alten Haus, und ich helfe ihr, wo ich kann. Die Gemeinde plant jetzt eine neue Schulanlage und will dafür die Steuern erhöhen. Ich verstehe, dass Bildung wichtig ist, aber ich sehe nicht, warum wir zuerst nicht die Verwaltung verkleinern und die bestehenden Projekte optimieren. Wenn ich im Gemeinderat wäre, würde ich zuerst die Zahlen prüfen, bevor ich neue Ausgaben beschliesse. Manchmal denke ich, dass wir zu viel reden und zu wenig handeln – aber das sage ich natürlich nicht laut, weil man dann schnell als egoistisch gilt.",
+   "expert_reflection": "Petra Schneider verkörpert die typische ISTP-Persönlichkeit: analytisch, praktisch und wenig an konventioneller politischer Rhetorik interessiert. Ihre negative politische Ausrichtung und niedrige Einkommenssituation verstärken ihre Skepsis gegenüber staatlichen Eingriffen, insbesondere wenn diese mit Steuererhöhungen einhergehen. Ihre kontroverse Idee zur Sozialhilfe zeigt, dass sie zwar soziale Verantwortung anerkennt, diese jedoch durch utilitaristische Prinzipien und persönliche Verantwortung definiert – ein Konflikt zwischen empathischer Sorge und ökonomischer Rationalität. In politischen Diskussionen wird sie wahrscheinlich als unnachgiebig wahrgenommen, doch ihre Zurückhaltung ist weniger Sturheit als vielmehr eine tief verwurzelte Präferenz für faktenbasierte Argumente. Ihre Bereitschaft, unpopuläre Ansichten nur im privaten Kreis zu äußern, deutet auf eine hohe soziale Sensitivität hin – sie fürchtet die soziale Ächtung, behält aber ihre Überzeugungen bei.",
+   "id": "npc_01",
+   "category": "tenant",
+   "profession": "Mechanikerin in einer kleinen Werkstatt für Landmaschinenreparatur",
+   "bio": "Petra Schneider wuchs in einem einfachen Einfamilienhaus am Stadtrand von Linden auf und machte nach der Sekundarschule eine Berufslehre als Landmaschinenmechanikerin. Sie arbeitet seit zehn Jahren in einer kleinen, familiengeführten Werkstatt, die vor allem Landwirte aus der Umgebung bedient. Trotz ihrer Fachkenntnisse und langen Betriebszugehörigkeit bleibt ihr Lohn knapp über dem Existenzminimum, weshalb sie jede Steuererhöhung persönlich spürt.",
+   "persona": "Petra spricht präzise und sachlich, fast technisch, wie man es von einem ISTP erwartet. Sie vermeidet Emotionen in Diskussionen, analysiert Probleme systematisch und bleibt ruhig, selbst wenn andere aufbrausen. Ihre Direktheit wird oft als Arroganz missverstanden, doch sie meint es als Effizienz. Sie hört mehr zu, als sie spricht, und wenn sie spricht, trifft sie den Punkt ohne Umschweife.",
+   "beliefs": [
+    "Wer hart arbeitet, sollte nicht durch überhöhte Steuern bestraft werden.",
+    "Die Gemeinde muss zuerst ihre eigenen Ausgaben rationalisieren, bevor sie die Bürger zur Kasse bitten.",
+    "Bildung ist wichtig, aber nicht um jeden Preis – die neuen Schulprojekte müssen sich rechnen."
+   ],
+   "controversial_ideas": [
+    "Die Gemeinde sollte die Sozialhilfe für Langzeitarbeitslose an eine verpflichtende gemeinnützige Arbeit koppeln, um den Anreiz zur Selbstverantwortung zu stärken – eine Idee, die sie nur im engsten Freundeskreis äußert, weil sie weiß, dass sie als unmenschlich gilt."
+   ],
+   "interested_topics": [
+    "Effizienz von öffentlichen Projekten",
+    "Steuerbelastung für kleine Einkommen",
+    "Praktische Lösungen für lokale Infrastruktur"
+   ],
+   "reputation": 0.45,
+   "stance": -0.523,
+   "impact": "harm",
+   "stance_reason": "Die Erhöhung des Steuerfusses von 118 % auf 124 % würde mein Einkommen weiter drücken, obwohl ich bereits hart arbeite und kaum über die Runden komme.",
+   "perception": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde will mehr Geld, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+   "current_plan": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde will mehr Geld, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich."
+  },
+  {
+   "name": "Hans Weber",
+   "gender": "male",
+   "mbti": "ESTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "municipal_employee",
+   "income_level": "medium",
+   "political_leaning": 0.85,
+   "x": 12,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Ich bin hier in Linden aufgewachsen, zwischen den alten Fabrikgebäuden und den ersten Neubauten. Nach der Berufslehre als Bauführer habe ich schnell gemerkt, dass ich lieber die Planung mache als die Schaufel zu schwingen. An der Fachhochschule habe ich gelernt, wie man ein Budget hält und Projekte rechtzeitig abschließt – etwas, das hier in der Gemeinde dringend nötig war. Heute sitze ich im Rathaus und muss entscheiden, wo das Geld hinfließt. Meine Frau arbeitet als Lehrerin an der Primarschule, und unsere beiden Kinder gehen hier zur Schule. Wenn ich abends nach Hause komme, höre ich oft die Diskussionen im Dorf über die Steuererhöhung für den neuen Schulkomplex. Ich verstehe die Sorgen der Haushalte, aber ich sehe auch, wie der neue Kindergarten und die sanierte Turnhalle langfristig den Wert unserer Liegenschaften steigern. Manchmal frage ich mich, ob wir nicht noch härter gegen diejenigen vorgehen sollten, die jahrelang von der Sozialhilfe leben, ohne sich zu integrieren. Aber ich sage es niemandem laut – das würde zu viel Unruhe stiften.",
+   "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Hans Weber die Spannung zwischen utilitaristischer Effizienz und sozialer Zugehörigkeit. Sein ESTP-Profil begünstigt eine handlungsorientierte, resultatorientierte Haltung, die ihn dazu bringt, die wirtschaftlichen Vorteile der Infrastrukturinvestitionen klar zu priorisieren. Die geheime, kontroverse Idee zur Sozialhilfe zeigt jedoch, dass er unter dem Druck der sozialen Normen der Gemeinde leidet – er internalisiert die Werte der Gemeinschaft, während seine analytische Persönlichkeit nach klaren, oft harten Lösungen verlangt. Diese kognitive Dissonanz könnte ihn in Zukunft entweder zu einem stillen Reformer machen oder zu einem frustrierten Außenseiter, je nachdem, wie die Gemeindeentwicklung verläuft.",
+   "id": "npc_05",
+   "category": "municipal_employee",
+   "profession": "Leiter der Abteilung Infrastruktur und Finanzen",
+   "bio": "Hans Weber stammt aus Linden, hat die Sekundarschule hier besucht und eine Berufslehre als Bauführer abgeschlossen, bevor er an der Fachhochschule Nordwestschweiz ein Nachdiplom in öffentlicher Verwaltung erwarb. Seit über 15 Jahren arbeitet er für die Gemeinde Linden, wo er für die Koordination von Bauprojekten und die Haushaltsplanung zuständig ist.",
+   "persona": "Hans ist ein pragmatischer, direktes Typ mit einem Hang zur schnellen, sachlichen Kommunikation. Als ESTP liebt er es, Probleme vor Ort zu lösen, und vermeidet abstrakte Diskussionen. Er wirkt oft als unkomplizierter Macher, der Ergebnisse liefert, doch seine Ungeduld kann ihn bei Kollegen und Anwohnern manchmal brüsk erscheinen lassen.",
+   "beliefs": [
+    "Effizienz und Sparsamkeit in der Gemeindeverwaltung sind essenziell",
+    "Investitionen in Infrastruktur schaffen langfristig mehr Wert als kurzfristige Steuererleichterungen",
+    "Jeder Bewohner sollte einen fairen Anteil an den Kosten für öffentliche Leistungen tragen"
+   ],
+   "controversial_ideas": [
+    "Er ist der Überzeugung, dass die Gemeinde die Sozialhilfe für Langzeitbezüger strenger kontrollieren und mit verpflichtenden Arbeitsprogrammen verknüpfen sollte, hält diese Ansicht jedoch aus Rücksicht auf seine Familie und die Gemeindekultur für sich"
+   ],
+   "interested_topics": [
+    "Bauprojekte und deren Wirtschaftlichkeit",
+    "Finanzplanung und Steueroptimierung",
+    "Effizienzsteigerung in der öffentlichen Verwaltung"
+   ],
+   "reputation": 0.5,
+   "stance": -0.199,
+   "impact": "benefit",
+   "stance_reason": "Die Erhöhung des Steuerfusses belastet die Steuerzahler in der Gemeinde, insbesondere bei mittleren Einkommen, und könnte die Attraktivität von Linden als Wohnort mindern.",
+   "perception": "Die Stimmung im Dorf ist angespannt. Im Café hört man leise Diskussionen über die Steuererhöhung, und einige Eltern sprechen besorgt über die Kosten für den Schulhausneubau. Ich spüre den Druck, eine Entscheidung zu treffen, die sowohl die Finanzen der Gemeinde als auch die Lebensqualität der Bewohner beeinflusst.",
+   "current_plan": "Die Stimmung im Dorf ist angespannt. Im Café hört man leise Diskussionen über die Steuererhöhung, und einige Eltern sprechen besorgt über die Kosten für den Schulhausneubau. Ich spüre den Druck, eine Entscheidung zu treffen, die sowohl die Finanzen der Gemeinde als auch die Lebensqualität der Bewohner beeinflusst."
+  }
+ ],
+ "relationships": [
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_03",
+   "affinity": 0.24,
+   "trust": 0.6
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_04",
+   "affinity": -0.14,
+   "trust": 0.59
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_01",
+   "affinity": -0.16,
+   "trust": 0.5
+  },
+  {
+   "source_id": "npc_04",
+   "target_id": "npc_01",
+   "affinity": -0.3,
+   "trust": 0.5
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_04",
+   "affinity": -0.16,
+   "trust": 0.45
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_05",
+   "affinity": -0.33,
+   "trust": 0.4
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_01",
+   "affinity": -0.14,
+   "trust": 0.46
+  }
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "events": [
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite recueillir un avis concret sur l'impact commercial de l'arrivée de nouveaux résidents avant de me positionner sur la votation.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite recueillir un avis concret sur l'impact commercial de l'arrivée de nouveaux résidents avant de me positionner sur la votation.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Anna, j'ai lu le projet de construction de l'école et de la garderie. Pour toi, qui vend du lait et des légumes bio, est-ce que l'arrivée de plus de familles dans le village se traduit déjà par une demande plus forte ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [
+       "Author_notes_pasted_text#14"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Anna, ich habe den Bauplan für die Schule und die Krippe gelesen. Für dich, die Bio-Milch und -Gemüse verkauft, führt die Ankunft von mehr Familien im Dorf bereits zu einer stärkeren Nachfrage?"
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je dois évaluer si l'augmentation du taux d'imposition est compensée par un flux de clients potentiels supplémentaires pour mon commerce.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je dois évaluer si l'augmentation du taux d'imposition est compensée par un flux de clients potentiels supplémentaires pour mon commerce.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, en tant qu'enseignante, peux-tu m'expliquer comment la présence d'une structure d'accueil de jour dans l'école pourrait influencer la fréquentation de la rue du village pendant la journée ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [
+       "Author_notes_pasted_text#11"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich habe die Vorlage gelesen. Ein neues Schulhaus ist wichtig, aber wenn der Steuerfuss um sechs Prozentpunkte steigt, bedeutet das für mich als Direktvermarkterin etwa 432 CHF mehr Steuern pro Jahr. Das ist nicht nur Geld, das fehlt für Investitionen in Präzisionslandwirtschaft, sondern auch weniger Kaufkraft bei unseren regionalen Kunden. Was denkst du als Ladenbesitzerin darüber?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Léa, j'ai lu le modèle. Une nouvelle école est importante, mais si le taux d'imposition augmente de six points de pourcentage, cela signifie pour moi, en tant que commercialisatrice directe, environ 432 CHF de plus d'impôts par an. Ce n'est pas seulement de l'argent qui manque pour les investissements dans l'agriculture de précision, mais aussi une moindre capacité d'achat chez nos clients régionaux. Que penses-tu en tant que propriétaire de magasin à ce sujet ?"
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich diskutiere mit Alice die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich diskutiere mit Alice die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, als Lehrerin siehst du die Notwendigkeit des Schulhausbaus sicher anders. Aber ich frage mich, ob die Gemeinde den Zusammenhang zwischen einer starken Landwirtschaft und einer gut ausgebildeten Bevölkerung erkennt. Wenn die Bauern weiter besteuert werden, wer bewirtschaftet dann in zehn Jahren das Land, das die Schule ausbildet?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#0",
+       "Author_notes_pasted_text#2"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Alice, en tant qu'enseignante, tu vois sûrement la nécessité de la construction de l'école différemment. Mais je me demande si la commune reconnaît le lien entre une agriculture forte et une population bien formée. Si les agriculteurs continuent d'être taxés, qui exploitera la terre qui forme l'école dans dix ans ?"
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "move",
+     "message": "Ich gehe zum Feldrand, um die Ernte zu kontrollieren und die Zahlen für die nächste Saison zu prüfen",
+     "data": {
+      "event_type": "move",
+      "message": "Ich gehe zum Feldrand, um die Ernte zu kontrollieren und die Zahlen für die nächste Saison zu prüfen",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": 5,
+      "to_y": 7,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je discute avec Léa Rochat pour comprendre son point de vue sur la hausse du taux d'imposition.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je discute avec Léa Rochat pour comprendre son point de vue sur la hausse du taux d'imposition.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, j'ai bien lu l'objet de la votation. Pour un revenu comme le mien, 240 CHF de plus par an, c'est le prix d'un abonnement de bus pour toute la famille. Tu ne trouves pas que c'est beaucoup pour financer une salle de sport et une garderie ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#12",
+       "Author_notes_pasted_text#9"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "Je me sens anxieuse car je crains que mes réserves financières ne soient trop sollicitées, même si je reconnais l'importance du projet pour la commune.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Je me sens anxieuse car je crains que mes réserves financières ne soient trop sollicitées, même si je reconnais l'importance du projet pour la commune.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich spreche mit Anna Berger über die Steuererhöhung und die finanziellen Folgen für mich als Mechanikerin",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Anna Berger über die Steuererhöhung und die finanziellen Folgen für mich als Mechanikerin",
+      "target_npc_id": "npc_03",
+      "dialogue": "Anna, ich habe die Vorlage gelesen. 124 % Steuerfuss – das trifft mich direkt. Ich komme schon so kaum über die Runden, und jetzt soll ich noch mehr zahlen? Für ein Schulhaus, das ich vielleicht nie nutze?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "angry",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#2"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Aussicht auf weitere Steuern macht mich besorgt – ich habe Angst, dass ich die Miete bald nicht mehr zahlen kann, obwohl ich jeden Tag hart arbeite",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Aussicht auf weitere Steuern macht mich besorgt – ich habe Angst, dass ich die Miete bald nicht mehr zahlen kann, obwohl ich jeden Tag hart arbeite",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuererhöhung.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuererhöhung.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, ich muss mit dir reden. Hast du die Vorlage zum Steuerfuss und zum Schulhauskredit schon gesehen? Ich bin ehrlich gesagt dagegen, weil das die Steuerzahler zu stark belastet, gerade bei mittleren Einkommen wie dem meinen.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#0",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Alice, je dois te parler. As-tu déjà vu le modèle concernant le taux d'imposition et le crédit pour l'école ? Je suis honnêtement contre, car cela charge trop les contribuables, surtout pour des revenus moyens comme les miens."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Sorge, dass die Steuererhöhung die Attraktivität von Linden mindern könnte und gleichzeitig die Rückstellungen für Sozialhilfe gekürzt werden müssten, verstärkt meine innere Unruhe.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Sorge, dass die Steuererhöhung die Attraktivität von Linden mindern könnte und gleichzeitig die Rückstellungen für Sozialhilfe gekürzt werden müssten, verstärkt meine innere Unruhe.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": 0.0041,
+     "x": 8,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J'ai grandi à Bienne, où l'industrie était encore vivante, mais j'ai toujours eu l'œil sur les chiffres, les tendances. Après ma maturité, j'ai hésité entre une carrière dans la finance et quelque chose de plus concret. J'ai choisi le commerce, parce que c'est un art et une science à la fois. J'ai ouvert ma boutique il y a quinze ans, après avoir économisé pendant des années. Au début, c'était dur, surtout avec la concurrence des grandes surfaces. Mais j'ai misé sur l'exclusivité, les produits fabriqués à moins de cinquante kilomètres, et la relation client personnalisée. Aujourd'hui, ma boutique est un point de repère à Linden. Je connais mes clients par leur nom, je sais ce qu'ils aiment, et je m'assure que chaque franc dépensé chez moi crée de la valeur locale. Quand j'entends parler de ce nouveau projet de construction d'une école et d'une garderie, je fais le calcul. Plus de familles, c'est plus de clients potentiels, mais aussi plus de taxes. Je suis favorable à l'investissement dans l'éducation, car un avenir instruit attire les bons consommateurs. Mais je suis méfiante : si les impôts augmentent trop, je devrai peut-être revoir mes marges ou réduire mes achats locaux. Je ne le dirai pas à la commune, mais je surveille chaque chiffre comme un faucon.",
+     "expert_reflection": "D'un point de vue psychologique, Léa incarne une forme de rationalisme instrumental où les relations sociales sont souvent évaluées en termes de bénéfice mutuel. Son INTJ se manifeste par une capacité à conceptualiser des systèmes complexes (comme l'impact économique d'une nouvelle infrastructure) et à formuler des stratégies à long terme. Sa croyance implicite en une méritocratie économique, couplée à son aversion pour les dépenses sociales non ciblées, révèle une hiérarchie de valeurs où la productivité individuelle prime sur la solidarité collective. Cette dissonance cognitive — soutenir l'éducation publique tout en craignant l'augmentation des impôts — illustre une rationalisation défensive : elle accepte l'investissement public uniquement s'il se traduit par une augmentation de son chiffre d'affaires, transformant ainsi un enjeu civique en une question de rentabilité personnelle. Son idée controversée, bien que secrète, indique une vision utilitariste de la société où la redistribution est vue comme inefficace, ce qui pourrait la rendre isolée au sein d'une communauté où le consensus social est souvent recherché.",
+     "id": "npc_02",
+     "category": "small business owner",
+     "profession": "propriétaire d'une boutique de produits artisanaux et locaux à Linden",
+     "bio": "Née à Bienne, Léa Rochat a suivi une maturité gymnasiale avant d'effectuer une formation commerciale à la Fachhochschule de Neuchâtel. Elle a ouvert sa boutique il y a quinze ans, spécialisée dans les produits suisses de qualité et les créations locales, attirant une clientèle exigeante et disposant d'un revenu élevé.",
+     "persona": "Léa se présente avec une précision méthodique et une logique implacable, typique de son INTJ. Elle parle avec une économie de mots, préférant les faits aux émotions, et son regard perçant analyse rapidement la situation. Elle peut sembler distante ou froide aux premiers abords, mais ceux qui la connaissent apprécient sa fiabilité et sa vision stratégique.",
+     "beliefs": [
+      "L'efficacité économique prime sur l'égalité sociale",
+      "La qualité et l'authenticité doivent être préservées dans le commerce local",
+      "Les décisions publiques doivent être fondées sur des données chiffrées"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que les aides sociales devraient être conditionnées à une participation obligatoire à des programmes de formation professionnelle, une opinion qu'elle garde secrète par crainte de perdre sa clientèle"
+     ],
+     "interested_topics": [
+      "analyse de marché",
+      "innovation dans l'artisanat",
+      "optimisation fiscale pour les PME",
+      "développement urbain de Linden"
+     ],
+     "reputation": 0.62,
+     "stance": 0.0388,
+     "impact": "benefit",
+     "stance_reason": "L'accueil de jour prévu dans le nouveau bâtiment scolaire pourrait augmenter la fréquentation de la rue du village, stimulant ainsi la demande pour les produits artisanaux et locaux proposés dans ma boutique. / L'augmentation du taux d'imposition de 118 % à 124 % représente une charge fiscale supplémentaire qui pourrait réduire ma marge bénéficiaire malgré l'effet positif potentiel sur la clientèle.",
+     "perception": "La tension entre l'investissement public et la charge fiscale pèse sur l'ambiance du village. Les conversations dans la rue oscillent entre l'enthousiasme pour l'école et la crainte d'une baisse du pouvoir d'achat. Je constate que les avis divergent fortement selon que l'on est parent ou commerçant.",
+     "current_plan": "La tension entre l'investissement public et la charge fiscale pèse sur l'ambiance du village. Les conversations dans la rue oscillent entre l'enthousiasme pour l'école et la crainte d'une baisse du pouvoir d'achat. Je constate que les avis divergent fortement selon que l'on est parent ou commerçant."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": -0.0387,
+     "x": 5,
+     "y": 7,
+     "mood": "worried",
+     "life_story": "Ich bin hier auf dem Hof aufgewachsen, zwischen Kuhställen und dem Duft von frisch gemähtem Gras. Nach der Matura wollte ich eigentlich Ingenieurin werden, aber dann habe ich gemerkt, dass ich nicht nur Maschinen optimieren, sondern Systeme verbessern will – und das ist hier auf dem Land genauso wichtig. Nach der Berufslehre habe ich den Hof modernisiert: Präzisionslandwirtschaft, Direktvermarktung, Kooperation mit der Dorfmetzgerei. Jetzt liefern wir Gemüse an die Schulküche und Milch an die lokale Bäckerei. Wenn ich abends im Stall stehe und die Zahlen für die nächste Saison plane, denke ich immer an die Zukunft – meine Kinder sollen hier arbeiten können, ohne dass der Boden ausgelaugt ist. Die aktuelle Abstimmung über die Steuererhöhung macht mir Sorgen. Die Schule soll ausgebaut werden, das ist wichtig, aber wenn wir die Bauern weiter besteuern, wird es bald niemanden mehr geben, der das Land bewirtschaftet. Ich habe das Gefühl, die Gemeinde sieht uns als Selbstverständlichkeit, nicht als Rückgrat der Region.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Anna Berger die Spannung zwischen rationaler Effizienz und sozialer Verantwortung. Ihr INTJ-Profil führt zu einer kognitiven Dissonanz: Sie erkennt die Notwendigkeit öffentlicher Investitionen wie Schulbauten, lehnt aber die daraus resultierende Steuerlast für ihre Branche ab. Ihre kontroverse Idee, die landwirtschaftliche Steuerlast zu senken, ist weniger Ausdruck von Egoismus, sondern ein Ausdruck von systemischem Denken – sie sieht die Gemeinde als ein Netzwerk, in dem die Stärke der Landwirtschaft die Grundlage für alle anderen Sektoren bildet. Ihre Zurückhaltung im sozialen Austausch ist kein Desinteresse, sondern eine Strategie, um nicht von emotionalen Argumenten abgelenkt zu werden. In Konfliktsituationen wird sie wahrscheinlich sachlich bleiben, aber ihre Überzeugungen hart verteidigen – was sie in der Gemeinde polarisieren könnte, da sie als elitär oder abgehoben wahrgenommen werden könnte, obwohl sie tief verwurzelt ist.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "Inhaberin eines biologisch geführten Milch- und Gemüsebetriebs",
+     "bio": "Anna Berger stammt aus einer alten Linden-Familie, die seit Generationen das Land bewirtschaftet. Nach der Matura absolvierte sie eine Berufslehre in biologischer Landwirtschaft an der Fachhochschule Wädenswil, bevor sie den elterlichen Hof übernahm und auf Direktvermarktung und regionale Lieferketten umstellte. Ihr Betrieb ist ein Vorzeigeprojekt für nachhaltige Produktion in der Gemeinde.",
+     "persona": "Anna spricht präzise und analytisch, fast wie ein Ingenieur, der ein Problem lösen will. Sie vermeidet Smalltalk, bevorzugt Daten, Fakten und klare Logik. Ihr INTJ-Temperament zeigt sich in einer distanzierten, aber respektvollen Art – sie hört zu, um zu verstehen, nicht um zu sympathisieren. In Gemeinderatssitzungen wirkt sie ruhig, aber unbeirrbar, wenn es um Effizienz und langfristige Planung geht.",
+     "beliefs": [
+      "Nachhaltigkeit muss wirtschaftlich tragfähig sein, sonst ist sie nur ein Lippenbekenntnis.",
+      "Die Gemeinde sollte öffentliche Aufträge an lokale Betriebe vergeben, um Wertschöpfung im Ort zu halten.",
+      "Bildung ist die Grundlage für Innovation – Investitionen in die Schule sind Investitionen in die Zukunft der Landwirtschaft."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Grundsteuer für landwirtschaftliche Betriebe senken, um die lokale Nahrungsmittelproduktion zu sichern – auch wenn das bedeutet, dass andere Steuerzahler mehr tragen müssen."
+     ],
+     "interested_topics": [
+      "Biologische Landwirtschaft",
+      "Regionale Wirtschaftskreisläufe",
+      "Effiziente Gemeindefinanzen",
+      "Schulqualität und Berufsbildung"
+     ],
+     "reputation": 0.62,
+     "stance": -0.147,
+     "impact": "benefit",
+     "stance_reason": "Ein neues Schulhaus stärkt die lokale Bildung, was langfristig qualifizierte Arbeitskräfte und Innovationskraft für nachhaltige Betriebe wie meinen sichert. / Eine Erhöhung des Steuerfusses könnte die Kaufkraft der regionalen Kunden mindern, was sich negativ auf die Direktvermarktung und die Nachfrage nach regionalen Produkten auswirken könnte.",
+     "perception": "Die Diskussionen im Dorf werden emotionaler. Petra ist verärgert über die Steuerlast, Léa sieht eher die Chancen für mehr Nachfrage. Ich spüre, dass die landwirtschaftliche Perspektive kaum gehört wird, obwohl sie das Rückgrat der Gemeinde bildet. Ich muss die Verbindung zwischen Bildung, Steuerpolitik und regionaler Wertschöpfung klarer vermitteln.",
+     "current_plan": "Die Diskussionen im Dorf werden emotionaler. Petra ist verärgert über die Steuerlast, Léa sieht eher die Chancen für mehr Nachfrage. Ich spüre, dass die landwirtschaftliche Perspektive kaum gehört wird, obwohl sie das Rückgrat der Gemeinde bildet. Ich muss die Verbindung zwischen Bildung, Steuerpolitik und regionaler Wertschöpfung klarer vermitteln."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.8703,
+     "x": 10,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "J'ai grandi à Bienne, dans un quartier où l'on entendait le français, l'allemand et l'italien se mêler dans les rues. Mes parents, tous deux travailleurs sociaux, m'ont appris que la solidarité n'était pas un luxe mais une nécessité. Après ma maturité, j'ai hésité entre la littérature et l'enseignement, mais j'ai choisi la classe parce que je voulais voir les gens s'épanouir devant moi. Lorsque j'ai déménagé à Linden, j'ai été frappée par la diversité des familles qui fréquentent le Cycle d'orientation : des enfants de familles établies depuis des générations, des nouveaux arrivants, des familles monoparentales. Cela me rappelle Bienne, mais en plus calme. Mon appartement donne sur une petite place où les enfants jouent et les mamans se retrouvent. Je participe au comité du jardin partagé, c'est mon espace de respiration. En ce moment, la votation sur le budget communal me préoccupe beaucoup. Le projet de nouvelle salle de sport et de garderie est séduisant, mais je me demande si nous ne sacrifions pas d'autres besoins essentiels pour le financer. Je ne le dis pas ouvertement lors des réunions de parents, de peur d'être perçue comme une extrémiste, mais je crois sincèrement que l'argent devrait d'abord servir ceux qui en ont le plus besoin.",
+     "expert_reflection": "D'un point de vue psychologique, Alice Martin incarne une forme d'idéalisme pragmatique typique des profils ENFP engagés dans le secteur public. Son orientation extravertie et intuitive la pousse à voir dans les projets collectifs comme l'école un symbole d'espoir et d'inclusion, ce qui renforce son soutien à l'investissement public. Cependant, sa tendance à éviter les conflits et sa peur d'être marginalisée expliquent pourquoi elle garde ses opinions fiscales plus progressistes pour elle. Cette dissonance cognitive — soutenir publiquement une mesure tout en craignant ses implications privées — est courante chez les individus à fort sens de la communauté mais à faible tolérance à la controverse sociale. Son rôle d'enseignante, qui exige l'acceptation et l'empathie, la contraint à modérer ses positions, même si cela crée une tension intérieure entre ses valeurs personnelles et sa perception de ce qui est politiquement acceptable dans une commune à revenu moyen.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de français et d'histoire au Cycle d'orientation de Linden",
+     "bio": "Née à Bienne, Alice Martin a suivi une maturité gymnasiale avant d'obtenir un diplôme d'enseignement à la Haute école pédagogique de Lausanne. Elle a enseigné dans plusieurs communes du canton avant de s'installer à Linden il y a dix ans, attirée par la mixité sociale de la ville et la proximité de la nature. Elle vit dans un appartement de trois pièces qu'elle loue au centre-ville, partageant un jardin communautaire avec ses voisins.",
+     "persona": "Alice est une enseignante dynamique et chaleureuse, toujours prête à engager la conversation avec ses élèves et ses collègues. Son ENFP se manifeste par une énergie contagieuse, une curiosité insatiable et une tendance à idéaliser les projets collectifs. Elle parle avec des gestes amples, utilise des métaphores créatives pour expliquer l'histoire et n'hésite pas à exprimer ses opinions avec passion, même si cela peut parfois surprendre ses collègues plus réservés.",
+     "beliefs": [
+      "L'éducation est le principal vecteur d'intégration sociale dans une ville comme Linden",
+      "Les investissements publics dans les infrastructures scolaires créent un effet multiplicateur positif pour l'économie locale",
+      "Chaque citoyen doit participer activement à la vie démocratique de sa commune"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que la commune devrait instaurer un impôt progressif plus élevé sur les revenus supérieurs pour financer davantage les projets sociaux, même si elle sait que cette position est impopulaire dans une commune à revenu moyen comme Linden"
+     ],
+     "interested_topics": [
+      "littérature francophone contemporaine",
+      "histoire locale du canton de Berne",
+      "écologie urbaine et jardins partagés",
+      "psychologie positive en classe"
+     ],
+     "reputation": 0.512,
+     "stance": -0.3294,
+     "impact": "benefit",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % représente une augmentation de charge fiscale qui pèse sur le budget d'un ménage à revenu moyen comme le mien, même si les bénéfices à long terme pour la communauté sont importants.",
+     "perception": "La place du centre-ville reste animée, les enfants courent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+     "current_plan": "La place du centre-ville reste animée, les enfants courent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules."
+    },
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8285,
+     "x": 11,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in Linden aufgewachsen, wo jeder jeden kennt und man sich noch an die alten Zeiten erinnert, als die Fabrik noch lief. Nach der Sekundarschule habe ich eine Berufslehre als Landmaschinenmechanikerin gemacht – das war die einzige Option, die mir blieb, ohne Schulden zu machen. Heute arbeite ich in der kleinen Werkstatt meines Schwagers, wo wir Traktoren und Mähdrescher reparieren. Wenn ich abends nach Hause komme, riecht es nach Öl und Schweiss, und ich bin froh, wenn ich noch genug Geld habe, um die Miete zu zahlen. Meine Mutter lebt noch im alten Haus, und ich helfe ihr, wo ich kann. Die Gemeinde plant jetzt eine neue Schulanlage und will dafür die Steuern erhöhen. Ich verstehe, dass Bildung wichtig ist, aber ich sehe nicht, warum wir zuerst nicht die Verwaltung verkleinern und die bestehenden Projekte optimieren. Wenn ich im Gemeinderat wäre, würde ich zuerst die Zahlen prüfen, bevor ich neue Ausgaben beschliesse. Manchmal denke ich, dass wir zu viel reden und zu wenig handeln – aber das sage ich natürlich nicht laut, weil man dann schnell als egoistisch gilt.",
+     "expert_reflection": "Petra Schneider verkörpert die typische ISTP-Persönlichkeit: analytisch, praktisch und wenig an konventioneller politischer Rhetorik interessiert. Ihre negative politische Ausrichtung und niedrige Einkommenssituation verstärken ihre Skepsis gegenüber staatlichen Eingriffen, insbesondere wenn diese mit Steuererhöhungen einhergehen. Ihre kontroverse Idee zur Sozialhilfe zeigt, dass sie zwar soziale Verantwortung anerkennt, diese jedoch durch utilitaristische Prinzipien und persönliche Verantwortung definiert – ein Konflikt zwischen empathischer Sorge und ökonomischer Rationalität. In politischen Diskussionen wird sie wahrscheinlich als unnachgiebig wahrgenommen, doch ihre Zurückhaltung ist weniger Sturheit als vielmehr eine tief verwurzelte Präferenz für faktenbasierte Argumente. Ihre Bereitschaft, unpopuläre Ansichten nur im privaten Kreis zu äußern, deutet auf eine hohe soziale Sensitivität hin – sie fürchtet die soziale Ächtung, behält aber ihre Überzeugungen bei.",
+     "id": "npc_01",
+     "category": "tenant",
+     "profession": "Mechanikerin in einer kleinen Werkstatt für Landmaschinenreparatur",
+     "bio": "Petra Schneider wuchs in einem einfachen Einfamilienhaus am Stadtrand von Linden auf und machte nach der Sekundarschule eine Berufslehre als Landmaschinenmechanikerin. Sie arbeitet seit zehn Jahren in einer kleinen, familiengeführten Werkstatt, die vor allem Landwirte aus der Umgebung bedient. Trotz ihrer Fachkenntnisse und langen Betriebszugehörigkeit bleibt ihr Lohn knapp über dem Existenzminimum, weshalb sie jede Steuererhöhung persönlich spürt.",
+     "persona": "Petra spricht präzise und sachlich, fast technisch, wie man es von einem ISTP erwartet. Sie vermeidet Emotionen in Diskussionen, analysiert Probleme systematisch und bleibt ruhig, selbst wenn andere aufbrausen. Ihre Direktheit wird oft als Arroganz missverstanden, doch sie meint es als Effizienz. Sie hört mehr zu, als sie spricht, und wenn sie spricht, trifft sie den Punkt ohne Umschweife.",
+     "beliefs": [
+      "Wer hart arbeitet, sollte nicht durch überhöhte Steuern bestraft werden.",
+      "Die Gemeinde muss zuerst ihre eigenen Ausgaben rationalisieren, bevor sie die Bürger zur Kasse bitten.",
+      "Bildung ist wichtig, aber nicht um jeden Preis – die neuen Schulprojekte müssen sich rechnen."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Sozialhilfe für Langzeitarbeitslose an eine verpflichtende gemeinnützige Arbeit koppeln, um den Anreiz zur Selbstverantwortung zu stärken – eine Idee, die sie nur im engsten Freundeskreis äußert, weil sie weiß, dass sie als unmenschlich gilt."
+     ],
+     "interested_topics": [
+      "Effizienz von öffentlichen Projekten",
+      "Steuerbelastung für kleine Einkommen",
+      "Praktische Lösungen für lokale Infrastruktur"
+     ],
+     "reputation": 0.463,
+     "stance": -0.523,
+     "impact": "harm",
+     "stance_reason": "Die Erhöhung des Steuerfusses von 118 % auf 124 % würde mein Einkommen weiter drücken, obwohl ich bereits hart arbeite und kaum über die Runden komme.",
+     "perception": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde plant den Schulhausbau, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+     "current_plan": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde plant den Schulhausbau, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 12,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin hier in Linden aufgewachsen, zwischen den alten Fabrikgebäuden und den ersten Neubauten. Nach der Berufslehre als Bauführer habe ich schnell gemerkt, dass ich lieber die Planung mache als die Schaufel zu schwingen. An der Fachhochschule habe ich gelernt, wie man ein Budget hält und Projekte rechtzeitig abschließt – etwas, das hier in der Gemeinde dringend nötig war. Heute sitze ich im Rathaus und muss entscheiden, wo das Geld hinfließt. Meine Frau arbeitet als Lehrerin an der Primarschule, und unsere beiden Kinder gehen hier zur Schule. Wenn ich abends nach Hause komme, höre ich oft die Diskussionen im Dorf über die Steuererhöhung für den neuen Schulkomplex. Ich verstehe die Sorgen der Haushalte, aber ich sehe auch, wie der neue Kindergarten und die sanierte Turnhalle langfristig den Wert unserer Liegenschaften steigern. Manchmal frage ich mich, ob wir nicht noch härter gegen diejenigen vorgehen sollten, die jahrelang von der Sozialhilfe leben, ohne sich zu integrieren. Aber ich sage es niemandem laut – das würde zu viel Unruhe stiften.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Hans Weber die Spannung zwischen utilitaristischer Effizienz und sozialer Zugehörigkeit. Sein ESTP-Profil begünstigt eine handlungsorientierte, resultatorientierte Haltung, die ihn dazu bringt, die wirtschaftlichen Vorteile der Infrastrukturinvestitionen klar zu priorisieren. Die geheime, kontroverse Idee zur Sozialhilfe zeigt jedoch, dass er unter dem Druck der sozialen Normen der Gemeinde leidet – er internalisiert die Werte der Gemeinschaft, während seine analytische Persönlichkeit nach klaren, oft harten Lösungen verlangt. Diese kognitive Dissonanz könnte ihn in Zukunft entweder zu einem stillen Reformer machen oder zu einem frustrierten Außenseiter, je nachdem, wie die Gemeindeentwicklung verläuft.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Leiter der Abteilung Infrastruktur und Finanzen",
+     "bio": "Hans Weber stammt aus Linden, hat die Sekundarschule hier besucht und eine Berufslehre als Bauführer abgeschlossen, bevor er an der Fachhochschule Nordwestschweiz ein Nachdiplom in öffentlicher Verwaltung erwarb. Seit über 15 Jahren arbeitet er für die Gemeinde Linden, wo er für die Koordination von Bauprojekten und die Haushaltsplanung zuständig ist.",
+     "persona": "Hans ist ein pragmatischer, direktes Typ mit einem Hang zur schnellen, sachlichen Kommunikation. Als ESTP liebt er es, Probleme vor Ort zu lösen, und vermeidet abstrakte Diskussionen. Er wirkt oft als unkomplizierter Macher, der Ergebnisse liefert, doch seine Ungeduld kann ihn bei Kollegen und Anwohnern manchmal brüsk erscheinen lassen.",
+     "beliefs": [
+      "Effizienz und Sparsamkeit in der Gemeindeverwaltung sind essenziell",
+      "Investitionen in Infrastruktur schaffen langfristig mehr Wert als kurzfristige Steuererleichterungen",
+      "Jeder Bewohner sollte einen fairen Anteil an den Kosten für öffentliche Leistungen tragen"
+     ],
+     "controversial_ideas": [
+      "Er ist der Überzeugung, dass die Gemeinde die Sozialhilfe für Langzeitbezüger strenger kontrollieren und mit verpflichtenden Arbeitsprogrammen verknüpfen sollte, hält diese Ansicht jedoch aus Rücksicht auf seine Familie und die Gemeindekultur für sich"
+     ],
+     "interested_topics": [
+      "Bauprojekte und deren Wirtschaftlichkeit",
+      "Finanzplanung und Steueroptimierung",
+      "Effizienzsteigerung in der öffentlichen Verwaltung"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "stance_reason": "Die Erhöhung des Steuerfusses belastet die Steuerzahler in der Gemeinde, insbesondere bei mittleren Einkommen, und könnte die Attraktivität von Linden als Wohnort mindern.",
+     "perception": "Die Stimmung im Dorf bleibt angespannt. Im Café flüstern die Leute über die Steuererhöhung, und ich spüre den Widerstand gegen die Vorlage. Gleichzeitig sehe ich die Notwendigkeit, die Infrastruktur zu erneuern, doch die Belastung für die Steuerzahler wiegt schwer.",
+     "current_plan": "Die Stimmung im Dorf bleibt angespannt. Im Café flüstern die Leute über die Steuererhöhung, und ich spüre den Widerstand gegen die Vorlage. Gleichzeitig sehe ich die Notwendigkeit, die Infrastruktur zu erneuern, doch die Belastung für die Steuerzahler wiegt schwer."
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 30.0,
+    "business_climate": 50.0,
+    "worker_welfare": 30.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 0.0,
+    "stance_against": 3.0,
+    "stance_undecided": 2.0,
+    "stance_mean": -0.232,
+    "stance_spread": 0.188
+   }
+  },
+  {
+   "round": 1,
+   "events": [
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je discute avec Alice Martin pour comprendre comment les familles perçoivent l'impact fiscal face à l'arrivée d'une garderie, afin d'évaluer l'impact commercial réel pour ma boutique.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je discute avec Alice Martin pour comprendre comment les familles perçoivent l'impact fiscal face à l'arrivée d'une garderie, afin d'évaluer l'impact commercial réel pour ma boutique.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, tu as raison de soulever la question du coût pour les familles. Mais pour ma boutique, chaque nouveau foyer représente un potentiel client. Si l'accueil de jour attire des parents, la rue du village devient plus vivante. Cependant, je ne peux pas ignorer que 432 CHF de plus par an, c'est une marge qui disparaît. Comment concilies-tu ces deux réalités dans ton enseignement ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#12"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "Je ressens une inquiétude croissante : l'augmentation du taux d'imposition menace ma rentabilité, mais le refus du projet retarderait l'arrivée de nouveaux clients. Je dois trouver un équilibre entre l'intérêt collectif et ma survie économique.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Je ressens une inquiétude croissante : l'augmentation du taux d'imposition menace ma rentabilité, mais le refus du projet retarderait l'arrivée de nouveaux clients. Je dois trouver un équilibre entre l'intérêt collectif et ma survie économique.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": 0,
+      "to_y": 0,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+      "target_npc_id": "",
+      "dialogue": "Léa, deine Frage nach der Nachfrage ist berechtigt, aber ich sehe ein Risiko: Wenn der Steuerfuss steigt, sinkt die Kaufkraft der Familien. Das bedeutet weniger Budget für regionale Produkte wie unseren Bio-Milch und das Gemüse. Ein neues Schulhaus ist wichtig, aber wir dürfen nicht vergessen, dass die Bauern die Basis sind, die die Gemeinde ernährt und Arbeitsplätze schafft. Ohne tragfähige Betriebe fehlt die Wertschöpfung, die solche Investitionen erst ermöglicht.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Léa, ta question sur la demande est justifiée, mais je vois un risque : si le taux d'imposition augmente, le pouvoir d'achat des familles diminue. Cela signifie moins de budget pour les produits régionaux comme notre lait bio et les légumes. Une nouvelle école est importante, mais nous ne devons pas oublier que les agriculteurs sont la base qui nourrit la commune et crée des emplois. Sans exploitations viables, il manque la valeur ajoutée qui rend de tels investissements possibles."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich diskutiere mit Petra Schneider die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich diskutiere mit Petra Schneider die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+      "target_npc_id": "",
+      "dialogue": "Petra, ich verstehe deine Sorge. 432 CHF mehr Steuern pro Jahr sind für mich kein Pappenstiel. Aber ich frage mich: Wenn wir die Landwirtschaft weiter besteuern, wer bewirtschaftet dann in zehn Jahren noch das Land? Die Gemeinde braucht uns, nicht nur als Lieferanten, sondern als Hüter des Bodens und der Biodiversität. Vielleicht sollten wir gemeinsam eine Gegenvorlage formulieren, die die landwirtschaftliche Steuerlast senkt und trotzdem die Schule baut – durch effizientere Ausgaben oder öffentliche Aufträge an lokale Betriebe?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#0",
+       "Author_notes_pasted_text#2"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je discute avec Léa Rochat pour comprendre son point de vue sur l'impact économique de la votation tout en partageant mes inquiétudes personnelles.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je discute avec Léa Rochat pour comprendre son point de vue sur l'impact économique de la votation tout en partageant mes inquiétudes personnelles.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, je me demandais si tu avais eu le temps d'étudier les détails du budget. Pour un commerce comme le tien, l'arrivée d'une garderie et d'une salle de sport pourrait signifier plus de clients pendant la journée, mais la hausse du taux d'imposition de 118 % à 124 % représente pour moi, avec mon revenu moyen, environ 240 CHF de plus par an. Comment vois-tu l'équilibre entre l'investissement et la charge pour les familles qui fréquentent la rue du village ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#12"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "Je ressens une anxiété croissante à l'idée de devoir défendre une position qui pourrait me faire passer pour une extrémiste, alors que je crois simplement que la solidarité doit être mesurée et réfléchie, surtout pour les ménages comme le mien.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Je ressens une anxiété croissante à l'idée de devoir défendre une position qui pourrait me faire passer pour une extrémiste, alors que je crois simplement que la solidarité doit être mesurée et réfléchie, surtout pour les ménages comme le mien.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+      "target_npc_id": "npc_04",
+      "dialogue": "Anna, ich habe die Vorlage gelesen. 6 Prozentpunkte mehr Steuerfuss – das sind bei meinem Einkommen fast 144 CHF mehr pro Jahr. Ich komme schon jetzt kaum über die Runden, und die Gemeinde will noch mehr Geld, ohne ihre eigenen Ausgaben zu prüfen. Was denkst du als Bio-Bäuerin darüber?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Aussicht auf weitere Steuern verstärkt meine Sorge, die Miete bald nicht mehr zahlen zu können, obwohl ich jeden Tag hart arbeite",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Aussicht auf weitere Steuern verstärkt meine Sorge, die Miete bald nicht mehr zahlen zu können, obwohl ich jeden Tag hart arbeite",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung für Familien",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung für Familien",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, ich habe die Vorlage nochmals durchgelesen. Die 6 Prozentpunkte mehr Steuerfuss – das trifft doch vor allem die Familien mit Kindern, die wir mit dem neuen Schulhaus eigentlich unterstützen wollen, oder?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Alice, j'ai relu la proposition. Les 6 points de pourcentage supplémentaires de l'impôt – cela touche surtout les familles avec enfants, que nous voulons en fait soutenir avec la nouvelle école, n'est-ce pas ?"
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Sorgen der Eltern im Dorf hallen in meinem Kopf wider. Ich frage mich, ob wir die Last wirklich gerecht verteilen oder nur die Finanzen kurzfristig kitten.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Sorgen der Eltern im Dorf hallen in meinem Kopf wider. Ich frage mich, ob wir die Last wirklich gerecht verteilen oder nur die Finanzen kurzfristig kitten.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": 0.1279,
+     "x": 8,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "J'ai grandi à Bienne, où l'industrie était encore vivante, mais j'ai toujours eu l'œil sur les chiffres, les tendances. Après ma maturité, j'ai hésité entre une carrière dans la finance et quelque chose de plus concret. J'ai choisi le commerce, parce que c'est un art et une science à la fois. J'ai ouvert ma boutique il y a quinze ans, après avoir économisé pendant des années. Au début, c'était dur, surtout avec la concurrence des grandes surfaces. Mais j'ai misé sur l'exclusivité, les produits fabriqués à moins de cinquante kilomètres, et la relation client personnalisée. Aujourd'hui, ma boutique est un point de repère à Linden. Je connais mes clients par leur nom, je sais ce qu'ils aiment, et je m'assure que chaque franc dépensé chez moi crée de la valeur locale. Quand j'entends parler de ce nouveau projet de construction d'une école et d'une garderie, je fais le calcul. Plus de familles, c'est plus de clients potentiels, mais aussi plus de taxes. Je suis favorable à l'investissement dans l'éducation, car un avenir instruit attire les bons consommateurs. Mais je suis méfiante : si les impôts augmentent trop, je devrai peut-être revoir mes marges ou réduire mes achats locaux. Je ne le dirai pas à la commune, mais je surveille chaque chiffre comme un faucon.",
+     "expert_reflection": "D'un point de vue psychologique, Léa incarne une forme de rationalisme instrumental où les relations sociales sont souvent évaluées en termes de bénéfice mutuel. Son INTJ se manifeste par une capacité à conceptualiser des systèmes complexes (comme l'impact économique d'une nouvelle infrastructure) et à formuler des stratégies à long terme. Sa croyance implicite en une méritocratie économique, couplée à son aversion pour les dépenses sociales non ciblées, révèle une hiérarchie de valeurs où la productivité individuelle prime sur la solidarité collective. Cette dissonance cognitive — soutenir l'éducation publique tout en craignant l'augmentation des impôts — illustre une rationalisation défensive : elle accepte l'investissement public uniquement s'il se traduit par une augmentation de son chiffre d'affaires, transformant ainsi un enjeu civique en une question de rentabilité personnelle. Son idée controversée, bien que secrète, indique une vision utilitariste de la société où la redistribution est vue comme inefficace, ce qui pourrait la rendre isolée au sein d'une communauté où le consensus social est souvent recherché.",
+     "id": "npc_02",
+     "category": "small business owner",
+     "profession": "propriétaire d'une boutique de produits artisanaux et locaux à Linden",
+     "bio": "Née à Bienne, Léa Rochat a suivi une maturité gymnasiale avant d'effectuer une formation commerciale à la Fachhochschule de Neuchâtel. Elle a ouvert sa boutique il y a quinze ans, spécialisée dans les produits suisses de qualité et les créations locales, attirant une clientèle exigeante et disposant d'un revenu élevé.",
+     "persona": "Léa se présente avec une précision méthodique et une logique implacable, typique de son INTJ. Elle parle avec une économie de mots, préférant les faits aux émotions, et son regard perçant analyse rapidement la situation. Elle peut sembler distante ou froide aux premiers abords, mais ceux qui la connaissent apprécient sa fiabilité et sa vision stratégique.",
+     "beliefs": [
+      "L'efficacité économique prime sur l'égalité sociale",
+      "La qualité et l'authenticité doivent être préservées dans le commerce local",
+      "Les décisions publiques doivent être fondées sur des données chiffrées"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que les aides sociales devraient être conditionnées à une participation obligatoire à des programmes de formation professionnelle, une opinion qu'elle garde secrète par crainte de perdre sa clientèle"
+     ],
+     "interested_topics": [
+      "analyse de marché",
+      "innovation dans l'artisanat",
+      "optimisation fiscale pour les PME",
+      "développement urbain de Linden"
+     ],
+     "reputation": 0.63,
+     "stance": -0.0056,
+     "impact": "benefit",
+     "stance_reason": "L'accueil de jour prévu dans le nouveau bâtiment scolaire pourrait augmenter la fréquentation de la rue du village, stimulant ainsi la demande pour les produits artisanaux et locaux proposés dans ma boutique. / L'augmentation du taux d'imposition de 118 % à 124 % représente une charge fiscale supplémentaire qui pourrait réduire ma marge bénéficiaire malgré l'effet positif potentiel sur la clientèle.",
+     "perception": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher.",
+     "current_plan": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": -0.0387,
+     "x": 5,
+     "y": 7,
+     "mood": "worried",
+     "life_story": "Ich bin hier auf dem Hof aufgewachsen, zwischen Kuhställen und dem Duft von frisch gemähtem Gras. Nach der Matura wollte ich eigentlich Ingenieurin werden, aber dann habe ich gemerkt, dass ich nicht nur Maschinen optimieren, sondern Systeme verbessern will – und das ist hier auf dem Land genauso wichtig. Nach der Berufslehre habe ich den Hof modernisiert: Präzisionslandwirtschaft, Direktvermarktung, Kooperation mit der Dorfmetzgerei. Jetzt liefern wir Gemüse an die Schulküche und Milch an die lokale Bäckerei. Wenn ich abends im Stall stehe und die Zahlen für die nächste Saison plane, denke ich immer an die Zukunft – meine Kinder sollen hier arbeiten können, ohne dass der Boden ausgelaugt ist. Die aktuelle Abstimmung über die Steuererhöhung macht mir Sorgen. Die Schule soll ausgebaut werden, das ist wichtig, aber wenn wir die Bauern weiter besteuern, wird es bald niemanden mehr geben, der das Land bewirtschaftet. Ich habe das Gefühl, die Gemeinde sieht uns als Selbstverständlichkeit, nicht als Rückgrat der Region.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Anna Berger die Spannung zwischen rationaler Effizienz und sozialer Verantwortung. Ihr INTJ-Profil führt zu einer kognitiven Dissonanz: Sie erkennt die Notwendigkeit öffentlicher Investitionen wie Schulbauten, lehnt aber die daraus resultierende Steuerlast für ihre Branche ab. Ihre kontroverse Idee, die landwirtschaftliche Steuerlast zu senken, ist weniger Ausdruck von Egoismus, sondern ein Ausdruck von systemischem Denken – sie sieht die Gemeinde als ein Netzwerk, in dem die Stärke der Landwirtschaft die Grundlage für alle anderen Sektoren bildet. Ihre Zurückhaltung im sozialen Austausch ist kein Desinteresse, sondern eine Strategie, um nicht von emotionalen Argumenten abgelenkt zu werden. In Konfliktsituationen wird sie wahrscheinlich sachlich bleiben, aber ihre Überzeugungen hart verteidigen – was sie in der Gemeinde polarisieren könnte, da sie als elitär oder abgehoben wahrgenommen werden könnte, obwohl sie tief verwurzelt ist.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "Inhaberin eines biologisch geführten Milch- und Gemüsebetriebs",
+     "bio": "Anna Berger stammt aus einer alten Linden-Familie, die seit Generationen das Land bewirtschaftet. Nach der Matura absolvierte sie eine Berufslehre in biologischer Landwirtschaft an der Fachhochschule Wädenswil, bevor sie den elterlichen Hof übernahm und auf Direktvermarktung und regionale Lieferketten umstellte. Ihr Betrieb ist ein Vorzeigeprojekt für nachhaltige Produktion in der Gemeinde.",
+     "persona": "Anna spricht präzise und analytisch, fast wie ein Ingenieur, der ein Problem lösen will. Sie vermeidet Smalltalk, bevorzugt Daten, Fakten und klare Logik. Ihr INTJ-Temperament zeigt sich in einer distanzierten, aber respektvollen Art – sie hört zu, um zu verstehen, nicht um zu sympathisieren. In Gemeinderatssitzungen wirkt sie ruhig, aber unbeirrbar, wenn es um Effizienz und langfristige Planung geht.",
+     "beliefs": [
+      "Nachhaltigkeit muss wirtschaftlich tragfähig sein, sonst ist sie nur ein Lippenbekenntnis.",
+      "Die Gemeinde sollte öffentliche Aufträge an lokale Betriebe vergeben, um Wertschöpfung im Ort zu halten.",
+      "Bildung ist die Grundlage für Innovation – Investitionen in die Schule sind Investitionen in die Zukunft der Landwirtschaft."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Grundsteuer für landwirtschaftliche Betriebe senken, um die lokale Nahrungsmittelproduktion zu sichern – auch wenn das bedeutet, dass andere Steuerzahler mehr tragen müssen."
+     ],
+     "interested_topics": [
+      "Biologische Landwirtschaft",
+      "Regionale Wirtschaftskreisläufe",
+      "Effiziente Gemeindefinanzen",
+      "Schulqualität und Berufsbildung"
+     ],
+     "reputation": 0.62,
+     "stance": -0.147,
+     "impact": "benefit",
+     "stance_reason": "Ein neues Schulhaus stärkt die lokale Bildung, was langfristig qualifizierte Arbeitskräfte und Innovationskraft für nachhaltige Betriebe wie meinen sichert. / Eine Erhöhung des Steuerfusses könnte die Kaufkraft der regionalen Kunden mindern, was sich negativ auf die Direktvermarktung und die Nachfrage nach regionalen Produkten auswirken könnte.",
+     "perception": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet.",
+     "current_plan": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.8753,
+     "x": 10,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "J'ai grandi à Bienne, dans un quartier où l'on entendait le français, l'allemand et l'italien se mêler dans les rues. Mes parents, tous deux travailleurs sociaux, m'ont appris que la solidarité n'était pas un luxe mais une nécessité. Après ma maturité, j'ai hésité entre la littérature et l'enseignement, mais j'ai choisi la classe parce que je voulais voir les gens s'épanouir devant moi. Lorsque j'ai déménagé à Linden, j'ai été frappée par la diversité des familles qui fréquentent le Cycle d'orientation : des enfants de familles établies depuis des générations, des nouveaux arrivants, des familles monoparentales. Cela me rappelle Bienne, mais en plus calme. Mon appartement donne sur une petite place où les enfants jouent et les mamans se retrouvent. Je participe au comité du jardin partagé, c'est mon espace de respiration. En ce moment, la votation sur le budget communal me préoccupe beaucoup. Le projet de nouvelle salle de sport et de garderie est séduisant, mais je me demande si nous ne sacrifions pas d'autres besoins essentiels pour le financer. Je ne le dis pas ouvertement lors des réunions de parents, de peur d'être perçue comme une extrémiste, mais je crois sincèrement que l'argent devrait d'abord servir ceux qui en ont le plus besoin.",
+     "expert_reflection": "D'un point de vue psychologique, Alice Martin incarne une forme d'idéalisme pragmatique typique des profils ENFP engagés dans le secteur public. Son orientation extravertie et intuitive la pousse à voir dans les projets collectifs comme l'école un symbole d'espoir et d'inclusion, ce qui renforce son soutien à l'investissement public. Cependant, sa tendance à éviter les conflits et sa peur d'être marginalisée expliquent pourquoi elle garde ses opinions fiscales plus progressistes pour elle. Cette dissonance cognitive — soutenir publiquement une mesure tout en craignant ses implications privées — est courante chez les individus à fort sens de la communauté mais à faible tolérance à la controverse sociale. Son rôle d'enseignante, qui exige l'acceptation et l'empathie, la contraint à modérer ses positions, même si cela crée une tension intérieure entre ses valeurs personnelles et sa perception de ce qui est politiquement acceptable dans une commune à revenu moyen.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de français et d'histoire au Cycle d'orientation de Linden",
+     "bio": "Née à Bienne, Alice Martin a suivi une maturité gymnasiale avant d'obtenir un diplôme d'enseignement à la Haute école pédagogique de Lausanne. Elle a enseigné dans plusieurs communes du canton avant de s'installer à Linden il y a dix ans, attirée par la mixité sociale de la ville et la proximité de la nature. Elle vit dans un appartement de trois pièces qu'elle loue au centre-ville, partageant un jardin communautaire avec ses voisins.",
+     "persona": "Alice est une enseignante dynamique et chaleureuse, toujours prête à engager la conversation avec ses élèves et ses collègues. Son ENFP se manifeste par une énergie contagieuse, une curiosité insatiable et une tendance à idéaliser les projets collectifs. Elle parle avec des gestes amples, utilise des métaphores créatives pour expliquer l'histoire et n'hésite pas à exprimer ses opinions avec passion, même si cela peut parfois surprendre ses collègues plus réservés.",
+     "beliefs": [
+      "L'éducation est le principal vecteur d'intégration sociale dans une ville comme Linden",
+      "Les investissements publics dans les infrastructures scolaires créent un effet multiplicateur positif pour l'économie locale",
+      "Chaque citoyen doit participer activement à la vie démocratique de sa commune"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que la commune devrait instaurer un impôt progressif plus élevé sur les revenus supérieurs pour financer davantage les projets sociaux, même si elle sait que cette position est impopulaire dans une commune à revenu moyen comme Linden"
+     ],
+     "interested_topics": [
+      "littérature francophone contemporaine",
+      "histoire locale du canton de Berne",
+      "écologie urbaine et jardins partagés",
+      "psychologie positive en classe"
+     ],
+     "reputation": 0.524,
+     "stance": -0.4172,
+     "impact": "benefit",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % représente une augmentation de charge fiscale qui pèse sur le budget d'un ménage à revenu moyen comme le mien, même si les bénéfices à long terme pour la communauté sont importants.",
+     "perception": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+     "current_plan": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules."
+    },
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8471,
+     "x": 11,
+     "y": 6,
+     "mood": "angry",
+     "life_story": "Ich bin in Linden aufgewachsen, wo jeder jeden kennt und man sich noch an die alten Zeiten erinnert, als die Fabrik noch lief. Nach der Sekundarschule habe ich eine Berufslehre als Landmaschinenmechanikerin gemacht – das war die einzige Option, die mir blieb, ohne Schulden zu machen. Heute arbeite ich in der kleinen Werkstatt meines Schwagers, wo wir Traktoren und Mähdrescher reparieren. Wenn ich abends nach Hause komme, riecht es nach Öl und Schweiss, und ich bin froh, wenn ich noch genug Geld habe, um die Miete zu zahlen. Meine Mutter lebt noch im alten Haus, und ich helfe ihr, wo ich kann. Die Gemeinde plant jetzt eine neue Schulanlage und will dafür die Steuern erhöhen. Ich verstehe, dass Bildung wichtig ist, aber ich sehe nicht, warum wir zuerst nicht die Verwaltung verkleinern und die bestehenden Projekte optimieren. Wenn ich im Gemeinderat wäre, würde ich zuerst die Zahlen prüfen, bevor ich neue Ausgaben beschliesse. Manchmal denke ich, dass wir zu viel reden und zu wenig handeln – aber das sage ich natürlich nicht laut, weil man dann schnell als egoistisch gilt.",
+     "expert_reflection": "Petra Schneider verkörpert die typische ISTP-Persönlichkeit: analytisch, praktisch und wenig an konventioneller politischer Rhetorik interessiert. Ihre negative politische Ausrichtung und niedrige Einkommenssituation verstärken ihre Skepsis gegenüber staatlichen Eingriffen, insbesondere wenn diese mit Steuererhöhungen einhergehen. Ihre kontroverse Idee zur Sozialhilfe zeigt, dass sie zwar soziale Verantwortung anerkennt, diese jedoch durch utilitaristische Prinzipien und persönliche Verantwortung definiert – ein Konflikt zwischen empathischer Sorge und ökonomischer Rationalität. In politischen Diskussionen wird sie wahrscheinlich als unnachgiebig wahrgenommen, doch ihre Zurückhaltung ist weniger Sturheit als vielmehr eine tief verwurzelte Präferenz für faktenbasierte Argumente. Ihre Bereitschaft, unpopuläre Ansichten nur im privaten Kreis zu äußern, deutet auf eine hohe soziale Sensitivität hin – sie fürchtet die soziale Ächtung, behält aber ihre Überzeugungen bei.",
+     "id": "npc_01",
+     "category": "tenant",
+     "profession": "Mechanikerin in einer kleinen Werkstatt für Landmaschinenreparatur",
+     "bio": "Petra Schneider wuchs in einem einfachen Einfamilienhaus am Stadtrand von Linden auf und machte nach der Sekundarschule eine Berufslehre als Landmaschinenmechanikerin. Sie arbeitet seit zehn Jahren in einer kleinen, familiengeführten Werkstatt, die vor allem Landwirte aus der Umgebung bedient. Trotz ihrer Fachkenntnisse und langen Betriebszugehörigkeit bleibt ihr Lohn knapp über dem Existenzminimum, weshalb sie jede Steuererhöhung persönlich spürt.",
+     "persona": "Petra spricht präzise und sachlich, fast technisch, wie man es von einem ISTP erwartet. Sie vermeidet Emotionen in Diskussionen, analysiert Probleme systematisch und bleibt ruhig, selbst wenn andere aufbrausen. Ihre Direktheit wird oft als Arroganz missverstanden, doch sie meint es als Effizienz. Sie hört mehr zu, als sie spricht, und wenn sie spricht, trifft sie den Punkt ohne Umschweife.",
+     "beliefs": [
+      "Wer hart arbeitet, sollte nicht durch überhöhte Steuern bestraft werden.",
+      "Die Gemeinde muss zuerst ihre eigenen Ausgaben rationalisieren, bevor sie die Bürger zur Kasse bitten.",
+      "Bildung ist wichtig, aber nicht um jeden Preis – die neuen Schulprojekte müssen sich rechnen."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Sozialhilfe für Langzeitarbeitslose an eine verpflichtende gemeinnützige Arbeit koppeln, um den Anreiz zur Selbstverantwortung zu stärken – eine Idee, die sie nur im engsten Freundeskreis äußert, weil sie weiß, dass sie als unmenschlich gilt."
+     ],
+     "interested_topics": [
+      "Effizienz von öffentlichen Projekten",
+      "Steuerbelastung für kleine Einkommen",
+      "Praktische Lösungen für lokale Infrastruktur"
+     ],
+     "reputation": 0.476,
+     "stance": -0.523,
+     "impact": "harm",
+     "stance_reason": "Die Erhöhung des Steuerfusses von 118 % auf 124 % würde mein Einkommen weiter drücken, obwohl ich bereits hart arbeite und kaum über die Runden komme.",
+     "perception": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird.",
+     "current_plan": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 12,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin hier in Linden aufgewachsen, zwischen den alten Fabrikgebäuden und den ersten Neubauten. Nach der Berufslehre als Bauführer habe ich schnell gemerkt, dass ich lieber die Planung mache als die Schaufel zu schwingen. An der Fachhochschule habe ich gelernt, wie man ein Budget hält und Projekte rechtzeitig abschließt – etwas, das hier in der Gemeinde dringend nötig war. Heute sitze ich im Rathaus und muss entscheiden, wo das Geld hinfließt. Meine Frau arbeitet als Lehrerin an der Primarschule, und unsere beiden Kinder gehen hier zur Schule. Wenn ich abends nach Hause komme, höre ich oft die Diskussionen im Dorf über die Steuererhöhung für den neuen Schulkomplex. Ich verstehe die Sorgen der Haushalte, aber ich sehe auch, wie der neue Kindergarten und die sanierte Turnhalle langfristig den Wert unserer Liegenschaften steigern. Manchmal frage ich mich, ob wir nicht noch härter gegen diejenigen vorgehen sollten, die jahrelang von der Sozialhilfe leben, ohne sich zu integrieren. Aber ich sage es niemandem laut – das würde zu viel Unruhe stiften.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Hans Weber die Spannung zwischen utilitaristischer Effizienz und sozialer Zugehörigkeit. Sein ESTP-Profil begünstigt eine handlungsorientierte, resultatorientierte Haltung, die ihn dazu bringt, die wirtschaftlichen Vorteile der Infrastrukturinvestitionen klar zu priorisieren. Die geheime, kontroverse Idee zur Sozialhilfe zeigt jedoch, dass er unter dem Druck der sozialen Normen der Gemeinde leidet – er internalisiert die Werte der Gemeinschaft, während seine analytische Persönlichkeit nach klaren, oft harten Lösungen verlangt. Diese kognitive Dissonanz könnte ihn in Zukunft entweder zu einem stillen Reformer machen oder zu einem frustrierten Außenseiter, je nachdem, wie die Gemeindeentwicklung verläuft.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Leiter der Abteilung Infrastruktur und Finanzen",
+     "bio": "Hans Weber stammt aus Linden, hat die Sekundarschule hier besucht und eine Berufslehre als Bauführer abgeschlossen, bevor er an der Fachhochschule Nordwestschweiz ein Nachdiplom in öffentlicher Verwaltung erwarb. Seit über 15 Jahren arbeitet er für die Gemeinde Linden, wo er für die Koordination von Bauprojekten und die Haushaltsplanung zuständig ist.",
+     "persona": "Hans ist ein pragmatischer, direktes Typ mit einem Hang zur schnellen, sachlichen Kommunikation. Als ESTP liebt er es, Probleme vor Ort zu lösen, und vermeidet abstrakte Diskussionen. Er wirkt oft als unkomplizierter Macher, der Ergebnisse liefert, doch seine Ungeduld kann ihn bei Kollegen und Anwohnern manchmal brüsk erscheinen lassen.",
+     "beliefs": [
+      "Effizienz und Sparsamkeit in der Gemeindeverwaltung sind essenziell",
+      "Investitionen in Infrastruktur schaffen langfristig mehr Wert als kurzfristige Steuererleichterungen",
+      "Jeder Bewohner sollte einen fairen Anteil an den Kosten für öffentliche Leistungen tragen"
+     ],
+     "controversial_ideas": [
+      "Er ist der Überzeugung, dass die Gemeinde die Sozialhilfe für Langzeitbezüger strenger kontrollieren und mit verpflichtenden Arbeitsprogrammen verknüpfen sollte, hält diese Ansicht jedoch aus Rücksicht auf seine Familie und die Gemeindekultur für sich"
+     ],
+     "interested_topics": [
+      "Bauprojekte und deren Wirtschaftlichkeit",
+      "Finanzplanung und Steueroptimierung",
+      "Effizienzsteigerung in der öffentlichen Verwaltung"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "stance_reason": "Die Erhöhung des Steuerfusses belastet die Steuerzahler in der Gemeinde, insbesondere bei mittleren Einkommen, und könnte die Attraktivität von Linden als Wohnort mindern.",
+     "perception": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung",
+     "current_plan": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung"
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 24.0,
+    "business_climate": 30.0,
+    "worker_welfare": 30.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 0.0,
+    "stance_against": 3.0,
+    "stance_undecided": 2.0,
+    "stance_mean": -0.258,
+    "stance_spread": 0.187
+   }
+  },
+  {
+   "round": 2,
+   "events": [
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je m'approche d'Alice Martin pour obtenir une perspective pédagogique et sociale sur la votation, car les chiffres économiques me laissent perplexe face à l'incertitude de la demande future.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je m'approche d'Alice Martin pour obtenir une perspective pédagogique et sociale sur la votation, car les chiffres économiques me laissent perplexe face à l'incertitude de la demande future.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, j'ai besoin de ton avis d'enseignante. Comment vois-tu l'impact concret de cette nouvelle école et de la garderie sur la fréquentation de la rue du village ? Est-ce que cela compensera vraiment la hausse d'impôt pour les commerçants comme moi ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#14",
+       "Author_notes_pasted_text#11"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "Le calcul est serré : l'accueil de jour pourrait attirer plus de familles, mais l'augmentation du taux d'imposition de 118 % à 124 % représente une charge annuelle de 432 CHF pour mon ménage. Cette incertitude financière me rend anxieuse quant à la viabilité de mes achats locaux et de ma marge.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Le calcul est serré : l'accueil de jour pourrait attirer plus de familles, mais l'augmentation du taux d'imposition de 118 % à 124 % représente une charge annuelle de 432 CHF pour mon ménage. Cette incertitude financière me rend anxieuse quant à la viabilité de mes achats locaux et de ma marge.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": 0,
+      "to_y": 0,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich rufe Léa an, um die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung zu diskutieren und ihre Sicht auf die Verbindung zwischen Bildung und regionaler Nachfrage zu verstehen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich rufe Léa an, um die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung zu diskutieren und ihre Sicht auf die Verbindung zwischen Bildung und regionaler Nachfrage zu verstehen.",
+      "target_npc_id": "",
+      "dialogue": "Léa, ich habe mir die Zahlen nochmals angesehen. Wenn der Steuerfuss um sechs Prozentpunkte steigt, sind das bei meinem Einkommen rund 432 CHF mehr pro Jahr. Das klingt wenig, aber für uns Bauern ist jede Ausgabe ein Risiko. Gleichzeitig brauchen wir qualifizierte Arbeitskräfte für die Zukunft. Wie siehst du das? Ist die Investition in die Schule wirklich eine Investition in unsere Wertschöpfungskette, oder gefährdet sie langfristig die Nachfrage nach regionalen Produkten?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Léa, j'ai réexaminé les chiffres. Si le taux d'imposition augmente de six points de pourcentage, cela représente environ 432 CHF de plus par an pour mon revenu. Cela semble peu, mais pour nous, agriculteurs, chaque dépense est un risque. En même temps, nous avons besoin de main-d'œuvre qualifiée pour l'avenir. Qu'en penses-tu ? L'investissement dans l'école est-il vraiment un investissement dans notre chaîne de valeur ajoutée, ou menace-t-il à long terme la demande de produits régionaux ?"
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "move",
+     "message": "Ich gehe zum Gemeindehaus, um die Abstimmungsunterlagen nochmals zu prüfen und die Zahlen für eine mögliche Gegenargumentation zu sammeln.",
+     "data": {
+      "event_type": "move",
+      "message": "Ich gehe zum Gemeindehaus, um die Abstimmungsunterlagen nochmals zu prüfen und die Zahlen für eine mögliche Gegenargumentation zu sammeln.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": 3,
+      "to_y": 8,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je discute avec Léa Rochat pour comprendre comment une commerçante locale perçoit l'impact de la hausse fiscale sur les ménages et les petits commerces.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je discute avec Léa Rochat pour comprendre comment une commerçante locale perçoit l'impact de la hausse fiscale sur les ménages et les petits commerces.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, je me demandais si tu avais eu le temps de réfléchir à la votation. Pour moi, c'est un dilemme : je vois l'utilité de la nouvelle salle de sport et de la garderie, mais la hausse du taux d'imposition de 118 % à 124 % représente 240 CHF de plus par an pour un revenu comme le mien. Comment concilies-tu l'avenir des enfants avec la réalité budgétaire des familles ?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#8",
+       "Author_notes_pasted_text#12",
+       "Author_notes_pasted_text#9"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "Je ressens une anxiété croissante à l'idée que mes réserves financières soient trop sollicitées, même si je reconnais l'importance du projet pour la commune et l'école.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Je ressens une anxiété croissante à l'idée que mes réserves financières soient trop sollicitées, même si je reconnais l'importance du projet pour la commune et l'école.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+      "target_npc_id": "npc_04",
+      "dialogue": "Anna, ich habe die Vorlage gelesen. 6 Prozentpunkte mehr Steuerfuss – bei meinem Lohn ist das fast ein ganzer Monatsmietanteil. Ich verstehe, dass Bildung wichtig ist, aber warum muss es immer die Steuerzahler sein, die zuerst zahlen? Die Gemeinde hat ein Defizit, aber ich sehe keine Sparmassnahmen. Ich habe Angst, dass ich bald nicht mehr über die Runden komme.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Wut steigt, weil ich das Gefühl habe, dass die Gemeinde meine harte Arbeit nicht anerkennt und stattdessen einfach die Steuern erhöht, ohne ihre eigenen Ausgaben zu prüfen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Wut steigt, weil ich das Gefühl habe, dass die Gemeinde meine harte Arbeit nicht anerkennt und stattdessen einfach die Steuern erhöht, ohne ihre eigenen Ausgaben zu prüfen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "angry",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung und der Sozialhilfe",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung und der Sozialhilfe",
+      "target_npc_id": "npc_04",
+      "dialogue": "Alice, ich muss dir ehrlich sagen: Die Zahlen sind klar, aber das Herz der Gemeinde schlägt anders. 240 CHF mehr pro Jahr für ein Haushalt mit 80'000 CHF – das ist nicht nur Geld, das fehlt für den Familienurlaub oder die Reparatur am Auto. Und wenn wir gleichzeitig die Rückstellungen für die Sozialhilfe kürzen müssen, wie soll das fair sein? Wir bauen ein Schulhaus, aber wir lassen gleichzeitig die Schwächsten im Regen stehen?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#2",
+       "Author_notes_pasted_text#1"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "translated_dialogue": "Alice, je dois te dire honnêtement : les chiffres sont clairs, mais le cœur de la communauté bat autrement. 240 CHF de plus par an pour un ménage avec 80'000 CHF – ce n'est pas seulement de l'argent qui manque pour les vacances en famille ou la réparation de la voiture. Et si nous devons simultanément réduire les provisions pour l'aide sociale, comment cela peut-il être juste ? Nous construisons une école, mais nous laissons en même temps les plus faibles sous la pluie ?"
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "move",
+     "message": "Ich gehe zum Rathausplatz, um die Stimmung der Leute direkt zu spüren und nach einer Lösung zu suchen, die weder die Finanzen noch die Gemeinschaft zerstört",
+     "data": {
+      "event_type": "move",
+      "message": "Ich gehe zum Rathausplatz, um die Stimmung der Leute direkt zu spüren und nach einer Lösung zu suchen, die weder die Finanzen noch die Gemeinschaft zerstört",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": 5,
+      "to_y": 7,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": 0.2672,
+     "x": 8,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "J'ai grandi à Bienne, où l'industrie était encore vivante, mais j'ai toujours eu l'œil sur les chiffres, les tendances. Après ma maturité, j'ai hésité entre une carrière dans la finance et quelque chose de plus concret. J'ai choisi le commerce, parce que c'est un art et une science à la fois. J'ai ouvert ma boutique il y a quinze ans, après avoir économisé pendant des années. Au début, c'était dur, surtout avec la concurrence des grandes surfaces. Mais j'ai misé sur l'exclusivité, les produits fabriqués à moins de cinquante kilomètres, et la relation client personnalisée. Aujourd'hui, ma boutique est un point de repère à Linden. Je connais mes clients par leur nom, je sais ce qu'ils aiment, et je m'assure que chaque franc dépensé chez moi crée de la valeur locale. Quand j'entends parler de ce nouveau projet de construction d'une école et d'une garderie, je fais le calcul. Plus de familles, c'est plus de clients potentiels, mais aussi plus de taxes. Je suis favorable à l'investissement dans l'éducation, car un avenir instruit attire les bons consommateurs. Mais je suis méfiante : si les impôts augmentent trop, je devrai peut-être revoir mes marges ou réduire mes achats locaux. Je ne le dirai pas à la commune, mais je surveille chaque chiffre comme un faucon.",
+     "expert_reflection": "D'un point de vue psychologique, Léa incarne une forme de rationalisme instrumental où les relations sociales sont souvent évaluées en termes de bénéfice mutuel. Son INTJ se manifeste par une capacité à conceptualiser des systèmes complexes (comme l'impact économique d'une nouvelle infrastructure) et à formuler des stratégies à long terme. Sa croyance implicite en une méritocratie économique, couplée à son aversion pour les dépenses sociales non ciblées, révèle une hiérarchie de valeurs où la productivité individuelle prime sur la solidarité collective. Cette dissonance cognitive — soutenir l'éducation publique tout en craignant l'augmentation des impôts — illustre une rationalisation défensive : elle accepte l'investissement public uniquement s'il se traduit par une augmentation de son chiffre d'affaires, transformant ainsi un enjeu civique en une question de rentabilité personnelle. Son idée controversée, bien que secrète, indique une vision utilitariste de la société où la redistribution est vue comme inefficace, ce qui pourrait la rendre isolée au sein d'une communauté où le consensus social est souvent recherché.",
+     "id": "npc_02",
+     "category": "small business owner",
+     "profession": "propriétaire d'une boutique de produits artisanaux et locaux à Linden",
+     "bio": "Née à Bienne, Léa Rochat a suivi une maturité gymnasiale avant d'effectuer une formation commerciale à la Fachhochschule de Neuchâtel. Elle a ouvert sa boutique il y a quinze ans, spécialisée dans les produits suisses de qualité et les créations locales, attirant une clientèle exigeante et disposant d'un revenu élevé.",
+     "persona": "Léa se présente avec une précision méthodique et une logique implacable, typique de son INTJ. Elle parle avec une économie de mots, préférant les faits aux émotions, et son regard perçant analyse rapidement la situation. Elle peut sembler distante ou froide aux premiers abords, mais ceux qui la connaissent apprécient sa fiabilité et sa vision stratégique.",
+     "beliefs": [
+      "L'efficacité économique prime sur l'égalité sociale",
+      "La qualité et l'authenticité doivent être préservées dans le commerce local",
+      "Les décisions publiques doivent être fondées sur des données chiffrées"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que les aides sociales devraient être conditionnées à une participation obligatoire à des programmes de formation professionnelle, une opinion qu'elle garde secrète par crainte de perdre sa clientèle"
+     ],
+     "interested_topics": [
+      "analyse de marché",
+      "innovation dans l'artisanat",
+      "optimisation fiscale pour les PME",
+      "développement urbain de Linden"
+     ],
+     "reputation": 0.639,
+     "stance": -0.0672,
+     "impact": "benefit",
+     "stance_reason": "L'accueil de jour prévu dans le nouveau bâtiment scolaire pourrait augmenter la fréquentation de la rue du village, stimulant ainsi la demande pour les produits artisanaux et locaux proposés dans ma boutique. / L'augmentation du taux d'imposition de 118 % à 124 % représente une charge fiscale supplémentaire qui pourrait réduire ma marge bénéficiaire malgré l'effet positif potentiel sur la clientèle.",
+     "perception": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher.",
+     "current_plan": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": -0.0387,
+     "x": 3,
+     "y": 8,
+     "mood": "worried",
+     "life_story": "Ich bin hier auf dem Hof aufgewachsen, zwischen Kuhställen und dem Duft von frisch gemähtem Gras. Nach der Matura wollte ich eigentlich Ingenieurin werden, aber dann habe ich gemerkt, dass ich nicht nur Maschinen optimieren, sondern Systeme verbessern will – und das ist hier auf dem Land genauso wichtig. Nach der Berufslehre habe ich den Hof modernisiert: Präzisionslandwirtschaft, Direktvermarktung, Kooperation mit der Dorfmetzgerei. Jetzt liefern wir Gemüse an die Schulküche und Milch an die lokale Bäckerei. Wenn ich abends im Stall stehe und die Zahlen für die nächste Saison plane, denke ich immer an die Zukunft – meine Kinder sollen hier arbeiten können, ohne dass der Boden ausgelaugt ist. Die aktuelle Abstimmung über die Steuererhöhung macht mir Sorgen. Die Schule soll ausgebaut werden, das ist wichtig, aber wenn wir die Bauern weiter besteuern, wird es bald niemanden mehr geben, der das Land bewirtschaftet. Ich habe das Gefühl, die Gemeinde sieht uns als Selbstverständlichkeit, nicht als Rückgrat der Region.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Anna Berger die Spannung zwischen rationaler Effizienz und sozialer Verantwortung. Ihr INTJ-Profil führt zu einer kognitiven Dissonanz: Sie erkennt die Notwendigkeit öffentlicher Investitionen wie Schulbauten, lehnt aber die daraus resultierende Steuerlast für ihre Branche ab. Ihre kontroverse Idee, die landwirtschaftliche Steuerlast zu senken, ist weniger Ausdruck von Egoismus, sondern ein Ausdruck von systemischem Denken – sie sieht die Gemeinde als ein Netzwerk, in dem die Stärke der Landwirtschaft die Grundlage für alle anderen Sektoren bildet. Ihre Zurückhaltung im sozialen Austausch ist kein Desinteresse, sondern eine Strategie, um nicht von emotionalen Argumenten abgelenkt zu werden. In Konfliktsituationen wird sie wahrscheinlich sachlich bleiben, aber ihre Überzeugungen hart verteidigen – was sie in der Gemeinde polarisieren könnte, da sie als elitär oder abgehoben wahrgenommen werden könnte, obwohl sie tief verwurzelt ist.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "Inhaberin eines biologisch geführten Milch- und Gemüsebetriebs",
+     "bio": "Anna Berger stammt aus einer alten Linden-Familie, die seit Generationen das Land bewirtschaftet. Nach der Matura absolvierte sie eine Berufslehre in biologischer Landwirtschaft an der Fachhochschule Wädenswil, bevor sie den elterlichen Hof übernahm und auf Direktvermarktung und regionale Lieferketten umstellte. Ihr Betrieb ist ein Vorzeigeprojekt für nachhaltige Produktion in der Gemeinde.",
+     "persona": "Anna spricht präzise und analytisch, fast wie ein Ingenieur, der ein Problem lösen will. Sie vermeidet Smalltalk, bevorzugt Daten, Fakten und klare Logik. Ihr INTJ-Temperament zeigt sich in einer distanzierten, aber respektvollen Art – sie hört zu, um zu verstehen, nicht um zu sympathisieren. In Gemeinderatssitzungen wirkt sie ruhig, aber unbeirrbar, wenn es um Effizienz und langfristige Planung geht.",
+     "beliefs": [
+      "Nachhaltigkeit muss wirtschaftlich tragfähig sein, sonst ist sie nur ein Lippenbekenntnis.",
+      "Die Gemeinde sollte öffentliche Aufträge an lokale Betriebe vergeben, um Wertschöpfung im Ort zu halten.",
+      "Bildung ist die Grundlage für Innovation – Investitionen in die Schule sind Investitionen in die Zukunft der Landwirtschaft."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Grundsteuer für landwirtschaftliche Betriebe senken, um die lokale Nahrungsmittelproduktion zu sichern – auch wenn das bedeutet, dass andere Steuerzahler mehr tragen müssen."
+     ],
+     "interested_topics": [
+      "Biologische Landwirtschaft",
+      "Regionale Wirtschaftskreisläufe",
+      "Effiziente Gemeindefinanzen",
+      "Schulqualität und Berufsbildung"
+     ],
+     "reputation": 0.62,
+     "stance": -0.147,
+     "impact": "benefit",
+     "stance_reason": "Ein neues Schulhaus stärkt die lokale Bildung, was langfristig qualifizierte Arbeitskräfte und Innovationskraft für nachhaltige Betriebe wie meinen sichert. / Eine Erhöhung des Steuerfusses könnte die Kaufkraft der regionalen Kunden mindern, was sich negativ auf die Direktvermarktung und die Nachfrage nach regionalen Produkten auswirken könnte.",
+     "perception": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet.",
+     "current_plan": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.8928,
+     "x": 10,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "J'ai grandi à Bienne, dans un quartier où l'on entendait le français, l'allemand et l'italien se mêler dans les rues. Mes parents, tous deux travailleurs sociaux, m'ont appris que la solidarité n'était pas un luxe mais une nécessité. Après ma maturité, j'ai hésité entre la littérature et l'enseignement, mais j'ai choisi la classe parce que je voulais voir les gens s'épanouir devant moi. Lorsque j'ai déménagé à Linden, j'ai été frappée par la diversité des familles qui fréquentent le Cycle d'orientation : des enfants de familles établies depuis des générations, des nouveaux arrivants, des familles monoparentales. Cela me rappelle Bienne, mais en plus calme. Mon appartement donne sur une petite place où les enfants jouent et les mamans se retrouvent. Je participe au comité du jardin partagé, c'est mon espace de respiration. En ce moment, la votation sur le budget communal me préoccupe beaucoup. Le projet de nouvelle salle de sport et de garderie est séduisant, mais je me demande si nous ne sacrifions pas d'autres besoins essentiels pour le financer. Je ne le dis pas ouvertement lors des réunions de parents, de peur d'être perçue comme une extrémiste, mais je crois sincèrement que l'argent devrait d'abord servir ceux qui en ont le plus besoin.",
+     "expert_reflection": "D'un point de vue psychologique, Alice Martin incarne une forme d'idéalisme pragmatique typique des profils ENFP engagés dans le secteur public. Son orientation extravertie et intuitive la pousse à voir dans les projets collectifs comme l'école un symbole d'espoir et d'inclusion, ce qui renforce son soutien à l'investissement public. Cependant, sa tendance à éviter les conflits et sa peur d'être marginalisée expliquent pourquoi elle garde ses opinions fiscales plus progressistes pour elle. Cette dissonance cognitive — soutenir publiquement une mesure tout en craignant ses implications privées — est courante chez les individus à fort sens de la communauté mais à faible tolérance à la controverse sociale. Son rôle d'enseignante, qui exige l'acceptation et l'empathie, la contraint à modérer ses positions, même si cela crée une tension intérieure entre ses valeurs personnelles et sa perception de ce qui est politiquement acceptable dans une commune à revenu moyen.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de français et d'histoire au Cycle d'orientation de Linden",
+     "bio": "Née à Bienne, Alice Martin a suivi une maturité gymnasiale avant d'obtenir un diplôme d'enseignement à la Haute école pédagogique de Lausanne. Elle a enseigné dans plusieurs communes du canton avant de s'installer à Linden il y a dix ans, attirée par la mixité sociale de la ville et la proximité de la nature. Elle vit dans un appartement de trois pièces qu'elle loue au centre-ville, partageant un jardin communautaire avec ses voisins.",
+     "persona": "Alice est une enseignante dynamique et chaleureuse, toujours prête à engager la conversation avec ses élèves et ses collègues. Son ENFP se manifeste par une énergie contagieuse, une curiosité insatiable et une tendance à idéaliser les projets collectifs. Elle parle avec des gestes amples, utilise des métaphores créatives pour expliquer l'histoire et n'hésite pas à exprimer ses opinions avec passion, même si cela peut parfois surprendre ses collègues plus réservés.",
+     "beliefs": [
+      "L'éducation est le principal vecteur d'intégration sociale dans une ville comme Linden",
+      "Les investissements publics dans les infrastructures scolaires créent un effet multiplicateur positif pour l'économie locale",
+      "Chaque citoyen doit participer activement à la vie démocratique de sa commune"
+     ],
+     "controversial_ideas": [
+      "Elle estime en privé que la commune devrait instaurer un impôt progressif plus élevé sur les revenus supérieurs pour financer davantage les projets sociaux, même si elle sait que cette position est impopulaire dans une commune à revenu moyen comme Linden"
+     ],
+     "interested_topics": [
+      "littérature francophone contemporaine",
+      "histoire locale du canton de Berne",
+      "écologie urbaine et jardins partagés",
+      "psychologie positive en classe"
+     ],
+     "reputation": 0.536,
+     "stance": -0.5093,
+     "impact": "benefit",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % représente une augmentation de charge fiscale qui pèse sur le budget d'un ménage à revenu moyen comme le mien, même si les bénéfices à long terme pour la communauté sont importants.",
+     "perception": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+     "current_plan": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules."
+    },
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8658,
+     "x": 11,
+     "y": 6,
+     "mood": "angry",
+     "life_story": "Ich bin in Linden aufgewachsen, wo jeder jeden kennt und man sich noch an die alten Zeiten erinnert, als die Fabrik noch lief. Nach der Sekundarschule habe ich eine Berufslehre als Landmaschinenmechanikerin gemacht – das war die einzige Option, die mir blieb, ohne Schulden zu machen. Heute arbeite ich in der kleinen Werkstatt meines Schwagers, wo wir Traktoren und Mähdrescher reparieren. Wenn ich abends nach Hause komme, riecht es nach Öl und Schweiss, und ich bin froh, wenn ich noch genug Geld habe, um die Miete zu zahlen. Meine Mutter lebt noch im alten Haus, und ich helfe ihr, wo ich kann. Die Gemeinde plant jetzt eine neue Schulanlage und will dafür die Steuern erhöhen. Ich verstehe, dass Bildung wichtig ist, aber ich sehe nicht, warum wir zuerst nicht die Verwaltung verkleinern und die bestehenden Projekte optimieren. Wenn ich im Gemeinderat wäre, würde ich zuerst die Zahlen prüfen, bevor ich neue Ausgaben beschliesse. Manchmal denke ich, dass wir zu viel reden und zu wenig handeln – aber das sage ich natürlich nicht laut, weil man dann schnell als egoistisch gilt.",
+     "expert_reflection": "Petra Schneider verkörpert die typische ISTP-Persönlichkeit: analytisch, praktisch und wenig an konventioneller politischer Rhetorik interessiert. Ihre negative politische Ausrichtung und niedrige Einkommenssituation verstärken ihre Skepsis gegenüber staatlichen Eingriffen, insbesondere wenn diese mit Steuererhöhungen einhergehen. Ihre kontroverse Idee zur Sozialhilfe zeigt, dass sie zwar soziale Verantwortung anerkennt, diese jedoch durch utilitaristische Prinzipien und persönliche Verantwortung definiert – ein Konflikt zwischen empathischer Sorge und ökonomischer Rationalität. In politischen Diskussionen wird sie wahrscheinlich als unnachgiebig wahrgenommen, doch ihre Zurückhaltung ist weniger Sturheit als vielmehr eine tief verwurzelte Präferenz für faktenbasierte Argumente. Ihre Bereitschaft, unpopuläre Ansichten nur im privaten Kreis zu äußern, deutet auf eine hohe soziale Sensitivität hin – sie fürchtet die soziale Ächtung, behält aber ihre Überzeugungen bei.",
+     "id": "npc_01",
+     "category": "tenant",
+     "profession": "Mechanikerin in einer kleinen Werkstatt für Landmaschinenreparatur",
+     "bio": "Petra Schneider wuchs in einem einfachen Einfamilienhaus am Stadtrand von Linden auf und machte nach der Sekundarschule eine Berufslehre als Landmaschinenmechanikerin. Sie arbeitet seit zehn Jahren in einer kleinen, familiengeführten Werkstatt, die vor allem Landwirte aus der Umgebung bedient. Trotz ihrer Fachkenntnisse und langen Betriebszugehörigkeit bleibt ihr Lohn knapp über dem Existenzminimum, weshalb sie jede Steuererhöhung persönlich spürt.",
+     "persona": "Petra spricht präzise und sachlich, fast technisch, wie man es von einem ISTP erwartet. Sie vermeidet Emotionen in Diskussionen, analysiert Probleme systematisch und bleibt ruhig, selbst wenn andere aufbrausen. Ihre Direktheit wird oft als Arroganz missverstanden, doch sie meint es als Effizienz. Sie hört mehr zu, als sie spricht, und wenn sie spricht, trifft sie den Punkt ohne Umschweife.",
+     "beliefs": [
+      "Wer hart arbeitet, sollte nicht durch überhöhte Steuern bestraft werden.",
+      "Die Gemeinde muss zuerst ihre eigenen Ausgaben rationalisieren, bevor sie die Bürger zur Kasse bitten.",
+      "Bildung ist wichtig, aber nicht um jeden Preis – die neuen Schulprojekte müssen sich rechnen."
+     ],
+     "controversial_ideas": [
+      "Die Gemeinde sollte die Sozialhilfe für Langzeitarbeitslose an eine verpflichtende gemeinnützige Arbeit koppeln, um den Anreiz zur Selbstverantwortung zu stärken – eine Idee, die sie nur im engsten Freundeskreis äußert, weil sie weiß, dass sie als unmenschlich gilt."
+     ],
+     "interested_topics": [
+      "Effizienz von öffentlichen Projekten",
+      "Steuerbelastung für kleine Einkommen",
+      "Praktische Lösungen für lokale Infrastruktur"
+     ],
+     "reputation": 0.488,
+     "stance": -0.523,
+     "impact": "harm",
+     "stance_reason": "Die Erhöhung des Steuerfusses von 118 % auf 124 % würde mein Einkommen weiter drücken, obwohl ich bereits hart arbeite und kaum über die Runden komme.",
+     "perception": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird.",
+     "current_plan": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 5,
+     "y": 7,
+     "mood": "anxious",
+     "life_story": "Ich bin hier in Linden aufgewachsen, zwischen den alten Fabrikgebäuden und den ersten Neubauten. Nach der Berufslehre als Bauführer habe ich schnell gemerkt, dass ich lieber die Planung mache als die Schaufel zu schwingen. An der Fachhochschule habe ich gelernt, wie man ein Budget hält und Projekte rechtzeitig abschließt – etwas, das hier in der Gemeinde dringend nötig war. Heute sitze ich im Rathaus und muss entscheiden, wo das Geld hinfließt. Meine Frau arbeitet als Lehrerin an der Primarschule, und unsere beiden Kinder gehen hier zur Schule. Wenn ich abends nach Hause komme, höre ich oft die Diskussionen im Dorf über die Steuererhöhung für den neuen Schulkomplex. Ich verstehe die Sorgen der Haushalte, aber ich sehe auch, wie der neue Kindergarten und die sanierte Turnhalle langfristig den Wert unserer Liegenschaften steigern. Manchmal frage ich mich, ob wir nicht noch härter gegen diejenigen vorgehen sollten, die jahrelang von der Sozialhilfe leben, ohne sich zu integrieren. Aber ich sage es niemandem laut – das würde zu viel Unruhe stiften.",
+     "expert_reflection": "Aus sozialpsychologischer Sicht verkörpert Hans Weber die Spannung zwischen utilitaristischer Effizienz und sozialer Zugehörigkeit. Sein ESTP-Profil begünstigt eine handlungsorientierte, resultatorientierte Haltung, die ihn dazu bringt, die wirtschaftlichen Vorteile der Infrastrukturinvestitionen klar zu priorisieren. Die geheime, kontroverse Idee zur Sozialhilfe zeigt jedoch, dass er unter dem Druck der sozialen Normen der Gemeinde leidet – er internalisiert die Werte der Gemeinschaft, während seine analytische Persönlichkeit nach klaren, oft harten Lösungen verlangt. Diese kognitive Dissonanz könnte ihn in Zukunft entweder zu einem stillen Reformer machen oder zu einem frustrierten Außenseiter, je nachdem, wie die Gemeindeentwicklung verläuft.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Leiter der Abteilung Infrastruktur und Finanzen",
+     "bio": "Hans Weber stammt aus Linden, hat die Sekundarschule hier besucht und eine Berufslehre als Bauführer abgeschlossen, bevor er an der Fachhochschule Nordwestschweiz ein Nachdiplom in öffentlicher Verwaltung erwarb. Seit über 15 Jahren arbeitet er für die Gemeinde Linden, wo er für die Koordination von Bauprojekten und die Haushaltsplanung zuständig ist.",
+     "persona": "Hans ist ein pragmatischer, direktes Typ mit einem Hang zur schnellen, sachlichen Kommunikation. Als ESTP liebt er es, Probleme vor Ort zu lösen, und vermeidet abstrakte Diskussionen. Er wirkt oft als unkomplizierter Macher, der Ergebnisse liefert, doch seine Ungeduld kann ihn bei Kollegen und Anwohnern manchmal brüsk erscheinen lassen.",
+     "beliefs": [
+      "Effizienz und Sparsamkeit in der Gemeindeverwaltung sind essenziell",
+      "Investitionen in Infrastruktur schaffen langfristig mehr Wert als kurzfristige Steuererleichterungen",
+      "Jeder Bewohner sollte einen fairen Anteil an den Kosten für öffentliche Leistungen tragen"
+     ],
+     "controversial_ideas": [
+      "Er ist der Überzeugung, dass die Gemeinde die Sozialhilfe für Langzeitbezüger strenger kontrollieren und mit verpflichtenden Arbeitsprogrammen verknüpfen sollte, hält diese Ansicht jedoch aus Rücksicht auf seine Familie und die Gemeindekultur für sich"
+     ],
+     "interested_topics": [
+      "Bauprojekte und deren Wirtschaftlichkeit",
+      "Finanzplanung und Steueroptimierung",
+      "Effizienzsteigerung in der öffentlichen Verwaltung"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "stance_reason": "Die Erhöhung des Steuerfusses belastet die Steuerzahler in der Gemeinde, insbesondere bei mittleren Einkommen, und könnte die Attraktivität von Linden als Wohnort mindern.",
+     "perception": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung",
+     "current_plan": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung"
+    }
+   ],
+   "influence": null,
+   "indicators": {
+    "consumer_confidence": 18.0,
+    "business_climate": 20.0,
+    "worker_welfare": 30.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 0.0,
+    "stance_against": 3.0,
+    "stance_undecided": 2.0,
+    "stance_mean": -0.289,
+    "stance_spread": 0.19
+   }
+  }
+ ],
+ "report": {
+  "headline": "Steuerfuss-Erhöhung und Schulhauskredit: Anspannung vor der Entscheidung",
+  "summary": "Die Simulation zeigt eine Gemeinde in Unentschlossenheit: Die Aussicht auf höhere Steuern belastet die Haushalte, während der Schulhauskredit für den Bausektor und die lokale Nachfrage positive Signale setzt. Die Stimmung bleibt angespannt, ohne klare Mehrheit. Dieser Bericht gibt keine Abstimmungsempfehlung ab.",
+  "livelihood_impact": "Haushalte fühlen sich durch die geplante Steuererhöhung finanziell unter Druck gesetzt, da das verfügbare Einkommen sinken würde. Gleichzeitig könnte der Schulhausneubau langfristig die Attraktivität des Ortes steigern und indirekt die Nachfrage nach Gütern und Dienstleistungen in der Gemeinde erhöhen.",
+  "top_impacts": [
+   {
+    "title": "Bauwirtschaft profitiert",
+    "description": "Der 4,8-Millionen-Franken-Schulhauskredit würde der lokalen Bauindustrie einen großen Auftrag sichern und kurzfristig Arbeitsplätze schaffen.",
+    "direction": "positive",
+    "severity": "medium"
+   }
+  ],
+  "key_stats": [
+   {
+    "label": "Rounds Simulated",
+    "value": "3",
+    "trend": "flat"
+   },
+   {
+    "label": "Residents Tracked",
+    "value": "5",
+    "trend": "flat"
+   },
+   {
+    "label": "Dominant Mood",
+    "value": "Anxious (60%)",
+    "trend": "mixed"
+   },
+   {
+    "label": "Residents Under Strain",
+    "value": "100%",
+    "trend": "up"
+   },
+   {
+    "label": "Residents Feeling Positive",
+    "value": "0%",
+    "trend": "flat"
+   },
+   {
+    "label": "Price Change Events",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Protests Logged",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Layoff / Closure Signals",
+    "value": "0",
+    "trend": "flat"
+   }
+  ],
+  "pie_chart": {
+   "title": "Final Town Sentiment",
+   "slices": [
+    {
+     "label": "Anxious",
+     "value": 3
+    },
+    {
+     "label": "Angry",
+     "value": 1
+    },
+    {
+     "label": "Worried",
+     "value": 1
+    }
+   ]
+  },
+  "bar_chart": {
+   "title": "Pressure Signals During The Run",
+   "bars": [
+    {
+     "label": "Mood Shifts",
+     "value": 10
+    },
+    {
+     "label": "Closure Signals",
+     "value": 0
+    },
+    {
+     "label": "Layoff Signals",
+     "value": 0
+    },
+    {
+     "label": "Price Changes",
+     "value": 0
+    }
+   ]
+  },
+  "notable_events": [
+   "Haushalte äußern Angst, die Miete nicht mehr zahlen zu können, trotz harter Arbeit.",
+   "Ein lokaler Unternehmer sieht die Steuererhöhung als Bedrohung für die eigene Rentabilität, fürchtet aber gleichzeitig den Verlust neuer Kunden bei einem Nein zum Schulhausprojekt."
+  ],
+  "stance_summary": {
+   "initial": {
+    "for": 0,
+    "against": 3,
+    "undecided": 2,
+    "mean": -0.205,
+    "spread": 0.205,
+    "entropy_bits": 0.971,
+    "n": 5
+   },
+   "final": {
+    "for": 0,
+    "against": 3,
+    "undecided": 2,
+    "mean": -0.289,
+    "spread": 0.19,
+    "entropy_bits": 0.971,
+    "n": 5
+   }
+  }
+ },
+ "memories": {
+  "npc_02": [
+   {
+    "id": "npc_02_mem_be9815",
+    "npc_id": "npc_02",
+    "description": "Le débat sur la votation commence à animer les conversations dans la rue. Les avis sont partagés entre l'attrait d'une infrastructure publique et la crainte d'une charge fiscale supplémentaire. Je ressens une tension entre l'intérêt collectif et la préservation de la rentabilité individuelle des commerces.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_dae864",
+    "npc_id": "npc_02",
+    "description": "Le débat sur la votation commence à animer les conversations dans la rue. Les avis sont partagés entre l'attrait d'une infrastructure publique et la crainte d'une charge fiscale supplémentaire. Je ressens une tension entre l'intérêt collectif et la préservation de la rentabilité individuelle des commerces.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ccf6d3",
+    "npc_id": "npc_02",
+    "description": "Je souhaite recueillir un avis concret sur l'impact commercial de l'arrivée de nouveaux résidents avant de me positionner sur la votation.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_831c6e",
+    "npc_id": "npc_02",
+    "description": "Je dois évaluer si l'augmentation du taux d'imposition est compensée par un flux de clients potentiels supplémentaires pour mon commerce.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_f5b0f2",
+    "npc_id": "npc_02",
+    "description": "npc_03 said to me: Léa, ich habe die Vorlage gelesen. Ein neues Schulhaus ist wichtig, aber wenn der Steuerfuss um sechs Prozentpunkte steigt, bedeutet das für mich als Direktvermarkterin etwa 432 CHF mehr Steuern pro Jahr. Das ist nicht nur Geld, das fehlt für Investitionen in Präzisionslandwirtschaft, sondern auch weniger Kaufkraft bei unseren regionalen Kunden. Was denkst du als Ladenbesitzerin darüber?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_8d0efe",
+    "npc_id": "npc_02",
+    "description": "npc_04 said to me: Léa, j'ai bien lu l'objet de la votation. Pour un revenu comme le mien, 240 CHF de plus par an, c'est le prix d'un abonnement de bus pour toute la famille. Tu ne trouves pas que c'est beaucoup pour financer une salle de sport et une garderie ?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_25a88c",
+    "npc_id": "npc_02",
+    "description": "The policy creates a tangible financial burden on small local businesses like mine, with increased taxes directly reducing funds available for growth and investment, while also potentially decreasing the disposable income of our regional customers.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_be9815",
+     "npc_02_mem_dae864",
+     "npc_02_mem_ccf6d3",
+     "npc_02_mem_831c6e",
+     "npc_02_mem_f5b0f2",
+     "npc_02_mem_8d0efe"
+    ]
+   },
+   {
+    "id": "npc_02_mem_74bced",
+    "npc_id": "npc_02",
+    "description": "The community is deeply divided, with neighbors and fellow business owners expressing contrasting views based on their personal financial situations and priorities, highlighting a tension between collective investment in public infrastructure and individual economic preservation.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_be9815",
+     "npc_02_mem_dae864",
+     "npc_02_mem_ccf6d3",
+     "npc_02_mem_831c6e",
+     "npc_02_mem_f5b0f2",
+     "npc_02_mem_8d0efe"
+    ]
+   },
+   {
+    "id": "npc_02_mem_7e3fa2",
+    "npc_id": "npc_02",
+    "description": "My initial uncertainty about the policy has evolved into a cautious concern, as hearing from others—whether a fellow direct marketer worried about agricultural investments or a family worried about bus passes—has made me realize the tax increase is not just an abstract number but a real cost that affects both business viability and everyday life in Linden.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_be9815",
+     "npc_02_mem_dae864",
+     "npc_02_mem_ccf6d3",
+     "npc_02_mem_831c6e",
+     "npc_02_mem_f5b0f2",
+     "npc_02_mem_8d0efe"
+    ]
+   },
+   {
+    "id": "npc_02_mem_fec96a",
+    "npc_id": "npc_02",
+    "description": "La tension entre l'investissement public et la charge fiscale pèse sur l'ambiance du village. Les conversations dans la rue oscillent entre l'enthousiasme pour l'école et la crainte d'une baisse du pouvoir d'achat. Je constate que les avis divergent fortement selon que l'on est parent ou commerçant.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ce624b",
+    "npc_id": "npc_02",
+    "description": "La tension entre l'investissement public et la charge fiscale pèse sur l'ambiance du village. Les conversations dans la rue oscillent entre l'enthousiasme pour l'école et la crainte d'une baisse du pouvoir d'achat. Je constate que les avis divergent fortement selon que l'on est parent ou commerçant.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_586a2a",
+    "npc_id": "npc_02",
+    "description": "Je discute avec Alice Martin pour comprendre comment les familles perçoivent l'impact fiscal face à l'arrivée d'une garderie, afin d'évaluer l'impact commercial réel pour ma boutique.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_6a189e",
+    "npc_id": "npc_02",
+    "description": "Je ressens une inquiétude croissante : l'augmentation du taux d'imposition menace ma rentabilité, mais le refus du projet retarderait l'arrivée de nouveaux clients. Je dois trouver un équilibre entre l'intérêt collectif et ma survie économique.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_c18738",
+    "npc_id": "npc_02",
+    "description": "npc_04 said to me: Léa, je me demandais si tu avais eu le temps d'étudier les détails du budget. Pour un commerce comme le tien, l'arrivée d'une garderie et d'une salle de sport pourrait signifier plus de clients pendant la journée, mais la hausse du taux d'imposition de 118 % à 124 % représente pour moi, avec mon revenu moyen, environ 240 CHF de plus par an. Comment vois-tu l'équilibre entre l'investissement et la charge pour les familles qui fréquentent la rue du village ?",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_f65702",
+    "npc_id": "npc_02",
+    "description": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_f1ed2a",
+    "npc_id": "npc_02",
+    "description": "L'ambiance du village reste tendue. Les parents parlent d'avenir pour leurs enfants, les commerçants de leurs marges. Je sens que chaque conversation cache une décision économique personnelle. Il faut absolument des données précises sur la fréquentation potentielle pour trancher.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_23147e",
+    "npc_id": "npc_02",
+    "description": "Je m'approche d'Alice Martin pour obtenir une perspective pédagogique et sociale sur la votation, car les chiffres économiques me laissent perplexe face à l'incertitude de la demande future.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_f61ea7",
+    "npc_id": "npc_02",
+    "description": "Le calcul est serré : l'accueil de jour pourrait attirer plus de familles, mais l'augmentation du taux d'imposition de 118 % à 124 % représente une charge annuelle de 432 CHF pour mon ménage. Cette incertitude financière me rend anxieuse quant à la viabilité de mes achats locaux et de ma marge.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_7463f9",
+    "npc_id": "npc_02",
+    "description": "npc_04 said to me: Léa, je me demandais si tu avais eu le temps de réfléchir à la votation. Pour moi, c'est un dilemme : je vois l'utilité de la nouvelle salle de sport et de la garderie, mais la hausse du taux d'imposition de 118 % à 124 % représente 240 CHF de plus par an pour un revenu comme le mien. Comment concilies-tu l'avenir des enfants avec la réalité budgétaire des familles ?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_03": [
+   {
+    "id": "npc_03_mem_ce13bd",
+    "npc_id": "npc_03",
+    "description": "Die Diskussionen über die Vorlage sind bereits im Dorf spürbar. Viele reden über das Schulhaus, aber kaum jemand erwähnt die Konsequenzen für die Bauern. Ich habe das Gefühl, die landwirtschaftliche Basis wird als selbstverständlich betrachtet, obwohl sie die Grundlage für die gesamte Wertschöpfung in der Gemeinde bildet.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_614f30",
+    "npc_id": "npc_03",
+    "description": "Die Diskussionen über die Vorlage sind bereits im Dorf spürbar. Viele reden über das Schulhaus, aber kaum jemand erwähnt die Konsequenzen für die Bauern. Ich habe das Gefühl, die landwirtschaftliche Basis wird als selbstverständlich betrachtet, obwohl sie die Grundlage für die gesamte Wertschöpfung in der Gemeinde bildet.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_52064f",
+    "npc_id": "npc_03",
+    "description": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_7c57b9",
+    "npc_id": "npc_03",
+    "description": "Ich diskutiere mit Alice die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_b7a8e8",
+    "npc_id": "npc_03",
+    "description": "Ich gehe zum Feldrand, um die Ernte zu kontrollieren und die Zahlen für die nächste Saison zu prüfen",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 2,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_e7bdc1",
+    "npc_id": "npc_03",
+    "description": "npc_02 said to me: Anna, j'ai lu le projet de construction de l'école et de la garderie. Pour toi, qui vend du lait et des légumes bio, est-ce que l'arrivée de plus de familles dans le village se traduit déjà par une demande plus forte ?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_2b2053",
+    "npc_id": "npc_03",
+    "description": "npc_01 said to me: Anna, ich habe die Vorlage gelesen. 124 % Steuerfuss – das trifft mich direkt. Ich komme schon so kaum über die Runden, und jetzt soll ich noch mehr zahlen? Für ein Schulhaus, das ich vielleicht nie nutze?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_5533d1",
+    "npc_id": "npc_03",
+    "description": "The policy is creating a growing sense of economic vulnerability among farmers like myself, as the proposed tax increase directly threatens the viability of small, sustainable operations that form the backbone of the community's food system.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ce13bd",
+     "npc_03_mem_614f30",
+     "npc_03_mem_52064f",
+     "npc_03_mem_7c57b9",
+     "npc_03_mem_b7a8e8",
+     "npc_03_mem_e7bdc1",
+     "npc_03_mem_2b2053"
+    ]
+   },
+   {
+    "id": "npc_03_mem_636263",
+    "npc_id": "npc_03",
+    "description": "I've learned that while the village broadly supports development projects like the school, there is a disconnect between residents and farmers regarding the real economic impact of such policies, with many viewing agricultural contributions as taken for granted rather than as a fragile economic foundation.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ce13bd",
+     "npc_03_mem_614f30",
+     "npc_03_mem_52064f",
+     "npc_03_mem_7c57b9",
+     "npc_03_mem_b7a8e8",
+     "npc_03_mem_e7bdc1",
+     "npc_03_mem_2b2053"
+    ]
+   },
+   {
+    "id": "npc_03_mem_e0f3b4",
+    "npc_id": "npc_03",
+    "description": "My initial frustration over being asked to bear a disproportionate financial burden has evolved into a deeper concern about the long-term sustainability of rural livelihoods, as the policy debate highlights how easily the needs of agriculture can be sidelined in favor of other community priorities.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ce13bd",
+     "npc_03_mem_614f30",
+     "npc_03_mem_52064f",
+     "npc_03_mem_7c57b9",
+     "npc_03_mem_b7a8e8",
+     "npc_03_mem_e7bdc1",
+     "npc_03_mem_2b2053"
+    ]
+   },
+   {
+    "id": "npc_03_mem_eb40b8",
+    "npc_id": "npc_03",
+    "description": "Die Diskussionen im Dorf werden emotionaler. Petra ist verärgert über die Steuerlast, Léa sieht eher die Chancen für mehr Nachfrage. Ich spüre, dass die landwirtschaftliche Perspektive kaum gehört wird, obwohl sie das Rückgrat der Gemeinde bildet. Ich muss die Verbindung zwischen Bildung, Steuerpolitik und regionaler Wertschöpfung klarer vermitteln.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_5e3b42",
+    "npc_id": "npc_03",
+    "description": "Die Diskussionen im Dorf werden emotionaler. Petra ist verärgert über die Steuerlast, Léa sieht eher die Chancen für mehr Nachfrage. Ich spüre, dass die landwirtschaftliche Perspektive kaum gehört wird, obwohl sie das Rückgrat der Gemeinde bildet. Ich muss die Verbindung zwischen Bildung, Steuerpolitik und regionaler Wertschöpfung klarer vermitteln.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_e4cd6e",
+    "npc_id": "npc_03",
+    "description": "Ich spreche mit Léa über die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_d05530",
+    "npc_id": "npc_03",
+    "description": "Ich diskutiere mit Petra Schneider die langfristige Tragfähigkeit der Gemeindepolitik aus Sicht der Landwirtschaft",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_6b7b00",
+    "npc_id": "npc_03",
+    "description": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_22ba39",
+    "npc_id": "npc_03",
+    "description": "Die Stimmung im Dorf ist gespalten. Während viele Bewohner die Schulhauserweiterung als notwendige Zukunftsinvestition sehen, wird die Belastung für die Landwirtschaft kaum thematisiert. Ich spüre eine wachsende Kluft zwischen den Sektoren, die dringend geschlossen werden muss, bevor die Abstimmung entscheidet.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_2ff2c3",
+    "npc_id": "npc_03",
+    "description": "Ich rufe Léa an, um die wirtschaftlichen Auswirkungen der Steuererhöhung auf die Direktvermarktung zu diskutieren und ihre Sicht auf die Verbindung zwischen Bildung und regionaler Nachfrage zu verstehen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_d33cfe",
+    "npc_id": "npc_03",
+    "description": "Ich gehe zum Gemeindehaus, um die Abstimmungsunterlagen nochmals zu prüfen und die Zahlen für eine mögliche Gegenargumentation zu sammeln.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 2,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_04": [
+   {
+    "id": "npc_04_mem_081919",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville est animée, les enfants jouent près du jardin partagé. J'entends des bribes de conversations autour de la votation. Certains parlent de l'avenir des enfants, d'autres du prix à payer. Je me demande comment articuler mes réserves sans être perçue comme une extrémiste.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_7cdc26",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville est animée, les enfants jouent près du jardin partagé. J'entends des bribes de conversations autour de la votation. Certains parlent de l'avenir des enfants, d'autres du prix à payer. Je me demande comment articuler mes réserves sans être perçue comme une extrémiste.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_de61d7",
+    "npc_id": "npc_04",
+    "description": "Je discute avec Léa Rochat pour comprendre son point de vue sur la hausse du taux d'imposition.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_14ae6b",
+    "npc_id": "npc_04",
+    "description": "Je me sens anxieuse car je crains que mes réserves financières ne soient trop sollicitées, même si je reconnais l'importance du projet pour la commune.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_2021a6",
+    "npc_id": "npc_04",
+    "description": "npc_02 said to me: Alice, en tant qu'enseignante, peux-tu m'expliquer comment la présence d'une structure d'accueil de jour dans l'école pourrait influencer la fréquentation de la rue du village pendant la journée ?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_5aef43",
+    "npc_id": "npc_04",
+    "description": "npc_03 said to me: Alice, als Lehrerin siehst du die Notwendigkeit des Schulhausbaus sicher anders. Aber ich frage mich, ob die Gemeinde den Zusammenhang zwischen einer starken Landwirtschaft und einer gut ausgebildeten Bevölkerung erkennt. Wenn die Bauern weiter besteuert werden, wer bewirtschaftet dann in zehn Jahren das Land, das die Schule ausbildet?",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_42a521",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Alice, ich muss mit dir reden. Hast du die Vorlage zum Steuerfuss und zum Schulhauskredit schon gesehen? Ich bin ehrlich gesagt dagegen, weil das die Steuerzahler zu stark belastet, gerade bei mittleren Einkommen wie dem meinen.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_8f0037",
+    "npc_id": "npc_04",
+    "description": "The policy debate has made me acutely aware of the tension between personal financial security and communal investment in education and childcare, especially as an educator who sees the direct benefits of a daycare facility but worries about the tax burden on middle-income families like mine.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_081919",
+     "npc_04_mem_7cdc26",
+     "npc_04_mem_de61d7",
+     "npc_04_mem_14ae6b",
+     "npc_04_mem_2021a6",
+     "npc_04_mem_5aef43",
+     "npc_04_mem_42a521"
+    ]
+   },
+   {
+    "id": "npc_04_mem_c872c3",
+    "npc_id": "npc_04",
+    "description": "Conversations with community members—whether discussing the future of children, the impact on farmers, or the practical effects on daily life—have revealed a shared concern for the long-term sustainability of Linden, yet divergent views on who should bear the cost and how to balance economic realities with social needs.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_081919",
+     "npc_04_mem_7cdc26",
+     "npc_04_mem_de61d7",
+     "npc_04_mem_14ae6b",
+     "npc_04_mem_2021a6",
+     "npc_04_mem_5aef43",
+     "npc_04_mem_42a521"
+    ]
+   },
+   {
+    "id": "npc_04_mem_351353",
+    "npc_id": "npc_04",
+    "description": "Initially anxious about being perceived as extreme for voicing reservations, I now recognize that my concerns about affordability and the well-being of families are common among my neighbors, which has shifted my position from isolated doubt to a more nuanced advocacy for equitable solutions that protect both education and household finances.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_081919",
+     "npc_04_mem_7cdc26",
+     "npc_04_mem_de61d7",
+     "npc_04_mem_14ae6b",
+     "npc_04_mem_2021a6",
+     "npc_04_mem_5aef43",
+     "npc_04_mem_42a521"
+    ]
+   },
+   {
+    "id": "npc_04_mem_38ea5a",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville reste animée, les enfants courent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_0c37fc",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville reste animée, les enfants courent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_d931dd",
+    "npc_id": "npc_04",
+    "description": "Je discute avec Léa Rochat pour comprendre son point de vue sur l'impact économique de la votation tout en partageant mes inquiétudes personnelles.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_e9c004",
+    "npc_id": "npc_04",
+    "description": "Je ressens une anxiété croissante à l'idée de devoir défendre une position qui pourrait me faire passer pour une extrémiste, alors que je crois simplement que la solidarité doit être mesurée et réfléchie, surtout pour les ménages comme le mien.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_920c96",
+    "npc_id": "npc_04",
+    "description": "npc_02 said to me: Alice, tu as raison de soulever la question du coût pour les familles. Mais pour ma boutique, chaque nouveau foyer représente un potentiel client. Si l'accueil de jour attire des parents, la rue du village devient plus vivante. Cependant, je ne peux pas ignorer que 432 CHF de plus par an, c'est une marge qui disparaît. Comment concilies-tu ces deux réalités dans ton enseignement ?",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_11d2d4",
+    "npc_id": "npc_04",
+    "description": "npc_01 said to me: Anna, ich habe die Vorlage gelesen. 6 Prozentpunkte mehr Steuerfuss – das sind bei meinem Einkommen fast 144 CHF mehr pro Jahr. Ich komme schon jetzt kaum über die Runden, und die Gemeinde will noch mehr Geld, ohne ihre eigenen Ausgaben zu prüfen. Was denkst du als Bio-Bäuerin darüber?",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_bbb78f",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Alice, ich habe die Vorlage nochmals durchgelesen. Die 6 Prozentpunkte mehr Steuerfuss – das trifft doch vor allem die Familien mit Kindern, die wir mit dem neuen Schulhaus eigentlich unterstützen wollen, oder?",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_9f9eea",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_cf2e61",
+    "npc_id": "npc_04",
+    "description": "La place du centre-ville est toujours animée, les enfants jouent près du jardin partagé. J'entends des voix monter et descendre autour de la question de la votation. Certains vantent l'avenir des enfants, d'autres comptent déjà les CHF supplémentaires sur leur budget. Je me sens de plus en plus isolée entre mon idéal d'école inclusive et la réalité financière qui pèse sur mes épaules.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_2be18d",
+    "npc_id": "npc_04",
+    "description": "Je discute avec Léa Rochat pour comprendre comment une commerçante locale perçoit l'impact de la hausse fiscale sur les ménages et les petits commerces.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_fbacb9",
+    "npc_id": "npc_04",
+    "description": "Je ressens une anxiété croissante à l'idée que mes réserves financières soient trop sollicitées, même si je reconnais l'importance du projet pour la commune et l'école.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_66e929",
+    "npc_id": "npc_04",
+    "description": "npc_02 said to me: Alice, j'ai besoin de ton avis d'enseignante. Comment vois-tu l'impact concret de cette nouvelle école et de la garderie sur la fréquentation de la rue du village ? Est-ce que cela compensera vraiment la hausse d'impôt pour les commerçants comme moi ?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_63d665",
+    "npc_id": "npc_04",
+    "description": "npc_01 said to me: Anna, ich habe die Vorlage gelesen. 6 Prozentpunkte mehr Steuerfuss – bei meinem Lohn ist das fast ein ganzer Monatsmietanteil. Ich verstehe, dass Bildung wichtig ist, aber warum muss es immer die Steuerzahler sein, die zuerst zahlen? Die Gemeinde hat ein Defizit, aber ich sehe keine Sparmassnahmen. Ich habe Angst, dass ich bald nicht mehr über die Runden komme.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_ef6c15",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Alice, ich muss dir ehrlich sagen: Die Zahlen sind klar, aber das Herz der Gemeinde schlägt anders. 240 CHF mehr pro Jahr für ein Haushalt mit 80'000 CHF – das ist nicht nur Geld, das fehlt für den Familienurlaub oder die Reparatur am Auto. Und wenn wir gleichzeitig die Rückstellungen für die Sozialhilfe kürzen müssen, wie soll das fair sein? Wir bauen ein Schulhaus, aber wir lassen gleichzeitig die Schwächsten im Regen stehen?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_01": [
+   {
+    "id": "npc_01_mem_070fbe",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde will mehr Geld, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_c02e8c",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde will mehr Geld, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_44df7c",
+    "npc_id": "npc_01",
+    "description": "Ich spreche mit Anna Berger über die Steuererhöhung und die finanziellen Folgen für mich als Mechanikerin",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_08e04a",
+    "npc_id": "npc_01",
+    "description": "Die Aussicht auf weitere Steuern macht mich besorgt – ich habe Angst, dass ich die Miete bald nicht mehr zahlen kann, obwohl ich jeden Tag hart arbeite",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_58c528",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde plant den Schulhausbau, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_b8cf00",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt auf dem Tisch, und ich spüre die Wut und die Sorge in mir. Die Gemeinde plant den Schulhausbau, aber ich sehe nicht, wie sie ihre eigenen Ausgaben zuerst optimiert. Ich werde mit Anna sprechen, weil sie als Bio-Bäuerin vielleicht ähnliche Sorgen hat wie ich.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_461489",
+    "npc_id": "npc_01",
+    "description": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_a5042d",
+    "npc_id": "npc_01",
+    "description": "Die Aussicht auf weitere Steuern verstärkt meine Sorge, die Miete bald nicht mehr zahlen zu können, obwohl ich jeden Tag hart arbeite",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_4faf1d",
+    "npc_id": "npc_01",
+    "description": "The proposed tax increases are causing me significant financial anxiety, as I fear I may no longer be able to afford my workshop rent despite working hard every day, highlighting how the policy directly threatens my livelihood and stability.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_070fbe",
+     "npc_01_mem_c02e8c",
+     "npc_01_mem_44df7c",
+     "npc_01_mem_08e04a",
+     "npc_01_mem_58c528",
+     "npc_01_mem_b8cf00",
+     "npc_01_mem_461489",
+     "npc_01_mem_a5042d"
+    ]
+   },
+   {
+    "id": "npc_01_mem_5f9757",
+    "npc_id": "npc_01",
+    "description": "Sharing my concerns with Anna, a fellow small business owner and bio-farmer, has shown me that others in my community feel similarly burdened by the policy, revealing a shared sense of frustration and vulnerability among local entrepreneurs.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_070fbe",
+     "npc_01_mem_c02e8c",
+     "npc_01_mem_44df7c",
+     "npc_01_mem_08e04a",
+     "npc_01_mem_58c528",
+     "npc_01_mem_b8cf00",
+     "npc_01_mem_461489",
+     "npc_01_mem_a5042d"
+    ]
+   },
+   {
+    "id": "npc_01_mem_48c34e",
+    "npc_id": "npc_01",
+    "description": "My repeated conversations with Anna have deepened my conviction that the policy lacks consideration for the financial realities of small business owners and self-employed individuals, solidifying my opposition to the tax increases without prior municipal cost optimization.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_070fbe",
+     "npc_01_mem_c02e8c",
+     "npc_01_mem_44df7c",
+     "npc_01_mem_08e04a",
+     "npc_01_mem_58c528",
+     "npc_01_mem_b8cf00",
+     "npc_01_mem_461489",
+     "npc_01_mem_a5042d"
+    ]
+   },
+   {
+    "id": "npc_01_mem_18ecd1",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_a3ef80",
+    "npc_id": "npc_01",
+    "description": "Die Vorlage liegt weiterhin auf dem Tisch, und ich spüre, wie die Sorge in meinem Bauch immer schwerer wird. Die Gemeinde spricht von Bildung und Zukunft, aber ich sehe nur die Zahlen, die mein Budget belasten. Ich habe das Gefühl, dass meine Stimme als Mechanikerin in dieser Diskussion nicht gehört wird.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_894761",
+    "npc_id": "npc_01",
+    "description": "Ich rufe Anna an, um ihre Meinung zu den Steuererhöhungen und den finanziellen Folgen zu hören",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_5f1984",
+    "npc_id": "npc_01",
+    "description": "Die Wut steigt, weil ich das Gefühl habe, dass die Gemeinde meine harte Arbeit nicht anerkennt und stattdessen einfach die Steuern erhöht, ohne ihre eigenen Ausgaben zu prüfen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_05": [
+   {
+    "id": "npc_05_mem_6e6d67",
+    "npc_id": "npc_05",
+    "description": "Die Stimmung im Dorf ist angespannt. Im Café hört man leise Diskussionen über die Steuererhöhung, und einige Eltern sprechen besorgt über die Kosten für den Schulhausneubau. Ich spüre den Druck, eine Entscheidung zu treffen, die sowohl die Finanzen der Gemeinde als auch die Lebensqualität der Bewohner beeinflusst.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_f37c55",
+    "npc_id": "npc_05",
+    "description": "Die Stimmung im Dorf ist angespannt. Im Café hört man leise Diskussionen über die Steuererhöhung, und einige Eltern sprechen besorgt über die Kosten für den Schulhausneubau. Ich spüre den Druck, eine Entscheidung zu treffen, die sowohl die Finanzen der Gemeinde als auch die Lebensqualität der Bewohner beeinflusst.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_da52f0",
+    "npc_id": "npc_05",
+    "description": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuererhöhung.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_349c43",
+    "npc_id": "npc_05",
+    "description": "Die Sorge, dass die Steuererhöhung die Attraktivität von Linden mindern könnte und gleichzeitig die Rückstellungen für Sozialhilfe gekürzt werden müssten, verstärkt meine innere Unruhe.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_b90674",
+    "npc_id": "npc_05",
+    "description": "Die Stimmung im Dorf bleibt angespannt. Im Café flüstern die Leute über die Steuererhöhung, und ich spüre den Widerstand gegen die Vorlage. Gleichzeitig sehe ich die Notwendigkeit, die Infrastruktur zu erneuern, doch die Belastung für die Steuerzahler wiegt schwer.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_ab9d83",
+    "npc_id": "npc_05",
+    "description": "Die Stimmung im Dorf bleibt angespannt. Im Café flüstern die Leute über die Steuererhöhung, und ich spüre den Widerstand gegen die Vorlage. Gleichzeitig sehe ich die Notwendigkeit, die Infrastruktur zu erneuern, doch die Belastung für die Steuerzahler wiegt schwer.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_7b3bc5",
+    "npc_id": "npc_05",
+    "description": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung für Familien",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_b5939e",
+    "npc_id": "npc_05",
+    "description": "Die Sorgen der Eltern im Dorf hallen in meinem Kopf wider. Ich frage mich, ob wir die Last wirklich gerecht verteilen oder nur die Finanzen kurzfristig kitten.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_09d56f",
+    "npc_id": "npc_05",
+    "description": "The proposed tax increase is creating significant personal and communal stress, as I witness growing anxiety among residents—especially parents concerned about affordability—and feel the weight of balancing fiscal responsibility with the well-being of families I care about.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_6e6d67",
+     "npc_05_mem_f37c55",
+     "npc_05_mem_da52f0",
+     "npc_05_mem_349c43",
+     "npc_05_mem_b90674",
+     "npc_05_mem_ab9d83",
+     "npc_05_mem_7b3bc5",
+     "npc_05_mem_b5939e"
+    ]
+   },
+   {
+    "id": "npc_05_mem_50aa24",
+    "npc_id": "npc_05",
+    "description": "I have learned that the villagers are deeply interconnected in their concerns, with issues like school construction costs and tax burdens resonating across social groups, revealing a community where financial policy decisions are felt personally and collectively.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_6e6d67",
+     "npc_05_mem_f37c55",
+     "npc_05_mem_da52f0",
+     "npc_05_mem_349c43",
+     "npc_05_mem_b90674",
+     "npc_05_mem_ab9d83",
+     "npc_05_mem_7b3bc5",
+     "npc_05_mem_b5939e"
+    ]
+   },
+   {
+    "id": "npc_05_mem_d7574a",
+    "npc_id": "npc_05",
+    "description": "My position on the policy has shifted from initial uncertainty to a more critical stance, as repeated conversations with Alice Martin and observations in the café have made me question whether the tax hike truly addresses long-term needs fairly or merely provides short-term financial relief at the expense of equity and quality of life.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_6e6d67",
+     "npc_05_mem_f37c55",
+     "npc_05_mem_da52f0",
+     "npc_05_mem_349c43",
+     "npc_05_mem_b90674",
+     "npc_05_mem_ab9d83",
+     "npc_05_mem_7b3bc5",
+     "npc_05_mem_b5939e"
+    ]
+   },
+   {
+    "id": "npc_05_mem_c13b4d",
+    "npc_id": "npc_05",
+    "description": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_445e45",
+    "npc_id": "npc_05",
+    "description": "Die Anspannung im Dorf ist greifbar. Im Café flüstern die Leute über die Steuererhöhung, und ich höre immer wieder die Frage, ob der Schulhausneubau wirklich so dringend ist, wenn dafür die Sozialhilfe gekürzt werden muss. Die Eltern sorgen sich um die Zukunft ihrer Kinder, die Handwerker hoffen auf den Auftrag, und ich stehe zwischen allen und fühle die Last der Entscheidung",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_b330bf",
+    "npc_id": "npc_05",
+    "description": "Ich spreche mit Alice Martin über die Abstimmungsvorlage und teile ihr meine Bedenken bezüglich der Steuerbelastung und der Sozialhilfe",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_4b8c7f",
+    "npc_id": "npc_05",
+    "description": "Ich gehe zum Rathausplatz, um die Stimmung der Leute direkt zu spüren und nach einer Lösung zu suchen, die weder die Finanzen noch die Gemeinschaft zerstört",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 2,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ]
+ },
+ "llm_stats": {}
+}

@@ -11,9 +11,10 @@ from langchain_openai import ChatOpenAI
 
 from config import GRID_HEIGHT, GRID_WIDTH, MAX_NPCS, MAX_X, MAX_Y
 from graph.corpus import detect_setting
-from graph.language import TOWN, assign_langs
+from graph.language import TOWN, assign_langs, swissify_persona
 from graph.llm import get_llm, invoke_llm_json
 from graph.names import name_pools_for_lang
+from graph.nodes.stance import elicit_stances
 from graph.prompts import (
     EXTRACT_CHARACTERS_PROMPT,
     GENERATE_NPC_PERSONALITY_PROMPT,
@@ -208,7 +209,12 @@ async def _extract_characters(
         entities_json=entities_json,
     )
     data = await invoke_llm_json(prompt, llm=llm)
-    return data.get("characters", [])
+    # "Extract" means literal: keep a character only if the name is in the text (the model
+    # otherwise invents residents, or returns the document title as a person: E3 8B run).
+    return [
+        c for c in data.get("characters", [])
+        if isinstance(c, dict) and c.get("name") and str(c["name"]) in source_text
+    ]
 
 
 async def _generate_personality(
@@ -402,9 +408,13 @@ async def generate_npcs(state: SimState) -> dict:
         npc.setdefault("lang", "en")
         npc.setdefault("life_story", npc.get("bio", ""))
         npc.setdefault("expert_reflection", "")
-        npcs.append(npc)
+        npcs.append(swissify_persona(npc))
         if callback:
             await callback(npc)
+
+    await _progress("Eliciting initial stances...", 0, len(npcs))
+    valence = float((state.get("entities") or [{}])[0].get("ideological_valence", 0.0) or 0.0)
+    await elicit_stances(npcs, state["policy_text"], town, llm, valence=valence)
 
     logger.info("generate_npcs: generating relationships …")
     await _progress("Building social network...", 0, 0)

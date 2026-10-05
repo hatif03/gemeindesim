@@ -47,6 +47,11 @@ class NPC(BaseModel):
     lang: Literal["de", "fr", "en"] = "en"
     life_story: str = ""
     expert_reflection: str = ""
+    # Code-owned stance on the question: -1 (against) .. +1 (for). Seeded once by an Apertus
+    # elicitation, then moved only by the Python opinion dynamics (never rewritten by the LLM).
+    stance: float = Field(default=0.0, ge=-1, le=1)
+    stance_reason: str = ""
+    impact: str = ""
 
 
 class Relationship(BaseModel):
@@ -155,6 +160,18 @@ class PolicyAnalysis(BaseModel):
     stakeholders: list[str]
     economic_impacts: list[str]
     controversy_level: Literal["low", "medium", "high"]
+    # Whom does the measure favour politically? -1 = left/progressive voters, +1 = right/conservative.
+    ideological_valence: float = Field(default=0.0, ge=-1, le=1)
+
+    @classmethod
+    def prompt_example(cls) -> dict[str, Any]:
+        return {
+            "sectors": ["Retail", "Construction"],
+            "stakeholders": ["Tenants pay more tax", "Shop owners hope for demand"],
+            "economic_impacts": ["Household tax burden rises", "School construction orders local firms"],
+            "controversy_level": "medium",
+            "ideological_valence": -0.4,
+        }
 
 
 class NPCGenerationResponse(BaseModel):
@@ -183,6 +200,27 @@ class NPCEvent(BaseModel):
     used_source_ids: list[str] = Field(default_factory=list)
     grounded: bool = False
 
+    @model_validator(mode="before")
+    @classmethod
+    def null_to_default(cls, data: Any) -> Any:
+        """The model emits null for string/list fields it has nothing to say for."""
+        if isinstance(data, dict):
+            data = dict(data)
+            for k in ("message", "target_npc_id", "dialogue", "new_mood"):
+                if data.get(k) is None:
+                    data[k] = ""
+            ids = data.get("used_source_ids")
+            if ids is None:
+                data["used_source_ids"] = []
+            elif isinstance(ids, (str, int)):
+                data["used_source_ids"] = [str(ids)]
+            elif isinstance(ids, list):  # the 8B writes [1, 2] for ["P1", "P2"]
+                data["used_source_ids"] = [str(x) for x in ids]
+            for k in ("to_x", "to_y"):
+                if data.get(k) in ("", "null"):
+                    data[k] = None
+        return data
+
     @model_validator(mode="after")
     def canonicalize_mood(self) -> NPCEvent:
         if not self.new_mood:
@@ -199,6 +237,36 @@ class NPCRoundResponse(BaseModel):
     events: list[NPCEvent]
     perception: str = ""
 
+    @classmethod
+    def prompt_example(cls, lang: str = "en") -> dict[str, Any]:
+        """Three-event example with <instruction> placeholders in the resident's language.
+
+        Research E2/E2b: the example *is* the behaviour policy. Placeholder defaults ("...", 0)
+        are echoed and leave the 8B at one chat per turn; a filled example is parroted (8B: 53 %
+        of dialogue). Instruction placeholders gave 0 % parroting, 2.0 events/turn on the 70B
+        (with `move` kept) and 1.8 on the 8B (from 1.0). The types shown are NOT binding."""
+        t = {
+            "de": ("<was du tust, ein Satz>", "<id aus der Nearby-Liste>", "<deine genauen Worte, auf Deutsch>",
+                   "<P1, P2 ...>", "<wie sich deine Stimmung ändert und warum>", "<wohin und warum>",
+                   "<was du in dieser Runde bemerkst>"),
+            "fr": ("<ce que tu fais, une phrase>", "<id de la liste Nearby>", "<tes mots exacts, en français>",
+                   "<P1, P2 ...>", "<comment ton humeur change et pourquoi>", "<où et pourquoi>",
+                   "<ce que tu remarques ce tour>"),
+            "en": ("<what you do, one sentence>", "<id from the Nearby list>", "<your exact words>",
+                   "<P1, P2 ...>", "<how your mood changes and why>", "<where and why>",
+                   "<what you notice this round>"),
+        }[lang if lang in ("de", "fr") else "en"]
+        mood = "<angry|anxious|worried|neutral|hopeful|excited>"
+        base = {"target_npc_id": "", "dialogue": "", "to_x": None, "to_y": None, "new_mood": "", "used_source_ids": []}
+        return {
+            "events": [
+                {**base, "event_type": "chat", "message": t[0], "target_npc_id": t[1], "dialogue": t[2], "used_source_ids": [t[3]]},
+                {**base, "event_type": "mood_shift", "message": t[4], "new_mood": mood},
+                {**base, "event_type": "move", "message": t[5], "to_x": 0, "to_y": 0},
+            ],
+            "perception": t[6],
+        }
+
     @model_validator(mode="before")
     @classmethod
     def normalize_shape(cls, data: Any) -> Any:
@@ -206,6 +274,16 @@ class NPCRoundResponse(BaseModel):
         if isinstance(data, dict) and "event_type" in data:
             return {"events": [data]}
         return data
+
+
+class ImpactResponse(BaseModel):
+    """How the measure touches one resident, plus the best argument each way (resident's language).
+
+    The stance is NOT asked for: Apertus answers "yes" for every persona (research E11)."""
+
+    impact: Literal["benefit", "harm", "mixed", "none"] = "mixed"
+    support_reason: str = ""
+    oppose_reason: str = ""
 
 
 class ReflectionResponse(BaseModel):
@@ -264,3 +342,4 @@ class EconomicReportResponse(BaseModel):
     pie_chart: PieChartData
     bar_chart: BarChartData
     notable_events: list[str]
+    stance_summary: dict[str, Any] | None = None
