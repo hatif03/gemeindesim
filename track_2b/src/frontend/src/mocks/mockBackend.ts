@@ -223,6 +223,12 @@ function professionForRole(role: BackendRole, industry: string, index: number): 
       return "corner shopkeeper";
     case "driver":
       return index % 2 === 0 ? "delivery driver" : "taxi driver";
+    case "teacher":
+      return "primary school teacher";
+    case "municipal_employee":
+      return "municipal clerk";
+    case "tenant":
+      return "tenant";
   }
 }
 

@@ -91,6 +91,21 @@ def stance_binding(npc: dict[str, Any]) -> str:
     x = float(npc.get("stance", 0.0))
     label = stance_label(x)
     reason = (npc.get("stance_reason") or "").strip()
+    if label == "undecided" and reason:
+        # E16/E16b: "you are torn" alone made undecided residents sound like opponents (≈ 45 % mixed lines on the 70B).
+        # Two named arguments, one for and one against, in their own words and never copied word for word:
+        # 72-74 % mixed on the 70B (5 % verbatim copying), 8B 'mixed or neutral' 53 % -> 68 %.
+        pro, _, con = reason.partition(" / ")
+        pro = (npc.get("support_reason") or pro).strip()
+        con = (npc.get("oppose_reason") or con).strip()
+        if pro and con:
+            return (
+                f"REMINDER before you answer: Your position on the question: undecided ({x:+.2f}). You have NOT made up your mind "
+                f"and you say so in your own words. In every line you do three things: (1) state plainly that you are still "
+                f"undecided; (2) give ONE concrete reason in favour (in your own words): {pro} (3) give ONE concrete reason "
+                f"against (in your own words): {con} You never take a side and you never argue only about costs. "
+                f"Do NOT repeat the sentences above word for word: say the same thing with new wording every time."
+            )
     carry = f" The argument you carry: {reason}" if reason else ""
     return f"REMINDER before you answer: Your position on the question: {label} ({x:+.2f}). In everything you say, {_HOW[label]}.{carry}"
 
@@ -133,6 +148,7 @@ async def elicit_stances(
         s = stance_prior(valence, float(n.get("political_leaning", 0.0)), r.impact, burden)
         n["stance"] = s
         n["impact"] = r.impact
+        n["support_reason"], n["oppose_reason"] = r.support_reason.strip(), r.oppose_reason.strip()
         if s > 0.15:
             n["stance_reason"] = r.support_reason.strip()
         elif s < -0.15:

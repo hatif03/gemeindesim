@@ -856,3 +856,71 @@ opponents (6–8 of ~20 lines). Remaining open item of E14.
 for a poll-consistent demo but also makes them less independently "emergent". Whether reflections or chat should be allowed to
 move the stance beyond the Deffuant update is a modelling choice, not a measured one. *Limits:* n = 5 runs, 59–80 lines;
 classifiers are LLMs; one corpus; 3 rounds.
+
+---
+
+## 2026-10-05 — E16 / E16b: making an *undecided* resident sound undecided (open item F51/F53)
+
+**E16** (`exp16_undecided.py`): replay of the 41 logged prompts of residents whose code stance is *undecided* (21 on the 70B,
+20 on the 8B; v2.1 and v2.2 logs; the binding paragraph replaced per condition), two classifiers. Conditions: **U0** the
+current binding ("you are torn and say so openly, weighing both sides"); **U1** state plainly that you are undecided, give
+ONE concrete reason in favour and ONE against (own words, taken from the two arguments Apertus wrote for this resident),
+never argue only about costs; **U2** U1 plus a required opening phrase ("Ich bin noch unentschieden" / "Je n'ai pas encore
+décidé"); **U3** U0 plus "never argue only about costs".
+
+| model | cond | share of lines judged *mixed* (clf 70B / 8B) | *against* | arguments copied verbatim | distinct-trigram |
+| --- | --- | --- | --- | --- | --- |
+| 70B | U0 | .47 / .42 | .39 / .45 | 0.00 | 0.908 |
+| 70B | **U1** | **.72 / .67** | .17 / .22 | **0.67** | **0.662** |
+| 70B | U2 | .67 / .64 | .28 / .28 | 0.62 | 0.648 |
+| 70B | U3 | .57 / .50 | .25 / .28 | 0.00 | 0.905 |
+| 8B | U0 | .47 / .45 | .28 / .25 | 0.00 | 0.826 |
+| 8B | U1 | .55 / .40 | .35 / .47 | 0.20 | 0.609 |
+| 8B | U2 | .50 / .33 | .40 / .53 | 0.85 | 0.529 |
+| 8B | U3 | .45 / .55 | .15 / .25 | 0.00 | 0.783 |
+
+**F55 — A two-sided instruction works on the 70B (mixed 0.47 → 0.72), but by *parroting*:** 62–67 % of turns copy the
+supplied argument sentence word for word and lexical diversity collapses (0.91 → 0.66). The opening phrase (U2) adds
+nothing; "never only costs" alone (U3) helps a little. The 8B does not benefit from U1/U2.
+**E16b** (`exp16b_undecided.py`): U1 plus **U1p** "Do NOT repeat the sentences above word for word: say the same thing with
+new wording every time" and **U1h** (only a 55-character hint of each argument).
+
+| model | cond | mixed (clf 70B / 8B) | mixed + neutral | against | verbatim copy | distinct-trigram |
+| --- | --- | --- | --- | --- | --- | --- |
+| 70B | U1 | .72 / .67 | .75 / .69 | .22 / .28 | 0.62 | 0.662 |
+| 70B | **U1p** | **.74 / .72** | .77 / .74 | **.21 / .23** | **0.05** | **0.837** |
+| 70B | U1h | .76 / .71 | .76 / .71 | .16 / .21 | 0.14 | 0.814 |
+| 8B | U1 | .50 / .38 | .55 / .42 | .40 / .47 | 0.20 | 0.609 |
+| 8B | **U1p** | **.57 / .53** | **.68 / .68** | **.28 / .28** | **0.05** | 0.706 |
+| 8B | U1h | .46 / .38 | .49 / .38 | .41 / .49 | 0.30 | 0.572 |
+
+(U0 reference: 70B mixed .42–.47, mixed + neutral .47–.53; 8B mixed .45–.47, mixed + neutral .53.)
+**F56 — U1p keeps the gain without the parroting:** 70B mixed 0.47 → 0.74, verbatim copying 0.05, diversity 0.84 (U0 0.91);
+8B mixed + neutral 0.53 → 0.68. Hints (U1h) do not help the 8B. **D17** adopt U1p for undecided residents
+(`stance_binding`; the support and oppose arguments are now stored separately as `support_reason` / `oppose_reason`). Events per
+turn, validity and event types unchanged (2.0–2.14, 1.00). *Limits:* replay, 41 prompts (36–40 lines per cell), LLM
+classifiers; confirmed in the real loop in the final runs below.
+
+## 2026-10-05 — Deployment findings from a clean clone (E18)
+
+Cloned `submission/v2` into a clean directory, added only `.env`, and ran `docker compose up --build`.
+
+1. **`make run` could not build on a clean checkout, in the original repo too.** The frontend image failed with
+   `Cannot find module '../lightningcss.linux-x64-gnu.node'`: `bun install --frozen-lockfile` honours `bun.lock`, which has no
+   Linux native package (the lock was generated on Windows; `grep` count 0), and the committed `package-lock.json` is also out of
+   sync with `package.json` (`npm ci` refuses: many packages missing from the lock) and has no Linux entries either. Neither lockfile was
+   touched by this work (`git diff 0bb53b2 -- bun.lock package.json package-lock.json` is empty). Plain `npm install` on the
+   full dependency set crashes npm 10.9 (`Cannot read properties of null (reading 'edgesOut')`); `npm install --legacy-peer-deps`
+   works and installs `lightningcss-linux-x64-gnu`, `@tailwindcss/oxide-linux-x64-gnu` and `@next/swc-linux-x64-gnu`
+   (verified in a throwaway `node:22-slim` container). **Fix:** the frontend Dockerfile now builds with Node 22 and
+   `npm install --legacy-peer-deps` from `package.json` alone (trade-off documented in the file: versions follow the ranges, not a
+   lock).
+2. **A type error would have failed `next build`:** `mockBackend.ts` `professionForRole` had no cases for the Swiss roles
+   (teacher, municipal_employee, tenant). Fixed; `tsc --noEmit` is clean.
+3. **`docker-compose.yml` overrode the concurrency fix** (`LLM_CONCURRENCY` default 6): now 4, with a comment. The `.env.example`
+   files and the backend README say 4.
+4. **Docker runs the *swarm* graph by default** (`SWARM: ${SWARM:-true}`), while every measurement up to this point used the
+   standard graph. Both are now measured (final runs below).
+5. *Not testable here:* a local model. The machine's Docker VM has ≈ 7 GB, almost all used by other containers; an Apertus 8B
+   build does not fit and loading even a small model risks the OOM-killing of unrelated containers. The portable probe
+   `research/probe_endpoint.py` is validated against the hosted gateway and ready for a GPU host.

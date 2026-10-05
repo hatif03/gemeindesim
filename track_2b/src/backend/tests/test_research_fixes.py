@@ -366,3 +366,13 @@ def test_two_ballot_questions_are_both_pinned():
     ]
     got = retrieve_passages(chunks, "Mindereinnahmen Milliarden", top_k=3, lang="de")
     assert {c["source_id"] for c in got} >= {"d#0", "d#1"} and len(got) == 3
+
+
+def test_undecided_binding_names_both_arguments_and_forbids_copying():
+    from graph.nodes.stance import stance_binding
+
+    b = stance_binding({"stance": 0.05, "stance_reason": "Pro Satz. / Contra Satz.", "support_reason": "Pro Satz.", "oppose_reason": "Contra Satz."})
+    assert "undecided (+0.05)" in b and "Pro Satz." in b and "Contra Satz." in b
+    assert "word for word" in b and "never take a side" in b
+    # without both arguments it falls back to the generic wording
+    assert "torn" in stance_binding({"stance": 0.0, "stance_reason": ""})
