@@ -4,6 +4,7 @@ Usage: python research/summarize_sims.py
 Groups are fixed below; run_sim.py/analyze_sims.py produced the inputs.
 """
 import json
+import sys
 import statistics as st
 from collections import Counter
 
@@ -16,6 +17,15 @@ GROUPS = {
     "8B baseline": ["base8_s1", "base8_s2"],
     "8B v2.1": ["v21_8_s1", "v21_8_s2"],
 }
+if "final" in sys.argv[1:]:  # final code: standard graph (5 seeds) and swarm graph, the Docker default (3 seeds)
+    GROUPS = {
+        "70B baseline (v1)": ["base70_s1", "base70_s2", "base70_s3"],
+        "70B final": [f"final_70_s{i}" for i in range(1, 6)],
+        "70B final, swarm": [f"final_sw70_s{i}" for i in range(1, 4)],
+        "8B baseline (v1)": ["base8_s1", "base8_s2"],
+        "8B final": [f"final_8_s{i}" for i in range(1, 6)],
+        "8B final, swarm": [f"final_sw8_s{i}" for i in range(1, 4)],
+    }
 NUM = [
     ("t_sim_s", "simulation wall time (s)"), ("calls", "LLM calls"), ("lat_mean", "mean call latency (s)"),
     ("events", "events"), ("chat_share", "chat share of events"), ("intro_rate", "chats that start with a self-introduction"),

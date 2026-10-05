@@ -924,3 +924,114 @@ Cloned `submission/v2` into a clean directory, added only `.env`, and ran `docke
 5. *Not testable here:* a local model. The machine's Docker VM has ≈ 7 GB, almost all used by other containers; an Apertus 8B
    build does not fit and loading even a small model risks the OOM-killing of unrelated containers. The portable probe
    `research/probe_endpoint.py` is validated against the hosted gateway and ready for a GPU host.
+
+---
+
+## 2026-10-05 — Correction C1: the self-introduction metric was wrong (and rose spuriously after the speech binding)
+
+While scoring the final runs, the self-introduction rate appeared to *rise* in some runs (up to 0.42) after the speech binding. Reading
+the matched lines showed why: `analyze_sims.INTRO` ran with `re.I`, so `ich bin [A-ZÄÖÜ]\w+ [A-ZÄÖÜ]\w+` also matched lowercase text
+("Ich bin noch nicht entschieden", "je suis pour cette hausse"). The binding makes such sentences common, so the metric inflated
+exactly where I was not looking. **Fixed** (name parts must be capitalised, case-sensitive; "my name is" patterns kept) and **all groups
+recomputed**: 70B baseline **0.27** (0.13–0.39) [was reported as 0.29], 8B baseline **0.17** (0.07–0.27) [0.20]; v2.1 **0.00** [0.02],
+final standard and swarm graphs **0.00** in all 16 runs. The direction of every earlier conclusion holds; the numbers in
+`03-results.md`, the paper draft, `technical_report.md` and the report were updated. (The "0.14, noise-level" caveat I attached to the
+v2.2 runs in F52 was this artefact.) Lesson recorded: a regex metric needs its false positives read before it is trusted, especially
+after the generator's wording changes.
+
+---
+
+## 2026-10-05 — FINAL measurement on the final code (E3d, E14b, E13b), both graphs
+
+Code frozen at the commit that adopts the two-sided undecided binding (v2.3). Runs (same seeds as the baseline for the first
+three): **standard graph** 5 × 70B and 5 × 8B (`final_70_s1..5`, `final_8_s1..5`), **swarm graph** (the compose default until
+now) 3 × 70B and 3 × 8B (`final_sw70_*`, `final_sw8_*`). `research/summarize_sims.py final`. Means, with min–max over runs.
+
+| metric | 70B baseline (v1, n=3) | 70B final (n=5) | 70B final swarm (n=3) | 8B baseline (n=2) | 8B final (n=5) | 8B final swarm (n=3) |
+| --- | --- | --- | --- | --- | --- | --- |
+| wall time per simulation (s) | 334 (219–548*) | **126** (120–132) | **160** (151–166) | 29 | 28 | 36 |
+| LLM calls | 39.7 | 46.2 | 48.0 | 34 | 41.2 | 46.7 |
+| events | 27.3 | **33.0** | 32.3 | 15 | **31.6** | 29.0 |
+| event types per run | chat 16.7, mood 5.3, move 3.0, price 1.7, protest 0.7 | chat 18.8, mood 10.4, move 3.8 | chat 19.0, mood 8.7, move 4.7 | chat 15 | chat 16.2, mood 13.8, move 1.6 | chat 16.7, mood 12.0, move 0.3 |
+| chats opening with a self-introduction (corrected metric, C1) | 0.27 (0.13–0.39) | **0.00** | **0.00** | 0.17 | **0.00** | **0.00** |
+| utterance in resident's language | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| ß in generated text (count/run) | 6.3 | **0** | **0** | 3.5 | **0** | **0** |
+| cited ids that exist in the pack | 0.00 | **1.00** | **1.00** | 0.00 | **1.00** | **1.00** |
+| events with ≥ 1 valid citation | 0.00 | 0.57 | 0.59 | 0.00 | 0.48 | 0.52 |
+| ballot question in the resident prompt | 0.13 | **1.00** | **1.00** | 0.30 | **1.00** | **1.00** |
+| report mixes German and English (runs) | 3/3 | **0/5** | **0/3** | 2/2 | **0/5** | **0/3** |
+| report asserts "the measure passed" (runs) | 2/3 | **0/5** | **0/3** | 0/2 | **0/5** | **0/3** |
+| influence outcomes logged | none (bug) | compromise 53, keep 24 | compromise 46, keep 3 | none | compromise 64, keep 13 | compromise 41, keep 9 |
+
+\* shared the key with another job; clean baseline runs 219 and 235 s.
+**Speech vs code stance (E14b, 465 lines, two classifiers, `exp14_tilt.py final_70=… `):** share of lines whose expressed position
+matches the speaker's code stance (classifier 70B / 8B): 70B standard **0.91 / 0.88** (n = 146), 8B standard **0.87 / 0.85** (n = 150);
+70B swarm 0.90 / 0.92 (n = 83), 8B swarm 0.84 / 0.86 (n = 86). By code stance (70B standard, clf 70B): *for* 54/58, *against* 55/55,
+*undecided* 24/33 (0.73; "mixed" strictly 23/33); 8B: *for* 26/29, *against* 91/97, *undecided* 13/24 (0.54).
+(v2.1, same measure: 0.46–0.55 on the 70B, 0.50–0.52 on the 8B.)
+**Stance fidelity (E13b, 25 residents of the five final 70B runs):** the model, re-asked with the resident's memories, agrees with the
+code stance for 0.64 of residents (v2.1: 0.40). Code *against* (10): model says no 3, undecided 6, yes 1; code *for* (10): yes 10;
+code *undecided* (5): undecided 3, yes 2. The model still erases opposition (7 of 10 opponents), now mostly to "undecided" rather than "yes".
+**Spread across seeds (`ensemble_report.py`, `docs/research/ensemble_final_70.md` / `_8.md`):** share *for* at the end ranges
+0.00–0.80 (70B, mean 0.40) and 0.00–0.40 (8B, mean 0.16); share *against* 0.00–0.60 (70B) and 0.20–1.00 (8B). In 4 of 5 70B runs the
+poll did not change at all in three rounds. A single run is not a result; the 8B's towns are systematically more negative.
+**Swarm vs standard (decision D18):** swarm costs +27 % wall time on the 70B (160 vs 126 s) and +27 % on the 8B, produces fewer moves on
+the 8B (0.3 vs 1.6 per run) and no measurable quality gain (speech match 0.90–0.92 vs 0.88–0.91; same citation/report metrics).
+`docker-compose.yml` now defaults `SWARM=false` (the team's own `.env` already did); swarm remains supported and measured.
+**F57 — All fixes hold on both graphs and both sizes, on the final code.** Not changed by the final code: the 8B never uses `move`
+meaningfully; stance dynamics move little in 3 rounds.
+
+## 2026-10-05 — E17 Real booklet (28 Sept 2025, 48 pages, 83 k characters = 209 chunks)
+
+`exp17_real_booklet.py` (booklet via `download_booklet.py`, not vendored; two measures: E-ID and the Eigenmietwert/second-home property tax).
+**A. Directed retrieval recall@4** (14 questions with gold evidence): v1 retriever **10/14**, v2 **11/14**; v2 at k = 6: 12/14 (offline).
+Misses are exact-term problems (e.g. "Mindereinnahmen" occurs in nine chunks; "who issues the E-ID" depends on a verb phrase), i.e. the
+limit of lexical retrieval; a hybrid with a multilingual embedding model is the obvious next step.
+**B. What a resident sees:** a resident's 4 passages are 2 % of the booklet and contain 1 % (v1) / 4 % (v2) of the 14 key facts —
+the wrong target (a resident's context should hold what is relevant *to them*, not all facts); it only shows the scale gap to the 1.6 k-character
+Linden sample. Pinning figure-dense chunks did not help (offline: coverage 0.04 → 0.04–0.19 only at k = 8 with 3 pinned chunks).
+**C. Grounded QA with the 70B** on the retrieved passages (answers graded **by hand**, `e17_manual_grading.json`; the first automatic
+regex grader undercounted: 7/14 and 6/14, because answers were paraphrased): v1 passages **11/14** correct (10/14 with the evidence in the cited
+passage), v2 passages **12/14** (11/14 grounded). Wrongly abstained ("NICHT IM TEXT"): 3 (v1), 2 (v2) — all where the evidence was not retrieved.
+**Unanswerable questions: 3/3 abstained** with both. One answer ("Der Bund") was correct *without* the evidence in the pack (an ungrounded
+guess that happened to be right), in both versions. All 17 citation labels valid in both.
+**F58 — On a real booklet the pipeline works but retrieval, not the model, is the bottleneck:** recall@4 is 11/14, the model answers correctly
+whenever the evidence is retrieved, abstains correctly when it is not (and when the question is unanswerable), and the v2 retriever is only
+marginally better than the old one (+1 of 14: not significant). French booklet parity could not be tested (the French PDF was not
+retrievable from the federal site during this work). `corpus.default_top_k` now returns 6 passages for large corpora; two question
+chunks are pinned.
+
+## 2026-10-05 — Probe script validated; E10 nuance
+
+`research/probe_endpoint.py` (portable: any OpenAI-compatible URL, no key needed for a local server) ran against the hosted 8B and
+reproduced the E1/E10 behaviours (n = 5): single call 5/5; two cities 5/5 one call; explicit "two calls" → one call each; `tool_choice=required`
+one call; thinking span in `content` 5/5, `reasoning` field 0/5; thinking + `json_object` → no span and the wrong answer 0.1 (5/5);
+tools + thinking HTTP 200; 429 at 6 in flight (7 of 12). First run returned HTTP 401 for every request because it did not load `track_2b/.env`
+(the key was not exported): fixed, and the script now stops with a clear message when the endpoint rejects a trivial request.
+**Nuances found by the re-run.** (1) The in-flight limit is *borderline at 5*: 10/10 succeeded at 5 here, but 4/10 in E10; 6+ fails consistently,
+so 4 stays the safe default. (2) `temperature 0` determinism depends on the prompt: this *short* German prompt gave 1 distinct output of 5
+(the long resident prompt of E1 gave 3 and 5): non-reproducibility concerns long, rich prompts. (3) The 8B gives ≈ 160 tokens/s per stream
+(589 at 4 in flight, 730 at 5).
+
+---
+
+## 2026-10-05 — E19 Compare-conditions demonstration (8B, 4 conditions × 3 paired seeds)
+
+`run_sim.py --recommendation yes|no`, `--corpus balanced`; `summarize_conditions.py`. Same seeds across conditions (same random attributes; the
+LLM text differs), 8B, standard graph, 12 runs (≈ 30 s each). Mean stance of the five residents:
+
+| condition | start (per seed) → end | share *for* / *against* at the end | paired Δ start | paired Δ end |
+| --- | --- | --- | --- | --- |
+| as shipped (no recommendation) | −0.38→−0.58, +0.12→+0.19, −0.18→−0.26 | 0.33 / 0.53 | – | – |
+| + "Empfehlung des Gemeinderats: Ja" | −0.26→−0.36, −0.13→−0.26, −0.15→−0.26 | 0.13 / 0.73 | −0.04 (−0.25…+0.12) | −0.07 (−0.45…+0.22) |
+| + "Empfehlung des Gemeinderats: Nein" | −0.26→−0.32, −0.23→−0.38, −0.14→−0.11 | 0.13 / 0.67 | −0.07 (−0.35…+0.12) | −0.05 (−0.56…+0.26) |
+| balanced (committee counter-arguments added) | −0.56→−0.81, −0.27→−0.36, −0.19→−0.31 | 0.13 / 0.80 | **−0.19** (−0.39…−0.01) | **−0.28** (−0.55…−0.05) |
+
+**F59 — The harness can compare conditions, and the stance is robust to the authority cue by construction.** A "yes" and a "no" recommendation
+shift the stance in the same, small and inconsistent way (ranges include zero): the code-owned stance does not read the recommendation, so
+the E8 effect (the 8B follows a shown recommendation 98 % of the time) cannot flip it here; the model's judged impact is the only channel.
+(Speech could still echo the recommendation; not measured.) **Adding the committee's counter-arguments lowers the mean stance in all three
+seeds** (start −0.19, end −0.28 against the same seeds without them): the model's impact judgement turns more negative when the booklet states
+the case against, and the computed cost also gains a second worked example. *Limits:* n = 3 paired runs, 8B only, three-round runs; this shows the
+tool works as a *what-if comparer*, it is not an estimate of how real residents would react. Not built: an in-app control for it
+(the harness and `docs/research` are the interface).

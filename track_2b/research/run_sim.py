@@ -53,6 +53,8 @@ async def main():
     ap.add_argument("--sample", default="linden")
     ap.add_argument("--swarm", action="store_true", help="use the swarm graph (the Docker default: SWARM=true)")
     ap.add_argument("--corpus", default="original", choices=["original", "balanced"])
+    ap.add_argument("--recommendation", default="none", choices=["none", "yes", "no"],
+                    help="replace the 'no recommendation' line by an official recommendation (compare-conditions, research E19)")
     ap.add_argument("--objective", default="How the Steuerfuss and school credit land on households and shops")
     args = ap.parse_args()
 
@@ -71,6 +73,10 @@ async def main():
         stem = "steuerfuss_linden_balanced" if args.corpus == "balanced" else "steuerfuss_linden"
         notes = read_sample(f"{stem}_de.txt").strip() + "\n\n" + read_sample(f"{stem}_fr.txt").strip()
         kind = "vote"
+        if args.recommendation != "none":
+            yes = args.recommendation == "yes"
+            notes = notes.replace("Keine Abstimmungsempfehlung in diesem Auszug.", f"Empfehlung des Gemeinderats: {'Ja' if yes else 'Nein'}.")
+            notes = notes.replace("Pas de recommandation de vote dans cet extrait.", f"Recommandation du conseil communal : {'oui' if yes else 'non'}.")
     else:
         notes = read_sample("tariff_millfield_en.txt").strip()
         kind = "policy"

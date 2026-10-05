@@ -148,13 +148,13 @@ No loss in validity, event mix, citations, language or lexical diversity. "Undec
 | dropped `influence_events` | empty in all 5 baseline runs | 49 / 39 influence outcomes logged (70B / 8B v2.1) |
 | missing calculator | docs promised; absent; model wrong at 240 | `graph/calculator.py`, figure in prompt and pack |
 
-## 4. Baseline vs v2.1 (E3c; identical seeds; 70B n = 3, 8B n = 2)
+## 4. Baseline vs v2.1 (E3c; identical seeds; 70B n = 3, 8B n = 2) — superseded by section 7 (final code, more seeds, both graphs)
 
 | metric | 70B baseline | 70B v2.1 | 8B baseline | 8B v2.1 |
 | --- | --- | --- | --- | --- |
 | events | 27 | 33 | 15 | 30 |
 | event types/run | chat 16.7, mood 5.3, move 3.0, price 1.7, protest 0.7 | chat 19.7, mood 7.7, move 5.3 | chat 15 | chat 19.5, mood 10.5 |
-| self-introductions | 0.29 | 0.02 | 0.20 | 0.00 |
+| self-introductions (corrected metric) | 0.27 | 0.00 | 0.17 | 0.00 |
 | cited ids valid | 0.00 | 0.99 | 0.00 | 1.00 |
 | ballot question in prompt | 0.13 | 1.00 | 0.30 | 1.00 |
 | report mixes languages | 3/3 | 0/3 | 2/2 | 0/2 |
@@ -165,7 +165,49 @@ No loss in validity, event mix, citations, language or lexical diversity. "Undec
 Wall time: the 70B difference is **not attributable** (equal token volume, endpoint load varies up to
 8×). The 8B is ≈ 4× faster than the 70B in both versions.
 
-## 5. What we did not (or could not) test
+## 5. Undecided residents (E16, E16b)
+
+A two-sided instruction ("state that you are undecided; one concrete reason for, one against, in your own words; never only costs")
+raises the share of lines judged *mixed* from 0.42–0.47 to 0.67–0.72 on the 70B but makes 62–67 % of turns copy the supplied argument
+verbatim (distinct-trigram 0.91 → 0.66). Adding "do not repeat the sentences word for word" (U1p): 70B mixed **0.72–0.74**, verbatim copying
+**0.05**, distinct-trigram **0.84**; 8B mixed + neutral 0.53 → **0.68**. Adopted (`stance_binding`). Hints instead of sentences, a
+required opening phrase and "never only costs" alone did not do better.
+
+## 6. Real booklet (E17; 28 Sept 2025 Federal Council booklet, 83 k characters, 209 chunks)
+
+| measure | v1 retriever | v2 retriever |
+| --- | --- | --- |
+| directed recall@4 (14 questions) | 10/14 | 11/14 (12/14 at k = 6) |
+| grounded QA, 70B, hand-graded (correct / evidence in the cited passage) | 11/14 / 10/14 | 12/14 / 11/14 |
+| wrongly abstained / unanswerable abstained | 3 / 3 of 3 | 2 / 3 of 3 |
+| citation labels valid | 17/17 | 17/17 |
+
+The model answers correctly whenever the evidence is retrieved and abstains when it is not; retrieval (lexical, exact-term) is the bottleneck, and the
+v2 gain over the old retriever is +1 of 14 (not significant). The automatic regex grader undercounted (7/14, 6/14); the grading is in
+`research/results/e17_manual_grading.json`. French edition not tested (PDF not retrievable).
+
+## 7. Final measurement on the final code (E3d, E14b, E13b)
+
+70B n = 5 (standard graph), n = 3 (swarm graph); 8B n = 5 / 3; baseline n = 3 / 2.
+
+| metric | 70B baseline | 70B final | 70B swarm | 8B baseline | 8B final | 8B swarm |
+| --- | --- | --- | --- | --- | --- | --- |
+| wall time (s) | 334 (219–548*) | 126 (120–132) | 160 (151–166) | 29 | 28 | 36 |
+| events | 27.3 | 33.0 | 32.3 | 15 | 31.6 | 29.0 |
+| self-introductions (corrected metric) | 0.27 | 0.00 | 0.00 | 0.17 | 0.00 | 0.00 |
+| ß count per run | 6.3 | 0 | 0 | 3.5 | 0 | 0 |
+| cited ids that exist | 0.00 | 1.00 | 1.00 | 0.00 | 1.00 | 1.00 |
+| ballot question in resident prompt | 0.13 | 1.00 | 1.00 | 0.30 | 1.00 | 1.00 |
+| reports mixing languages | 3/3 | 0/5 | 0/3 | 2/2 | 0/5 | 0/3 |
+| reports asserting "passed" | 2/3 | 0/5 | 0/3 | 0/2 | 0/5 | 0/3 |
+| speech matches code stance (clf 70B / 8B) | 0.46–0.55 (v2.1) | **0.91 / 0.88** | 0.90 / 0.92 | 0.50–0.52 (v2.1) | **0.87 / 0.85** | 0.84 / 0.86 |
+| influence outcomes logged | 0 | 77 | 49 | 0 | 77 | 50 |
+
+\* shared the key with another job (clean baselines 219, 235 s). Stance fidelity (E13b, 25 residents): model agrees with the code stance
+for 0.64 (v2.1: 0.40); 7 of 10 code-*against* residents become "undecided"/"yes" when the model answers alone. Spread across seeds: share *for* at the end
+0.00–0.80 (70B), 0.00–0.40 (8B) — see `ensemble_final_70.md`, `ensemble_final_8.md`. Swarm graph: +27 % wall time, no quality gain, default set to off.
+
+## 8. What we did not (or could not) test
 
 * Local vLLM / sovereign deployment (no GPU here): all gateway findings are properties of that deployment.
 * A real Abstimmungsbüchlein: the Linden sample (1.6 k characters per language) cannot stress retrieval.

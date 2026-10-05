@@ -28,7 +28,7 @@ policy upload → chunk/retrieve → parse → NPCs → N× run_round → Socket
 
 **Primary:** **(c) Sovereign Swiss cloud** — app containers + on-disk corpus; inference via Swiss-hosted OpenAI-compatible endpoint (`LLM_BASE_URL`, hackathon: `https://hackapertus.livemap.sh/v1`).
 
-**Also supported:** **(a) On-premise** / **(b) Air-gapped** by pointing `LLM_BASE_URL` to local vLLM serving `swiss-ai/Apertus-v1.5-70B`.
+**Also supported:** **(a) On-premise** / **(b) Air-gapped** by pointing `LLM_BASE_URL` to local vLLM serving `swiss-ai/Apertus-v1.5-70B`. **Status:** configuration only. The application's only outbound call is `LLM_BASE_URL`, and a clean-clone Docker stack starts and serves; but the model behaviours reported below were measured on the hosted gateway, and a local deployment was not run (no GPU available). `research/probe_endpoint.py` reproduces the behaviour table (tool calls, thinking, determinism, in-flight limit) on any OpenAI-compatible endpoint and was validated on the hosted 8B, so the sovereign claim can be completed in minutes on a GPU host.
 
 ## 3. Use of Apertus
 
@@ -44,7 +44,7 @@ Synthetic bilingual Linden Steuerfuss/school-credit excerpts (`data/steuerfuss_l
 
 ## 5. Evaluation
 
-Offline pytest (116 tests; 48 pin a research finding, `tests/test_research_fixes.py`). The earlier "schema fixtures 20/20" validated hand-written objects, not model output, and is no longer cited.
+Offline pytest (`cd src/backend && uv run pytest --deselect tests/test_e2e.py`; the new regression tests in `tests/test_research_fixes.py` each pin a finding). The earlier "schema fixtures 20/20" validated hand-written objects, not model output, and is no longer cited.
 
 Measured on the live hackathon gateway (5 October 2026; every call logged in `research/results/`; method and caveats in `docs/research/05-paper-draft.md`):
 
@@ -52,14 +52,18 @@ Measured on the live hackathon gateway (5 October 2026; every call logged in `re
 | --- | --- |
 | Structured output on 49 real resident prompts | 49/49 first-attempt valid (both sizes) with `<instruction>` example; old gate 86 % on the 70B (nulls in string fields) |
 | Language fidelity | 112/112 utterances in the resident's language |
-| Retrieval / grounding, baseline → v2.1 | ballot question in prompt 13–30 % → 100 %; valid citations 0 → 99–100 % |
+| Retrieval / grounding, baseline → final code (16 runs) | ballot question in prompt 13–30 % → 100 %; valid citation labels 0 → 100 % |
+| Real 48-page Federal Council booklet | recall@4 11/14 (old retriever 10/14); grounded QA 12/14 (hand-graded), 3/3 unanswerable questions abstained; retrieval is the bottleneck |
+| Speech vs stance (465 lines, two classifiers) | resident's words match their code stance 0.46–0.55 → **0.85–0.92** (undecided residents: 0.5–0.7) |
 | Report (6 objectives × 5 samples) | invented outcome 12/30 → 0/30; explicit vote advice 0/30 before and after |
 | Swiss civic facts (15 questions) | 70B 12/15, 8B 9/15; both wrong on *Steuerfuss* and on 4 000 × 6 % |
 | Stance when asked directly | 15/15 "yes" under every persona condition, also with a balanced booklet (stance is therefore code-owned) |
 | 54 real federal votes, ballot title only | simulated yes-share 34–37 pp too high; Spearman 0.25–0.38 (70B personas); Federal Council position alone: 0.63 |
 | Throughput | 4 requests in flight; 70B ≈ 156 tok/s, 8B ≈ 555 tok/s at that limit |
 
-Baseline vs v2.1 on identical seeds (5 residents × 3 rounds; 70B n = 3, 8B n = 2): events 27 → 33 (70B), 15 → 30 (8B); self-introductions 29 % → 2 %; influence log 0 → 49 outcomes (it had been silently dropped).
+Baseline vs final code on identical seeds (5 residents × 3 rounds; standard graph 70B n = 5, 8B n = 5; swarm graph n = 3 + 3; baseline n = 3 + 2): events 27 → 33 (70B), 15 → 32 (8B); self-introductions 27 % → 0 %; reports asserting a result or mixing languages 2/3 and 3/3 → 0/16; influence log 0 → 49–77 outcomes per group (it had been silently dropped). The stance poll differs a lot from seed to seed (share *for* at the end 0.00–0.80 on the 70B), so the demo shows a distribution, not one run.
+
+**Deployment check.** A clean clone of the original repository could not build the frontend image (no Linux native packages in either lockfile); fixed and verified from a fresh clone (UI and API serve; concurrency 4). `SWARM` now defaults to `false` (swarm: +27 % wall time, no gain). A local Apertus was not run (no GPU); `research/probe_endpoint.py` produces the behaviour table for any OpenAI-compatible endpoint and was validated on the hosted 8B.
 
 ## 6. Limitations
 

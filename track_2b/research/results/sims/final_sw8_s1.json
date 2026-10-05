@@ -1,0 +1,3020 @@
+{
+ "args": {
+  "tag": "final_sw8_s1",
+  "seed": 1,
+  "npcs": 5,
+  "rounds": 3,
+  "model": "apertus-v1.5-8b",
+  "sample": "linden",
+  "swarm": true,
+  "corpus": "original",
+  "recommendation": "none",
+  "objective": "How the Steuerfuss and school credit land on households and shops"
+ },
+ "t_sim_s": 35.1,
+ "t_report_s": 2.6,
+ "entities": [
+  {
+   "sectors": [
+    "Retail",
+    "Construction"
+   ],
+   "stakeholders": [
+    "Resident taxpayers",
+    "Small shop owners",
+    "School staff"
+   ],
+   "economic_impacts": [
+    "Household tax bills increase by ~240 CHF annually for 80k income earners",
+    "Local construction firms receive 4.8 million CHF contract",
+    "Consumer prices for retail goods may rise due to higher tax revenue funding"
+   ],
+   "controversy_level": "medium",
+   "ideological_valence": -0.4,
+   "kind": "vote"
+  }
+ ],
+ "npcs0": [
+  {
+   "name": "Petra Schneider",
+   "gender": "female",
+   "mbti": "ISTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "tenant",
+   "income_level": "low",
+   "political_leaning": -0.81,
+   "x": 8,
+   "y": 6,
+   "mood": "neutral",
+   "life_story": "Als Kind habe ich auf dem Bau meines Vaters mitgeholfen, deshalb habe ich nie Angst vor Schmutz oder harter Arbeit gehabt. Nach der Berufslehre zog ich nach Linden, weil die Baustellen hier zahlreich waren und ich endlich ein eigenes Zimmer mieten konnte. Heute verdiene ich gerade genug, um die Miete für meine kleine Wohnung zu bezahlen, und die steigenden Steuern lassen mich jeden Franken zählen. Die Gemeinde plant gerade neue Wohnbauten, und ich frage mich, ob das Geld nicht besser in die Sanierung alter Häuser fliessen könnte. Meine Kolleginnen und Kollegen wissen, dass ich keine leeren Versprechungen mag und lieber eine konkrete Lösung als eine schöne Rede höre.",
+   "expert_reflection": "Petra Schneiders ISTP-geprägte, analytische Kommunikationsweise und ihre pragmatische Haltung zu Steuern und Infrastruktur spiegeln eine starke Orientierung an Fakten und Effizienz wider. Ihr polarisierendes, geheimes Misstrauen gegenüber der Subventionspolitik der Gemeinde zeigt, wie persönliche wirtschaftliche Sorgen und ein kritischer Blick auf institutionelle Ressourcenverteilung zu einem inneren Konflikt zwischen öffentlicher Loyalität und privater Skepsis werden können, was in sozialen Spannungsfeldern zu defensivem Verhalten oder sogar zu informellem Widerstand führen kann.",
+   "id": "npc_01",
+   "category": "worker",
+   "profession": "Bauarbeiterin (Construction laborer)",
+   "bio": "Petra Schneider wuchs in einem kleinen Dorf auf, machte ihre Berufslehre als Maurerin und zog nach Linden, um Arbeit zu finden. Sie arbeitet seit Jahren auf Baustellen, verdient knapp genug, um die Miete zu bezahlen, und sieht die steigenden Steuern als direkte Belastung ihrer ohnehren Existenz. Ihre Erfahrung mit dem Bau von Gemeindeprojekten macht sie besonders sensibel für die Kosten-Nutzen-Bilanz öffentlicher Investitionen.",
+   "persona": "Petra wirkt sachlich und zurückhaltend, spricht präzise und vermeidet überflüssige Emotionen. Ihr ISTP-Typ zeigt sich in einer analytischen, fast mechanischen Art zu kommunizieren, bei der sie Fakten über Werte stellt und Entscheidungen auf Effizienz prüft, was sie bei Kollegen als unnachgiebig, aber verlässlich erscheinen lässt.",
+   "beliefs": [
+    "Arbeit und Selbstständigkeit sind die Grundpfeiler einer stabilen Gesellschaft",
+    "Steuern sollten direkt in messbare Infrastrukturinvestitionen fliessen, nicht in administrative Aufwände",
+    "Transparenz bei Gemeindeausgaben ist essenziell für das Vertrauen der Bürger"
+   ],
+   "controversial_ideas": [
+    "Sie glaubt heimlich, dass die Gemeinde zu viele Subventionen an grosse Baukonzerne vergibt, anstatt lokale Handwerksbetriebe zu fördern, was sie in internen Diskussionen als Korruption bezeichnet."
+   ],
+   "interested_topics": [
+    "Bauwesen und lokale Infrastruktur",
+    "Steuergerechtigkeit und Haushaltsplanung",
+    "Effizienzsteigerung in öffentlichen Projekten"
+   ],
+   "reputation": 0.45,
+   "stance": 0.712,
+   "impact": "benefit",
+   "support_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+   "oppose_reason": "Die Erhöhung des Steuerfusses belastet meine ohnehren Existenz zusätzlich, während die Transparenz der Ausgaben und die direkte Nutzung der Steuern für messbare Infrastrukturprojekte wie das Schulhaus fehlen.",
+   "stance_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+   "perception": "Die Nachricht über die neue Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren bereits, wie sich das auf ihre eigenen Budgets auswirkt, während ich die langfristigen Vorteile für die Gemeinde sehe.",
+   "current_plan": "Die Nachricht über die neue Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren bereits, wie sich das auf ihre eigenen Budgets auswirkt, während ich die langfristigen Vorteile für die Gemeinde sehe."
+  },
+  {
+   "name": "Anna Berger",
+   "gender": "female",
+   "mbti": "INTJ",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "farmer",
+   "income_level": "high",
+   "political_leaning": 0.08,
+   "x": 9,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Meine Kindheit verbrachte ich auf dem Hof, wo ich früh lernte, wie Bodenfruchtbarkeit und Wetterlagen die Ernte bestimmen. Nach der Matura absolvierte ich eine landwirtschaftliche Berufslehre und übernahm nach dem Tod meines Vaters gemeinsam mit meiner Schwester die Bewirtschaftung. Die steigenden Energiekosten und die neuen Steuerlasten durch die Gemeindepolitik belasten unseren Betrieb zunehmend, während wir gleichzeitig versuchen, ökologische Standards zu erfüllen. Meine Familie unterstützt mich, doch die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig. Trotz der Herausforderungen bleibe ich überzeugt, dass eine ausgewogene Steuerpolitik die landwirtschaftliche Zukunft sichern kann, auch wenn ich diese Ansicht nur vorsichtig äussere.",
+   "expert_reflection": "Als INTJ-Typ zeigt Anna Berger eine ausgeprägte systematische Denkweise, die sie dazu befähigt, komplexe ökonomische Zusammenhänge präzise zu analysieren und langfristige Strategien zu entwickeln. Ihre zurückhaltende Kommunikation und die Tendenz, kritische Standpunkte zunächst intern zu verarbeiten, könnten jedoch dazu führen, dass ihre fundierten Bedenken bezüglich der Steuerbelastungen für landwirtschaftliche Betriebe in der öffentlichen Debatte unterrepräsentiert bleiben, was die Gefahr birgt, dass wichtige agrarpolitische Perspektiven übersehen werden.",
+   "id": "npc_03",
+   "category": "farmer",
+   "profession": "landwirtin (small family farm)",
+   "bio": "Nach der Matura absolvierte ich eine Berufslehre als landwirtschaftliche Fachfrau und übernahm später gemeinsam mit meiner Familie den elterlichen Hof in Linden. Die steigenden Betriebskosten und die neuen Steuerbelastungen durch die Gemeindepolitik stellen eine zunehmende Herausforderung für die langfristige Rentabilität unserer landwirtschaftlichen Produktion dar.",
+   "persona": "Anna Berger wirkt stets präzise und analytisch, spricht in kurzen, klaren Sätzen und vermeidet emotionale Ausschweifungen. Ihre INTJ-Artikulation zeigt sich in einer strukturierten Argumentation, bei der sie komplexe ökonomische Zusammenhänge systematisch abwägt und dabei stets den Blick für die langfristigen Konsequenzen behält.",
+   "beliefs": [
+    "Nachhaltigkeit und ökologische Bewirtschaftung sind essenziell für die Zukunftsfähigkeit der Landwirtschaft",
+    "Steuererhöhungen dürfen nicht die Wettbewerbsfähigkeit der lokalen Betriebe gefährden",
+    "Die Gemeinde muss transparente Planungsinstrumente bereitstellen, um Investitionssicherheit zu gewährleisten"
+   ],
+   "controversial_ideas": [
+    "Ich bin überzeugt, dass die aktuellen Steuererhöhungen für hohe Einkommen in Linden langfristig die landwirtschaftliche Produktion destabilisieren werden, was ich jedoch nur in privaten Gesprächen offen äussere, da es der politischen Mehrheitsmeinung widerspricht"
+   ],
+   "interested_topics": [
+    "agrarökonomie",
+    "Steuerpolitik",
+    "Nachhaltige Bewirtschaftung"
+   ],
+   "reputation": 0.6,
+   "stance": -1.0,
+   "impact": "harm",
+   "support_reason": "Die Erhöhung des Steuerfusses gefährdet die Wettbewerbsfähigkeit unserer landwirtschaftlichen Produktion und erhöht die Betriebskosten weiter.",
+   "oppose_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+   "stance_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+   "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+   "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik."
+  },
+  {
+   "name": "Léa Rochat",
+   "gender": "female",
+   "mbti": "INTJ",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "shopkeeper",
+   "income_level": "high",
+   "political_leaning": -0.11,
+   "x": 10,
+   "y": 6,
+   "mood": "worried",
+   "life_story": "J’ai grandi dans une petite ville voisine, où mon père tenait une petite épicerie familiale. Après avoir obtenu ma Matura, j’ai choisi une Berufslehre en commerce pour comprendre les rouages du secteur de la vente. Après plusieurs années d’apprentissage, j’ai ouvert ma boutique à Linden, sélectionnant des produits locaux et des marques suisses de qualité. Mon magasin a rapidement gagné en notoriété grâce à une clientèle fidèle et à une gestion rigoureuse des marges. Aujourd’hui, je participe activement aux réunions du Gemeinderat, où je plaide pour des mesures fiscales qui protègent les petites entreprises tout en finançant des projets de construction qui dynamisent notre économie. Malgré les pressions des augmentations d’impôts, je reste convaincue que l’équilibre entre fiscalité et investissement est la clé du développement durable de notre commune.",
+   "expert_reflection": "En tant que psychologue sociale, Léa Rochat incarne le profil INTJ : une pensée stratégique, une communication axée sur les faits et une préférence pour les structures claires. Son professionnalisme et sa capacité à articuler des arguments chiffrés lui confèrent une crédibilité auprès des décideurs, mais son approche analytique peut parfois être perçue comme détachée des préoccupations émotionnelles des citoyens. La combinaison d’une position économique favorable aux projets de construction et d’une critique des dépenses administratives pourrait susciter des tensions, car elle révèle une vision utilitariste de la politique fiscale, susceptible de polariser les opinions au sein de la communauté.",
+   "id": "npc_02",
+   "category": "shopkeeper",
+   "profession": "proprietor of a boutique retail shop in Linden",
+   "bio": "Après ma Matura, j’ai suivi une Berufslehre en commerce avant d’ouvrir ma propre boutique de produits locaux. Mon magasin, situé en plein cœur de Linden, attire autant les résidents que les touristes grâce à une sélection soignée et des prix compétitifs. Je suis consciente que les augmentations d’impôts affectent directement les budgets des ménages, mais je soutiens l’investissement dans les projets de construction qui dynamisent notre économie locale.",
+   "persona": "Léa Rochat se présente avec une assurance calme et analytique, articulant ses propos de façon concise et logique, comme un INTJ qui privilégie la structure et l’efficacité. Elle adopte un ton professionnel, légèrement distancié, et utilise des arguments chiffrés pour appuyer ses positions, ce qui lui confère une réputation de décideuse pragmatique parmi les clients et les partenaires locaux.",
+   "beliefs": [
+    "La transparence fiscale et la responsabilité des municipalités sont essentielles pour maintenir la confiance des citoyens.",
+    "Les investissements dans l’infrastructure locale stimulent la croissance économique à long terme.",
+    "Le commerce indépendant doit être soutenu par des politiques qui favorisent la compétitivité et la qualité des produits."
+   ],
+   "controversial_ideas": [
+    "Je crois que les augmentations d’impôts sur les ménages à revenu élevé devraient être réinvesties uniquement dans des projets de construction qui génèrent des retours économiques tangibles, et non dans des dépenses administratives."
+   ],
+   "interested_topics": [
+    "optimisation des coûts d’exploitation des petites entreprises",
+    "développement durable des projets de construction",
+    "politiques fiscales équitables pour les classes moyennes"
+   ],
+   "reputation": 0.6,
+   "stance": -0.14,
+   "impact": "benefit",
+   "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise.",
+   "oppose_reason": "L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+   "stance_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise. / L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+   "perception": "Je perçois une tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages. Les discussions avec Petra Schneider et Anna Berger révèlent des préoccupations divergentes sur l'équité et la croissance, ce qui complique ma prise de décision.",
+   "current_plan": "Je perçois une tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages. Les discussions avec Petra Schneider et Anna Berger révèlent des préoccupations divergentes sur l'équité et la croissance, ce qui complique ma prise de décision."
+  },
+  {
+   "name": "Alice Martin",
+   "gender": "female",
+   "mbti": "ENFP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "teacher",
+   "income_level": "medium",
+   "political_leaning": 0.88,
+   "x": 11,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "J'ai grandi dans une petite maison familiale à Niederbipp, où mon père était menuisier et ma mère tenait une petite épicerie. Après l'école obligatoire, j'ai poursuivi mes études à l'école de Linden, obtenant ma Matura avec distinction, puis j'ai effectué une Berufslehre en pédagogie à l'école professionnelle de Berne. J'ai enseigné pendant dix ans dans les classes primaires de Linden, avant de devenir directrice d'établissement il y a trois ans. Je loue un appartement moderne au centre-ville depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires. Je suis mariée à un ingénieur en construction qui travaille sur le projet de construction de 4,8 millions de francs, ce qui me donne une perspective unique sur les coûts et les bénéfices. Mes deux enfants fréquentent l'école primaire de Linden, et je m'engage activement dans les associations de parents. Je crois fermement que l'éducation doit rester accessible à tous, indépendamment du revenu familial, et que les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés.",
+   "expert_reflection": "En tant que psychologue sociale, Alice Martin présente un profil ENFP caractérisé par une grande empathie, une créativité communicative et une capacité à mobiliser les autres autour de causes collectives. Son engagement passionné pour l'équité éducative et sa volonté de remettre en question les structures fiscales actuelles reflètent une personnalité idéaliste et visionnaire, susceptible de susciter des réactions mitigées au sein de la communauté. Sa capacité à articuler des arguments complexes avec chaleur et conviction pourrait renforcer son influence auprès des familles et des jeunes, mais sa propension à explorer des solutions radicales, comme une réforme progressive de la fiscalité locative, pourrait aussi la marginaliser auprès des conservateurs et des acteurs économiques locaux.",
+   "id": "npc_04",
+   "category": "teacher",
+   "profession": "enseignante de l'école primaire",
+   "bio": "Après ma Matura à l'école de Linden, j'ai suivi une Berufslehre en pédagogie, puis j'ai enseigné pendant dix ans avant de devenir directrice d'établissement. Je vis dans un appartement que je loue depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires.",
+   "persona": "Alice Martin se présente avec une énergie débordante et un ton chaleureux, utilisant des gestes expressifs et des questions ouvertes pour engager les élèves et les parents. Son MBTI ENFP se traduit par une communication enthousiaste et empathique, mais aussi par une tendance à voir les situations sous plusieurs angles, ce qui peut parfois la rendre perçue comme instable ou trop idéaliste par ses collègues plus pragmatiques.",
+   "beliefs": [
+    "L'éducation est le fondement d'une société équitable et doit rester accessible à tous, indépendamment du revenu familial",
+    "Les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés",
+    "La transparence budgétaire est essentielle pour maintenir la confiance des citoyens"
+   ],
+   "controversial_ideas": [
+    "Je crois que les impôts sur les ménages devraient être réévalués pour inclure une composante progressive basée sur la valeur locative, même si cela pourrait réduire l'investissement dans le logement social"
+   ],
+   "interested_topics": [
+    "politique éducative locale",
+    "équité fiscale",
+    "développement durable des écoles"
+   ],
+   "reputation": 0.5,
+   "stance": -0.815,
+   "impact": "mixed",
+   "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire améliorera les infrastructures éducatives, bénéficiant ainsi aux élèves et à la communauté.",
+   "oppose_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+   "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+   "perception": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+   "current_plan": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants."
+  },
+  {
+   "name": "Hans Weber",
+   "gender": "male",
+   "mbti": "ESTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "municipal_employee",
+   "income_level": "medium",
+   "political_leaning": 0.85,
+   "x": 12,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Ich bin in einem kleinen Dorf in der Emmental aufgewachsen, wo ich früh die Bedeutung von Gemeinschaft und lokaler Verantwortung spürte. Nach der obligatorischen Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung der Gemeinde Linden, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Meine Frau arbeitet als Lehrerin an der lokalen Schule, und wir haben zwei Kinder, die im Dorf aufwachsen. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen. Ich bin stolz darauf, dass wir in Linden eine gute Balance zwischen Wohnen, Arbeiten und Freizeit schaffen, auch wenn die Umsetzung manchmal Konflikte auslöst.",
+   "expert_reflection": "Als ESTP-Typus neigt Hans Weber dazu, Entscheidungen schnell und situationsbezogen zu treffen, was ihn in der dynamischen Welt der Raumplanung effizient macht. Seine pragmatische Haltung und sein direkter Kommunikationsstil können jedoch dazu führen, dass er komplexe gesellschaftliche Implikationen von Projekten unterschätzt, insbesondere wenn es um langfristige soziale Auswirkungen geht. Die Bereitschaft, kontroverse Ideen wie gezielte Gewerbezonen trotz kurzfristiger Wohnqualitätsverluste zu vertreten, zeigt eine starke Orientierung an wirtschaftlichen Zielen, die in der heutigen Politik oft Priorität vor sozialer Gerechtigkeit haben.",
+   "id": "npc_05",
+   "category": "municipal_employee",
+   "profession": "Stadtplaner im Amt für Raumplanung der Gemeinde Linden",
+   "bio": "Nach der Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen.",
+   "persona": "Hans wirkt direkt und pragmatisch, spricht in kurzen, prägnanten Sätzen und nutzt gerne Fachbegriffe, um seine Argumente zu untermauern. Sein ESTP-Typus sorgt dafür, dass er spontan auf Diskussionen reagiert und Entscheidungen schnell trifft, was ihn bei Kollegen geschätzt, aber bei manchen als zu impulsiv empfunden macht.",
+   "beliefs": [
+    "Nachhaltigkeit und effiziente Nutzung des Gemeindegebiets sind die Grundpfeiler einer zukunftsfähigen Entwicklung",
+    "Steuererhöhungen sind gerechtfertigt, wenn sie langfristig zu besserer Infrastruktur und Lebensqualität führen",
+    "Die Beteiligung der Bürger sollte in konkreten Planungsprozessen stärker verankert werden"
+   ],
+   "controversial_ideas": [
+    "Ich glaube, dass Linden gezielt Flächen für Gewerbezonen ausweisen sollte, um die lokale Wirtschaft zu stärken, auch wenn das die Wohnqualität in Randgebieten kurzfristig verschlechtert"
+   ],
+   "interested_topics": [
+    "Raumplanung und Infrastruktur",
+    "Steuerpolitik und Haushaltsmanagement",
+    "Bauprojekte und ihre sozialen Auswirkungen"
+   ],
+   "reputation": 0.5,
+   "stance": -0.199,
+   "impact": "benefit",
+   "support_reason": "Die Erhöhung des Steuerfusses und der Schulhauskredit ermöglichen langfristig eine verbesserte Infrastruktur und Lebensqualität, was der nachhaltigen Entwicklung der Gemeinde dient.",
+   "oppose_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+   "stance_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+   "perception": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt.",
+   "current_plan": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt."
+  }
+ ],
+ "relationships": [
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_03",
+   "affinity": -0.18,
+   "trust": 0.45
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_02",
+   "affinity": -0.08,
+   "trust": 0.61
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_04",
+   "affinity": -0.16,
+   "trust": 0.45
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_04",
+   "affinity": -0.14,
+   "trust": 0.59
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_02",
+   "affinity": 0.42,
+   "trust": 0.68
+  },
+  {
+   "source_id": "npc_04",
+   "target_id": "npc_05",
+   "affinity": 0.19,
+   "trust": 0.56
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_04",
+   "affinity": -0.34,
+   "trust": 0.4
+  }
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "events": [
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich habe die Erläuterungen des Gemeinderats gelesen, die zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen. Für mich ist das eine klare Investition in die Zukunft.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich habe die Erläuterungen des Gemeinderats gelesen, die zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen. Für mich ist das eine klare Investition in die Zukunft.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich verstehe deine Bedenken über die Preise, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Das stabilisiert unsere Gemeinde und meine berufliche Zukunft.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, je comprends tes préoccupations concernant les prix, mais l'investissement dans la nouvelle école crée des emplois et une meilleure infrastructure à long terme. Cela stabilise notre communauté et mon avenir professionnel."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je veux comprendre ton point de vue sur la construction du nouveau bâtiment scolaire, mais je ne peux pas accepter que les plus vulnérables paient le prix.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je veux comprendre ton point de vue sur la construction du nouveau bâtiment scolaire, mais je ne peux pas accepter que les plus vulnérables paient le prix.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, je suis vraiment inquiète pour les familles modestes. Cette hausse d'impôt de 118 à 124 % va les forcer à couper dans les activités extrascolaires, ce qui est inacceptable pour l'équité éducative.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#10",
+       "Author_notes_pasted_text#11"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       },
+       {
+        "id": "Author_notes_pasted_text#11",
+        "text": "2. Le crédit scolaire de 4,8 millions CHF finance huit salles de classe, une salle de gymnastique et une structure d'accueil de jour. Les coûts de construction figurent au budget 2027. Un non reporterait le chantier d'au moins trois ans."
+       }
+      ]
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit Léa über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit Léa über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich verstehe die Notwendigkeit des Schulhauses, doch die Steuererhöhung von 118 auf 124 % zerstört unsere Einnahmen. Für unseren Hof bedeutet das zusätzliche 432 CHF jährlich, während die Gemeinde keine Investitionssicherheit für unsere ökologischen Standards bietet.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, ich verstehe die Notwendigkeit des Schulhauses, doch die Steuererhöhung von 118 auf 124 % zerstört unsere Einnahmen. Für unseren Hof bedeutet das zusätzliche 432 CHF jährlich, während die Gemeinde keine Investitionssicherheit für unsere ökologischen Standards bietet."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite recueillir l'avis de Petra Schneider sur l'impact concret de ce projet pour les commerçants locaux.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite recueillir l'avis de Petra Schneider sur l'impact concret de ce projet pour les commerçants locaux.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Je suis encore indécise sur cette question. Le crédit de 4,8 millions CHF pour le nouveau bâtiment scolaire stimulera l'activité locale et attirera plus de clients, ce qui est bénéfique pour mon magasin. En même temps, l'augmentation du taux d'imposition alourdit les budgets des ménages et risque de réduire leur pouvoir d'achat.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#14"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       },
+       {
+        "id": "Author_notes_pasted_text#14",
+        "text": "5. Les petits commerces de la rue du village tablent sur une demande un peu plus forte si l'accueil de jour embauche. Les prix du béton et de l'acier sont budgétés +8 % par rapport à 2024."
+       }
+      ],
+      "translated_dialogue": "Je bin noch unschlüssig iber diese Frage. Der Kredit vo 4,8 Millionen CHF fürs neue Schulgebäude wird die lokale Aktivität ankurbeln und mehr Kunden anziehen, was für meinen Laden vorteilhaft ist. Gleichzeitig belastet die Steigerung der Steuerquote die Haushaltsbudgets und riskiert, ihre Kaufkraft zu mindern."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir fiscal me préoccupe, car je ne peux pas encore anticiper l'évolution de la demande.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir fiscal me préoccupe, car je ne peux pas encore anticiper l'évolution de la demande.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit dir über die Auswirkungen auf lokale Konsumenten sprechen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit dir über die Auswirkungen auf lokale Konsumenten sprechen.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich verstehe, dass du deine Boutique führen musst, aber diese Steuererhöhung trifft genau die mittleren Einkommen wie das meine. Die 240 CHF mehr pro Jahr sind für viele Familien spürbar, ohne dass wir sehen, wie die Planungsprozesse wirklich transparent werden. Wir brauchen klare Nutzen für die Bürgerbeteiligung, nicht nur neue Schulbauten.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, je comprends que tu doives diriger ta boutique, mais cette augmentation d'impôt touche précisément les revenus moyens comme le mien. Les 240 CHF de plus par an sont perceptibles pour de nombreuses familles, sans que nous voyions comment les processus de planification deviennent réellement transparents. Nous avons besoin de bénéfices clairs pour la participation citoyenne, pas seulement de nouveaux bâtiments scolaires."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8347,
+     "x": 8,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich auf dem Bau meines Vaters mitgeholfen, deshalb habe ich nie Angst vor Schmutz oder harter Arbeit gehabt. Nach der Berufslehre zog ich nach Linden, weil die Baustellen hier zahlreich waren und ich endlich ein eigenes Zimmer mieten konnte. Heute verdiene ich gerade genug, um die Miete für meine kleine Wohnung zu bezahlen, und die steigenden Steuern lassen mich jeden Franken zählen. Die Gemeinde plant gerade neue Wohnbauten, und ich frage mich, ob das Geld nicht besser in die Sanierung alter Häuser fliessen könnte. Meine Kolleginnen und Kollegen wissen, dass ich keine leeren Versprechungen mag und lieber eine konkrete Lösung als eine schöne Rede höre.",
+     "expert_reflection": "Petra Schneiders ISTP-geprägte, analytische Kommunikationsweise und ihre pragmatische Haltung zu Steuern und Infrastruktur spiegeln eine starke Orientierung an Fakten und Effizienz wider. Ihr polarisierendes, geheimes Misstrauen gegenüber der Subventionspolitik der Gemeinde zeigt, wie persönliche wirtschaftliche Sorgen und ein kritischer Blick auf institutionelle Ressourcenverteilung zu einem inneren Konflikt zwischen öffentlicher Loyalität und privater Skepsis werden können, was in sozialen Spannungsfeldern zu defensivem Verhalten oder sogar zu informellem Widerstand führen kann.",
+     "id": "npc_01",
+     "category": "worker",
+     "profession": "Bauarbeiterin (Construction laborer)",
+     "bio": "Petra Schneider wuchs in einem kleinen Dorf auf, machte ihre Berufslehre als Maurerin und zog nach Linden, um Arbeit zu finden. Sie arbeitet seit Jahren auf Baustellen, verdient knapp genug, um die Miete zu bezahlen, und sieht die steigenden Steuern als direkte Belastung ihrer ohnehren Existenz. Ihre Erfahrung mit dem Bau von Gemeindeprojekten macht sie besonders sensibel für die Kosten-Nutzen-Bilanz öffentlicher Investitionen.",
+     "persona": "Petra wirkt sachlich und zurückhaltend, spricht präzise und vermeidet überflüssige Emotionen. Ihr ISTP-Typ zeigt sich in einer analytischen, fast mechanischen Art zu kommunizieren, bei der sie Fakten über Werte stellt und Entscheidungen auf Effizienz prüft, was sie bei Kollegen als unnachgiebig, aber verlässlich erscheinen lässt.",
+     "beliefs": [
+      "Arbeit und Selbstständigkeit sind die Grundpfeiler einer stabilen Gesellschaft",
+      "Steuern sollten direkt in messbare Infrastrukturinvestitionen fliessen, nicht in administrative Aufwände",
+      "Transparenz bei Gemeindeausgaben ist essenziell für das Vertrauen der Bürger"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt heimlich, dass die Gemeinde zu viele Subventionen an grosse Baukonzerne vergibt, anstatt lokale Handwerksbetriebe zu fördern, was sie in internen Diskussionen als Korruption bezeichnet."
+     ],
+     "interested_topics": [
+      "Bauwesen und lokale Infrastruktur",
+      "Steuergerechtigkeit und Haushaltsplanung",
+      "Effizienzsteigerung in öffentlichen Projekten"
+     ],
+     "reputation": 0.463,
+     "stance": 0.6702,
+     "impact": "benefit",
+     "support_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "oppose_reason": "Die Erhöhung des Steuerfusses belastet meine ohnehren Existenz zusätzlich, während die Transparenz der Ausgaben und die direkte Nutzung der Steuern für messbare Infrastrukturprojekte wie das Schulhaus fehlen.",
+     "stance_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": 0.0832,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Meine Kindheit verbrachte ich auf dem Hof, wo ich früh lernte, wie Bodenfruchtbarkeit und Wetterlagen die Ernte bestimmen. Nach der Matura absolvierte ich eine landwirtschaftliche Berufslehre und übernahm nach dem Tod meines Vaters gemeinsam mit meiner Schwester die Bewirtschaftung. Die steigenden Energiekosten und die neuen Steuerlasten durch die Gemeindepolitik belasten unseren Betrieb zunehmend, während wir gleichzeitig versuchen, ökologische Standards zu erfüllen. Meine Familie unterstützt mich, doch die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig. Trotz der Herausforderungen bleibe ich überzeugt, dass eine ausgewogene Steuerpolitik die landwirtschaftliche Zukunft sichern kann, auch wenn ich diese Ansicht nur vorsichtig äussere.",
+     "expert_reflection": "Als INTJ-Typ zeigt Anna Berger eine ausgeprägte systematische Denkweise, die sie dazu befähigt, komplexe ökonomische Zusammenhänge präzise zu analysieren und langfristige Strategien zu entwickeln. Ihre zurückhaltende Kommunikation und die Tendenz, kritische Standpunkte zunächst intern zu verarbeiten, könnten jedoch dazu führen, dass ihre fundierten Bedenken bezüglich der Steuerbelastungen für landwirtschaftliche Betriebe in der öffentlichen Debatte unterrepräsentiert bleiben, was die Gefahr birgt, dass wichtige agrarpolitische Perspektiven übersehen werden.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "landwirtin (small family farm)",
+     "bio": "Nach der Matura absolvierte ich eine Berufslehre als landwirtschaftliche Fachfrau und übernahm später gemeinsam mit meiner Familie den elterlichen Hof in Linden. Die steigenden Betriebskosten und die neuen Steuerbelastungen durch die Gemeindepolitik stellen eine zunehmende Herausforderung für die langfristige Rentabilität unserer landwirtschaftlichen Produktion dar.",
+     "persona": "Anna Berger wirkt stets präzise und analytisch, spricht in kurzen, klaren Sätzen und vermeidet emotionale Ausschweifungen. Ihre INTJ-Artikulation zeigt sich in einer strukturierten Argumentation, bei der sie komplexe ökonomische Zusammenhänge systematisch abwägt und dabei stets den Blick für die langfristigen Konsequenzen behält.",
+     "beliefs": [
+      "Nachhaltigkeit und ökologische Bewirtschaftung sind essenziell für die Zukunftsfähigkeit der Landwirtschaft",
+      "Steuererhöhungen dürfen nicht die Wettbewerbsfähigkeit der lokalen Betriebe gefährden",
+      "Die Gemeinde muss transparente Planungsinstrumente bereitstellen, um Investitionssicherheit zu gewährleisten"
+     ],
+     "controversial_ideas": [
+      "Ich bin überzeugt, dass die aktuellen Steuererhöhungen für hohe Einkommen in Linden langfristig die landwirtschaftliche Produktion destabilisieren werden, was ich jedoch nur in privaten Gesprächen offen äussere, da es der politischen Mehrheitsmeinung widerspricht"
+     ],
+     "interested_topics": [
+      "agrarökonomie",
+      "Steuerpolitik",
+      "Nachhaltige Bewirtschaftung"
+     ],
+     "reputation": 0.61,
+     "stance": -1.0,
+     "impact": "harm",
+     "support_reason": "Die Erhöhung des Steuerfusses gefährdet die Wettbewerbsfähigkeit unserer landwirtschaftlichen Produktion und erhöht die Betriebskosten weiter.",
+     "oppose_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "stance_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik."
+    },
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": -0.1163,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite ville voisine, où mon père tenait une petite épicerie familiale. Après avoir obtenu ma Matura, j’ai choisi une Berufslehre en commerce pour comprendre les rouages du secteur de la vente. Après plusieurs années d’apprentissage, j’ai ouvert ma boutique à Linden, sélectionnant des produits locaux et des marques suisses de qualité. Mon magasin a rapidement gagné en notoriété grâce à une clientèle fidèle et à une gestion rigoureuse des marges. Aujourd’hui, je participe activement aux réunions du Gemeinderat, où je plaide pour des mesures fiscales qui protègent les petites entreprises tout en finançant des projets de construction qui dynamisent notre économie. Malgré les pressions des augmentations d’impôts, je reste convaincue que l’équilibre entre fiscalité et investissement est la clé du développement durable de notre commune.",
+     "expert_reflection": "En tant que psychologue sociale, Léa Rochat incarne le profil INTJ : une pensée stratégique, une communication axée sur les faits et une préférence pour les structures claires. Son professionnalisme et sa capacité à articuler des arguments chiffrés lui confèrent une crédibilité auprès des décideurs, mais son approche analytique peut parfois être perçue comme détachée des préoccupations émotionnelles des citoyens. La combinaison d’une position économique favorable aux projets de construction et d’une critique des dépenses administratives pourrait susciter des tensions, car elle révèle une vision utilitariste de la politique fiscale, susceptible de polariser les opinions au sein de la communauté.",
+     "id": "npc_02",
+     "category": "shopkeeper",
+     "profession": "proprietor of a boutique retail shop in Linden",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en commerce avant d’ouvrir ma propre boutique de produits locaux. Mon magasin, situé en plein cœur de Linden, attire autant les résidents que les touristes grâce à une sélection soignée et des prix compétitifs. Je suis consciente que les augmentations d’impôts affectent directement les budgets des ménages, mais je soutiens l’investissement dans les projets de construction qui dynamisent notre économie locale.",
+     "persona": "Léa Rochat se présente avec une assurance calme et analytique, articulant ses propos de façon concise et logique, comme un INTJ qui privilégie la structure et l’efficacité. Elle adopte un ton professionnel, légèrement distancié, et utilise des arguments chiffrés pour appuyer ses positions, ce qui lui confère une réputation de décideuse pragmatique parmi les clients et les partenaires locaux.",
+     "beliefs": [
+      "La transparence fiscale et la responsabilité des municipalités sont essentielles pour maintenir la confiance des citoyens.",
+      "Les investissements dans l’infrastructure locale stimulent la croissance économique à long terme.",
+      "Le commerce indépendant doit être soutenu par des politiques qui favorisent la compétitivité et la qualité des produits."
+     ],
+     "controversial_ideas": [
+      "Je crois que les augmentations d’impôts sur les ménages à revenu élevé devraient être réinvesties uniquement dans des projets de construction qui génèrent des retours économiques tangibles, et non dans des dépenses administratives."
+     ],
+     "interested_topics": [
+      "optimisation des coûts d’exploitation des petites entreprises",
+      "développement durable des projets de construction",
+      "politiques fiscales équitables pour les classes moyennes"
+     ],
+     "reputation": 0.61,
+     "stance": -0.3288,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "stance_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise. / L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "perception": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+     "current_plan": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.8989,
+     "x": 11,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J'ai grandi dans une petite maison familiale à Niederbipp, où mon père était menuisier et ma mère tenait une petite épicerie. Après l'école obligatoire, j'ai poursuivi mes études à l'école de Linden, obtenant ma Matura avec distinction, puis j'ai effectué une Berufslehre en pédagogie à l'école professionnelle de Berne. J'ai enseigné pendant dix ans dans les classes primaires de Linden, avant de devenir directrice d'établissement il y a trois ans. Je loue un appartement moderne au centre-ville depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires. Je suis mariée à un ingénieur en construction qui travaille sur le projet de construction de 4,8 millions de francs, ce qui me donne une perspective unique sur les coûts et les bénéfices. Mes deux enfants fréquentent l'école primaire de Linden, et je m'engage activement dans les associations de parents. Je crois fermement que l'éducation doit rester accessible à tous, indépendamment du revenu familial, et que les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés.",
+     "expert_reflection": "En tant que psychologue sociale, Alice Martin présente un profil ENFP caractérisé par une grande empathie, une créativité communicative et une capacité à mobiliser les autres autour de causes collectives. Son engagement passionné pour l'équité éducative et sa volonté de remettre en question les structures fiscales actuelles reflètent une personnalité idéaliste et visionnaire, susceptible de susciter des réactions mitigées au sein de la communauté. Sa capacité à articuler des arguments complexes avec chaleur et conviction pourrait renforcer son influence auprès des familles et des jeunes, mais sa propension à explorer des solutions radicales, comme une réforme progressive de la fiscalité locative, pourrait aussi la marginaliser auprès des conservateurs et des acteurs économiques locaux.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de l'école primaire",
+     "bio": "Après ma Matura à l'école de Linden, j'ai suivi une Berufslehre en pédagogie, puis j'ai enseigné pendant dix ans avant de devenir directrice d'établissement. Je vis dans un appartement que je loue depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires.",
+     "persona": "Alice Martin se présente avec une énergie débordante et un ton chaleureux, utilisant des gestes expressifs et des questions ouvertes pour engager les élèves et les parents. Son MBTI ENFP se traduit par une communication enthousiaste et empathique, mais aussi par une tendance à voir les situations sous plusieurs angles, ce qui peut parfois la rendre perçue comme instable ou trop idéaliste par ses collègues plus pragmatiques.",
+     "beliefs": [
+      "L'éducation est le fondement d'une société équitable et doit rester accessible à tous, indépendamment du revenu familial",
+      "Les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés",
+      "La transparence budgétaire est essentielle pour maintenir la confiance des citoyens"
+     ],
+     "controversial_ideas": [
+      "Je crois que les impôts sur les ménages devraient être réévalués pour inclure une composante progressive basée sur la valeur locative, même si cela pourrait réduire l'investissement dans le logement social"
+     ],
+     "interested_topics": [
+      "politique éducative locale",
+      "équité fiscale",
+      "développement durable des écoles"
+     ],
+     "reputation": 0.512,
+     "stance": -0.815,
+     "impact": "mixed",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire améliorera les infrastructures éducatives, bénéficiant ainsi aux élèves et à la communauté.",
+     "oppose_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "perception": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+     "current_plan": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 12,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in einem kleinen Dorf in der Emmental aufgewachsen, wo ich früh die Bedeutung von Gemeinschaft und lokaler Verantwortung spürte. Nach der obligatorischen Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung der Gemeinde Linden, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Meine Frau arbeitet als Lehrerin an der lokalen Schule, und wir haben zwei Kinder, die im Dorf aufwachsen. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen. Ich bin stolz darauf, dass wir in Linden eine gute Balance zwischen Wohnen, Arbeiten und Freizeit schaffen, auch wenn die Umsetzung manchmal Konflikte auslöst.",
+     "expert_reflection": "Als ESTP-Typus neigt Hans Weber dazu, Entscheidungen schnell und situationsbezogen zu treffen, was ihn in der dynamischen Welt der Raumplanung effizient macht. Seine pragmatische Haltung und sein direkter Kommunikationsstil können jedoch dazu führen, dass er komplexe gesellschaftliche Implikationen von Projekten unterschätzt, insbesondere wenn es um langfristige soziale Auswirkungen geht. Die Bereitschaft, kontroverse Ideen wie gezielte Gewerbezonen trotz kurzfristiger Wohnqualitätsverluste zu vertreten, zeigt eine starke Orientierung an wirtschaftlichen Zielen, die in der heutigen Politik oft Priorität vor sozialer Gerechtigkeit haben.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Stadtplaner im Amt für Raumplanung der Gemeinde Linden",
+     "bio": "Nach der Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen.",
+     "persona": "Hans wirkt direkt und pragmatisch, spricht in kurzen, prägnanten Sätzen und nutzt gerne Fachbegriffe, um seine Argumente zu untermauern. Sein ESTP-Typus sorgt dafür, dass er spontan auf Diskussionen reagiert und Entscheidungen schnell trifft, was ihn bei Kollegen geschätzt, aber bei manchen als zu impulsiv empfunden macht.",
+     "beliefs": [
+      "Nachhaltigkeit und effiziente Nutzung des Gemeindegebiets sind die Grundpfeiler einer zukunftsfähigen Entwicklung",
+      "Steuererhöhungen sind gerechtfertigt, wenn sie langfristig zu besserer Infrastruktur und Lebensqualität führen",
+      "Die Beteiligung der Bürger sollte in konkreten Planungsprozessen stärker verankert werden"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass Linden gezielt Flächen für Gewerbezonen ausweisen sollte, um die lokale Wirtschaft zu stärken, auch wenn das die Wohnqualität in Randgebieten kurzfristig verschlechtert"
+     ],
+     "interested_topics": [
+      "Raumplanung und Infrastruktur",
+      "Steuerpolitik und Haushaltsmanagement",
+      "Bauprojekte und ihre sozialen Auswirkungen"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "support_reason": "Die Erhöhung des Steuerfusses und der Schulhauskredit ermöglichen langfristig eine verbesserte Infrastruktur und Lebensqualität, was der nachhaltigen Entwicklung der Gemeinde dient.",
+     "oppose_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "stance_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "perception": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "current_plan": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_02",
+     "influence": 0.3744,
+     "behavior": "compromise",
+     "political_delta": -0.1147,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_02",
+     "influence": 0.3744,
+     "behavior": "compromise",
+     "political_delta": 0.1042,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_02",
+     "influence": 0.4496,
+     "behavior": "compromise",
+     "political_delta": 0.0086,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.3984,
+     "behavior": "compromise",
+     "political_delta": -0.0062,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_02",
+     "influence": 0.1,
+     "behavior": "keep",
+     "political_delta": 0.0,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 28.0,
+    "business_climate": 30.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 1.0,
+    "stance_against": 4.0,
+    "stance_undecided": 0.0,
+    "stance_mean": -0.335,
+    "stance_spread": 0.583
+   }
+  },
+  {
+   "round": 1,
+   "events": [
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich verstehe deine Bedenken bezüglich der Steuerbelastung, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Für die Gemeinde ist das eine stabile Zukunft, die auch unseren Bauprojekten zugutekommt.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, ich verstehe deine Bedenken bezüglich der Steuerbelastung, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Für die Gemeinde ist das eine stabile Zukunft, die auch unseren Bauprojekten zugutekommt."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je souhaite discuter de l'impact réel de cette hausse sur les ménages les plus vulnérables avant de voter.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite discuter de l'impact réel de cette hausse sur les ménages les plus vulnérables avant de voter.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, je comprends que le nouveau bâtiment scolaire semble prometteur, mais le coût fiscal de 240 CHF supplémentaires par an pèsera trop lourdement sur les familles modestes. Sans cette hausse, nous pourrions maintenir les activités extrascolaires essentielles pour nos enfants.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#8",
+       "Author_notes_pasted_text#11",
+       "Author_notes_pasted_text#10"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#8",
+        "text": "Commune de Linden — objet: hausse du taux d'imposition et crédit pour l'école"
+       },
+       {
+        "id": "Author_notes_pasted_text#11",
+        "text": "2. Le crédit scolaire de 4,8 millions CHF finance huit salles de classe, une salle de gymnastique et une structure d'accueil de jour. Les coûts de construction figurent au budget 2027. Un non reporterait le chantier d'au moins trois ans."
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       }
+      ]
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, die Steuererhöhung trifft uns Bauern direkt am Geldbeutel. Unsere Einnahmen sinken, während die Gemeinde weiterhin keine klaren Investitionssicherheiten bietet. Das ist keine nachhaltige Politik.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       }
+      ],
+      "translated_dialogue": "Léa, l'augmentation des impôts nous touche directement au porte-monnaie. Nos revenus diminuent, tandis que la commune ne propose toujours pas de garanties d'investissement claires. Ce n'est pas une politique durable."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite discuter avec Petra des conséquences concrètes de cette hausse sur les commerçants locaux.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite discuter avec Petra des conséquences concrètes de cette hausse sur les commerçants locaux.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Petra, l'augmentation du taux d'imposition de 118 à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin. Ce crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire ne compense pas cette pression fiscale immédiate.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#10"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       }
+      ],
+      "translated_dialogue": "Petra, l'augmentation du taux d'imposition de 118 à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin. Ce crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire ne compense pas cette pression fiscale immédiate."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite recueillir votre avis sur l'équilibre entre investissement et pression fiscale immédiate.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite recueillir votre avis sur l'équilibre entre investissement et pression fiscale immédiate.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Anna, je comprends votre préoccupation pour les familles modestes, mais l'augmentation du taux d'imposition de 118 à 124 % alourdit directement leurs budgets. Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire ne doit pas se faire au détriment de la capacité d'achat des ménages.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0,
+      "sources": [],
+      "translated_dialogue": "Anna, je comprends Ihre Besorgnis für die bescheidenen Familien, aber die Erhöhung der Steuersatz von 118 bis 124 % belastet direkt ihre Haushalte. Der Kredit von 4,8 Millionen CHF für den Bau des neuen Schulgebäudes darf nicht auf Kosten der Kaufkraft der Haushalte gehen."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte deine Sicht auf die Auswirkungen auf lokale Konsumenten hören, besonders wie sich höhere Steuern auf die Preise in deinem Geschäft auswirken könnten.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte deine Sicht auf die Auswirkungen auf lokale Konsumenten hören, besonders wie sich höhere Steuern auf die Preise in deinem Geschäft auswirken könnten.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, die Steuererhöhung von 118 auf 124 Prozent belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind. Die 4.8 Millionen CHF für den Schulbau profitieren den lokalen Firmen, während wir die Rückstellungen für Strassen und Sozialhilfe kürzen müssen.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#2",
+       "Author_notes_pasted_text#5",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#2",
+        "text": "Erläuterungen des Gemeinderats: 1. Der Steuerfuss bleibt seit 2019 bei 118 %. Die Jahresrechnung 2025 schliesst mit einem Defizit von 1.2 Millionen CHF. Ohne Massnahme müsste die Gemeinde die Rückstellungen für Strassen und Sozialhilfe kürz"
+       },
+       {
+        "id": "Author_notes_pasted_text#5",
+        "text": "4. Was ein Nein ändert: Der Steuerfuss bleibt 118 %. Das Defizit von 1.2 Millionen CHF bleibt. Der Gemeinderat müsste Sparaufträge von 400'000 CHF bei der Schule und 200'000 CHF bei den Werkhöfen vorschlagen."
+       },
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, la hausse d'impôt de 118 à 124 pour cent alourdit les revenus moyens comme le mien, sans que les avantages concrets pour la participation citoyenne dans les processus de planification soient suffisamment transparents. Les 4,8 millions CHF pour la construction d'écoles profitent aux entreprises locales, tandis que nous devons réduire les réserves pour les routes et l'aide sociale."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8556,
+     "x": 8,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich auf dem Bau meines Vaters mitgeholfen, deshalb habe ich nie Angst vor Schmutz oder harter Arbeit gehabt. Nach der Berufslehre zog ich nach Linden, weil die Baustellen hier zahlreich waren und ich endlich ein eigenes Zimmer mieten konnte. Heute verdiene ich gerade genug, um die Miete für meine kleine Wohnung zu bezahlen, und die steigenden Steuern lassen mich jeden Franken zählen. Die Gemeinde plant gerade neue Wohnbauten, und ich frage mich, ob das Geld nicht besser in die Sanierung alter Häuser fliessen könnte. Meine Kolleginnen und Kollegen wissen, dass ich keine leeren Versprechungen mag und lieber eine konkrete Lösung als eine schöne Rede höre.",
+     "expert_reflection": "Petra Schneiders ISTP-geprägte, analytische Kommunikationsweise und ihre pragmatische Haltung zu Steuern und Infrastruktur spiegeln eine starke Orientierung an Fakten und Effizienz wider. Ihr polarisierendes, geheimes Misstrauen gegenüber der Subventionspolitik der Gemeinde zeigt, wie persönliche wirtschaftliche Sorgen und ein kritischer Blick auf institutionelle Ressourcenverteilung zu einem inneren Konflikt zwischen öffentlicher Loyalität und privater Skepsis werden können, was in sozialen Spannungsfeldern zu defensivem Verhalten oder sogar zu informellem Widerstand führen kann.",
+     "id": "npc_01",
+     "category": "worker",
+     "profession": "Bauarbeiterin (Construction laborer)",
+     "bio": "Petra Schneider wuchs in einem kleinen Dorf auf, machte ihre Berufslehre als Maurerin und zog nach Linden, um Arbeit zu finden. Sie arbeitet seit Jahren auf Baustellen, verdient knapp genug, um die Miete zu bezahlen, und sieht die steigenden Steuern als direkte Belastung ihrer ohnehren Existenz. Ihre Erfahrung mit dem Bau von Gemeindeprojekten macht sie besonders sensibel für die Kosten-Nutzen-Bilanz öffentlicher Investitionen.",
+     "persona": "Petra wirkt sachlich und zurückhaltend, spricht präzise und vermeidet überflüssige Emotionen. Ihr ISTP-Typ zeigt sich in einer analytischen, fast mechanischen Art zu kommunizieren, bei der sie Fakten über Werte stellt und Entscheidungen auf Effizienz prüft, was sie bei Kollegen als unnachgiebig, aber verlässlich erscheinen lässt.",
+     "beliefs": [
+      "Arbeit und Selbstständigkeit sind die Grundpfeiler einer stabilen Gesellschaft",
+      "Steuern sollten direkt in messbare Infrastrukturinvestitionen fliessen, nicht in administrative Aufwände",
+      "Transparenz bei Gemeindeausgaben ist essenziell für das Vertrauen der Bürger"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt heimlich, dass die Gemeinde zu viele Subventionen an grosse Baukonzerne vergibt, anstatt lokale Handwerksbetriebe zu fördern, was sie in internen Diskussionen als Korruption bezeichnet."
+     ],
+     "interested_topics": [
+      "Bauwesen und lokale Infrastruktur",
+      "Steuergerechtigkeit und Haushaltsplanung",
+      "Effizienzsteigerung in öffentlichen Projekten"
+     ],
+     "reputation": 0.476,
+     "stance": 0.6005,
+     "impact": "benefit",
+     "support_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "oppose_reason": "Die Erhöhung des Steuerfusses belastet meine ohnehren Existenz zusätzlich, während die Transparenz der Ausgaben und die direkte Nutzung der Steuern für messbare Infrastrukturprojekte wie das Schulhaus fehlen.",
+     "stance_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": 0.0697,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Meine Kindheit verbrachte ich auf dem Hof, wo ich früh lernte, wie Bodenfruchtbarkeit und Wetterlagen die Ernte bestimmen. Nach der Matura absolvierte ich eine landwirtschaftliche Berufslehre und übernahm nach dem Tod meines Vaters gemeinsam mit meiner Schwester die Bewirtschaftung. Die steigenden Energiekosten und die neuen Steuerlasten durch die Gemeindepolitik belasten unseren Betrieb zunehmend, während wir gleichzeitig versuchen, ökologische Standards zu erfüllen. Meine Familie unterstützt mich, doch die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig. Trotz der Herausforderungen bleibe ich überzeugt, dass eine ausgewogene Steuerpolitik die landwirtschaftliche Zukunft sichern kann, auch wenn ich diese Ansicht nur vorsichtig äussere.",
+     "expert_reflection": "Als INTJ-Typ zeigt Anna Berger eine ausgeprägte systematische Denkweise, die sie dazu befähigt, komplexe ökonomische Zusammenhänge präzise zu analysieren und langfristige Strategien zu entwickeln. Ihre zurückhaltende Kommunikation und die Tendenz, kritische Standpunkte zunächst intern zu verarbeiten, könnten jedoch dazu führen, dass ihre fundierten Bedenken bezüglich der Steuerbelastungen für landwirtschaftliche Betriebe in der öffentlichen Debatte unterrepräsentiert bleiben, was die Gefahr birgt, dass wichtige agrarpolitische Perspektiven übersehen werden.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "landwirtin (small family farm)",
+     "bio": "Nach der Matura absolvierte ich eine Berufslehre als landwirtschaftliche Fachfrau und übernahm später gemeinsam mit meiner Familie den elterlichen Hof in Linden. Die steigenden Betriebskosten und die neuen Steuerbelastungen durch die Gemeindepolitik stellen eine zunehmende Herausforderung für die langfristige Rentabilität unserer landwirtschaftlichen Produktion dar.",
+     "persona": "Anna Berger wirkt stets präzise und analytisch, spricht in kurzen, klaren Sätzen und vermeidet emotionale Ausschweifungen. Ihre INTJ-Artikulation zeigt sich in einer strukturierten Argumentation, bei der sie komplexe ökonomische Zusammenhänge systematisch abwägt und dabei stets den Blick für die langfristigen Konsequenzen behält.",
+     "beliefs": [
+      "Nachhaltigkeit und ökologische Bewirtschaftung sind essenziell für die Zukunftsfähigkeit der Landwirtschaft",
+      "Steuererhöhungen dürfen nicht die Wettbewerbsfähigkeit der lokalen Betriebe gefährden",
+      "Die Gemeinde muss transparente Planungsinstrumente bereitstellen, um Investitionssicherheit zu gewährleisten"
+     ],
+     "controversial_ideas": [
+      "Ich bin überzeugt, dass die aktuellen Steuererhöhungen für hohe Einkommen in Linden langfristig die landwirtschaftliche Produktion destabilisieren werden, was ich jedoch nur in privaten Gesprächen offen äussere, da es der politischen Mehrheitsmeinung widerspricht"
+     ],
+     "interested_topics": [
+      "agrarökonomie",
+      "Steuerpolitik",
+      "Nachhaltige Bewirtschaftung"
+     ],
+     "reputation": 0.62,
+     "stance": -1.0,
+     "impact": "harm",
+     "support_reason": "Die Erhöhung des Steuerfusses gefährdet die Wettbewerbsfähigkeit unserer landwirtschaftlichen Produktion und erhöht die Betriebskosten weiter.",
+     "oppose_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "stance_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik."
+    },
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": -0.1223,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite ville voisine, où mon père tenait une petite épicerie familiale. Après avoir obtenu ma Matura, j’ai choisi une Berufslehre en commerce pour comprendre les rouages du secteur de la vente. Après plusieurs années d’apprentissage, j’ai ouvert ma boutique à Linden, sélectionnant des produits locaux et des marques suisses de qualité. Mon magasin a rapidement gagné en notoriété grâce à une clientèle fidèle et à une gestion rigoureuse des marges. Aujourd’hui, je participe activement aux réunions du Gemeinderat, où je plaide pour des mesures fiscales qui protègent les petites entreprises tout en finançant des projets de construction qui dynamisent notre économie. Malgré les pressions des augmentations d’impôts, je reste convaincue que l’équilibre entre fiscalité et investissement est la clé du développement durable de notre commune.",
+     "expert_reflection": "En tant que psychologue sociale, Léa Rochat incarne le profil INTJ : une pensée stratégique, une communication axée sur les faits et une préférence pour les structures claires. Son professionnalisme et sa capacité à articuler des arguments chiffrés lui confèrent une crédibilité auprès des décideurs, mais son approche analytique peut parfois être perçue comme détachée des préoccupations émotionnelles des citoyens. La combinaison d’une position économique favorable aux projets de construction et d’une critique des dépenses administratives pourrait susciter des tensions, car elle révèle une vision utilitariste de la politique fiscale, susceptible de polariser les opinions au sein de la communauté.",
+     "id": "npc_02",
+     "category": "shopkeeper",
+     "profession": "proprietor of a boutique retail shop in Linden",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en commerce avant d’ouvrir ma propre boutique de produits locaux. Mon magasin, situé en plein cœur de Linden, attire autant les résidents que les touristes grâce à une sélection soignée et des prix compétitifs. Je suis consciente que les augmentations d’impôts affectent directement les budgets des ménages, mais je soutiens l’investissement dans les projets de construction qui dynamisent notre économie locale.",
+     "persona": "Léa Rochat se présente avec une assurance calme et analytique, articulant ses propos de façon concise et logique, comme un INTJ qui privilégie la structure et l’efficacité. Elle adopte un ton professionnel, légèrement distancié, et utilise des arguments chiffrés pour appuyer ses positions, ce qui lui confère une réputation de décideuse pragmatique parmi les clients et les partenaires locaux.",
+     "beliefs": [
+      "La transparence fiscale et la responsabilité des municipalités sont essentielles pour maintenir la confiance des citoyens.",
+      "Les investissements dans l’infrastructure locale stimulent la croissance économique à long terme.",
+      "Le commerce indépendant doit être soutenu par des politiques qui favorisent la compétitivité et la qualité des produits."
+     ],
+     "controversial_ideas": [
+      "Je crois que les augmentations d’impôts sur les ménages à revenu élevé devraient être réinvesties uniquement dans des projets de construction qui génèrent des retours économiques tangibles, et non dans des dépenses administratives."
+     ],
+     "interested_topics": [
+      "optimisation des coûts d’exploitation des petites entreprises",
+      "développement durable des projets de construction",
+      "politiques fiscales équitables pour les classes moyennes"
+     ],
+     "reputation": 0.63,
+     "stance": -0.5318,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "stance_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise. / L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "perception": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+     "current_plan": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.9178,
+     "x": 11,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J'ai grandi dans une petite maison familiale à Niederbipp, où mon père était menuisier et ma mère tenait une petite épicerie. Après l'école obligatoire, j'ai poursuivi mes études à l'école de Linden, obtenant ma Matura avec distinction, puis j'ai effectué une Berufslehre en pédagogie à l'école professionnelle de Berne. J'ai enseigné pendant dix ans dans les classes primaires de Linden, avant de devenir directrice d'établissement il y a trois ans. Je loue un appartement moderne au centre-ville depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires. Je suis mariée à un ingénieur en construction qui travaille sur le projet de construction de 4,8 millions de francs, ce qui me donne une perspective unique sur les coûts et les bénéfices. Mes deux enfants fréquentent l'école primaire de Linden, et je m'engage activement dans les associations de parents. Je crois fermement que l'éducation doit rester accessible à tous, indépendamment du revenu familial, et que les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés.",
+     "expert_reflection": "En tant que psychologue sociale, Alice Martin présente un profil ENFP caractérisé par une grande empathie, une créativité communicative et une capacité à mobiliser les autres autour de causes collectives. Son engagement passionné pour l'équité éducative et sa volonté de remettre en question les structures fiscales actuelles reflètent une personnalité idéaliste et visionnaire, susceptible de susciter des réactions mitigées au sein de la communauté. Sa capacité à articuler des arguments complexes avec chaleur et conviction pourrait renforcer son influence auprès des familles et des jeunes, mais sa propension à explorer des solutions radicales, comme une réforme progressive de la fiscalité locative, pourrait aussi la marginaliser auprès des conservateurs et des acteurs économiques locaux.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de l'école primaire",
+     "bio": "Après ma Matura à l'école de Linden, j'ai suivi une Berufslehre en pédagogie, puis j'ai enseigné pendant dix ans avant de devenir directrice d'établissement. Je vis dans un appartement que je loue depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires.",
+     "persona": "Alice Martin se présente avec une énergie débordante et un ton chaleureux, utilisant des gestes expressifs et des questions ouvertes pour engager les élèves et les parents. Son MBTI ENFP se traduit par une communication enthousiaste et empathique, mais aussi par une tendance à voir les situations sous plusieurs angles, ce qui peut parfois la rendre perçue comme instable ou trop idéaliste par ses collègues plus pragmatiques.",
+     "beliefs": [
+      "L'éducation est le fondement d'une société équitable et doit rester accessible à tous, indépendamment du revenu familial",
+      "Les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés",
+      "La transparence budgétaire est essentielle pour maintenir la confiance des citoyens"
+     ],
+     "controversial_ideas": [
+      "Je crois que les impôts sur les ménages devraient être réévalués pour inclure une composante progressive basée sur la valeur locative, même si cela pourrait réduire l'investissement dans le logement social"
+     ],
+     "interested_topics": [
+      "politique éducative locale",
+      "équité fiscale",
+      "développement durable des écoles"
+     ],
+     "reputation": 0.524,
+     "stance": -0.815,
+     "impact": "mixed",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire améliorera les infrastructures éducatives, bénéficiant ainsi aux élèves et à la communauté.",
+     "oppose_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "perception": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+     "current_plan": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 12,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in einem kleinen Dorf in der Emmental aufgewachsen, wo ich früh die Bedeutung von Gemeinschaft und lokaler Verantwortung spürte. Nach der obligatorischen Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung der Gemeinde Linden, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Meine Frau arbeitet als Lehrerin an der lokalen Schule, und wir haben zwei Kinder, die im Dorf aufwachsen. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen. Ich bin stolz darauf, dass wir in Linden eine gute Balance zwischen Wohnen, Arbeiten und Freizeit schaffen, auch wenn die Umsetzung manchmal Konflikte auslöst.",
+     "expert_reflection": "Als ESTP-Typus neigt Hans Weber dazu, Entscheidungen schnell und situationsbezogen zu treffen, was ihn in der dynamischen Welt der Raumplanung effizient macht. Seine pragmatische Haltung und sein direkter Kommunikationsstil können jedoch dazu führen, dass er komplexe gesellschaftliche Implikationen von Projekten unterschätzt, insbesondere wenn es um langfristige soziale Auswirkungen geht. Die Bereitschaft, kontroverse Ideen wie gezielte Gewerbezonen trotz kurzfristiger Wohnqualitätsverluste zu vertreten, zeigt eine starke Orientierung an wirtschaftlichen Zielen, die in der heutigen Politik oft Priorität vor sozialer Gerechtigkeit haben.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Stadtplaner im Amt für Raumplanung der Gemeinde Linden",
+     "bio": "Nach der Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen.",
+     "persona": "Hans wirkt direkt und pragmatisch, spricht in kurzen, prägnanten Sätzen und nutzt gerne Fachbegriffe, um seine Argumente zu untermauern. Sein ESTP-Typus sorgt dafür, dass er spontan auf Diskussionen reagiert und Entscheidungen schnell trifft, was ihn bei Kollegen geschätzt, aber bei manchen als zu impulsiv empfunden macht.",
+     "beliefs": [
+      "Nachhaltigkeit und effiziente Nutzung des Gemeindegebiets sind die Grundpfeiler einer zukunftsfähigen Entwicklung",
+      "Steuererhöhungen sind gerechtfertigt, wenn sie langfristig zu besserer Infrastruktur und Lebensqualität führen",
+      "Die Beteiligung der Bürger sollte in konkreten Planungsprozessen stärker verankert werden"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass Linden gezielt Flächen für Gewerbezonen ausweisen sollte, um die lokale Wirtschaft zu stärken, auch wenn das die Wohnqualität in Randgebieten kurzfristig verschlechtert"
+     ],
+     "interested_topics": [
+      "Raumplanung und Infrastruktur",
+      "Steuerpolitik und Haushaltsmanagement",
+      "Bauprojekte und ihre sozialen Auswirkungen"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "support_reason": "Die Erhöhung des Steuerfusses und der Schulhauskredit ermöglichen langfristig eine verbesserte Infrastruktur und Lebensqualität, was der nachhaltigen Entwicklung der Gemeinde dient.",
+     "oppose_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "stance_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "perception": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "current_plan": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_02",
+     "influence": 0.3861,
+     "behavior": "compromise",
+     "political_delta": -0.1211,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_02",
+     "influence": 0.3859,
+     "behavior": "compromise",
+     "political_delta": 0.1107,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_02",
+     "influence": 0.4512,
+     "behavior": "compromise",
+     "political_delta": 0.009,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.4096,
+     "behavior": "compromise",
+     "political_delta": -0.0023,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_03",
+     "influence": 0.4528,
+     "behavior": "compromise",
+     "political_delta": -0.0162,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_02",
+     "influence": 0.1,
+     "behavior": "keep",
+     "political_delta": 0.0,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 30.0,
+    "business_climate": 30.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 1.0,
+    "stance_against": 4.0,
+    "stance_undecided": 0.0,
+    "stance_mean": -0.389,
+    "stance_spread": 0.564
+   }
+  },
+  {
+   "round": 2,
+   "events": [
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, ich verstehe deine Bedenken bezüglich der Steuerbelastung, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Das stärkt unsere Gemeinde und meine berufliche Zukunft.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Léa, je comprends tes préoccupations concernant l'imposition fiscale, mais l'investissement dans la nouvelle école crée des emplois et une meilleure infrastructure à long terme. Cela renforce notre communauté et mon avenir professionnel."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je veux comprendre comment tu vois la balance entre le nouveau bâtiment scolaire et le fardeau fiscal pour les ménages les plus vulnérables.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je veux comprendre comment tu vois la balance entre le nouveau bâtiment scolaire et le fardeau fiscal pour les ménages les plus vulnérables.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, je ne peux pas accepter que les familles les plus modestes soient contraintes de sacrifier les activités extrascolaires pour payer cette hausse d'impôt. Les enfants perdent déjà trop d'opportunités.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#11",
+       "Author_notes_pasted_text#10"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#11",
+        "text": "2. Le crédit scolaire de 4,8 millions CHF finance huit salles de classe, une salle de gymnastique et une structure d'accueil de jour. Les coûts de construction figurent au budget 2027. Un non reporterait le chantier d'au moins trois ans."
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       }
+      ]
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, die Steuererhöhung von 118 auf 124 Prozent belastet uns Bauern unnötig. Unsere Einnahmen sinken, während die Gemeinde keine klaren Planungsinstrumente bereitstellt. Das untergräbt die langfristige Rentabilität unseres Hofes.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       }
+      ],
+      "translated_dialogue": "Léa, la hausse d'impôt de 118 à 124 pour cent nous charge inutilement les agriculteurs. Nos revenus diminuent, tandis que la commune ne fournit aucun instrument de planification clair. Cela sape la rentabilité à long terme de notre exploitation."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite discuter des impacts concrets sur les budgets des ménages et sur la demande locale.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite discuter des impacts concrets sur les budgets des ménages et sur la demande locale.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Petra, l'augmentation du taux d'imposition alourdit directement les budgets des ménages, ce qui risque de réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin. Le crédit de 4,8 millions CHF pour l'école stimulera certes l'économie, mais au prix d'une charge fiscale insupportable pour les familles.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#14"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       },
+       {
+        "id": "Author_notes_pasted_text#14",
+        "text": "5. Les petits commerces de la rue du village tablent sur une demande un peu plus forte si l'accueil de jour embauche. Les prix du béton et de l'acier sont budgétés +8 % par rapport à 2024."
+       }
+      ],
+      "translated_dialogue": "Petra, die Erhöhung der Steuersätze belastet die Haushaltsbudgets direkt, was ihr Kaufkraftpotenzial verringern und den Kundenstrom in meinem Geschäft beeinträchtigen könnte. Der Kredit von 4,8 Millionen CHF für die Schule wird die Wirtschaft zwar ankurbeln, jedoch auf Kosten einer für Familien unzumutbaren Steuerbelastung."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite partager les données chiffrées sur l'augmentation de l'impôt et ses conséquences sur la consommation locale.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite partager les données chiffrées sur l'augmentation de l'impôt et ses conséquences sur la consommation locale.",
+      "target_npc_id": "npc_03",
+      "dialogue": "Anna, je comprends votre préoccupation pour les familles modestes, mais l'augmentation du taux d'imposition de 118 % à 124 % alourdit directement leurs budgets. Le crédit de 4,8 millions CHF pour l'école stimulera l'économie, mais au prix d'une charge fiscale qui risque de réduire le pouvoir d'achat et de nuire à mon entreprise.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0,
+      "sources": [],
+      "translated_dialogue": "Anna, je comprends Ihre Besorgnis für die bescheidenen Familien, aber die Erhöhung der Steuersatz von 118 % auf 124 % belastet direkt ihre Budgets. Der Kredit von 4,8 Millionen CHF für die Schule wird die Wirtschaft ankurbeln, aber zum Preis einer Steuerbelastung, die das Kaufkraftpotenzial verringern und meinem Unternehmen schaden könnte."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte deine Sicht hören: Wie werden höhere Steuern die Preise in deinem Geschäft beeinflussen?",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte deine Sicht hören: Wie werden höhere Steuern die Preise in deinem Geschäft beeinflussen?",
+      "target_npc_id": "npc_02",
+      "dialogue": "Léa, die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind. Die 240 CHF mehr pro Jahr sind für viele Familien eine spürbare Belastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#4",
+       "Author_notes_pasted_text#1"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       },
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       }
+      ],
+      "translated_dialogue": "Léa, l'augmentation de l'impôt charge les revenus moyens comme le mien, sans que les avantages concrets pour la participation citoyenne dans les processus de planification soient suffisamment transparents. Les 240 CHF de plus par an constituent une charge sensible pour de nombreuses familles, tandis que les entreprises de construction locales profitent déjà des 4,8 millions CHF."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "Petra Schneider",
+     "gender": "female",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "tenant",
+     "income_level": "low",
+     "political_leaning": -0.8726,
+     "x": 8,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Als Kind habe ich auf dem Bau meines Vaters mitgeholfen, deshalb habe ich nie Angst vor Schmutz oder harter Arbeit gehabt. Nach der Berufslehre zog ich nach Linden, weil die Baustellen hier zahlreich waren und ich endlich ein eigenes Zimmer mieten konnte. Heute verdiene ich gerade genug, um die Miete für meine kleine Wohnung zu bezahlen, und die steigenden Steuern lassen mich jeden Franken zählen. Die Gemeinde plant gerade neue Wohnbauten, und ich frage mich, ob das Geld nicht besser in die Sanierung alter Häuser fliessen könnte. Meine Kolleginnen und Kollegen wissen, dass ich keine leeren Versprechungen mag und lieber eine konkrete Lösung als eine schöne Rede höre.",
+     "expert_reflection": "Petra Schneiders ISTP-geprägte, analytische Kommunikationsweise und ihre pragmatische Haltung zu Steuern und Infrastruktur spiegeln eine starke Orientierung an Fakten und Effizienz wider. Ihr polarisierendes, geheimes Misstrauen gegenüber der Subventionspolitik der Gemeinde zeigt, wie persönliche wirtschaftliche Sorgen und ein kritischer Blick auf institutionelle Ressourcenverteilung zu einem inneren Konflikt zwischen öffentlicher Loyalität und privater Skepsis werden können, was in sozialen Spannungsfeldern zu defensivem Verhalten oder sogar zu informellem Widerstand führen kann.",
+     "id": "npc_01",
+     "category": "worker",
+     "profession": "Bauarbeiterin (Construction laborer)",
+     "bio": "Petra Schneider wuchs in einem kleinen Dorf auf, machte ihre Berufslehre als Maurerin und zog nach Linden, um Arbeit zu finden. Sie arbeitet seit Jahren auf Baustellen, verdient knapp genug, um die Miete zu bezahlen, und sieht die steigenden Steuern als direkte Belastung ihrer ohnehren Existenz. Ihre Erfahrung mit dem Bau von Gemeindeprojekten macht sie besonders sensibel für die Kosten-Nutzen-Bilanz öffentlicher Investitionen.",
+     "persona": "Petra wirkt sachlich und zurückhaltend, spricht präzise und vermeidet überflüssige Emotionen. Ihr ISTP-Typ zeigt sich in einer analytischen, fast mechanischen Art zu kommunizieren, bei der sie Fakten über Werte stellt und Entscheidungen auf Effizienz prüft, was sie bei Kollegen als unnachgiebig, aber verlässlich erscheinen lässt.",
+     "beliefs": [
+      "Arbeit und Selbstständigkeit sind die Grundpfeiler einer stabilen Gesellschaft",
+      "Steuern sollten direkt in messbare Infrastrukturinvestitionen fliessen, nicht in administrative Aufwände",
+      "Transparenz bei Gemeindeausgaben ist essenziell für das Vertrauen der Bürger"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt heimlich, dass die Gemeinde zu viele Subventionen an grosse Baukonzerne vergibt, anstatt lokale Handwerksbetriebe zu fördern, was sie in internen Diskussionen als Korruption bezeichnet."
+     ],
+     "interested_topics": [
+      "Bauwesen und lokale Infrastruktur",
+      "Steuergerechtigkeit und Haushaltsplanung",
+      "Effizienzsteigerung in öffentlichen Projekten"
+     ],
+     "reputation": 0.488,
+     "stance": 0.5023,
+     "impact": "benefit",
+     "support_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "oppose_reason": "Die Erhöhung des Steuerfusses belastet meine ohnehren Existenz zusätzlich, während die Transparenz der Ausgaben und die direkte Nutzung der Steuern für messbare Infrastrukturprojekte wie das Schulhaus fehlen.",
+     "stance_reason": "Die Investition in das neue Schulhaus Linden-Dorf schafft langfristig Arbeitsplätze und verbessert die Infrastruktur, was für die Stabilität der Gemeinde und damit für meine berufliche Zukunft wichtig ist.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist."
+    },
+    {
+     "name": "Anna Berger",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "farmer",
+     "income_level": "high",
+     "political_leaning": 0.0528,
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Meine Kindheit verbrachte ich auf dem Hof, wo ich früh lernte, wie Bodenfruchtbarkeit und Wetterlagen die Ernte bestimmen. Nach der Matura absolvierte ich eine landwirtschaftliche Berufslehre und übernahm nach dem Tod meines Vaters gemeinsam mit meiner Schwester die Bewirtschaftung. Die steigenden Energiekosten und die neuen Steuerlasten durch die Gemeindepolitik belasten unseren Betrieb zunehmend, während wir gleichzeitig versuchen, ökologische Standards zu erfüllen. Meine Familie unterstützt mich, doch die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig. Trotz der Herausforderungen bleibe ich überzeugt, dass eine ausgewogene Steuerpolitik die landwirtschaftliche Zukunft sichern kann, auch wenn ich diese Ansicht nur vorsichtig äussere.",
+     "expert_reflection": "Als INTJ-Typ zeigt Anna Berger eine ausgeprägte systematische Denkweise, die sie dazu befähigt, komplexe ökonomische Zusammenhänge präzise zu analysieren und langfristige Strategien zu entwickeln. Ihre zurückhaltende Kommunikation und die Tendenz, kritische Standpunkte zunächst intern zu verarbeiten, könnten jedoch dazu führen, dass ihre fundierten Bedenken bezüglich der Steuerbelastungen für landwirtschaftliche Betriebe in der öffentlichen Debatte unterrepräsentiert bleiben, was die Gefahr birgt, dass wichtige agrarpolitische Perspektiven übersehen werden.",
+     "id": "npc_03",
+     "category": "farmer",
+     "profession": "landwirtin (small family farm)",
+     "bio": "Nach der Matura absolvierte ich eine Berufslehre als landwirtschaftliche Fachfrau und übernahm später gemeinsam mit meiner Familie den elterlichen Hof in Linden. Die steigenden Betriebskosten und die neuen Steuerbelastungen durch die Gemeindepolitik stellen eine zunehmende Herausforderung für die langfristige Rentabilität unserer landwirtschaftlichen Produktion dar.",
+     "persona": "Anna Berger wirkt stets präzise und analytisch, spricht in kurzen, klaren Sätzen und vermeidet emotionale Ausschweifungen. Ihre INTJ-Artikulation zeigt sich in einer strukturierten Argumentation, bei der sie komplexe ökonomische Zusammenhänge systematisch abwägt und dabei stets den Blick für die langfristigen Konsequenzen behält.",
+     "beliefs": [
+      "Nachhaltigkeit und ökologische Bewirtschaftung sind essenziell für die Zukunftsfähigkeit der Landwirtschaft",
+      "Steuererhöhungen dürfen nicht die Wettbewerbsfähigkeit der lokalen Betriebe gefährden",
+      "Die Gemeinde muss transparente Planungsinstrumente bereitstellen, um Investitionssicherheit zu gewährleisten"
+     ],
+     "controversial_ideas": [
+      "Ich bin überzeugt, dass die aktuellen Steuererhöhungen für hohe Einkommen in Linden langfristig die landwirtschaftliche Produktion destabilisieren werden, was ich jedoch nur in privaten Gesprächen offen äussere, da es der politischen Mehrheitsmeinung widerspricht"
+     ],
+     "interested_topics": [
+      "agrarökonomie",
+      "Steuerpolitik",
+      "Nachhaltige Bewirtschaftung"
+     ],
+     "reputation": 0.63,
+     "stance": -1.0,
+     "impact": "harm",
+     "support_reason": "Die Erhöhung des Steuerfusses gefährdet die Wettbewerbsfähigkeit unserer landwirtschaftlichen Produktion und erhöht die Betriebskosten weiter.",
+     "oppose_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "stance_reason": "Die Steuererhöhung belastet unsere Einnahmen unnötig und untergräbt die langfristige Rentabilität unseres Hofes, während gleichzeitig Investitionssicherheit für die Gemeinde fehlt.",
+     "perception": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+     "current_plan": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik."
+    },
+    {
+     "name": "Léa Rochat",
+     "gender": "female",
+     "mbti": "INTJ",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "shopkeeper",
+     "income_level": "high",
+     "political_leaning": -0.1291,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite ville voisine, où mon père tenait une petite épicerie familiale. Après avoir obtenu ma Matura, j’ai choisi une Berufslehre en commerce pour comprendre les rouages du secteur de la vente. Après plusieurs années d’apprentissage, j’ai ouvert ma boutique à Linden, sélectionnant des produits locaux et des marques suisses de qualité. Mon magasin a rapidement gagné en notoriété grâce à une clientèle fidèle et à une gestion rigoureuse des marges. Aujourd’hui, je participe activement aux réunions du Gemeinderat, où je plaide pour des mesures fiscales qui protègent les petites entreprises tout en finançant des projets de construction qui dynamisent notre économie. Malgré les pressions des augmentations d’impôts, je reste convaincue que l’équilibre entre fiscalité et investissement est la clé du développement durable de notre commune.",
+     "expert_reflection": "En tant que psychologue sociale, Léa Rochat incarne le profil INTJ : une pensée stratégique, une communication axée sur les faits et une préférence pour les structures claires. Son professionnalisme et sa capacité à articuler des arguments chiffrés lui confèrent une crédibilité auprès des décideurs, mais son approche analytique peut parfois être perçue comme détachée des préoccupations émotionnelles des citoyens. La combinaison d’une position économique favorable aux projets de construction et d’une critique des dépenses administratives pourrait susciter des tensions, car elle révèle une vision utilitariste de la politique fiscale, susceptible de polariser les opinions au sein de la communauté.",
+     "id": "npc_02",
+     "category": "shopkeeper",
+     "profession": "proprietor of a boutique retail shop in Linden",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en commerce avant d’ouvrir ma propre boutique de produits locaux. Mon magasin, situé en plein cœur de Linden, attire autant les résidents que les touristes grâce à une sélection soignée et des prix compétitifs. Je suis consciente que les augmentations d’impôts affectent directement les budgets des ménages, mais je soutiens l’investissement dans les projets de construction qui dynamisent notre économie locale.",
+     "persona": "Léa Rochat se présente avec une assurance calme et analytique, articulant ses propos de façon concise et logique, comme un INTJ qui privilégie la structure et l’efficacité. Elle adopte un ton professionnel, légèrement distancié, et utilise des arguments chiffrés pour appuyer ses positions, ce qui lui confère une réputation de décideuse pragmatique parmi les clients et les partenaires locaux.",
+     "beliefs": [
+      "La transparence fiscale et la responsabilité des municipalités sont essentielles pour maintenir la confiance des citoyens.",
+      "Les investissements dans l’infrastructure locale stimulent la croissance économique à long terme.",
+      "Le commerce indépendant doit être soutenu par des politiques qui favorisent la compétitivité et la qualité des produits."
+     ],
+     "controversial_ideas": [
+      "Je crois que les augmentations d’impôts sur les ménages à revenu élevé devraient être réinvesties uniquement dans des projets de construction qui génèrent des retours économiques tangibles, et non dans des dépenses administratives."
+     ],
+     "interested_topics": [
+      "optimisation des coûts d’exploitation des petites entreprises",
+      "développement durable des projets de construction",
+      "politiques fiscales équitables pour les classes moyennes"
+     ],
+     "reputation": 0.648,
+     "stance": -0.7256,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "stance_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire stimulera l'économie locale et augmentera la demande auprès des résidents et touristes, bénéfique pour mon entreprise. / L'augmentation du taux d'imposition de 118 % à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin.",
+     "perception": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+     "current_plan": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise."
+    },
+    {
+     "name": "Alice Martin",
+     "gender": "female",
+     "mbti": "ENFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "teacher",
+     "income_level": "medium",
+     "political_leaning": 0.9368,
+     "x": 11,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J'ai grandi dans une petite maison familiale à Niederbipp, où mon père était menuisier et ma mère tenait une petite épicerie. Après l'école obligatoire, j'ai poursuivi mes études à l'école de Linden, obtenant ma Matura avec distinction, puis j'ai effectué une Berufslehre en pédagogie à l'école professionnelle de Berne. J'ai enseigné pendant dix ans dans les classes primaires de Linden, avant de devenir directrice d'établissement il y a trois ans. Je loue un appartement moderne au centre-ville depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires. Je suis mariée à un ingénieur en construction qui travaille sur le projet de construction de 4,8 millions de francs, ce qui me donne une perspective unique sur les coûts et les bénéfices. Mes deux enfants fréquentent l'école primaire de Linden, et je m'engage activement dans les associations de parents. Je crois fermement que l'éducation doit rester accessible à tous, indépendamment du revenu familial, et que les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés.",
+     "expert_reflection": "En tant que psychologue sociale, Alice Martin présente un profil ENFP caractérisé par une grande empathie, une créativité communicative et une capacité à mobiliser les autres autour de causes collectives. Son engagement passionné pour l'équité éducative et sa volonté de remettre en question les structures fiscales actuelles reflètent une personnalité idéaliste et visionnaire, susceptible de susciter des réactions mitigées au sein de la communauté. Sa capacité à articuler des arguments complexes avec chaleur et conviction pourrait renforcer son influence auprès des familles et des jeunes, mais sa propension à explorer des solutions radicales, comme une réforme progressive de la fiscalité locative, pourrait aussi la marginaliser auprès des conservateurs et des acteurs économiques locaux.",
+     "id": "npc_04",
+     "category": "teacher",
+     "profession": "enseignante de l'école primaire",
+     "bio": "Après ma Matura à l'école de Linden, j'ai suivi une Berufslehre en pédagogie, puis j'ai enseigné pendant dix ans avant de devenir directrice d'établissement. Je vis dans un appartement que je loue depuis trois ans, avec un revenu moyen qui me permet de participer aux décisions locales sans être dépendante des subventions. Le projet de hausse des impôts sur les ménages m'inquiète, car je vois déjà les familles les plus modestes réduire leurs dépenses pour les activités extrascolaires.",
+     "persona": "Alice Martin se présente avec une énergie débordante et un ton chaleureux, utilisant des gestes expressifs et des questions ouvertes pour engager les élèves et les parents. Son MBTI ENFP se traduit par une communication enthousiaste et empathique, mais aussi par une tendance à voir les situations sous plusieurs angles, ce qui peut parfois la rendre perçue comme instable ou trop idéaliste par ses collègues plus pragmatiques.",
+     "beliefs": [
+      "L'éducation est le fondement d'une société équitable et doit rester accessible à tous, indépendamment du revenu familial",
+      "Les augmentations d'impôts doivent être proportionnelles et accompagnées de services publics améliorés",
+      "La transparence budgétaire est essentielle pour maintenir la confiance des citoyens"
+     ],
+     "controversial_ideas": [
+      "Je crois que les impôts sur les ménages devraient être réévalués pour inclure une composante progressive basée sur la valeur locative, même si cela pourrait réduire l'investissement dans le logement social"
+     ],
+     "interested_topics": [
+      "politique éducative locale",
+      "équité fiscale",
+      "développement durable des écoles"
+     ],
+     "reputation": 0.536,
+     "stance": -0.815,
+     "impact": "mixed",
+     "support_reason": "Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire améliorera les infrastructures éducatives, bénéficiant ainsi aux élèves et à la communauté.",
+     "oppose_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "stance_reason": "La hausse du taux d'imposition de 118 % à 124 % pèsera sur les ménages modestes, forçant des réductions de dépenses pour les activités extrascolaires essentielles.",
+     "perception": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+     "current_plan": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants."
+    },
+    {
+     "name": "Hans Weber",
+     "gender": "male",
+     "mbti": "ESTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "municipal_employee",
+     "income_level": "medium",
+     "political_leaning": 0.85,
+     "x": 12,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in einem kleinen Dorf in der Emmental aufgewachsen, wo ich früh die Bedeutung von Gemeinschaft und lokaler Verantwortung spürte. Nach der obligatorischen Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung der Gemeinde Linden, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Meine Frau arbeitet als Lehrerin an der lokalen Schule, und wir haben zwei Kinder, die im Dorf aufwachsen. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen. Ich bin stolz darauf, dass wir in Linden eine gute Balance zwischen Wohnen, Arbeiten und Freizeit schaffen, auch wenn die Umsetzung manchmal Konflikte auslöst.",
+     "expert_reflection": "Als ESTP-Typus neigt Hans Weber dazu, Entscheidungen schnell und situationsbezogen zu treffen, was ihn in der dynamischen Welt der Raumplanung effizient macht. Seine pragmatische Haltung und sein direkter Kommunikationsstil können jedoch dazu führen, dass er komplexe gesellschaftliche Implikationen von Projekten unterschätzt, insbesondere wenn es um langfristige soziale Auswirkungen geht. Die Bereitschaft, kontroverse Ideen wie gezielte Gewerbezonen trotz kurzfristiger Wohnqualitätsverluste zu vertreten, zeigt eine starke Orientierung an wirtschaftlichen Zielen, die in der heutigen Politik oft Priorität vor sozialer Gerechtigkeit haben.",
+     "id": "npc_05",
+     "category": "municipal_employee",
+     "profession": "Stadtplaner im Amt für Raumplanung der Gemeinde Linden",
+     "bio": "Nach der Berufslehre als Bauzeichner habe ich die Matura nachgeholt und an der Fachhochschule für Raumplanung studiert. Seit zehn Jahren arbeite ich im Amt für Raumplanung, wo ich direkt an der Umsetzung von Bauprojekten und Infrastrukturentscheidungen mitwirke. Die aktuellen Steuererhöhungen für Haushalte und die grossen Bauaufträge für lokale Firmen zeigen mir, wie sehr unsere Planungen die Lebensqualität der Bewohner prägen.",
+     "persona": "Hans wirkt direkt und pragmatisch, spricht in kurzen, prägnanten Sätzen und nutzt gerne Fachbegriffe, um seine Argumente zu untermauern. Sein ESTP-Typus sorgt dafür, dass er spontan auf Diskussionen reagiert und Entscheidungen schnell trifft, was ihn bei Kollegen geschätzt, aber bei manchen als zu impulsiv empfunden macht.",
+     "beliefs": [
+      "Nachhaltigkeit und effiziente Nutzung des Gemeindegebiets sind die Grundpfeiler einer zukunftsfähigen Entwicklung",
+      "Steuererhöhungen sind gerechtfertigt, wenn sie langfristig zu besserer Infrastruktur und Lebensqualität führen",
+      "Die Beteiligung der Bürger sollte in konkreten Planungsprozessen stärker verankert werden"
+     ],
+     "controversial_ideas": [
+      "Ich glaube, dass Linden gezielt Flächen für Gewerbezonen ausweisen sollte, um die lokale Wirtschaft zu stärken, auch wenn das die Wohnqualität in Randgebieten kurzfristig verschlechtert"
+     ],
+     "interested_topics": [
+      "Raumplanung und Infrastruktur",
+      "Steuerpolitik und Haushaltsmanagement",
+      "Bauprojekte und ihre sozialen Auswirkungen"
+     ],
+     "reputation": 0.5,
+     "stance": -0.199,
+     "impact": "benefit",
+     "support_reason": "Die Erhöhung des Steuerfusses und der Schulhauskredit ermöglichen langfristig eine verbesserte Infrastruktur und Lebensqualität, was der nachhaltigen Entwicklung der Gemeinde dient.",
+     "oppose_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "stance_reason": "Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "perception": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+     "current_plan": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_02",
+     "influence": 0.3978,
+     "behavior": "compromise",
+     "political_delta": -0.1272,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_02",
+     "influence": 0.3974,
+     "behavior": "compromise",
+     "political_delta": 0.1175,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_02",
+     "influence": 0.4672,
+     "behavior": "compromise",
+     "political_delta": 0.0078,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.4224,
+     "behavior": "compromise",
+     "political_delta": 0.0017,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_03",
+     "influence": 0.4702,
+     "behavior": "compromise",
+     "political_delta": -0.0189,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_02",
+     "influence": 0.1,
+     "behavior": "keep",
+     "political_delta": 0.0,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 30.0,
+    "business_climate": 30.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 20.0,
+    "stance_for": 1.0,
+    "stance_against": 4.0,
+    "stance_undecided": 0.0,
+    "stance_mean": -0.447,
+    "stance_spread": 0.544
+   }
+  }
+ ],
+ "report": {
+  "headline": "Steuerfuss-Erhöhung und Schulhauskredit belasten Haushalte und lokale Geschäfte",
+  "summary": "Die geplante Erhöhung des Steuerfusses von 118 % auf 124 % und der Kredit von 4,8 Millionen CHF für den Schulneubau würden die jährlichen Steuerlasten für Haushalte mit 80.000 CHF Einkommen um rund 240 CHF erhöhen. Lokale Geschäfte und Bauunternehmen könnten durch höhere Steuereinnahmen und neue Aufträge profitieren, während die Unsicherheit über die langfristige Finanzierung die Stimmung der Bevölkerung belastet. Dieser Bericht gibt keine Abstimmungsempfehlung ab.",
+  "livelihood_impact": "Haushalte mit mittleren Einkommen sehen ihre monatlichen Ausgaben steigen, was die Planung von Investitionen und Konsum einschränkt. Kleine Geschäfte spüren den Druck durch mögliche Preissteigerungen und die Unsicherheit über die zukünftige Nachfrage, während Bauunternehmen neue Aufträge erhalten könnten.",
+  "top_impacts": [
+   {
+    "title": "Steuerlast für Haushalte",
+    "description": "Die jährliche Steuerbelastung steigt für Haushalte mit 80.000 CHF Einkommen um etwa 240 CHF, was die finanzielle Planung erschwert.",
+    "direction": "negative",
+    "severity": "medium"
+   },
+   {
+    "title": "Neue Aufträge für lokale Bauunternehmen",
+    "description": "Der Schulhauskredit von 4,8 Millionen CHF schafft neue Bauaufträge für lokale Firmen, was kurzfristig Arbeitsplätze sichern könnte.",
+    "direction": "positive",
+    "severity": "medium"
+   }
+  ],
+  "key_stats": [
+   {
+    "label": "Rounds Simulated",
+    "value": "3",
+    "trend": "flat"
+   },
+   {
+    "label": "Residents Tracked",
+    "value": "5",
+    "trend": "flat"
+   },
+   {
+    "label": "Dominant Mood",
+    "value": "Anxious (40%)",
+    "trend": "mixed"
+   },
+   {
+    "label": "Residents Under Strain",
+    "value": "80%",
+    "trend": "up"
+   },
+   {
+    "label": "Residents Feeling Positive",
+    "value": "0%",
+    "trend": "flat"
+   },
+   {
+    "label": "Price Change Events",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Protests Logged",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Layoff / Closure Signals",
+    "value": "0",
+    "trend": "flat"
+   }
+  ],
+  "pie_chart": {
+   "title": "Final Town Sentiment",
+   "slices": [
+    {
+     "label": "Anxious",
+     "value": 2
+    },
+    {
+     "label": "Worried",
+     "value": 2
+    },
+    {
+     "label": "Neutral",
+     "value": 1
+    }
+   ]
+  },
+  "bar_chart": {
+   "title": "Pressure Signals During The Run",
+   "bars": [
+    {
+     "label": "Mood Shifts",
+     "value": 12
+    },
+    {
+     "label": "Closure Signals",
+     "value": 0
+    },
+    {
+     "label": "Layoff Signals",
+     "value": 0
+    },
+    {
+     "label": "Price Changes",
+     "value": 0
+    }
+   ]
+  },
+  "notable_events": [
+   "Die Unsicherheit über die zukünftige Finanzierung macht die Bevölkerung ängstlich und unruhig.",
+   "Lokale Bauunternehmen sehen neue Auftragschancen durch den Schulhauskredit."
+  ],
+  "stance_summary": {
+   "initial": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1,
+    "mean": -0.288,
+    "spread": 0.602,
+    "entropy_bits": 1.371,
+    "n": 5
+   },
+   "final": {
+    "for": 1,
+    "against": 4,
+    "undecided": 0,
+    "mean": -0.447,
+    "spread": 0.544,
+    "entropy_bits": 0.722,
+    "n": 5
+   }
+  }
+ },
+ "memories": {
+  "npc_01": [
+   {
+    "id": "npc_01_mem_fa84a5",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die neue Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren bereits, wie sich das auf ihre eigenen Budgets auswirkt, während ich die langfristigen Vorteile für die Gemeinde sehe.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_f2a342",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die neue Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren bereits, wie sich das auf ihre eigenen Budgets auswirkt, während ich die langfristigen Vorteile für die Gemeinde sehe.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_00d45f",
+    "npc_id": "npc_01",
+    "description": "Ich habe die Erläuterungen des Gemeinderats gelesen, die zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen. Für mich ist das eine klare Investition in die Zukunft.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_64b301",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Je suis encore indécise sur cette question. Le crédit de 4,8 millions CHF pour le nouveau bâtiment scolaire stimulera l'activité locale et attirera plus de clients, ce qui est bénéfique pour mon magasin. En même temps, l'augmentation du taux d'imposition alourdit les budgets des ménages et risque de réduire leur pouvoir d'achat.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_ca4f62",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_cc46a4",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_3f24bb",
+    "npc_id": "npc_01",
+    "description": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_ac2cd7",
+    "npc_id": "npc_01",
+    "description": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_055b9f",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Petra, l'augmentation du taux d'imposition de 118 à 124 % alourdit directement les budgets des ménages, ce qui pourrait réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin. Ce crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire ne compense pas cette pression fiscale immédiate.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_1141c3",
+    "npc_id": "npc_01",
+    "description": "Die Steuererhöhung belastet die Kollegen finanziell und sorgt für Unsicherheit in ihren Haushalten, während ich die langfristige Investition in die Gemeinde und die damit verbundenen Arbeitsplätze für unsere Baustelle sehe.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_fa84a5",
+     "npc_01_mem_f2a342",
+     "npc_01_mem_00d45f",
+     "npc_01_mem_64b301",
+     "npc_01_mem_ca4f62",
+     "npc_01_mem_cc46a4",
+     "npc_01_mem_3f24bb",
+     "npc_01_mem_ac2cd7",
+     "npc_01_mem_055b9f"
+    ]
+   },
+   {
+    "id": "npc_01_mem_00aea8",
+    "npc_id": "npc_01",
+    "description": "Durch die Diskussionen habe ich erkannt, dass die finanziellen Auswirkungen der Steuererhöhung für die Menschen unmittelbar spürbar sind, während die Vorteile des Schulhauskredits erst in der Zukunft liegen – das zeigt, wie unterschiedlich Prioritäten und Zeithorizonte sein können.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_fa84a5",
+     "npc_01_mem_f2a342",
+     "npc_01_mem_00d45f",
+     "npc_01_mem_64b301",
+     "npc_01_mem_ca4f62",
+     "npc_01_mem_cc46a4",
+     "npc_01_mem_3f24bb",
+     "npc_01_mem_ac2cd7",
+     "npc_01_mem_055b9f"
+    ]
+   },
+   {
+    "id": "npc_01_mem_63ecc2",
+    "npc_id": "npc_01",
+    "description": "Meine Überzeugung, dass die Investition stabilisierend wirkt, hat sich durch die direkten Rückmeldungen der Kollegen und des lokalen Geschäftsinhabers gestärkt, auch wenn ich die unmittelbaren finanziellen Belastungen nachvollziehen kann.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_fa84a5",
+     "npc_01_mem_f2a342",
+     "npc_01_mem_00d45f",
+     "npc_01_mem_64b301",
+     "npc_01_mem_ca4f62",
+     "npc_01_mem_cc46a4",
+     "npc_01_mem_3f24bb",
+     "npc_01_mem_ac2cd7",
+     "npc_01_mem_055b9f"
+    ]
+   },
+   {
+    "id": "npc_01_mem_9d4531",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_633aa1",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit erreicht gerade die Baustelle. Die Kollegen diskutieren die finanziellen Auswirkungen, während ich die langfristigen Vorteile für die Gemeinde und meine berufliche Zukunft sehe. Die Erläuterungen des Gemeinderats zeigen, dass der Steuerfuss steigt, um den Schulbau zu ermöglichen, was für mich eine klare Investition in die Zukunft ist.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_ca3a29",
+    "npc_id": "npc_01",
+    "description": "Ich habe die Erläuterungen gelesen, dass die 4.8 Millionen CHF für den Schulbau 2027 beginnen können. Das schafft Arbeitsplätze, die wir brauchen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_12a04f",
+    "npc_id": "npc_01",
+    "description": "Die Diskussionen auf der Baustelle zeigen, dass die Kollegen die finanziellen Auswirkungen spüren, aber ich bleibe bei meiner Überzeugung, dass die Investition langfristig stabilisierend wirkt.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_a6fca3",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Petra, l'augmentation du taux d'imposition alourdit directement les budgets des ménages, ce qui risque de réduire leur pouvoir d'achat et nuire à la fréquentation de mon magasin. Le crédit de 4,8 millions CHF pour l'école stimulera certes l'économie, mais au prix d'une charge fiscale insupportable pour les familles.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_03": [
+   {
+    "id": "npc_03_mem_3daed9",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_329e5f",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_d5db8e",
+    "npc_id": "npc_03",
+    "description": "Ich muss mit Léa über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_96f042",
+    "npc_id": "npc_03",
+    "description": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_bd7a31",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_0b391b",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_e291c3",
+    "npc_id": "npc_03",
+    "description": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_44e361",
+    "npc_id": "npc_03",
+    "description": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_542091",
+    "npc_id": "npc_03",
+    "description": "npc_02 said to me: Anna, je comprends votre préoccupation pour les familles modestes, mais l'augmentation du taux d'imposition de 118 à 124 % alourdit directement leurs budgets. Le crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire ne doit pas se faire au détriment de la capacité d'achat des ménages.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_07f5a6",
+    "npc_id": "npc_03",
+    "description": "The policy's lack of transparency and the sudden burden of increased taxes and school credit have eroded the community's trust in local governance, making me realize that without clear communication, even well-intentioned measures risk alienating those who depend most on stable, affordable living conditions.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_3daed9",
+     "npc_03_mem_329e5f",
+     "npc_03_mem_d5db8e",
+     "npc_03_mem_96f042",
+     "npc_03_mem_bd7a31",
+     "npc_03_mem_0b391b",
+     "npc_03_mem_e291c3",
+     "npc_03_mem_44e361",
+     "npc_03_mem_542091"
+    ]
+   },
+   {
+    "id": "npc_03_mem_7e8fe2",
+    "npc_id": "npc_03",
+    "description": "Engaging with Léa and others has shown me that the impact of these policies extends far beyond the farm; higher taxes directly threaten the purchasing power of local families, especially the modest ones, revealing a deep interdependence between agricultural livelihoods and the broader community's economic health.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_3daed9",
+     "npc_03_mem_329e5f",
+     "npc_03_mem_d5db8e",
+     "npc_03_mem_96f042",
+     "npc_03_mem_bd7a31",
+     "npc_03_mem_0b391b",
+     "npc_03_mem_e291c3",
+     "npc_03_mem_44e361",
+     "npc_03_mem_542091"
+    ]
+   },
+   {
+    "id": "npc_03_mem_fe9c49",
+    "npc_id": "npc_03",
+    "description": "Initially, the uncertainty felt like a personal threat to my farm's future, but through these interactions, I've come to see the policy not just as a financial challenge but as a test of community solidarity—my position has evolved from one of isolated worry to a call for collective dialogue and equitable planning that protects both the school and the families who feed and support it.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_3daed9",
+     "npc_03_mem_329e5f",
+     "npc_03_mem_d5db8e",
+     "npc_03_mem_96f042",
+     "npc_03_mem_bd7a31",
+     "npc_03_mem_0b391b",
+     "npc_03_mem_e291c3",
+     "npc_03_mem_44e361",
+     "npc_03_mem_542091"
+    ]
+   },
+   {
+    "id": "npc_03_mem_733a14",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_bfcddf",
+    "npc_id": "npc_03",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulhauskredit verbreitet sich schnell, und die ersten Reaktionen zeigen, dass viele Bürger die Belastung für landwirtschaftliche Betriebe nicht verstehen. Die Gemeinde muss endlich transparente Erläuterungen liefern, sonst verlieren wir das Vertrauen in die lokale Politik.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_4922f4",
+    "npc_id": "npc_03",
+    "description": "Ich muss mit dir über die Auswirkungen auf lokale Konsumenten sprechen, denn höhere Steuern könnten die Kaufkraft in Linden senken.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_245a4a",
+    "npc_id": "npc_03",
+    "description": "Die Unsicherheit über die zukünftige Finanzierung unserer Investitionen macht jede Nacht unruhig, besonders wenn die Gemeinde keine klaren Planungsinstrumente bereitstellt.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_08995b",
+    "npc_id": "npc_03",
+    "description": "npc_02 said to me: Anna, je comprends votre préoccupation pour les familles modestes, mais l'augmentation du taux d'imposition de 118 % à 124 % alourdit directement leurs budgets. Le crédit de 4,8 millions CHF pour l'école stimulera l'économie, mais au prix d'une charge fiscale qui risque de réduire le pouvoir d'achat et de nuire à mon entreprise.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_02": [
+   {
+    "id": "npc_02_mem_9cf734",
+    "npc_id": "npc_02",
+    "description": "Petra Schneider (acquaintance, affinity=-0.1) said: Léa, ich verstehe deine Bedenken über die Preise, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Das stabilisiert unsere Gemeinde und meine berufliche Zukunft.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_df465b",
+    "npc_id": "npc_02",
+    "description": "Alice Martin (acquaintance, affinity=-0.2) said: Léa, je suis vraiment inquiète pour les familles modestes. Cette hausse d'impôt de 118 à 124 % va les forcer à couper dans les activités extrascolaires, ce qui est inacceptable pour l'équité éducative.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_d6fa44",
+    "npc_id": "npc_02",
+    "description": "Je perçois une tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages. Les discussions avec Petra Schneider et Anna Berger révèlent des préoccupations divergentes sur l'équité et la croissance, ce qui complique ma prise de décision.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_1f8411",
+    "npc_id": "npc_02",
+    "description": "Je perçois une tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages. Les discussions avec Petra Schneider et Anna Berger révèlent des préoccupations divergentes sur l'équité et la croissance, ce qui complique ma prise de décision.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_1b8f07",
+    "npc_id": "npc_02",
+    "description": "Je souhaite recueillir l'avis de Petra Schneider sur l'impact concret de ce projet pour les commerçants locaux.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_e281b1",
+    "npc_id": "npc_02",
+    "description": "L'incertitude sur l'avenir fiscal me préoccupe, car je ne peux pas encore anticiper l'évolution de la demande.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_3e9cce",
+    "npc_id": "npc_02",
+    "description": "npc_03 said to me: Léa, ich verstehe die Notwendigkeit des Schulhauses, doch die Steuererhöhung von 118 auf 124 % zerstört unsere Einnahmen. Für unseren Hof bedeutet das zusätzliche 432 CHF jährlich, während die Gemeinde keine Investitionssicherheit für unsere ökologischen Standards bietet.",
+    "round_created": 0,
+    "round_last_accessed": 0,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_716b53",
+    "npc_id": "npc_02",
+    "description": "npc_05 said to me: Léa, ich verstehe, dass du deine Boutique führen musst, aber diese Steuererhöhung trifft genau die mittleren Einkommen wie das meine. Die 240 CHF mehr pro Jahr sind für viele Familien spürbar, ohne dass wir sehen, wie die Planungsprozesse wirklich transparent werden. Wir brauchen klare Nutzen für die Bürgerbeteiligung, nicht nur neue Schulbauten.",
+    "round_created": 0,
+    "round_last_accessed": 0,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_708f88",
+    "npc_id": "npc_02",
+    "description": "Petra Schneider (acquaintance, affinity=-0.1) said: Léa, ich verstehe deine Bedenken bezüglich der Steuerbelastung, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Für die Gemeinde ist das eine stabile Zukunft, die auch unseren Bauprojekten zugutekommt.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_52321c",
+    "npc_id": "npc_02",
+    "description": "Alice Martin (acquaintance, affinity=-0.2) said: Léa, je comprends que le nouveau bâtiment scolaire semble prometteur, mais le coût fiscal de 240 CHF supplémentaires par an pèsera trop lourdement sur les familles modestes. Sans cette hausse, nous pourrions maintenir les activités extrascolaires essentielles pour nos enfants.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_35f63c",
+    "npc_id": "npc_02",
+    "description": "The policy creates a stark divide between long-term economic optimism and immediate financial strain, leaving me torn between supporting community growth and protecting the livelihoods of those I serve daily.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_9cf734",
+     "npc_02_mem_df465b",
+     "npc_02_mem_d6fa44",
+     "npc_02_mem_1f8411",
+     "npc_02_mem_1b8f07",
+     "npc_02_mem_e281b1",
+     "npc_02_mem_3e9cce",
+     "npc_02_mem_716b53",
+     "npc_02_mem_708f88",
+     "npc_02_mem_52321c"
+    ]
+   },
+   {
+    "id": "npc_02_mem_c6e0f0",
+    "npc_id": "npc_02",
+    "description": "I've learned that those around me hold deeply personal stakes in this decision—Petra sees stability through jobs, Alice fears losing essential family resources, and others like npc_03 and npc_05 feel the direct burden on their small businesses and middle-class budgets.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_9cf734",
+     "npc_02_mem_df465b",
+     "npc_02_mem_d6fa44",
+     "npc_02_mem_1f8411",
+     "npc_02_mem_1b8f07",
+     "npc_02_mem_e281b1",
+     "npc_02_mem_3e9cce",
+     "npc_02_mem_716b53",
+     "npc_02_mem_708f88",
+     "npc_02_mem_52321c"
+    ]
+   },
+   {
+    "id": "npc_02_mem_870b0f",
+    "npc_id": "npc_02",
+    "description": "My position has evolved from initial uncertainty to a more nuanced stance: while I recognize the potential for infrastructure and jobs, I now demand greater transparency in planning and clearer evidence that the fiscal burden is distributed equitably, rather than accepting the policy at face value.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_9cf734",
+     "npc_02_mem_df465b",
+     "npc_02_mem_d6fa44",
+     "npc_02_mem_1f8411",
+     "npc_02_mem_1b8f07",
+     "npc_02_mem_e281b1",
+     "npc_02_mem_3e9cce",
+     "npc_02_mem_716b53",
+     "npc_02_mem_708f88",
+     "npc_02_mem_52321c"
+    ]
+   },
+   {
+    "id": "npc_02_mem_066e8c",
+    "npc_id": "npc_02",
+    "description": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_03c1a3",
+    "npc_id": "npc_02",
+    "description": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_a1dff0",
+    "npc_id": "npc_02",
+    "description": "Je souhaite discuter avec Petra des conséquences concrètes de cette hausse sur les commerçants locaux.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ed5455",
+    "npc_id": "npc_02",
+    "description": "Je souhaite recueillir votre avis sur l'équilibre entre investissement et pression fiscale immédiate.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_167ceb",
+    "npc_id": "npc_02",
+    "description": "npc_03 said to me: Léa, die Steuererhöhung trifft uns Bauern direkt am Geldbeutel. Unsere Einnahmen sinken, während die Gemeinde weiterhin keine klaren Investitionssicherheiten bietet. Das ist keine nachhaltige Politik.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_aee291",
+    "npc_id": "npc_02",
+    "description": "npc_05 said to me: Léa, die Steuererhöhung von 118 auf 124 Prozent belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind. Die 4.8 Millionen CHF für den Schulbau profitieren den lokalen Firmen, während wir die Rückstellungen für Strassen und Sozialhilfe kürzen müssen.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_38d413",
+    "npc_id": "npc_02",
+    "description": "Petra Schneider (acquaintance, affinity=-0.1) said: Léa, ich verstehe deine Bedenken bezüglich der Steuerbelastung, aber die Investition in das neue Schulhaus bringt langfristig Arbeitsplätze und bessere Infrastruktur. Das stärkt unsere Gemeinde und meine berufliche Zukunft.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_2ed9cd",
+    "npc_id": "npc_02",
+    "description": "Alice Martin (acquaintance, affinity=-0.2) said: Léa, je ne peux pas accepter que les familles les plus modestes soient contraintes de sacrifier les activités extrascolaires pour payer cette hausse d'impôt. Les enfants perdent déjà trop d'opportunités.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ddec0b",
+    "npc_id": "npc_02",
+    "description": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_e3bc84",
+    "npc_id": "npc_02",
+    "description": "La tension entre les bénéfices économiques du projet scolaire et les pressions fiscales immédiates sur les ménages s'intensifie. Les discussions avec Petra et Anna révèlent des divergences sur l'équité et la croissance, ce qui complique ma prise de décision. Je reste convaincue que l'augmentation du taux d'imposition alourdit directement les budgets des ménages et risque de réduire leur pouvoir d'achat, nuisant ainsi à mon entreprise.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_2f2cb9",
+    "npc_id": "npc_02",
+    "description": "Je souhaite discuter des impacts concrets sur les budgets des ménages et sur la demande locale.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_636770",
+    "npc_id": "npc_02",
+    "description": "Je souhaite partager les données chiffrées sur l'augmentation de l'impôt et ses conséquences sur la consommation locale.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_4f640c",
+    "npc_id": "npc_02",
+    "description": "npc_03 said to me: Léa, die Steuererhöhung von 118 auf 124 Prozent belastet uns Bauern unnötig. Unsere Einnahmen sinken, während die Gemeinde keine klaren Planungsinstrumente bereitstellt. Das untergräbt die langfristige Rentabilität unseres Hofes.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_d36f4c",
+    "npc_id": "npc_02",
+    "description": "npc_05 said to me: Léa, die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind. Die 240 CHF mehr pro Jahr sind für viele Familien eine spürbare Belastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_04": [
+   {
+    "id": "npc_04_mem_f2a275",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_5dc438",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_d2f9e7",
+    "npc_id": "npc_04",
+    "description": "Je veux comprendre ton point de vue sur la construction du nouveau bâtiment scolaire, mais je ne peux pas accepter que les plus vulnérables paient le prix.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_504bec",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_f0f60b",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_be6b45",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_de7419",
+    "npc_id": "npc_04",
+    "description": "Je souhaite discuter de l'impact réel de cette hausse sur les ménages les plus vulnérables avant de voter.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_5fc6ef",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_eb4ed0",
+    "npc_id": "npc_04",
+    "description": "Le fardeau fiscal du projet de construction pèse disproportionnellement sur les ménages modestes, et je vois clairement comment cela menace l'égalité des chances pour nos enfants, ce qui me rend anxieuse quant à leur avenir éducatif.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_f2a275",
+     "npc_04_mem_5dc438",
+     "npc_04_mem_d2f9e7",
+     "npc_04_mem_504bec",
+     "npc_04_mem_f0f60b",
+     "npc_04_mem_be6b45",
+     "npc_04_mem_de7419",
+     "npc_04_mem_5fc6ef"
+    ]
+   },
+   {
+    "id": "npc_04_mem_0e1f70",
+    "npc_id": "npc_04",
+    "description": "Au fil des discussions, j'ai appris que l'incertitude financière touche profondément les familles de notre communauté, et que la priorité doit être donnée à la protection des plus vulnérables plutôt qu'à des projets ambitieux sans considération sociale.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_f2a275",
+     "npc_04_mem_5dc438",
+     "npc_04_mem_d2f9e7",
+     "npc_04_mem_504bec",
+     "npc_04_mem_f0f60b",
+     "npc_04_mem_be6b45",
+     "npc_04_mem_de7419",
+     "npc_04_mem_5fc6ef"
+    ]
+   },
+   {
+    "id": "npc_04_mem_ea483a",
+    "npc_id": "npc_04",
+    "description": "Mon positionnement s'est évolué d'une ouverture initiale vers une vigilance accrue, car j'ai compris que les politiques doivent non seulement être prometteuses mais aussi équitables, et que les réductions de dépenses extrascolaires compromettent directement le développement global de nos élèves.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_f2a275",
+     "npc_04_mem_5dc438",
+     "npc_04_mem_d2f9e7",
+     "npc_04_mem_504bec",
+     "npc_04_mem_f0f60b",
+     "npc_04_mem_be6b45",
+     "npc_04_mem_de7419",
+     "npc_04_mem_5fc6ef"
+    ]
+   },
+   {
+    "id": "npc_04_mem_3c6158",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_777edc",
+    "npc_id": "npc_04",
+    "description": "Le projet de construction semble prometteur, mais le coût fiscal pèse trop lourdement sur les ménages modestes. Je crains que les réductions de dépenses extrascolaires ne compromettent l'égalité des chances pour nos enfants.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_9b42a0",
+    "npc_id": "npc_04",
+    "description": "Je veux comprendre comment tu vois la balance entre le nouveau bâtiment scolaire et le fardeau fiscal pour les ménages les plus vulnérables.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_b18144",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir financier de nos familles me rend anxieuse quant aux choix que nous devrons faire.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_05": [
+   {
+    "id": "npc_05_mem_910483",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_263fe2",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_92b7ee",
+    "npc_id": "npc_05",
+    "description": "Ich möchte mit dir über die Auswirkungen auf lokale Konsumenten sprechen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_448406",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_134ad4",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_96b95c",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_49bdf9",
+    "npc_id": "npc_05",
+    "description": "Ich möchte deine Sicht auf die Auswirkungen auf lokale Konsumenten hören, besonders wie sich höhere Steuern auf die Preise in deinem Geschäft auswirken könnten.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_24efb8",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_124fc2",
+    "npc_id": "npc_05",
+    "description": "Die Steuererhöhung trifft mittlere Einkommen wie das meine direkt, während lokale Bauunternehmen bereits von den Investitionen profitieren – das erzeugt ein Gefühl der Ungerechtigkeit und schwächt die Akzeptanz, da die Nutzen für die Bürgerbeteiligung unklar bleiben.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_910483",
+     "npc_05_mem_263fe2",
+     "npc_05_mem_92b7ee",
+     "npc_05_mem_448406",
+     "npc_05_mem_134ad4",
+     "npc_05_mem_96b95c",
+     "npc_05_mem_49bdf9",
+     "npc_05_mem_24efb8"
+    ]
+   },
+   {
+    "id": "npc_05_mem_3e67de",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über langfristige soziale Folgen, besonders für Familien mit mittlerem Einkommen, zeigt, dass die Politik nicht nur ökonomische, sondern auch soziale Spannungen verstärkt, wenn Transparenz und Nutzen der Maßnahmen nicht ausreichend kommuniziert werden.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_910483",
+     "npc_05_mem_263fe2",
+     "npc_05_mem_92b7ee",
+     "npc_05_mem_448406",
+     "npc_05_mem_134ad4",
+     "npc_05_mem_96b95c",
+     "npc_05_mem_49bdf9",
+     "npc_05_mem_24efb8"
+    ]
+   },
+   {
+    "id": "npc_05_mem_e6b098",
+    "npc_id": "npc_05",
+    "description": "Durch die wiederholten Rückmeldungen der Dorfbewohner wurde mir klar, dass Vertrauen in Planungsprozesse entscheidend ist – ohne klare Informationen über Nutzen und Verteilung der Mittel wird jede Steuererhöhung als Belastung ohne Gegenwert wahrgenommen, was die Bereitschaft zur Unterstützung der Politik erheblich mindert.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_910483",
+     "npc_05_mem_263fe2",
+     "npc_05_mem_92b7ee",
+     "npc_05_mem_448406",
+     "npc_05_mem_134ad4",
+     "npc_05_mem_96b95c",
+     "npc_05_mem_49bdf9",
+     "npc_05_mem_24efb8"
+    ]
+   },
+   {
+    "id": "npc_05_mem_8fcce1",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_a75338",
+    "npc_id": "npc_05",
+    "description": "Die ersten Reaktionen im Dorf zeigen Sorge über die Steuerbelastung, während die lokalen Bauunternehmen bereits von den 4.8 Millionen CHF profitieren. Die Transparenz der Planungsprozesse bleibt unklar, was die Akzeptanz der Steuererhöhung schwächt. Die Steuererhöhung belastet mittlere Einkommen wie das meine, ohne dass die konkreten Nutzen für die Bürgerbeteiligung in den Planungsprozessen ausreichend transparent sind.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_fcb001",
+    "npc_id": "npc_05",
+    "description": "Ich möchte deine Sicht hören: Wie werden höhere Steuern die Preise in deinem Geschäft beeinflussen?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_22bc09",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über die langfristigen sozialen Folgen macht mir Sorgen, besonders für Familien mit mittlerem Einkommen, die nun zusätzlich 240 CHF Steuern zahlen müssen, ohne klare Zusagen zu mehr Transparenz in den Planungsprozessen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ]
+ },
+ "llm_stats": {}
+}

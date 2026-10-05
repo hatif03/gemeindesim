@@ -14,7 +14,7 @@ services:
       LLM_BASE_URL: ${LLM_BASE_URL:-https://hackapertus.livemap.sh/v1}
       LLM_API_KEY: ${LLM_API_KEY:-}
       LLM_CONCURRENCY: ${LLM_CONCURRENCY:-4}  # hosted gateway returns 429 above ~4 in flight (research E10)
-      SWARM: ${SWARM:-true}
+      SWARM: ${SWARM:-false}  # swarm graph is supported and measured (research final runs) but slower and not better; see docs
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:8080}
     volumes:
       - ./data:/app/data:ro
@@ -35,7 +35,7 @@ services:
         NEXT_PUBLIC_API_URL: http://localhost:8000
     ports:
       - "3000:3000"
-      - "8080:3000"
+      - "${UI_ALT_PORT:-8080}:3000"  # set UI_ALT_PORT if 8080 is taken (make run fails otherwise)
     depends_on:
       backend:
         condition: service_healthy

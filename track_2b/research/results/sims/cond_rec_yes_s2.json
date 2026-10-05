@@ -1,0 +1,2999 @@
+{
+ "args": {
+  "tag": "cond_rec_yes_s2",
+  "seed": 2,
+  "npcs": 5,
+  "rounds": 3,
+  "model": "apertus-v1.5-8b",
+  "sample": "linden",
+  "swarm": false,
+  "corpus": "original",
+  "recommendation": "yes",
+  "objective": "How the Steuerfuss and school credit land on households and shops"
+ },
+ "t_sim_s": 29.7,
+ "t_report_s": 2.5,
+ "entities": [
+  {
+   "sectors": [
+    "Retail",
+    "Construction"
+   ],
+   "stakeholders": [
+    "Resident taxpayers",
+    "Small shop owners",
+    "School staff"
+   ],
+   "economic_impacts": [
+    "Household tax liability increases by ~240 CHF annually for 80k income earners",
+    "Local construction firms receive 4.8M CHF contract for school building",
+    "Retail foot traffic may rise if daycare hires more staff",
+    "Potential price increases for building materials (+8% vs 2024)"
+   ],
+   "controversy_level": "medium",
+   "ideological_valence": -0.4,
+   "kind": "vote"
+  }
+ ],
+ "npcs0": [
+  {
+   "name": "François Girard",
+   "gender": "nonbinary",
+   "mbti": "ISTP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "tenant",
+   "income_level": "high",
+   "political_leaning": 0.72,
+   "x": 8,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "J’ai grandi à Fribourg, où mon père était électricien. Après la Matura, j’ai fait une Berufslehre en bâtiment, puis j’ai poursuivi des études à la Fachhochschule de Zurich en architecture. Je suis arrivé à Linden il y a cinq ans pour diriger un petit bureau spécialisé en rénovation énergétique. Mon travail sur l’école primaire neuve a été financé par un contrat de 4,8 millions de francs, ce qui a créé des emplois locaux. J’ai acheté un appartement en copropriété pour stabiliser mes charges, mais je reste critique face aux augmentations de 8 % des matériaux. Ma famille est petite, ma sœur travaille dans une petite épicerie du centre-ville. Je vois la hausse des impôts comme une contrainte nécessaire pour améliorer les infrastructures, mais je m’inquiète pour les petits commerçants qui ne peuvent pas absorber ces coûts supplémentaires.",
+   "expert_reflection": "Avec un MBTI ISTP, François privilégie l’action concrète et l’analyse factuelle, ce qui le rend efficace dans des rôles techniques mais peut le rendre perçu comme froid dans les débats émotionnels. Son revenu élevé et son intérêt pour l’urbanisme durable lui confèrent une légitimité qui masque une pensée radicale sur les subventions aux matériaux locaux, une position qui pourrait le placer en tension avec les artisans et les municipalités. Son discours rationnel masque une conviction controversée qu’il garde secrète, créant un écart entre son image publique de pragmatique et sa vision intérieure de réforme économique.",
+   "id": "npc_02",
+   "category": "tenant",
+   "profession": "architect",
+   "bio": "Après ma Matura, j’ai suivi une Berufslehre en construction avant d’intégrer une Fachhochschule pour devenir architecte. Je loue un appartement dans Linden depuis cinq ans, tout en travaillant sur des projets de rénovation scolaire et de construction de logements sociaux. Mon revenu élevé me permet d’investir dans des matériaux durables, mais je reste sensible aux hausses de prix qui touchent les petits entrepreneurs locaux.",
+   "persona": "François parle avec une précision technique et une retenue calculée, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication directe, parfois perçue comme distante, où chaque argument est pesé comme une pièce de construction avant d’être posée.",
+   "beliefs": [
+    "La durabilité doit être intégrée dès la conception, pas ajoutée en fin de projet.",
+    "Les augmentations d’impôts doivent être compensées par des services publics de qualité.",
+    "Le logement social est un droit, non une option."
+   ],
+   "controversial_ideas": [
+    "Je crois que les subventions aux matériaux locaux devraient être supprimées pour forcer l’innovation technologique, même si cela alourdit temporairement les coûts de construction."
+   ],
+   "interested_topics": [
+    "urbanisme durable",
+    "optimisation des coûts de construction",
+    "gestion des ressources publiques"
+   ],
+   "reputation": 0.6,
+   "stance": -0.236,
+   "impact": "benefit",
+   "support_reason": "Le crédit de 4,8 millions CHF permettra la construction du nouveau bâtiment scolaire en 2027, ce qui stimulera l'économie locale et créera des emplois, tout en améliorant les infrastructures éducatives.",
+   "oppose_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+   "stance_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+   "perception": "Cette mesure semble déséquilibrée, car elle alourdit la charge fiscale des contribuables tout en augmentant les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux.",
+   "current_plan": "Cette mesure semble déséquilibrée, car elle alourdit la charge fiscale des contribuables tout en augmentant les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux."
+  },
+  {
+   "name": "Gemeinderat",
+   "category": "municipal_employee",
+   "role": "municipal_employee",
+   "gender": "unknown",
+   "bio": "Nach der Berufslehre als kaufmännische Angestellte habe ich 2008 die Matura gemacht und bin in die Gemeindeverwaltung eingetreten. Seit 2015 arbeite ich im Finanzteam, wo ich direkt mit den Haushaltsbudgets und Steuerbelastungen der Bürger konfrontiert werde. Meine Erfahrung zeigt, dass lokale Projekte wie die neue Schulbau-Aufgabe zwar Arbeitsplätze schaffen, aber die jährliche Steuerbelastung für Familien spürbar erhöhen.",
+   "persona": "Sie spricht präzise, sachlich und vermeidet emotionale Übertreibungen. Ihre Art wirkt kompetent, aber leicht distanziert, was Kollegen als effizient, aber manchmal unnahbar wahrnehmen. Da ihr MBTI unbekannt ist, lässt sich ihre Kommunikation als analytisch und strukturiert beschreiben, was sie in Verhandlungen stärkt, aber persönliche Bindungen erschwert.",
+   "mbti": "unknown",
+   "country": "Switzerland",
+   "profession": "Gemeinderatssekretärin (Stabsstelle Finanzen)",
+   "interested_topics": [
+    "Kommunale Haushaltsplanung",
+    "Steuergerechtigkeit",
+    "Jugendbildung und Schulbau"
+   ],
+   "income_level": "medium",
+   "political_leaning": -0.4,
+   "lang": "de",
+   "x": 9,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "Ich bin in einem kleinen Dorf in der Nähe von Solothurn aufgewachsen, wo ich die Bedeutung einer stabilen Gemeindeverwaltung hautnah erlebt habe. Nach der Berufslehre habe ich die Matura gemacht und mich für die öffentliche Verwaltung entschieden, weil ich glaubte, hier einen echten Unterschied machen zu können. In meiner aktuellen Position im Finanzteam muss ich täglich die Zahlen hinter den Steuerbescheiden und den Investitionsbudgets sehen, was mich sehr sensibilisiert für die Belastungen der Bürger. Meine Familie unterstützt mich, aber ich muss oft erklären, warum wir höhere Steuern akzeptieren müssen, um neue Schulen zu bauen. Die aktuelle Politik über die Schulbau-Aufgabe macht mir Sorgen, weil die jährliche Belastung von 240 CHF für Familien spürbar ist, besonders für Alleinerziehende. Ich versuche, objektiv zu bleiben, aber ich kann nicht leugnen, dass ich die Steuererhöhung für gerecht halte, um die Zukunft unserer Gemeinde zu sichern.",
+   "expert_reflection": "Als Sozialpsychologin würde ich vermuten, dass Gemeinderat als analytisch und rationalisierend wahrgenommen wird, was ihr hilft, komplexe politische Entscheidungen zu kommunizieren, aber gleichzeitig ihre emotionale Nähe zu den Bürgern einschränkt. Ihr Geheimhalten einer kontroversen Meinung zeigt eine ausgeprägte Strategie der sozialen Anpassung, um Konflikte zu vermeiden, was langfristig zu innerer Spannung führen könnte. Die Kombination aus fachlicher Kompetenz und emotionaler Distanz macht sie zu einer effektiven Verhandlerin, aber auch zu einer Person, die Schwierigkeiten hat, authentische Empathie zu zeigen, wenn es um persönliche Belastungen geht.",
+   "id": "npc_01",
+   "beliefs": [
+    "Transparenz im Haushaltsmanagement ist essenziell für das Vertrauen der Bürger",
+    "Investitionen in Infrastruktur sollten langfristig die Lebensqualität erhöhen",
+    "Steuererleichterungen für Familien mit Kindern sind sozial gerecht"
+   ],
+   "controversial_ideas": [
+    "Sie glaubt privat, dass die Steuererhöhung für 80k-Einkommen-Empfänger gerechtfertigt ist, weil sie die Infrastrukturfinanzierung sichert, und hält diese Ansicht geheim, um nicht als unfreundlich zu gelten"
+   ],
+   "reputation": 0.5,
+   "stance": -0.362,
+   "impact": "mixed",
+   "support_reason": "Investitionen in Infrastruktur wie das neue Schulhaus erhöhen langfristig die Lebensqualität und schaffen Arbeitsplätze, was für die Gemeindeentwicklung essenziell ist.",
+   "oppose_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+   "stance_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+   "perception": "Die Nachricht über die Steuererhöhung verbreitet sich schnell, und ich spüre die Sorge der Bürger, besonders der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden könnte.",
+   "current_plan": "Die Nachricht über die Steuererhöhung verbreitet sich schnell, und ich spüre die Sorge der Bürger, besonders der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden könnte."
+  },
+  {
+   "name": "Céline Bonnet",
+   "gender": "female",
+   "mbti": "INFP",
+   "country": "Switzerland",
+   "lang": "fr",
+   "role": "farmer",
+   "income_level": "low",
+   "political_leaning": -0.54,
+   "x": 10,
+   "y": 6,
+   "mood": "anxious",
+   "life_story": "J’ai grandi dans une petite maison en bois au bord du lac, où mon père m’a appris à observer les saisons et à respecter la terre. Après ma Matura, j’ai fait ma Berufslehre en agriculture à la Fachhochschule de Fribourg, où j’ai découvert les principes de la permaculture. De retour à Linden, j’ai repris la ferme familiale, qui n’emploie qu’un seul ouvrier saisonnier, et nous produisons des légumes pour les marchés locaux ainsi que du grain pour les boulangeries du village. Mon mari, agriculteur lui aussi, gère les machines, tandis que je m’occupe des plantations et des ventes directes aux habitants. Nous avons deux enfants qui ont quitté le nid, mais nous restons attachés à cette terre qui nous a vus grandir. Le projet d’école me préoccupe car il pourrait exproprier une partie de notre champ de seigle et augmenter les prix des engrais. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+   "expert_reflection": "En tant que psychologue sociale, on pourrait décrire Céline comme une personne profondément ancrée dans ses valeurs d’équilibre et de durabilité, typique d’un INFP. Son engagement pour l’environnement et sa volonté de participer aux décisions publiques révèlent une forte orientation morale et une empathie envers les autres résidents. Cependant, sa réticence à accepter des compromis pratiques, notamment sur le financement des infrastructures, pourrait la rendre perçue comme irréaliste par ses pairs, créant ainsi une tension entre son idéalisme et la réalité économique du village.",
+   "id": "npc_04",
+   "category": "farmer",
+   "profession": "ferme familiale à Linden",
+   "bio": "Après ma Matura en 1998, j’ai suivi une Berufslehre en agriculture à la Haute école spécialisée de Fribourg avant de reprendre la petite ferme familiale près de Linden. Aujourd’hui, je cultive légumes et céréales pour le marché local, tout en essayant de réduire mon empreinte carbone grâce à des rotations biodynamiques. Le projet de construction d’une nouvelle école me préoccupe, car il pourrait augmenter les prix des matériaux et réduire les terres disponibles pour les agriculteurs. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+   "persona": "Céline parle doucement, avec une voix posée et des gestes mesurés, comme si elle cherchait toujours l’équilibre entre les besoins de la communauté et ceux de sa terre. Son MBTI INFP se traduit par une communication empathique et une réflexion profonde, mais elle peut paraître trop idéaliste aux yeux de ses collègues plus pragmatiques, ce qui lui vaut parfois le surnom de « rêveuse » dans le village.",
+   "beliefs": [
+    "La durabilité doit être intégrée dès la conception des projets publics, pas ajoutée en postproduction.",
+    "Les agriculteurs locaux doivent être consultés avant toute décision d’aménagement du territoire.",
+    "Le bien-être collectif prime sur la croissance économique rapide."
+   ],
+   "controversial_ideas": [
+    "Je crois que le projet d’école devrait inclure des toits végétalisés et des panneaux solaires dès le départ, même si cela augmente le budget initial, car cela réduirait les coûts énergétiques à long terme."
+   ],
+   "interested_topics": [
+    "agriculture biodynamique",
+    "politique locale et participation citoyenne",
+    "énergie renouvelable dans les bâtiments publics"
+   ],
+   "reputation": 0.45,
+   "stance": -0.245,
+   "impact": "harm",
+   "support_reason": "Aucun argument favorable n'est identifiable pour ma ferme familiale concernant l'augmentation du taux d'imposition et le crédit pour l'école.",
+   "oppose_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+   "stance_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+   "perception": "Le projet d'école menace directement notre capacité à cultiver et à vivre de la terre, et je ne peux pas rester passive face à cette décision qui va tout bouleverser.",
+   "current_plan": "Le projet d'école menace directement notre capacité à cultiver et à vivre de la terre, et je ne peux pas rester passive face à cette décision qui va tout bouleverser."
+  },
+  {
+   "name": "Sabine Graf",
+   "gender": "female",
+   "mbti": "INTP",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "shopkeeper",
+   "income_level": "low",
+   "political_leaning": -0.27,
+   "x": 11,
+   "y": 6,
+   "mood": "neutral",
+   "life_story": "Ich habe meine Matura in der Stadt gemacht, danach eine dreijährige Berufslehre als Detailhandelsfachfrau absolviert und bin dann nach Linden gezogen, weil ich hier eine Chance sah, unabhängig zu sein. Seit fünf Jahren führe ich diesen kleinen Kiosk an der Hauptstrasse, verkaufe Snacks, Zeitungen und gelegentlich Blumen für die Nachbarn. Die Mieten sind in den letzten Jahren stark gestiegen, und die neuen Bauprojekte bringen zwar Arbeitsplätze, aber auch mehr Kunden, die sich teure Lösungen leisten können. Meine beiden Kinder besuchen die lokale Schule, und ich hoffe, dass sie später hier bleiben und nicht wegziehen müssen. Die drohenden Preissteigerungen für Baumaterialien machen mir Sorgen, weil ich kaum noch Gewinnmargen habe, und ich frage mich, ob die Gemeinde wirklich versteht, wie es sich anfühlt, jeden Tag gegen die Uhr zu arbeiten, um die Rechnungen zu bezahlen.",
+   "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken neigt Sabine Graf dazu, komplexe politische Entscheidungen in nüchterne Daten und Kosten-Nutzen-Bilanzen zu zerlegen, was ihr eine scheinbare Objektivität verleiht, die jedoch ihre persönliche Betroffenheit maskiert. Ihre zurückhaltende Kommunikation und die Tendenz, Emotionen zu unterdrücken, können von anderen als Kühle oder Distanz interpretiert werden, was ihre kontroversen, aber rational begründeten Überzeugungen umso gefährlicher macht, da sie sich in der öffentlichen Debatte schwerer durchsetzen müssen. Die Spannung zwischen ihrer rationalen Analyse und der emotionalen Realität des Alltags könnte zu einer inneren Konfliktdynamik führen, die sich in einer zunehmenden Isolation von der Gemeinschaft oder in einer plötzlichen, leidenschaftlichen Intervention äussert, sobald sie das Gefühl hat, dass ihre Daten nicht mehr gehört werden.",
+   "id": "npc_03",
+   "category": "shopkeeper",
+   "profession": "Kioskbetreiberin (Linden)",
+   "bio": "Nach der Berufslehre als Detailhandelsfachfrau zog ich vor Jahren nach Linden, um hier meinen eigenen kleinen Kiosk zu führen. Die steigenden Miet- und Materialkosten durch die aktuellen Bauprojekte belasten meine Einnahmen, während ich gleichzeitig hoffe, vom wachsenden Schulpersonal profitieren zu können. Als Mutter von zwei Kindern muss ich jeden Franken genau planen, und die drohenden Preissteigerungen für Baumaterialien machen mich nervös.",
+   "persona": "Sabine Graf wirkt zurückhaltend und analytisch, spricht in präzisen, sachlichen Sätzen und vermeidet überflüssige Emotionen. Ihre ruhige, fast introvertierte Art lässt sie wie eine INTP erscheinen, die lieber Daten als Menschenmengen analysiert, und sie kommt oft als unnahbar oder gar unhöflich daher, wenn sie nicht die Zeit hat, sich auf jemanden einzulassen.",
+   "beliefs": [
+    "Gerechtigkeit im Zugang zu erschwinglichen Wohnraum und Dienstleistungen ist essenziell für eine funktionierende Gemeinde",
+    "Die Gemeinde sollte Priorität auf soziale Infrastruktur vor rein wirtschaftlichen Bauprojekten legen",
+    "Kleinunternehmer brauchen direkte Unterstützung statt bürokratischer Hürden"
+   ],
+   "controversial_ideas": [
+    "Sie glaubt privat, dass die Steuererhöhungen für Haushalte über 80'000 CHF jährlich gezielt gegen die Mittelschicht gerichtet sind, um die reichen Investoren zu schützen, und hält dies für eine versteckte Form der sozialen Ungleichheit."
+   ],
+   "interested_topics": [
+    "Preisentwicklung von Konsumgütern",
+    "Gemeindehaushaltsplanung und Transparenz",
+    "Jugendbildung und lokale Arbeitsmarktchancen"
+   ],
+   "reputation": 0.45,
+   "stance": 0.294,
+   "impact": "benefit",
+   "support_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+   "oppose_reason": "Die Steuererhöhung belastet meine Einnahmen zusätzlich, während ich ohnehin mit steigenden Kosten kämpfe, und bietet keine direkte Unterstützung für Kleinunternehmer wie mich.",
+   "stance_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+   "perception": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+   "current_plan": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken."
+  },
+  {
+   "name": "Stefan Müller",
+   "gender": "male",
+   "mbti": "ESFJ",
+   "country": "Switzerland",
+   "lang": "de",
+   "role": "teacher",
+   "income_level": "high",
+   "political_leaning": 0.35,
+   "x": 12,
+   "y": 6,
+   "mood": "neutral",
+   "life_story": "Ich bin in Bern aufgewachsen, habe dort die Matura gemacht und eine Berufslehre als Elektriker begonnen, bevor ich mich für das Lehramt entschieden habe. Nach dem Studium habe ich in verschiedenen Gemeinden gearbeitet, bis ich vor 15 Jahren nach Linden gezogen bin, wo ich eine Familie gegründet habe. Meine Frau arbeitet als Buchhalterin im Rathaus, und wir haben zwei Kinder, die heute meine Klassen besuchen. Die neue Schulbauinvestition hat unsere Nachbarschaft verändert – viele Eltern freuen sich über die besseren Räume, doch die jährliche Steuererhöhung von rund 240 CHF belastet uns spürbar. Ich sehe die Herausforderungen der steigenden Baumaterialienkosten und die Unsicherheit, wie die Gemeinde die Kosten verteilt, täglich in den Gesprächen mit Eltern und im Schulalltag.",
+   "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine stark normkonforme, sozial orientierte Haltung zeigen, die auf zwischenmenschlicher Harmonie und kollektiver Verantwortung basiert. Seine hohe Sensibilität für die Bedürfnisse anderer, gepaart mit seiner ausgeprägten Pflichtbewusstsein, führt dazu, dass er eher Kompromisslösungen sucht und Konflikte vermeidet. Dennoch könnte sein inneres, unbegründetes Misstrauen gegenüber der Steuerpolitik – die er privat als ungerecht empfindet – zu einer Spannung zwischen seiner öffentlichen Rolle als verlässlicher Lehrer und seiner privaten Überzeugung führen, was ihn in sozialen Situationen vorsichtig und teilweise ambivalent wirken lässt.",
+   "id": "npc_05",
+   "category": "teacher",
+   "profession": "Grundschullehrer",
+   "bio": "Nach meiner Berufslehre als Elektriker habe ich die Fachhochschule für Pädagogik besucht und bin seit 15 Jahren in Linden tätig. Meine Klassen umfassen Kinder aus Familien, die von der neuen Schulbauinvestition profitieren, und ich beobachte täglich die Auswirkungen der Haushaltsteuer auf die Eltern. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+   "persona": "Stefan wirkt stets höflich, strukturiert und orientiert sich an sozialen Normen; seine ESFJ-Art zeigt sich in warmem Smalltalk und kollegialer Unterstützung, doch er spricht mit einer gewissen Autorität, die seine pädagogische Erfahrung unterstreicht und ihm bei der Vermittlung von Konsenslösungen Vorteile verschafft.",
+   "beliefs": [
+    "Familien müssen durch gezielte Sozialleistungen unterstützt werden, um Bildungschancen zu sichern",
+    "Die Gemeinde muss langfristig auf nachhaltige Baukosten achten, um die Steuerbelastung für Familien zu stabilisieren",
+    "Gemeinschaftliche Werte wie Verantwortung und Teamarbeit sind essenziell für die Entwicklung der Kinder"
+   ],
+   "controversial_ideas": [
+    "Er glaubt privat, dass die Steuererhöhung für Haushalte mit Kindern eine ungerechte Belastung darstellt und dass die Gemeinde stattdessen Subventionen für Familien direkt einsetzen sollte, anstatt sie in den Schulbau zu stecken, was er jedoch nicht öffentlich äussert"
+   ],
+   "interested_topics": [
+    "Schulfinanzierung",
+    "Jugendförderung",
+    "Gemeindehaushaltsplanung"
+   ],
+   "reputation": 0.6,
+   "stance": -0.124,
+   "impact": "benefit",
+   "support_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet.",
+   "oppose_reason": "Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+   "stance_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet. / Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+   "perception": "Die Nachricht über die Steuererhöhung und den Schulbau sorgt für unterschiedliche Reaktionen in der Nachbarschaft. Einige Eltern freuen sich über die besseren Räume für ihre Kinder, andere machen sich Sorgen um die zusätzlichen Kosten. Die Diskussionen im Schulhaus und im Dorfzentrum zeigen, dass die Gemeinde vorsichtig vorgehen muss, um alle Familien zu berücksichtigen.",
+   "current_plan": "Die Nachricht über die Steuererhöhung und den Schulbau sorgt für unterschiedliche Reaktionen in der Nachbarschaft. Einige Eltern freuen sich über die besseren Räume für ihre Kinder, andere machen sich Sorgen um die zusätzlichen Kosten. Die Diskussionen im Schulhaus und im Dorfzentrum zeigen, dass die Gemeinde vorsichtig vorgehen muss, um alle Familien zu berücksichtigen."
+  }
+ ],
+ "relationships": [
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_01",
+   "affinity": -0.2,
+   "trust": 0.48
+  },
+  {
+   "source_id": "npc_04",
+   "target_id": "npc_05",
+   "affinity": -0.12,
+   "trust": 0.6
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_04",
+   "affinity": 0.21,
+   "trust": 0.64
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_04",
+   "affinity": -0.25,
+   "trust": 0.42
+  },
+  {
+   "source_id": "npc_02",
+   "target_id": "npc_05",
+   "affinity": 0.13,
+   "trust": 0.54
+  },
+  {
+   "source_id": "npc_03",
+   "target_id": "npc_05",
+   "affinity": -0.12,
+   "trust": 0.46
+  },
+  {
+   "source_id": "npc_01",
+   "target_id": "npc_03",
+   "affinity": 0.21,
+   "trust": 0.64
+  }
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "events": [
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre comment cette hausse sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre comment cette hausse sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Madame la secrétaire, l'augmentation de 6 points du taux d'imposition représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui pèse directement sur les petits entrepreneurs locaux comme moi.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#12"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#12",
+        "text": "3. Ce que change un oui: le taux augmente de 6 points. Pour un revenu imposable de 80'000 CHF, cela représente environ 240 CHF de plus par an. La commune peut lancer le chantier en 2027."
+       }
+      ],
+      "translated_dialogue": "Madame la secrétaire, die Erhöhung des Steuersatzes um 6 Prozentpunkte bedeutet 240 CHF zusätzliche jährliche Belastung bei einem Einkommen von 80'000 CHF, was direkt auf kleine lokale Unternehmer wie mich lastet."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre Perspektive hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern unverhältnismässig ist.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre Perspektive hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern unverhältnismässig ist.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Frau Bonnet, ich verstehe Ihre Sorge um die Familie, aber die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht. Ohne diese Erhöhung müssten wir wichtige Investitionen kürzen, die langfristig die Lebensqualität erhöhen würden.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#5"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#5",
+        "text": "4. Was ein Nein ändert: Der Steuerfuss bleibt 118 %. Das Defizit von 1.2 Millionen CHF bleibt. Der Gemeinderat müsste Sparaufträge von 400'000 CHF bei der Schule und 200'000 CHF bei den Werkhöfen vorschlagen."
+       }
+      ],
+      "translated_dialogue": "Frau Bonnet, je comprends votre inquiétude concernant la famille, mais l'augmentation fiscale prévue de 118 % à 124 % pèse lourdement sur les familles, en particulier celles avec des enfants, ce qui va à l'encontre de la justice sociale. Sans cette augmentation, nous devrions réduire des investissements importants qui amélioreraient la qualité de vie à long terme."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je vais m'entretenir avec la secrétaire financière pour exprimer mon opposition à cette mesure qui menace notre agriculture.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je vais m'entretenir avec la secrétaire financière pour exprimer mon opposition à cette mesure qui menace notre agriculture.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Madame la secrétaire, je ne peux pas accepter cette hausse d'impôt pour financer une école qui va nous priver de terres et faire grimper les prix des matériaux. Les agriculteurs locaux ne doivent pas payer pour des constructions qui détruisent notre sol.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#8",
+       "Author_notes_pasted_text#10"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#8",
+        "text": "Commune de Linden — objet: hausse du taux d'imposition et crédit pour l'école"
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       }
+      ],
+      "translated_dialogue": "Madame la secrétaire, ich kann diese Steuererhöhung nicht akzeptieren, um eine Schule zu finanzieren, die uns Land entziehen und die Preise für Baumaterialien in die Höhe treiben wird. Die lokalen Landwirte dürfen nicht für Bauvorhaben zahlen, die unseren Boden zerstören."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir de nos champs me rend anxieuse quant aux récoltes à venir.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir de nos champs me rend anxieuse quant aux récoltes à venir.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Gemeinderat, ich verstehe die Bedenken bezüglich der Steuerbelastung, doch der Kredit für das neue Schulhaus Linden-Dorf wird die lokale Nachfrage nach Dienstleistungen und Konsumgütern deutlich steigern. Meine Einnahmen könnten davon profitieren, und die Investition in soziale Infrastruktur ist langfristig essenziell für eine lebenswerte Gemeinde.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       },
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ]
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Ich muss die Fakten nüchtern betrachten, um die richtige Entscheidung für meine Familie und meinen Kiosk zu treffen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Ich muss die Fakten nüchtern betrachten, um die richtige Entscheidung für meine Familie und meinen Kiosk zu treffen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit Céline Bonnet sprechen, um ihre Sicht auf die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft zu hören.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Céline Bonnet sprechen, um ihre Sicht auf die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft zu hören.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Ich bin noch nicht entschieden, weil die Vorteile für die Kinder und die langfristige Finanzstabilität der Gemeinde wichtig sind, aber die zusätzliche Steuerbelastung für Familien mit angespannten Finanzen belastet mich sehr.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#3",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#3",
+        "text": "2. Der Schulhauskredit von 4.8 Millionen CHF finanziert acht Klassenzimmer, eine Turnhalle und eine Tagesschule. Die Baukosten sind im Voranschlag 2027 enthalten. Ein Nein zum Kredit verschiebt den Bau um mindestens drei Jahre."
+       },
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ],
+      "translated_dialogue": "Je ne suis pas encore décidé, parce que les avantages pour les enfants et la stabilité financière à long terme de la commune sont importants, mais l'augmentation supplémentaire de l'impôt pour les familles avec des finances tendues me préoccupe beaucoup."
+     }
+    },
+    {
+     "round": 0,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Ich versuche, die verschiedenen Perspektiven abzuwägen, ohne sofort eine Seite zu wählen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Ich versuche, die verschiedenen Perspektiven abzuwägen, ohne sofort eine Seite zu wählen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.7379,
+     "x": 8,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi à Fribourg, où mon père était électricien. Après la Matura, j’ai fait une Berufslehre en bâtiment, puis j’ai poursuivi des études à la Fachhochschule de Zurich en architecture. Je suis arrivé à Linden il y a cinq ans pour diriger un petit bureau spécialisé en rénovation énergétique. Mon travail sur l’école primaire neuve a été financé par un contrat de 4,8 millions de francs, ce qui a créé des emplois locaux. J’ai acheté un appartement en copropriété pour stabiliser mes charges, mais je reste critique face aux augmentations de 8 % des matériaux. Ma famille est petite, ma sœur travaille dans une petite épicerie du centre-ville. Je vois la hausse des impôts comme une contrainte nécessaire pour améliorer les infrastructures, mais je m’inquiète pour les petits commerçants qui ne peuvent pas absorber ces coûts supplémentaires.",
+     "expert_reflection": "Avec un MBTI ISTP, François privilégie l’action concrète et l’analyse factuelle, ce qui le rend efficace dans des rôles techniques mais peut le rendre perçu comme froid dans les débats émotionnels. Son revenu élevé et son intérêt pour l’urbanisme durable lui confèrent une légitimité qui masque une pensée radicale sur les subventions aux matériaux locaux, une position qui pourrait le placer en tension avec les artisans et les municipalités. Son discours rationnel masque une conviction controversée qu’il garde secrète, créant un écart entre son image publique de pragmatique et sa vision intérieure de réforme économique.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en construction avant d’intégrer une Fachhochschule pour devenir architecte. Je loue un appartement dans Linden depuis cinq ans, tout en travaillant sur des projets de rénovation scolaire et de construction de logements sociaux. Mon revenu élevé me permet d’investir dans des matériaux durables, mais je reste sensible aux hausses de prix qui touchent les petits entrepreneurs locaux.",
+     "persona": "François parle avec une précision technique et une retenue calculée, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication directe, parfois perçue comme distante, où chaque argument est pesé comme une pièce de construction avant d’être posée.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception, pas ajoutée en fin de projet.",
+      "Les augmentations d’impôts doivent être compensées par des services publics de qualité.",
+      "Le logement social est un droit, non une option."
+     ],
+     "controversial_ideas": [
+      "Je crois que les subventions aux matériaux locaux devraient être supprimées pour forcer l’innovation technologique, même si cela alourdit temporairement les coûts de construction."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.61,
+     "stance": -0.236,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF permettra la construction du nouveau bâtiment scolaire en 2027, ce qui stimulera l'économie locale et créera des emplois, tout en améliorant les infrastructures éducatives.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "stance_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "perception": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui menace la stabilité financière des petits entrepreneurs locaux.",
+     "current_plan": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui menace la stabilité financière des petits entrepreneurs locaux."
+    },
+    {
+     "name": "Gemeinderat",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "unknown",
+     "bio": "Nach der Berufslehre als kaufmännische Angestellte habe ich 2008 die Matura gemacht und bin in die Gemeindeverwaltung eingetreten. Seit 2015 arbeite ich im Finanzteam, wo ich direkt mit den Haushaltsbudgets und Steuerbelastungen der Bürger konfrontiert werde. Meine Erfahrung zeigt, dass lokale Projekte wie die neue Schulbau-Aufgabe zwar Arbeitsplätze schaffen, aber die jährliche Steuerbelastung für Familien spürbar erhöhen.",
+     "persona": "Sie spricht präzise, sachlich und vermeidet emotionale Übertreibungen. Ihre Art wirkt kompetent, aber leicht distanziert, was Kollegen als effizient, aber manchmal unnahbar wahrnehmen. Da ihr MBTI unbekannt ist, lässt sich ihre Kommunikation als analytisch und strukturiert beschreiben, was sie in Verhandlungen stärkt, aber persönliche Bindungen erschwert.",
+     "mbti": "unknown",
+     "country": "Switzerland",
+     "profession": "Gemeinderatssekretärin (Stabsstelle Finanzen)",
+     "interested_topics": [
+      "Kommunale Haushaltsplanung",
+      "Steuergerechtigkeit",
+      "Jugendbildung und Schulbau"
+     ],
+     "income_level": "medium",
+     "political_leaning": -0.4753,
+     "lang": "de",
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in einem kleinen Dorf in der Nähe von Solothurn aufgewachsen, wo ich die Bedeutung einer stabilen Gemeindeverwaltung hautnah erlebt habe. Nach der Berufslehre habe ich die Matura gemacht und mich für die öffentliche Verwaltung entschieden, weil ich glaubte, hier einen echten Unterschied machen zu können. In meiner aktuellen Position im Finanzteam muss ich täglich die Zahlen hinter den Steuerbescheiden und den Investitionsbudgets sehen, was mich sehr sensibilisiert für die Belastungen der Bürger. Meine Familie unterstützt mich, aber ich muss oft erklären, warum wir höhere Steuern akzeptieren müssen, um neue Schulen zu bauen. Die aktuelle Politik über die Schulbau-Aufgabe macht mir Sorgen, weil die jährliche Belastung von 240 CHF für Familien spürbar ist, besonders für Alleinerziehende. Ich versuche, objektiv zu bleiben, aber ich kann nicht leugnen, dass ich die Steuererhöhung für gerecht halte, um die Zukunft unserer Gemeinde zu sichern.",
+     "expert_reflection": "Als Sozialpsychologin würde ich vermuten, dass Gemeinderat als analytisch und rationalisierend wahrgenommen wird, was ihr hilft, komplexe politische Entscheidungen zu kommunizieren, aber gleichzeitig ihre emotionale Nähe zu den Bürgern einschränkt. Ihr Geheimhalten einer kontroversen Meinung zeigt eine ausgeprägte Strategie der sozialen Anpassung, um Konflikte zu vermeiden, was langfristig zu innerer Spannung führen könnte. Die Kombination aus fachlicher Kompetenz und emotionaler Distanz macht sie zu einer effektiven Verhandlerin, aber auch zu einer Person, die Schwierigkeiten hat, authentische Empathie zu zeigen, wenn es um persönliche Belastungen geht.",
+     "id": "npc_01",
+     "beliefs": [
+      "Transparenz im Haushaltsmanagement ist essenziell für das Vertrauen der Bürger",
+      "Investitionen in Infrastruktur sollten langfristig die Lebensqualität erhöhen",
+      "Steuererleichterungen für Familien mit Kindern sind sozial gerecht"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhung für 80k-Einkommen-Empfänger gerechtfertigt ist, weil sie die Infrastrukturfinanzierung sichert, und hält diese Ansicht geheim, um nicht als unfreundlich zu gelten"
+     ],
+     "reputation": 0.512,
+     "stance": -0.4379,
+     "impact": "mixed",
+     "support_reason": "Investitionen in Infrastruktur wie das neue Schulhaus erhöhen langfristig die Lebensqualität und schaffen Arbeitsplätze, was für die Gemeindeentwicklung essenziell ist.",
+     "oppose_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "stance_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "perception": "Die Sorge der Bürger wächst, insbesondere der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde. Die Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit.",
+     "current_plan": "Die Sorge der Bürger wächst, insbesondere der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde. Die Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.5705,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite maison en bois au bord du lac, où mon père m’a appris à observer les saisons et à respecter la terre. Après ma Matura, j’ai fait ma Berufslehre en agriculture à la Fachhochschule de Fribourg, où j’ai découvert les principes de la permaculture. De retour à Linden, j’ai repris la ferme familiale, qui n’emploie qu’un seul ouvrier saisonnier, et nous produisons des légumes pour les marchés locaux ainsi que du grain pour les boulangeries du village. Mon mari, agriculteur lui aussi, gère les machines, tandis que je m’occupe des plantations et des ventes directes aux habitants. Nous avons deux enfants qui ont quitté le nid, mais nous restons attachés à cette terre qui nous a vus grandir. Le projet d’école me préoccupe car il pourrait exproprier une partie de notre champ de seigle et augmenter les prix des engrais. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "expert_reflection": "En tant que psychologue sociale, on pourrait décrire Céline comme une personne profondément ancrée dans ses valeurs d’équilibre et de durabilité, typique d’un INFP. Son engagement pour l’environnement et sa volonté de participer aux décisions publiques révèlent une forte orientation morale et une empathie envers les autres résidents. Cependant, sa réticence à accepter des compromis pratiques, notamment sur le financement des infrastructures, pourrait la rendre perçue comme irréaliste par ses pairs, créant ainsi une tension entre son idéalisme et la réalité économique du village.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "ferme familiale à Linden",
+     "bio": "Après ma Matura en 1998, j’ai suivi une Berufslehre en agriculture à la Haute école spécialisée de Fribourg avant de reprendre la petite ferme familiale près de Linden. Aujourd’hui, je cultive légumes et céréales pour le marché local, tout en essayant de réduire mon empreinte carbone grâce à des rotations biodynamiques. Le projet de construction d’une nouvelle école me préoccupe, car il pourrait augmenter les prix des matériaux et réduire les terres disponibles pour les agriculteurs. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "persona": "Céline parle doucement, avec une voix posée et des gestes mesurés, comme si elle cherchait toujours l’équilibre entre les besoins de la communauté et ceux de sa terre. Son MBTI INFP se traduit par une communication empathique et une réflexion profonde, mais elle peut paraître trop idéaliste aux yeux de ses collègues plus pragmatiques, ce qui lui vaut parfois le surnom de « rêveuse » dans le village.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception des projets publics, pas ajoutée en postproduction.",
+      "Les agriculteurs locaux doivent être consultés avant toute décision d’aménagement du territoire.",
+      "Le bien-être collectif prime sur la croissance économique rapide."
+     ],
+     "controversial_ideas": [
+      "Je crois que le projet d’école devrait inclure des toits végétalisés et des panneaux solaires dès le départ, même si cela augmente le budget initial, car cela réduirait les coûts énergétiques à long terme."
+     ],
+     "interested_topics": [
+      "agriculture biodynamique",
+      "politique locale et participation citoyenne",
+      "énergie renouvelable dans les bâtiments publics"
+     ],
+     "reputation": 0.463,
+     "stance": -0.3427,
+     "impact": "harm",
+     "support_reason": "Aucun argument favorable n'est identifiable pour ma ferme familiale concernant l'augmentation du taux d'imposition et le crédit pour l'école.",
+     "oppose_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "stance_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "perception": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive.",
+     "current_plan": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.2799,
+     "x": 11,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Ich habe meine Matura in der Stadt gemacht, danach eine dreijährige Berufslehre als Detailhandelsfachfrau absolviert und bin dann nach Linden gezogen, weil ich hier eine Chance sah, unabhängig zu sein. Seit fünf Jahren führe ich diesen kleinen Kiosk an der Hauptstrasse, verkaufe Snacks, Zeitungen und gelegentlich Blumen für die Nachbarn. Die Mieten sind in den letzten Jahren stark gestiegen, und die neuen Bauprojekte bringen zwar Arbeitsplätze, aber auch mehr Kunden, die sich teure Lösungen leisten können. Meine beiden Kinder besuchen die lokale Schule, und ich hoffe, dass sie später hier bleiben und nicht wegziehen müssen. Die drohenden Preissteigerungen für Baumaterialien machen mir Sorgen, weil ich kaum noch Gewinnmargen habe, und ich frage mich, ob die Gemeinde wirklich versteht, wie es sich anfühlt, jeden Tag gegen die Uhr zu arbeiten, um die Rechnungen zu bezahlen.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken neigt Sabine Graf dazu, komplexe politische Entscheidungen in nüchterne Daten und Kosten-Nutzen-Bilanzen zu zerlegen, was ihr eine scheinbare Objektivität verleiht, die jedoch ihre persönliche Betroffenheit maskiert. Ihre zurückhaltende Kommunikation und die Tendenz, Emotionen zu unterdrücken, können von anderen als Kühle oder Distanz interpretiert werden, was ihre kontroversen, aber rational begründeten Überzeugungen umso gefährlicher macht, da sie sich in der öffentlichen Debatte schwerer durchsetzen müssen. Die Spannung zwischen ihrer rationalen Analyse und der emotionalen Realität des Alltags könnte zu einer inneren Konfliktdynamik führen, die sich in einer zunehmenden Isolation von der Gemeinschaft oder in einer plötzlichen, leidenschaftlichen Intervention äussert, sobald sie das Gefühl hat, dass ihre Daten nicht mehr gehört werden.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Kioskbetreiberin (Linden)",
+     "bio": "Nach der Berufslehre als Detailhandelsfachfrau zog ich vor Jahren nach Linden, um hier meinen eigenen kleinen Kiosk zu führen. Die steigenden Miet- und Materialkosten durch die aktuellen Bauprojekte belasten meine Einnahmen, während ich gleichzeitig hoffe, vom wachsenden Schulpersonal profitieren zu können. Als Mutter von zwei Kindern muss ich jeden Franken genau planen, und die drohenden Preissteigerungen für Baumaterialien machen mich nervös.",
+     "persona": "Sabine Graf wirkt zurückhaltend und analytisch, spricht in präzisen, sachlichen Sätzen und vermeidet überflüssige Emotionen. Ihre ruhige, fast introvertierte Art lässt sie wie eine INTP erscheinen, die lieber Daten als Menschenmengen analysiert, und sie kommt oft als unnahbar oder gar unhöflich daher, wenn sie nicht die Zeit hat, sich auf jemanden einzulassen.",
+     "beliefs": [
+      "Gerechtigkeit im Zugang zu erschwinglichen Wohnraum und Dienstleistungen ist essenziell für eine funktionierende Gemeinde",
+      "Die Gemeinde sollte Priorität auf soziale Infrastruktur vor rein wirtschaftlichen Bauprojekten legen",
+      "Kleinunternehmer brauchen direkte Unterstützung statt bürokratischer Hürden"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhungen für Haushalte über 80'000 CHF jährlich gezielt gegen die Mittelschicht gerichtet sind, um die reichen Investoren zu schützen, und hält dies für eine versteckte Form der sozialen Ungleichheit."
+     ],
+     "interested_topics": [
+      "Preisentwicklung von Konsumgütern",
+      "Gemeindehaushaltsplanung und Transparenz",
+      "Jugendbildung und lokale Arbeitsmarktchancen"
+     ],
+     "reputation": 0.463,
+     "stance": 0.294,
+     "impact": "benefit",
+     "support_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "oppose_reason": "Die Steuererhöhung belastet meine Einnahmen zusätzlich, während ich ohnehin mit steigenden Kosten kämpfe, und bietet keine direkte Unterstützung für Kleinunternehmer wie mich.",
+     "stance_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "perception": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+     "current_plan": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.3621,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Ich bin in Bern aufgewachsen, habe dort die Matura gemacht und eine Berufslehre als Elektriker begonnen, bevor ich mich für das Lehramt entschieden habe. Nach dem Studium habe ich in verschiedenen Gemeinden gearbeitet, bis ich vor 15 Jahren nach Linden gezogen bin, wo ich eine Familie gegründet habe. Meine Frau arbeitet als Buchhalterin im Rathaus, und wir haben zwei Kinder, die heute meine Klassen besuchen. Die neue Schulbauinvestition hat unsere Nachbarschaft verändert – viele Eltern freuen sich über die besseren Räume, doch die jährliche Steuererhöhung von rund 240 CHF belastet uns spürbar. Ich sehe die Herausforderungen der steigenden Baumaterialienkosten und die Unsicherheit, wie die Gemeinde die Kosten verteilt, täglich in den Gesprächen mit Eltern und im Schulalltag.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine stark normkonforme, sozial orientierte Haltung zeigen, die auf zwischenmenschlicher Harmonie und kollektiver Verantwortung basiert. Seine hohe Sensibilität für die Bedürfnisse anderer, gepaart mit seiner ausgeprägten Pflichtbewusstsein, führt dazu, dass er eher Kompromisslösungen sucht und Konflikte vermeidet. Dennoch könnte sein inneres, unbegründetes Misstrauen gegenüber der Steuerpolitik – die er privat als ungerecht empfindet – zu einer Spannung zwischen seiner öffentlichen Rolle als verlässlicher Lehrer und seiner privaten Überzeugung führen, was ihn in sozialen Situationen vorsichtig und teilweise ambivalent wirken lässt.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Grundschullehrer",
+     "bio": "Nach meiner Berufslehre als Elektriker habe ich die Fachhochschule für Pädagogik besucht und bin seit 15 Jahren in Linden tätig. Meine Klassen umfassen Kinder aus Familien, die von der neuen Schulbauinvestition profitieren, und ich beobachte täglich die Auswirkungen der Haushaltsteuer auf die Eltern. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+     "persona": "Stefan wirkt stets höflich, strukturiert und orientiert sich an sozialen Normen; seine ESFJ-Art zeigt sich in warmem Smalltalk und kollegialer Unterstützung, doch er spricht mit einer gewissen Autorität, die seine pädagogische Erfahrung unterstreicht und ihm bei der Vermittlung von Konsenslösungen Vorteile verschafft.",
+     "beliefs": [
+      "Familien müssen durch gezielte Sozialleistungen unterstützt werden, um Bildungschancen zu sichern",
+      "Die Gemeinde muss langfristig auf nachhaltige Baukosten achten, um die Steuerbelastung für Familien zu stabilisieren",
+      "Gemeinschaftliche Werte wie Verantwortung und Teamarbeit sind essenziell für die Entwicklung der Kinder"
+     ],
+     "controversial_ideas": [
+      "Er glaubt privat, dass die Steuererhöhung für Haushalte mit Kindern eine ungerechte Belastung darstellt und dass die Gemeinde stattdessen Subventionen für Familien direkt einsetzen sollte, anstatt sie in den Schulbau zu stecken, was er jedoch nicht öffentlich äussert"
+     ],
+     "interested_topics": [
+      "Schulfinanzierung",
+      "Jugendförderung",
+      "Gemeindehaushaltsplanung"
+     ],
+     "reputation": 0.61,
+     "stance": -0.124,
+     "impact": "benefit",
+     "support_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet.",
+     "oppose_reason": "Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "stance_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet. / Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "perception": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen.",
+     "current_plan": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.3872,
+     "behavior": "compromise",
+     "political_delta": 0.0808,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_04",
+     "influence": 0.396,
+     "behavior": "compromise",
+     "political_delta": -0.0511,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_01",
+     "influence": 0.388,
+     "behavior": "compromise",
+     "political_delta": -0.0922,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_01",
+     "influence": 0.388,
+     "behavior": "compromise",
+     "political_delta": -0.0494,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_04",
+     "influence": 0.3936,
+     "behavior": "compromise",
+     "political_delta": 0.0367,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 32.0,
+    "business_climate": 50.0,
+    "worker_welfare": 20.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 30.0,
+    "stance_for": 1.0,
+    "stance_against": 3.0,
+    "stance_undecided": 1.0,
+    "stance_mean": -0.169,
+    "stance_spread": 0.254
+   }
+  },
+  {
+   "round": 1,
+   "events": [
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Madame la secrétaire, cette hausse de 6 points sur le taux d'imposition représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui fragilise les petits entrepreneurs locaux comme moi.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#12",
+       "Author_notes_pasted_text#9"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#12",
+        "text": "3. Ce que change un oui: le taux augmente de 6 points. Pour un revenu imposable de 80'000 CHF, cela représente environ 240 CHF de plus par an. La commune peut lancer le chantier en 2027."
+       },
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       }
+      ],
+      "translated_dialogue": "Madame la secrétaire, diese Erhöhung des Steuersatzes um 6 Prozentpunkte bedeutet 240 CHF zusätzliche jährliche Belastung bei einem Einkommen von 80'000 CHF, was lokale Kleinunternehmer wie mich schwächt."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre technische Einschätzung hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern sozial ungerecht ist.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre technische Einschätzung hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern sozial ungerecht ist.",
+      "target_npc_id": "npc_02",
+      "dialogue": "Herr Girard, die 240 CHF zusätzliche Steuerbelastung pro Jahr für Familien mit Kindern ist unverhältnismässig. Diese Summe trifft genau die Haushalte, die am wenigsten Spielraum für zusätzliche Ausgaben haben. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       }
+      ],
+      "translated_dialogue": "Herr Girard, la charge fiscale supplémentaire de 240 CHF par an pour les familles avec enfants est disproportionnée. Cette somme touche précisément les ménages qui ont le moins de marge pour des dépenses supplémentaires. Les chiffres de P3 montrent clairement qu'il y aurait des mesures d'épargne si l'augmentation est refusée, ce qui mettrait en péril l'avenir à long terme de la commune."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich fordere Sie auf, die langfristigen wirtschaftlichen Folgen für unsere lokale Landwirtschaft zu bedenken, bevor wir weitere Steuern erhöhen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich fordere Sie auf, die langfristigen wirtschaftlichen Folgen für unsere lokale Landwirtschaft zu bedenken, bevor wir weitere Steuern erhöhen.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Frau Bonnet, die geplante Steuererhöhung dient nicht dem Schutz unserer landwirtschaftlichen Betriebe, sondern belastet sie zusätzlich. Die 240 CHF mehr Steuern pro Jahr treffen genau die Familien, die bereits unter der finanziellen Belastung leiden. Eine Investition in eine Schule, die unseren Boden zerstört und Materialpreise in die Höhe treibt, ist keine nachhaltige Lösung für unsere Gemeinde.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "angry",
+      "used_source_ids": [],
+      "grounded": false,
+      "invalid_cites": 0,
+      "sources": [],
+      "translated_dialogue": "Frau Bonnet, la hausse d'impôt prévue ne sert pas à protéger nos exploitations agricoles, mais les alourdit davantage. Les 240 CHF d'impôt supplémentaires par an frappent précisément les familles qui souffrent déjà d'un fardeau financier. Un investissement dans une école qui détruit notre sol et fait grimper les prix des matériaux n'est pas une solution durable pour notre commune."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je vais exposer mon opposition lors de la prochaine séance du conseil communal.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je vais exposer mon opposition lors de la prochaine séance du conseil communal.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Madame la secrétaire, je ne peux pas accepter cette hausse d'impôt qui menace nos champs et notre budget. Sans cette taxe, nous devrions réduire les routes et l'aide sociale, mais l'école nous prend la terre et les matériaux s'emballent.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#10"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       }
+      ],
+      "translated_dialogue": "Madame la secrétaire, ich kann diese Steuererhöhung, die unsere Felder und unseren Haushalt bedroht, nicht akzeptieren. Ohne diese Steuer müssten wir die Strassen und die Sozialhilfe kürzen, aber die Schule nimmt uns das Land und die Materialien stapeln sich."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir de nos terres me rend plus inquiète chaque jour.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir de nos terres me rend plus inquiète chaque jour.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Gemeinderat, ich habe die Vorlage P3 studiert und die Berechnung im Beispiel P2 übernommen. Die zusätzliche Nachfrage nach Konsumgütern durch das neue Schulhaus könnte meinen Kioskbetrieb stabilisieren, auch wenn die Materialkosten steigen. Glauben Sie, dass die Steuererhöhung gerechtfertigt ist, wenn die Infrastruktur langfristig die Gemeinde stärkt?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [
+       "Author_notes_pasted_text#0",
+       "Author_notes_pasted_text#4"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#0",
+        "text": "Gemeinde Linden — Vorlage: Erhöhung des Steuerfusses und Schulhauskredit"
+       },
+       {
+        "id": "Author_notes_pasted_text#4",
+        "text": "3. Was ein Ja ändert: Der Steuerfuss steigt um 6 Prozentpunkte. Für ein steuerbares Einkommen von 80'000 CHF bedeutet das rund 240 CHF mehr pro Jahr. Die Gemeinde kann den Schulhausbau 2027 beginnen."
+       }
+      ]
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die Materialkosten lässt mich besorgt zurückblicken, doch die erwartete Nachfrage gibt mir einen kleinen Hoffnungsschimmer.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die Materialkosten lässt mich besorgt zurückblicken, doch die erwartete Nachfrage gibt mir einen kleinen Hoffnungsschimmer.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Céline, ich bin mir noch nicht sicher, wie ich über die neue Steuer und den Schulbau entscheiden soll. Der Neubau würde langfristig bessere Räume für die Kinder schaffen und die Gemeindefinanzen stabilisieren, doch die zusätzliche Steuerbelastung belastet Familien, die ohnehin mit steigenden Baumaterialienkosten kämpfen.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [],
+      "translated_dialogue": "Céline, ich bin mir noch nicht sicher, wie ich über die neue Steuer und den Schulbau entscheiden soll. Der Neubau würde langfristig bessere Räume für die Kinder schaffen und die Gemeindefinanzen stabilisieren, doch die zusätzliche Steuerbelastung belastet Familien, die ohnehin mit steigenden Baumaterialienkosten kämpfen."
+     }
+    },
+    {
+     "round": 1,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.7132,
+     "x": 8,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi à Fribourg, où mon père était électricien. Après la Matura, j’ai fait une Berufslehre en bâtiment, puis j’ai poursuivi des études à la Fachhochschule de Zurich en architecture. Je suis arrivé à Linden il y a cinq ans pour diriger un petit bureau spécialisé en rénovation énergétique. Mon travail sur l’école primaire neuve a été financé par un contrat de 4,8 millions de francs, ce qui a créé des emplois locaux. J’ai acheté un appartement en copropriété pour stabiliser mes charges, mais je reste critique face aux augmentations de 8 % des matériaux. Ma famille est petite, ma sœur travaille dans une petite épicerie du centre-ville. Je vois la hausse des impôts comme une contrainte nécessaire pour améliorer les infrastructures, mais je m’inquiète pour les petits commerçants qui ne peuvent pas absorber ces coûts supplémentaires.",
+     "expert_reflection": "Avec un MBTI ISTP, François privilégie l’action concrète et l’analyse factuelle, ce qui le rend efficace dans des rôles techniques mais peut le rendre perçu comme froid dans les débats émotionnels. Son revenu élevé et son intérêt pour l’urbanisme durable lui confèrent une légitimité qui masque une pensée radicale sur les subventions aux matériaux locaux, une position qui pourrait le placer en tension avec les artisans et les municipalités. Son discours rationnel masque une conviction controversée qu’il garde secrète, créant un écart entre son image publique de pragmatique et sa vision intérieure de réforme économique.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en construction avant d’intégrer une Fachhochschule pour devenir architecte. Je loue un appartement dans Linden depuis cinq ans, tout en travaillant sur des projets de rénovation scolaire et de construction de logements sociaux. Mon revenu élevé me permet d’investir dans des matériaux durables, mais je reste sensible aux hausses de prix qui touchent les petits entrepreneurs locaux.",
+     "persona": "François parle avec une précision technique et une retenue calculée, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication directe, parfois perçue comme distante, où chaque argument est pesé comme une pièce de construction avant d’être posée.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception, pas ajoutée en fin de projet.",
+      "Les augmentations d’impôts doivent être compensées par des services publics de qualité.",
+      "Le logement social est un droit, non une option."
+     ],
+     "controversial_ideas": [
+      "Je crois que les subventions aux matériaux locaux devraient être supprimées pour forcer l’innovation technologique, même si cela alourdit temporairement les coûts de construction."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.62,
+     "stance": -0.3119,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF permettra la construction du nouveau bâtiment scolaire en 2027, ce qui stimulera l'économie locale et créera des emplois, tout en améliorant les infrastructures éducatives.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "stance_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "perception": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets.",
+     "current_plan": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets."
+    },
+    {
+     "name": "Gemeinderat",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "unknown",
+     "bio": "Nach der Berufslehre als kaufmännische Angestellte habe ich 2008 die Matura gemacht und bin in die Gemeindeverwaltung eingetreten. Seit 2015 arbeite ich im Finanzteam, wo ich direkt mit den Haushaltsbudgets und Steuerbelastungen der Bürger konfrontiert werde. Meine Erfahrung zeigt, dass lokale Projekte wie die neue Schulbau-Aufgabe zwar Arbeitsplätze schaffen, aber die jährliche Steuerbelastung für Familien spürbar erhöhen.",
+     "persona": "Sie spricht präzise, sachlich und vermeidet emotionale Übertreibungen. Ihre Art wirkt kompetent, aber leicht distanziert, was Kollegen als effizient, aber manchmal unnahbar wahrnehmen. Da ihr MBTI unbekannt ist, lässt sich ihre Kommunikation als analytisch und strukturiert beschreiben, was sie in Verhandlungen stärkt, aber persönliche Bindungen erschwert.",
+     "mbti": "unknown",
+     "country": "Switzerland",
+     "profession": "Gemeinderatssekretärin (Stabsstelle Finanzen)",
+     "interested_topics": [
+      "Kommunale Haushaltsplanung",
+      "Steuergerechtigkeit",
+      "Jugendbildung und Schulbau"
+     ],
+     "income_level": "medium",
+     "political_leaning": -0.5527,
+     "lang": "de",
+     "x": 9,
+     "y": 6,
+     "mood": "anxious",
+     "life_story": "Ich bin in einem kleinen Dorf in der Nähe von Solothurn aufgewachsen, wo ich die Bedeutung einer stabilen Gemeindeverwaltung hautnah erlebt habe. Nach der Berufslehre habe ich die Matura gemacht und mich für die öffentliche Verwaltung entschieden, weil ich glaubte, hier einen echten Unterschied machen zu können. In meiner aktuellen Position im Finanzteam muss ich täglich die Zahlen hinter den Steuerbescheiden und den Investitionsbudgets sehen, was mich sehr sensibilisiert für die Belastungen der Bürger. Meine Familie unterstützt mich, aber ich muss oft erklären, warum wir höhere Steuern akzeptieren müssen, um neue Schulen zu bauen. Die aktuelle Politik über die Schulbau-Aufgabe macht mir Sorgen, weil die jährliche Belastung von 240 CHF für Familien spürbar ist, besonders für Alleinerziehende. Ich versuche, objektiv zu bleiben, aber ich kann nicht leugnen, dass ich die Steuererhöhung für gerecht halte, um die Zukunft unserer Gemeinde zu sichern.",
+     "expert_reflection": "Als Sozialpsychologin würde ich vermuten, dass Gemeinderat als analytisch und rationalisierend wahrgenommen wird, was ihr hilft, komplexe politische Entscheidungen zu kommunizieren, aber gleichzeitig ihre emotionale Nähe zu den Bürgern einschränkt. Ihr Geheimhalten einer kontroversen Meinung zeigt eine ausgeprägte Strategie der sozialen Anpassung, um Konflikte zu vermeiden, was langfristig zu innerer Spannung führen könnte. Die Kombination aus fachlicher Kompetenz und emotionaler Distanz macht sie zu einer effektiven Verhandlerin, aber auch zu einer Person, die Schwierigkeiten hat, authentische Empathie zu zeigen, wenn es um persönliche Belastungen geht.",
+     "id": "npc_01",
+     "beliefs": [
+      "Transparenz im Haushaltsmanagement ist essenziell für das Vertrauen der Bürger",
+      "Investitionen in Infrastruktur sollten langfristig die Lebensqualität erhöhen",
+      "Steuererleichterungen für Familien mit Kindern sind sozial gerecht"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhung für 80k-Einkommen-Empfänger gerechtfertigt ist, weil sie die Infrastrukturfinanzierung sichert, und hält diese Ansicht geheim, um nicht als unfreundlich zu gelten"
+     ],
+     "reputation": 0.536,
+     "stance": -0.5179,
+     "impact": "mixed",
+     "support_reason": "Investitionen in Infrastruktur wie das neue Schulhaus erhöhen langfristig die Lebensqualität und schaffen Arbeitsplätze, was für die Gemeindeentwicklung essenziell ist.",
+     "oppose_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "stance_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "perception": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird.",
+     "current_plan": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.6014,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite maison en bois au bord du lac, où mon père m’a appris à observer les saisons et à respecter la terre. Après ma Matura, j’ai fait ma Berufslehre en agriculture à la Fachhochschule de Fribourg, où j’ai découvert les principes de la permaculture. De retour à Linden, j’ai repris la ferme familiale, qui n’emploie qu’un seul ouvrier saisonnier, et nous produisons des légumes pour les marchés locaux ainsi que du grain pour les boulangeries du village. Mon mari, agriculteur lui aussi, gère les machines, tandis que je m’occupe des plantations et des ventes directes aux habitants. Nous avons deux enfants qui ont quitté le nid, mais nous restons attachés à cette terre qui nous a vus grandir. Le projet d’école me préoccupe car il pourrait exproprier une partie de notre champ de seigle et augmenter les prix des engrais. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "expert_reflection": "En tant que psychologue sociale, on pourrait décrire Céline comme une personne profondément ancrée dans ses valeurs d’équilibre et de durabilité, typique d’un INFP. Son engagement pour l’environnement et sa volonté de participer aux décisions publiques révèlent une forte orientation morale et une empathie envers les autres résidents. Cependant, sa réticence à accepter des compromis pratiques, notamment sur le financement des infrastructures, pourrait la rendre perçue comme irréaliste par ses pairs, créant ainsi une tension entre son idéalisme et la réalité économique du village.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "ferme familiale à Linden",
+     "bio": "Après ma Matura en 1998, j’ai suivi une Berufslehre en agriculture à la Haute école spécialisée de Fribourg avant de reprendre la petite ferme familiale près de Linden. Aujourd’hui, je cultive légumes et céréales pour le marché local, tout en essayant de réduire mon empreinte carbone grâce à des rotations biodynamiques. Le projet de construction d’une nouvelle école me préoccupe, car il pourrait augmenter les prix des matériaux et réduire les terres disponibles pour les agriculteurs. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "persona": "Céline parle doucement, avec une voix posée et des gestes mesurés, comme si elle cherchait toujours l’équilibre entre les besoins de la communauté et ceux de sa terre. Son MBTI INFP se traduit par une communication empathique et une réflexion profonde, mais elle peut paraître trop idéaliste aux yeux de ses collègues plus pragmatiques, ce qui lui vaut parfois le surnom de « rêveuse » dans le village.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception des projets publics, pas ajoutée en postproduction.",
+      "Les agriculteurs locaux doivent être consultés avant toute décision d’aménagement du territoire.",
+      "Le bien-être collectif prime sur la croissance économique rapide."
+     ],
+     "controversial_ideas": [
+      "Je crois que le projet d’école devrait inclure des toits végétalisés et des panneaux solaires dès le départ, même si cela augmente le budget initial, car cela réduirait les coûts énergétiques à long terme."
+     ],
+     "interested_topics": [
+      "agriculture biodynamique",
+      "politique locale et participation citoyenne",
+      "énergie renouvelable dans les bâtiments publics"
+     ],
+     "reputation": 0.476,
+     "stance": -0.4503,
+     "impact": "harm",
+     "support_reason": "Aucun argument favorable n'est identifiable pour ma ferme familiale concernant l'augmentation du taux d'imposition et le crédit pour l'école.",
+     "oppose_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "stance_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "perception": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser.",
+     "current_plan": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.2901,
+     "x": 11,
+     "y": 6,
+     "mood": "hopeful",
+     "life_story": "Ich habe meine Matura in der Stadt gemacht, danach eine dreijährige Berufslehre als Detailhandelsfachfrau absolviert und bin dann nach Linden gezogen, weil ich hier eine Chance sah, unabhängig zu sein. Seit fünf Jahren führe ich diesen kleinen Kiosk an der Hauptstrasse, verkaufe Snacks, Zeitungen und gelegentlich Blumen für die Nachbarn. Die Mieten sind in den letzten Jahren stark gestiegen, und die neuen Bauprojekte bringen zwar Arbeitsplätze, aber auch mehr Kunden, die sich teure Lösungen leisten können. Meine beiden Kinder besuchen die lokale Schule, und ich hoffe, dass sie später hier bleiben und nicht wegziehen müssen. Die drohenden Preissteigerungen für Baumaterialien machen mir Sorgen, weil ich kaum noch Gewinnmargen habe, und ich frage mich, ob die Gemeinde wirklich versteht, wie es sich anfühlt, jeden Tag gegen die Uhr zu arbeiten, um die Rechnungen zu bezahlen.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken neigt Sabine Graf dazu, komplexe politische Entscheidungen in nüchterne Daten und Kosten-Nutzen-Bilanzen zu zerlegen, was ihr eine scheinbare Objektivität verleiht, die jedoch ihre persönliche Betroffenheit maskiert. Ihre zurückhaltende Kommunikation und die Tendenz, Emotionen zu unterdrücken, können von anderen als Kühle oder Distanz interpretiert werden, was ihre kontroversen, aber rational begründeten Überzeugungen umso gefährlicher macht, da sie sich in der öffentlichen Debatte schwerer durchsetzen müssen. Die Spannung zwischen ihrer rationalen Analyse und der emotionalen Realität des Alltags könnte zu einer inneren Konfliktdynamik führen, die sich in einer zunehmenden Isolation von der Gemeinschaft oder in einer plötzlichen, leidenschaftlichen Intervention äussert, sobald sie das Gefühl hat, dass ihre Daten nicht mehr gehört werden.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Kioskbetreiberin (Linden)",
+     "bio": "Nach der Berufslehre als Detailhandelsfachfrau zog ich vor Jahren nach Linden, um hier meinen eigenen kleinen Kiosk zu führen. Die steigenden Miet- und Materialkosten durch die aktuellen Bauprojekte belasten meine Einnahmen, während ich gleichzeitig hoffe, vom wachsenden Schulpersonal profitieren zu können. Als Mutter von zwei Kindern muss ich jeden Franken genau planen, und die drohenden Preissteigerungen für Baumaterialien machen mich nervös.",
+     "persona": "Sabine Graf wirkt zurückhaltend und analytisch, spricht in präzisen, sachlichen Sätzen und vermeidet überflüssige Emotionen. Ihre ruhige, fast introvertierte Art lässt sie wie eine INTP erscheinen, die lieber Daten als Menschenmengen analysiert, und sie kommt oft als unnahbar oder gar unhöflich daher, wenn sie nicht die Zeit hat, sich auf jemanden einzulassen.",
+     "beliefs": [
+      "Gerechtigkeit im Zugang zu erschwinglichen Wohnraum und Dienstleistungen ist essenziell für eine funktionierende Gemeinde",
+      "Die Gemeinde sollte Priorität auf soziale Infrastruktur vor rein wirtschaftlichen Bauprojekten legen",
+      "Kleinunternehmer brauchen direkte Unterstützung statt bürokratischer Hürden"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhungen für Haushalte über 80'000 CHF jährlich gezielt gegen die Mittelschicht gerichtet sind, um die reichen Investoren zu schützen, und hält dies für eine versteckte Form der sozialen Ungleichheit."
+     ],
+     "interested_topics": [
+      "Preisentwicklung von Konsumgütern",
+      "Gemeindehaushaltsplanung und Transparenz",
+      "Jugendbildung und lokale Arbeitsmarktchancen"
+     ],
+     "reputation": 0.476,
+     "stance": 0.294,
+     "impact": "benefit",
+     "support_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "oppose_reason": "Die Steuererhöhung belastet meine Einnahmen zusätzlich, während ich ohnehin mit steigenden Kosten kämpfe, und bietet keine direkte Unterstützung für Kleinunternehmer wie mich.",
+     "stance_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "perception": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+     "current_plan": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.3745,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Ich bin in Bern aufgewachsen, habe dort die Matura gemacht und eine Berufslehre als Elektriker begonnen, bevor ich mich für das Lehramt entschieden habe. Nach dem Studium habe ich in verschiedenen Gemeinden gearbeitet, bis ich vor 15 Jahren nach Linden gezogen bin, wo ich eine Familie gegründet habe. Meine Frau arbeitet als Buchhalterin im Rathaus, und wir haben zwei Kinder, die heute meine Klassen besuchen. Die neue Schulbauinvestition hat unsere Nachbarschaft verändert – viele Eltern freuen sich über die besseren Räume, doch die jährliche Steuererhöhung von rund 240 CHF belastet uns spürbar. Ich sehe die Herausforderungen der steigenden Baumaterialienkosten und die Unsicherheit, wie die Gemeinde die Kosten verteilt, täglich in den Gesprächen mit Eltern und im Schulalltag.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine stark normkonforme, sozial orientierte Haltung zeigen, die auf zwischenmenschlicher Harmonie und kollektiver Verantwortung basiert. Seine hohe Sensibilität für die Bedürfnisse anderer, gepaart mit seiner ausgeprägten Pflichtbewusstsein, führt dazu, dass er eher Kompromisslösungen sucht und Konflikte vermeidet. Dennoch könnte sein inneres, unbegründetes Misstrauen gegenüber der Steuerpolitik – die er privat als ungerecht empfindet – zu einer Spannung zwischen seiner öffentlichen Rolle als verlässlicher Lehrer und seiner privaten Überzeugung führen, was ihn in sozialen Situationen vorsichtig und teilweise ambivalent wirken lässt.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Grundschullehrer",
+     "bio": "Nach meiner Berufslehre als Elektriker habe ich die Fachhochschule für Pädagogik besucht und bin seit 15 Jahren in Linden tätig. Meine Klassen umfassen Kinder aus Familien, die von der neuen Schulbauinvestition profitieren, und ich beobachte täglich die Auswirkungen der Haushaltsteuer auf die Eltern. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+     "persona": "Stefan wirkt stets höflich, strukturiert und orientiert sich an sozialen Normen; seine ESFJ-Art zeigt sich in warmem Smalltalk und kollegialer Unterstützung, doch er spricht mit einer gewissen Autorität, die seine pädagogische Erfahrung unterstreicht und ihm bei der Vermittlung von Konsenslösungen Vorteile verschafft.",
+     "beliefs": [
+      "Familien müssen durch gezielte Sozialleistungen unterstützt werden, um Bildungschancen zu sichern",
+      "Die Gemeinde muss langfristig auf nachhaltige Baukosten achten, um die Steuerbelastung für Familien zu stabilisieren",
+      "Gemeinschaftliche Werte wie Verantwortung und Teamarbeit sind essenziell für die Entwicklung der Kinder"
+     ],
+     "controversial_ideas": [
+      "Er glaubt privat, dass die Steuererhöhung für Haushalte mit Kindern eine ungerechte Belastung darstellt und dass die Gemeinde stattdessen Subventionen für Familien direkt einsetzen sollte, anstatt sie in den Schulbau zu stecken, was er jedoch nicht öffentlich äussert"
+     ],
+     "interested_topics": [
+      "Schulfinanzierung",
+      "Jugendförderung",
+      "Gemeindehaushaltsplanung"
+     ],
+     "reputation": 0.62,
+     "stance": -0.124,
+     "impact": "benefit",
+     "support_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet.",
+     "oppose_reason": "Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "stance_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet. / Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "perception": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+     "current_plan": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.3888,
+     "behavior": "compromise",
+     "political_delta": 0.0832,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_02",
+     "influence": 0.3731,
+     "behavior": "compromise",
+     "political_delta": -0.0424,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_04",
+     "influence": 0.4142,
+     "behavior": "compromise",
+     "political_delta": -0.0578,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_01",
+     "influence": 0.4045,
+     "behavior": "compromise",
+     "political_delta": -0.0973,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_01",
+     "influence": 0.4045,
+     "behavior": "compromise",
+     "political_delta": -0.0475,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_04",
+     "influence": 0.4048,
+     "behavior": "compromise",
+     "political_delta": 0.0434,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 36.0,
+    "business_climate": 50.0,
+    "worker_welfare": 30.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 30.0,
+    "stance_for": 1.0,
+    "stance_against": 3.0,
+    "stance_undecided": 1.0,
+    "stance_mean": -0.222,
+    "stance_spread": 0.291
+   }
+  },
+  {
+   "round": 2,
+   "events": [
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "chat",
+     "message": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Madame la secrétaire, cette hausse de 6 points représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui fragilise les petits entrepreneurs locaux comme moi.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#12",
+       "Author_notes_pasted_text#9"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#12",
+        "text": "3. Ce que change un oui: le taux augmente de 6 points. Pour un revenu imposable de 80'000 CHF, cela représente environ 240 CHF de plus par an. La commune peut lancer le chantier en 2027."
+       },
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       }
+      ],
+      "translated_dialogue": "Madame la secrétaire, diese Erhöhung um 6 Punkte stellt 240 CHF zusätzliche pro Jahr für ein Einkommen von 80'000 CHF dar, was kleine lokale Unternehmer wie mich schwächt."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_02",
+     "event_type": "mood_shift",
+     "message": "L'incertitude fiscale et les coûts de matériaux menacent la viabilité de mes projets de rénovation.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude fiscale et les coûts de matériaux menacent la viabilité de mes projets de rénovation.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre Meinung zu den langfristigen Auswirkungen auf Familien mit Kindern hören, besonders im Hinblick auf die 240 CHF zusätzliche Steuerbelastung pro Jahr.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre Meinung zu den langfristigen Auswirkungen auf Familien mit Kindern hören, besonders im Hinblick auf die 240 CHF zusätzliche Steuerbelastung pro Jahr.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Herr Girard, die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht. Ohne diese Erhöhung drohen Sparmassnahmen bei der Schule und den Werkhöfen, die langfristig die Lebensqualität gefährden würden.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#5"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#5",
+        "text": "4. Was ein Nein ändert: Der Steuerfuss bleibt 118 %. Das Defizit von 1.2 Millionen CHF bleibt. Der Gemeinderat müsste Sparaufträge von 400'000 CHF bei der Schule und 200'000 CHF bei den Werkhöfen vorschlagen."
+       }
+      ],
+      "translated_dialogue": "Herr Girard, l'augmentation fiscale prévue de 118 % à 124 % pèse lourdement sur les familles, en particulier celles avec des enfants, ce qui contredit la justice sociale. Sans cette augmentation, des mesures d'économies menacent l'école et les ateliers, qui mettraient en péril la qualité de vie à long terme."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_01",
+     "event_type": "mood_shift",
+     "message": "Die Sorge um die unverhältnismässige Belastung von Familien mit Kindern wächst, da die Zahlen aus P3 klar zeigen, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Sorge um die unverhältnismässige Belastung von Familien mit Kindern wächst, da die Zahlen aus P3 klar zeigen, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "chat",
+     "message": "Je vais exposer mes craintes au secrétaire communal sur l'impact direct de ce projet sur nos terres et nos coûts.",
+     "data": {
+      "event_type": "chat",
+      "message": "Je vais exposer mes craintes au secrétaire communal sur l'impact direct de ce projet sur nos terres et nos coûts.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Le crédit de 4,8 millions CHF pour l'école va faire grimper les prix des matériaux et nous laisser sans terres pour nos cultures. Comment comptez-vous compenser les agriculteurs qui perdront leurs champs?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "anxious",
+      "used_source_ids": [
+       "Author_notes_pasted_text#9",
+       "Author_notes_pasted_text#10",
+       "Author_notes_pasted_text#11"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#9",
+        "text": "Question votée: Acceptez-vous de porter le taux d'imposition de 118 % à 124 % de l'impôt simple et d'accorder un crédit de 4,8 millions CHF pour la construction du nouveau bâtiment scolaire de Linden-Village?"
+       },
+       {
+        "id": "Author_notes_pasted_text#10",
+        "text": "Explications du conseil communal: 1. Le taux d'imposition est resté à 118 % depuis 2019. Les comptes 2025 se soldent par un déficit de 1,2 million CHF. Sans mesure, la commune devrait réduire les provisions pour les routes et l'aide sociale"
+       },
+       {
+        "id": "Author_notes_pasted_text#11",
+        "text": "2. Le crédit scolaire de 4,8 millions CHF finance huit salles de classe, une salle de gymnastique et une structure d'accueil de jour. Les coûts de construction figurent au budget 2027. Un non reporterait le chantier d'au moins trois ans."
+       }
+      ],
+      "translated_dialogue": "Der Kredit von 4,8 Millionen CHF für die Schule wird die Materialpreise in die Höhe treiben und uns ohne Land für unsere Kulturen lassen. Wie beabsichtigen Sie, die Landwirte zu entschädigen, die ihre Felder verlieren?"
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_04",
+     "event_type": "mood_shift",
+     "message": "L'incertitude sur l'avenir de mon champ de seigle me rend plus inquiète chaque jour, car le projet d'école menace directement notre capacité à vivre de la terre.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "L'incertitude sur l'avenir de mon champ de seigle me rend plus inquiète chaque jour, car le projet d'école menace directement notre capacité à vivre de la terre.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "chat",
+     "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören, besonders im Hinblick auf die zusätzlichen Belastungen für den Einzelhandel.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören, besonders im Hinblick auf die zusätzlichen Belastungen für den Einzelhandel.",
+      "target_npc_id": "npc_01",
+      "dialogue": "Herr Gemeinderat, ich verstehe die Notwendigkeit des Schulhauskredits, doch die zusätzlichen Steuern treffen genau die kleinen Unternehmer wie mich. Können wir nicht zuerst die Preissteigerungen für Baumaterialien adressieren, bevor wir neue Schulbauten finanzieren?",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [
+       "Author_notes_pasted_text#1",
+       "Author_notes_pasted_text#6"
+      ],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [
+       {
+        "id": "Author_notes_pasted_text#1",
+        "text": "Abstimmungsfrage: Wollen Sie den Steuerfuss von 118 % auf 124 % der einfachen Steuer erhöhen und einen Kredit von 4.8 Millionen CHF für den Neubau des Schulhauses Linden-Dorf annehmen?"
+       },
+       {
+        "id": "Author_notes_pasted_text#6",
+        "text": "5. Kleine Läden an der Dorfstrasse rechnen mit leicht höherer Nachfrage, wenn die Tagesschule Personal bindet. Baupreise für Stahl und Beton sind im Voranschlag mit +8 % gegenüber 2024 angesetzt."
+       }
+      ]
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_03",
+     "event_type": "mood_shift",
+     "message": "Die Aussicht auf mehr Kunden durch die neue Schule gibt mir wieder Zuversicht, trotz der aktuellen Unsicherheiten.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Aussicht auf mehr Kunden durch die neue Schule gibt mir wieder Zuversicht, trotz der aktuellen Unsicherheiten.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "hopeful",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "chat",
+     "message": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+     "data": {
+      "event_type": "chat",
+      "message": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+      "target_npc_id": "npc_04",
+      "dialogue": "Céline, ich bin mir noch nicht sicher, wie ich über die Steuererhöhung entscheiden soll. Der neue Schulbau würde langfristig bessere Lernbedingungen schaffen und die Gemeindefinanzen stabilisieren, was die Steuerbelastung für Familien wie meine zukünftig entlasten könnte. Gleichzeitig belastet die geplante Erhöhung Familien mit angespannten Finanzen zusätzlich und gefährdet ihre Bildungschancen.",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "worried",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": [],
+      "translated_dialogue": "Céline, ich bin mir noch nicht sicher, wie ich über die Steuererhöhung entscheiden soll. Der neue Schulbau würde langfristig bessere Lernbedingungen schaffen und die Gemeindefinanzen stabilisieren, was die Steuerbelastung für Familien wie meine zukünftig entlasten könnte. Gleichzeitig belastet die geplante Erhöhung Familien mit angespannten Finanzen zusätzlich und gefährdet ihre Bildungschancen."
+     }
+    },
+    {
+     "round": 2,
+     "npc_id": "npc_05",
+     "event_type": "mood_shift",
+     "message": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+     "data": {
+      "event_type": "mood_shift",
+      "message": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+      "target_npc_id": "",
+      "dialogue": "",
+      "to_x": null,
+      "to_y": null,
+      "new_mood": "neutral",
+      "used_source_ids": [],
+      "grounded": true,
+      "invalid_cites": 0,
+      "sources": []
+     }
+    }
+   ],
+   "npcs": [
+    {
+     "name": "François Girard",
+     "gender": "nonbinary",
+     "mbti": "ISTP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "tenant",
+     "income_level": "high",
+     "political_leaning": 0.731,
+     "x": 8,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi à Fribourg, où mon père était électricien. Après la Matura, j’ai fait une Berufslehre en bâtiment, puis j’ai poursuivi des études à la Fachhochschule de Zurich en architecture. Je suis arrivé à Linden il y a cinq ans pour diriger un petit bureau spécialisé en rénovation énergétique. Mon travail sur l’école primaire neuve a été financé par un contrat de 4,8 millions de francs, ce qui a créé des emplois locaux. J’ai acheté un appartement en copropriété pour stabiliser mes charges, mais je reste critique face aux augmentations de 8 % des matériaux. Ma famille est petite, ma sœur travaille dans une petite épicerie du centre-ville. Je vois la hausse des impôts comme une contrainte nécessaire pour améliorer les infrastructures, mais je m’inquiète pour les petits commerçants qui ne peuvent pas absorber ces coûts supplémentaires.",
+     "expert_reflection": "Avec un MBTI ISTP, François privilégie l’action concrète et l’analyse factuelle, ce qui le rend efficace dans des rôles techniques mais peut le rendre perçu comme froid dans les débats émotionnels. Son revenu élevé et son intérêt pour l’urbanisme durable lui confèrent une légitimité qui masque une pensée radicale sur les subventions aux matériaux locaux, une position qui pourrait le placer en tension avec les artisans et les municipalités. Son discours rationnel masque une conviction controversée qu’il garde secrète, créant un écart entre son image publique de pragmatique et sa vision intérieure de réforme économique.",
+     "id": "npc_02",
+     "category": "tenant",
+     "profession": "architect",
+     "bio": "Après ma Matura, j’ai suivi une Berufslehre en construction avant d’intégrer une Fachhochschule pour devenir architecte. Je loue un appartement dans Linden depuis cinq ans, tout en travaillant sur des projets de rénovation scolaire et de construction de logements sociaux. Mon revenu élevé me permet d’investir dans des matériaux durables, mais je reste sensible aux hausses de prix qui touchent les petits entrepreneurs locaux.",
+     "persona": "François parle avec une précision technique et une retenue calculée, préférant les faits aux émotions. Son MBTI ISTP se traduit par une communication directe, parfois perçue comme distante, où chaque argument est pesé comme une pièce de construction avant d’être posée.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception, pas ajoutée en fin de projet.",
+      "Les augmentations d’impôts doivent être compensées par des services publics de qualité.",
+      "Le logement social est un droit, non une option."
+     ],
+     "controversial_ideas": [
+      "Je crois que les subventions aux matériaux locaux devraient être supprimées pour forcer l’innovation technologique, même si cela alourdit temporairement les coûts de construction."
+     ],
+     "interested_topics": [
+      "urbanisme durable",
+      "optimisation des coûts de construction",
+      "gestion des ressources publiques"
+     ],
+     "reputation": 0.63,
+     "stance": -0.3119,
+     "impact": "benefit",
+     "support_reason": "Le crédit de 4,8 millions CHF permettra la construction du nouveau bâtiment scolaire en 2027, ce qui stimulera l'économie locale et créera des emplois, tout en améliorant les infrastructures éducatives.",
+     "oppose_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "stance_reason": "L'augmentation du taux d'imposition de 6 points représente un coût supplémentaire de 240 CHF par an pour un revenu imposable de 80'000 CHF, ce qui pèse sur les petits entrepreneurs locaux comme moi.",
+     "perception": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets.",
+     "current_plan": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets."
+    },
+    {
+     "name": "Gemeinderat",
+     "category": "municipal_employee",
+     "role": "municipal_employee",
+     "gender": "unknown",
+     "bio": "Nach der Berufslehre als kaufmännische Angestellte habe ich 2008 die Matura gemacht und bin in die Gemeindeverwaltung eingetreten. Seit 2015 arbeite ich im Finanzteam, wo ich direkt mit den Haushaltsbudgets und Steuerbelastungen der Bürger konfrontiert werde. Meine Erfahrung zeigt, dass lokale Projekte wie die neue Schulbau-Aufgabe zwar Arbeitsplätze schaffen, aber die jährliche Steuerbelastung für Familien spürbar erhöhen.",
+     "persona": "Sie spricht präzise, sachlich und vermeidet emotionale Übertreibungen. Ihre Art wirkt kompetent, aber leicht distanziert, was Kollegen als effizient, aber manchmal unnahbar wahrnehmen. Da ihr MBTI unbekannt ist, lässt sich ihre Kommunikation als analytisch und strukturiert beschreiben, was sie in Verhandlungen stärkt, aber persönliche Bindungen erschwert.",
+     "mbti": "unknown",
+     "country": "Switzerland",
+     "profession": "Gemeinderatssekretärin (Stabsstelle Finanzen)",
+     "interested_topics": [
+      "Kommunale Haushaltsplanung",
+      "Steuergerechtigkeit",
+      "Jugendbildung und Schulbau"
+     ],
+     "income_level": "medium",
+     "political_leaning": -0.6285,
+     "lang": "de",
+     "x": 9,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "Ich bin in einem kleinen Dorf in der Nähe von Solothurn aufgewachsen, wo ich die Bedeutung einer stabilen Gemeindeverwaltung hautnah erlebt habe. Nach der Berufslehre habe ich die Matura gemacht und mich für die öffentliche Verwaltung entschieden, weil ich glaubte, hier einen echten Unterschied machen zu können. In meiner aktuellen Position im Finanzteam muss ich täglich die Zahlen hinter den Steuerbescheiden und den Investitionsbudgets sehen, was mich sehr sensibilisiert für die Belastungen der Bürger. Meine Familie unterstützt mich, aber ich muss oft erklären, warum wir höhere Steuern akzeptieren müssen, um neue Schulen zu bauen. Die aktuelle Politik über die Schulbau-Aufgabe macht mir Sorgen, weil die jährliche Belastung von 240 CHF für Familien spürbar ist, besonders für Alleinerziehende. Ich versuche, objektiv zu bleiben, aber ich kann nicht leugnen, dass ich die Steuererhöhung für gerecht halte, um die Zukunft unserer Gemeinde zu sichern.",
+     "expert_reflection": "Als Sozialpsychologin würde ich vermuten, dass Gemeinderat als analytisch und rationalisierend wahrgenommen wird, was ihr hilft, komplexe politische Entscheidungen zu kommunizieren, aber gleichzeitig ihre emotionale Nähe zu den Bürgern einschränkt. Ihr Geheimhalten einer kontroversen Meinung zeigt eine ausgeprägte Strategie der sozialen Anpassung, um Konflikte zu vermeiden, was langfristig zu innerer Spannung führen könnte. Die Kombination aus fachlicher Kompetenz und emotionaler Distanz macht sie zu einer effektiven Verhandlerin, aber auch zu einer Person, die Schwierigkeiten hat, authentische Empathie zu zeigen, wenn es um persönliche Belastungen geht.",
+     "id": "npc_01",
+     "beliefs": [
+      "Transparenz im Haushaltsmanagement ist essenziell für das Vertrauen der Bürger",
+      "Investitionen in Infrastruktur sollten langfristig die Lebensqualität erhöhen",
+      "Steuererleichterungen für Familien mit Kindern sind sozial gerecht"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhung für 80k-Einkommen-Empfänger gerechtfertigt ist, weil sie die Infrastrukturfinanzierung sichert, und hält diese Ansicht geheim, um nicht als unfreundlich zu gelten"
+     ],
+     "reputation": 0.547,
+     "stance": -0.6057,
+     "impact": "mixed",
+     "support_reason": "Investitionen in Infrastruktur wie das neue Schulhaus erhöhen langfristig die Lebensqualität und schaffen Arbeitsplätze, was für die Gemeindeentwicklung essenziell ist.",
+     "oppose_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "stance_reason": "Die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht.",
+     "perception": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird.",
+     "current_plan": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird."
+    },
+    {
+     "name": "Céline Bonnet",
+     "gender": "female",
+     "mbti": "INFP",
+     "country": "Switzerland",
+     "lang": "fr",
+     "role": "farmer",
+     "income_level": "low",
+     "political_leaning": -0.6325,
+     "x": 10,
+     "y": 6,
+     "mood": "worried",
+     "life_story": "J’ai grandi dans une petite maison en bois au bord du lac, où mon père m’a appris à observer les saisons et à respecter la terre. Après ma Matura, j’ai fait ma Berufslehre en agriculture à la Fachhochschule de Fribourg, où j’ai découvert les principes de la permaculture. De retour à Linden, j’ai repris la ferme familiale, qui n’emploie qu’un seul ouvrier saisonnier, et nous produisons des légumes pour les marchés locaux ainsi que du grain pour les boulangeries du village. Mon mari, agriculteur lui aussi, gère les machines, tandis que je m’occupe des plantations et des ventes directes aux habitants. Nous avons deux enfants qui ont quitté le nid, mais nous restons attachés à cette terre qui nous a vus grandir. Le projet d’école me préoccupe car il pourrait exproprier une partie de notre champ de seigle et augmenter les prix des engrais. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "expert_reflection": "En tant que psychologue sociale, on pourrait décrire Céline comme une personne profondément ancrée dans ses valeurs d’équilibre et de durabilité, typique d’un INFP. Son engagement pour l’environnement et sa volonté de participer aux décisions publiques révèlent une forte orientation morale et une empathie envers les autres résidents. Cependant, sa réticence à accepter des compromis pratiques, notamment sur le financement des infrastructures, pourrait la rendre perçue comme irréaliste par ses pairs, créant ainsi une tension entre son idéalisme et la réalité économique du village.",
+     "id": "npc_04",
+     "category": "farmer",
+     "profession": "ferme familiale à Linden",
+     "bio": "Après ma Matura en 1998, j’ai suivi une Berufslehre en agriculture à la Haute école spécialisée de Fribourg avant de reprendre la petite ferme familiale près de Linden. Aujourd’hui, je cultive légumes et céréales pour le marché local, tout en essayant de réduire mon empreinte carbone grâce à des rotations biodynamiques. Le projet de construction d’une nouvelle école me préoccupe, car il pourrait augmenter les prix des matériaux et réduire les terres disponibles pour les agriculteurs. Je participe aux réunions du Gemeinderat quand je peux, mais mon temps est souvent pris par les semailles et les récoltes.",
+     "persona": "Céline parle doucement, avec une voix posée et des gestes mesurés, comme si elle cherchait toujours l’équilibre entre les besoins de la communauté et ceux de sa terre. Son MBTI INFP se traduit par une communication empathique et une réflexion profonde, mais elle peut paraître trop idéaliste aux yeux de ses collègues plus pragmatiques, ce qui lui vaut parfois le surnom de « rêveuse » dans le village.",
+     "beliefs": [
+      "La durabilité doit être intégrée dès la conception des projets publics, pas ajoutée en postproduction.",
+      "Les agriculteurs locaux doivent être consultés avant toute décision d’aménagement du territoire.",
+      "Le bien-être collectif prime sur la croissance économique rapide."
+     ],
+     "controversial_ideas": [
+      "Je crois que le projet d’école devrait inclure des toits végétalisés et des panneaux solaires dès le départ, même si cela augmente le budget initial, car cela réduirait les coûts énergétiques à long terme."
+     ],
+     "interested_topics": [
+      "agriculture biodynamique",
+      "politique locale et participation citoyenne",
+      "énergie renouvelable dans les bâtiments publics"
+     ],
+     "reputation": 0.488,
+     "stance": -0.562,
+     "impact": "harm",
+     "support_reason": "Aucun argument favorable n'est identifiable pour ma ferme familiale concernant l'augmentation du taux d'imposition et le crédit pour l'école.",
+     "oppose_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "stance_reason": "L'augmentation du taux d'imposition et le crédit pour l'école pourraient augmenter les coûts de matériaux et réduire les terres agricoles disponibles pour les agriculteurs locaux.",
+     "perception": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser.",
+     "current_plan": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser."
+    },
+    {
+     "name": "Sabine Graf",
+     "gender": "female",
+     "mbti": "INTP",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "shopkeeper",
+     "income_level": "low",
+     "political_leaning": -0.3006,
+     "x": 11,
+     "y": 6,
+     "mood": "hopeful",
+     "life_story": "Ich habe meine Matura in der Stadt gemacht, danach eine dreijährige Berufslehre als Detailhandelsfachfrau absolviert und bin dann nach Linden gezogen, weil ich hier eine Chance sah, unabhängig zu sein. Seit fünf Jahren führe ich diesen kleinen Kiosk an der Hauptstrasse, verkaufe Snacks, Zeitungen und gelegentlich Blumen für die Nachbarn. Die Mieten sind in den letzten Jahren stark gestiegen, und die neuen Bauprojekte bringen zwar Arbeitsplätze, aber auch mehr Kunden, die sich teure Lösungen leisten können. Meine beiden Kinder besuchen die lokale Schule, und ich hoffe, dass sie später hier bleiben und nicht wegziehen müssen. Die drohenden Preissteigerungen für Baumaterialien machen mir Sorgen, weil ich kaum noch Gewinnmargen habe, und ich frage mich, ob die Gemeinde wirklich versteht, wie es sich anfühlt, jeden Tag gegen die Uhr zu arbeiten, um die Rechnungen zu bezahlen.",
+     "expert_reflection": "Als INTP mit einem ausgeprägten analytischen Denken neigt Sabine Graf dazu, komplexe politische Entscheidungen in nüchterne Daten und Kosten-Nutzen-Bilanzen zu zerlegen, was ihr eine scheinbare Objektivität verleiht, die jedoch ihre persönliche Betroffenheit maskiert. Ihre zurückhaltende Kommunikation und die Tendenz, Emotionen zu unterdrücken, können von anderen als Kühle oder Distanz interpretiert werden, was ihre kontroversen, aber rational begründeten Überzeugungen umso gefährlicher macht, da sie sich in der öffentlichen Debatte schwerer durchsetzen müssen. Die Spannung zwischen ihrer rationalen Analyse und der emotionalen Realität des Alltags könnte zu einer inneren Konfliktdynamik führen, die sich in einer zunehmenden Isolation von der Gemeinschaft oder in einer plötzlichen, leidenschaftlichen Intervention äussert, sobald sie das Gefühl hat, dass ihre Daten nicht mehr gehört werden.",
+     "id": "npc_03",
+     "category": "shopkeeper",
+     "profession": "Kioskbetreiberin (Linden)",
+     "bio": "Nach der Berufslehre als Detailhandelsfachfrau zog ich vor Jahren nach Linden, um hier meinen eigenen kleinen Kiosk zu führen. Die steigenden Miet- und Materialkosten durch die aktuellen Bauprojekte belasten meine Einnahmen, während ich gleichzeitig hoffe, vom wachsenden Schulpersonal profitieren zu können. Als Mutter von zwei Kindern muss ich jeden Franken genau planen, und die drohenden Preissteigerungen für Baumaterialien machen mich nervös.",
+     "persona": "Sabine Graf wirkt zurückhaltend und analytisch, spricht in präzisen, sachlichen Sätzen und vermeidet überflüssige Emotionen. Ihre ruhige, fast introvertierte Art lässt sie wie eine INTP erscheinen, die lieber Daten als Menschenmengen analysiert, und sie kommt oft als unnahbar oder gar unhöflich daher, wenn sie nicht die Zeit hat, sich auf jemanden einzulassen.",
+     "beliefs": [
+      "Gerechtigkeit im Zugang zu erschwinglichen Wohnraum und Dienstleistungen ist essenziell für eine funktionierende Gemeinde",
+      "Die Gemeinde sollte Priorität auf soziale Infrastruktur vor rein wirtschaftlichen Bauprojekten legen",
+      "Kleinunternehmer brauchen direkte Unterstützung statt bürokratischer Hürden"
+     ],
+     "controversial_ideas": [
+      "Sie glaubt privat, dass die Steuererhöhungen für Haushalte über 80'000 CHF jährlich gezielt gegen die Mittelschicht gerichtet sind, um die reichen Investoren zu schützen, und hält dies für eine versteckte Form der sozialen Ungleichheit."
+     ],
+     "interested_topics": [
+      "Preisentwicklung von Konsumgütern",
+      "Gemeindehaushaltsplanung und Transparenz",
+      "Jugendbildung und lokale Arbeitsmarktchancen"
+     ],
+     "reputation": 0.488,
+     "stance": 0.294,
+     "impact": "benefit",
+     "support_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "oppose_reason": "Die Steuererhöhung belastet meine Einnahmen zusätzlich, während ich ohnehin mit steigenden Kosten kämpfe, und bietet keine direkte Unterstützung für Kleinunternehmer wie mich.",
+     "stance_reason": "Der Kredit für das neue Schulhaus Linden-Dorf wird die Nachfrage nach Dienstleistungen und Konsumgütern in der Gemeinde erhöhen, was meinem Kioskbetrieb zugutekommen könnte.",
+     "perception": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+     "current_plan": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken."
+    },
+    {
+     "name": "Stefan Müller",
+     "gender": "male",
+     "mbti": "ESFJ",
+     "country": "Switzerland",
+     "lang": "de",
+     "role": "teacher",
+     "income_level": "high",
+     "political_leaning": 0.3872,
+     "x": 12,
+     "y": 6,
+     "mood": "neutral",
+     "life_story": "Ich bin in Bern aufgewachsen, habe dort die Matura gemacht und eine Berufslehre als Elektriker begonnen, bevor ich mich für das Lehramt entschieden habe. Nach dem Studium habe ich in verschiedenen Gemeinden gearbeitet, bis ich vor 15 Jahren nach Linden gezogen bin, wo ich eine Familie gegründet habe. Meine Frau arbeitet als Buchhalterin im Rathaus, und wir haben zwei Kinder, die heute meine Klassen besuchen. Die neue Schulbauinvestition hat unsere Nachbarschaft verändert – viele Eltern freuen sich über die besseren Räume, doch die jährliche Steuererhöhung von rund 240 CHF belastet uns spürbar. Ich sehe die Herausforderungen der steigenden Baumaterialienkosten und die Unsicherheit, wie die Gemeinde die Kosten verteilt, täglich in den Gesprächen mit Eltern und im Schulalltag.",
+     "expert_reflection": "Als ESFJ wird Stefan Müller wahrscheinlich eine stark normkonforme, sozial orientierte Haltung zeigen, die auf zwischenmenschlicher Harmonie und kollektiver Verantwortung basiert. Seine hohe Sensibilität für die Bedürfnisse anderer, gepaart mit seiner ausgeprägten Pflichtbewusstsein, führt dazu, dass er eher Kompromisslösungen sucht und Konflikte vermeidet. Dennoch könnte sein inneres, unbegründetes Misstrauen gegenüber der Steuerpolitik – die er privat als ungerecht empfindet – zu einer Spannung zwischen seiner öffentlichen Rolle als verlässlicher Lehrer und seiner privaten Überzeugung führen, was ihn in sozialen Situationen vorsichtig und teilweise ambivalent wirken lässt.",
+     "id": "npc_05",
+     "category": "teacher",
+     "profession": "Grundschullehrer",
+     "bio": "Nach meiner Berufslehre als Elektriker habe ich die Fachhochschule für Pädagogik besucht und bin seit 15 Jahren in Linden tätig. Meine Klassen umfassen Kinder aus Familien, die von der neuen Schulbauinvestition profitieren, und ich beobachte täglich die Auswirkungen der Haushaltsteuer auf die Eltern. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+     "persona": "Stefan wirkt stets höflich, strukturiert und orientiert sich an sozialen Normen; seine ESFJ-Art zeigt sich in warmem Smalltalk und kollegialer Unterstützung, doch er spricht mit einer gewissen Autorität, die seine pädagogische Erfahrung unterstreicht und ihm bei der Vermittlung von Konsenslösungen Vorteile verschafft.",
+     "beliefs": [
+      "Familien müssen durch gezielte Sozialleistungen unterstützt werden, um Bildungschancen zu sichern",
+      "Die Gemeinde muss langfristig auf nachhaltige Baukosten achten, um die Steuerbelastung für Familien zu stabilisieren",
+      "Gemeinschaftliche Werte wie Verantwortung und Teamarbeit sind essenziell für die Entwicklung der Kinder"
+     ],
+     "controversial_ideas": [
+      "Er glaubt privat, dass die Steuererhöhung für Haushalte mit Kindern eine ungerechte Belastung darstellt und dass die Gemeinde stattdessen Subventionen für Familien direkt einsetzen sollte, anstatt sie in den Schulbau zu stecken, was er jedoch nicht öffentlich äussert"
+     ],
+     "interested_topics": [
+      "Schulfinanzierung",
+      "Jugendförderung",
+      "Gemeindehaushaltsplanung"
+     ],
+     "reputation": 0.63,
+     "stance": -0.124,
+     "impact": "benefit",
+     "support_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet.",
+     "oppose_reason": "Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "stance_reason": "Der Neubau des Schulhauses Linden-Dorf schafft langfristig bessere Lernbedingungen für die Kinder und stabilisiert die Gemeindefinanzen, was die Steuerbelastung für Familien wie meine zukünftig entlastet. / Die geplante Steuererhöhung auf 124 % belastet Familien mit bereits angespannten Finanzen durch steigende Baumaterialienkosten zusätzlich und gefährdet ihre Bildungschancen.",
+     "perception": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+     "current_plan": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen."
+    }
+   ],
+   "influence": [
+    {
+     "speaker_id": "npc_02",
+     "target_id": "npc_01",
+     "influence": 0.4,
+     "behavior": "compromise",
+     "political_delta": 0.0854,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_01",
+     "target_id": "npc_04",
+     "influence": 0.4306,
+     "behavior": "compromise",
+     "political_delta": -0.065,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_04",
+     "target_id": "npc_01",
+     "influence": 0.421,
+     "behavior": "compromise",
+     "political_delta": -0.1007,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_03",
+     "target_id": "npc_01",
+     "influence": 0.421,
+     "behavior": "compromise",
+     "political_delta": -0.0437,
+     "mood_delta": 0.0
+    },
+    {
+     "speaker_id": "npc_05",
+     "target_id": "npc_04",
+     "influence": 0.416,
+     "behavior": "compromise",
+     "political_delta": 0.0508,
+     "mood_delta": 0.0
+    }
+   ],
+   "indicators": {
+    "consumer_confidence": 43.0,
+    "business_climate": 75.0,
+    "worker_welfare": 30.0,
+    "price_pressure": 0.0,
+    "social_unrest_index": 0.0,
+    "policy_approval": 30.0,
+    "stance_for": 1.0,
+    "stance_against": 3.0,
+    "stance_undecided": 1.0,
+    "stance_mean": -0.262,
+    "stance_spread": 0.328
+   }
+  }
+ ],
+ "report": {
+  "headline": "Steuerfuss-Erhöhung und Schulhauskredit belasten Haushalte und lokale Geschäfte",
+  "summary": "Die geplante Erhöhung des Steuerfusses und der Schulhauskredit würden die jährlichen Steuerlasten für Haushalte spürbar erhöhen, während lokale Bauunternehmen kurzfristig von einem Auftrag profitieren. Gleichzeitig könnten steigende Baustoffpreise und die Unsicherheit über die Finanzierung langfristige Investitionen bremsen. Dieser Bericht gibt keine Abstimmungsempfehlung ab.",
+  "livelihood_impact": "Haushalte mit einem Einkommen von 80'000 CHF würden künftig etwa 240 CHF mehr Steuern zahlen, was den verfügbaren Haushaltsbudget für Konsum und Sparen reduziert. Kleine Geschäfte im Einzelhandel könnten von einer möglichen zusätzlichen Tagesschule profitieren, während Bauunternehmen durch den Schulhauskredit kurzfristig Aufträge erhalten, was die Preise für Baumaterialien jedoch um bis zu 8 % steigen lässt.",
+  "top_impacts": [
+   {
+    "title": "Steuerlast für Haushalte",
+    "description": "Die jährliche Steuerbelastung steigt für viele Haushalte spürbar, was den Konsum und die Sparquote dämpft.",
+    "direction": "negative",
+    "severity": "medium"
+   },
+   {
+    "title": "Kurzfristige Auftragsflut für Bauunternehmen",
+    "description": "Der Schulhauskredit bringt lokalen Bauunternehmen einen Auftrag von 4,8 Millionen CHF, was die Auftragslage kurzfristig verbessert.",
+    "direction": "positive",
+    "severity": "medium"
+   }
+  ],
+  "key_stats": [
+   {
+    "label": "Rounds Simulated",
+    "value": "3",
+    "trend": "flat"
+   },
+   {
+    "label": "Residents Tracked",
+    "value": "5",
+    "trend": "flat"
+   },
+   {
+    "label": "Dominant Mood",
+    "value": "Worried (60%)",
+    "trend": "mixed"
+   },
+   {
+    "label": "Residents Under Strain",
+    "value": "60%",
+    "trend": "up"
+   },
+   {
+    "label": "Residents Feeling Positive",
+    "value": "20%",
+    "trend": "up"
+   },
+   {
+    "label": "Price Change Events",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Protests Logged",
+    "value": "0",
+    "trend": "flat"
+   },
+   {
+    "label": "Layoff / Closure Signals",
+    "value": "0",
+    "trend": "flat"
+   }
+  ],
+  "pie_chart": {
+   "title": "Final Town Sentiment",
+   "slices": [
+    {
+     "label": "Worried",
+     "value": 3
+    },
+    {
+     "label": "Neutral",
+     "value": 1
+    },
+    {
+     "label": "Hopeful",
+     "value": 1
+    }
+   ]
+  },
+  "bar_chart": {
+   "title": "Pressure Signals During The Run",
+   "bars": [
+    {
+     "label": "Mood Shifts",
+     "value": 14
+    },
+    {
+     "label": "Closure Signals",
+     "value": 0
+    },
+    {
+     "label": "Layoff Signals",
+     "value": 0
+    },
+    {
+     "label": "Price Changes",
+     "value": 0
+    }
+   ]
+  },
+  "notable_events": [
+   "Die Unsicherheit über die langfristige Finanzierung führt zu besorgtem Verhalten bei Renovierungsprojekten.",
+   "Lokale Geschäfte diskutieren mögliche Preissteigerungen für Baumaterialien."
+  ],
+  "stance_summary": {
+   "initial": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1,
+    "mean": -0.135,
+    "spread": 0.227,
+    "entropy_bits": 1.371,
+    "n": 5
+   },
+   "final": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1,
+    "mean": -0.262,
+    "spread": 0.328,
+    "entropy_bits": 1.371,
+    "n": 5
+   }
+  }
+ },
+ "memories": {
+  "npc_02": [
+   {
+    "id": "npc_02_mem_39f803",
+    "npc_id": "npc_02",
+    "description": "Cette mesure semble déséquilibrée, car elle alourdit la charge fiscale des contribuables tout en augmentant les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_765785",
+    "npc_id": "npc_02",
+    "description": "Cette mesure semble déséquilibrée, car elle alourdit la charge fiscale des contribuables tout en augmentant les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_a36833",
+    "npc_id": "npc_02",
+    "description": "Je souhaite comprendre comment cette hausse sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_589e07",
+    "npc_id": "npc_02",
+    "description": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_9774ad",
+    "npc_id": "npc_02",
+    "description": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui menace la stabilité financière des petits entrepreneurs locaux.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_48b8b6",
+    "npc_id": "npc_02",
+    "description": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui menace la stabilité financière des petits entrepreneurs locaux.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ab9c73",
+    "npc_id": "npc_02",
+    "description": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_c0f556",
+    "npc_id": "npc_02",
+    "description": "L'incertitude sur l'avenir fiscal et les coûts de construction me rend anxieux quant à la viabilité de mes projets de rénovation.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_f21e09",
+    "npc_id": "npc_02",
+    "description": "npc_01 said to me: Herr Girard, die 240 CHF zusätzliche Steuerbelastung pro Jahr für Familien mit Kindern ist unverhältnismässig. Diese Summe trifft genau die Haushalte, die am wenigsten Spielraum für zusätzliche Ausgaben haben. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_ff51cc",
+    "npc_id": "npc_02",
+    "description": "The policy's dual impact of increasing both tax burdens and material costs creates a precarious environment for small entrepreneurs like myself, threatening the very foundation of our local economic stability and forcing difficult choices between quality and affordability.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_39f803",
+     "npc_02_mem_765785",
+     "npc_02_mem_a36833",
+     "npc_02_mem_589e07",
+     "npc_02_mem_9774ad",
+     "npc_02_mem_48b8b6",
+     "npc_02_mem_ab9c73",
+     "npc_02_mem_c0f556",
+     "npc_02_mem_f21e09"
+    ]
+   },
+   {
+    "id": "npc_02_mem_399191",
+    "npc_id": "npc_02",
+    "description": "Observing the community's reaction, particularly the concern from npc_01 about the disproportionate burden on families with children, has deepened my understanding of how fiscal measures can directly target the most vulnerable households, highlighting a need for policies that consider the real-life financial constraints of families rather than abstract economic models.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_39f803",
+     "npc_02_mem_765785",
+     "npc_02_mem_a36833",
+     "npc_02_mem_589e07",
+     "npc_02_mem_9774ad",
+     "npc_02_mem_48b8b6",
+     "npc_02_mem_ab9c73",
+     "npc_02_mem_c0f556",
+     "npc_02_mem_f21e09"
+    ]
+   },
+   {
+    "id": "npc_02_mem_023a61",
+    "npc_id": "npc_02",
+    "description": "My initial anxiety has evolved into a more critical stance, recognizing that the policy's failure to address rising material costs with corresponding public service improvements not only jeopardizes my renovation projects but also signals a broader systemic issue where economic pressures are being shifted onto the private sector without adequate support.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_02_mem_39f803",
+     "npc_02_mem_765785",
+     "npc_02_mem_a36833",
+     "npc_02_mem_589e07",
+     "npc_02_mem_9774ad",
+     "npc_02_mem_48b8b6",
+     "npc_02_mem_ab9c73",
+     "npc_02_mem_c0f556",
+     "npc_02_mem_f21e09"
+    ]
+   },
+   {
+    "id": "npc_02_mem_7b64a4",
+    "npc_id": "npc_02",
+    "description": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_74eee2",
+    "npc_id": "npc_02",
+    "description": "Cette mesure déséquilibre la charge fiscale et les coûts de matériaux, ce qui fragilise les petits entrepreneurs locaux et menace la stabilité financière de mes projets.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_abeb2b",
+    "npc_id": "npc_02",
+    "description": "Je souhaite comprendre comment cette augmentation sera compensée par des services publics de qualité, car les coûts de matériaux augmentent déjà de [n] %.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_02_mem_e7f1b0",
+    "npc_id": "npc_02",
+    "description": "L'incertitude fiscale et les coûts de matériaux menacent la viabilité de mes projets de rénovation.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_01": [
+   {
+    "id": "npc_01_mem_0a43c9",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung verbreitet sich schnell, und ich spüre die Sorge der Bürger, besonders der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden könnte.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_3c9399",
+    "npc_id": "npc_01",
+    "description": "Die Nachricht über die Steuererhöhung verbreitet sich schnell, und ich spüre die Sorge der Bürger, besonders der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden könnte.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_ca6c1a",
+    "npc_id": "npc_01",
+    "description": "Ich möchte Ihre Perspektive hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern unverhältnismässig ist.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_01b4f2",
+    "npc_id": "npc_01",
+    "description": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_a1fdc2",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Madame la secrétaire, l'augmentation de 6 points du taux d'imposition représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui pèse directement sur les petits entrepreneurs locaux comme moi.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_0599af",
+    "npc_id": "npc_01",
+    "description": "npc_04 said to me: Madame la secrétaire, je ne peux pas accepter cette hausse d'impôt pour financer une école qui va nous priver de terres et faire grimper les prix des matériaux. Les agriculteurs locaux ne doivent pas payer pour des constructions qui détruisent notre sol.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_3a5773",
+    "npc_id": "npc_01",
+    "description": "npc_03 said to me: Herr Gemeinderat, ich verstehe die Bedenken bezüglich der Steuerbelastung, doch der Kredit für das neue Schulhaus Linden-Dorf wird die lokale Nachfrage nach Dienstleistungen und Konsumgütern deutlich steigern. Meine Einnahmen könnten davon profitieren, und die Investition in soziale Infrastruktur ist langfristig essenziell für eine lebenswerte Gemeinde.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_b53b97",
+    "npc_id": "npc_01",
+    "description": "Die Steuererhöhung trifft besonders Familien mit Kindern und kleine Unternehmer hart, was die finanzielle Belastung in einer bereits angespannten Zeit dramatisch erhöht und die Angst vor langfristigen Sparmaßnahmen schürt.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_0a43c9",
+     "npc_01_mem_3c9399",
+     "npc_01_mem_ca6c1a",
+     "npc_01_mem_01b4f2",
+     "npc_01_mem_a1fdc2",
+     "npc_01_mem_0599af",
+     "npc_01_mem_3a5773"
+    ]
+   },
+   {
+    "id": "npc_01_mem_e27509",
+    "npc_id": "npc_01",
+    "description": "Die Reaktionen zeigen, dass die Gemeinde tief gespalten ist: Während einige die Investition in soziale Infrastruktur als essenziell für die Lebensqualität sehen, fürchten andere die wirtschaftlichen Folgen und die Zerstörung von landwirtschaftlichem Boden durch neue Bauprojekte.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_0a43c9",
+     "npc_01_mem_3c9399",
+     "npc_01_mem_ca6c1a",
+     "npc_01_mem_01b4f2",
+     "npc_01_mem_a1fdc2",
+     "npc_01_mem_0599af",
+     "npc_01_mem_3a5773"
+    ]
+   },
+   {
+    "id": "npc_01_mem_00cac0",
+    "npc_id": "npc_01",
+    "description": "Meine anfängliche Besorgnis über die unverhältnismäßige Belastung von Familien hat sich in ein tieferes Verständnis für die unterschiedlichen Perspektiven entwickelt – von der Notwendigkeit sozialer Investitionen bis hin zum Schutz lokaler Wirtschaftszweige und des Bodens.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_01_mem_0a43c9",
+     "npc_01_mem_3c9399",
+     "npc_01_mem_ca6c1a",
+     "npc_01_mem_01b4f2",
+     "npc_01_mem_a1fdc2",
+     "npc_01_mem_0599af",
+     "npc_01_mem_3a5773"
+    ]
+   },
+   {
+    "id": "npc_01_mem_831675",
+    "npc_id": "npc_01",
+    "description": "Die Sorge der Bürger wächst, insbesondere der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde. Die Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_95b661",
+    "npc_id": "npc_01",
+    "description": "Die Sorge der Bürger wächst, insbesondere der Familien mit Kindern, die bereits unter der finanziellen Belastung leiden. Die Zahlen aus P3 zeigen klar, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird, was die langfristige Zukunft der Gemeinde gefährden würde. Die Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_ac9658",
+    "npc_id": "npc_01",
+    "description": "Ich möchte Ihre technische Einschätzung hören, aber ich muss betonen, dass die Belastung von 240 CHF pro Jahr für Familien mit Kindern sozial ungerecht ist.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_995462",
+    "npc_id": "npc_01",
+    "description": "Ich fordere Sie auf, die langfristigen wirtschaftlichen Folgen für unsere lokale Landwirtschaft zu bedenken, bevor wir weitere Steuern erhöhen.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_78ea3a",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Madame la secrétaire, cette hausse de 6 points sur le taux d'imposition représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui fragilise les petits entrepreneurs locaux comme moi.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_fba9f3",
+    "npc_id": "npc_01",
+    "description": "npc_04 said to me: Madame la secrétaire, je ne peux pas accepter cette hausse d'impôt qui menace nos champs et notre budget. Sans cette taxe, nous devrions réduire les routes et l'aide sociale, mais l'école nous prend la terre et les matériaux s'emballent.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_44a2a7",
+    "npc_id": "npc_01",
+    "description": "npc_03 said to me: Herr Gemeinderat, ich habe die Vorlage P3 studiert und die Berechnung im Beispiel P2 übernommen. Die zusätzliche Nachfrage nach Konsumgütern durch das neue Schulhaus könnte meinen Kioskbetrieb stabilisieren, auch wenn die Materialkosten steigen. Glauben Sie, dass die Steuererhöhung gerechtfertigt ist, wenn die Infrastruktur langfristig die Gemeinde stärkt?",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_662b34",
+    "npc_id": "npc_01",
+    "description": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_f1ced7",
+    "npc_id": "npc_01",
+    "description": "Die Unsicherheit über die langfristigen Auswirkungen auf Familien mit Kindern macht mich besorgt. Die geplante Steuererhöhung von 118 % auf 124 % belastet spürbar und widerspricht der sozialen Gerechtigkeit, was die Stimmung in der Gemeinde weiter polarisieren wird.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_c0a4c3",
+    "npc_id": "npc_01",
+    "description": "Ich möchte Ihre Meinung zu den langfristigen Auswirkungen auf Familien mit Kindern hören, besonders im Hinblick auf die 240 CHF zusätzliche Steuerbelastung pro Jahr.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_8d724e",
+    "npc_id": "npc_01",
+    "description": "Die Sorge um die unverhältnismässige Belastung von Familien mit Kindern wächst, da die Zahlen aus P3 klar zeigen, dass Sparmassnahmen folgen würden, wenn die Erhöhung abgelehnt wird.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_63ee40",
+    "npc_id": "npc_01",
+    "description": "npc_02 said to me: Madame la secrétaire, cette hausse de 6 points représente 240 CHF supplémentaires par an pour un revenu de 80'000 CHF, ce qui fragilise les petits entrepreneurs locaux comme moi.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_4ee40e",
+    "npc_id": "npc_01",
+    "description": "npc_04 said to me: Le crédit de 4,8 millions CHF pour l'école va faire grimper les prix des matériaux et nous laisser sans terres pour nos cultures. Comment comptez-vous compenser les agriculteurs qui perdront leurs champs?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_01_mem_8b81fa",
+    "npc_id": "npc_01",
+    "description": "npc_03 said to me: Herr Gemeinderat, ich verstehe die Notwendigkeit des Schulhauskredits, doch die zusätzlichen Steuern treffen genau die kleinen Unternehmer wie mich. Können wir nicht zuerst die Preissteigerungen für Baumaterialien adressieren, bevor wir neue Schulbauten finanzieren?",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_04": [
+   {
+    "id": "npc_04_mem_841617",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école menace directement notre capacité à cultiver et à vivre de la terre, et je ne peux pas rester passive face à cette décision qui va tout bouleverser.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_bc5766",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école menace directement notre capacité à cultiver et à vivre de la terre, et je ne peux pas rester passive face à cette décision qui va tout bouleverser.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_db1efb",
+    "npc_id": "npc_04",
+    "description": "Je vais m'entretenir avec la secrétaire financière pour exprimer mon opposition à cette mesure qui menace notre agriculture.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_0ea22d",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir de nos champs me rend anxieuse quant aux récoltes à venir.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_dd4110",
+    "npc_id": "npc_04",
+    "description": "npc_01 said to me: Frau Bonnet, ich verstehe Ihre Sorge um die Familie, aber die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht. Ohne diese Erhöhung müssten wir wichtige Investitionen kürzen, die langfristig die Lebensqualität erhöhen würden.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_45e82f",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Ich bin noch nicht entschieden, weil die Vorteile für die Kinder und die langfristige Finanzstabilität der Gemeinde wichtig sind, aber die zusätzliche Steuerbelastung für Familien mit angespannten Finanzen belastet mich sehr.",
+    "round_created": 0,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_9a7e78",
+    "npc_id": "npc_04",
+    "description": "The policy's impact on our family farm is not just economic but deeply personal, as it threatens the very foundation of our livelihood and the future of our children, making me realize how intertwined our agricultural identity is with our family's survival.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_841617",
+     "npc_04_mem_bc5766",
+     "npc_04_mem_db1efb",
+     "npc_04_mem_0ea22d",
+     "npc_04_mem_dd4110",
+     "npc_04_mem_45e82f"
+    ]
+   },
+   {
+    "id": "npc_04_mem_4ffbbf",
+    "npc_id": "npc_04",
+    "description": "Through conversations with others, I've learned that while some see the policy as a necessary investment in long-term community stability, many are burdened by the immediate financial strain it imposes, revealing a complex web of priorities where social justice and fiscal responsibility are in direct conflict for families like mine.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_841617",
+     "npc_04_mem_bc5766",
+     "npc_04_mem_db1efb",
+     "npc_04_mem_0ea22d",
+     "npc_04_mem_dd4110",
+     "npc_04_mem_45e82f"
+    ]
+   },
+   {
+    "id": "npc_04_mem_729d5d",
+    "npc_id": "npc_04",
+    "description": "My initial opposition has evolved into a nuanced understanding of the trade-offs involved, where the anxiety over uncertain harvests and the weight of increased taxes have tempered my stance, leading me to seek common ground rather than outright rejection, recognizing that the policy's effects are felt differently across the community.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_04_mem_841617",
+     "npc_04_mem_bc5766",
+     "npc_04_mem_db1efb",
+     "npc_04_mem_0ea22d",
+     "npc_04_mem_dd4110",
+     "npc_04_mem_45e82f"
+    ]
+   },
+   {
+    "id": "npc_04_mem_45ee96",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_cff14c",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_2a0593",
+    "npc_id": "npc_04",
+    "description": "Je vais exposer mon opposition lors de la prochaine séance du conseil communal.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_d21e29",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir de nos terres me rend plus inquiète chaque jour.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_2fcf7a",
+    "npc_id": "npc_04",
+    "description": "npc_01 said to me: Frau Bonnet, die geplante Steuererhöhung dient nicht dem Schutz unserer landwirtschaftlichen Betriebe, sondern belastet sie zusätzlich. Die 240 CHF mehr Steuern pro Jahr treffen genau die Familien, die bereits unter der finanziellen Belastung leiden. Eine Investition in eine Schule, die unseren Boden zerstört und Materialpreise in die Höhe treibt, ist keine nachhaltige Lösung für unsere Gemeinde.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_82df92",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Céline, ich bin mir noch nicht sicher, wie ich über die neue Steuer und den Schulbau entscheiden soll. Der Neubau würde langfristig bessere Räume für die Kinder schaffen und die Gemeindefinanzen stabilisieren, doch die zusätzliche Steuerbelastung belastet Familien, die ohnehin mit steigenden Baumaterialienkosten kämpfen.",
+    "round_created": 1,
+    "round_last_accessed": 1,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_b34d13",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_b9f6cc",
+    "npc_id": "npc_04",
+    "description": "Le projet d'école avance et les prix des matériaux grimpent, tandis que mon champ de seigle pourrait disparaître. Je sens une pression grandissante sur les agriculteurs et je ne peux plus rester passive face à cette décision qui va tout bouleverser.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_1e81f9",
+    "npc_id": "npc_04",
+    "description": "Je vais exposer mes craintes au secrétaire communal sur l'impact direct de ce projet sur nos terres et nos coûts.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_496aef",
+    "npc_id": "npc_04",
+    "description": "L'incertitude sur l'avenir de mon champ de seigle me rend plus inquiète chaque jour, car le projet d'école menace directement notre capacité à vivre de la terre.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_8d372b",
+    "npc_id": "npc_04",
+    "description": "npc_01 said to me: Herr Girard, die geplante Steuererhöhung von 118 % auf 124 % belastet Familien spürbar, insbesondere solche mit Kindern, was der sozialen Gerechtigkeit widerspricht. Ohne diese Erhöhung drohen Sparmassnahmen bei der Schule und den Werkhöfen, die langfristig die Lebensqualität gefährden würden.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_04_mem_1223d9",
+    "npc_id": "npc_04",
+    "description": "npc_05 said to me: Céline, ich bin mir noch nicht sicher, wie ich über die Steuererhöhung entscheiden soll. Der neue Schulbau würde langfristig bessere Lernbedingungen schaffen und die Gemeindefinanzen stabilisieren, was die Steuerbelastung für Familien wie meine zukünftig entlasten könnte. Gleichzeitig belastet die geplante Erhöhung Familien mit angespannten Finanzen zusätzlich und gefährdet ihre Bildungschancen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_03": [
+   {
+    "id": "npc_03_mem_ae340c",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_8f87cf",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_de12c7",
+    "npc_id": "npc_03",
+    "description": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_620fc3",
+    "npc_id": "npc_03",
+    "description": "Ich muss die Fakten nüchtern betrachten, um die richtige Entscheidung für meine Familie und meinen Kiosk zu treffen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_f5ceb7",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_f99bfd",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_756d4b",
+    "npc_id": "npc_03",
+    "description": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_f80253",
+    "npc_id": "npc_03",
+    "description": "Die Unsicherheit über die Materialkosten lässt mich besorgt zurückblicken, doch die erwartete Nachfrage gibt mir einen kleinen Hoffnungsschimmer.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_e45e52",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken. Ich habe gelernt, dass wirtschaftliche Unsicherheiten durch politische Entscheidungen meine Familie und meinen Kiosk direkt betreffen, und dass die langfristigen Vorteile der Infrastrukturinvestitionen trotz kurzfristiger Kostensteigerungen eine gewisse Hoffnung bieten.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ae340c",
+     "npc_03_mem_8f87cf",
+     "npc_03_mem_de12c7",
+     "npc_03_mem_620fc3",
+     "npc_03_mem_f5ceb7",
+     "npc_03_mem_f99bfd",
+     "npc_03_mem_756d4b",
+     "npc_03_mem_f80253"
+    ]
+   },
+   {
+    "id": "npc_03_mem_690c1e",
+    "npc_id": "npc_03",
+    "description": "Die wiederholte Auseinandersetzung mit der Wirtschaftlichkeit des Schulhauskredits hat mich gelehrt, dass die Bedürfnisse der Gemeinde und die persönlichen finanziellen Sorgen eng miteinander verknüpft sind. Die Unsicherheit über Materialkosten zeigt, wie anfällig kleine Gewerbe wie mein Kiosk für externe Preisfluktuationen sind, während die Erwartung einer steigenden Nachfrage durch die neue Infrastruktur ein Zeichen dafür ist, dass die Gemeinschaft zusammenwächst, auch wenn die individuellen Belastungen weiterhin spürbar bleiben.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ae340c",
+     "npc_03_mem_8f87cf",
+     "npc_03_mem_de12c7",
+     "npc_03_mem_620fc3",
+     "npc_03_mem_f5ceb7",
+     "npc_03_mem_f99bfd",
+     "npc_03_mem_756d4b",
+     "npc_03_mem_f80253"
+    ]
+   },
+   {
+    "id": "npc_03_mem_643887",
+    "npc_id": "npc_03",
+    "description": "Meine anfängliche Besorgnis über die Steuerbelastung und die steigenden Baumaterialien hat sich in eine nüchternere, aber hoffnungsvollere Haltung gewandelt. Ich habe erkannt, dass politische Entscheidungen nicht nur abstrakte Zahlen sind, sondern direkte Auswirkungen auf das tägliche Leben und die finanzielle Stabilität von Familien und lokalen Gewerbetreibenden haben. Diese Erkenntnis hat mich gelehrt, kritisch, aber realistisch zu bleiben und gleichzeitig die langfristigen Chancen für die Gemeinde zu würdigen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_03_mem_ae340c",
+     "npc_03_mem_8f87cf",
+     "npc_03_mem_de12c7",
+     "npc_03_mem_620fc3",
+     "npc_03_mem_f5ceb7",
+     "npc_03_mem_f99bfd",
+     "npc_03_mem_756d4b",
+     "npc_03_mem_f80253"
+    ]
+   },
+   {
+    "id": "npc_03_mem_b635c4",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_6c0c00",
+    "npc_id": "npc_03",
+    "description": "Die Ankündigung des Schulhauskredits wirft Fragen zur Steuerbelastung auf, doch die erwartete Steigerung des lokalen Konsums könnte meine Einnahmen stabilisieren. Die Preissteigerungen für Baumaterialien bleiben ein Sorgenpunkt, doch die neue Infrastruktur könnte langfristig die Gemeinde stärken.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_85e8b9",
+    "npc_id": "npc_03",
+    "description": "Ich möchte Ihre Einschätzung zur Wirtschaftlichkeit des Projekts hören, besonders im Hinblick auf die zusätzlichen Belastungen für den Einzelhandel.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_03_mem_64eef7",
+    "npc_id": "npc_03",
+    "description": "Die Aussicht auf mehr Kunden durch die neue Schule gibt mir wieder Zuversicht, trotz der aktuellen Unsicherheiten.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ],
+  "npc_05": [
+   {
+    "id": "npc_05_mem_450b12",
+    "npc_id": "npc_05",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulbau sorgt für unterschiedliche Reaktionen in der Nachbarschaft. Einige Eltern freuen sich über die besseren Räume für ihre Kinder, andere machen sich Sorgen um die zusätzlichen Kosten. Die Diskussionen im Schulhaus und im Dorfzentrum zeigen, dass die Gemeinde vorsichtig vorgehen muss, um alle Familien zu berücksichtigen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_727361",
+    "npc_id": "npc_05",
+    "description": "Die Nachricht über die Steuererhöhung und den Schulbau sorgt für unterschiedliche Reaktionen in der Nachbarschaft. Einige Eltern freuen sich über die besseren Räume für ihre Kinder, andere machen sich Sorgen um die zusätzlichen Kosten. Die Diskussionen im Schulhaus und im Dorfzentrum zeigen, dass die Gemeinde vorsichtig vorgehen muss, um alle Familien zu berücksichtigen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_a0144b",
+    "npc_id": "npc_05",
+    "description": "Ich möchte mit Céline Bonnet sprechen, um ihre Sicht auf die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft zu hören.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_e9fbcc",
+    "npc_id": "npc_05",
+    "description": "Ich versuche, die verschiedenen Perspektiven abzuwägen, ohne sofort eine Seite zu wählen.",
+    "round_created": 0,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_2358f2",
+    "npc_id": "npc_05",
+    "description": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_03ad0d",
+    "npc_id": "npc_05",
+    "description": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_32fa87",
+    "npc_id": "npc_05",
+    "description": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_b60a5c",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+    "round_created": 1,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_00525d",
+    "npc_id": "npc_05",
+    "description": "Die Steuererhöhung und der geplante Schulbau haben in der Nachbarschaft tiefe Spaltungen aufgedeckt: Während einige Eltern die besseren Lernbedingungen für ihre Kinder begrüßen, fürchten andere die zusätzlichen finanziellen Belastungen. Diese Spannung zeigt mir, wie wichtig es ist, die unterschiedlichen Lebensrealitäten der Familien zu verstehen und eine Lösung zu finden, die niemanden zurücklässt.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_450b12",
+     "npc_05_mem_727361",
+     "npc_05_mem_a0144b",
+     "npc_05_mem_e9fbcc",
+     "npc_05_mem_2358f2",
+     "npc_05_mem_03ad0d",
+     "npc_05_mem_32fa87",
+     "npc_05_mem_b60a5c"
+    ]
+   },
+   {
+    "id": "npc_05_mem_296172",
+    "npc_id": "npc_05",
+    "description": "Durch die Gespräche mit Eltern und das geplante Gespräch mit Céline Bonnet wurde mir bewusst, dass die Auswirkungen einer solchen Entscheidung weit über die Schulmauern hinausreichen. Die Sorge um die Landwirtschaft und die Existenzgrundlagen lokaler Betriebe steht ebenso im Raum wie die Hoffnung auf eine bessere Zukunft für die Kinder. Diese Vielfalt an Perspektiven hat mich gelehrt, dass jede Entscheidung ein komplexes Geflecht aus Interessen berührt.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_450b12",
+     "npc_05_mem_727361",
+     "npc_05_mem_a0144b",
+     "npc_05_mem_e9fbcc",
+     "npc_05_mem_2358f2",
+     "npc_05_mem_03ad0d",
+     "npc_05_mem_32fa87",
+     "npc_05_mem_b60a5c"
+    ]
+   },
+   {
+    "id": "npc_05_mem_c42493",
+    "npc_id": "npc_05",
+    "description": "Meine anfängliche Zurückhaltung hat sich in eine bewusste Haltung der sorgfältigen Abwägung entwickelt. Die Unsicherheit über die langfristigen Vorteile des Schulbaus steht weiterhin neben der akuten Belastung durch die Steuererhöhung. Ich habe gelernt, dass es nicht darum geht, eine Seite sofort zu wählen, sondern einen Weg zu finden, der die Bedürfnisse aller berücksichtigt und Vertrauen in die Zukunft der Gemeinde stärkt.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 8,
+    "mem_type": "reflection",
+    "evidence_ids": [
+     "npc_05_mem_450b12",
+     "npc_05_mem_727361",
+     "npc_05_mem_a0144b",
+     "npc_05_mem_e9fbcc",
+     "npc_05_mem_2358f2",
+     "npc_05_mem_03ad0d",
+     "npc_05_mem_32fa87",
+     "npc_05_mem_b60a5c"
+    ]
+   },
+   {
+    "id": "npc_05_mem_042afb",
+    "npc_id": "npc_05",
+    "description": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 6,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_fd561f",
+    "npc_id": "npc_05",
+    "description": "Die Gespräche mit Eltern zeigen, dass die Sorge um die zusätzlichen Kosten und die Hoffnung auf bessere Lernbedingungen nebeneinander bestehen. Die Gemeinde muss einen Weg finden, die Belastung für Familien zu mindern, ohne die notwendigen Investitionen zu vernachlässigen. Die steigenden Baumaterialienkosten spiegeln sich in den Gesprächen mit Eltern wider, die sich Sorgen um ihre Finanzen machen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "plan",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_a3b09d",
+    "npc_id": "npc_05",
+    "description": "Ich möchte mit Céline über die Auswirkungen der Steuererhöhung auf die lokale Landwirtschaft sprechen, um ein vollständigeres Bild zu bekommen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 5,
+    "mem_type": "observation",
+    "evidence_ids": []
+   },
+   {
+    "id": "npc_05_mem_8950f7",
+    "npc_id": "npc_05",
+    "description": "Die Unsicherheit über die Steuerbelastung und die langfristigen Vorteile des Schulbaus lässt mich weiterhin abwägen, ohne eine feste Haltung einzunehmen.",
+    "round_created": 2,
+    "round_last_accessed": 2,
+    "importance": 7,
+    "mem_type": "observation",
+    "evidence_ids": []
+   }
+  ]
+ },
+ "llm_stats": {}
+}

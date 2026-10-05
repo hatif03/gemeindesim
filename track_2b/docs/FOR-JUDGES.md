@@ -92,9 +92,11 @@ We used the town as a test bench for the model. Every number is from a logged ru
 | Swiss civic knowledge is weak: both sizes define *Steuerfuss* as a rate on income and fail 4 000 × 6 % | 70B 12/15, 8B 9/15 (E7) |
 | Asked for a stance, every resident says **yes**, whatever the persona (also none, also with a balanced booklet) | 15/15 (E11, E11c) |
 | On 54 real federal votes the simulated electorate is 34–37 points too favourable; persona detail adds little; the 8B follows an official recommendation 98 % of the time; German prompts are 19 points more favourable than French | E8 (3 672 calls) |
-| Residents' *speech* leaned worried/against even though direct questioning says yes; the stance line controlled speech only for opponents. A reminder as the last prompt paragraph raised speech–stance agreement from ≈ 0.5 to 0.80 (70B) / 0.75 (8B) at no measurable cost; "undecided" residents still sound like opponents | E14, E15, E15b |
+| Residents' *speech* leaned worried/against even though direct questioning says yes; the stance line controlled speech only for opponents. A reminder as the last prompt paragraph, plus a two-sided instruction for undecided residents, raised speech–stance agreement from ≈ 0.5 to **0.88–0.91 (70B) / 0.85–0.87 (8B)** on the final code, on both graphs, at no measurable cost | E14, E15, E16b, final runs |
+| On a real 48-page Federal Council booklet the 70B answers 12/14 questions correctly (hand-graded), abstains on all 3 unanswerable ones; retrieval (11/14 recall@4) is the bottleneck, not the model | E17 |
+| `make run` could not build from a clean checkout in the original repo (no Linux native packages in either frontend lockfile); fixed and verified from a fresh clone | E18 |
 | The model never gave explicit vote advice (0/30) but, with the old prompt, asserted an invented outcome ("the measure passed") in most reports | E9; fixed 12/30 → 0/30 (E9b) |
-| Citations were decorative (0 of 159 ids existed) and are now validated (99–100 %) | E3 |
+| Citations were decorative (0 of 159 ids existed) and are now validated (100 % of labels valid in all 16 final runs) | E3, final runs |
 
 **What this changes in how we describe the product.** GemeindeSim is a bilingual, grounded *what-if explainer*, not a
 vote predictor, and not a source of Swiss facts. Apertus is the speaker; the application owns stance, arithmetic

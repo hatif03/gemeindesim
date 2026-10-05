@@ -18,7 +18,7 @@ uv run uvicorn main:app --reload --host 0.0.0.0 --port 8000
 | `LLM_BASE_URL` | OpenAI-compatible endpoint |
 | `LLM_API_KEY` | Hackathon / sovereign provider key |
 | `LLM_CONCURRENCY` | In-flight completions (default 4; the hosted gateway returns 429 above ~4) |
-| `SWARM` | `true` for two-phase initiator/reactor rounds |
+| `SWARM` | `true` for two-phase initiator/reactor rounds (default false; measured +27 % wall time on the 70B, no quality gain) |
 | `ALLOWED_ORIGINS` | CORS origins (3000 and 8080) |
 
 ## API Endpoints

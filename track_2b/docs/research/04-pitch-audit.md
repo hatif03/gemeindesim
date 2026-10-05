@@ -52,3 +52,27 @@ Experiment ids refer to `LAB-NOTEBOOK.md`. "v2" = the code after this work.
 * **Judging fit:** the "limits of the model" are now measured and reproducible (parallel
   tools, thinking/JSON exclusion, non-determinism, yes-bias, authority deference, 4-in-flight
   limit, Swiss-fact errors). That is a stronger Track 2B story than the original claims.
+
+---
+
+## Status after the final measurements (final code, 5 seeds standard + 3 swarm; real booklet; clean-checkout deployment)
+
+| claim | audited verdict | status now |
+| --- | --- | --- |
+| A8 "facts live in the corpus **and a calculator**" | Refuted (no calculator) | **Fixed**: `graph/calculator.py`; the resident's computed figure is in the prompt and the grounding pack |
+| A9 Charter: no advice, no side-taking | Partly (invented outcomes) | **Fixed** for outcomes: 0/30 (E9b), 0/5 + 0/3 reports in the final runs, both sizes, both graphs; explicit advice never occurred (0/30) |
+| B1 "filled example JSON" | Refuted (placeholder) | **Fixed and documented**: `<instruction>` placeholders in the resident's language (49/49 valid, 0 % parroting) |
+| B2 "residents cite sources" | Refuted (0 % valid) | **Fixed**: 100 % of citation labels valid in all 16 final runs; 48–59 % of events carry a valid citation |
+| B3 numeral gate | Partly (8/12) | **10/12**; residual: derived arithmetic (240/12) and spelled-out numbers (documented) |
+| B4 closed-corpus retrieval | Unsupported by the sample | **Tested on a real 48-page booklet**: recall@4 11/14, QA 12/14 hand-graded, 3/3 abstentions; retrieval is the bottleneck |
+| B5/B6 opinion dynamics, persona differences | Refuted for stance | **Redesigned**: stance computed in code; drift only for residents who conversed; speech matches stance 0.85–0.92 (was ≈ 0.5). Caveat: the prior's weights are assumptions |
+| B7 dashboard "computed from events" | Partly (`price_pressure` dead) | Economy bars hidden when a stance poll exists; `price_pressure` still always 0 (documented) |
+| B8 report "does not recommend a vote" | Partly | Conditional wording, localised disclaimer, language fixed (0/8 mixed, 0/8 asserted in the final runs) |
+| B9 default concurrency 6, silent 8B fallback | Refuted | **Fixed** in code and in `docker-compose.yml` (default 4); 429 retried on the same model |
+| B10 "schema fixtures 20/20" | Unsupported | Replaced by measured first-attempt validity (49/49) and 48 regression tests tied to findings |
+| B12 `invoke_llm_think` pre-pass | Unsupported | Still unused; stated as such |
+| B13 value / scalability | Supported | Quantified (E10, probe): linear to ≈ 4 in flight; 8B ≈ 4× faster per simulation |
+| B14 sovereign deployability | Not testable | **Still not measured on a local model** (no GPU; the Docker VM here has ≈ 7 GB). Prepared: `research/probe_endpoint.py` (validated on the hosted 8B) and a clean-clone Docker stack that starts and serves |
+| *new* `make run` on a clean checkout | (not audited before) | **Was broken in the original repo** (frontend image: no Linux native packages in either lockfile). Fixed (Node 22 + `npm install --legacy-peer-deps`), verified from a clean clone: UI 200 on both ports, API 200, concurrency 4 |
+| *new* Docker default `SWARM=true` | (not audited before) | Swarm measured (+27 % time, no gain); default set to `false`, swarm kept as an option |
+| A11 long context | Partly | unchanged: single-fact recall 60/60 up to ≈ 105 k tokens; persona dilution untested |

@@ -33,7 +33,7 @@ Research foundations: Park et al. 2023 (generative agents, arXiv:2304.03442); Pa
 make run
 ```
 
-UI: **http://localhost:3000** (also on **8080**). API: **http://localhost:8000**.
+UI: **http://localhost:3000** (also on **8080**; set `UI_ALT_PORT` in `track_2b/.env` if 8080 is already in use). API: **http://localhost:8000**.
 
 ## Environment variables (required by organizers)
 

@@ -16,7 +16,9 @@ from graph.language import fallback_utterance
 STOP = {"de": {"der", "die", "das", "und", "ich", "nicht", "ist", "zu", "mit", "für", "den", "ein", "wir", "sie", "es"},
         "fr": {"le", "la", "les", "et", "je", "pas", "est", "de", "des", "pour", "un", "une", "que", "nous", "vous"},
         "en": {"the", "and", "is", "to", "of", "for", "that", "with", "this", "we", "i"}}
-INTRO = re.compile(r"\b(ich bin [A-ZÄÖÜ]\w+ [A-ZÄÖÜ]\w+|mein Name ist|je suis [A-ZÉÈ]\w+ [A-ZÉÈ]\w+|je m'appelle|ich heisse|ich heiße)", re.I)
+# Self-introduction = "Ich bin <Vorname> <Nachname>" / "Je suis <Prénom> <Nom>" (capitalised name parts, case-SENSITIVE: an earlier version
+# ran with re.I, so "Ich bin noch unentschieden" and "je suis pour" counted as introductions) or an explicit "my name is".
+INTRO = re.compile(r"\b((?i:ich bin) [A-ZÄÖÜ][a-zäöüéèê]+ [A-ZÄÖÜ][a-zäöüéèê]+|(?i:mein name ist|je m'appelle|ich heisse|ich heiße)|(?i:je suis) [A-ZÉÈ][a-zéèê]+ [A-ZÉÈ][a-zéèê]+)")
 FALLBACKS = {fallback_utterance(l) for l in ("de", "fr", "en")}
 
 

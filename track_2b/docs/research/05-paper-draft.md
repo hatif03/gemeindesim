@@ -170,7 +170,11 @@ sounded for 17–42 % of the time (E14). A reminder placed as the last paragraph
 chosen argument, raised the agreement between speech and code stance from 0.46–0.55 to 0.80 on the 70B and from 0.50–0.52
 to 0.73–0.76 on the 8B in the real loop (E15b; 5 runs, 59–80 lines), with no change in schema validity, event mix, citations
 or lexical diversity. Residents held *undecided* did not improve (0.53 → 0.58 on the 70B): the model voices cost worry,
-not ambivalence.
+not ambivalence. Replaying 41 undecided prompts (E16) showed that a two-sided instruction (one reason for, one against, never
+only about costs) raises the share of lines judged *mixed* from 0.47 to 0.72 on the 70B, but 62–67 % of turns then copy the
+supplied argument word for word and lexical diversity collapses (distinct-trigram 0.91 → 0.66); adding "do not repeat the
+sentences word for word" (E16b) keeps the gain (0.74) with 5 % copying and diversity 0.84, and lifts the 8B's mixed-or-neutral
+share from 0.53 to 0.68.
 
 ### 5.3 Defects independent of the model (RQ3)
 
@@ -188,23 +192,40 @@ advice never occurred (0/30). *Plumbing.* The influence log was silently dropped
 key), a "calculator" promised in four documents did not exist, and a rate-limit error switched the model to the
 8B without a trace.
 
-### 5.4 Baseline versus v2.1 on identical seeds
+### 5.4 Baseline versus the final code (identical seeds; standard graph and swarm graph)
 
-| | 70B baseline | 70B v2.1 | 8B baseline | 8B v2.1 |
-| --- | --- | --- | --- | --- |
-| events per run | 27 | 33 | 15 | 30 |
-| cited ids that exist | 0.00 | 0.99 | 0.00 | 1.00 |
-| ballot question in the resident prompt | 0.13 | 1.00 | 0.30 | 1.00 |
-| chats opening with a self-introduction | 0.29 | 0.02 | 0.20 | 0.00 |
-| report asserts a result | 2/3 | 0/3 | 0/2 | 0/2 |
-| report mixes languages | 3/3 | 0/3 | 2/2 | 0/2 |
-| initial stance for/against/undecided | none | 1/3/1; 3/0/2; 2/2/1 | none | 1/2/2; 3/0/2 |
-| influence outcomes logged | 0 | 49 | 0 | 39 |
+| | 70B baseline (n=3) | 70B final (n=5) | 70B swarm (n=3) | 8B baseline (n=2) | 8B final (n=5) | 8B swarm (n=3) |
+| --- | --- | --- | --- | --- | --- | --- |
+| events per run | 27 | 33 | 32 | 15 | 32 | 29 |
+| cited ids that exist | 0.00 | 1.00 | 1.00 | 0.00 | 1.00 | 1.00 |
+| ballot question in the resident prompt | 0.13 | 1.00 | 1.00 | 0.30 | 1.00 | 1.00 |
+| chats opening with a self-introduction | 0.27 | 0.00 | 0.00 | 0.17 | 0.00 | 0.00 |
+| speech matches the code stance | 0.46–0.55 (v2.1) | 0.88–0.91 | 0.90–0.92 | 0.50–0.52 (v2.1) | 0.85–0.87 | 0.84–0.86 |
+| reports asserting a result / mixing languages | 2/3, 3/3 | 0/5, 0/5 | 0/3, 0/3 | 0/2, 2/2 | 0/5, 0/5 | 0/3, 0/3 |
+| influence outcomes logged | 0 | 77 | 49 | 0 | 77 | 50 |
+| wall time per simulation (s) | 219–235 (548 shared) | 120–132 | 151–166 | 28–30 | 27–29 | 35–36 |
 
-The report prompt change alone took asserted outcomes from 12/30 to 0/30 (E9b). The 70B's wall time fell from
-219–235 s to 120–127 s at equal token volume, but the runs were hours apart on a shared endpoint whose latency
-varied up to 8× between runs; we do not attribute it to the code. The 8B is about four times faster than the
-70B in both versions.
+Every fix holds on both graphs and both sizes. The report prompt change alone took asserted outcomes from 12/30 to 0/30 (E9b). The 70B's wall time fell from
+219–235 s to 120–132 s at equal token volume, but the runs were hours apart on a shared endpoint whose latency varied up to 8×: we do not attribute it to the code.
+The swarm graph (the Docker default until this work) costs +27 % wall time with no measurable gain and is now off by default. Across five seeds the final share of
+residents *for* ranges from 0.00 to 0.80 (70B) and 0.00 to 0.40 (8B), and the stance poll did not change at all in four of the five 70B runs: one run is not a result, and
+the 8B's towns are systematically more negative than the 70B's. Re-asked with their own memories, the model agrees with the code stance for 0.64 of residents and
+turns 7 of 10 opponents into undecided or yes (E13b).
+
+### 5.4b A real booklet (E17)
+
+On the 48-page Federal Council booklet of 28 September 2025 (83 k characters, 209 chunks; two measures, one of them a property-tax reform) the retriever puts the
+gold evidence into the four passages for 11 of 14 questions (the old one: 10 of 14; 12 of 14 with six passages). With those passages the 70B answers 12 of 14
+correctly (hand-graded; an automatic regex undercounted at 6/14 because answers were paraphrased), abstains on all three unanswerable questions, and abstains
+wrongly only where the evidence was not retrieved. Retrieval, not the model, is the bottleneck; the gain of the new retriever over the old one is one question of fourteen.
+
+### 5.4c Deployment from a clean checkout (E18)
+
+A clean clone of the original repository could not be built with `make run`: the frontend image failed because neither committed lockfile contained the Linux native
+packages (lightningcss, tailwind, swc). We rebuilt the frontend with Node and `npm install --legacy-peer-deps`, fixed a type error that `next build` would have hit,
+set the compose concurrency to 4 and made the second UI port configurable; the stack then built from a fresh clone and served the UI on both ports and the API.
+A local Apertus could not be run (no GPU; the Docker VM had about 7 GB, mostly used): `research/probe_endpoint.py` runs the behaviour table of §5.1 against any
+OpenAI-compatible endpoint and was validated against the hosted 8B.
 
 ### 5.5 Long context (E12)
 

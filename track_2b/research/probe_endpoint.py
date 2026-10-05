@@ -24,6 +24,9 @@ import time
 from pathlib import Path
 
 import httpx
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")  # track_2b/.env, so --key-env LLM_API_KEY works without exporting it
 
 WEATHER = {"type": "function", "function": {"name": "get_weather", "description": "Current weather for a city",
            "parameters": {"type": "object", "properties": {"city": {"type": "string"}}, "required": ["city"]}}}
@@ -61,6 +64,9 @@ async def main(a):
     cl = Client(a.base_url, a.model, key)
     out = {"base_url": a.base_url, "model": a.model, "date": time.strftime("%Y-%m-%d %H:%M")}
     n = a.n
+    first = await cl.chat("ping", max_tokens=5)
+    if first["http"] != 200:
+        raise SystemExit(f"endpoint answered HTTP {first['http']} to a trivial request: check --base-url, --model and the key ({a.key_env or 'none'}).")
 
     # 1 tool calls
     async def tools(prompt, **kw):
