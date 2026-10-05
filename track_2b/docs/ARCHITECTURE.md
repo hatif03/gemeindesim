@@ -2,34 +2,11 @@
 
 The shipped engine is FastAPI + LangGraph + Phaser, with an Apertus 1.5 adapter.
 
-```text
-User pastes / uploads policy (DE/FR/EN)
-        │
-        ▼
-┌───────────────────┐
-│ PDF/CSV/notes     │  routers/extract.py + context_store
-│ chunk + retrieve  │  graph/corpus.py (closed corpus)
-└─────────┬─────────┘
-          │
-          ▼
-┌───────────────────┐     Apertus json mode (70B)
-│ parse_policy      │
-│ generate_npcs     │──── frozen cards + life_story (de|fr|en)
-└─────────┬─────────┘
-          │
-          ▼
-┌───────────────────┐
-│ run_round         │  Park loop: retrieve → reflect → plan → act
-│  (or swarm)       │  1–3 events: chat/move/protest/mood/price
-│                   │  opinion dynamics in code
-└─────────┬─────────┘
-          │ Socket.IO
-          ▼
-┌───────────────────┐
-│ Phaser + dashboard│  Egg Index, prices, unrest, social graph
-│ economic report   │  no vote recommendation
-└───────────────────┘
-```
+![GemeindeSim end to end](figures/fig01-pipeline.png)
+
+*Blue = Apertus voices it; green = code owns it; red = code check or guardrail; sand = user input / screen.* Stance, household arithmetic, retrieval and citations, number gate, opinion dynamics and report guardrails are code; the model writes personas, dialogue and the report prose, and judges impact. How a stance is computed and moves: ![stance](figures/fig02-stance.png)
+
+Figures are drawn by `research/make_figures.py` (PNG, so they render in any viewer).
 
 ## Code map (`src/`)
 

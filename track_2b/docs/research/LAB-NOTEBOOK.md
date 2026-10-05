@@ -327,7 +327,7 @@ thinking tests n = 8 at T=0. Raw: `results/e01_probe.jsonl`; summary `e01_probe_
 | C2 parallel calls fail ("Zurich and Bern") | **11/11 / 11/11 emit one call** (second city dropped) |
 | C2' explicit "return two function calls" | 70B: **11/11 `finish=stop`, zero `tool_calls`, two pseudo-calls as text**; 8B: 11/11 one call |
 | **new** `tool_choice="required"` + two cities | still exactly one call, both models (11/11) |
-| C3 thinking leaks into `content` | 8/8 / 8/8 `<|inner_prefix|>…<|inner_suffix|>` in `content`, `reasoning` field always `null` |
+| C3 thinking leaks into `content` | 8/8 / 8/8 `<\|inner_prefix\|>…<\|inner_suffix\|>` in `content`, `reasoning` field always `null` |
 | **new** thinking + `response_format=json_object` | **no inner span in 16/16**: constrained decoding starts at `{`; the 70B answers the bat-and-ball puzzle **`0.10` (wrong)** in 15 tokens vs correct `0.05` when thinking is on (6/8 on 70B — two hit the 900-token cap; 8/8 on 8B in 266 tokens) |
 | **new** tools + thinking in one request | accepted without error (22/22), one tool call returned, no visible reasoning span; 70B adds a prose preamble. The vendor says "unsupported"; behaviour is *tolerated but unspecified*. |
 | C4 temperature 0 is deterministic | **No.** 5 identical long resident prompts at T=0: **70B → 3 distinct outputs, 8B → 5 distinct outputs** (lengths 1050–1658) |

@@ -30,7 +30,7 @@ Experiment ids refer to `LAB-NOTEBOOK.md`. "v2" = the code after this work.
 | B2 | "Residents cite sources (`used_source_ids`)" | **Refuted** (0 % valid) → fixed in v2 | E3: 0/44, 0/37, 0/35, 0/25, 0/18 cited ids exist in the corpus; `grounded` was always true when no unknown numeral |
 | B3 | "Residents may only quote figures that were retrieved or computed" (numeral gate) | **Partly** | E6: 8/12 edge cases; list numbering grounds digits 1–5, `replace` can corrupt `124`; v2 10/12 (residual: derived arithmetic, spelled-out numbers) |
 | B4 | "Closed-corpus retrieval grounds every turn" | **Unsupported** by the shipped sample | E5: corpus ≈ 1.6 k chars/language, 4 passages ≈ half of it; the ballot question reached 0–33 % of prompts; language filter was a no-op |
-| B5 | "Peralta-style opinion dynamics in code; the model does not update leaning by fiat" | **Supported** as a design fact; **Refuted** as a model of the vote | the variable it moves (`political_leaning`) is random, role-independent and not the stance on the Vorlage (audit B1–B2); E4: Baumann drift polarised a *silent* town (|x| 0.51 → 0.69 in 15 rounds); E8: abstract ideology does not predict concrete votes |
+| B5 | "Peralta-style opinion dynamics in code; the model does not update leaning by fiat" | **Supported** as a design fact; **Refuted** as a model of the vote | the variable it moves (`political_leaning`) is random, role-independent and not the stance on the Vorlage (audit B1–B2); E4: Baumann drift polarised a *silent* town (mean abs(x) 0.51 → 0.69 in 15 rounds); E8: abstract ideology does not predict concrete votes |
 | B6 | "Residents differ by role, language, income, politics" (persona design) | **Refuted for stance** | E11: 15/15 yes under every persona condition, also with no persona; E11c: balanced corpus 14/15 yes |
 | B7 | "Dashboard math is computed from events (Egg Index, prices, unrest, approval)" | **Partly** | computed in code, yes; but `price_pressure` reads `pct_change`, a field that does not exist in the event schema → always 0; for a tax vote price/unrest are structurally 0 (E3) |
 | B8 | "Report describes tradeoffs, does not tell anyone how to vote; live run did this" | **Partly** | no advice (E9); but the report said the measure "passed" in 2/3 of 70B runs and mixed German text with an English disclaimer |
@@ -48,7 +48,7 @@ Experiment ids refer to `LAB-NOTEBOOK.md`. "v2" = the code after this work.
   *arguing both sides when asked* — and which keeps numbers, stance and arithmetic out of
   the model's hands.
 * **Is not:** a vote predictor (E8: persona/ideology add little; the Federal Council
-  position alone beats every LLM condition), nor a source of Swiss civic facts (E7).
+  position alone beats every LLM condition that is not shown it; the 8B shown it scores 0.67 by following it), nor a source of Swiss civic facts (E7).
 * **Judging fit:** the "limits of the model" are now measured and reproducible (parallel
   tools, thinking/JSON exclusion, non-determinism, yes-bias, authority deference, 4-in-flight
   limit, Swiss-fact errors). That is a stronger Track 2B story than the original claims.

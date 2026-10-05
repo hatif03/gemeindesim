@@ -16,7 +16,7 @@ Temperature 0 unless stated (not deterministic, see 1.4).
 | explicit "return two calls" | **11/11 no `tool_calls`, two pseudo-calls as text** | 11/11 one call |
 | `tool_choice="required"`, two cities | 11/11 one call | 11/11 one call |
 | tools + thinking in one request | accepted, one call, no visible reasoning (22/22 over both) | |
-| thinking → `<|inner_prefix|>` in `content`, `reasoning` null | 8/8 | 8/8 |
+| thinking → `<\|inner_prefix\|>` in `content`, `reasoning` null | 8/8 | 8/8 |
 | thinking + `response_format=json_object` | no reasoning span (16/16); bat-and-ball answered **0.10 (wrong)** in 15 tokens | same |
 | thinking alone, bat-and-ball | 6/8 correct (2 truncated at 900 tokens), 900 tok | 8/8 correct, 266 tok |
 

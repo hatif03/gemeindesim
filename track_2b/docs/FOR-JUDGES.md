@@ -15,6 +15,8 @@ A two-service app:
 - **Backend:** FastAPI + LangGraph + Socket.IO. Policy ingest (PDF/CSV/notes), closed-corpus retrieval, NPC generation, Park-style cognitive loop, Peralta-style opinion dynamics in code, economic report.
 - **Frontend:** Next.js 16 + Phaser 3. Title screen, policy/config graph editor, live map, event log, Egg Index dashboard, end-of-run report.
 
+![GemeindeSim end to end](figures/fig01-pipeline.png)
+
 Default demo: 5 residents, 3 rounds, bilingual **Gemeinde Linden** Steuerfuss / school-credit notes (`data/steuerfuss_linden_{de,fr}.txt`). A second English sample (`data/tariff_millfield_en.txt`) stays available. The engine still supports up to 25 NPCs and 15 rounds.
 
 Five event types are first-class: `chat`, `move`, `protest`, `mood_shift`, `price_change`. Swarm mode (initiator/reactor rounds) is a flag, not a rewrite.

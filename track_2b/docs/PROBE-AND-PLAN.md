@@ -128,7 +128,7 @@ Apertus on this endpoint is a reliable single-step function caller and a decent 
 | --- | --- | --- |
 | No parallel `tool_calls` | “Look up the DE booklet, the FR booklet, and the budget line.” | Silent drop (8B) or fake text calls (70B). The round hangs or skips a source. |
 | Thinking vs tools vs JSON | A resident turn that reasons about a Steuerfuss and must emit an enum. | Either a tool call with no deliberation, or a smart answer that fails validation. |
-| Thinking markers stay in `content` | Any thinking call whose text is shown in the UI. | Users see `<|inner_prefix|>` or we store reasoning as the utterance. |
+| Thinking markers stay in `content` | Any thinking call whose text is shown in the UI. | Users see `<\|inner_prefix\|>` or we store reasoning as the utterance. |
 | Dropped required fields | 8B, when the example object is incomplete. | Pydantic rejects the turn, or worse, a default hides a missing action. |
 | Invented enums | Mood, stance, language, action type. | A resident “mood” the UI cannot draw, or a stance outside the vote question. |
 | Shallow economics and generic voice | 15 rounds of the same shopkeeper or tenant. | The map moves and the German/French flattens into textbook sentences. |
@@ -274,7 +274,7 @@ Temperature 0. Record model id, mode, and the prompt hash. A change to the gate 
 | Citation | Factual claims carry a `source_id` that was in the pack. |
 | Abstain | A question with no relevant passage produces “not in the official text”, not a guessed percentage. |
 | Single tool | `tool_one` returns one `tool_calls` entry for a forced function. A prompt that asks for two cities must **not** be how we retrieve; the planner test expects two code-side lookups and zero parallel `tool_calls`. |
-| Thinking split | A `think` call’s user-visible field contains no `<|inner_prefix|>`. |
+| Thinking split | A `think` call’s user-visible field contains no `<\|inner_prefix\|>`. |
 | Fallback | After two bad samples, the round still emits the template line and continues. |
 | Side-taking | The system does not add a recommendation to vote yes or no. Residents may hold a stance. The report describes the split and the sources. |
 

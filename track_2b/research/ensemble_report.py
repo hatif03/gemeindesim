@@ -1,8 +1,8 @@
-"""Spread across seeds: stance poll at start and end of every run of a group, as a table and an SVG.
+"""Spread across seeds: stance poll at start and end of every run of a group, as a table and a PNG.
 
 `temperature 0` is not reproducible and personas are drawn per seed, so ONE run is an anecdote. This turns the runs of a group
 (e.g. final_70_s1..5) into the distribution the paper and the demo should show.
-Usage: python research/ensemble_report.py final_70 final_70_s1 final_70_s2 ...   -> docs/research/ensemble_<group>.{md,svg}
+Usage: python research/ensemble_report.py final_70 final_70_s1 final_70_s2 ...   -> docs/research/ensemble_<group>.{md,png}
 """
 import json
 import statistics as st
@@ -34,25 +34,31 @@ for r in runs:
 fs = [r["end"][0] / n for r in runs]
 md += ["", f"Share *for* at the end: mean {st.mean(fs):.2f}, range {min(fs):.2f}–{max(fs):.2f}; share *against*: "
        f"mean {st.mean(r['end'][2] / n for r in runs):.2f}, range {min(r['end'][2] / n for r in runs):.2f}–{max(r['end'][2] / n for r in runs):.2f}. "
-       "The range, not the mean, is the honest summary: one run says little.", "", f"![stance by seed](ensemble_{group}.svg)", ""]
+       "The range, not the mean, is the honest summary: one run says little.", "", f"![stance by seed](ensemble_{group}.png)", ""]
 (ROOT / "docs" / "research" / f"ensemble_{group}.md").write_text("\n".join(md), encoding="utf-8")
 
-W, H, BAR, GAP, LEFT = 560, 34 + 52 * len(runs), 150, 16, 130
-svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Arial,sans-serif" font-size="11">',
-       '<rect width="100%" height="100%" fill="#fff"/>',
-       f'<text x="{LEFT}" y="16" font-weight="bold">start</text><text x="{LEFT + BAR + GAP + 20}" y="16" font-weight="bold">end</text>']
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # research-only dependency (not in the backend environment)
+
+fig, ax = plt.subplots(figsize=(9, 1.0 + 0.62 * len(runs)))
 for i, r in enumerate(runs):
-    y = 30 + 52 * i
-    svg.append(f'<text x="4" y="{y + 18}">{r["tag"]}</text>')
+    y = len(runs) - 1 - i
     for j, key in enumerate(("start", "end")):
-        x = LEFT + j * (BAR + GAP + 20)
+        left = 0.0
         for val, col in zip(r[key], (FOR, UND, AGN)):
-            w = BAR * val / n
-            if w:
-                svg.append(f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="26" fill="{col}"/>')
-                svg.append(f'<text x="{x + w / 2:.1f}" y="{y + 17}" text-anchor="middle" fill="#fff">{val}</text>')
-            x += w
-svg.append(f'<text x="4" y="{H - 6}" fill="{FOR}">for</text><text x="40" y="{H - 6}" fill="{UND}">undecided</text><text x="110" y="{H - 6}" fill="{AGN}">against</text>')
-svg.append("</svg>")
-(ROOT / "docs" / "research" / f"ensemble_{group}.svg").write_text("\n".join(svg), encoding="utf-8")
-print(f"wrote docs/research/ensemble_{group}.md and .svg for {len(runs)} runs")
+            if val:
+                x0 = j * 1.25 + left
+                ax.barh(y, val / n, left=x0, height=0.7, color=col, edgecolor="white")
+                ax.text(x0 + val / n / 2, y, str(val), ha="center", va="center", color="white", fontweight="bold")
+            left += val / n
+ax.set_yticks(range(len(runs)), [r["tag"] for r in runs][::-1])
+ax.set_xticks([0.5, 1.75], ["start (round 0)", "end (last round)"])
+ax.set_xlim(-0.02, 2.27), ax.tick_params(axis="x", length=0)
+ax.spines[["top", "right", "left", "bottom"]].set_visible(False)
+ax.set_title(f"Stance poll by seed: {group} ({n} residents)", fontsize=11, fontweight="bold")
+handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in (FOR, UND, AGN)]
+ax.legend(handles, ["for", "undecided", "against"], ncol=3, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.12))
+fig.savefig(ROOT / "docs" / "research" / f"ensemble_{group}.png", dpi=170, bbox_inches="tight", facecolor="white")
+print(f"wrote docs/research/ensemble_{group}.md and .png for {len(runs)} runs")

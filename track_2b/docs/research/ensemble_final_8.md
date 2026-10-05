@@ -12,4 +12,4 @@
 
 Share *for* at the end: mean 0.16, range 0.00–0.40; share *against*: mean 0.60, range 0.20–1.00. The range, not the mean, is the honest summary: one run says little.
 
-![stance by seed](ensemble_final_8.svg)
+![stance by seed](ensemble_final_8.png)
