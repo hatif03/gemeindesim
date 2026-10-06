@@ -1253,3 +1253,5 @@ the same question was answered **5/5 with 1.8 billion CHF**; invented figures 0,
 
 `graph/chat.py` (grounded chat, document-first for 6 000–100 000 characters), `routers/ensemble.py` + UI (5-run spread), saved replays carry the report, `LLM_VOICE_NAME`, retry 502/503/504 twice on the same model,
 `research/` harness switches. Plan: `docs/research/08-cscs-plan.md`; comparison: `docs/research/07-cscs-vs-livemap.md`.
+
+**E27b — the 5-run spread, live.** `POST /ensemble` against the CSCS API (local backend, 16 in flight): 3 runs in parallel, 5 residents, 2 rounds, Linden DE+FR: **62 s**, 0 errors; initial → final polls (for/undecided/against) 1/3/1 → 3/1/1, 4/1/0 → 5/0/0, 2/1/2 → 2/1/2; share *for* at the end mean 0.67, range 0.40–1.00. Two rounds are enough for the dynamics to move the poll in two of three runs.

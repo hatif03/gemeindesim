@@ -73,7 +73,7 @@ Same seeds fix the random attributes only: the personas' text, the judged impact
   unknown facts declined ("not in the text") 5/5, no vote recommendation (0/5; residents say how *they* vote), reply translated into the user's language 5/5.
 * **The real booklet through the whole app (E28).** PDF upload, 5 residents, 2 rounds and the chat took 95 s. Retrieval alone left the chat unable to answer "how large are the lost revenues"
   (0/5, honest "not in the text"); with the complete text first in the prompt (24.5k tokens, mostly cached) 5/5 answered 1.8 billion CHF. Cost: those answers cite no passage label.
-* **Spread of the stance poll, in the app** (`POST /ensemble`, button "Run 5x: show the spread"): five runs in about five minutes on CSCS, which was not practical at 4 in flight.
+* **Spread of the stance poll, in the app** (`POST /ensemble`, button "Run 5x: show the spread"): tested live with three parallel runs (5 residents, 2 rounds): 62 s on CSCS, so five 3-round runs take roughly 2-3 minutes; at 4 in flight the same would take about 8 minutes (estimate). It returned the range of the poll (share for 0.40-1.00 across the three runs).
 * **Stuffing versus retrieval** (E26): 13/14 vs 11/14 for the 70B, same latency class thanks to the prefix cache.
 * **Replications** (same scripts, other deployment): Swiss knowledge 11/15 (70B), 9/15 (8B) vs 12/15 and 9/15 (E7); yes-bias on four models (E24); real votes (E8, section 5 below).
 

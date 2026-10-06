@@ -10,7 +10,7 @@ experiments*; the submitted app must keep working, with the same defaults, on li
 | --- | --- | --- | --- | --- |
 | L1 | ≈ 4 requests in flight (429 above) | none found to 96 in flight | **solved** | `LLM_CONCURRENCY=16` profile (`env.cscs.example`); keep 4 as the default |
 | L2 | slow (70B 10–11 s per call, a 3-round town takes ≈ 2 min) | 70B 3.8 s per call; a 5-resident 3-round run took ≈ 60 s (E27); a 25-resident town 105 s | **solved for demos** | record the demo video on CSCS; keep replays as the safety net |
-| L3 | one run is an anecdote, no budget to repeat | five runs cost ≈ 5 min | **solved** | in-app **"Run 5×: show the spread"** (built, `POST /ensemble`, `/spread` page) |
+| L3 | one run is an anecdote, no budget to repeat | three parallel runs took 62 s (E27); five 3-round runs ≈ 2–3 min | **solved** | in-app **"Run 5×: show the spread"** (built, `POST /ensemble`, `/spread` page) |
 | L4 | long context only tested to ≈ 105k | recall to 233k tokens on **both** endpoints (CSCS: 8B 30/30, 70B 26/30; 3 facts: 70B 9/10, 8B 5/10; CSCS is 2–3× faster) and a 94 % prefix-cache hit on a shared booklet | **tested; a speed gain, not a new capability** | whole-booklet mode for ≤ 25k-token booklets: 13/14 vs 11/14 in the QA (E26); **on in the 1:1 chat** (≤ 100k characters), off in the loop |
 | L5 | thinking span left in `content`, `reasoning` null | 8B-thinking fills `reasoning` and keeps it under `json_object`; 70B-thinking still leaves the span | **partly solved** | keep `strip_think_tags`; use the 8B-thinking only if a visible reasoning trace is wanted (it is slow and 504-prone at > 2 in flight) |
 | L6 | no parallel tool calls | same | **not solved** | unchanged: no tools in the loop |
