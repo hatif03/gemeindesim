@@ -12,6 +12,7 @@ export default function RunNode() {
     uploadingPolicySources,
     uploadingTrends,
     handleSimulate,
+    handleSpread,
     isSimulating,
     record,
     setRecord,
@@ -47,6 +48,19 @@ export default function RunNode() {
           }}
         >
           {isSimulating ? "\u2605 Running... \u2605" : "\u2605 Run Sim \u2605"}
+        </button>
+
+        {/* Spread: the same vote five times (one run is an anecdote) */}
+        <button
+          type="button"
+          onClick={handleSpread}
+          disabled={!canRun}
+          data-testid="spread-button"
+          title="Runs the same vote 5 times with fresh residents and shows the range of the stance poll (needs a fast endpoint)"
+          className="rpg-panel w-full py-2 text-[10px] font-pixel uppercase tracking-wide transition-all duration-150 disabled:opacity-30 disabled:cursor-not-allowed active:translate-y-px hover:opacity-85"
+          style={{ color: "#5B3A1E", background: "#FDF5E6" }}
+        >
+          Run 5x: show the spread
         </button>
 
         {/* Status */}

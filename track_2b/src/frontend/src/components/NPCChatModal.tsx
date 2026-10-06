@@ -4,9 +4,18 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { io, type Socket } from "socket.io-client";
 import type { BackendNPC } from "@/types/backend";
 
+interface ChatSource {
+  id: string;
+  text: string;
+}
+
 interface ChatMessage {
   role: "user" | "npc";
   content: string;
+  /** Passages of the vote text the resident relied on (validated by the backend). */
+  sources?: ChatSource[];
+  /** The reply in the user's language when it differs from the resident's. */
+  translated?: string | null;
 }
 
 interface NPCChatModalProps {
@@ -58,12 +67,18 @@ export function NPCChatModal({ npc, simulationId, onClose }: NPCChatModalProps) 
       reconnectionAttempts: 3,
     });
 
-    socket.on("npc_chat_response", (data: { npc_id: string; response: string }) => {
+    socket.on(
+      "npc_chat_response",
+      (data: { npc_id: string; response: string; sources?: ChatSource[]; translated?: string | null }) => {
       if (data.npc_id === npc.id) {
-        setMessages(prev => [...prev, { role: "npc", content: data.response }]);
+        setMessages(prev => [
+          ...prev,
+          { role: "npc", content: data.response, sources: data.sources, translated: data.translated },
+        ]);
         setIsLoading(false);
       }
-    });
+    },
+    );
 
     socket.on("npc_chat_error", (data: { npc_id: string; message: string }) => {
       if (data.npc_id === npc.id) {
@@ -104,7 +119,8 @@ export function NPCChatModal({ npc, simulationId, onClose }: NPCChatModalProps) 
       simulation_id: simulationId,
       npc_id: npc.id,
       message: trimmed,
-      history: [...messages, newUserMessage],
+      history: [...messages, newUserMessage].map(({ role, content }) => ({ role, content })),
+      user_lang: "en",
     });
   }, [input, isLoading, messages, npc.id, simulationId]);
 
@@ -222,6 +238,25 @@ export function NPCChatModal({ npc, simulationId, onClose }: NPCChatModalProps) 
                 >
                   {msg.content}
                 </p>
+                {msg.translated && (
+                  <p className="mt-1 text-[9px] font-mono italic leading-relaxed" style={{ color: "#6B5A3A" }}>
+                    {msg.translated}
+                  </p>
+                )}
+                {msg.sources && msg.sources.length > 0 && (
+                  <div className="mt-1 flex flex-wrap gap-1" data-testid="chat-sources">
+                    {msg.sources.map((src) => (
+                      <span
+                        key={src.id}
+                        title={src.text}
+                        className="cursor-help rounded px-1 text-[8px] font-mono"
+                        style={{ background: "#E8D5A3", border: "1px solid #C4A46C", color: "#5B3A1E" }}
+                      >
+                        {src.id}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

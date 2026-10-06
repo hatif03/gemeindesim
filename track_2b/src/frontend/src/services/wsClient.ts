@@ -187,3 +187,59 @@ export function connectSimulation(
     socket.disconnect();
   };
 }
+
+export interface StanceTallyDTO {
+  for: number;
+  against: number;
+  undecided: number;
+  mean: number;
+  n: number;
+}
+
+export interface EnsembleRun {
+  initial: StanceTallyDTO;
+  final: StanceTallyDTO;
+  events: number;
+}
+
+export interface EnsembleStatus {
+  status: "running" | "complete" | "error";
+  completed: number;
+  total: number;
+  runs: EnsembleRun[];
+  errors: string[];
+  summary: {
+    share_for: { mean: number; min: number; max: number };
+    share_against: { mean: number; min: number; max: number };
+    mean_stance: { mean: number; min: number; max: number };
+    runs: number;
+  } | null;
+}
+
+/** Run the same vote several times; the result is a spread of the stance poll, not a single anecdote. */
+export async function startEnsemble(request: StartSimulationRequest, runs = 5): Promise<string> {
+  const res = await fetch(`${API_BASE}/ensemble`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      policy_source_ids: request.policy_source_ids ?? [],
+      primary_policy_source_id: request.primary_policy_source_id ?? null,
+      notes_text: request.notes_text ?? "",
+      trend_source_ids: request.trend_source_ids ?? [],
+      num_rounds: request.num_rounds ?? 3,
+      num_npcs: request.num_npcs ?? 5,
+      objective: request.objective ?? "",
+      map_id: request.map_id ?? "citypack",
+      situation_kind: request.situation_kind ?? "policy",
+      runs,
+    }),
+  });
+  if (!res.ok) throw new Error(`Failed to start the spread run: ${res.status} ${await res.text()}`);
+  return ((await res.json()) as { ensemble_id: string }).ensemble_id;
+}
+
+export async function fetchEnsemble(id: string): Promise<EnsembleStatus> {
+  const res = await fetch(`${API_BASE}/ensemble/${id}`);
+  if (!res.ok) throw new Error(`Spread run not found: ${res.status}`);
+  return (await res.json()) as EnsembleStatus;
+}

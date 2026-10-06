@@ -37,6 +37,8 @@ LLM_NAME = os.environ.get("LLM_NAME", "apertus-v1.5-70b")
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "https://hackapertus.livemap.sh/v1")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "")
 LLM_FALLBACK_NAME = os.environ.get("LLM_FALLBACK_NAME", "apertus-v1.5-8b")
+# Optional: a different (usually larger) model for what the user reads (report, 1:1 chat) while the resident loop runs LLM_NAME.
+LLM_VOICE_NAME = os.environ.get("LLM_VOICE_NAME", "")
 # The hackathon gateway answers 429 above ~4 requests in flight (research E10), so default to 4.
 try:
     LLM_CONCURRENCY = max(1, int(os.environ.get("LLM_CONCURRENCY", "4")))

@@ -9,7 +9,7 @@ from fastapi import APIRouter, HTTPException
 from graph.builder import build_graph
 from config import SWARM
 from graph.builder_swarm import build_swarm_graph
-from graph.chat import generate_npc_chat_response
+from graph.chat import generate_npc_chat_reply
 from graph.nodes.stance import stance_summary
 from models.schemas import EconomicReportResponse, PolicyInput
 from models.state import SimState
@@ -369,17 +369,24 @@ async def chat_with_npc(sid: str, data: dict) -> None:
         return
 
     try:
-        response = await generate_npc_chat_response(
+        reply = await generate_npc_chat_reply(
             npc=npc,
             user_message=user_message,
             conversation_history=conversation_history,
             memory_stream=record.memory_streams.get(npc_id, []),
             policy_context=record.policy_text,
+            user_lang=data.get("user_lang"),
         )
 
         await sio.emit(
             "npc_chat_response",
-            {"npc_id": npc_id, "response": response},
+            {
+                "npc_id": npc_id,
+                "response": reply["text"],
+                "sources": reply["sources"],
+                "stance": reply["stance"],
+                "translated": reply["translated"],
+            },
             to=sid,
         )
     except Exception as e:

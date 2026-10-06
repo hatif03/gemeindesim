@@ -542,6 +542,7 @@ export function useSimulation(simulationId?: string, record = false) {
 
         onEconomicReport: (report) => {
           console.log("[sim] economic_report received");
+          if (recordingRef.current) recordingRef.current.report = report; // so a saved replay carries the report
           setReport(report);
           setReportLoading(false);
           setReportError(null);
@@ -617,6 +618,10 @@ export function useSimulation(simulationId?: string, record = false) {
       const feedNext = () => {
         if (i >= recording.rounds.length) {
           waitForQueueDrain(eventQueueRef, setState);
+          if (recording.report) {
+            setReport(recording.report);
+            reportRequestedRef.current = true;
+          }
           return;
         }
         processRound(recording.rounds[i++]);

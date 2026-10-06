@@ -209,6 +209,39 @@ async def test_429_retries_same_model_and_does_not_downgrade(monkeypatch):
     assert L.STATS["rate_limited"] == 2 and "downgraded_to_fallback_model" not in L.STATS
 
 
+async def test_504_retries_same_model_twice_then_raises(monkeypatch):
+    """CSCS answers 504 'upstream request timeout' under mixed load (research F64): retry the same model, do not downgrade at once."""
+    import graph.llm as L
+
+    class Timeout504(Exception):
+        status_code = 504
+
+    calls = {"n": 0}
+
+    class FakeBound:
+        async def ainvoke(self, prompt):
+            calls["n"] += 1
+            if calls["n"] < 3:
+                raise Timeout504("504")
+            return type("R", (), {"content": "{}"})()
+
+    class FakeLLM:
+        def bind(self, **kw):
+            return FakeBound()
+
+    async def no_sleep(_):
+        return None
+
+    monkeypatch.setattr(L.asyncio, "sleep", no_sleep)
+    L.STATS.clear()
+    r = await L._ainvoke(FakeLLM(), "x")
+    assert r.content == "{}" and calls["n"] == 3 and L.STATS["gateway_5xx_retried"] == 2
+
+    calls["n"] = -10  # never succeeds within the budget: the third failure is raised to the caller
+    with pytest.raises(Timeout504):
+        await L._ainvoke(FakeLLM(), "x")
+
+
 def test_default_concurrency_respects_gateway_limit():
     from config import LLM_CONCURRENCY
 

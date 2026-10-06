@@ -287,4 +287,6 @@ export interface SavedSimulation {
   maxRounds: number;
   initMsg: WSInitMsg;
   rounds: WSRoundMsg[];
+  /** Added when the run finished and the report arrived (older saves have none). */
+  report?: EconomicReport;
 }

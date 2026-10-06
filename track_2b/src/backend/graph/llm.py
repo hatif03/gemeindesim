@@ -236,6 +236,12 @@ async def _ainvoke(llm: ChatOpenAI, prompt: str) -> Any:
                 STATS["rate_limited"] += 1
                 await asyncio.sleep(min(20.0, 1.5 * 2**attempt))  # outside the semaphore
                 continue
+            if _status(exc) in (502, 503, 504) and attempt < 2:
+                # CSCS answers 504 "upstream request timeout" under mixed load instead of 429 (research E21/F64): retry the same model
+                # twice before the caller considers a smaller one.
+                STATS["gateway_5xx_retried"] += 1
+                await asyncio.sleep(2.0 * 2**attempt)
+                continue
             raise
     raise RuntimeError("unreachable")
 

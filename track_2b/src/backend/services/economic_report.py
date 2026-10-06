@@ -7,7 +7,8 @@ from collections import Counter
 from typing import Any
 
 from graph.language import LANG_LABEL, NO_VOTE_LINE, swissify
-from graph.llm import invoke_llm_structured
+from config import LLM_VOICE_NAME
+from graph.llm import get_llm, invoke_llm_structured
 from graph.prompts import ECONOMIC_REPORT_PROMPT
 from models.schemas import (
     BarChartData,
@@ -365,6 +366,7 @@ async def generate_economic_report(
             prompt,
             EconomicReportNarrative,
             max_tokens=6000,
+            llm=get_llm(max_tokens=6000, model=LLM_VOICE_NAME or None),
         )
     except Exception:
         logger.exception("economic_report: structured output failed, using fallback narrative")

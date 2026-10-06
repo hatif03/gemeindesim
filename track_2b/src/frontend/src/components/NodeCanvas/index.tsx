@@ -12,7 +12,7 @@ import "@xyflow/react/dist/style.css";
 import { useRouter } from "next/navigation";
 import { type MapType, setSelectedMap } from "@/game/constants";
 import { setReplayData } from "@/lib/replayStore";
-import { startSimulation, uploadContextSource } from "@/services/wsClient";
+import { startEnsemble, startSimulation, uploadContextSource } from "@/services/wsClient";
 import type { SavedSimulation, UploadedContextSource } from "@/types/backend";
 import { MIN_NOTES_CHARS_FOR_TEXT_ONLY } from "@/types/backend";
 import ConfigNode from "./ConfigNode";
@@ -188,6 +188,32 @@ export default function NodeCanvas({ onSimulateStart }: NodeCanvasProps) {
     setTrendSources((prev) => prev.filter((source) => source.id !== sourceId));
   }, []);
 
+  const handleSpread = useCallback(async () => {
+    const notesOk = notesText.trim().length >= MIN_NOTES_CHARS_FOR_TEXT_ONLY;
+    if ((policySources.length === 0 && !notesOk) || isSimulating) return;
+    setIsSimulating(true);
+    try {
+      const id = await startEnsemble(
+        {
+          policy_source_ids: policySources.map((s) => s.id),
+          primary_policy_source_id: null,
+          notes_text: notesText,
+          trend_source_ids: trendSources.map((source) => source.id),
+          num_rounds: numRounds,
+          num_npcs: numNpcs,
+          objective,
+          map_id: mapId,
+        },
+        5,
+      );
+      router.push(`/spread?id=${id}`);
+    } catch (err) {
+      console.error("Failed to start the spread run:", err);
+      alert(`Failed to start the spread run: ${err instanceof Error ? err.message : err}`);
+      setIsSimulating(false);
+    }
+  }, [policySources, notesText, trendSources, numNpcs, numRounds, objective, mapId, router, isSimulating]);
+
   const handleSimulate = useCallback(async () => {
     const notesOk = notesText.trim().length >= MIN_NOTES_CHARS_FOR_TEXT_ONLY;
     const hasNarrativeFiles = policySources.length > 0;
@@ -305,6 +331,7 @@ export default function NodeCanvas({ onSimulateStart }: NodeCanvasProps) {
       handleTrendFiles,
       removeTrendSource,
       handleSimulate,
+      handleSpread,
       handleLoadCustomRun,
       handleLoadFile,
       loadingCustomRun,
@@ -325,6 +352,7 @@ export default function NodeCanvas({ onSimulateStart }: NodeCanvasProps) {
       handleTrendFiles,
       removeTrendSource,
       handleSimulate,
+      handleSpread,
       handleLoadCustomRun,
       handleLoadFile,
       loadingCustomRun,

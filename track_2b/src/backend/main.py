@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import LLM_BASE_URL, LLM_NAME, SWARM
+from routers.ensemble import router as ensemble_router
 from routers.extract import router as extract_router
 from routers.simulate import router, sio
 
@@ -40,6 +41,7 @@ app.add_middleware(
 
 app.include_router(router)
 app.include_router(extract_router)
+app.include_router(ensemble_router)
 
 # Mount Socket.IO as ASGI sub-application
 sio_asgi = socketio.ASGIApp(sio, other_asgi_app=app)

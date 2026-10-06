@@ -27,6 +27,7 @@ export interface FormState {
   handleTrendFiles: (e: React.ChangeEvent<HTMLInputElement>) => void;
   removeTrendSource: (sourceId: string) => void;
   handleSimulate: () => void;
+  handleSpread: () => void;
   handleLoadCustomRun: () => void;
   handleLoadFile: (e: React.ChangeEvent<HTMLInputElement>) => void;
   loadingCustomRun: boolean;

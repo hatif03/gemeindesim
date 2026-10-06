@@ -14,6 +14,8 @@ services:
       LLM_BASE_URL: ${LLM_BASE_URL:-https://hackapertus.livemap.sh/v1}
       LLM_API_KEY: ${LLM_API_KEY:-}
       LLM_CONCURRENCY: ${LLM_CONCURRENCY:-4}  # hosted gateway returns 429 above ~4 in flight (research E10)
+      LLM_FALLBACK_NAME: ${LLM_FALLBACK_NAME:-apertus-v1.5-8b}
+      LLM_VOICE_NAME: ${LLM_VOICE_NAME:-}  # optional: model for the report and the 1:1 chat
       SWARM: ${SWARM:-false}  # swarm graph is supported and measured (research final runs) but slower and not better; see docs
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:8080}
     volumes:
