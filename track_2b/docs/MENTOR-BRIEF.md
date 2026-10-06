@@ -1,6 +1,6 @@
 # GemeindeSim — the complete project brief for the mentor meeting
 
-*Hack Apertus 2026, Track 2B (own project). State: 5 October 2026, branch `submission/v2` = `main` (code frozen except fixes).
+*Hack Apertus 2026, Track 2B (own project). State: 6 October 2026, branch `main` (updated after a second inference endpoint, CSCS, became available: see 4.8).
 This document is written to be read on its own: parts 1–4 explain the whole project, part 5 lists what we want to discuss — each topic is
 followed immediately by **our current solution**, so the mentor sees what we already do before we ask.*
 
@@ -51,11 +51,12 @@ their voice — and writes the report.
 | Apertus limits in an agent loop | no parallel tool calls, thinking and JSON exclusive on this gateway, `temperature 0` not reproducible, 4 requests in flight, strong DE/FR fidelity, needle recall to ≈105k tokens ([4.1](#41-capabilities-and-limits-of-apertus-15-on-the-gateway)) |
 | Population validity | strong yes-bias; personas add little; the Federal Council position alone is as good as the best LLM condition ([4.2](#42-is-the-population-a-population)) |
 | After the fixes (70B, same seeds) | valid citations 0 → 100 %, speech matches stance ≈ 0.5 → 0.91, reports asserting an outcome 2/3 → 0/5 |
-| Real booklet | 48-page Federal Council booklet: right passage in the top 4 for 11 of 14 questions, grounded answers 12/14, 3/3 correct abstentions |
+| Real booklet | 48-page Federal Council booklet: right passage in the top 4 for 11 of 14 questions, grounded answers 12/14, 3/3 correct abstentions; with the whole booklet in the prompt the 70B answers 13/14 (4.8) |
+| Second endpoint (CSCS, 6 Oct) | no 429 up to 96 requests in flight (livemap: ≈ 4–5), the same simulation takes 61 s instead of 126 s, every v2 fix replicates; the yes-bias, the single tool call and the non-reproducible `temperature 0` do not change ([4.8](#48-a-second-endpoint-the-cscs-inference-api)) |
 
 ### What it is **not**
-Not a vote predictor, not legal advice, not campaigning. It does not recommend a vote (guardrail checked 0/30). We have **not** tested a local/sovereign deployment (no GPU); the
-gateway findings are properties of the hosted deployment.
+Not a vote predictor, not legal advice, not campaigning. It does not recommend a vote (guardrail checked 0/30). We have **not** tested a local/on-prem deployment (no GPU); the
+findings are properties of two hosted deployments (the hackathon gateway "livemap" and the CSCS inference API, 4.8).
 
 ### Run it
 `cp track_2b/.env.example track_2b/.env` (set `LLM_API_KEY`), then `make run` from the repository root → http://localhost:3000 (also :8080, or `UI_ALT_PORT`), API http://localhost:8000/docs.
@@ -87,6 +88,7 @@ a household calculator, sources cited, no vote advice, and a "limits of Apertus"
 | 7. Hard cases | undecided residents; real 48-page booklet; compare-conditions harness | 4.3, 4.6, 4.7 |
 | 8. Deployment | the original `make run` **did not build from a clean clone** (lockfiles lacked Linux packages); compose defaults overrode our fixes; a silent HTTP 422 for texts > 4 000 characters | all fixed and verified from a fresh clone and through the real UI |
 | 9. Submission | judge briefing, technical report, 3-page PDF, demo script, native-speaker review pack (49 items), 120 offline tests, public repo | see part 8 |
+| 10. Second endpoint (6 Oct) | a key for the CSCS inference API: same probes, same scripts, same-day controls on livemap (E20–E28); then wired what it makes affordable: the grounded 1:1 chat, a 5-run spread in the app, replays that carry the report | 4.8 |
 
 ### 2.3 What we found wrong in our own code (not model problems)
 * **Citations were fiction:** 0 of 159 cited source ids existed in the corpus (5 runs). The "grounded" flag was true whenever no unknown number appeared.
@@ -156,17 +158,20 @@ a localised disclaimer, Swiss spelling. Result: asserted outcome in at least 12 
 
 ### 3.5 The screen (frontend)
 Landing page → policy/config editor (a node graph; a **record** toggle saves the run) → simulation screen: Phaser town map with residents; **stance poll panel** (for / undecided / against, start → now);
-**event feed** with citation chips that open the quoted passage; **resident profile** with stance, reason and impact; **report** modal with the stance shift; replay loader for saved runs (the replay holds the init and rounds only —
-the report is not part of it). Economy bars are hidden for votes and shown for the tariff mode. The 1:1 chat with a resident exists (see 3.7).
+**event feed** with citation chips that open the quoted passage; **resident profile** with stance, reason and impact; **report** modal with the stance shift; replay loader for saved runs (recordings made after 6 Oct also carry the report). Economy bars are hidden for votes and shown for the tariff mode.
+The **1:1 chat** with a resident is grounded the same way as a round (since 6 Oct, see 3.7): the answer comes first, the resident's stance and reason colour it, passages of the vote text are cited as chips,
+figures outside the text are stripped, "not in the text" is said when it is not, and the reply can be shown translated into the user's language. A **"Run 5×: show the spread"** button on the Run node
+starts the same vote five times and opens a page with the stance poll of every run and its range.
 
 ### 3.6 Configuration and deployment
-Environment: `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_CONCURRENCY` (default 4), `SWARM` (default false), `LLM_TEMPERATURE`. `docker compose` builds both services (Node 22, `npm install --legacy-peer-deps`).
+Environment: `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_CONCURRENCY` (default 4: the hackathon gateway's ceiling; 16 on CSCS, see `env.cscs.example`), `LLM_VOICE_NAME` (optional: a different model for the report and
+the chat), `CHAT_STUFF_MAX_CHARS` (default 100 000), `SWARM` (default false), `LLM_TEMPERATURE`. `docker compose` builds both services (Node 22, `npm install --legacy-peer-deps`).
 Sovereign story: point `LLM_BASE_URL` at a local `vllm serve` of Apertus (air-gapped: no other outbound traffic) or a Swiss cloud endpoint. `research/probe_endpoint.py` measures the same limits on any endpoint.
 **We have only measured the hosted gateway.**
 
 ### 3.7 Known gaps (state them before they are found)
-* **The 1:1 chat with a resident (`graph/chat.py`) is not covered by v2.** It uses memories only: no stance, no retrieval from the vote text (policy summary cut to 800 characters), no numeral gate, no Swiss spelling pass.
-  A resident chatted with directly can say "yes" and quote numbers freely. A small fix; not done.
+* **The 1:1 chat was not covered by v2 on 5 Oct** (memories only: no stance, no retrieval, no numeral gate, no Swiss spelling). **Fixed on 6 Oct** and tested live (E25): residents answer first and cite passages,
+  decline unknown facts (5/5), never recommend a vote (0/5), do not invent figures. Remaining: facts the model takes from the complete text (documents between 6 000 and 100 000 characters are put in the prompt whole) carry no passage chip.
 * Stance weights, noise, thresholds and the role mix are assumptions, not calibrated. LLM-generated personas are homogeneous.
 * Dynamics move little in 3 rounds: the poll is unchanged in 4 of 5 final 70B runs; the spread between seeds is large (share *for* 0.00–0.80).
 * The model alone agrees with the code stance only 0.64 (7 of 10 code-*against* residents turn "undecided" or "yes" if the model answers alone) — the reason for code ownership, and the point a critic will press.
@@ -255,6 +260,35 @@ There is no in-app control yet (harness only).
 
 ---
 
+### 4.8 A second endpoint: the CSCS inference API
+On 6 October we got a key for `https://api.inference.cscs.ch/v1` (Swiss National Supercomputing Centre; the provider's documentation says prompts are not recorded and data does not leave its infrastructure — not verified by us).
+It reaches **four models only** (Apertus v1.5 70B, 8B, 70B-thinking, 8B-thinking; every other model answers 403) and offers no usable embedding model. We ran the same scripts on both endpoints, including same-day controls on livemap;
+full tables are in [`research/07-cscs-vs-livemap.md`](research/07-cscs-vs-livemap.md), the reasoning and what we do with it in [`research/08-cscs-plan.md`](research/08-cscs-plan.md).
+
+![Two endpoints: throughput and simulation time](figures/fig08-endpoints.png)
+
+| | hackathon gateway (livemap) | CSCS inference API |
+| --- | --- | --- |
+| requests in flight | ≈ 4–5, then 429 | up to 96 tested, **no 429 in 2 496 requests** |
+| 70B throughput | ≈ 160 tok/s at 4 in flight | 247 at 4, 1 737 at 32, 4 359 at 96 |
+| one simulation (5 residents, 3 rounds) | 70B 126 s, 8B 28 s | **70B 61 s, 8B 23 s**; 25 residents: 105 s |
+| thinking | no separate model; spans in `content` | separate thinking models; **8B-thinking** has a reasoning parser and keeps reasoning under `json_object` |
+| strict `json_schema` | works (24/24 on real prompts) | works on the 70B, **8B degenerates into endless whitespace (11/24)** |
+| `temperature 0` on real 2–3k-token prompts | 2.75 distinct of 3 | 2.71 distinct of 3 (no difference; `seed` does not help on either) |
+| long context | 233k tokens works (70B 98 s) | 233k tokens works (70B ≈ 30–46 s); prefix cache reported, 94 % hit on a shared booklet |
+| parallel tool calls, yes-bias, Swiss facts, real-vote result | same | same (E7, E8, E24 replicate to ±0.01 Spearman) |
+
+**What this means.** The speed-related limits were the hackathon gateway's configuration, not the model or our app; everything that comes from the weights (yes-bias, one tool call, weak Swiss facts, authority deference,
+non-reproducible sampling) is unchanged — so the design (code-owned stance, grounding, guardrails) stands on two deployments, and every v2 fix replicates (citations 1.00, no self-introductions, reports without asserted outcome 0/5, speech matches
+stance 0.85–0.88).
+
+**What we built because of it** (all behind safe defaults, the submission still defaults to livemap): the grounded 1:1 chat tested live (0 invented figures, unknown facts declined 5/5, 0/5 vote recommendations), the whole-text chat for documents up to
+100 000 characters (the real booklet: the lost-revenue question answered 5/5 instead of 0/5), the in-app 5-run spread, replays that carry the report, `LLM_VOICE_NAME`, retry of 504 on the same model, a CSCS profile (`env.cscs.example`).
+
+**What it does not change.** No local deployment was measured; CSCS is another hosted endpoint. A shared service answers 504 (not 429) when long jobs overlap, so clients need retries; the key is personal and is not part of the submission.
+
+---
+
 ## 5. Topics to discuss with the mentor
 
 ### 5.0 Suggested agenda (20–30 minutes)
@@ -262,7 +296,7 @@ Spend the time on topics only a mentor can answer. The rest we can settle oursel
 
 | # | topic | why a mentor | time |
 | --- | --- | --- | --- |
-| 1 | **Gateway behaviour and flags** — topics 1, 2 and 3 below (tool calls, thinking, spans in `content`) plus 5.2-B (why 4 in flight, why `T=0` is not reproducible) | only the people running the gateway know the vLLM version and parsers | 6 min |
+| 1 | **Gateway behaviour and flags** — topics 1, 2 and 3 below (tool calls, thinking, spans in `content`) plus 5.2-B (why 4 in flight, why `T=0` is not reproducible). We now have the same measurements from a second deployment (4.8): the 4-in-flight limit is livemap's configuration, one tool call and non-reproducible sampling are not | only the people running the gateway know the vLLM version and parsers | 6 min |
 | 2 | **Code-owned stance vs. dynamics in the LLM** — topic 6; plus 5.2-A (yes-bias) | the central design decision | 7 min |
 | 3 | **8B locally vs. 70B for the shown voice** — topic 8 | deployment realism; we have no GPU | 5 min |
 | 4 | **Charter line for activist personas** — topic 7 (please confirm the interpretation first) | policy boundary | 3 min |
@@ -283,7 +317,10 @@ Each topic: the question → **our current solution** → the evidence → what 
 **Evidence.** Thinking + `json_object` suppresses the reasoning (16/16) and the bat-and-ball answer drops to a wrong 0.10 in 15 tokens; thinking alone: 70B 6/8 right (900-token limit hit twice), 8B 8/8. Tools + thinking is accepted (22/22) but
 shows no reasoning. Strict JSON parses 100 % in every example condition with or without `response_format`.
 
-**We would like:** is there a supported way on this gateway to get a reasoning span *and* constrained output in one call (reasoning parser plus guided decoding)? Or is two calls the norm?
+**Update 6 Oct (CSCS inference API, E20).** That deployment has **separate thinking models**. The 8B-thinking fills the `reasoning` field, keeps `content` clean and *keeps its reasoning under `json_object`* (bat-and-ball 5/5 right in ≈ 260 tokens);
+the 70B-thinking does not (reasoning skipped, 0.10 wrong 5/5). Thinking models accept no tools (HTTP 400) and do not change the yes-bias (E24). So "reasoning and JSON in one call" exists, for the 8B only; the loop stays on `json`, thinking off.
+
+**We would like:** is there a supported way on the hackathon gateway to get a reasoning span *and* constrained output in one call (reasoning parser plus guided decoding), as the CSCS 8B-thinking does? Or is two calls the norm?
 **Likely mentor view:** "Two calls is fine; don't fight the server; ask for a reasoning parser to be enabled."
 
 #### 2. No parallel `tool_calls` — model, vLLM or gateway?
@@ -294,6 +331,7 @@ shows no reasoning. Strict JSON parses 100 % in every example condition with or 
 
 **Evidence.** 11/11 on both models: one `tool_calls` entry even when two cities are requested; with an explicit "return two calls" prompt the 70B writes two pseudo-calls as text and returns **no** `tool_calls` (11/11), the 8B emits one; `tool_choice=required` also
 gives one. From outside we cannot separate chat template, tool parser and gateway.
+**Update 6 Oct:** identical on the CSCS API (E20: one call for two cities, `parallel_tool_calls=true` ignored, the 70B writes two pseudo-calls as text 5/5, the 8B one call). Both deployments report the same vLLM build (0.23.1rc1), so the limit sits in the engine or the chat template, not in either gateway.
 
 **We would like:** which tool parser is enabled? Can a mentor run `probe_endpoint.py` against a local vLLM for five minutes — that decides whether it is model, parser or gateway.
 **Likely mentor view:** "Probably the template/parser; Apertus was not trained for parallel calls. Sequential or many-requests is fine."
@@ -305,6 +343,8 @@ gives one. From outside we cannot separate chat template, tool parser and gatewa
 It is a safety net; the loop runs with thinking off, so spans normally do not occur.
 
 **Evidence.** 8/8 on both models: span in `content`, `reasoning` null. Weakness: an unclosed span (a truncated generation) would not be removed by a closing-tag regex alone; 2 of 8 70B thinking calls hit the 900-token limit.
+
+**Update 6 Oct:** on CSCS the 70B-thinking still leaves the span in `content` (`reasoning` null) while the 8B-thinking has the parser (field filled, content clean): the parser is a per-deployment choice, so the delimiters can be configured.
 
 **We would like:** can the gateway be told Apertus' reasoning delimiters so the field is populated? Are the delimiters stable between 1.5 and later versions?
 **Likely mentor view:** "A vLLM configuration issue; keep stripping defensively."
@@ -331,7 +371,9 @@ full booklets into every turn.
 the model every round at 4 in flight. The real booklet (83 k characters ≈ 25k tokens) *would fit* whole, so stuffing is feasible for one booklet — **untested end-to-end** (multi-fact, persona dilution).
 
 **We would like:** has anyone measured Apertus beyond 100k tokens with persona and instructions, not a needle?
-**Next step we can do ourselves:** a "whole booklet in context" condition on E17 (14 questions × stuffed vs retrieved, both sizes, ≈ 30 calls).
+**Update 6 Oct — we ran it (E26, hand graded).** Whole booklet (24.5k tokens) vs retrieved passages, same 14 + 3 questions: 70B 13/14 whole vs 12/14 (top 8) and 11/14 (top 4); 8B 12 / 12 / 11; unanswerable questions 3/3 in every cell. A whole-booklet call took 1.5 s because the provider's
+prefix cache served 94 % of the shared tokens. Long-context recall works to 233k tokens on both endpoints (needle: 70B 26/30 on CSCS with digit errors in the German haystack above 150k tokens, 8B 30/30; three facts: 70B 9/10, 8B 5/10). Decision: the 1:1 chat now gets the complete text first when it has
+6 000–100 000 characters (the real booklet: 5/5 answered the 1.8 billion CHF question that retrieval alone missed 5/5); the loop keeps retrieval, because it gives the validated citation chips. Not tested: persona dilution in the loop.
 **Likely mentor view:** "Hybrid: retrieval for citations, long context as a fallback; test degradation beyond 100k."
 
 #### 6. Opinion dynamics in equations versus in the LLM
@@ -367,6 +409,8 @@ as everyone else (no persuasion boost); Swissvotes data is used under its terms 
 **Evidence.** The 8B is ≈ 4× faster (555 vs 156 aggregate tokens/s at 4 in flight; 1.8 s vs 11 s per call); final speech–stance match 0.87 / 0.85 vs 0.91 / 0.88; undecided lines 0.54 vs 0.73; Swiss facts 9/15 vs 12/15; never emits `move`; the strongest deference to authority (98 %).
 The 70B (tensor-parallel 2 on the gateway) needs two large GPUs; the 8B fits one.
 
+**Update 6 Oct:** on CSCS the 70B takes 3.8 s per call and a 3-round simulation 61 s against 23 s for the 8B (livemap: 126 s vs 28 s), so the *speed* argument for the 8B has shrunk; the local-hardware argument has not. `LLM_VOICE_NAME` now lets a deployment run the 8B for the loop and the 70B for the report and chat (untested as a pair).
+
 **We would like:** realistic municipal hardware, the vLLM flags for the 8B, and whether a quantised 70B behaves like the hosted one.
 **Likely mentor view:** "Hybrid is sensible; test quantised and local and report the delta honestly."
 
@@ -388,11 +432,15 @@ Same format.
 **Question:** is it expected from Apertus' alignment data, and is there a recommended mitigation?
 **Our current solution.** We do not try to de-bias the model. We take the sign of the stance out of its hands (code-owned stance), keep the model for impact judgement and voice, and bind speech to the stance. Direct elicitation under persona, no persona and balanced text all gave yes.
 **Evidence.** 15/15 yes; ≈ 35 pp too yes on 54 real votes; the prompt language shifts it ≈ 19 pp.
+**Update 6 Oct (E24):** the same 14 of 15 "yes" with a persona and 15 of 15 without on all four models of the CSCS key, thinking models included (reasoning does not talk it out of it). Logprobs show the answer format matters: asked for one word, the 8B puts 25 % of its mass on "no" for the residents it answers "yes" in JSON with a reason.
+
 **We would like:** a known cause and a mitigation (system role, logit bias, calibration) that we should compare with the code-owned design.
 
 #### B. Why 4 in flight, and why is `T=0` not reproducible?
 **Our current solution.** Concurrency 4 with 429 back-off (same model, up to 6 times); the app never assumes reproducibility, so findings are reported as ranges over seeds; every call is logged in full so a run can be audited and replayed in the UI.
 **Evidence.** 5 identical `T=0` prompts → 3 distinct outputs (70B), 5 (8B); 5 in flight → 4/10 answered; 70B 156 tok/s at 4 in flight.
+**Update 6 Oct (E21, E23):** the 4-in-flight ceiling is livemap's configuration: the CSCS API answered 2 496 requests up to 96 in flight without one 429 (70B 4 359 tok/s at 96, livemap ≈ 200 at its ceiling). `temperature 0` on the app's real 2–3k-token prompts is *not* reproducible on either endpoint (2.7 distinct outputs of 3, 1 of 24 prompts identical) and `seed` does not help; the short-prompt probe (8B: 1 distinct of 5) is misleading.
+
 **We would like:** is the limit gateway configuration (max sequences) and is the non-determinism batching under tensor parallelism? Would a single-GPU local vLLM be reproducible?
 
 #### C. How should a civic simulation be validated?
@@ -411,7 +459,7 @@ Same format.
 **We would like:** whether there is a tokenizer or fine-tune angle, and whether Swiss-German input is expected to work.
 
 #### F. How strongly may we word "sovereign"?
-**Our current solution.** We say the app is *configured* for on-prem / air-gapped / Swiss cloud via `LLM_BASE_URL` and ships a portable probe; we say explicitly that only the hosted gateway was measured.
+**Our current solution.** We say the app is *configured* for on-prem / air-gapped / Swiss cloud via `LLM_BASE_URL` and ships a portable probe; we say explicitly that only hosted endpoints were measured — the hackathon gateway and, since 6 Oct, the CSCS inference API (Swiss National Supercomputing Centre; its documentation states prompts are not recorded and data stays on its infrastructure). Whether that counts as the "Swiss sovereign cloud" option of the track is the organisers' call; a local/on-prem run is still unmeasured.
 **We would like:** the wording the organisers consider acceptable.
 
 #### G. Evaluation hygiene
@@ -439,7 +487,9 @@ Same format.
 | Did you test a local deployment? | No GPU. `LLM_BASE_URL` swap and `probe_endpoint.py` exist; every limit is that of the hosted gateway. |
 | Is the German/French right? | 100 % language fidelity measured; register not native-reviewed yet. |
 | Why is it faster than before? | We cannot attribute it; token volume is equal and endpoint load varied up to 8×. |
-| What does the 1:1 chat do? | Memories only: not grounded and not stance-bound yet (3.7). |
+| What does the 1:1 chat do? | Since 6 Oct it is grounded like a round: stance and reason colour the answer, passages are cited, figures outside the text are stripped, unknown facts are declined, no vote recommendation (tested live, 25 answers). |
+| Why two endpoints, and which numbers are yours? | Livemap is the hackathon endpoint and stays the default; CSCS (a key we received on 6 Oct) is where we ran the same scripts faster. The livemap numbers are the primary ones; CSCS is a replication (4.8). |
+| Is the speed-up your code? | No. It is the endpoint: the same code takes 126 s on livemap and 61 s on CSCS (70B). |
 | Where is the original pitch wrong? | `research/04-pitch-audit.md` lists each claim with the verdict (supported / partly / refuted). |
 | What did you get wrong yourselves? | The self-introduction metric (C1), a contaminated first throughput run, a number-gate variant that was worse, a grader that undercounted — all in the notebook. |
 
@@ -448,8 +498,8 @@ Same format.
 ## 8. Open items, reproduction, glossary
 
 ### Open before 15 October (deadline 16 Oct, 12:00 CEST)
-Record the ≤ 2-minute video (`docs/DEMO-SCRIPT.md`); get the native-speaker review (`docs/review/`); rename the PDF with the team name; submit the form; optionally ground the 1:1 chat, run the stuffed-booklet experiment, run the probe on a local vLLM,
-test a French booklet. Checklist: [`SUBMISSION-CHECKLIST.md`](SUBMISSION-CHECKLIST.md).
+Record the ≤ 2-minute video (`docs/DEMO-SCRIPT.md`; the run takes ≈ 1 minute on CSCS, keep the replay as the fallback); get the native-speaker review (`docs/review/`); rename the PDF with the team name; submit the form; optionally run the probe on a local vLLM,
+test a French booklet, test the 8B-loop + 70B-voice split, put the whole booklet into the loop prompt (plan in `docs/research/08-cscs-plan.md`). Checklist: [`SUBMISSION-CHECKLIST.md`](SUBMISSION-CHECKLIST.md).
 
 ### Reproduce
 ```bash

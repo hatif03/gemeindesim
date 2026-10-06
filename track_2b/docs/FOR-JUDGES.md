@@ -99,6 +99,8 @@ We used the town as a test bench for the model. Every number is from a logged ru
 | `make run` could not build from a clean checkout in the original repo (no Linux native packages in either frontend lockfile); fixed and verified from a fresh clone | E18 |
 | The model never gave explicit vote advice (0/30) but, with the old prompt, asserted an invented outcome ("the measure passed") in most reports | E9; fixed 12/30 → 0/30 (E9b) |
 | Citations were decorative (0 of 159 ids existed) and are now validated (100 % of labels valid in all 16 final runs) | E3, final runs |
+| A second hosted endpoint (the CSCS inference API, 6 Oct) lifts the speed limits (no 429 up to 96 requests in flight; the same simulation 126 s → 61 s on the 70B) and every v2 fix replicates; the yes-bias, the single tool call, the non-reproducible `temperature 0` and the real-vote result do not change | E20–E28, [`research/07-cscs-vs-livemap.md`](research/07-cscs-vs-livemap.md) |
+| The 1:1 chat with a resident is grounded like a round: answers first, cites passages, strips figures outside the text, declines unknown facts (5/5), never recommends a vote (0/5); with the whole booklet in its prompt the real-booklet revenue question is answered 5/5 instead of 0/5 | E25, E28 |
 
 **What this changes in how we describe the product.** GemeindeSim is a bilingual, grounded *what-if explainer*, not a
 vote predictor, and not a source of Swiss facts. Apertus is the speaker; the application owns stance, arithmetic
@@ -106,7 +108,7 @@ and sources. Corrections to earlier statements in this repo are listed in
 [`research/04-pitch-audit.md`](research/04-pitch-audit.md).
 
 **For the Apertus team** (things we could not resolve from outside): is the silent skipping of reasoning under
-`json_object` the intended vLLM behaviour? Is the 4-in-flight limit a gateway or a deployment property? Would a
+`json_object` the intended vLLM behaviour? Is the 4-in-flight limit a gateway or a deployment property (the CSCS API showed none up to 96)? Would a
 `reasoning` field be exposed (our splitter already no-ops)? Is the strong *yes* default on civic proposals a known
 effect of the charter alignment?
 

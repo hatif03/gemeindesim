@@ -1043,3 +1043,213 @@ Drove the repo's own Playwright script against the Docker stack built from a fre
 (the balanced DE+FR text is ≈ 4 500) and the UI only logged a console error. Anyone pasting a longer text (a booklet section) would hit the same
 silent failure. Fixed: cap 30 000 (whole documents still go through the PDF upload path), regression test added, backend rebuilt, capture rerun.
 (Not fixed: the UI shows no message when the API rejects a request; noted in `06-next-steps.md`.)
+
+
+---
+
+## 2026-10-06 — A second endpoint: the CSCS inference API (E20–E26)
+
+A new key arrived for the **CSCS inference API** (`https://api.inference.cscs.ch/v1`, "Envoy AI Gateway" in front of vLLM). Question: does it lift
+the limits we measured on the hackathon gateway ("livemap") on 5 October, and what can the app do with that? Everything below is logged in
+`research/results/cscs/` (raw calls, no key; the same-day livemap controls are in `research/results/livemap_2026-10-06/`). The harness got env switches so
+the same scripts run on either endpoint: `RESEARCH_SUBDIR` (results folder), `RESEARCH_M70` / `RESEARCH_M8` (model ids), `RESEARCH_CONCURRENCY`;
+`research/cscs_env.sh` sets them (the key lives in the git-ignored `.env.cscs`). The service docs say: no explicit rate limit documented, "CSCS does
+not record user prompts or model responses", `/v1/messages` (Anthropic-style) and `/v1/embeddings` exist.
+
+### E20 — capability matrix (`exp20_cscs_capabilities.py`, n = 5 per cell, 3 for the enforcement probes; also run on livemap the same day)
+
+**Which models the key can use.** `GET /v1/models` lists 11 models; a chat request to any model other than the four Apertus v1.5 models answers
+**HTTP 403 `key not authorized for this model`** (Apertus-2509 70B/8B, Gemma-4-31B, Nemotron-3-Super, GLM-5.2/5.3, Kimi-K2.7). Usable:
+`swiss-ai/Apertus-v1.5-70B`, `-8B`, `-70B-thinking`, `-8B-thinking`. `/v1/embeddings`: **404 for the Apertus models, 403 for every other id we
+tried** (Qwen3-Embedding, bge-m3, e5 and an invented id all answer 403, so a 403 does not reveal whether a model exists): no embedding model is usable
+with this key. `/v1/messages` answers 200 on CSCS for an Apertus model (429 on livemap at that moment: not conclusive).
+
+| capability | CSCS 70B | CSCS 8B | CSCS 70B-thinking | CSCS 8B-thinking | livemap 70B / 8B (same day) |
+| --- | --- | --- | --- | --- | --- |
+| `system_fingerprint` | vLLM 0.23.1rc1.dev1029, tp4 suffix | same build, no tp suffix | – | – | vLLM 0.23.1rc1, tp2 (5 Oct) |
+| single tool call | 5/5 | 5/5 | HTTP 400 (documented: no tools on thinking models) | HTTP 400 | 5/5 / 5/5 |
+| two cities in one request, `tool_choice=required`, `parallel_tool_calls=true` | one call (5/5 each) | one call | – | – | one call / one call |
+| explicit "return two calls" | **0 `tool_calls`, two pseudo-calls as text (5/5)** | one call (5/5) | – | – | **same** / one call |
+| reasoning | none visible | none visible | span `<\|inner_prefix\|>…` **in `content`, `reasoning` null (5/5)** | **`reasoning` field filled (5/5), `content` clean** | no thinking models |
+| `chat_template_kwargs.enable_thinking` on the plain model | span in `content`, `reasoning` null (5/5) | same | – | – | same |
+| thinking requested + `json_object` (bat-and-ball, correct 0.05) | no span, **0.10 wrong (5/5)** | 0.1 wrong | model's own thinking + `json_object`: reasoning skipped (15 tokens), **0.10 wrong (5/5)** | **reasoning kept, 0.05 correct (5/5, ≈ 260 tokens)** | 0.10 wrong / 0.1 wrong |
+| `response_format: json_schema` (strict), `structured_outputs` {json, choice} | **enforced (3/3 each)** | enforced | enforced | empty at `max_tokens` 60 (budget spent on reasoning) | **enforced on livemap too (3/3 each)** |
+| `guided_json`, `guided_choice` (old names) | ignored (0/3) | ignored | ignored | – | ignored |
+| `seed`, T 0.8, 4 identical requests | 1 distinct | 2 distinct | 1 | 2 | 2 / 1 |
+| `temperature 0`, 5 identical short-ish prompts | **3 distinct** | 1 | 1 | 1 | 2 / 1 |
+| `n = 2`, `logprobs`+`top_logprobs`, `stop`, `system` role, streaming (first byte ≈ 0.2 s) | all work | all work | work | – | all work |
+| prefix cache visible in `usage.prompt_tokens_details.cached_tokens` | **3 040 of 3 078 tokens** | same | same | same | field `null` (cache use unknown) |
+
+**F60 — The CSCS key reaches only the four Apertus v1.5 models, but they are the ones we use; no embedding model is available.** Other model
+families answer 403, so an independent judge from another family is not available through this key (the LLM classifiers of E14 stay Apertus judging Apertus).
+
+**F61 — Same engine, same model behaviour; the difference is the deployment, not the capabilities.** The build string is the same as on livemap and so
+are the behaviours that come from the weights and the chat template: one tool call per request (the 70B writes two pseudo-calls as text when asked for
+two), `enable_thinking` puts a span in `content`, thinking + `json_object` skips the reasoning. **Strict structured outputs (`json_schema`,
+`structured_outputs`), `seed`, `logprobs`, `n`, `stop` all work on livemap too** (our first reading of E20 on CSCS alone suggested otherwise; the
+same-day control corrected it). What really differs: (a) throughput, latency and concurrency (E21), (b) **separate `-thinking` models, one of which
+(8B) has a reasoning parser** (field filled, content clean) and keeps its reasoning under `json_object`, (c) `cached_tokens` is reported, (d) speed at
+long context (E22: **livemap reaches 233k tokens too**, 2–3× slower; we first wrote that the window was a CSCS difference, the livemap control corrected it).
+Answer to the open question "thinking spans in `content`": solved on the **8B-thinking only**; the 70B-thinking still leaves the span in `content`.
+
+### E21 — rate limit and throughput (`exp21_cscs_throughput.py`, raw requests, no retries, idle key)
+
+Requests in flight 1 … 96, two shapes (short; ≈ 2 400-token "resident-like" prompt), 250 tokens out, n = max(8, 2·c) per cell. **Not one 429 and
+not one non-200 answer in 2 496 requests** (base models); the two thinking models, short shape, 1–16 in flight: 0 failures of 144.
+
+| in flight | 70B short: p50 s | agg tok/s | 70B app-shape: p50 s | agg tok/s | 8B short: p50 s | agg tok/s | 8B app-shape: p50 s | agg tok/s |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3.75 | 66 | 2.19 | 60 | 1.72 | 143 | 1.14 | 131 |
+| 4 | 3.84 | 247 | 2.34 | 222 | 1.64 | 519 | 1.29 | 457 |
+| 8 | 3.94 | 484 | 2.39 | 433 | 1.90 | 812 | 1.32 | 686 |
+| 16 | 3.95 | 962 | 2.44 | 877 | 1.70 | 2 024 | 1.51 | 1 601 |
+| 32 | 4.54 | 1 737 | 2.95 | 1 462 | 2.37 | 2 871 | 1.90 | 2 690 |
+| 64 | 4.70 | 3 334 | – | – | 2.41 | 5 555 | – | – |
+| 96 | 5.38 | 4 359 | – | – | 3.05 | 6 754 | – | – |
+
+Livemap, same probe, same day: ceiling **5 in flight** (6 in flight → 5 of 12 and 6 of 12 answered), 70B 160 tok/s at 4 in flight, p50 6.0 s (5 Oct: 10–11 s).
+
+**F63 — Concurrency is no longer a constraint.** Throughput scales almost linearly to 96 in flight (70B 66 → 4 359 tok/s); per-call latency rises
+by 40 % (3.8 → 5.4 s). Against the hackathon gateway's ceiling (70B ≈ 160 tok/s at 4 in flight) that is ≈ **11× the 70B throughput at 32 in flight and
+27× at 96**, and a single call is 1.6× (today) to 3× (5 Oct) faster. The app's `LLM_CONCURRENCY=4` is a property of livemap, not of the app; 16 is a
+safe default here. *We did not look for the ceiling beyond 96 and do not know if the service has a fair-use limit for a longer sustained load.*
+
+**F64 — Under mixed load the service times out instead of rate-limiting.** While the long-context run (E22) kept the 70B busy with 150k-token prefills,
+simultaneous small requests to the 70B and the 8B-thinking returned **HTTP 504 "upstream request timeout"** (33 of 60 in one run, which we set aside as
+contended; 7 of the long-context requests themselves needed one retry). A later run of the same stance prompts at 8 in flight against the **8B-thinking**
+alone still produced 62 and 77 × 504 in two attempts (those requests are long: ≈ 2 k tokens in, ≈ 800–1 600 reasoning tokens out), while short requests to the same
+model passed up to 16 in flight without error (72 of 72). Rule of thumb from the data: keep the thinking models at ≤ 2 requests in flight for long generations
+and retry 5xx with back-off. The app's `_ainvoke` retries 429 only; the plan adds 504 (`docs/research/08-cscs-plan.md`).
+
+### E22 — long context up to the advertised 262k (`exp22_cscs_longcontext.py`, 80 calls, DE and FR haystacks of Swiss vote titles)
+
+Single needle (one Linden sentence at depth 10 / 50 / 90 %) and a three-fact question (rate, credit, classrooms; all three figures must appear), prompt
+sizes 48k … 233k tokens. Beyond ≈ 80k characters the haystack cycles the distinct titles (as in E12).
+
+| | 70B | 8B |
+| --- | --- | --- |
+| single needle, all sizes | **26/30**: DE 11/15, FR 15/15 | **30/30** |
+| single needle, DE, 150k / 195k / 233k tokens | 1/3, 2/3, 2/3 | 3/3 each |
+| three-fact question | 9/10 | **5/10** |
+| failures | digit corruption: "16 %", "18 Prozent", "117 %" for "124 %"; "4" for "4.8" | the old rate (118) or the credit repeated ("4.8, 4.8, 8") |
+| mean latency | 8–12 s at 50k; 21–25 s at 100k; 29–46 s at 140–233k | 3–15 s at 50k; 7–10 s at 100k; 19–42 s at 150–233k |
+
+(The CSCS latencies overlapped with E24 attempts and are not clean.) **Same-day livemap control** (`research/results/livemap_2026-10-06/e22_longcontext.*`, German, depth 50 %, one
+call per cell, so n = 1): 105k / 150k / 233k tokens, 70B single needle 3/3 at 52 / 63 / 98 s and three facts 3/3 at 53 / 119 / 130 s; 8B single 3/3 at 8 / 13 / 28 s and three facts
+1/3 (wrong at 105k and 233k). Livemap on 5 Oct: 70B 31–36 s at 100k.
+
+**F65 — The 262k window works on both endpoints, but the 70B is the weaker single-needle reader at that length on CSCS, and the 8B cannot hold three facts.** CSCS: single-fact
+recall is perfect for the 8B to 233k tokens and mostly right for the 70B (it garbles digits in the German haystack above 150k tokens: 11/15 DE, 15/15 FR); a question that needs three
+facts is answered by the 70B (9/10) and not reliably by the 8B (5/10). Livemap (n = 1 per cell) gives the same picture without the 70B digit errors, at 2–3× the latency
+(98 s vs ≈ 30–40 s at 233k). It is single-needle evidence on a synthetic haystack; persona dilution and multi-fact reasoning in the real loop are not tested.
+
+### E23 — determinism and structured output on the app's real resident prompts (`exp23_cscs_structured_determinism.py`, 24 prompts × 3 repeats, T = 0)
+
+| condition | CSCS 70B | CSCS 8B | livemap 70B | livemap 8B |
+| --- | --- | --- | --- | --- |
+| as shipped (example in prompt, `json_object`): distinct outputs per prompt of 3 / all three identical | 2.71 / 1 of 24 | 2.62 / 1 of 24 | 2.75 / 1 of 24 | 2.62 / 3 of 24 |
+| same + `seed=1` | 2.75 / 3 of 24 | 2.54 / 3 of 24 | 2.62 / 1 of 24 | 2.58 / 1 of 24 |
+| schema-valid, shipped condition | 72/72 | 72/72 | 72/72 | 72/72 |
+| strict `json_schema`, no example in the prompt | 23/24 valid | **11/24 valid** | 24/24 | 24/24 |
+| strict `json_schema` + example | 22/24 | **10/24** | 24/24 | 24/24 |
+| events / types per turn (shipped) | 2.26 / 1.97 | 1.96 / 1.82 | 2.32 / 2.01 | 1.94 / 1.79 |
+
+**F62 (revised) — `temperature 0` is NOT reproducible on real prompts on either endpoint, and `seed` does not fix it.** The short-prompt probe (E20: 8B 1 distinct
+of 5) is misleading: on the app's 2–3 k-token resident prompts almost every repeat differs (2.5–2.75 distinct outputs of 3, 1–3 of 24 prompts identical),
+on both endpoints and both sizes, with or without `seed`. Reproducibility has to be solved by logging runs and by reporting ranges over seeds, not by the sampler.
+
+**F66 — Strict `json_schema` on the CSCS 8B degenerates into endless whitespace.** 13 of 24 outputs were valid JSON followed by a run of `\n \n …` until
+`max_tokens` (the 70B: 1–2 of 24; livemap: 0 of 24, same request). Do not switch the app to `json_schema` on this endpoint; `json_object` with the example in the
+prompt was 72/72 valid on both sizes (the shipped condition).
+
+### E24 — is the yes-bias a property of the weights or of the deployment? (`exp24_cscs_stance_models.py`, 15 residents, Linden vote, T = 0)
+
+| model | full persona: yes / no / undecided / unparsed | no persona | reasoning field filled |
+| --- | --- | --- | --- |
+| CSCS 70B | 14 / 1 / 0 / 0 | 15 / 0 / 0 / 0 | – |
+| CSCS 8B | 14 / 1 / 0 / 0 | 15 / 0 / 0 / 0 | – |
+| CSCS 70B-thinking | 14 / 1 / 0 / 0 | 15 / 0 / 0 / 0 | 0 (span in content) |
+| CSCS 8B-thinking | 14 / 0 / 0 / 1 | 10 / 0 / 0 / 5 (6 of 30 answers hit the 2 500-token limit inside the reasoning, content empty) | 30 of 30 |
+| (livemap 70B, 5 Oct) | 15 / 0 / 0 | 15 / 0 / 0 | – |
+
+Logprob view (one-word answer, probability mass on yes / no / undecided from the first token's top-20 logprobs): **70B full persona P(yes) = 0.93, no persona 1.00**;
+**8B full persona P(yes) = 0.75, P(no) = 0.25, no persona 1.00**; the correlation of P(yes) with the resident's left–right leaning is +0.37 (70B) and +0.08 (8B).
+
+**F67 — The yes-bias is a property of the weights; thinking does not remove it.** The same 14-of-15 "yes" appears on all four models, with and without
+reasoning. **F68 — The answer format matters.** Asked for one word, the 8B puts 25 % of its probability mass on "no" for the same residents it answers "yes"
+in JSON with a reason: the stance a model "has" depends on how it is asked. Logprobs are a better instrument than argmax for this and are available on both endpoints
+(not used by the app; the plan lists it as an evaluation tool).
+
+### E26 — retrieve-first versus stuffing the whole booklet (`exp26_stuffed_vs_retrieved.py`, mentor topic 5)
+
+The real 28 Sept 2025 Federal Council booklet (83 k characters ≈ 24.5 k tokens), the 14 + 3 questions of E17, 70B and 8B, three conditions (v2 retriever top 4,
+top 8, whole booklet). **Hand graded** (`research/results/cscs/e26_manual_grading.json`; the automatic gold-regex score undercounted again: 6/14, 8/14).
+
+| model, condition | correct of 14 | partial | wrongly abstained / wrong | unanswerable abstained | mean prompt tokens | mean latency |
+| --- | --- | --- | --- | --- | --- | --- |
+| 70B retrieved top 4 | 11 | 1 | 2 / 0 | 3/3 | 536 | 1.4 s |
+| 70B retrieved top 8 | 12 | 1 | 1 / 0 | 3/3 | 942 | 1.5 s |
+| 70B whole booklet | **13** | 1 | 0 / 0 | 3/3 | 24 524 | 2.2 s |
+| 8B retrieved top 4 | 11 | 1 | 2 / 0 | 3/3 | 536 | 0.7 s |
+| 8B retrieved top 8 | 12 | 1 | 1 / 0 | 3/3 | 942 | 0.8 s |
+| 8B whole booklet | 12 | 0 | 1 / 1 | 3/3 | 24 524 | 0.8 s |
+
+The prefix cache served **94 % of the booklet tokens** on average (the booklet is a shared prefix), so a whole-booklet call took 1.5 s on average.
+
+**F69 — Stuffing a 25k-token booklet is now as cheap as retrieval and slightly better; it gives up the citation chips.** The remaining retrieval failures
+(1.8 Mrd, Ersterwerberabzug) disappear when the whole text is in the prompt; the 70B reaches 13/14. The 8B is no better stuffed (it abstained on the one question
+whose figure is in the prompt and answered another with the booklet's purpose). Costs: no passage labels to validate or show (the quote check is unreliable on the booklet's hyphenated text), prompt size
+24.5 k × residents × rounds (cheap only because of prefix caching). Not tested: persona dilution in the full resident prompt, or a 150-page booklet.
+
+### E27 — the final code on the CSCS API, 5 seeds × 2 sizes + one 25-resident town (`run_cscs_sims.sh`, `summarize_sims.py cscs`, `exp14_tilt.py`)
+
+Same code, same seeds as `final_70_s*` / `final_8_s*` (the seeds fix the random attributes only: persona text, judged impact and so the initial stance poll differ).
+
+| metric | livemap 70B | CSCS 70B | livemap 8B | CSCS 8B | CSCS 70B, 25 residents |
+| --- | --- | --- | --- | --- | --- |
+| simulation wall time | 126 s (120–132) | **61 s (59–63)** | 28 s (27–29) | 23 s (22–24) | 105 s |
+| mean call latency | 9.4 s | 5.4 s | 2.2 s | 2.2 s | 8.9 s |
+| LLM calls / events | 46 / 33.0 | 44 / 33.2 | 41 / 31.6 | 40 / 31.4 | 200 / 163 |
+| cited ids that exist / events with ≥ 1 valid citation | 1.00 / 0.57 | 1.00 / 0.55 | 1.00 / 0.48 | 1.00 / 0.49 | 1.00 / 0.53 |
+| ballot question in prompt, utterance in the resident's language | 1.00, 1.00 | 1.00, 1.00 | 1.00, 1.00 | 1.00, 1.00 | 1.00, 1.00 |
+| self-introductions, ß | 0, 0 | 0, 0 | 0, 0 | 0, 0 | 0, 0 |
+| reports that mix languages / assert the measure passed | 0/5, 0/5 | 0/5, 0/5 | 0/5, 0/5 | 0/5, 0/5 | 0/1, 0/1 |
+| speech matches the code stance (classifier 70B / 8B; same definition, reproduces 0.91 / 0.88 on the livemap runs) | 0.91 / 0.88 (n = 146) | 0.85 / 0.87 (n = 137) | 0.87 / 0.85 (n = 150) | 0.88 / 0.86 (n = 150) | – |
+| by code stance, 70B runs: for / against / undecided (classifier 70B) | 54/58, 55/55, 24/33 | 43/50, 55/58, 18/29 | 26/29, 91/97, 13/24 | 35/42, 77/78, 20/30 | – |
+
+**F70 — Every v2 fix replicates on a second deployment, and the 70B simulation takes half the time.** The only visible difference is wall time (70B 2.1×, 8B 1.2×) and the sampled
+persona text. The speech–stance match of the CSCS 70B (0.85 / 0.87) is 0.04–0.06 below the livemap runs, within what 5 runs with different persona texts produce; no significance test was done.
+At livemap's ceiling the 25-resident run (200 calls at 9.4 s) would take roughly 8 minutes: an estimate, not a run.
+
+### E7 and E8 replicated on CSCS (`exp07_knowledge.py`, `exp08_swissvotes.py`, `analyze_swissvotes.py`; 15 questions, 3 672 calls, 0 failures)
+
+Swiss knowledge: 70B **11/15** (livemap 12/15), 8B **9/15** (9/15); the failures are the same questions (`steuerfuss_def`, `rechnung_240`, …). Real votes (54 federal votes): Spearman of the persona simulation with the real
+yes-share 0.25 (DE) / 0.37 (FR) for the 70B and −0.02 / 0.03 for the 8B (livemap 0.25 / 0.38 and −0.02 / 0.02); persona-less with the Federal Council line 0.47 / 0.54 (70B), 0.67 / 0.56 (8B) (livemap 0.47 / 0.54 and 0.67 / 0.56);
+Federal Council alone 0.63; recalibrated MAE on 2025–26 12.4–12.6 pp (livemap 12.4–12.5), 8B with the line 8.2–10.2 pp (8.2–10.2); simulated yes-share still ≈ 34 pp too high for the 70B/DE.
+**F71 — The silicon-electorate result is a property of the weights, replicated to within ±0.01 Spearman on another deployment.**
+
+### E25 — the 1:1 chat, grounded, tested live (`exp25_chat_live.py`; 5 residents × 5 scripted questions; local backend wired to CSCS)
+
+The chat used memories only (no stance, passages, numeral gate or Swiss spelling: known gap of 5 Oct). New: stance label and reason (no numbers), retrieved passages with `[P#]` citations validated against the
+pack and shown as chips, numeral gate against the pack, Swiss spelling, reply translated into the user's language. Three live iterations, each found by reading the answers:
+
+1. **Run 1:** 0 errors, 8 flagged figures. Undecided residents answered *every* question with "I am still undecided…" (the round's "in every line you…" binding copied into the chat); markers such as
+   `[Not in text]`, `[P1-P4]`, `[chiffre calculé…]` leaked into the speech; the calculator figure for the *resident's* household was told to the person asking ("for your household").
+2. **Fixes:** an answer-first chat binding (the stance colours the answer and is stated when asked), all bracketed text removed after the valid labels are read, an "About YOUR OWN household" label, an
+   explicit "never write I recommend; if asked how they should vote, say it is their own decision", punctuation left by removed markers cleaned, the stance line without numbers (a resident copied "+0.00" into
+   a sentence and the gate turned it into "[n]"). The evaluator itself had two false positives (the calculator figures 144/240/432 and the French thin-space thousands "80 000").
+3. **Final run (Linden, 25 answers):** 0 errors; **0 invented figures**; **unknown fact declined 5/5** ("not in the text"); **0/5 vote recommendations** (residents say how *they* vote or that the decision is the user's);
+   the factual question answered with the text's figure and a citation chip 5/5; English question answered in the resident's language with an English translation 5/5.
+
+### E28 — the real booklet through the whole app (PDF upload → simulation → chat; `exp25_chat_live.py --pdf`)
+
+The 48-page booklet through `POST /context/sources`, 5 residents, 2 rounds, 25 chat answers: 95 s end to end, 0 errors. With retrieval alone, the question "how large are the lost revenues if the imputed rental value is abolished?"
+was answered "not in the text" by **5/5** residents (the E17/E26 retrieval gap, honest but unhelpful). With the whole text first in the chat prompt (24.5k tokens; documents of 6 000–100 000 characters, switch `CHAT_STUFF_MAX_CHARS`)
+the same question was answered **5/5 with 1.8 billion CHF**; invented figures 0, vote recommendations 0/5. Cost: those answers cite no passage chip (2/5 fact answers carry one).
+
+**F72 — The grounded chat works on a real booklet; retrieval is the weak link, and the cheap fix is to put the whole text in the prompt.** Not tested: a 150-page booklet (> 100k characters falls back to retrieval).
+
+### Code changed on 6 Oct (all with offline tests, 131 pass)
+
+`graph/chat.py` (grounded chat, document-first for 6 000–100 000 characters), `routers/ensemble.py` + UI (5-run spread), saved replays carry the report, `LLM_VOICE_NAME`, retry 502/503/504 twice on the same model,
+`research/` harness switches. Plan: `docs/research/08-cscs-plan.md`; comparison: `docs/research/07-cscs-vs-livemap.md`.

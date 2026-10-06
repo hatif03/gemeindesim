@@ -6,7 +6,8 @@ browser at 100 %, English narration, German/French shown on screen. Total target
 ## Before recording (10 minutes)
 
 1. `make run` from the repository root, wait for the backend to be healthy, open http://localhost:3000.
-2. **Record a replay once, then play the replay on camera** (live 70B rounds take ≈ 2 minutes and the gateway latency varies).
+   **Faster option (6 Oct):** put the lines of `env.cscs.example` into `.env` (your CSCS key, `LLM_CONCURRENCY=16`) before `make run`: the 5-resident run then takes ≈ 1 minute instead of ≈ 2 and there is no 429. Never show `.env` or the terminal that prints it.
+2. **Record a replay once, then play the replay on camera** (live 70B rounds take ≈ 2 minutes on the hackathon gateway, ≈ 1 minute on CSCS, and the latency varies).
    In the editor switch on the **record** toggle of the Run node, run the simulation, and press **SAVE JSON** at the top of the
    simulation screen when it finishes. To replay, use the file-load control on the landing page and pick the saved
    `gemeindesim-*.json` (`public/example-replay.json` shows the format).
@@ -33,6 +34,4 @@ browser at 100 %, English narration, German/French shown on screen. Total target
 * Say "fictional town", "what-if explainer", never "predicts the vote".
 * Do not claim sovereign parity: say it is configured, and the probe script is ready for a local deployment.
 * If asked about German and French quality: it was reviewed by a native speaker (fill in after the review).
-* Fallback if the live run misbehaves: play the saved replay; the stance panel, event feed, citation chips and resident profiles work from it.
-  **The report does not**: the saved JSON holds only the init message and the rounds (`SavedSimulation` in `types/backend.ts`); the report arrives
-  as a separate Socket.IO event and a replay shows "Report Pending". Film the report shot from a live run (or screen-record it once and cut it in).
+* Fallback if the live run misbehaves: play the saved replay; the stance panel, event feed, citation chips, resident profiles and (for recordings saved after 6 Oct 2026, and for `docs/replays/final_70_s3.replay.json`) the report work from it. Older saves, such as the bundled `example-replay.json`, carry no report and show "Report Pending".

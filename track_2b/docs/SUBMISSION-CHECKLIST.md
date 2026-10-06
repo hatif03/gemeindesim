@@ -20,7 +20,7 @@ Requirements are from `docs/HACKATHON.md`. **Done** = verified in this repositor
 
 1. `git pull` the final branch into a fresh directory, copy `.env`, run `make run`, wait for healthy, open http://localhost:3000.
 2. Run the Linden DE+FR sample once (5 residents, 3 rounds). Expect: stance panel, citation chips, a German report with no outcome.
-3. `cd track_2b/src/backend && uv run pytest --deselect tests/test_e2e.py` (120 offline tests).
+3. `cd track_2b/src/backend && uv run pytest --deselect tests/test_e2e.py` (131 offline tests).
 4. Check the PDF page count and that the numbers equal `docs/research/03-results.md`.
 5. Submit.
 
@@ -29,5 +29,13 @@ Requirements are from `docs/HACKATHON.md`. **Done** = verified in this repositor
 * May: measured limits of Apertus 1.5 (parallel tools, thinking vs JSON, `T=0` non-determinism, 4 in flight, yes-bias,
   authority deference, weak Swiss facts); the design principle (model voices, code owns stance / numbers / sources); the
   fixes with before/after numbers; a what-if explainer that compares conditions.
-* May not: that it predicts votes; that sovereign deployment was tested; that stance weights are calibrated; that the German and
+* May (6 Oct): that the findings were measured on **two hosted deployments** (the hackathon gateway and the CSCS inference API, `research/07-cscs-vs-livemap.md`) and that the v2 fixes and the real-vote result replicate on both.
+* May not: that it predicts votes; that a local / on-prem deployment was tested (CSCS is another hosted endpoint; whether it is the track's "Swiss sovereign cloud" is the organisers' call); that stance weights are calibrated; that the German and
   French were native-reviewed until the review sheet has come back and been applied.
+
+## Second endpoint (CSCS inference API, 6 Oct)
+
+* The **submission defaults stay on the hackathon gateway** (the template and the judges use it). The CSCS key is personal: it lives in the git-ignored `track_2b/.env.cscs` (and in `.env` if you run the app on it), never in the repository;
+  scan before every push (`grep -rI "sk-" --exclude-dir=node_modules --exclude-dir=.venv .` should find no key).
+* To run the app on it: copy the lines of `track_2b/env.cscs.example` into `.env` (`LLM_CONCURRENCY=16`).
+* Record the demo video on it (the run takes ≈ 1 minute) and keep the replay as the fallback.

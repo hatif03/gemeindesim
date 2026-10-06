@@ -12,6 +12,8 @@ do inside a multi-agent civic simulation. Written to be the raw material of a pa
 | [02-codebase-audit.md](02-codebase-audit.md) | Static audit written *before* the experiments (hypotheses stated up front) |
 | [01-literature-review.md](01-literature-review.md) | ≈ 55 papers/pages, each tagged verified / search-snippet-only, with implications |
 | [06-next-steps.md](06-next-steps.md) | What to do next, ranked |
+| [07-cscs-vs-livemap.md](07-cscs-vs-livemap.md) | The CSCS inference API compared with the hackathon gateway, same scripts, same day (E20–E27) |
+| [08-cscs-plan.md](08-cscs-plan.md) | What the second endpoint solves, what it does not, and the plan to use it |
 | [ensemble_final_70.md](ensemble_final_70.md), [ensemble_final_8.md](ensemble_final_8.md) | Spread of the stance poll across 5 seeds (table + chart) |
 | [../DEMO-SCRIPT.md](../DEMO-SCRIPT.md), [../SUBMISSION-CHECKLIST.md](../SUBMISSION-CHECKLIST.md) | Video shot list; submission checklist with what still needs a person |
 | [../review/NATIVE-SPEAKER-REVIEW.md](../review/NATIVE-SPEAKER-REVIEW.md) | German/French review pack (49 items, rubric) + `research/summarize_review.py` |
