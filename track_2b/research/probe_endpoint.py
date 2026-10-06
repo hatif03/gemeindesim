@@ -27,6 +27,7 @@ import httpx
 from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")  # track_2b/.env, so --key-env LLM_API_KEY works without exporting it
+load_dotenv(Path(__file__).resolve().parents[1] / ".env.cscs")  # --key-env CSCS_API_KEY (CSCS inference API)
 
 WEATHER = {"type": "function", "function": {"name": "get_weather", "description": "Current weather for a city",
            "parameters": {"type": "object", "properties": {"city": {"type": "string"}}, "required": ["city"]}}}
@@ -55,7 +56,7 @@ class Client:
         ch = (j.get("choices") or [{}])[0]
         m = ch.get("message") or {}
         return {"http": r.status_code, "lat": dt, "content": m.get("content") or "", "tool_calls": m.get("tool_calls") or [],
-                "reasoning": (m.get("provider_specific_fields") or {}).get("reasoning") or m.get("reasoning_content"),
+                "reasoning": (m.get("provider_specific_fields") or {}).get("reasoning") or m.get("reasoning") or m.get("reasoning_content"),
                 "tokens": (j.get("usage") or {}).get("completion_tokens", 0)}
 
 

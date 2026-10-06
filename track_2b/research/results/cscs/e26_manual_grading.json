@@ -1,0 +1,16 @@
+{
+  "note": "Hand grading of research/results/cscs/e26_stuffed_vs_retrieved.json (the automatic gold-regex score undercounts: 6/14 and 8/14 for the 70B). correct = the answer states the gold fact; partial = true but vague; abstained = 'NICHT IM TEXT' although the fact was in the prompt (stuffed) or was not retrieved (retrieved).",
+  "70B": {
+    "retrieved4": {"correct": 11, "partial": 1, "wrongly_abstained": 2, "wrong": 0, "partial_questions": ["Schuldzinsen"], "abstained_questions": ["Mindereinnahmen 1,8 Mrd (not retrieved)", "Ersterwerberabzug (not retrieved)"]},
+    "retrieved8": {"correct": 12, "partial": 1, "wrongly_abstained": 1, "wrong": 0, "partial_questions": ["Schuldzinsen"], "abstained_questions": ["Mindereinnahmen 1,8 Mrd (not retrieved)"]},
+    "stuffed": {"correct": 13, "partial": 1, "wrongly_abstained": 0, "wrong": 0, "partial_questions": ["Schuldzinsen"], "abstained_questions": []}
+  },
+  "8B": {
+    "retrieved4": {"correct": 11, "partial": 1, "wrongly_abstained": 2, "wrong": 0, "partial_questions": ["Schuldzinsen"], "abstained_questions": ["Mindereinnahmen 1,8 Mrd (not retrieved)", "Ersterwerberabzug (not retrieved)"]},
+    "retrieved8": {"correct": 12, "partial": 1, "wrongly_abstained": 1, "wrong": 0, "partial_questions": ["Schuldzinsen"], "abstained_questions": ["Mindereinnahmen 1,8 Mrd (not retrieved)"]},
+    "stuffed": {"correct": 12, "partial": 0, "wrongly_abstained": 1, "wrong": 1, "abstained_questions": ["E-ID Kosten 180 Mio (in the prompt!)"], "wrong_questions": ["Warum kommt das E-ID-Gesetz zur Abstimmung? (answered with the purpose, not the referendum)"]}
+  },
+  "unanswerable_abstained": "3/3 in every cell (70B and 8B, retrieved4, retrieved8, stuffed)",
+  "stuffed_prefix_cache": "mean 94 % of the prompt tokens cached (34 stuffed calls sharing the booklet as prefix), mean latency 1.5 s at 24.5 k tokens",
+  "quote_check": "quote_in_text is unreliable: the booklet text has hyphenation and line breaks (e.g. 'Energiespar- und'); it is not used as evidence."
+}

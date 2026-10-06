@@ -1,7 +1,7 @@
 {
  "base_url": "https://hackapertus.livemap.sh/v1",
- "model": "apertus-v1.5-8b",
- "date": "2026-10-06 22:22",
+ "model": "apertus-v1.5-70b",
+ "date": "2026-10-06 22:19",
  "single_call": [
   [
    1,
@@ -36,11 +36,11 @@
  ],
  "explicit_two_calls": [
   [
-   1,
-   1,
-   1,
-   1,
-   1
+   0,
+   0,
+   0,
+   0,
+   0
   ],
   [
    0,
@@ -89,19 +89,19 @@
  ],
  "thinking_plus_json_answers": [
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ]
  ],
  "tools_plus_thinking_http": [
@@ -118,48 +118,48 @@
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.5,
-   "agg_tok_per_s": 164.6
+   "p50_latency_s": 6.01,
+   "agg_tok_per_s": 41.6
   },
   {
    "concurrency": 2,
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.52,
-   "agg_tok_per_s": 305.4
+   "p50_latency_s": 6.04,
+   "agg_tok_per_s": 81.2
   },
   {
    "concurrency": 4,
    "ok": 8,
    "n": 8,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 586.5
+   "p50_latency_s": 6.13,
+   "agg_tok_per_s": 159.5
   },
   {
    "concurrency": 5,
    "ok": 10,
    "n": 10,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 736.0
+   "p50_latency_s": 6.19,
+   "agg_tok_per_s": 197.1
   },
   {
    "concurrency": 6,
-   "ok": 6,
+   "ok": 5,
    "n": 12,
-   "http429": 6,
-   "p50_latency_s": 1.54,
-   "agg_tok_per_s": 507.1
+   "http429": 7,
+   "p50_latency_s": 6.22,
+   "agg_tok_per_s": 200.5
   },
   {
    "concurrency": 8,
    "ok": 5,
    "n": 16,
    "http429": 11,
-   "p50_latency_s": 1.56,
-   "agg_tok_per_s": 791.4
+   "p50_latency_s": 6.25,
+   "agg_tok_per_s": 197.7
   }
  ]
 }

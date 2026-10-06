@@ -1,0 +1,605 @@
+{
+ "date": "2026-10-06 22:55",
+ "base": "https://hackapertus.livemap.sh/v1",
+ "models": {
+  "apertus-v1.5-70b": {
+   "model": "apertus-v1.5-70b",
+   "ping_http": 200,
+   "ping_lat": 0.715,
+   "tool_single": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "tokens": [
+     380,
+     408,
+     380,
+     380,
+     380
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     887,
+     942,
+     933,
+     884,
+     933
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ],
+    "tokens": [
+     15,
+     15,
+     15,
+     15,
+     15
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"none\"\n  , \"n\": 3\n}"
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "devastating"
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"none\"\n  , \"n\": 3\n}"
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "A tax rise does **not** help a tenant. In fact, it typically harms tenants in several ways"
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "none"
+    }
+   },
+   "seed_same_seed_distinct_of_4": 2,
+   "t0_distinct_of_5": 2,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": true,
+   "system_role_followed": true,
+   "prefix_cache": null,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.19,
+    "chunks": 32
+   }
+  },
+  "apertus-v1.5-8b": {
+   "model": "apertus-v1.5-8b",
+   "ping_http": 200,
+   "ping_lat": 0.197,
+   "tool_single": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "tokens": [
+     119,
+     119,
+     119,
+     119,
+     119
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     258,
+     258,
+     258,
+     258,
+     258
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ],
+    "tokens": [
+     12,
+     12,
+     12,
+     12,
+     12
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\"impact\": \"none\", \"n\": 3}"
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "catastrophic"
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\"impact\": \"none\", \"n\": 3}"
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "No. A tax rise does not help a tenant; it typically increases the cost of living and can l"
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "none"
+    }
+   },
+   "seed_same_seed_distinct_of_4": 1,
+   "t0_distinct_of_5": 1,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": true,
+   "system_role_followed": true,
+   "prefix_cache": null,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.17,
+    "chunks": 32
+   }
+  }
+ },
+ "embeddings": {
+  "apertus-v1.5-70b": {
+   "embeddings_http": 404,
+   "dim": null
+  },
+  "apertus-v1.5-8b": {
+   "embeddings_http": 404,
+   "dim": null
+  }
+ },
+ "anthropic_messages_http": 429
+}

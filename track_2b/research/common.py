@@ -18,20 +18,21 @@ import httpx
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[1]  # track_2b/
-RESULTS = Path(__file__).resolve().parent / "results"
-RESULTS.mkdir(exist_ok=True)
+RESULTS = Path(__file__).resolve().parent / "results" / os.environ.get("RESEARCH_SUBDIR", "")  # e.g. RESEARCH_SUBDIR=cscs for another endpoint
+RESULTS.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(ROOT / "src" / "backend"))  # reuse the app's own modules
 load_dotenv(ROOT / ".env")
 
 BASE = os.environ["LLM_BASE_URL"].rstrip("/")
 KEY = os.environ["LLM_API_KEY"]
-M70, M8 = "apertus-v1.5-70b", "apertus-v1.5-8b"
+M70, M8 = os.environ.get("RESEARCH_M70", "apertus-v1.5-70b"), os.environ.get("RESEARCH_M8", "apertus-v1.5-8b")
 
 
 class Gateway:
     """Rate-limited chat client with raw-call logging."""
 
-    def __init__(self, exp: str, concurrency: int = 3):  # gateway limit: 5 parallel per key
+    def __init__(self, exp: str, concurrency: int | None = None):  # livemap gateway limit: ~4 in flight per key
+        concurrency = int(os.environ.get("RESEARCH_CONCURRENCY", concurrency or 3))
         self.exp = exp
         self.sem = asyncio.Semaphore(concurrency)
         self.log = RESULTS / f"{exp}.jsonl"
@@ -83,7 +84,7 @@ class Gateway:
         rec["resp"] = {
             "content": msg.get("content") or "",
             "tool_calls": msg.get("tool_calls"),
-            "reasoning": (msg.get("provider_specific_fields") or {}).get("reasoning"),
+            "reasoning": (msg.get("provider_specific_fields") or {}).get("reasoning") or msg.get("reasoning") or msg.get("reasoning_content"),
             "finish": ch.get("finish_reason"),
             "usage": data.get("usage"),
             "raw_error": data.get("error") if "error" in data else None,

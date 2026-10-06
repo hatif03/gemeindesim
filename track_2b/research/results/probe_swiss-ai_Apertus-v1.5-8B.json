@@ -1,6 +1,6 @@
 {
- "base_url": "https://hackapertus.livemap.sh/v1",
- "model": "apertus-v1.5-8b",
+ "base_url": "https://api.inference.cscs.ch/v1",
+ "model": "swiss-ai/Apertus-v1.5-8B",
  "date": "2026-10-06 22:22",
  "single_call": [
   [
@@ -111,55 +111,71 @@
   200,
   200
  ],
- "determinism_distinct_of_5": 2,
+ "determinism_distinct_of_5": 1,
  "throughput": [
   {
    "concurrency": 1,
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.5,
-   "agg_tok_per_s": 164.6
+   "p50_latency_s": 1.66,
+   "agg_tok_per_s": 147.6
   },
   {
    "concurrency": 2,
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.52,
-   "agg_tok_per_s": 305.4
+   "p50_latency_s": 1.64,
+   "agg_tok_per_s": 275.2
   },
   {
    "concurrency": 4,
    "ok": 8,
    "n": 8,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 586.5
+   "p50_latency_s": 1.66,
+   "agg_tok_per_s": 516.8
   },
   {
    "concurrency": 5,
    "ok": 10,
    "n": 10,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 736.0
+   "p50_latency_s": 1.71,
+   "agg_tok_per_s": 643.9
   },
   {
    "concurrency": 6,
-   "ok": 6,
+   "ok": 12,
    "n": 12,
-   "http429": 6,
-   "p50_latency_s": 1.54,
-   "agg_tok_per_s": 507.1
+   "http429": 0,
+   "p50_latency_s": 1.73,
+   "agg_tok_per_s": 773.0
   },
   {
    "concurrency": 8,
-   "ok": 5,
+   "ok": 16,
    "n": 16,
-   "http429": 11,
-   "p50_latency_s": 1.56,
-   "agg_tok_per_s": 791.4
+   "http429": 0,
+   "p50_latency_s": 1.68,
+   "agg_tok_per_s": 1037.1
+  },
+  {
+   "concurrency": 12,
+   "ok": 24,
+   "n": 24,
+   "http429": 0,
+   "p50_latency_s": 1.78,
+   "agg_tok_per_s": 1483.5
+  },
+  {
+   "concurrency": 16,
+   "ok": 32,
+   "n": 32,
+   "http429": 0,
+   "p50_latency_s": 1.73,
+   "agg_tok_per_s": 1973.4
   }
  ]
 }

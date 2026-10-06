@@ -26,6 +26,12 @@ if "final" in sys.argv[1:]:  # final code: standard graph (5 seeds) and swarm gr
         "8B final": [f"final_8_s{i}" for i in range(1, 6)],
         "8B final, swarm": [f"final_sw8_s{i}" for i in range(1, 4)],
     }
+if "cscs" in sys.argv[1:]:  # run with RESEARCH_SUBDIR=cscs: the same final code on the CSCS inference API (research E23-E25)
+    GROUPS = {
+        "70B CSCS": [f"cscs70_s{i}" for i in range(1, 6)],
+        "8B CSCS": [f"cscs8_s{i}" for i in range(1, 6)],
+        "70B CSCS, 25 residents": ["cscs70_n25_s1"],
+    }
 NUM = [
     ("t_sim_s", "simulation wall time (s)"), ("calls", "LLM calls"), ("lat_mean", "mean call latency (s)"),
     ("events", "events"), ("chat_share", "chat share of events"), ("intro_rate", "chats that start with a self-introduction"),

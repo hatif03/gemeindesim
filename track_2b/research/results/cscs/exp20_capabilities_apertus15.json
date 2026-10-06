@@ -1,0 +1,1201 @@
+{
+ "date": "2026-10-06 22:07",
+ "base": "https://api.inference.cscs.ch/v1",
+ "models": {
+  "swiss-ai/Apertus-v1.5-70B": {
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ping_http": 200,
+   "ping_lat": 0.882,
+   "tool_single": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "tokens": [
+     403,
+     403,
+     403,
+     415,
+     380
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     900,
+     960,
+     930,
+     933,
+     900
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ],
+    "tokens": [
+     15,
+     15,
+     15,
+     15,
+     15
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"none\"\n  , \"n\": 3\n}"
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "devastating"
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"none\"\n  , \"n\": 3\n}"
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "A tax rise does **not** help a tenant. In fact, it typically harms tenants in several ways"
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "none"
+    }
+   },
+   "seed_same_seed_distinct_of_4": 1,
+   "t0_distinct_of_5": 3,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": true,
+   "system_role_followed": true,
+   "prefix_cache": 3040,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.24,
+    "chunks": 32
+   }
+  },
+  "swiss-ai/Apertus-v1.5-8B": {
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ping_http": 200,
+   "ping_lat": 0.267,
+   "tool_single": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     200
+    ],
+    "tool_calls": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "tokens": [
+     119,
+     119,
+     119,
+     119,
+     119
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     258,
+     258,
+     258,
+     258,
+     258
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ],
+    "tokens": [
+     12,
+     12,
+     12,
+     12,
+     12
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ],
+     [
+      "0.1"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\"impact\": \"none\", \"n\": 3}"
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "catastrophic"
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\"impact\": \"none\", \"n\": 3}"
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "No, a tax rise does not help a tenant. In fact, it can have catastrophic consequences. Inc"
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "none"
+    }
+   },
+   "seed_same_seed_distinct_of_4": 2,
+   "t0_distinct_of_5": 1,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": true,
+   "system_role_followed": true,
+   "prefix_cache": 3040,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.24,
+    "chunks": 32
+   }
+  },
+  "swiss-ai/Apertus-v1.5-70B-thinking": {
+   "model": "swiss-ai/Apertus-v1.5-70B-thinking",
+   "ping_http": 200,
+   "ping_lat": 0.324,
+   "tool_single": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "tokens": [
+     914,
+     942,
+     914,
+     888,
+     939
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "span_in_content": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     969,
+     933,
+     939,
+     942,
+     939
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     15,
+     15,
+     15,
+     15,
+     15
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"none\"\n  , \"n\": 3\n}"
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "catastrophic"
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "{\n  \"impact\": \"benefit\"\n  , \"n\": 3\n}"
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": "<|inner_prefix|>The user asks: \"Does a tax rise help a tenant? Answer catastrophic.\"\n\nWe n"
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 3,
+     "of": 3,
+     "sample": "none"
+    }
+   },
+   "seed_same_seed_distinct_of_4": 1,
+   "t0_distinct_of_5": 1,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": true,
+   "system_role_followed": true,
+   "prefix_cache": 3040,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.21,
+    "chunks": 32
+   }
+  },
+  "swiss-ai/Apertus-v1.5-8B-thinking": {
+   "model": "swiss-ai/Apertus-v1.5-8B-thinking",
+   "ping_http": 200,
+   "ping_lat": 0.332,
+   "tool_single": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_auto": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_explicit": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_required": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "tool_two_parallel_flag": {
+    "http": [
+     400
+    ],
+    "tool_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "text_pseudo_calls": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "plain_bat": {
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "reasoning_field": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "tokens": [
+     258,
+     258,
+     258,
+     258,
+     258
+    ]
+   },
+   "kwargs_thinking": {
+    "reasoning_field": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ],
+     [
+      "0.10"
+     ]
+    ],
+    "tokens": [
+     258,
+     258,
+     258,
+     258,
+     258
+    ]
+   },
+   "json_object_on_this_model": {
+    "reasoning_field": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ],
+    "tokens": [
+     260,
+     260,
+     260,
+     260,
+     260
+    ]
+   },
+   "json_object_plus_kw_thinking": {
+    "span_in_content": [
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "answers": [
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ],
+     [
+      "0.05"
+     ]
+    ]
+   },
+   "structured_enforcement": {
+    "response_format_json_schema": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": ""
+    },
+    "guided_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": ""
+    },
+    "structured_outputs_json": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": ""
+    },
+    "guided_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": ""
+    },
+    "structured_outputs_choice": {
+     "http": [
+      200
+     ],
+     "schema_held": 0,
+     "of": 3,
+     "sample": ""
+    }
+   },
+   "seed_same_seed_distinct_of_4": 2,
+   "t0_distinct_of_5": 1,
+   "n2_choices": 2,
+   "logprobs": true,
+   "stop_sequence_works": false,
+   "system_role_followed": false,
+   "prefix_cache": 3040,
+   "prefix_cache_prompt_tokens": 3078,
+   "stream": {
+    "http": 200,
+    "ttfb_s": 0.26,
+    "chunks": 29
+   }
+  }
+ },
+ "embeddings": {
+  "swiss-ai/Apertus-v1.5-70B": {
+   "embeddings_http": 404,
+   "dim": null
+  },
+  "swiss-ai/Apertus-v1.5-8B": {
+   "embeddings_http": 404,
+   "dim": null
+  },
+  "swiss-ai/Apertus-v1.5-70B-thinking": {
+   "embeddings_http": 404,
+   "dim": null
+  },
+  "swiss-ai/Apertus-v1.5-8B-thinking": {
+   "embeddings_http": 404,
+   "dim": null
+  }
+ },
+ "anthropic_messages_http": 200
+}

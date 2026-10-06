@@ -199,7 +199,33 @@ def fig_fixes():
     plt.close(fig)
 
 
+def fig_endpoints():
+    """Two endpoints, same probe and same scripts (E21, probe_endpoint.py, E27)."""
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12, 4.3), gridspec_kw={"width_ratios": [1.5, 1]})
+    live_x, live_y = [1, 2, 4, 5, 6, 8], [41.6, 81.2, 159.5, 197.1, 200.5, 197.7]
+    cscs_x, cscs_y = [1, 2, 4, 8, 16, 32, 64, 96], [66, 129, 247, 484, 962, 1737, 3334, 4359]
+    a.plot(cscs_x, cscs_y, "o-", color="#3E7C34", label="CSCS 70B (no 429 in 2 496 requests)")
+    a.plot(live_x, live_y, "s-", color="#B83A52", label="livemap 70B (429 above 5 in flight)")
+    a.axvspan(5.5, 96, ymin=0, ymax=0.04, color="#B83A52", alpha=0.35)
+    a.set_xscale("log", base=2), a.set_xticks([1, 2, 4, 8, 16, 32, 64, 96], ["1", "2", "4", "8", "16", "32", "64", "96"])
+    a.set_xlabel("requests in flight"), a.set_ylabel("aggregate tokens / second (70B)")
+    a.set_title("Throughput: the limit was the gateway, not the app", fontsize=10.5, fontweight="bold")
+    a.legend(frameon=False, loc="upper left"), a.spines[["top", "right"]].set_visible(False)
+    names = ["70B", "8B"]
+    live, cscs = [126, 28], [61, 23]
+    xs = range(2)
+    b.bar([x - 0.2 for x in xs], live, 0.4, color="#B83A52", label="livemap")
+    b.bar([x + 0.2 for x in xs], cscs, 0.4, color="#3E7C34", label="CSCS")
+    for x, v1, v2 in zip(xs, live, cscs):
+        b.text(x - 0.2, v1 + 2, f"{v1} s", ha="center", fontsize=9), b.text(x + 0.2, v2 + 2, f"{v2} s", ha="center", fontsize=9)
+    b.set_xticks(list(xs), names), b.set_ylabel("simulation wall time (5 residents, 3 rounds)"), b.set_ylim(0, 150)
+    b.set_title("Same code, same seeds (5 runs each)", fontsize=10.5, fontweight="bold")
+    b.legend(frameon=False), b.spines[["top", "right"]].set_visible(False)
+    fig.savefig(OUT / "fig08-endpoints.png", dpi=170, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
 if __name__ == "__main__":
-    for f in (fig_pipeline, fig_stance, fig_speech, fig_yesbias, fig_signal, fig_throughput, fig_fixes):
+    for f in (fig_pipeline, fig_stance, fig_speech, fig_yesbias, fig_signal, fig_throughput, fig_fixes, fig_endpoints):
         f()
     print("wrote", *sorted(p.name for p in OUT.glob("*.png")))

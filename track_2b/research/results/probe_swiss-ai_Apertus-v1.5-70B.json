@@ -1,7 +1,7 @@
 {
- "base_url": "https://hackapertus.livemap.sh/v1",
- "model": "apertus-v1.5-8b",
- "date": "2026-10-06 22:22",
+ "base_url": "https://api.inference.cscs.ch/v1",
+ "model": "swiss-ai/Apertus-v1.5-70B",
+ "date": "2026-10-06 22:19",
  "single_call": [
   [
    1,
@@ -36,11 +36,11 @@
  ],
  "explicit_two_calls": [
   [
-   1,
-   1,
-   1,
-   1,
-   1
+   0,
+   0,
+   0,
+   0,
+   0
   ],
   [
    0,
@@ -89,19 +89,19 @@
  ],
  "thinking_plus_json_answers": [
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ],
   [
-   "0.1"
+   "0.10"
   ]
  ],
  "tools_plus_thinking_http": [
@@ -111,55 +111,71 @@
   200,
   200
  ],
- "determinism_distinct_of_5": 2,
+ "determinism_distinct_of_5": 3,
  "throughput": [
   {
    "concurrency": 1,
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.5,
-   "agg_tok_per_s": 164.6
+   "p50_latency_s": 3.75,
+   "agg_tok_per_s": 64.6
   },
   {
    "concurrency": 2,
    "ok": 6,
    "n": 6,
    "http429": 0,
-   "p50_latency_s": 1.52,
-   "agg_tok_per_s": 305.4
+   "p50_latency_s": 3.78,
+   "agg_tok_per_s": 128.3
   },
   {
    "concurrency": 4,
    "ok": 8,
    "n": 8,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 586.5
+   "p50_latency_s": 3.83,
+   "agg_tok_per_s": 247.4
   },
   {
    "concurrency": 5,
    "ok": 10,
    "n": 10,
    "http429": 0,
-   "p50_latency_s": 1.53,
-   "agg_tok_per_s": 736.0
+   "p50_latency_s": 3.9,
+   "agg_tok_per_s": 299.7
   },
   {
    "concurrency": 6,
-   "ok": 6,
+   "ok": 12,
    "n": 12,
-   "http429": 6,
-   "p50_latency_s": 1.54,
-   "agg_tok_per_s": 507.1
+   "http429": 0,
+   "p50_latency_s": 3.91,
+   "agg_tok_per_s": 368.9
   },
   {
    "concurrency": 8,
-   "ok": 5,
+   "ok": 16,
    "n": 16,
-   "http429": 11,
-   "p50_latency_s": 1.56,
-   "agg_tok_per_s": 791.4
+   "http429": 0,
+   "p50_latency_s": 3.92,
+   "agg_tok_per_s": 483.4
+  },
+  {
+   "concurrency": 12,
+   "ok": 24,
+   "n": 24,
+   "http429": 0,
+   "p50_latency_s": 3.93,
+   "agg_tok_per_s": 724.7
+  },
+  {
+   "concurrency": 16,
+   "ok": 32,
+   "n": 32,
+   "http429": 0,
+   "p50_latency_s": 3.95,
+   "agg_tok_per_s": 965.0
   }
  ]
 }

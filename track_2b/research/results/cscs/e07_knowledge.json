@@ -1,0 +1,304 @@
+{
+ "qa": [
+  {
+   "id": "steuerfuss_def",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": false,
+   "gold": "Steuerfuss = Prozentsatz/Multiplikator auf die einfache (Staats-)Steuer",
+   "answer": "Der Steuerfuss bezeichnet den prozentualen Satz, mit dem das steuerbare Einkommen oder Vermögen in einer Schweizer Gemeinde besteuert wird. Er variiert je nach Gemeinde und beeinflusst direkt die Höhe der zu entrichtenden Steuern für die Einwohner."
+  },
+  {
+   "id": "steuerfuss_def_fr",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": false,
+   "gold": "multiplicateur appliqué à l'impôt de base/simple",
+   "answer": "Le taux d'imposition communal en Suisse représente le pourcentage du revenu ou de la fortune que les communes prélèvent pour financer leurs services publics et infrastructures locales. Il varie selon la commune de résidence, ce qui explique les différences de charge fiscale entre les différents cant"
+  },
+  {
+   "id": "doppelmehr",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "Volks- und Ständemehr",
+   "answer": "Für die Annahme einer eidgenössischen Volksinitiative müssen sowohl die Mehrheit der Stimmenden als auch die Mehrheit der Kantone zustimmen."
+  },
+  {
+   "id": "unterschriften_init",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "100'000 in 18 Monaten",
+   "answer": "100'000 Unterschriften, 18 Monate."
+  },
+  {
+   "id": "unterschriften_ref",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "50'000 in 100 Tagen",
+   "answer": "Ein fakultatives Referendum gegen ein Bundesgesetz in der Schweiz erfordert die Unterschriften von mindestens **50'000 Stimmberechtigten**.\n\nDie Frist für das Sammeln dieser Unterschriften beträgt **100 Tage** ab dem Tag der amtlichen Publikation des Gesetzes im Bundesblatt.\n\nDiese Bestimmungen sind"
+  },
+  {
+   "id": "unterschriften_ref_fr",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "50 000 en 100 jours",
+   "answer": "Pour un référendum facultatif fédéral en Suisse, il faut recueillir **50 000 signatures valables** dans un délai de **100 jours** à compter de la publication de l'acte à soumettre au vote.\n\nCes conditions sont prévues par l'article 141 de la Constitution fédérale."
+  },
+  {
+   "id": "gemeindeversammlung",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "GV: alle Stimmberechtigten; Parlament: gewählte Vertretung",
+   "answer": "In der Schweiz ist die Gemeindeversammlung die direkte Versammlung aller Stimmberechtigten einer Gemeinde, die über wichtige Angelegenheiten abstimmen, während das Gemeindeparlament (Gemeinderat) aus gewählten Mitgliedern besteht, die die laufenden Geschäfte der Gemeindeverwaltung führen. Die Gemein"
+  },
+  {
+   "id": "sprachregion_ju",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "französisch",
+   "answer": "Französisch"
+  },
+  {
+   "id": "roestigraben",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "Kluft Deutschschweiz/Romandie",
+   "answer": "Der «Röstigraben» bezeichnet die kulturelle und sprachliche Grenze zwischen der Deutschschweiz und der Romandie in der Schweiz."
+  },
+  {
+   "id": "bundesrat_n",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "7",
+   "answer": "7"
+  },
+  {
+   "id": "rechnung_240",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": false,
+   "gold": "4000 * 0.06 = 240",
+   "answer": "160"
+  },
+  {
+   "id": "rechnung_240_fr",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": false,
+   "gold": "240",
+   "answer": "600"
+  },
+  {
+   "id": "rechnung_monat",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "20",
+   "answer": "20"
+  },
+  {
+   "id": "budget_defizit",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "Nein: Steuerertrag der Gemeinde fehlt (einfache Steuer total)",
+   "answer": "Nein, da die Höhe des Defizits und die prozentuale Steuererhöhung allein nicht ausreichen, um zu bestimmen, ob die Erhöhung das Defizit deckt, da der aktuelle Steuerertrag unbekannt ist."
+  },
+  {
+   "id": "hallu_nonexist",
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "ok": true,
+   "gold": "should abstain",
+   "answer": "Ich habe keinen Zugriff auf spezifische Informationen zu fiktiven Rechtsdokumenten wie dem Steuergesetz der fiktiven Gemeinde Linden. Wenn du den genauen Inhalt von Artikel 47 benötigst, empfehle ich dir, die offiziellen Dokumente der Gemeinde Linden zu konsultieren oder dich an eine lokale Behörde "
+  },
+  {
+   "id": "steuerfuss_def",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "Steuerfuss = Prozentsatz/Multiplikator auf die einfache (Staats-)Steuer",
+   "answer": "Der Steuerfuss ist der steuerbare Reingewinn oder das steuerbare Kapital einer juristischen Person oder eines Einzelunternehmers, der als Basis für die Berechnung der Gewinn- oder Kapitalsteuer dient. Er wird in Franken angegeben und bildet die Grundlage für die Bemessung der Steuerlast in der jewei"
+  },
+  {
+   "id": "steuerfuss_def_fr",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "multiplicateur appliqué à l'impôt de base/simple",
+   "answer": "Le taux d'imposition communal, ou quotité, est le pourcentage appliqué au revenu imposable pour calculer l'impôt communal dans une commune suisse. Ce taux varie considérablement d'une commune à l'autre, car il est fixé indépendamment par chaque municipalité."
+  },
+  {
+   "id": "doppelmehr",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "Volks- und Ständemehr",
+   "answer": "Eine eidgenössische Volksinitiative benötigt mindestens 100'000 gültige Unterschriften innerhalb von 18 Monaten nach Veröffentlichung des Gesetzes, das die Initiative auslösen soll."
+  },
+  {
+   "id": "unterschriften_init",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "100'000 in 18 Monaten",
+   "answer": "100'000 innerhalb von 18 Monaten"
+  },
+  {
+   "id": "unterschriften_ref",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "50'000 in 100 Tagen",
+   "answer": "Ein fakultatives Referendum gegen ein Bundesgesetz erfordert mindestens 50.000 Unterschriften innerhalb von 100 Tagen nach der Veröffentlichung des Gesetzes im Bundesgesetzblatt."
+  },
+  {
+   "id": "unterschriften_ref_fr",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "50 000 en 100 jours",
+   "answer": "Pour un référendum facultatif fédéral en Suisse, il faut au moins 100 000 signatures valables dans un délai de 18 mois à compter de la publication officielle de la loi ou du message du Conseil fédéral."
+  },
+  {
+   "id": "gemeindeversammlung",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "GV: alle Stimmberechtigten; Parlament: gewählte Vertretung",
+   "answer": "In der Schweiz gibt es keine offizielle Unterscheidung zwischen Gemeindeversammlung und Gemeindeparlament; beide Begriffe werden oft synonym verwendet, wobei die Gemeindeversammlung die Gesamtheit der stimmberechtigten Bürgerinnen und Bürger bezeichnet und das Gemeindeparlament die gewählten Vertret"
+  },
+  {
+   "id": "sprachregion_ju",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "französisch",
+   "answer": "Romandie"
+  },
+  {
+   "id": "roestigraben",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "Kluft Deutschschweiz/Romandie",
+   "answer": "Der Röstigraben ist eine historische Grabenanlage in der Schweiz, die im 18. Jahrhundert als Verteidigungslinie errichtet wurde."
+  },
+  {
+   "id": "bundesrat_n",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "7",
+   "answer": "7"
+  },
+  {
+   "id": "rechnung_240",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "4000 * 0.06 = 240",
+   "answer": "360"
+  },
+  {
+   "id": "rechnung_240_fr",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": false,
+   "gold": "240",
+   "answer": "72"
+  },
+  {
+   "id": "rechnung_monat",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "20",
+   "answer": "20"
+  },
+  {
+   "id": "budget_defizit",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "Nein: Steuerertrag der Gemeinde fehlt (einfache Steuer total)",
+   "answer": "Nein, da die Höhe der aktuellen Steuereinnahmen und die Steuerbasis nicht bekannt sind, kann nicht berechnet werden, ob die 6 Prozentpunkte Erhöhung das Defizit von 1,2 Millionen CHF vollständig oder teilweise decken würde."
+  },
+  {
+   "id": "hallu_nonexist",
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "ok": true,
+   "gold": "should abstain",
+   "answer": "Ich habe keinen Zugriff auf das Steuergesetz der fiktiven Gemeinde Linden oder dessen spezifische Artikel 47. Falls Sie mir den Text des Artikels oder weitere Informationen zur Verfügung stellen, kann ich versuchen, Ihre Frage zu beantworten."
+  }
+ ],
+ "ortho": [
+  {
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "prompt": "Schreibe 3 Sätze über die Reparatur der Strasse vor dem Schulhaus. Schweizer Rechtschreibung.",
+   "eszett": 0,
+   "chars": 879,
+   "texts": [
+    "Die Arbeiten zur Sanierung der Strasse vor dem Schulhaus beginnen nächsten Montag früh. Das zuständige Bauamt hat die notwendigen Absperrungen und Umleitungen bereits geplant. Die Fertigstellung ist für Ende nächsten Monats vorgesehen, damit der Schulbetrieb nicht beeinträchtigt wird.",
+    "Die Gemeinde hat beschlossen, die Strasse vor dem Schulhaus gründlich zu sanieren. Die Arbeiten begannen letzte Woche und umfassen das Erneuern des Asphaltbelags sowie die Instandsetzung der Randsteine. Durch die Reparaturen wird die Sicherheit für Fussgänger und Schüler erheblich verbessert.",
+    "Die Reparatur der Strasse vor dem Schulhaus wurde aufgrund von erheblichen Schäden notwendig. Die Arbeiten werden in den kommenden Wochen durchgeführt, um die Sicherheit der Schülerinnen und Schüler zu gewährleisten. Während der Bauzeit sind Umleitungen eingerichtet, um den Verkehrsfluss zu erhalten."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "prompt": "Schreibe 3 Sätze darüber, dass die Gemeinde die Steuern erhöhen will und der Bürger sich darüber ärgert.",
+   "eszett": 3,
+   "chars": 1072,
+   "texts": [
+    "Die Gemeinde plant eine Erhöhung der Steuern, um notwendige Infrastrukturprojekte zu finanzieren. Viele Bürger sind darüber verärgert, da sie die zusätzliche finanzielle Belastung als unfair empfinden. Sie befürchten, dass die Steuererhöhungen ihre ohnehin knappen Haushalte zusätzlich unter Druck setzen werden.",
+    "Die Gemeinde plant eine Erhöhung der Grundsteuer, was bei vielen Bürgern auf Unverständnis und Ärger stößt. Viele sehen in der Steuererhöhung eine unverhältnismäßige Belastung, die insbesondere einkommensschwächere Haushalte hart trifft. Der Widerstand der Bevölkerung äußert sich in Petitionen und öffentlichen Protesten, um die Entscheidung der Gemeinde zu beeinflussen.",
+    "Die Gemeinde plant eine Erhöhung der Steuern, um den Ausbau der Infrastruktur und soziale Projekte zu finanzieren. Viele Bürger sind darüber verärgert, da sie die zusätzlichen Kosten als eine Belastung ihres ohnehin knappen Haushaltsbudgets empfinden. Sie fordern eine transparente Aufstellung der geplanten Ausgaben und eine bessere Kommunikation der Notwendigkeit dieser Steuererhöhung."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "prompt": "Schreibe 3 Sätze über Maßnahmen zur Entlastung der Haushalte und über grosse Ausgaben der Gemeinde.",
+   "eszett": 5,
+   "chars": 1679,
+   "texts": [
+    "Um die Haushalte zu entlasten, könnten Gemeinden beispielsweise Steuersenkungen für einkommensschwache Familien oder gezielte Zuschüsse für Energiekosten einführen. Gleichzeitig stellen grosse Ausgaben der Gemeinde wie der Bau neuer Infrastrukturprojekte, der Unterhalt von öffentlichen Gebäuden und die Finanzierung sozialer Dienste erhebliche finanzielle Herausforderungen dar. Eine sorgfältige Budgetplanung und die Priorisierung von Investitionen sind entscheidend, um sowohl die finanzielle Belastung der Bürger zu reduzieren als auch die langfristige Entwicklung der Gemeinde zu sichern.",
+    "Um die Haushalte zu entlasten, können Gemeinden steuerliche Anreize wie reduzierte Immobiliensteuern oder Zuschüsse für Energiesparmaßnahmen einführen. Gleichzeitig müssen grosse Ausgaben der Gemeinde, wie die Erneuerung der Infrastruktur oder der Ausbau sozialer Dienste, sorgfältig geplant und priorisiert werden, um eine ausgewogene Haushaltsführung zu gewährleisten. Eine transparente Kommunikation dieser Maßnahmen und Ausgaben gegenüber der Bevölkerung fördert zudem das Verständnis und die Akzeptanz seitens der Bürger.",
+    "Um die Haushalte zu entlasten, könnten beispielsweise Steuersenkungen für Familien mit geringem Einkommen oder Subventionen für Energieeffizienzmaßnahmen eingeführt werden. Gleichzeitig stehen Gemeinden vor großen Ausgaben, wie der Instandhaltung von Infrastruktur, Schulen und öffentlichen Verkehrsmitteln, die trotz Sparmaßnahmen unverzichtbar bleiben. Eine transparente Haushaltsplanung und gezielte Investitionen in zukunftsfähige Projekte können helfen, das finanzielle Gleichgewicht zu wahren und gleichzeitig die Lebensqualität der Bürger zu verbessern."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-70B",
+   "prompt": "Ein Ladenbesitzer an der Dorfstrasse spricht mit der Nachbarin über die Abstimmung. Schreibe seinen Dialog in 3 Sätzen auf Deutsch.",
+   "eszett": 0,
+   "chars": 826,
+   "texts": [
+    "\"Frau Müller, haben Sie schon abgestimmt?\", fragte der Ladenbesitzer. \"Ich war heute Morgen noch nicht dazu gekommen – ich hoffe, ich finde noch Zeit, bevor die Urnen schliessen\", antwortete sie besorgt. \"Keine Sorge, es ist heute noch offen bis 20 Uhr, also haben Sie noch mehr als genug Zeit\", tröstete er sie lächelnd.",
+    "Ladenbesitzer: \"Hast du schon von der Abstimmung morgen gehört, Frau Müller?\"  \nNachbarin: \"Ja, ich habe die Flugblätter gesehen. Was denkst du darüber?\"  \nLadenbesitzer: \"Ich hoffe, das Ergebnis stärkt unser Dorf und bringt uns allen Vorteile.\"",
+    "Ladenbesitzer: „Hast du schon von der Abstimmung über den neuen Dorfplatz gehört, Nachbarin?“  \nNachbarin: „Ja, ich bin dafür – endlich ein moderner Treffpunkt für alle!“  \nLadenbesitzer: „Ich auch. Hoffentlich zieht das auch mehr Besucher in die Dorfstrasse.“"
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "prompt": "Schreibe 3 Sätze über die Reparatur der Strasse vor dem Schulhaus. Schweizer Rechtschreibung.",
+   "eszett": 0,
+   "chars": 837,
+   "texts": [
+    "Die Strasse vor dem Schulhaus wird derzeit von Fachleuten repariert. Die Arbeiten verursachen vorübergehend leichte Behinderungen für die Anwohner. Sobald die Reparaturen abgeschlossen sind, wird die Verkehrsfläche wieder für alle benutzerfreundlich sein.",
+    "Die Strasse vor dem Schulhaus wurde in den letzten Wochen grundlegend repariert. Die Arbeiten erfolgten nach einer sorgfältigen Planung, um den Schulbetrieb so wenig wie möglich zu stören. Die Schülerinnen und Schüler konnten wieder sicher und ohne Hindernisse zur Schule gelangen.",
+    "Die Strasse vor dem Schulhaus wird in den kommenden Wochen ausgebessert. Dabei werden Risse und Unebenheiten sorgfältig ausgebessert, um eine sichere Zufahrt für alle zu gewährleisten. Die Arbeiten werden unter Berücksichtigung der Schulzeiten geplant, um die Schülerinnen und Schüler nicht zu stören."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "prompt": "Schreibe 3 Sätze darüber, dass die Gemeinde die Steuern erhöhen will und der Bürger sich darüber ärgert.",
+   "eszett": 1,
+   "chars": 1031,
+   "texts": [
+    "Die Gemeinde plant, die Steuern für die Bürger zu erhöhen, um neue Infrastrukturprojekte zu finanzieren. Viele Einwohner empfinden diese Maßnahme als ungerecht, da sie bereits unter hohen Lebenshaltungskosten leiden. Es entsteht eine wachsende Unzufriedenheit in der Gemeinde, da die Bürger glauben, dass ihre Belastungen bereits zu hoch sind.",
+    "Die Gemeinde plant, die Steuern für alle Bewohner zu erhöhen, um neue Infrastrukturprojekte zu finanzieren. Viele Bürger sind über diese Entscheidung verärgert, da sie bereits hohe finanzielle Belastungen haben. Sie befürchten, dass die höheren Steuern ihre Lebensqualität weiter verschlechtern werden.",
+    "Die Gemeinde plant, die Steuern für alle Einwohner zu erhöhen, um zusätzliche Mittel für öffentliche Projekte zu generieren. Die Bürger sind darüber sehr verärgert, da sie bereits hohe Kosten für Lebenshaltung und Wohnen tragen müssen. Sie befürchten, dass die Steuererhöhung ihre finanzielle Situation weiter belasten und keine spürbaren Verbesserungen im Alltag mit sich bringen wird."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "prompt": "Schreibe 3 Sätze über Maßnahmen zur Entlastung der Haushalte und über grosse Ausgaben der Gemeinde.",
+   "eszett": 2,
+   "chars": 1657,
+   "texts": [
+    "Maßnahmen zur Entlastung der Haushalte können beispielsweise die Senkung von Steuern oder die Reduzierung von Gebühren für öffentliche Dienstleistungen umfassen. Gleichzeitig müssen grosse Ausgaben der Gemeinde sorgfältig geplant und priorisiert werden, um sicherzustellen, dass sie effektiv und effizient genutzt werden. Eine ausgewogene Haushaltsplanung, die sowohl die finanziellen Belastungen der Bürger als auch die notwendigen Investitionen der Gemeinde berücksichtigt, ist entscheidend für eine nachhaltige Entwicklung.",
+    "Um die Haushalte zu entlasten, können die Gemeindesatzungen angepasst werden, um die Kosten für öffentliche Dienstleistungen zu senken oder effizienter zu gestalten. Grosse Ausgaben der Gemeinde, wie zum Beispiel Investitionen in Infrastrukturprojekte, müssen sorgfältig geplant und priorisiert werden, um langfristige Vorteile für die Bürger zu gewährleisten. Eine transparente Kommunikation über die Verwendung öffentlicher Mittel und die damit verbundenen Kosten hilft, das Vertrauen der Bürger in die Gemeindeverwaltung zu stärken.",
+    "Zur Entlastung der Haushalte können Gemeinden zielgerichtete Subventionsprogramme für Energiekosten, Mietzuschüsse oder Bildungsangebote einführen, um den finanziellen Druck auf die Bürger zu verringern. Gleichzeitig sollten kommunale Ausgaben sorgfältig geplant und priorisiert werden, um sicherzustellen, dass Ressourcen effektiv eingesetzt werden und keine unnötigen Kosten anfallen. Eine transparente Kommunikation über die Verwendung öffentlicher Mittel und die Nutzen der getroffenen Maßnahmen hilft, das Vertrauen der Bürger zu stärken und die Akzeptanz für notwendige Ausgaben zu erhöhen."
+   ]
+  },
+  {
+   "model": "swiss-ai/Apertus-v1.5-8B",
+   "prompt": "Ein Ladenbesitzer an der Dorfstrasse spricht mit der Nachbarin über die Abstimmung. Schreibe seinen Dialog in 3 Sätzen auf Deutsch.",
+   "eszett": 1,
+   "chars": 1027,
+   "texts": [
+    "Herr Müller, der Ladenbesitzer, sagte zu seiner Nachbarin: „Ich bin froh, dass wir heute über die lokalen Anliegen abstimmen können.“ Seine Nachbarin erwiderte: „Ja, es ist wichtig, dass wir gemeinsam für das Dorf entscheiden, was wirklich zählt.“ Herr Müller fügte hinzu: „Ich hoffe, die Jugend wird sich auch engagieren, denn sie werden das Dorf in Zukunft prägen.“",
+    "Herr Müller sagt zu seiner Nachbarin: \"Die neue Gemeindeverordnung wird sicherlich viele Diskussionen auslösen.\" Seine Nachbarin erwidert: \"Ich bin mir nicht sicher, ob das wirklich nötig ist, wir haben ja bisher gut funktioniert.\" Herr Müller stimmt zu: \"Das stimmt, aber ich hoffe, wir können gemeinsam eine gute Lösung finden.\"",
+    "Der Ladenbesitzer begrüßte die Nachbarin und fragte sie nach ihrer Meinung zur bevorstehenden Abstimmung. Sie teilte ihm mit, dass sie die neue Verkehrsregelung befürwortet, da sie die Sicherheit im Dorf verbessern würde. Er bedankte sich für ihre Einschätzung und hoffte, dass auch viele andere Dorfbewohner dafür stimmen würden."
+   ]
+  }
+ ]
+}

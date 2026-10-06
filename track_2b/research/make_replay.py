@@ -2,8 +2,7 @@
 
     python research/make_replay.py final_70_s3          # -> docs/replays/final_70_s3.replay.json
 
-Load it on the landing page with the replay file control. The UI replay holds only the init message and the rounds, so the
-report is not part of it (it is printed to the console and kept in the source run).
+Load it on the landing page with the replay file control. The replay carries the init message, the rounds and the report.
 """
 
 import json
@@ -22,6 +21,7 @@ replay = {
     "policyText": f"GemeindeSim run {tag} ({run['args']['model']}, seed {run['args']['seed']}): Linden tax multiplier 118 to 124 % and school credit",
     "maxRounds": n_rounds,
     "initMsg": {"type": "init", "npcs": run["npcs0"], "relationships": rels, "max_rounds": n_rounds},
+    "report": run["report"],
     "rounds": [
         {
             "type": "round",

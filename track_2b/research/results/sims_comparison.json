@@ -1,5 +1,5 @@
 {
- "70B baseline": [
+ "70B baseline (v1)": [
   {
    "tag": "base70_s1",
    "t_sim_s": 234.7,
@@ -148,48 +148,48 @@
    "retrieval_question_chunk_rate": 0.0
   }
  ],
- "70B v2.1": [
+ "70B final": [
   {
-   "tag": "v21_70_s1",
-   "t_sim_s": 123.7,
-   "calls": 44,
+   "tag": "final_70_s1",
+   "t_sim_s": 121.7,
+   "calls": 49,
    "err_calls": 0,
    "retry_calls": 0,
-   "tok_in": 52639,
-   "tok_out": 13381,
-   "lat_mean": 9.2,
-   "events": 33,
-   "chat_share": 0.55,
+   "tok_in": 55140,
+   "tok_out": 13552,
+   "lat_mean": 8.6,
+   "events": 34,
+   "chat_share": 0.56,
    "types": {
-    "chat": 18,
-    "mood_shift": 8,
-    "move": 7
+    "chat": 19,
+    "move": 5,
+    "mood_shift": 10
    },
    "intro_rate": 0.0,
    "intro_after_r0": 0.0,
    "lang_ok": 1.0,
-   "eszett": 1,
+   "eszett": 0,
    "numerals_stripped": 0,
-   "cite_n": 39,
-   "cite_valid_rate": 0.97,
-   "events_with_valid_cite": 0.55,
+   "cite_n": 29,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.56,
    "grounded_rate": 1.0,
    "stance_initial": {
-    "for": 1,
-    "against": 3,
-    "undecided": 1
+    "for": 0,
+    "against": 2,
+    "undecided": 3
    },
    "stance_final": {
-    "for": 1,
+    "for": 0,
     "against": 3,
-    "undecided": 1
+    "undecided": 2
    },
    "llm_stats": {},
    "intro_hint": null,
    "fallback_events": 0,
    "final_moods": {
-    "anxious": 3,
-    "worried": 2
+    "worried": 4,
+    "anxious": 1
    },
    "report_lang": "de",
    "report_mixed_lang": false,
@@ -197,34 +197,34 @@
    "retrieval_question_chunk_rate": 1.0
   },
   {
-   "tag": "v21_70_s2",
-   "t_sim_s": 120.4,
-   "calls": 47,
+   "tag": "final_70_s2",
+   "t_sim_s": 126.5,
+   "calls": 49,
    "err_calls": 0,
    "retry_calls": 0,
-   "tok_in": 52676,
-   "tok_out": 13554,
-   "lat_mean": 8.7,
-   "events": 31,
-   "chat_share": 0.61,
+   "tok_in": 55564,
+   "tok_out": 15262,
+   "lat_mean": 9.4,
+   "events": 32,
+   "chat_share": 0.66,
    "types": {
-    "chat": 19,
-    "mood_shift": 7,
-    "move": 5
+    "chat": 21,
+    "mood_shift": 8,
+    "move": 3
    },
    "intro_rate": 0.0,
    "intro_after_r0": 0.0,
    "lang_ok": 1.0,
-   "eszett": 1,
+   "eszett": 0,
    "numerals_stripped": 1,
-   "cite_n": 39,
+   "cite_n": 43,
    "cite_valid_rate": 1.0,
-   "events_with_valid_cite": 0.61,
-   "grounded_rate": 0.97,
+   "events_with_valid_cite": 0.66,
+   "grounded_rate": 1.0,
    "stance_initial": {
-    "for": 3,
+    "for": 4,
     "against": 0,
-    "undecided": 2
+    "undecided": 1
    },
    "stance_final": {
     "for": 4,
@@ -235,9 +235,8 @@
    "intro_hint": null,
    "fallback_events": 0,
    "final_moods": {
-    "anxious": 3,
-    "worried": 1,
-    "neutral": 1
+    "hopeful": 3,
+    "worried": 2
    },
    "report_lang": "de",
    "report_mixed_lang": false,
@@ -245,38 +244,134 @@
    "retrieval_question_chunk_rate": 1.0
   },
   {
-   "tag": "v21_70_s3",
-   "t_sim_s": 127.2,
-   "calls": 51,
+   "tag": "final_70_s3",
+   "t_sim_s": 119.5,
+   "calls": 42,
    "err_calls": 0,
    "retry_calls": 0,
-   "tok_in": 53018,
-   "tok_out": 14244,
-   "lat_mean": 8.5,
+   "tok_in": 53040,
+   "tok_out": 13634,
+   "lat_mean": 9.7,
    "events": 34,
-   "chat_share": 0.65,
+   "chat_share": 0.53,
    "types": {
-    "chat": 22,
-    "mood_shift": 8,
-    "move": 4
+    "chat": 18,
+    "mood_shift": 10,
+    "move": 6
    },
    "intro_rate": 0.0,
    "intro_after_r0": 0.0,
    "lang_ok": 1.0,
-   "eszett": 1,
+   "eszett": 0,
    "numerals_stripped": 1,
-   "cite_n": 40,
+   "cite_n": 37,
    "cite_valid_rate": 1.0,
-   "events_with_valid_cite": 0.65,
+   "events_with_valid_cite": 0.53,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 3,
+    "against": 2,
+    "undecided": 0
+   },
+   "stance_final": {
+    "for": 3,
+    "against": 2,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "neutral": 2,
+    "anxious": 2,
+    "hopeful": 1
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_70_s4",
+   "t_sim_s": 131.5,
+   "calls": 43,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 54376,
+   "tok_out": 14327,
+   "lat_mean": 10.0,
+   "events": 33,
+   "chat_share": 0.55,
+   "types": {
+    "chat": 18,
+    "mood_shift": 13,
+    "move": 2
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 1,
+   "cite_n": 31,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.55,
    "grounded_rate": 1.0,
    "stance_initial": {
     "for": 2,
-    "against": 2,
-    "undecided": 1
+    "against": 3,
+    "undecided": 0
    },
    "stance_final": {
     "for": 2,
-    "against": 1,
+    "against": 3,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "anxious": 2,
+    "worried": 2,
+    "hopeful": 1
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_70_s5",
+   "t_sim_s": 131.2,
+   "calls": 48,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 56422,
+   "tok_out": 14785,
+   "lat_mean": 9.4,
+   "events": 32,
+   "chat_share": 0.56,
+   "types": {
+    "chat": 18,
+    "mood_shift": 11,
+    "move": 3
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 1,
+   "cite_n": 37,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.56,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 1,
+    "against": 2,
+    "undecided": 2
+   },
+   "stance_final": {
+    "for": 1,
+    "against": 2,
     "undecided": 2
    },
    "llm_stats": {},
@@ -284,7 +379,8 @@
    "fallback_events": 0,
    "final_moods": {
     "worried": 3,
-    "hopeful": 2
+    "anxious": 1,
+    "hopeful": 1
    },
    "report_lang": "de",
    "report_mixed_lang": false,
@@ -292,7 +388,153 @@
    "retrieval_question_chunk_rate": 1.0
   }
  ],
- "8B baseline": [
+ "70B final, swarm": [
+  {
+   "tag": "final_sw70_s1",
+   "t_sim_s": 151.2,
+   "calls": 47,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 55626,
+   "tok_out": 14309,
+   "lat_mean": 8.2,
+   "events": 34,
+   "chat_share": 0.5,
+   "types": {
+    "chat": 17,
+    "mood_shift": 10,
+    "move": 7
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 1,
+   "cite_n": 34,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.5,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1
+   },
+   "stance_final": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "neutral": 1,
+    "worried": 2,
+    "anxious": 2
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_sw70_s2",
+   "t_sim_s": 166.2,
+   "calls": 48,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 56905,
+   "tok_out": 15043,
+   "lat_mean": 8.4,
+   "events": 31,
+   "chat_share": 0.68,
+   "types": {
+    "chat": 21,
+    "mood_shift": 7,
+    "move": 3
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 0,
+   "cite_n": 53,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.68,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 3,
+    "against": 0,
+    "undecided": 2
+   },
+   "stance_final": {
+    "for": 5,
+    "against": 0,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "hopeful": 2,
+    "worried": 3
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_sw70_s3",
+   "t_sim_s": 163.8,
+   "calls": 49,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 56760,
+   "tok_out": 15220,
+   "lat_mean": 8.3,
+   "events": 32,
+   "chat_share": 0.59,
+   "types": {
+    "chat": 19,
+    "mood_shift": 9,
+    "move": 4
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 2,
+   "cite_n": 41,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.59,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 3,
+    "against": 2,
+    "undecided": 0
+   },
+   "stance_final": {
+    "for": 3,
+    "against": 1,
+    "undecided": 1
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "worried": 1,
+    "neutral": 1,
+    "hopeful": 2,
+    "anxious": 1
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  }
+ ],
+ "8B baseline (v1)": [
   {
    "tag": "base8_s1",
    "t_sim_s": 29.7,
@@ -387,48 +629,93 @@
    "retrieval_question_chunk_rate": 0.33
   }
  ],
- "8B v2.1": [
+ "8B final": [
   {
-   "tag": "v21_8_s1",
+   "tag": "final_8_s1",
    "t_sim_s": 28.4,
-   "calls": 49,
+   "calls": 44,
    "err_calls": 0,
    "retry_calls": 0,
-   "tok_in": 49556,
-   "tok_out": 11595,
-   "lat_mean": 1.8,
+   "tok_in": 51362,
+   "tok_out": 11636,
+   "lat_mean": 2.1,
    "events": 30,
-   "chat_share": 0.7,
+   "chat_share": 0.57,
    "types": {
-    "chat": 21,
-    "mood_shift": 9
+    "chat": 17,
+    "mood_shift": 13
    },
    "intro_rate": 0.0,
    "intro_after_r0": 0.0,
    "lang_ok": 1.0,
    "eszett": 0,
    "numerals_stripped": 0,
-   "cite_n": 25,
+   "cite_n": 30,
    "cite_valid_rate": 1.0,
    "events_with_valid_cite": 0.57,
-   "grounded_rate": 1.0,
+   "grounded_rate": 0.97,
    "stance_initial": {
-    "for": 1,
-    "against": 2,
-    "undecided": 2
+    "for": 0,
+    "against": 4,
+    "undecided": 1
    },
    "stance_final": {
-    "for": 1,
+    "for": 0,
+    "against": 5,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "worried": 1,
+    "anxious": 4
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_8_s2",
+   "t_sim_s": 27.8,
+   "calls": 39,
+   "err_calls": 0,
+   "retry_calls": 2,
+   "tok_in": 50619,
+   "tok_out": 11260,
+   "lat_mean": 2.2,
+   "events": 29,
+   "chat_share": 0.55,
+   "types": {
+    "chat": 16,
+    "mood_shift": 13
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 0,
+   "cite_n": 22,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.52,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 2,
     "against": 2,
+    "undecided": 1
+   },
+   "stance_final": {
+    "for": 2,
+    "against": 1,
     "undecided": 2
    },
    "llm_stats": {},
    "intro_hint": null,
    "fallback_events": 0,
    "final_moods": {
-    "hopeful": 2,
-    "neutral": 1,
     "worried": 1,
+    "neutral": 3,
     "anxious": 1
    },
    "report_lang": "de",
@@ -437,29 +724,221 @@
    "retrieval_question_chunk_rate": 1.0
   },
   {
-   "tag": "v21_8_s2",
-   "t_sim_s": 28.2,
-   "calls": 43,
+   "tag": "final_8_s3",
+   "t_sim_s": 29.3,
+   "calls": 42,
    "err_calls": 0,
    "retry_calls": 0,
-   "tok_in": 50967,
-   "tok_out": 11938,
-   "lat_mean": 2.1,
-   "events": 30,
-   "chat_share": 0.6,
+   "tok_in": 52914,
+   "tok_out": 12608,
+   "lat_mean": 2.3,
+   "events": 33,
+   "chat_share": 0.48,
    "types": {
-    "chat": 18,
+    "chat": 16,
+    "mood_shift": 14,
+    "move": 3
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 0,
+   "cite_n": 28,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.48,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 2,
+    "against": 2,
+    "undecided": 1
+   },
+   "stance_final": {
+    "for": 2,
+    "against": 1,
+    "undecided": 2
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "worried": 1,
+    "neutral": 4
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_8_s4",
+   "t_sim_s": 28.9,
+   "calls": 45,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 51615,
+   "tok_out": 11654,
+   "lat_mean": 2.0,
+   "events": 31,
+   "chat_share": 0.48,
+   "types": {
+    "chat": 15,
+    "mood_shift": 15,
+    "move": 1
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 2,
+   "cite_n": 22,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.45,
+   "grounded_rate": 0.97,
+   "stance_initial": {
+    "for": 0,
+    "against": 5,
+    "undecided": 0
+   },
+   "stance_final": {
+    "for": 0,
+    "against": 5,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "worried": 1,
+    "anxious": 4
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_8_s5",
+   "t_sim_s": 27.2,
+   "calls": 36,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 50481,
+   "tok_out": 11396,
+   "lat_mean": 2.4,
+   "events": 35,
+   "chat_share": 0.49,
+   "types": {
+    "chat": 17,
+    "mood_shift": 14,
+    "move": 4
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 0,
+   "cite_n": 23,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.4,
+   "grounded_rate": 0.94,
+   "stance_initial": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1
+   },
+   "stance_final": {
+    "for": 0,
+    "against": 3,
+    "undecided": 2
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "worried": 2,
+    "anxious": 1,
+    "angry": 1,
+    "hopeful": 1
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  }
+ ],
+ "8B final, swarm": [
+  {
+   "tag": "final_sw8_s1",
+   "t_sim_s": 35.1,
+   "calls": 47,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 53160,
+   "tok_out": 12191,
+   "lat_mean": 1.8,
+   "events": 29,
+   "chat_share": 0.59,
+   "types": {
+    "chat": 17,
     "mood_shift": 12
    },
    "intro_rate": 0.0,
    "intro_after_r0": 0.0,
    "lang_ok": 1.0,
    "eszett": 0,
-   "numerals_stripped": 1,
-   "cite_n": 27,
+   "numerals_stripped": 0,
+   "cite_n": 25,
    "cite_valid_rate": 1.0,
-   "events_with_valid_cite": 0.57,
-   "grounded_rate": 1.0,
+   "events_with_valid_cite": 0.52,
+   "grounded_rate": 0.86,
+   "stance_initial": {
+    "for": 1,
+    "against": 3,
+    "undecided": 1
+   },
+   "stance_final": {
+    "for": 1,
+    "against": 4,
+    "undecided": 0
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "neutral": 1,
+    "anxious": 2,
+    "worried": 2
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_sw8_s2",
+   "t_sim_s": 36.3,
+   "calls": 45,
+   "err_calls": 0,
+   "retry_calls": 0,
+   "tok_in": 53464,
+   "tok_out": 11929,
+   "lat_mean": 1.9,
+   "events": 28,
+   "chat_share": 0.61,
+   "types": {
+    "chat": 17,
+    "mood_shift": 11
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 1,
+   "cite_n": 25,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.54,
+   "grounded_rate": 0.96,
    "stance_initial": {
     "for": 3,
     "against": 0,
@@ -474,9 +953,56 @@
    "intro_hint": null,
    "fallback_events": 0,
    "final_moods": {
-    "worried": 1,
-    "anxious": 2,
+    "hopeful": 3,
     "neutral": 2
+   },
+   "report_lang": "de",
+   "report_mixed_lang": false,
+   "report_asserts_outcome": false,
+   "retrieval_question_chunk_rate": 1.0
+  },
+  {
+   "tag": "final_sw8_s3",
+   "t_sim_s": 36.4,
+   "calls": 48,
+   "err_calls": 0,
+   "retry_calls": 2,
+   "tok_in": 56349,
+   "tok_out": 12948,
+   "lat_mean": 1.9,
+   "events": 30,
+   "chat_share": 0.53,
+   "types": {
+    "chat": 16,
+    "mood_shift": 13,
+    "move": 1
+   },
+   "intro_rate": 0.0,
+   "intro_after_r0": 0.0,
+   "lang_ok": 1.0,
+   "eszett": 0,
+   "numerals_stripped": 0,
+   "cite_n": 26,
+   "cite_valid_rate": 1.0,
+   "events_with_valid_cite": 0.5,
+   "grounded_rate": 1.0,
+   "stance_initial": {
+    "for": 2,
+    "against": 1,
+    "undecided": 2
+   },
+   "stance_final": {
+    "for": 2,
+    "against": 2,
+    "undecided": 1
+   },
+   "llm_stats": {},
+   "intro_hint": null,
+   "fallback_events": 0,
+   "final_moods": {
+    "anxious": 1,
+    "worried": 1,
+    "neutral": 3
    },
    "report_lang": "de",
    "report_mixed_lang": false,
