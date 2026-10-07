@@ -37,7 +37,7 @@ Open **http://localhost:3000** (also published on **8080**; if that port is take
 
 The defaults are the **CSCS inference API** (`LLM_BASE_URL=https://api.inference.cscs.ch/v1`, `LLM_NAME=swiss-ai/Apertus-v1.5-70B`); the hackathon gateway works with the same build ([`docs/ENDPOINTS.md`](docs/ENDPOINTS.md)). The simulation screen has a collapsible **Run metrics** panel (tokens, cache share, context use, latency, requests in flight).
 
-Optional `.env` switches: `LLM_CONCURRENCY` (default `auto`: adapts to the endpoint; a number fixes it), `LLM_VOICE_NAME` (another model for the report and the chat), `CHAT_STREAM`, `CHAT_STUFF_MAX_CHARS`, `EMBEDDING_MODEL` (optional hybrid retrieval), `SWARM=true|false` (two-phase initiator/reactor rounds), `LLM_NAME=swiss-ai/Apertus-v1.5-8B` for a fast run. The engineering questions behind these choices are answered in [`docs/ENGINEERING-QA.md`](docs/ENGINEERING-QA.md).
+Optional `.env` switches: `LLM_CONCURRENCY` (default `auto`: adapts to the endpoint; a number fixes it), `LLM_VOICE_NAME` (another model for the report and the chat), `CHAT_STREAM`, `CHAT_STUFF_MAX_CHARS`, `EMBEDDING_MODEL` (optional hybrid retrieval), `SWARM=true|false` (two-phase initiator/reactor rounds), `LLM_NAME=swiss-ai/Apertus-v1.5-8B` for a fast run. The engineering questions behind these choices are answered in [`docs/ENGINEERING-QA.md`](docs/ENGINEERING-QA.md). Why the project exists, why Apertus and why Switzerland: [`docs/PITCH.md`](docs/PITCH.md).
 
 ### Local development (without Docker)
 

@@ -17,6 +17,7 @@ do inside a multi-agent civic simulation. Written to be the raw material of a pa
 | [../ENGINEERING-QA.md](../ENGINEERING-QA.md) | The mentor's engineering questions (Python speed, async, streaming, caching, context, RAG validation, subagents, tokens): answers with evidence and justification (E29-E32) |
 | [../ENDPOINTS.md](../ENDPOINTS.md) | Running the same build on the CSCS API (judging) or the hackathon gateway |
 | [../INNOVATIONS.md](../INNOVATIONS.md) | What we measured, what is new, what is only standard: source material for a blog post (also published as a gist) |
+| [../PITCH.md](../PITCH.md) | The pitch: problem, precedents, why Apertus, why Switzerland, use cases, risks, roadmap, hard questions |
 | [ensemble_final_70.md](ensemble_final_70.md), [ensemble_final_8.md](ensemble_final_8.md) | Spread of the stance poll across 5 seeds (table + chart) |
 | [../DEMO-SCRIPT.md](../DEMO-SCRIPT.md), [../SUBMISSION-CHECKLIST.md](../SUBMISSION-CHECKLIST.md) | Video shot list; submission checklist with what still needs a person |
 | [../review/NATIVE-SPEAKER-REVIEW.md](../review/NATIVE-SPEAKER-REVIEW.md) | German/French review pack (49 items, rubric) + `research/summarize_review.py` |
