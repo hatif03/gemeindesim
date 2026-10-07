@@ -6,7 +6,11 @@ import math
 import re
 import unicodedata
 from collections import Counter
+from functools import lru_cache
 from typing import Any
+
+from graph.dense import order as dense_order
+from graph.dense import rrf
 
 _TOKEN = re.compile(r"[A-Za-zÀ-ÿ0-9]+", re.UNICODE)
 _HEADER = re.compile(r"^---\s*(?:Source:\s*)?(.*?)\s*---\s*$", re.MULTILINE)
@@ -168,17 +172,25 @@ def chunk_policy_document(policy_text: str) -> list[dict[str, Any]]:
     return chunks
 
 
+@lru_cache(maxsize=8192)
+def _term_counts(text: str) -> Counter:
+    """Term counts of a chunk, computed once per distinct text (read-only: callers never mutate it). Retrieval runs for every resident every round;
+    tokenising a 83 k-character booklet each time cost ≈ 12 ms per query (research E29), the counts now come from the cache."""
+    return Counter(_tokens(text))
+
+
 def retrieve_passages(
     chunks: list[dict[str, Any]],
     query: str,
     top_k: int = 4,
     lang: str | None = None,
+    max_pins: int = 2,
 ) -> list[dict[str, Any]]:
-    """BM25 over the resident-language chunks; the ballot-question chunk is always included."""
+    """BM25 over the resident-language chunks; the ballot-question chunk(s) are always included (up to `max_pins`)."""
     if not chunks:
         return []
     pool = [c for c in chunks if not lang or c.get("lang") == lang] or chunks
-    docs = [Counter(_tokens(c.get("text", ""))) for c in pool]
+    docs = [_term_counts(c.get("text", "")) for c in pool]
     n = len(pool)
     avg = sum(sum(d.values()) for d in docs) / n or 1.0
     df = Counter(t for d in docs for t in d)
@@ -195,8 +207,13 @@ def retrieve_passages(
         scored.append((s, c))
     scored.sort(key=lambda x: x[0], reverse=True)
     picked = [c for s, c in scored if s > 0][:top_k] or [c for _, c in scored[:top_k]]
+    dense = dense_order([c.get("text", "") for c in pool], query)  # None unless EMBEDDING_MODEL is set (graph/dense.py, research E30)
+    if dense is not None:
+        where = {id(c): i for i, c in enumerate(pool)}
+        bm25_rank = [where[id(c)] for _, c in scored]  # `scored` is already sorted by BM25
+        picked = [pool[i] for i in rrf(bm25_rank, dense)[:top_k]]
     # A booklet can carry several ballot questions (one per measure): pin up to two, then fill with BM25.
-    pinned = [c for c in pool if c.get("is_question")][:2]
+    pinned = [c for c in pool if c.get("is_question")][:max_pins]
     if pinned and any(p not in picked for p in pinned):
         picked = pinned + [c for c in picked if c not in pinned][: max(0, top_k - len(pinned))]
     return picked

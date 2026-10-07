@@ -22,7 +22,7 @@ from config import LLM_VOICE_NAME
 from graph.calculator import household_line
 from graph.corpus import chunk_policy_document, default_top_k, detect_setting, format_passages, passage_labels, retrieve_passages
 from graph.language import TOWN, glossary_for, strip_ungrounded_numerals, swissify, translate_utterance
-from graph.llm import get_llm, strip_think_tags
+from graph.llm import ainvoke_text, astream_text, get_llm, strip_think_tags
 from graph.memory import format_memories_for_prompt, retrieve_memories
 from graph.nodes.stance import stance_label
 from graph.prompts import MBTI_DESC, NPC_CHAT_PROMPT
@@ -113,19 +113,14 @@ def _clean(content: str) -> str:
     return content.strip()
 
 
-async def generate_npc_chat_reply(
+def _prepare(
     npc: dict[str, Any],
     user_message: str,
     conversation_history: list[dict[str, str]],
     memory_stream: list[dict[str, Any]],
     policy_context: str,
-    user_lang: str | None = None,
 ) -> dict[str, Any]:
-    """Generate an in-character, grounded reply to a user message.
-
-    Returns {"text", "sources": [{"id", "text"}], "stance": "for|against|undecided", "translated": str | None}.
-    Nothing is persisted back to the simulation.
-    """
+    """Everything before the model call: memories, passages, the calculator line, the prompt, and what the answer is checked against."""
     # Build a query from the user message + recent conversation for memory retrieval
     recent_context = " ".join(msg.get("content", "") for msg in conversation_history[-2:])
     query = f"{user_message} {recent_context}".strip()
@@ -191,35 +186,119 @@ async def generate_npc_chat_reply(
         len(passages),
         stance_label(float(npc.get("stance", 0.0))),
     )
+    return {"prompt": prompt, "labels": labels, "passages": passages, "pack_text": pack_text, "grounded": bool(chunks), "swiss": swiss, "lang": lang}
 
-    # Use a smaller max_tokens since chat responses should be concise
-    llm = get_llm(max_tokens=1024, model=LLM_VOICE_NAME or None)
-    response = await llm.ainvoke(prompt)
-    content = _clean(response.content)  # type: ignore[arg-type]
 
-    # Citations: keep only labels that exist in THIS pack, and remove the markers from the spoken text.
-    cited = [f"P{m}" for grp in re.findall(r"\[([^\]]*)\]", content) for m in re.findall(r"P(\d+)", grp)]
-    content = re.sub(r"\s*\[[^\]]*\]", "", content).strip()  # labels and any other bracketed text the model puts there
-    content = re.sub(r"(\s*,){2,}", ",", content)  # "[P1], [P2]" leaves ",,"
-    content = re.sub(r"\s+([,.!?;:])", r"\1", content)
-    content = re.sub(r"[ \t]{2,}", " ", content).strip()
+_BRACKETS = re.compile(r"\s*\[([^\]]*)\]")
+
+
+def _tidy(text: str) -> str:
+    text = re.sub(r"(\s*,){2,}", ",", text)  # "[P1], [P2]" leaves ",,"
+    text = re.sub(r"\s+([,.!?;:])", r"\1", text)
+    return re.sub(r"[ \t]{2,}", " ", text).strip()
+
+
+def _check(text: str, ctx: dict[str, Any]) -> tuple[str, list[str]]:
+    """The guardrails on a piece of the answer: remove bracketed text (reading the valid citation labels first), then keep only figures that come
+    from the passages / the calculator, and Swiss spelling. Works on a whole answer or on one sentence of a streamed one."""
+    cited = [f"P{m}" for grp in _BRACKETS.findall(text) for m in re.findall(r"P(\d+)", grp)]
+    text = _tidy(_BRACKETS.sub("", text))
+    if ctx["grounded"]:
+        text = strip_ungrounded_numerals(text, ctx["pack_text"])
+    if ctx["swiss"]:
+        text = swissify(text, ctx["lang"])
+    return text, cited
+
+
+def _sources(cited: list[str], ctx: dict[str, Any]) -> list[dict[str, str]]:
+    labels = ctx["labels"]
+    snippets = {labels[f"P{i}"]: p.get("text", "")[:240] for i, p in enumerate(ctx["passages"], 1)}
     seen: list[str] = []
     for k in cited:
-        if k in labels and labels[k] not in seen:
+        if k in labels and labels[k] not in seen:  # only labels that exist in THIS pack
             seen.append(labels[k])
-    snippets = {labels[f"P{i}"]: p.get("text", "")[:240] for i, p in enumerate(passages, 1)}
-    sources = [{"id": sid, "text": snippets.get(sid, "")} for sid in seen]
+    return [{"id": sid, "text": snippets.get(sid, "")} for sid in seen]
 
-    # Figures must come from the passages or the calculator; Swiss Standard German has no ß.
-    content = strip_ungrounded_numerals(content, pack_text) if chunks else content
-    if swiss:
-        content = swissify(content, lang)
 
-    translated = None
-    if user_lang and user_lang != lang and content:
-        translated = strip_ungrounded_numerals(await translate_utterance(content, user_lang, llm), pack_text) if chunks else await translate_utterance(content, user_lang, llm)
+async def _translate(content: str, user_lang: str | None, ctx: dict[str, Any], llm: Any) -> str | None:
+    if not (user_lang and user_lang != ctx["lang"] and content):
+        return None
+    translated = await translate_utterance(content, user_lang, llm)
+    return strip_ungrounded_numerals(translated, ctx["pack_text"]) if ctx["grounded"] else translated
 
+
+async def generate_npc_chat_reply(
+    npc: dict[str, Any],
+    user_message: str,
+    conversation_history: list[dict[str, str]],
+    memory_stream: list[dict[str, Any]],
+    policy_context: str,
+    user_lang: str | None = None,
+) -> dict[str, Any]:
+    """Generate an in-character, grounded reply to a user message.
+
+    Returns {"text", "sources": [{"id", "text"}], "stance": "for|against|undecided", "translated": str | None}.
+    Nothing is persisted back to the simulation.
+    """
+    ctx = _prepare(npc, user_message, conversation_history, memory_stream, policy_context)
+    # Use a smaller max_tokens since chat responses should be concise
+    llm = get_llm(max_tokens=1024, model=LLM_VOICE_NAME or None)
+    response = await ainvoke_text(llm, ctx["prompt"])
+    content, cited = _check(_clean(response.content), ctx)  # type: ignore[arg-type]
+    sources = _sources(cited, ctx)
+    translated = await _translate(content, user_lang, ctx, llm)
     logger.info("NPC chat: %s responded with %d chars, %d valid citations", npc.get("name", "?"), len(content), len(sources))
+    return {"text": content, "sources": sources, "stance": stance_label(float(npc.get("stance", 0.0))), "translated": translated}
+
+
+_SPAN = re.compile(r"<\|inner_prefix\|>.*?<\|inner_suffix\|>", re.DOTALL)
+_SENTENCE_END = re.compile(r"(?<=[.!?])\s+(?=[A-ZÄÖÜÉÈÀ0-9«\"(])")
+
+
+async def stream_npc_chat_reply(
+    npc: dict[str, Any],
+    user_message: str,
+    conversation_history: list[dict[str, str]],
+    memory_stream: list[dict[str, Any]],
+    policy_context: str,
+    on_chunk: Any,
+    user_lang: str | None = None,
+) -> dict[str, Any]:
+    """Like `generate_npc_chat_reply`, but the answer is sent sentence by sentence while the model is still writing.
+
+    The guardrails run on each complete sentence BEFORE it is sent (numbers outside the sources are stripped, bracketed text removed, Swiss spelling),
+    so the user never sees text that the checks would have changed; tokens are not shown raw. First text arrives after the first sentence
+    (≈ 1–2 s) instead of after the whole answer. `on_chunk(text)` is awaited for every cleaned sentence; the return value equals the non-streamed one."""
+    ctx = _prepare(npc, user_message, conversation_history, memory_stream, policy_context)
+    llm = get_llm(max_tokens=1024, model=LLM_VOICE_NAME or None, stream_usage=True)
+    buffer, emitted, cited_all = "", [], []
+
+    async def emit(sentence: str) -> None:
+        sentence = sentence.strip()
+        if not sentence or sentence.lower().startswith(_META_PREFIXES):  # leaked reasoning is dropped, as in the non-streamed path
+            return
+        text, cited = _check(sentence, ctx)
+        cited_all.extend(cited)
+        if text:
+            emitted.append(text)
+            await on_chunk(text)
+
+    async for piece in astream_text(llm, ctx["prompt"]):
+        buffer += piece
+        if "<|inner_prefix|>" in buffer and "<|inner_suffix|>" not in buffer:
+            continue  # a reasoning span is still open: wait for its end
+        buffer = _SPAN.sub("", buffer)  # not strip_think_tags: it strips whitespace and would glue the next piece to the sentence
+        parts = _SENTENCE_END.split(buffer)
+        for done in parts[:-1]:
+            await emit(done)
+        buffer = parts[-1]
+    await emit(buffer)
+    content = " ".join(emitted).strip()
+    if content.startswith('"') and content.endswith('"'):
+        content = content[1:-1]
+    translated = await _translate(content, user_lang, ctx, llm)
+    sources = _sources(cited_all, ctx)
+    logger.info("NPC chat (streamed): %s responded with %d chars in %d sentences, %d valid citations", npc.get("name", "?"), len(content), len(emitted), len(sources))
     return {"text": content, "sources": sources, "stance": stance_label(float(npc.get("stance", 0.0))), "translated": translated}
 
 

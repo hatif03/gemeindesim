@@ -3,14 +3,16 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useRouter } from "next/navigation";
 import NodeCanvas from "./index";
 
-const { uploadContextSource, startSimulation } = vi.hoisted(() => ({
+const { uploadContextSource, startSimulation, startEnsemble } = vi.hoisted(() => ({
   uploadContextSource: vi.fn(),
   startSimulation: vi.fn(),
+  startEnsemble: vi.fn(),
 }));
 
 vi.mock("@/services/wsClient", () => ({
   uploadContextSource,
   startSimulation,
+  startEnsemble,
 }));
 
 describe("NodeCanvas multimodal policy flow", () => {

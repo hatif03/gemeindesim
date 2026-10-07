@@ -124,3 +124,44 @@ async def test_chat_puts_a_mid_sized_document_first_and_leaves_short_ones_alone(
     monkeypatch.setattr(chat, "CHAT_STUFF_MAX_CHARS", 0)
     await generate_npc_chat_reply(NPC, "Was kostet das?", [], [], long_policy)
     assert not seen["prompt"].startswith("Official document")  # switched off
+
+
+def _stream(monkeypatch, pieces):
+    async def fake(llm, prompt):
+        for p in pieces:
+            yield p
+
+    monkeypatch.setattr("graph.chat.astream_text", fake)
+    monkeypatch.setattr("graph.chat.get_llm", lambda **kw: MagicMock())
+
+
+@pytest.mark.asyncio
+async def test_streamed_chat_sends_checked_sentences_not_raw_tokens(monkeypatch):
+    _stream(monkeypatch, ["Der Steuerfuss steigt auf 124 % [P", "1]. Die Gemeinde spart 37 Prozent. ", "Ich unterstuetze das", " Vorhaben [Note]."])
+    from graph.chat import stream_npc_chat_reply
+
+    sent = []
+
+    async def on_chunk(t):
+        sent.append(t)
+
+    reply = await stream_npc_chat_reply(NPC, "Wie hoch?", [], [], POLICY, on_chunk)
+    assert len(sent) == 3  # one per sentence, in order
+    assert "[P" not in "".join(sent) and "[Note" not in "".join(sent) and "37" not in "".join(sent)  # the checks ran BEFORE anything was sent
+    assert sent[0].startswith("Der Steuerfuss steigt auf 124 %")
+    assert reply["text"] == " ".join(sent) and len(reply["sources"]) == 1
+
+
+@pytest.mark.asyncio
+async def test_streamed_chat_waits_for_a_reasoning_span_and_drops_leaked_reasoning(monkeypatch):
+    _stream(monkeypatch, ["<|inner_prefix|>Let me think. ", "The user asks. <|inner_suffix|>Ich weiss es nicht. ", "Let me explain. Es steht nicht im Text."])
+    from graph.chat import stream_npc_chat_reply
+
+    sent = []
+
+    async def on_chunk(t):
+        sent.append(t)
+
+    reply = await stream_npc_chat_reply(NPC, "Wann?", [], [], POLICY, on_chunk)
+    assert sent == ["Ich weiss es nicht.", "Es steht nicht im Text."]
+    assert reply["text"] == "Ich weiss es nicht. Es steht nicht im Text."

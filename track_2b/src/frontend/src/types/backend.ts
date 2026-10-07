@@ -174,6 +174,32 @@ export interface BackendInfluenceEvent {
   mood_delta: number;
 }
 
+/** Token, cache, latency and context accounting of the run (backend `graph/metrics.py`). */
+export interface RunMetrics {
+  calls: number;
+  prompt_tokens: number;
+  completion_tokens: number;
+  cached_tokens: number;
+  cache_hit_rate: number;
+  mean_prompt_tokens: number;
+  max_prompt_tokens: number;
+  context_window: number;
+  mean_context_use: number;
+  max_context_use: number;
+  mean_latency_s: number;
+  p95_latency_s: number;
+  decode_tokens_per_s: number;
+  elapsed_s: number;
+  rate_limited: number;
+  gateway_retries: number;
+  downgraded: number;
+  failed: number;
+  models: Record<string, number>;
+  model: string;
+  endpoint: string;
+  in_flight_limit: number | null;
+}
+
 export interface WSRoundMsg {
   type: "round";
   round: number;
@@ -183,6 +209,7 @@ export interface WSRoundMsg {
   economic_indicators?: Record<string, number>;
   relationships?: BackendRelationship[];
   max_rounds?: number;
+  metrics?: RunMetrics;
 }
 
 export interface WSNPCAddedMsg {

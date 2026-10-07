@@ -126,6 +126,7 @@ export function NPCInteractionModal({
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [streamed, setStreamed] = useState("");  // sentences of the answer that arrived so far (each already checked by the backend)
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -160,10 +161,15 @@ export function NPCInteractionModal({
       reconnectionAttempts: 3,
     });
 
+    socket.on("npc_chat_chunk", (data: { npc_id: string; text: string }) => {
+      if (data.npc_id === npc.id) setStreamed((prev) => (prev ? `${prev} ${data.text}` : data.text));
+    });
+
     socket.on(
       "npc_chat_response",
       (data: { npc_id: string; response: string; sources?: ChatSource[]; translated?: string | null }) => {
         if (data.npc_id === npc.id) {
+          setStreamed("");
           setMessages((prev) => [
             ...prev,
             { role: "npc", content: data.response, sources: data.sources, translated: data.translated },
@@ -177,6 +183,7 @@ export function NPCInteractionModal({
       "npc_chat_error",
       (data: { npc_id: string; message: string }) => {
         if (data.npc_id === npc.id) {
+          setStreamed("");
           setError(data.message);
           setIsLoading(false);
         }
@@ -207,6 +214,7 @@ export function NPCInteractionModal({
     setMessages((prev) => [...prev, newUserMessage]);
     setInput("");
     setIsLoading(true);
+    setStreamed("");
     setError(null);
 
     socketRef.current.emit("chat_with_npc", {
@@ -508,12 +516,18 @@ export function NPCInteractionModal({
                   >
                     {npc.name}
                   </div>
-                  <p
-                    className="text-[10px] font-mono animate-pulse"
-                    style={{ color: "#5A8B5A" }}
-                  >
-                    Thinking...
-                  </p>
+                  {streamed ? (
+                    <p className="text-[10px] font-mono leading-relaxed" style={{ color: "#3D2510" }} data-testid="chat-streaming">
+                      {streamed}
+                    </p>
+                  ) : (
+                    <p
+                      className="text-[10px] font-mono animate-pulse"
+                      style={{ color: "#5A8B5A" }}
+                    >
+                      Thinking...
+                    </p>
+                  )}
                 </div>
               </div>
             )}

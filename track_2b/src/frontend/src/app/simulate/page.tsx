@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
+import { MetricsPanel } from "@/components/MetricsPanel";
 import { StancePanel } from "@/components/StancePanel";
 import { stancePoll } from "@/lib/stance";
 import { EconomicReportModal } from "@/components/EconomicReportModal";
@@ -776,6 +777,7 @@ function SimulateContent() {
         className={`fixed bottom-3 right-3 z-40 pointer-events-auto flex flex-col gap-2 ${focusMode ? "opacity-0 pointer-events-none" : ""}`}
       >
         <StancePanel npcs={sim.graphData.npcs} version={sim.graphData.version} />
+        <MetricsPanel metrics={sim.runMetrics} />
         <Dashboard
           metrics={sim.metrics}
           metricsHistory={sim.metricsHistory}

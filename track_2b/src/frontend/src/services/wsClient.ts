@@ -4,6 +4,7 @@ import { io, type Socket } from "socket.io-client";
 import type {
   BackendSimEvent,
   EconomicReport,
+  RunMetrics,
   StartSimulationRequest,
   UploadedContextSource,
   WSInitMsg,
@@ -25,6 +26,7 @@ export interface WSCallbacks {
   onNPCEvents?: (msg: WSNPCEventsMsg) => void;
   onDone: () => void;
   onEconomicReport?: (report: EconomicReport) => void;
+  onMetrics?: (metrics: RunMetrics) => void;
   onError: (message: string) => void;
 }
 
@@ -167,6 +169,10 @@ export function connectSimulation(
 
   socket.on("economic_report", (data: EconomicReport) => {
     callbacks.onEconomicReport?.(data);
+  });
+
+  socket.on("metrics", (data: RunMetrics) => {
+    callbacks.onMetrics?.(data);
   });
 
   socket.on("sim_error", (data: { message: string }) => {

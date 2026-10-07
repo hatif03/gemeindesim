@@ -7,9 +7,11 @@ import socketio
 from fastapi import APIRouter, HTTPException
 
 from graph.builder import build_graph
-from config import SWARM
+from config import CHAT_STREAM, LLM_BASE_URL, LLM_NAME, SWARM
 from graph.builder_swarm import build_swarm_graph
-from graph.chat import generate_npc_chat_reply
+from graph.chat import generate_npc_chat_reply, stream_npc_chat_reply
+from graph.llm import current_limit
+from graph.metrics import PROCESS_METRICS, RunMetrics, current_metrics
 from graph.nodes.stance import stance_summary
 from models.schemas import EconomicReportResponse, PolicyInput
 from models.state import SimState
@@ -44,9 +46,14 @@ class SimulationRecord:
     economic_report: EconomicReportResponse | None = None
     memory_streams: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     initial_stance: dict[str, Any] | None = None
+    metrics: RunMetrics = field(default_factory=RunMetrics)
 
 
 simulations: dict[str, SimulationRecord] = {}
+
+
+def metrics_snapshot(record: "SimulationRecord") -> dict[str, Any]:
+    return record.metrics.snapshot(LLM_NAME, LLM_BASE_URL, current_limit())
 
 _POLICY_SOURCE_KINDS = frozenset({"pdf", "text", "book", "video"})
 
@@ -118,6 +125,7 @@ async def _handle_round_update(
             "economic_indicators": update.get("economic_indicators", {}),
             "relationships": update.get("relationships", []),
             "max_rounds": max_rounds,
+            "metrics": metrics_snapshot(record),
         },
         to=sid,
     )
@@ -149,6 +157,8 @@ async def start_sim(sid: str, data: dict) -> None:
     record.indicator_snapshots = []
     record.source_summaries = []
 
+    record.metrics = RunMetrics()
+    current_metrics.set(record.metrics)  # every LLM call of this run (and its child tasks) is counted here
     graph = build_swarm_graph() if SWARM else build_graph()
     logger.info("sim=%s  mode=%s", simulation_id, "swarm" if SWARM else "standard")
 
@@ -285,6 +295,7 @@ async def start_sim(sid: str, data: dict) -> None:
             )
             record.economic_report = report
             await sio.emit("economic_report", report.model_dump(), to=sid)
+            await sio.emit("metrics", metrics_snapshot(record), to=sid)
             logger.info("sim=%s  economic_report emitted", simulation_id)
         except Exception:
             logger.exception("sim=%s  economic_report generation failed", simulation_id)
@@ -299,6 +310,21 @@ async def start_sim(sid: str, data: dict) -> None:
             )
         except Exception:
             pass
+
+
+@router.get("/simulate/{simulation_id}/metrics")
+async def get_simulation_metrics(simulation_id: str):
+    """Tokens, cache hits, latency and context use of one run (the frontend shows the same snapshot)."""
+    record = simulations.get(simulation_id)
+    if record is None:
+        raise HTTPException(status_code=404, detail="Simulation not found.")
+    return metrics_snapshot(record)
+
+
+@router.get("/metrics")
+async def get_process_metrics():
+    """Everything this backend process has sent to the model since it started."""
+    return PROCESS_METRICS.snapshot(LLM_NAME, LLM_BASE_URL, current_limit())
 
 
 @router.get(
@@ -368,8 +394,9 @@ async def chat_with_npc(sid: str, data: dict) -> None:
         )
         return
 
+    current_metrics.set(record.metrics)  # chat tokens count into the run's totals
     try:
-        reply = await generate_npc_chat_reply(
+        chat_args = dict(
             npc=npc,
             user_message=user_message,
             conversation_history=conversation_history,
@@ -377,6 +404,14 @@ async def chat_with_npc(sid: str, data: dict) -> None:
             policy_context=record.policy_text,
             user_lang=data.get("user_lang"),
         )
+        if CHAT_STREAM:
+
+            async def send_chunk(text: str) -> None:
+                await sio.emit("npc_chat_chunk", {"npc_id": npc_id, "text": text}, to=sid)
+
+            reply = await stream_npc_chat_reply(on_chunk=send_chunk, **chat_args)
+        else:
+            reply = await generate_npc_chat_reply(**chat_args)
 
         await sio.emit(
             "npc_chat_response",

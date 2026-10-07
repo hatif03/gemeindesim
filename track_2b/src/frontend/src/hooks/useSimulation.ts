@@ -15,6 +15,7 @@ import type {
   BackendNPC,
   BackendRelationship,
   EconomicReport,
+  RunMetrics,
   SavedSimulation,
   WSNPCEventsMsg,
   WSRoundMsg,
@@ -163,6 +164,7 @@ export function useSimulation(simulationId?: string, record = false) {
   const [report, setReport] = useState<EconomicReport | null>(null);
   const [reportLoading, setReportLoading] = useState(false);
   const [reportError, setReportError] = useState<string | null>(null);
+  const [runMetrics, setRunMetrics] = useState<RunMetrics | null>(null);
 
   const cleanupRef = useRef<(() => void) | null>(null);
   const recordingRef = useRef<SavedSimulation | null>(null);
@@ -248,6 +250,7 @@ export function useSimulation(simulationId?: string, record = false) {
       if (typeof msg.max_rounds === "number" && msg.max_rounds > 0) {
         maxRoundsRef.current = msg.max_rounds;
       }
+      if (msg.metrics) setRunMetrics(msg.metrics);
 
       const round = msg.round;
       const lookup = npcLookupRef.current;
@@ -378,6 +381,7 @@ export function useSimulation(simulationId?: string, record = false) {
     });
     setSetupProgress({ stage: "waiting", npcsReady: 0, numNpcs: 0, label: "" });
     setReport(null);
+    setRunMetrics(null);
     setReportLoading(false);
     setReportError(null);
     reportRequestedRef.current = false;
@@ -540,6 +544,7 @@ export function useSimulation(simulationId?: string, record = false) {
           waitForQueueDrain(eventQueueRef, setState);
         },
 
+        onMetrics: (m) => setRunMetrics(m),
         onEconomicReport: (report) => {
           console.log("[sim] economic_report received");
           if (recordingRef.current) recordingRef.current.report = report; // so a saved replay carries the report
@@ -655,6 +660,7 @@ export function useSimulation(simulationId?: string, record = false) {
     graphData,
     getNpc,
     report,
+    runMetrics,
     reportLoading,
     reportError,
     setupProgress,
