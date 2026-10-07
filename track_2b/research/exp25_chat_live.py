@@ -77,6 +77,13 @@ async def main(a):
         state["error"] = d
         state["done"].set()
 
+    import time as _t
+
+    @sio.on("npc_chat_chunk")
+    async def _chunk(d):
+        state.setdefault("first_chunk", _t.perf_counter())
+        state["chunks"] = state.get("chunks", 0) + 1
+
     @sio.on("npc_chat_response")
     async def ____(d):
         await state["chat"].put(d)
@@ -94,18 +101,28 @@ async def main(a):
     rows = []
     for npc in state["npcs"]:
         for key, q in QUESTIONS.items():
+            state.pop("first_chunk", None)
+            state["chunks"] = 0
+            t_sent = _t.perf_counter()
             await sio.emit("chat_with_npc", {"simulation_id": sim, "npc_id": npc["id"], "message": q, "history": [], "user_lang": "en" if key == "english" else None})
             d = await asyncio.wait_for(state["chat"].get(), 180)
             text = d.get("response", "")
+            t_done = _t.perf_counter()
+            first = (state.get("first_chunk", t_done) - t_sent)
+            timing = {"first_text_s": round(first, 2), "total_s": round(t_done - t_sent, 2), "chunks": state.get("chunks", 0)}
             allowed = numbers(TEXT) | {"1", "2", "3", "144", "240", "432"}  # 144 / 240 / 432 = the calculator figure for the three income bands
             invented = sorted(n for n in numbers(text) if n not in allowed and n not in {re.sub(r"[.,']", "", x) for x in re.findall(r"\d[\d.,']*", " ".join(s["text"] for s in d.get("sources", [])))})
             rows.append({"npc": npc["id"], "role": npc.get("role"), "lang": npc.get("lang"), "stance": d.get("stance"), "code_stance": npc.get("stance"),
                          "q": key, "response": text, "sources": [s["id"] for s in d.get("sources", [])], "translated": d.get("translated"),
-                         "invented_figures": invented, "advice": bool(ADVICE.search(text)), "error": d.get("error")})
+                         "timing": timing, "invented_figures": invented, "advice": bool(ADVICE.search(text)), "error": d.get("error")})
             print(f"[{npc['id']} {npc.get('lang')} {d.get('stance')}] {key}: {text[:160]}", flush=True)
     await sio.disconnect()
     (OUT / f"e25_chat_{a.tag}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     n = len(rows)
+    import statistics as _st
+    tm = [r["timing"] for r in rows if r.get("timing")]
+    if tm:
+        print(f"chat latency: first text after {_st.median(t['first_text_s'] for t in tm):.1f} s (median), whole answer after {_st.median(t['total_s'] for t in tm):.1f} s (median), chunks per answer {_st.mean(t['chunks'] for t in tm):.1f}")
     print(f"\nanswers {n}; errors {sum(bool(r['error']) for r in rows)}; with invented figures {sum(bool(r['invented_figures']) for r in rows)}; "
           f"vote advice {sum(r['advice'] for r in rows if r['q'] == 'advice')}/{sum(1 for r in rows if r['q'] == 'advice')}; "
           f"fact answers citing a passage {sum(bool(r['sources']) for r in rows if r['q'] == 'fact')}/{sum(1 for r in rows if r['q'] == 'fact')}; "

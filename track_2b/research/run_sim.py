@@ -18,23 +18,26 @@ SIMS = RESULTS / "sims"
 SIMS.mkdir(exist_ok=True)
 
 
+_T0 = time.perf_counter()  # call timeline origin (research E29: how much of the wall time is Python?)
+
+
 def install_call_logger(path):
     import graph.llm as L
     orig = L._ainvoke
 
-    async def logged(llm, prompt):
+    async def logged(llm, prompt, **kw):
         t0 = time.perf_counter()
         err = None
         resp = None
         try:
-            resp = await orig(llm, prompt)
+            resp = await orig(llm, prompt, **kw)
             return resp
         except Exception as exc:  # noqa: BLE001
             err = repr(exc)
             raise
         finally:
             rec = {"model": getattr(llm, "model_name", "?"), "prompt": prompt,
-                   "latency_s": round(time.perf_counter() - t0, 3), "error": err,
+                   "latency_s": round(time.perf_counter() - t0, 3), "t_start": round(t0 - _T0, 3), "t_end": round(time.perf_counter() - _T0, 3), "error": err,
                    "content": getattr(resp, "content", None),
                    "usage": (getattr(resp, "usage_metadata", None) or {})}
             with open(path, "a", encoding="utf-8") as f:
@@ -88,6 +91,7 @@ async def main():
         "economic_indicators": {}, "memory_streams": {}, "situation_kind": kind,
     }
     t0 = time.perf_counter()
+    cpu0 = time.process_time()
     final: dict = {}
     rounds_log = []
     last_memories: dict = {}
@@ -102,6 +106,7 @@ async def main():
             if node not in ("run_round", "run_round_swarm"):
                 final[node] = upd
     t_sim = time.perf_counter() - t0
+    cpu_sim = time.process_time() - cpu0
     last = rounds_log[-1] if rounds_log else {}
     t1 = time.perf_counter()
     import inspect
@@ -115,7 +120,7 @@ async def main():
         entities=final["parse_policy"]["entities"], source_summaries=[], indicator_snapshots=[],
         final_npcs=last.get("npcs", []), events=[e for r in rounds_log for e in r["events"]],
         completed_rounds=len(rounds_log), max_rounds=args.rounds, situation_kind=kind, **extra)
-    out = {"args": vars(args), "t_sim_s": round(t_sim, 1), "t_report_s": round(time.perf_counter() - t1, 1),
+    out = {"args": vars(args), "t_sim_s": round(t_sim, 1), "cpu_sim_s": round(cpu_sim, 2), "t_report_s": round(time.perf_counter() - t1, 1),
            "entities": final["parse_policy"]["entities"], "npcs0": final["generate_npcs"]["npcs"],
            "relationships": final["generate_npcs"]["relationships"], "rounds": rounds_log,
            "report": report.model_dump(), "memories": last_memories,
