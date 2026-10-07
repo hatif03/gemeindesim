@@ -3,6 +3,8 @@
 *Why this project should exist, why on Apertus, why Switzerland, and what it changes for the people who write, read and vote on official voting material. Every factual claim is tagged by where it comes from: **[ours]** measured in this repository (experiment ids in
 [`research/LAB-NOTEBOOK.md`](research/LAB-NOTEBOOK.md)), **[V]** a source opened and read, **[S]** seen in a search result only (verify before quoting on stage), **[context]** common knowledge we did not look up. Section 14 lists the sources.*
 
+**Evidence behind this pitch, in depth:** [`PITCH-LANDSCAPE.md`](PITCH-LANDSCAPE.md) (real deployments, research precedents with the model used and why, failures, the Swiss ecosystem map, what we may and may not claim). Where the two differ, the landscape file is newer (8 Oct 2026).
+
 ---
 
 ## 0. The pitch on one page
