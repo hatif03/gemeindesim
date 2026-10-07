@@ -39,9 +39,11 @@ UI: **http://localhost:3000** (also on **8080**; set `UI_ALT_PORT` in `track_2b/
 
 | Variable | Example |
 | --- | --- |
-| `LLM_NAME` | `apertus-v1.5-70b` |
-| `LLM_BASE_URL` | `https://hackapertus.livemap.sh/v1` |
-| `LLM_API_KEY` | Your hackathon API key |
+| `LLM_NAME` | `swiss-ai/Apertus-v1.5-70B` (CSCS) or `apertus-v1.5-70b` (hackathon gateway): either style is accepted on either endpoint |
+| `LLM_BASE_URL` | `https://api.inference.cscs.ch/v1` (CSCS, used for judging) or `https://hackapertus.livemap.sh/v1` |
+| `LLM_API_KEY` | The key of that endpoint |
+
+One build runs on both endpoints (model ids are mapped, concurrency adapts): [`track_2b/docs/ENDPOINTS.md`](track_2b/docs/ENDPOINTS.md).
 
 ## License
 

@@ -35,7 +35,7 @@ Requirements are from `docs/HACKATHON.md`. **Done** = verified in this repositor
 
 ## Second endpoint (CSCS inference API, 6 Oct)
 
-* The **submission defaults stay on the hackathon gateway** (the template and the judges use it). The CSCS key is personal: it lives in the git-ignored `track_2b/.env.cscs` (and in `.env` if you run the app on it), never in the repository;
+* **The judges run the app on the CSCS inference API** (confirmed by the mentor on 7 Oct), so `.env.example` and `docker-compose.yml` default to the CSCS values (`https://api.inference.cscs.ch/v1`, `swiss-ai/Apertus-v1.5-70B`); the hackathon gateway still works with the same build (`docs/ENDPOINTS.md`: model ids are mapped, concurrency adapts). The CSCS key you used is personal: it lives in the git-ignored `track_2b/.env.cscs` (and in `.env` if you run the app on it), never in the repository;
   scan before every push (`grep -rI "sk-" --exclude-dir=node_modules --exclude-dir=.venv .` should find no key).
 * To run the app on it: copy the lines of `track_2b/env.cscs.example` into `.env` (`LLM_CONCURRENCY=16`).
 * Record the demo video on it (the run takes ≈ 1 minute) and keep the replay as the fallback.

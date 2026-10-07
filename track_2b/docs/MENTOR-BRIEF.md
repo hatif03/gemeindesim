@@ -1,6 +1,6 @@
 # GemeindeSim — the complete project brief for the mentor meeting
 
-*Hack Apertus 2026, Track 2B (own project). State: 6 October 2026, branch `main` (updated after a second inference endpoint, CSCS, became available: see 4.8).
+*Hack Apertus 2026, Track 2B (own project). State: 7 October 2026, branch `main` (updated after a second inference endpoint, CSCS, became available: 4.8; and after the mentor's engineering questions: 4.9).
 This document is written to be read on its own: parts 1–4 explain the whole project, part 5 lists what we want to discuss — each topic is
 followed immediately by **our current solution**, so the mentor sees what we already do before we ask.*
 
@@ -160,11 +160,11 @@ a localised disclaimer, Swiss spelling. Result: asserted outcome in at least 12 
 Landing page → policy/config editor (a node graph; a **record** toggle saves the run) → simulation screen: Phaser town map with residents; **stance poll panel** (for / undecided / against, start → now);
 **event feed** with citation chips that open the quoted passage; **resident profile** with stance, reason and impact; **report** modal with the stance shift; replay loader for saved runs (recordings made after 6 Oct also carry the report). Economy bars are hidden for votes and shown for the tariff mode.
 The **1:1 chat** with a resident is grounded the same way as a round (since 6 Oct, see 3.7): the answer comes first, the resident's stance and reason colour it, passages of the vote text are cited as chips,
-figures outside the text are stripped, "not in the text" is said when it is not, and the reply can be shown translated into the user's language. A **"Run 5×: show the spread"** button on the Run node
+figures outside the text are stripped, "not in the text" is said when it is not, and the reply can be shown translated into the user's language. A collapsible **"Run metrics"** panel shows what the run cost (tokens in and out, share served from the endpoint's cache, context use as a share of the window, latency, requests in flight, retries). The chat answer arrives **sentence by sentence**, each sentence checked before it is sent. A **"Run 5×: show the spread"** button on the Run node
 starts the same vote five times and opens a page with the stance poll of every run and its range.
 
 ### 3.6 Configuration and deployment
-Environment: `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_CONCURRENCY` (default 4: the hackathon gateway's ceiling; 16 on CSCS, see `env.cscs.example`), `LLM_VOICE_NAME` (optional: a different model for the report and
+Environment: `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY` (the defaults are the CSCS values, the endpoint the judges use; the hackathon gateway works too: model ids are mapped, `docs/ENDPOINTS.md`), `LLM_CONCURRENCY` (default `auto`: adapts to the endpoint), `LLM_VOICE_NAME` (optional: a different model for the report and
 the chat), `CHAT_STUFF_MAX_CHARS` (default 100 000), `SWARM` (default false), `LLM_TEMPERATURE`. `docker compose` builds both services (Node 22, `npm install --legacy-peer-deps`).
 Sovereign story: point `LLM_BASE_URL` at a local `vllm serve` of Apertus (air-gapped: no other outbound traffic) or a Swiss cloud endpoint. `research/probe_endpoint.py` measures the same limits on any endpoint.
 **We have only measured the hosted gateway.**
@@ -282,10 +282,28 @@ full tables are in [`research/07-cscs-vs-livemap.md`](research/07-cscs-vs-livema
 non-reproducible sampling) is unchanged — so the design (code-owned stance, grounding, guardrails) stands on two deployments, and every v2 fix replicates (citations 1.00, no self-introductions, reports without asserted outcome 0/5, speech matches
 stance 0.85–0.88).
 
-**What we built because of it** (all behind safe defaults, the submission still defaults to livemap): the grounded 1:1 chat tested live (0 invented figures, unknown facts declined 5/5, 0/5 vote recommendations), the whole-text chat for documents up to
+**What we built because of it** (the judges run on CSCS, so the defaults are now the CSCS values; livemap still works: `docs/ENDPOINTS.md`): the grounded 1:1 chat tested live (0 invented figures, unknown facts declined 5/5, 0/5 vote recommendations), the whole-text chat for documents up to
 100 000 characters (the real booklet: the lost-revenue question answered 5/5 instead of 0/5), the in-app 5-run spread, replays that carry the report, `LLM_VOICE_NAME`, retry of 504 on the same model, a CSCS profile (`env.cscs.example`).
 
 **What it does not change.** No local deployment was measured; CSCS is another hosted endpoint. A shared service answers 504 (not 429) when long jobs overlap, so clients need retries; the key is personal and is not part of the submission.
+
+### 4.9 The mentor's engineering questions (7 Oct): measured answers
+Full answers with the code, the evidence and the justification for every technique we use or do not use: [`ENGINEERING-QA.md`](ENGINEERING-QA.md). The short version:
+
+| question | answer | evidence |
+| --- | --- | --- |
+| Is Python slow, and the cause of our issues? | **No.** Process CPU is **2.2 %** of the wall time of a run (5 % on the 8B). A call is 81 % generation (≈ 60 tokens/s on the 70B); the wall time is the chain of dependent calls (persona 14 s → impact 2 s → per round reflection, turn, translation) | E29: CPU 1.33 s of 60.5 s; 464 calls regressed |
+| Async? | Yes, end to end (FastAPI, Socket.IO, LangChain `ainvoke`/`astream`, residents as parallel tasks, an adaptive limiter). What is sequential is a data dependency | E21, E29 |
+| Streaming? | To the screen yes (residents appear as they are created, events per round, the chat **sentence by sentence with the checks run before each sentence is sent**). Not token streaming for the JSON turns: a half JSON cannot be validated or shown | chat: first text 1.5 s vs whole answer 2.4 s (E32) |
+| Prompt caching? | The endpoint caches (CSCS reports it: 94 % of a shared booklet prompt). In the resident loop only 17–24 % is cached; reordering the prompt would gain ≈ 0.3 s of 5.5 s and would move the speech-binding paragraph away from the end, so **not done**; the chat puts the document first on purpose | E26, E27, E29 |
+| Context compaction / window management? | Bounded by construction (top-8 memories, 4–6 passages, reflections as compaction): a prompt uses **1.1 % of the 262k window** at most, growing 2.1k → 2.7k tokens over three rounds | E27 |
+| Is our RAG validated against industry practice? | Now, on a real booklet: **BM25 as shipped recall@6 = 12/14; hybrid BM25 + dense (multilingual-e5-large) = 14/14 at k = 4 and the best ranking**; a small paraphrase model is worse than BM25. Hybrid is implemented as an option, off by default (no embedding endpoint, 2.2 GB model, air-gapped requirement) | E30 (n = 14, one document: stated) |
+| Subagents? Tool-result pagination? | Each resident is an isolated agent run in parallel (swarm/orchestrator variant measured: +27 % time, no gain); no tool loop (one tool call per request), retrieval is code, every result set is already a small fixed page | E1, E3d |
+| Token counting, and metrics in the frontend? | **Added:** counted from the endpoint's `usage`, shown in a collapsible "Run metrics" panel and at `GET /simulate/{id}/metrics` | tests + live runs |
+| Are livemap and CSCS interchangeable? | **Yes, one build:** `LLM_NAME` of either style is mapped to the endpoint's ids, the fallback model is derived, concurrency adapts (slow start, halve on 429/5xx, step back one level when a rise makes answers > 2× slower per token). Tested live in both directions | E31, [`ENDPOINTS.md`](ENDPOINTS.md) |
+
+**Two findings the questions produced.** (1) The ballot-question pin costs retrieval slots on a real booklet (MRR 0.29 vs 0.82 without it; equal recall at the shipped k = 6). (2) Under load the hackathon gateway *queues* instead of answering 429 (32 in flight: each request at 7.5 tokens/s instead of 30), so a limiter driven by errors alone grew to 32 and
+stalled; the latency rule fixed that.
 
 ---
 
@@ -490,6 +508,8 @@ Same format.
 | What does the 1:1 chat do? | Since 6 Oct it is grounded like a round: stance and reason colour the answer, passages are cited, figures outside the text are stripped, unknown facts are declined, no vote recommendation (tested live, 25 answers). |
 | Why two endpoints, and which numbers are yours? | Livemap is the hackathon endpoint and stays the default; CSCS (a key we received on 6 Oct) is where we ran the same scripts faster. The livemap numbers are the primary ones; CSCS is a replication (4.8). |
 | Is the speed-up your code? | No. It is the endpoint: the same code takes 126 s on livemap and 61 s on CSCS (70B). |
+| Would a faster language help? | No: Python is 2.2 % of the wall time (E29); a call is 81 % token generation. See `ENGINEERING-QA.md` §1. |
+| Do the judges' endpoint and yours behave the same? | The same weights, the same app; ids and concurrency are handled automatically (`ENDPOINTS.md`); every v2 fix and the real-vote result replicate on CSCS. |
 | Where is the original pitch wrong? | `research/04-pitch-audit.md` lists each claim with the verdict (supported / partly / refuted). |
 | What did you get wrong yourselves? | The self-introduction metric (C1), a contaminated first throughput run, a number-gate variant that was worse, a grader that undercounted — all in the notebook. |
 

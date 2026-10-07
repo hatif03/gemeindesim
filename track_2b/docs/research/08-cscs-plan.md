@@ -1,8 +1,7 @@
 # 08 — Plan: using the CSCS inference API
 
-Written 6 October 2026, after E20–E27 (`07-cscs-vs-livemap.md`, `LAB-NOTEBOOK.md`). Constraint that shapes everything: **the hackathon template and the judges use the
-livemap gateway** (`LLM_BASE_URL` / `LLM_API_KEY`), and the CSCS key is personal and reaches only four models. So CSCS is where we *develop, measure, demo and run big
-experiments*; the submitted app must keep working, with the same defaults, on livemap. Every change below is therefore a switch with a safe default, not a replacement.
+Written 6 October 2026, after E20–E27 (`07-cscs-vs-livemap.md`, `LAB-NOTEBOOK.md`). **Update 7 Oct: the mentors confirmed that the judges run the app on the CSCS API.** The defaults (`.env.example`, `docker-compose.yml`) are therefore the CSCS values, and one build works on both endpoints (`../ENDPOINTS.md`). The CSCS key we used is personal and is not part of the submission; the judges bring their own.
+Every change below is a switch with a safe default.
 
 ## 1. Which previous limitation does it solve?
 

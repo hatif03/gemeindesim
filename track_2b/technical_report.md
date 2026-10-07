@@ -26,7 +26,7 @@ policy upload → chunk/retrieve → parse → NPCs → N× run_round → Socket
 
 ### Target architecture (mandatory)
 
-**Primary:** **(c) Sovereign Swiss cloud** — app containers + on-disk corpus; inference via Swiss-hosted OpenAI-compatible endpoint (`LLM_BASE_URL`, hackathon: `https://hackapertus.livemap.sh/v1`).
+**Primary:** **(c) Sovereign Swiss cloud** — app containers + on-disk corpus; inference via a Swiss-hosted OpenAI-compatible endpoint (`LLM_BASE_URL`: the CSCS inference API `https://api.inference.cscs.ch/v1` used for judging, or the hackathon gateway `https://hackapertus.livemap.sh/v1`; one build runs on both, `docs/ENDPOINTS.md`).
 
 **Also supported:** **(a) On-premise** / **(b) Air-gapped** by pointing `LLM_BASE_URL` to local vLLM serving `swiss-ai/Apertus-v1.5-70B`. **Status:** configuration only. The application's only outbound call is `LLM_BASE_URL`, and a clean-clone Docker stack starts and serves; but the model behaviours reported below were measured on the hosted gateway, and a local deployment was not run (no GPU available). `research/probe_endpoint.py` reproduces the behaviour table (tool calls, thinking, determinism, in-flight limit) on any OpenAI-compatible endpoint and was validated on the hosted 8B, so the sovereign claim can be completed in minutes on a GPU host.
 

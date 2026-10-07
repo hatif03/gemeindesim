@@ -1255,3 +1255,57 @@ the same question was answered **5/5 with 1.8 billion CHF**; invented figures 0,
 `research/` harness switches. Plan: `docs/research/08-cscs-plan.md`; comparison: `docs/research/07-cscs-vs-livemap.md`.
 
 **E27b — the 5-run spread, live.** `POST /ensemble` against the CSCS API (local backend, 16 in flight): 3 runs in parallel, 5 residents, 2 rounds, Linden DE+FR: **62 s**, 0 errors; initial → final polls (for/undecided/against) 1/3/1 → 3/1/1, 4/1/0 → 5/0/0, 2/1/2 → 2/1/2; share *for* at the end mean 0.67, range 0.40–1.00. Two rounds are enough for the dynamics to move the poll in two of three runs.
+
+
+---
+
+## 2026-10-07 — The mentor's engineering questions (E29–E32)
+
+The mentor asked: is Python slow and behind our issues; are we asynchronous; do we stream; prompt caching / context compaction / context-window management; have we validated RAG against industry practice; subagents,
+tool-result pagination and truncation; token counting and metrics in the frontend; and the judges use the CSCS endpoint, are the two interchangeable? Answers with the code and the justification: `docs/ENGINEERING-QA.md`, `docs/ENDPOINTS.md`.
+
+### E29 — is Python the bottleneck? (`exp29_python_overhead.py`; `run_sim.py` now logs per-call start/end and process CPU time)
+
+One instrumented 5-resident, 3-round run per size on CSCS: **70B wall 60.5 s, process CPU 1.33 s (2.2 %); 8B wall 26.1 s, CPU 1.31 s (5.0 %)**; 44 / 45 calls, sum of latencies 249 / 96 s; at least one call in flight 100 % of the time; mean 3.9 / 3.4 and peak 5 in flight (5 residents).
+Latency vs completion tokens within a run: r = 1.00 (70B 64 tokens/s, 8B 154); a regression over 464 logged 70B calls gives 0.6 s + 0.0172 s per output token + 0.85 s per 1 k uncached prompt tokens, R² 0.76: output tokens explain 81 % of the mean latency, prompt processing 12 %.
+By call class (70B, mean): resident turn 8.1 s (15 calls), persona 14.2 s (5), reflection 3.6 s (6), translation 1.7 s (11), impact judgement 2.1 s (5). Micro-benchmarks (median of 200): retrieval per query 0.1 ms (Linden) and 12.1 ms on the 83 k-character booklet
+(re-tokenising 209 chunks every query) → **2.5 ms after caching the term counts per chunk text** (`graph/corpus.py`, `lru_cache`); numeral gate 0.1–0.5 ms; JSON extraction + Pydantic 0.03–0.12 ms; chunking the booklet 17–56 ms once (noisy: other jobs were running).
+
+**F73 — Python is 2–5 % of the wall time; the wall time is the longest chain of dependent calls (persona → impact → per round reflection → turn → translation) at ≈ 60 tokens/s.** More requests in flight cannot shorten a chain; 5 residents give at most 5 in flight. The levers are output tokens (the persona text is 23 % of the chain), model size, overlapping the translation and the endpoint.
+
+**F74 — Prompt caching could save about 0.3 s of a 5.5 s call in the resident loop.** In the logged runs 17–24 % of prompt tokens were cached on CSCS (0 reported on the gateway); the instruction block (34 % of the prompt's characters) sits *after* the persona so it is not a shared prefix. Moving it to the front would also move the speech-binding paragraph's context (E15 showed the last-paragraph position matters), for a ≈ 5 % gain: not done. The chat does put the document first (E26).
+
+**F75 — Context use is 1.1 % of the window at most.** Resident-turn prompts over rounds 1–3 (25 residents): 2 139, 2 503, 2 706 tokens (max 2 877); mean 1.25 k; composition by characters: instructions + example 34 %, persona 29 %, passages 12 %, round + neighbours 8 %, memories + plan 1.4 %.
+
+### E30 — retrieval against the usual baselines (`exp30_rag_baselines.py`, a throw-away venv with fastembed on CPU; 14 gold questions of the real booklet, 209 chunks of 480 characters)
+
+| retriever | recall@4 | recall@6 | recall@8 | MRR@10 | nDCG@10 |
+| --- | --- | --- | --- | --- | --- |
+| BM25 as shipped (ballot question pinned) | 0.79 | 0.86 | 0.86 | 0.29 | 0.47 |
+| BM25 without the pin | 0.86 | 0.86 | 0.93 | 0.82 | 0.86 |
+| dense multilingual-e5-large | 1.00 | 1.00 | 1.00 | 0.89 | 0.90 |
+| **hybrid BM25 + e5-large (RRF, k = 60)** | **1.00** | **1.00** | **1.00** | **0.91** | **0.93** |
+| dense paraphrase-multilingual-MiniLM | 0.71 | 0.79 | 0.79 | 0.56 | 0.63 |
+| hybrid BM25 + MiniLM | 0.86 | 0.93 | 0.93 | 0.76 | 0.79 |
+
+Chunk sizes 960 and 1 500 characters: BM25 roughly equal; the dense model gets worse at 1 500 (recall@4 0.86; MiniLM 0.21). **F76 — A multilingual dense model fused with BM25 beats our BM25 by 14 points of recall@4 and 0.09 MRR; a small paraphrase model is worse than BM25; the ballot-question pin costs 1–2 slots
+(recall@6 is equal, 12/14).** n = 14, one German document, a gold phrase can be cut by a chunk boundary: differences of one question are noise. Implemented as an option (`EMBEDDING_MODEL`, `graph/dense.py`), off by default (no embedding endpoint; 2.2 GB local model; air-gapped requirement).
+
+### E31 — one build on both endpoints; the limiter (`config.resolve_model`, `graph.llm.Limiter`)
+
+The judges run on CSCS; our `.env` is the gateway. Model ids differ (`apertus-v1.5-70b` vs `swiss-ai/Apertus-v1.5-70B`) and so does the overload behaviour, so: ids are mapped to the endpoint's style, the 8B fallback is derived, and `LLM_CONCURRENCY=auto` adapts.
+Live, both directions (3 residents × 2 rounds + 15 chat answers): **CSCS URL + gateway-style id** → sent as `swiss-ai/Apertus-v1.5-70B`, 44 calls, 0 errors, limit 4 → 9; **gateway URL + CSCS-style id** → sent as `apertus-v1.5-70b`, 42 calls, 0 errors, limit 4 → 9.
+Limiter iterations on 25 residents × 2 rounds (each found by running it): (1) additive growth only: CSCS 141 s (limit reached 21), gateway 656 s with the limit hovering at 4 and five 429s absorbed; (2) slow start (double on a clean streak): CSCS 89 s (limit 32); on the gateway, which on 6–7 Oct
+*queued* instead of answering 429, the limit grew to 32 without one error and every request ran at 7.5 tokens/s (mean latency 58 s): a limiter driven by errors alone does not see this; (3) added a latency rule (a rise of the limit followed by a > 2× slower answer per token goes back one level; slowness that appears at both levels is not ours and is ignored):
+CSCS 95–97 s (limit 15–32), gateway **654 s**, limit 4 → 16, one 429, mean call latency 28 s, 12 tokens/s per request. **F77 — On the busy gateway more requests in flight added latency, not throughput (656 s with the limit at 4, 654 s with it at 16): the aggregate was ≈ 80 tokens/s either way**; the limiter is safe there but cannot make it faster.
+**F78 — The same run is 6.7–7.3× faster on CSCS (89–97 s vs 654 s that afternoon).**
+
+### E32 — token accounting, the metrics panel, streaming chat
+
+* `graph/metrics.py`: tokens in/out/cached, latency percentiles, max context use, retries, models, endpoint; counted from the endpoint's `usage` in `graph.llm._ainvoke` (and the streamed chat and the thinking call), attributed with a ContextVar (two concurrent runs never mix: test). `round` messages carry the snapshot, a `metrics` event follows the report, `GET /simulate/{id}/metrics`, `GET /metrics`; the frontend has a collapsible "Run metrics" panel.
+  Live: 25 residents, 2 rounds, CSCS: 143 calls, 168 k tokens in, 51 k out, 16 % cached, mean latency 6.6 s, p95 14.4 s, 0 retries.
+* **Streaming chat**: the model's stream is cut into sentences and each sentence passes the number gate, bracket removal and Swiss spelling *before* it is sent (`npc_chat_chunk`), then the final message carries the citations and the translation. Live (25 answers): **first text after 1.5 s (median), whole answer after 2.4 s**, 2.3 chunks per answer; 0 invented figures, 0/5 vote recommendations, 5/5 cited, 5/5 translated: quality unchanged.
+  Not streamed: the JSON turns and the report (they must be complete to be validated). **F79 — Streaming the chat is a modest gain (0.9 s) because the answers are short; it is safe only because the checks run before the text is sent.**
+* Subagents / pagination: each resident is an isolated context run in parallel; no tool loop (E1); every result set is a fixed small page (see `ENGINEERING-QA.md` §7). Nothing to change.
+
+Code: 146 offline tests pass (`test_metrics_and_endpoints.py`, `test_dense_hybrid.py` and the chat tests are new); frontend: 28 unit tests pass in a throw-away container, the 2 known `trend-csv-input` failures are unchanged.

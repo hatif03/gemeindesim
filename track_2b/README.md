@@ -35,7 +35,9 @@ make run
 
 Open **http://localhost:3000** (also published on **8080**; if that port is taken set `UI_ALT_PORT=18080` in `.env`). Backend API: **http://localhost:8000**.
 
-Optional `.env` switches: `LLM_CONCURRENCY` (default 4: the hosted gateway answers 429 above ≈ 4 requests in flight), `SWARM=true|false` (two-phase initiator/reactor rounds), `LLM_NAME=apertus-v1.5-8b` for a fast run.
+The defaults are the **CSCS inference API** (`LLM_BASE_URL=https://api.inference.cscs.ch/v1`, `LLM_NAME=swiss-ai/Apertus-v1.5-70B`); the hackathon gateway works with the same build ([`docs/ENDPOINTS.md`](docs/ENDPOINTS.md)). The simulation screen has a collapsible **Run metrics** panel (tokens, cache share, context use, latency, requests in flight).
+
+Optional `.env` switches: `LLM_CONCURRENCY` (default `auto`: adapts to the endpoint; a number fixes it), `LLM_VOICE_NAME` (another model for the report and the chat), `CHAT_STREAM`, `CHAT_STUFF_MAX_CHARS`, `EMBEDDING_MODEL` (optional hybrid retrieval), `SWARM=true|false` (two-phase initiator/reactor rounds), `LLM_NAME=swiss-ai/Apertus-v1.5-8B` for a fast run. The engineering questions behind these choices are answered in [`docs/ENGINEERING-QA.md`](docs/ENGINEERING-QA.md).
 
 ### Local development (without Docker)
 

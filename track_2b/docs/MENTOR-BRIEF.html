@@ -15,7 +15,7 @@ img { max-width: 100%; height: auto; display: block; margin: 12px auto; page-bre
 blockquote { border-left: 4px solid #3B6EA5; margin: 12px 0; padding: 4px 14px; background: #eef3fa; font-size: 12pt; }
 a { color: #1d5fa8; }
 </style></head><body><h1 id="gemeindesim-the-complete-project-brief-for-the-mentor-meeting">GemeindeSim — the complete project brief for the mentor meeting</h1>
-<p><em>Hack Apertus 2026, Track 2B (own project). State: 6 October 2026, branch <code>main</code> (updated after a second inference endpoint, CSCS, became available: see 4.8).
+<p><em>Hack Apertus 2026, Track 2B (own project). State: 7 October 2026, branch <code>main</code> (updated after a second inference endpoint, CSCS, became available: 4.8; and after the mentor's engineering questions: 4.9).
 This document is written to be read on its own: parts 1–4 explain the whole project, part 5 lists what we want to discuss — each topic is
 followed immediately by </em><em>our current solution</em><em>, so the mentor sees what we already do before we ask.</em></p>
 <p><em>Every number comes from a logged run in <code>track_2b/research/results/</code> and is tabulated in <a href="research/03-results.md"><code>research/03-results.md</code></a>;
@@ -230,10 +230,10 @@ a localised disclaimer, Swiss spelling. Result: asserted outcome in at least 12 
 <p>Landing page → policy/config editor (a node graph; a <strong>record</strong> toggle saves the run) → simulation screen: Phaser town map with residents; <strong>stance poll panel</strong> (for / undecided / against, start → now);
 <strong>event feed</strong> with citation chips that open the quoted passage; <strong>resident profile</strong> with stance, reason and impact; <strong>report</strong> modal with the stance shift; replay loader for saved runs (recordings made after 6 Oct also carry the report). Economy bars are hidden for votes and shown for the tariff mode.
 The <strong>1:1 chat</strong> with a resident is grounded the same way as a round (since 6 Oct, see 3.7): the answer comes first, the resident's stance and reason colour it, passages of the vote text are cited as chips,
-figures outside the text are stripped, "not in the text" is said when it is not, and the reply can be shown translated into the user's language. A <strong>"Run 5×: show the spread"</strong> button on the Run node
+figures outside the text are stripped, "not in the text" is said when it is not, and the reply can be shown translated into the user's language. A collapsible <strong>"Run metrics"</strong> panel shows what the run cost (tokens in and out, share served from the endpoint's cache, context use as a share of the window, latency, requests in flight, retries). The chat answer arrives <strong>sentence by sentence</strong>, each sentence checked before it is sent. A <strong>"Run 5×: show the spread"</strong> button on the Run node
 starts the same vote five times and opens a page with the stance poll of every run and its range.</p>
 <h3 id="36-configuration-and-deployment">3.6 Configuration and deployment</h3>
-<p>Environment: <code>LLM_NAME</code>, <code>LLM_BASE_URL</code>, <code>LLM_API_KEY</code>, <code>LLM_CONCURRENCY</code> (default 4: the hackathon gateway's ceiling; 16 on CSCS, see <code>env.cscs.example</code>), <code>LLM_VOICE_NAME</code> (optional: a different model for the report and
+<p>Environment: <code>LLM_NAME</code>, <code>LLM_BASE_URL</code>, <code>LLM_API_KEY</code> (the defaults are the CSCS values, the endpoint the judges use; the hackathon gateway works too: model ids are mapped, <code>docs/ENDPOINTS.md</code>), <code>LLM_CONCURRENCY</code> (default <code>auto</code>: adapts to the endpoint), <code>LLM_VOICE_NAME</code> (optional: a different model for the report and
 the chat), <code>CHAT_STUFF_MAX_CHARS</code> (default 100 000), <code>SWARM</code> (default false), <code>LLM_TEMPERATURE</code>. <code>docker compose</code> builds both services (Node 22, <code>npm install --legacy-peer-deps</code>).
 Sovereign story: point <code>LLM_BASE_URL</code> at a local <code>vllm serve</code> of Apertus (air-gapped: no other outbound traffic) or a Swiss cloud endpoint. <code>research/probe_endpoint.py</code> measures the same limits on any endpoint.
 <strong>We have only measured the hosted gateway.</strong></p>
@@ -448,9 +448,69 @@ full tables are in <a href="research/07-cscs-vs-livemap.md"><code>research/07-cs
 <p><strong>What this means.</strong> The speed-related limits were the hackathon gateway's configuration, not the model or our app; everything that comes from the weights (yes-bias, one tool call, weak Swiss facts, authority deference,
 non-reproducible sampling) is unchanged — so the design (code-owned stance, grounding, guardrails) stands on two deployments, and every v2 fix replicates (citations 1.00, no self-introductions, reports without asserted outcome 0/5, speech matches
 stance 0.85–0.88).</p>
-<p><strong>What we built because of it</strong> (all behind safe defaults, the submission still defaults to livemap): the grounded 1:1 chat tested live (0 invented figures, unknown facts declined 5/5, 0/5 vote recommendations), the whole-text chat for documents up to
+<p><strong>What we built because of it</strong> (the judges run on CSCS, so the defaults are now the CSCS values; livemap still works: <code>docs/ENDPOINTS.md</code>): the grounded 1:1 chat tested live (0 invented figures, unknown facts declined 5/5, 0/5 vote recommendations), the whole-text chat for documents up to
 100 000 characters (the real booklet: the lost-revenue question answered 5/5 instead of 0/5), the in-app 5-run spread, replays that carry the report, <code>LLM_VOICE_NAME</code>, retry of 504 on the same model, a CSCS profile (<code>env.cscs.example</code>).</p>
 <p><strong>What it does not change.</strong> No local deployment was measured; CSCS is another hosted endpoint. A shared service answers 504 (not 429) when long jobs overlap, so clients need retries; the key is personal and is not part of the submission.</p>
+<h3 id="49-the-mentors-engineering-questions-7-oct-measured-answers">4.9 The mentor's engineering questions (7 Oct): measured answers</h3>
+<p>Full answers with the code, the evidence and the justification for every technique we use or do not use: <a href="ENGINEERING-QA.md"><code>ENGINEERING-QA.md</code></a>. The short version:</p>
+<table>
+<thead>
+<tr>
+<th>question</th>
+<th>answer</th>
+<th>evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is Python slow, and the cause of our issues?</td>
+<td><strong>No.</strong> Process CPU is <strong>2.2 %</strong> of the wall time of a run (5 % on the 8B). A call is 81 % generation (≈ 60 tokens/s on the 70B); the wall time is the chain of dependent calls (persona 14 s → impact 2 s → per round reflection, turn, translation)</td>
+<td>E29: CPU 1.33 s of 60.5 s; 464 calls regressed</td>
+</tr>
+<tr>
+<td>Async?</td>
+<td>Yes, end to end (FastAPI, Socket.IO, LangChain <code>ainvoke</code>/<code>astream</code>, residents as parallel tasks, an adaptive limiter). What is sequential is a data dependency</td>
+<td>E21, E29</td>
+</tr>
+<tr>
+<td>Streaming?</td>
+<td>To the screen yes (residents appear as they are created, events per round, the chat <strong>sentence by sentence with the checks run before each sentence is sent</strong>). Not token streaming for the JSON turns: a half JSON cannot be validated or shown</td>
+<td>chat: first text 1.5 s vs whole answer 2.4 s (E32)</td>
+</tr>
+<tr>
+<td>Prompt caching?</td>
+<td>The endpoint caches (CSCS reports it: 94 % of a shared booklet prompt). In the resident loop only 17–24 % is cached; reordering the prompt would gain ≈ 0.3 s of 5.5 s and would move the speech-binding paragraph away from the end, so <strong>not done</strong>; the chat puts the document first on purpose</td>
+<td>E26, E27, E29</td>
+</tr>
+<tr>
+<td>Context compaction / window management?</td>
+<td>Bounded by construction (top-8 memories, 4–6 passages, reflections as compaction): a prompt uses <strong>1.1 % of the 262k window</strong> at most, growing 2.1k → 2.7k tokens over three rounds</td>
+<td>E27</td>
+</tr>
+<tr>
+<td>Is our RAG validated against industry practice?</td>
+<td>Now, on a real booklet: <strong>BM25 as shipped recall@6 = 12/14; hybrid BM25 + dense (multilingual-e5-large) = 14/14 at k = 4 and the best ranking</strong>; a small paraphrase model is worse than BM25. Hybrid is implemented as an option, off by default (no embedding endpoint, 2.2 GB model, air-gapped requirement)</td>
+<td>E30 (n = 14, one document: stated)</td>
+</tr>
+<tr>
+<td>Subagents? Tool-result pagination?</td>
+<td>Each resident is an isolated agent run in parallel (swarm/orchestrator variant measured: +27 % time, no gain); no tool loop (one tool call per request), retrieval is code, every result set is already a small fixed page</td>
+<td>E1, E3d</td>
+</tr>
+<tr>
+<td>Token counting, and metrics in the frontend?</td>
+<td><strong>Added:</strong> counted from the endpoint's <code>usage</code>, shown in a collapsible "Run metrics" panel and at <code>GET /simulate/{id}/metrics</code></td>
+<td>tests + live runs</td>
+</tr>
+<tr>
+<td>Are livemap and CSCS interchangeable?</td>
+<td><strong>Yes, one build:</strong> <code>LLM_NAME</code> of either style is mapped to the endpoint's ids, the fallback model is derived, concurrency adapts (slow start, halve on 429/5xx, step back one level when a rise makes answers &gt; 2× slower per token). Tested live in both directions</td>
+<td>E31, <a href="ENDPOINTS.md"><code>ENDPOINTS.md</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two findings the questions produced.</strong> (1) The ballot-question pin costs retrieval slots on a real booklet (MRR 0.29 vs 0.82 without it; equal recall at the shipped k = 6). (2) Under load the hackathon gateway <em>queues</em> instead of answering 429 (32 in flight: each request at 7.5 tokens/s instead of 30), so a limiter driven by errors alone grew to 32 and
+stalled; the latency rule fixed that.</p>
 <hr />
 <h2 id="5-topics-to-discuss-with-the-mentor">5. Topics to discuss with the mentor</h2>
 <h3 id="50-suggested-agenda-2030-minutes">5.0 Suggested agenda (20–30 minutes)</h3>
@@ -684,6 +744,14 @@ language. Swiss spelling is enforced in code.</p>
 <tr>
 <td>Is the speed-up your code?</td>
 <td>No. It is the endpoint: the same code takes 126 s on livemap and 61 s on CSCS (70B).</td>
+</tr>
+<tr>
+<td>Would a faster language help?</td>
+<td>No: Python is 2.2 % of the wall time (E29); a call is 81 % token generation. See <code>ENGINEERING-QA.md</code> §1.</td>
+</tr>
+<tr>
+<td>Do the judges' endpoint and yours behave the same?</td>
+<td>The same weights, the same app; ids and concurrency are handled automatically (<code>ENDPOINTS.md</code>); every v2 fix and the real-vote result replicate on CSCS.</td>
 </tr>
 <tr>
 <td>Where is the original pitch wrong?</td>

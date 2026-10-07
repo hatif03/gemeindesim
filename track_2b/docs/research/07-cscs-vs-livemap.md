@@ -48,8 +48,7 @@ The CSCS documentation states that it does not record prompts or responses and t
 | LLM calls | 46 | 44 | 41 | 40 |
 | events | 33.0 | 33.2 | 31.6 | 31.4 |
 
-The 70B is 2.1x faster end to end; the 8B (never the bottleneck) 1.2x. A **25-resident town** (3 rounds, 70B, 16 in flight) took 105 s, 200 calls, 163 events on CSCS. At livemap's ceiling
-of about 4 in flight the same 200 calls at 9.4 s would take roughly 8 minutes (an estimate, not a run).
+The 70B is 2.1x faster end to end; the 8B (never the bottleneck) 1.2x. A **25-resident town** (3 rounds, 70B, 16 in flight) took 105 s, 200 calls, 163 events on CSCS. The same-day control (25 residents, 2 rounds, `LLM_CONCURRENCY=auto`, E31): **CSCS 89–97 s, livemap 654 s** (the gateway was busy: 28 s mean call latency and 12 tokens/s per request; the same run with the first, additive limiter, which stayed at 4 in flight, took 656 s).
 
 ### 3.2 Quality: the v2 fixes replicate on a second deployment
 
