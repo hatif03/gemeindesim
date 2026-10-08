@@ -80,7 +80,7 @@ describe("NodeCanvas multimodal policy flow", () => {
     });
 
     const npcsSlider = screen.getByTestId("npcs-slider");
-    fireEvent.change(npcsSlider, { target: { value: "40" } });
+    fireEvent.change(npcsSlider, { target: { value: "20" } });
 
     const roundsSlider = screen.getByTestId("rounds-slider");
     fireEvent.change(roundsSlider, { target: { value: "10" } });
@@ -116,7 +116,7 @@ describe("NodeCanvas multimodal policy flow", () => {
           "Focus on inflation pass-through and lower-income households.",
         trend_source_ids: ["src_trend"],
         num_rounds: 10,
-        num_npcs: 40,
+        num_npcs: 20,
         objective: "How does this affect local inflation?",
         map_id: "citypack",
       });

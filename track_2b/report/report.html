@@ -55,7 +55,7 @@ host and was validated against the hosted 8B. The 8B is about 4× faster per sim
 <tr><td>DE↔FR chat</td><td>same</td><td>separate translation call</td><td>one language per completion; fluent (read)</td></tr>
 <tr><td>retrieval, numbers, stance, dynamics</td><td>none</td><td>Python</td><td>no tool calls: parallel calls fail (11/11); thinking + JSON silently skips reasoning</td></tr>
 </table>
-<p>Concurrency is a semaphore of 4 (the gateway answers 429 above ≈ 4 in flight); a 429 is retried on the <i>same</i> model. A reminder paragraph as the
+<p>Concurrency is an adaptive limiter (slow start from 4, halve on 429/5xx, back off when each answer gets slower per token): the hackathon gateway answers 429 above 4&ndash;5 in flight, CSCS showed no limit to 96; a 429 is retried on the <i>same</i> model. A reminder paragraph as the
 <i>last</i> paragraph of the resident prompt binds speech to the code-owned stance; undecided residents get one named pro and one named con argument in new wording.</p>
 
 <h2>4. Data</h2>
@@ -108,6 +108,9 @@ For evaluation only: Swissvotes (Univ. Bern), 54 federal votes 2021–2026 with 
 
 <h3>5.5 A second endpoint</h3>
 <p>The same scripts ran on the CSCS inference API (Swiss National Supercomputing Centre) and, the same day, on the hackathon gateway as a control. The gateway answers 429 above 4&ndash;5 requests in flight; CSCS answered 2&thinsp;496 requests up to 96 in flight without one, and the 5-resident, 3-round simulation took 61&nbsp;s instead of 126&nbsp;s on the 70B. Every v2 fix replicates (valid citations 1.00, no self-introductions, no asserted outcome, speech matches the code stance 0.85&ndash;0.88) and so do the Swiss-knowledge and real-vote results (Spearman within 0.01). Unchanged: the yes-bias (all four CSCS models, thinking included), one tool call, non-reproducible <code>T=0</code> on real prompts. Strict <code>json_schema</code> degenerates on the CSCS 8B (11/24 valid). Both endpoints are hosted; no local run was measured. The 1:1 chat is now grounded like a round (cited passages, number gate, declines unknown facts 5/5, no vote advice 0/5).</p>
+
+<h3>5.6 Engineering checks (7 October)</h3>
+<p><b>Python is not the bottleneck:</b> process CPU was 2.2&ndash;5.0&nbsp;% of the wall time (70B 60.5&nbsp;s, 8B 26.1&nbsp;s for 5 residents &times; 3 rounds); the wall time is the longest chain of dependent calls at &asymp;&nbsp;60 tokens/s. All calls are <code>async</code>; the 1:1 chat streams sentence by sentence only after the number gate and citation check (first text 1.5&nbsp;s, whole answer 2.4&nbsp;s). Every call is token-counted from the endpoint's <code>usage</code> and shown in a &ldquo;Run metrics&rdquo; panel (25 residents &times; 2 rounds: 143 calls, 168&nbsp;k tokens in, 51&nbsp;k out, mean latency 6.6&nbsp;s, p95 14.4&nbsp;s; context use at most 1.1&nbsp;% of the 262&nbsp;k window). <b>Retrieval was compared with the usual baselines</b> on the 14 booklet questions: our BM25 recall@4 0.79, dense multilingual-e5-large 1.00, hybrid BM25 + e5 (RRF) 1.00 (n&nbsp;=&nbsp;14, one document: indicative); the hybrid is an optional switch (<code>EMBEDDING_MODEL</code>), off by default because it needs a 2.2&nbsp;GB local model. The same build runs on both endpoints (model ids are mapped; <code>docs/ENDPOINTS.md</code>): 25 residents &times; 2 rounds took 89&ndash;97&nbsp;s on CSCS and 654&nbsp;s on the busy gateway.</p>
 
 <h2>6. Limitations</h2>
 <ul>

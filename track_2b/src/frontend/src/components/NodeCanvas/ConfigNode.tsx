@@ -58,7 +58,7 @@ export default function ConfigNode() {
           <input
             type="range"
             min="5"
-            max="50"
+            max="25"
             step="1"
             value={numNpcs}
             onChange={(e) => setNumNpcs(Number.parseInt(e.target.value))}
