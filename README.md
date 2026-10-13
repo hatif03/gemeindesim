@@ -31,7 +31,7 @@ Research foundations: Park et al. 2023 (generative agents, arXiv:2304.03442); Pa
 
 ## Quick start
 
-1. Copy `track_2b/.env.example` to `track_2b/.env` and set `LLM_API_KEY`.
+1. Copy `track_2b/.env.example` to `track_2b/.env` and set `LLM_API_KEY`. (Details and other ways to set the variables: [`track_2b/docs/JUDGES-SETUP.md`](track_2b/docs/JUDGES-SETUP.md).)
 2. From this repository root:
 
 ```bash
