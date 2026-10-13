@@ -35,6 +35,8 @@ make run
 
 UI: **http://localhost:3000** (also on **8080**; set `UI_ALT_PORT` in `track_2b/.env` if 8080 is already in use). API: **http://localhost:8000**.
 
+No `make` (for example on Windows): `cd track_2b && docker compose up --build` does the same. To see a finished run without calling the model, click **LOAD** on the title screen and pick `track_2b/docs/replays/linden_25x5_cscs.replay.json` (25 residents, 5 rounds, recorded from the running app on the CSCS API; see `track_2b/docs/replays/README.md`). The backend caps a run at 25 residents.
+
 ## Environment variables (required by organizers)
 
 | Variable | Example |

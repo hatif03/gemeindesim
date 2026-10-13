@@ -81,7 +81,7 @@ def fig_pipeline():
     box(ax, 8.7, y3, 8.0, h3, "UI (Next.js + Phaser)", "town map and resident profiles (stance + reason) · stance poll with start → now ·\nevent feed with citation chips that open the passage · report modal", USER)
     arrow(ax, (3.9, y3 + h3 / 2), (4.4, y3 + h3 / 2))
     arrow(ax, (8.2, y3 + h3 / 2), (8.7, y3 + h3 / 2))
-    ax.text(0.3, 0.55, "Not covered by this pipeline: the 1:1 chat with a resident (graph/chat.py) uses memories only — no stance, retrieval, number gate or spelling pass yet.",
+    ax.text(0.3, 0.55, "The 1:1 chat with a resident (graph/chat.py) runs the same checks: code stance first, retrieved passages, number gate, Swiss spelling; streamed sentence by sentence after the checks.",
             fontsize=9, color=EDGE[CHECK])
     fig.savefig(OUT / "fig01-pipeline.png", dpi=170, bbox_inches="tight", facecolor="white")
     plt.close(fig)

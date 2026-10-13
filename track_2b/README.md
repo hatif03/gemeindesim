@@ -35,6 +35,8 @@ make run
 
 Open **http://localhost:3000** (also published on **8080**; if that port is taken set `UI_ALT_PORT=18080` in `.env`). Backend API: **http://localhost:8000**.
 
+No `make` (for example on Windows): `cd track_2b && docker compose up --build` does the same. To see a finished run without calling the model, click **LOAD** on the title screen and pick `docs/replays/linden_25x5_cscs.replay.json` (25 residents, 5 rounds, recorded from the running app on the CSCS API; see `docs/replays/README.md`). The backend caps a run at 25 residents.
+
 The defaults are the **CSCS inference API** (`LLM_BASE_URL=https://api.inference.cscs.ch/v1`, `LLM_NAME=swiss-ai/Apertus-v1.5-70B`); the hackathon gateway works with the same build ([`docs/ENDPOINTS.md`](docs/ENDPOINTS.md)). The simulation screen has a collapsible **Run metrics** panel (tokens, cache share, context use, latency, requests in flight).
 
 Optional `.env` switches: `LLM_CONCURRENCY` (default `auto`: adapts to the endpoint; a number fixes it), `LLM_VOICE_NAME` (another model for the report and the chat), `CHAT_STREAM`, `CHAT_STUFF_MAX_CHARS`, `EMBEDDING_MODEL` (optional hybrid retrieval), `SWARM=true|false` (two-phase initiator/reactor rounds), `LLM_NAME=swiss-ai/Apertus-v1.5-8B` for a fast run. The engineering questions behind these choices are answered in [`docs/ENGINEERING-QA.md`](docs/ENGINEERING-QA.md). Why the project exists, why Apertus and why Switzerland: [`docs/PITCH.md`](docs/PITCH.md).
@@ -51,7 +53,7 @@ cd src/frontend && npm install --legacy-peer-deps && npm run dev   # bun.lock la
 
 Sample policies: `data/steuerfuss_linden_de.txt` + `_fr.txt` (bilingual default) or `data/tariff_millfield_en.txt`.
 
-Screenshots from a live 70B Linden run: `docs/screenshots/`.
+Screenshots: `docs/screenshots/` (`v2-*.png`, 13 Oct 2026: editor, live run with the metrics panel, influence graph, report, resident chat; the older `0*.png` are from 5 Oct).
 
 ## Data
 

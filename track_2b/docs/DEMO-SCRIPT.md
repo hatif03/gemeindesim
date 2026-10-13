@@ -1,5 +1,7 @@
 # Demo video script (≤ 2:00)
 
+> Superseded on 13 Oct by [`VIDEO-VOICEOVER.md`](VIDEO-VOICEOVER.md) (voice-over with timings, footage list and sources). This file keeps the earlier shot list and the recording tips.
+
 The video is the only thing many judges will watch, so it leads with the finding, not the architecture. Record at 1080p,
 browser at 100 %, English narration, German/French shown on screen. Total target 1:50.
 

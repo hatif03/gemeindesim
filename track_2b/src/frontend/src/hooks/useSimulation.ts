@@ -621,6 +621,12 @@ export function useSimulation(simulationId?: string, record = false) {
 
       let i = 0;
       const feedNext = () => {
+        // hold the next round (stance poll, graph) until this round's events have been played, as in a live run
+        if (eventQueueRef.current.length > 0) {
+          const wait = setTimeout(feedNext, 400);
+          cleanupRef.current = () => clearTimeout(wait);
+          return;
+        }
         if (i >= recording.rounds.length) {
           waitForQueueDrain(eventQueueRef, setState);
           if (recording.report) {
