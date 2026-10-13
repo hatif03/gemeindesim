@@ -2,6 +2,11 @@
 
 **GemeindeSim** is our Hack Apertus Track 2B submission: a generative-agent town running on [Apertus 1.5](https://www.apertus-ai.org/). Paste a Swiss municipal vote or budget (German and French) or an English economic policy, spawn residents on a pixel map, and watch prices, protests, moods, and conversations unfold.
 
+<p align="center"><img src="track_2b/docs/demo.gif" alt="GemeindeSim: a run with 25 residents on the CSCS endpoint" width="760"></p>
+
+**Videos (team 1ne):** [2-minute submission video](https://youtu.be/ZdXAJjCUhZI) · [complete live run with commentary (about 10 minutes)](https://youtu.be/BZnqYIDV63Q)
+
+
 Start here if you are judging or reviewing the work:
 
 - **[Briefing for judges](track_2b/docs/FOR-JUDGES.md)** — what we built, why Apertus, how the model is used, research, open questions

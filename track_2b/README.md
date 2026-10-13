@@ -2,6 +2,11 @@
 
 **GemeindeSim** is a generative-agent town: paste a policy (Swiss vote/budget or an English economic shock), spawn residents on a pixel map, and watch prices, protests, moods, and conversations unfold. It runs on **Apertus 1.5**. The default demo uses German- and French-speaking residents in a fictional Gemeinde.
 
+<p align="center"><img src="docs/demo.gif" alt="GemeindeSim: a run with 25 residents on the CSCS endpoint" width="760"></p>
+
+**Videos (team 1ne):** [2-minute submission video](https://youtu.be/ZdXAJjCUhZI) · [complete live run with commentary (about 10 minutes)](https://youtu.be/BZnqYIDV63Q)
+
+
 The product **explains** official material and livelihood effects. It does not campaign, recommend a vote, or replace legal advice. Design aligns with the [Apertus Charter](https://www.apertus-ai.org/pages/charter/).
 
 **Judge briefing:** [docs/FOR-JUDGES.md](docs/FOR-JUDGES.md)  

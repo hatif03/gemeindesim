@@ -6,7 +6,7 @@ numbers say.
 - **Track:** Track 2B — Own Project (GemeindeSim)
 - **Event:** Hack Apertus online stage, October 2026
 - **Team:** 1ne (project: GemeindeSim)
-- **Demo:** video (max. 2 min): link in the submission form; a recorded 25-resident, 5-round run on CSCS can be replayed without calling the model (LOAD, `docs/replays/linden_25x5_cscs.replay.json`, see `docs/replays/README.md`); screenshots in `docs/screenshots/`
+- **Demo:** submission video (2 min): https://youtu.be/ZdXAJjCUhZI; complete live run with commentary: https://youtu.be/BZnqYIDV63Q; a recorded 25-resident, 5-round run on CSCS can be replayed without calling the model (LOAD, `docs/replays/linden_25x5_cscs.replay.json`, see `docs/replays/README.md`); screenshots in `docs/screenshots/`
 - **Report PDF:** `1ne_Report.pdf` (6 pages, built from `report/report.html`)
 
 ## 1. Summary
