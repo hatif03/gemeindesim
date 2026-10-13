@@ -31,6 +31,8 @@ Measured on the hosted gateway (see [docs/research/](docs/research/README.md)): 
 
 ## Run it
 
+**Setting the environment variables, step by step (judges):** [docs/JUDGES-SETUP.md](docs/JUDGES-SETUP.md).
+
 Keep `track_2b/` as-is (Hack Apertus template rule). From the **repository root**:
 
 ```bash

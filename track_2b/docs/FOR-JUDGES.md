@@ -161,3 +161,5 @@ If you speak the administrative register — DE, FR, or Italian — and you are 
 ---
 
 Further reading: [`PROBE-AND-PLAN.md`](PROBE-AND-PLAN.md) (endpoint probe tables), [`HACKATHON.md`](HACKATHON.md) (submission mechanics), `../technical_report.md`.
+
+To run it yourself: [JUDGES-SETUP.md](JUDGES-SETUP.md) explains the three environment variables (`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_NAME`) step by step, with checks and troubleshooting.

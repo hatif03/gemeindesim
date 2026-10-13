@@ -44,6 +44,8 @@ No `make` (for example on Windows): `cd track_2b && docker compose up --build` d
 
 ## Environment variables (required by organizers)
 
+Step-by-step guide (a `.env` file or shell variables, Windows / macOS / Linux, checks and troubleshooting): [`track_2b/docs/JUDGES-SETUP.md`](track_2b/docs/JUDGES-SETUP.md).
+
 | Variable | Example |
 | --- | --- |
 | `LLM_NAME` | `swiss-ai/Apertus-v1.5-70B` (CSCS) or `apertus-v1.5-70b` (hackathon gateway): either style is accepted on either endpoint |
