@@ -1,6 +1,6 @@
 # Demo video: voice-over script (target 1:45, hard limit 2:00)
 
-Read at a calm pace (about 150 words per minute). 252 words, so about 1:42, which leaves a few seconds for the title card and the closing card.
+251 words: about 1:40 at 150 words per minute, about 1:55 at a calm 130. The times in the table assume the calm pace plus short pauses and a few seconds for the title and closing cards; check it against your own reading before you cut the picture.
 Every figure in the script is measured and written down: see `docs/research/LAB-NOTEBOOK.md` (experiment ids below) and `docs/PITCH-LANDSCAPE.md` (sources for the Swiss facts).
 The footage is in `footage/` (index: `footage/INDEX.md`). The app has no sound, so every clip is silent; add music and the voice-over yourself.
 

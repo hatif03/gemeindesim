@@ -226,7 +226,7 @@ def replay(p):
     pg.goto(URL)
     pg.wait_for_selector('[data-testid="play-button"]', timeout=60000)
     pg.wait_for_timeout(3000)
-    s.click('text=LOAD')
+    s.click('xpath=//button[@data-testid="play-button"]/following-sibling::button')
     pg.wait_for_timeout(1500)
     s.mark("file chosen")
     pg.set_input_files("input[type=file]", str(ROOT / "docs/replays/linden_25x5_cscs.replay.json"))
