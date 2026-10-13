@@ -5,9 +5,9 @@ numbers say.
 
 - **Track:** Track 2B — Own Project (GemeindeSim)
 - **Event:** Hack Apertus online stage, October 2026
-- **Team:** hatif03
+- **Team:** 1ne (project: GemeindeSim)
 - **Demo:** video (max. 2 min): link in the submission form; a recorded 25-resident, 5-round run on CSCS can be replayed without calling the model (LOAD, `docs/replays/linden_25x5_cscs.replay.json`, see `docs/replays/README.md`); screenshots in `docs/screenshots/`
-- **Report PDF:** `GemeindeSim_Report.pdf` (6 pages, built from `report/report.html`)
+- **Report PDF:** `1ne_Report.pdf` (6 pages, built from `report/report.html`)
 
 ## 1. Summary
 
@@ -16,6 +16,20 @@ GemeindeSim is a generative-agent town simulation (Park et al. 2023 memory/retri
 Headline eval (measured, `research/`, logged calls): on 49 real resident prompts the instruction-placeholder example gives 49/49 schema-valid first attempts on both sizes (the original gate: 86 % on the 70B); 112/112 utterances in the resident's language; on identical seeds v2.1 vs the first version: cited ids that exist 0 → 99–100 %, ballot question present in the resident prompt 13–30 % → 100 %, reports asserting an invented outcome 12/30 → 0/30. Model limits we measured: no parallel tool calls (11/11), thinking unusable with JSON mode, `T=0` not reproducible, 4 requests in flight, yes-biased and authority-deferential electorate on 54 real Swiss votes. Details: `docs/research/`.
 
 Judge briefing: `docs/FOR-JUDGES.md`.
+
+### 1.1 Similar applications and what they are used for
+
+Simulated people and AI-assisted listening are used in research and, increasingly, in government and market research. Reference numbers point to the list at the end.
+
+| Application | What it is used for | What is known about it |
+| --- | --- | --- |
+| Singapore GovTech Echo, Sept 2026 [44] | AI personas, built from past focus-group transcripts, react to a draft government announcement before it is released | the closest government case; early testing, still validated against real focus groups; “personas generate hypotheses, not conclusions” |
+| Social Simulacra, Stanford, 2022 [2] | an LLM generates thousands of community members so designers can test a community design before launch | the origin of the “populated prototype” idea we follow |
+| Generative agents and the 1,052-person study, Stanford, 2023 and 2024 [1, 3] | agents with memory, reflection and interview-grounded personas simulate individuals and small societies | match survey answers at 85 % of participants' own two-week consistency; the authors' spin-off sells it (company claims only) |
+| Predicting experiment results, Nature 2026 [13] | GPT-4 simulates 70 US survey experiments to pre-test messages | direction and rank right (r = 0.85), effect sizes systematically too large: good for comparing, not for levels |
+| AI-mediated deliberation: Habermas Machine, DeepMind 2024 [28]; Consult, UK government 2025 [45] | write group statements that people prefer 56 % of the time; sort 2,000+ consultation answers (F1 0.76) | they work on real people's words, not simulated ones; no public deployment of the first |
+| Synthetic respondents in market research: Aaru, Electric Twin, Ipsos, Qualtrics [46] | persona panels to test ads, products and campaign messages | accuracy figures are the vendors' own; the independent test (Pew 2026 [40]) found 11–13 points average error |
+| Human pre-testing of ballot wording: UK Electoral Commission 2012 and 2015 [47]; citizen panels in Oregon and Sion (VS) [48] | 203 interviews and 10 focus groups changed the wording of the Scottish referendum question; panels write the voter-pamphlet statement | the gold standard GemeindeSim is a cheap first pass for: it costs weeks and thousands of francs per question |
 
 ## 2. Architecture
 
@@ -134,10 +148,93 @@ Creative Commons Attribution 4.0 (CC-BY-4.0). All HackApertus projects are open-
 
 ## References
 
-- Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442.
-- Park, J. S., Zou, C. Q., Shaw, A., Hill, B. M., Cai, C., Morris, M. R., Willer, R., Liang, P., & Bernstein, M. S. (2024). Generative Agent Simulations of 1,000 People. arXiv:2411.10109.
-- Peralta, A. F., Kertész, J., & Iñiguez, G. (2022). Opinion dynamics in social networks: From models to data. arXiv:2201.01322.
-- Ramnath, K. et al. (2025). A Survey on Automatic Prompt Optimization. arXiv:2502.16923.
-- Apertus 1.5 getting started: https://blog.nlp-lab.ai/2026/10/01/Apertus15GettingStarted.html
-- Apertus Charter: https://www.apertus-ai.org/pages/charter/
-- Data transparency: https://github.com/swiss-ai/apertus-data-transparency
+License: CC-BY-4.0 (all Hack Apertus projects are open-sourced); code Apache-2.0. Vendor and press items are marked as such.
+
+**Generative agents and social simulation**
+
+1. Park, O'Brien, Cai, Morris, Liang, Bernstein (2023). Generative Agents: Interactive Simulacra of Human Behavior. [arxiv.org/abs/2304.03442](https://arxiv.org/abs/2304.03442)
+2. Park, Popowski, Cai, Morris, Liang, Bernstein (2022). Social Simulacra: Creating Populated Prototypes for Social Computing Systems. UIST. [arxiv.org/abs/2208.04024](https://arxiv.org/abs/2208.04024)
+3. Park, Zou, et al. (2024). Generative Agent Simulations of 1,000 People. [arxiv.org/abs/2411.10109](https://arxiv.org/abs/2411.10109)
+4. Yang et al. (2024). OASIS: Open Agent Social Interaction Simulations with One Million Agents. [arxiv.org/abs/2411.11581](https://arxiv.org/abs/2411.11581)
+5. Piao et al. (2025). AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents. [arxiv.org/abs/2502.08691](https://arxiv.org/abs/2502.08691)
+6. Rossetti et al. (2024). Y Social: an LLM-powered Social Media Digital Twin. [arxiv.org/abs/2408.00818](https://arxiv.org/abs/2408.00818)
+7. Anthis et al. (2025). LLM Social Simulations Are a Promising Research Method. ICML. [arxiv.org/abs/2504.02234](https://arxiv.org/abs/2504.02234)
+
+**Opinion dynamics**
+
+8. Deffuant, Neau, Amblard, Weisbuch (2000). Mixing beliefs among interacting agents. Advances in Complex Systems 3. [doi.org/10.1142/S0219525900000078](https://doi.org/10.1142/S0219525900000078)
+9. Peralta, Kertész, Iñiguez (2022). Opinion dynamics in social networks: from models to data. [arxiv.org/abs/2201.01322](https://arxiv.org/abs/2201.01322)
+10. Chuang et al. (2023). Simulating Opinion Dynamics with Networks of LLM-based Agents. [arxiv.org/abs/2311.09618](https://arxiv.org/abs/2311.09618)
+11. Törnberg, Valeeva, Uitermark, Bail (2023). Simulating Social Media Using LLMs to Evaluate Alternative News Feed Algorithms. [arxiv.org/abs/2310.05984](https://arxiv.org/abs/2310.05984)
+
+**LLM respondents, voting and survey experiments**
+
+12. Argyle et al. (2022). Out of One, Many: Using Language Models to Simulate Human Samples. Political Analysis. [arxiv.org/abs/2209.06899](https://arxiv.org/abs/2209.06899)
+13. Ashokkumar, Hewitt, Ghezae, Willer (2026). Large language models can predict the results of social science experiments. Nature 656. [ai4pb.stanford.edu/projects/predicting-results-of-social-science-experiments-using-large-language-models](https://ai4pb.stanford.edu/projects/predicting-results-of-social-science-experiments-using-large-language-models)
+14. Bisbee, Clinton, Dorff, Kenkel, Larson (2024). Synthetic Replacements for Human Survey Data? The Perils of Large Language Models. Political Analysis 32(4). [cambridge.org/core/product/B92267DC26195C7F36E63EA04A47D2FE](https://cambridge.org/core/product/B92267DC26195C7F36E63EA04A47D2FE)
+15. Barmettler (2026). Progressive in Principle, Centrist in Practice: LLM Political Bias Is Instrument-Dependent (48 Swiss federal referenda, four languages). [arxiv.org/abs/2606.00048](https://arxiv.org/abs/2606.00048)
+16. Reveilhac (2025). ChatGPT as a voting application in direct democracy. Swiss Political Science Review. [doi.org/10.1111/spsr.12650](https://doi.org/10.1111/spsr.12650)
+17. Yang, Dailisan, Korecki, Hausladen, Helbing (2024). LLM Voting: Human Choices and AI Collective Decision Making. AIES. [arxiv.org/abs/2402.01766](https://arxiv.org/abs/2402.01766)
+18. Bachmann, van der Weijden, Heitz, Sarasua, Bernstein (2025). Adaptive political surveys and GPT-4. PLoS One. [arxiv.org/abs/2503.09311](https://arxiv.org/abs/2503.09311)
+19. Stammbach, Widmer, Cho, Gulcehre, Ash (2024). Aligning Large Language Models with Diverse Political Viewpoints. EMNLP. [arxiv.org/abs/2406.14155](https://arxiv.org/abs/2406.14155)
+20. Egli, Mamié, Dolev, Müller (2023). Voting Booklet Bias: Stance Detection in Swiss Federal Communication. [arxiv.org/abs/2306.08999](https://arxiv.org/abs/2306.08999)
+21. von der Heyde, Haensch, Wenz (2025). Vox Populi, Vox AI? Using Language Models to Estimate German Public Opinion; and (2024) United in Diversity? Contextual Biases in LLM-Based Predictions of the 2024 European Parliament Elections. [arxiv.org/abs/2407.08563](https://arxiv.org/abs/2407.08563), [arxiv.org/abs/2409.09045](https://arxiv.org/abs/2409.09045)
+22. Ma et al. (2025). Algorithmic Fidelity of Large Language Models in Generating Synthetic German Public Opinions. ACL. [arxiv.org/abs/2412.13169](https://arxiv.org/abs/2412.13169)
+23. Gudiño-Rosero, Grandi, Hidalgo (2024). Large Language Models (LLMs) as Agents for Augmented Democracy. [arxiv.org/abs/2405.03452](https://arxiv.org/abs/2405.03452)
+24. Kreutner, Lutz, Strohmaier (2026). Persona-driven Simulation of Voting Behavior in the European Parliament with LLMs. EACL. [arxiv.org/abs/2506.11798](https://arxiv.org/abs/2506.11798)
+25. Gong, Sanders, Schneier (2026). Characterizing the ability of LLMs to recapitulate Americans' distributional responses to public opinion polling questions. [arxiv.org/abs/2603.20229](https://arxiv.org/abs/2603.20229)
+
+**Policy simulation and deliberation**
+
+26. Barnett, Kieslich, Diakopoulos (2024). Simulating Policy Impacts: A Generative Scenario Writing Method to Evaluate the Perceived Effects of Regulation. AIES. [arxiv.org/abs/2405.09679](https://arxiv.org/abs/2405.09679)
+27. Rountree, Gastil (2026). The Case for Using Generative AI to Run Deliberation Simulations. Journal of Deliberative Democracy. [delibdemjournal.org/article/id/1625](https://delibdemjournal.org/article/id/1625)
+28. Tessler et al. (2024). AI can help humans find common ground in democratic deliberation (Habermas Machine). Science 386; coverage: MIT Technology Review. [technologyreview.com/2024/10/17/1105810](https://technologyreview.com/2024/10/17/1105810)
+29. Chen (2026). Human-Simulation Interaction: From Prediction to Exploration in LLM Agent Simulations for Policy. PoliSim@CHI. [arxiv.org/abs/2608.07496](https://arxiv.org/abs/2608.07496)
+30. European Commission Joint Research Centre (2023). FABLES: LLM-driven agent populations for policy scenarios. [publications.jrc.ec.europa.eu/repository/handle/JRC135070](https://publications.jrc.ec.europa.eu/repository/handle/JRC135070)
+
+**Critiques and limits**
+
+31. Wang, Morgenstern, Dickerson (2024). Large language models that replace human participants can harmfully misportray and flatten identity groups. Nature Machine Intelligence. [arxiv.org/abs/2402.01908](https://arxiv.org/abs/2402.01908)
+32. Park, Schoenegger, Zhu (2024). Diminished Diversity-of-Thought in a Standard Large Language Model. [arxiv.org/abs/2302.07267](https://arxiv.org/abs/2302.07267)
+33. Santurkar et al. (2023). Whose Opinions Do Language Models Reflect? [arxiv.org/abs/2303.17548](https://arxiv.org/abs/2303.17548)
+34. Agnew et al. (2024). The Illusion of Artificial Inclusion. CHI. [arxiv.org/abs/2401.08572](https://arxiv.org/abs/2401.08572)
+35. Larooij, Törnberg (2025). Do Large Language Models Solve the Problems of Agent-Based Modeling? A Critical Review of Generative Social Simulations. [arxiv.org/abs/2504.03274](https://arxiv.org/abs/2504.03274)
+36. Ye, Cao, Chen, Ferrara (2026). Stop Drawing Scientific Claims from LLM Social Simulations Without Robustness Audits. [arxiv.org/abs/2605.18890](https://arxiv.org/abs/2605.18890)
+37. Lukauskas, Šarkauskaitė (2026). Plausible but Not Valid: A Psychometric Audit of LLMs as Synthetic Survey Respondents. [arxiv.org/abs/2608.14606](https://arxiv.org/abs/2608.14606)
+38. Flechtner (2026). The Deliberative Deficit. AIES; Yao et al. (2025). Peacemaker or Troublemaker: How Sycophancy Shapes Multi-Agent Debate. [arxiv.org/abs/2608.10186](https://arxiv.org/abs/2608.10186), [arxiv.org/abs/2509.23055](https://arxiv.org/abs/2509.23055)
+39. Luo, Arora, Guirado (2026). We Need Strong Preconditions For Using Simulations In Policy; Jang et al. (2026). From Simulated Citizens to Simulated Deliberation. [arxiv.org/abs/2604.07838](https://arxiv.org/abs/2604.07838), [arxiv.org/abs/2609.07573](https://arxiv.org/abs/2609.07573)
+40. Pew Research Center (30 Sept 2026). How synthetic polling results change based on the AI model. [pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model](https://pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model)
+41. University of Salford and UCL (2026). Most AI models predicted a Reform win in Makerfield; the voters delivered a Labour landslide. [salford.ac.uk/news/most-ai-models-predicted-a-reform-win-in-makerfield-the-voters-delivered-a-labour-landslide](https://salford.ac.uk/news/most-ai-models-predicted-a-reform-win-in-makerfield-the-voters-delivered-a-labour-landslide)
+42. Durmus et al. (2023). Towards Measuring the Representation of Subjective Global Opinions in Language Models; AlKhamissi et al. (2024). Investigating Cultural Alignment of Large Language Models. [arxiv.org/abs/2306.16388](https://arxiv.org/abs/2306.16388), [arxiv.org/abs/2402.13231](https://arxiv.org/abs/2402.13231)
+43. Hu, Collier (2024). Quantifying the Persona Effect in LLM Simulations; Atil et al. (2024). Non-Determinism of "Deterministic" LLM Settings. [arxiv.org/abs/2402.10811](https://arxiv.org/abs/2402.10811), [arxiv.org/abs/2408.04667](https://arxiv.org/abs/2408.04667)
+
+**Deployments and practice**
+
+44. Singapore GovTech (11 Sept 2026). Using AI to test government messages (Echo). [tech.gov.sg/technews/using-ai-to-test-government-messages](https://tech.gov.sg/technews/using-ai-to-test-government-messages)
+45. UK Government, i.AI (2025). Government-built Humphrey AI tool reviews responses to consultation for the first time (Consult). [gov.uk/government/news/government-built-humphrey-ai-tool-reviews-responses-to-consultation-for-first-time-in-bid-to-save-millions](https://gov.uk/government/news/government-built-humphrey-ai-tool-reviews-responses-to-consultation-for-first-time-in-bid-to-save-millions)
+46. Market-research vendors (company claims, not independent): Aaru (TechCrunch, 5 Dec 2025), Electric Twin (tech.eu, 12 Feb 2026), Simile, Ipsos PersonaBot, Qualtrics. [techcrunch.com/2025/12/05/ai-synthetic-research-startup-aaru-raised-a-series-a-at-a-1b-headline-valuation](https://techcrunch.com/2025/12/05/ai-synthetic-research-startup-aaru-raised-a-series-a-at-a-1b-headline-valuation)
+47. Ipsos for the UK Electoral Commission (2012). Scottish independence referendum question testing. [ipsos.com/en-uk/referendum-scottish-independence-question-testing](https://ipsos.com/en-uk/referendum-scottish-independence-question-testing)
+48. Citizens' Initiative Review (Oregon, from 2010) and the Sion (VS) pilot on a federal initiative (Nov 2019). [participedia.net/case/6439](https://participedia.net/case/6439)
+49. MIT Technology Review (2025). A small US city experiments with AI to find out what residents want (Bowling Green, KY). [technologyreview.com/2025/04/15/1115125](https://technologyreview.com/2025/04/15/1115125)
+
+**Swiss context**
+
+50. Federal Supreme Court (10 Apr 2019): annulment of the 2016 Heiratsstrafe vote (Blick). [blick.ch/politik/bundesgericht-erklaert-abstimmung-ueber-heiratsstrafe-fuer-ungueltig-wie-lange-kann-sich-die-cvp-freuen-id15266130.html](https://blick.ch/politik/bundesgericht-erklaert-abstimmung-ueber-heiratsstrafe-fuer-ungueltig-wie-lange-kann-sich-die-cvp-freuen-id15266130.html)
+51. Geschäftsprüfungskommission des Nationalrats (21 Nov 2023). Report on authority communication before votes. [parlament.ch/centers/documents/de/Bericht%20GPK-N%20vom%2021.11.2023%20D.pdf](https://parlament.ch/centers/documents/de/Bericht%20GPK-N%20vom%2021.11.2023%20D.pdf)
+52. swissinfo. VOTO analysis of the 25 Nov 2018 "Swiss law first" vote. [swissinfo.ch/eng/voto-analysis_-swiss-law-first--initiative-challenged-many-voters/44675792](https://swissinfo.ch/eng/voto-analysis_-swiss-law-first--initiative-challenged-many-voters/44675792)
+53. Federal Supreme Court, 1P.377/2003 (4 Nov 2003): objective and complete explanations in a municipal vote. [servat.unibe.ch/dfr/bger/2003/031104_1P-377-2003.html](https://servat.unibe.ch/dfr/bger/2003/031104_1P-377-2003.html)
+54. swissinfo (2024). It's often the voting booklet that decides yes or no (Strijbis study, commissioned by a campaign-communication body). [swissinfo.ch/eng/swiss-politics/its-often-the-voting-booklet-that-decides-yes-or-no/87490263](https://swissinfo.ch/eng/swiss-politics/its-often-the-voting-booklet-that-decides-yes-or-no/87490263)
+55. SRF (2022). Einfachere Sprache: Ist das Abstimmungsbüchlein für viele zu komplex? [srf.ch/news/abstimmungen-15-mai-2022/einfachere-sprache-ist-das-abstimmungsbuechlein-fuer-viele-zu-komplex](https://srf.ch/news/abstimmungen-15-mai-2022/einfachere-sprache-ist-das-abstimmungsbuechlein-fuer-viele-zu-komplex)
+56. gfs.bern for the Federal Chancellery (2025), via Netzwoche. KI in der Behördenkommunikation. [netzwoche.ch/news/2025-05-21/ki-in-der-behoerdenkommunikation-ist-okay-aber-nicht-bedingungslos](https://netzwoche.ch/news/2025-05-21/ki-in-der-behoerdenkommunikation-ist-okay-aber-nicht-bedingungslos)
+57. Menzi (2021). Swiss Yearbook of Administrative Sciences 12(1): many voters do not understand voting proposals. [doi.org/10.5334/ssas.157](https://doi.org/10.5334/ssas.157)
+58. SRF (2019). Aargau study of municipal assemblies; SRF on assembly attendance and the share of municipalities with a parliament. [srf.ch/news/grosse-studie-im-aargau-gemeindeversammlungen-sind-besser-als-ihr-ruf](https://srf.ch/news/grosse-studie-im-aargau-gemeindeversammlungen-sind-besser-als-ihr-ruf)
+59. Bern University of Applied Sciences: smartinfo (2026-2028); OST: Fact Attack 2026 (Hack Apertus track 2A); Swissvotes, University of Bern. [bfh.ch/de/forschung/forschungsprojekte/2026-405-463-889](https://bfh.ch/de/forschung/forschungsprojekte/2026-405-463-889), [github.com/JJukic/Apertus-Team-Fact-Attack-2026](https://github.com/JJukic/Apertus-Team-Fact-Attack-2026), [swissvotes.ch](https://swissvotes.ch)
+60. Federal Chancellery (28 Sept 2025). Erläuterungen des Bundesrates (the real booklet used in the evaluation). [bk.admin.ch](https://bk.admin.ch)
+
+**Apertus, retrieval and methods**
+
+61. Apertus: Swiss AI Initiative (2025). Apertus technical report; ETH Zurich press release; CSCS (2026), Apertus 1.5. [arxiv.org/abs/2509.14233](https://arxiv.org/abs/2509.14233), [cscs.ch/science/computer-science-hpc/2026/apertus-15-building-the-next-generation-of-open-ai-infrastructure](https://cscs.ch/science/computer-science-hpc/2026/apertus-15-building-the-next-generation-of-open-ai-infrastructure)
+62. Robertson, Zaragoza (2009). The Probabilistic Relevance Framework: BM25 and Beyond. [doi.org/10.1561/1500000019](https://doi.org/10.1561/1500000019)
+63. Wang et al. (2024). Multilingual E5 Text Embeddings: A Technical Report. [arxiv.org/abs/2402.05672](https://arxiv.org/abs/2402.05672)
+64. Cormack, Clarke, Büttcher (2009). Reciprocal rank fusion outperforms Condorcet and individual rank learning methods. SIGIR. [doi.org/10.1145/1571941.1572114](https://doi.org/10.1145/1571941.1572114)
+65. Gao et al. (2023). Enabling Large Language Models to Generate Text with Citations. [arxiv.org/abs/2305.14627](https://arxiv.org/abs/2305.14627)

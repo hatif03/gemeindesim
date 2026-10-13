@@ -20,7 +20,7 @@ Research foundations: Park et al. 2023 (generative agents, arXiv:2304.03442); Pa
 | `track_2b/` | **Project root** for judges — do not rename this folder |
 | `track_2b/src/backend` | FastAPI + LangGraph |
 | `track_2b/src/frontend` | Next.js + Phaser |
-| `track_2b/data/` | Sample policies (max. 100 MB) |
+| `track_2b/data/` | Sample policies (max. 100 MB); `data/situations/` has ready-to-paste scenarios for judges |
 | `track_2b/docs/` | Architecture, hackathon links, judge briefing, probe notes |
 | `track_2b/technical_report.md` | Submission write-up |
 

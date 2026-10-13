@@ -14,7 +14,7 @@ Deadline: **16 Oct 2026, 12:00 CEST** (submit by the 15th). Verified items are d
 | Pitch restated | `FOR-JUDGES.md`, `technical_report.md`, `PROBE-AND-PLAN.md` erratum; claim-by-claim in `04-pitch-audit.md` |
 | Final measurement on final code | 5 seeds × 2 sizes standard graph + 3 × 2 swarm graph; stance spread; compare-conditions demonstration (E19) |
 | Real booklet | Tested on a 48-page Federal Council booklet (German): recall@4 11/14, QA 12/14, 3/3 abstentions. **French edition not tested** |
-| 6-page PDF | `GemeindeSim_Report.pdf` (3 pages) built from `report/report.html` with `research/build_report_pdf.py` — rename with your team name |
+| 6-page PDF | `1ne_Report.pdf` (3 pages) built from `report/report.html` with `research/build_report_pdf.py` — rename with your team name |
 | Demo video | Script and pre-flight checklist: `DEMO-SCRIPT.md`. **Recording is yours** |
 | Native-speaker review | Pack ready: `docs/review/` (49 items, rubric, CSV) + `research/summarize_review.py`. **Needs your reviewer** |
 | Local vLLM probe | `research/probe_endpoint.py` validated on the hosted 8B; **not run on a local model** (no GPU) |

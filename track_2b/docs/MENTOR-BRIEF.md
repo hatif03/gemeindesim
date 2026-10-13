@@ -539,7 +539,7 @@ Run experiments **one at a time**: they share one key and one 4-in-flight limit.
 | frontend | `src/frontend/src/` (`components/StancePanel.tsx`, `EventFeed.tsx`, `NPCProfileModal.tsx`, `app/simulate/page.tsx`) |
 | research record | `docs/research/` (`README.md` index, `LAB-NOTEBOOK.md`, `03-results.md`, `04-pitch-audit.md`, `05-paper-draft.md`) |
 | experiments and raw call logs | `research/` and `research/results/` |
-| judges, demo, submission | `docs/FOR-JUDGES.md`, `docs/DEMO-SCRIPT.md`, `docs/SUBMISSION-CHECKLIST.md`, `technical_report.md`, `GemeindeSim_Report.pdf` |
+| judges, demo, submission | `docs/FOR-JUDGES.md`, `docs/DEMO-SCRIPT.md`, `docs/SUBMISSION-CHECKLIST.md`, `technical_report.md`, `1ne_Report.pdf` |
 
 ### Glossary
 | term | meaning |

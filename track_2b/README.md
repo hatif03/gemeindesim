@@ -51,7 +51,7 @@ cd src/backend && uv sync && uv run uvicorn main:app --reload --host 0.0.0.0 --p
 cd src/frontend && npm install --legacy-peer-deps && npm run dev   # bun.lock lacks Linux native packages
 ```
 
-Sample policies: `data/steuerfuss_linden_de.txt` + `_fr.txt` (bilingual default) or `data/tariff_millfield_en.txt`.
+Sample policies: `data/steuerfuss_linden_de.txt` + `_fr.txt` (bilingual default) or `data/tariff_millfield_en.txt`. **Ready-to-paste situations for judges** (German, French, English, one deliberately ambiguous text), with settings and what to look for: [`data/situations/README.md`](data/situations/README.md).
 
 Screenshots: `docs/screenshots/` (`v2-*.png`, 13 Oct 2026: editor, live run with the metrics panel, influence graph, report, resident chat; the older `0*.png` are from 5 Oct).
 

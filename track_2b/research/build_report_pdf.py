@@ -1,6 +1,6 @@
 """Render report/report.html to <Team>_Report.pdf with headless Chrome and check the page limit (max 6 pages).
 
-Usage: python research/build_report_pdf.py [output_name.pdf]      (default: GemeindeSim_Report.pdf in track_2b/)
+Usage: python research/build_report_pdf.py [output_name.pdf]      (default: 1ne_Report.pdf in track_2b/)
 """
 import subprocess
 import sys
@@ -10,7 +10,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "report" / "report.html"
-OUT = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "GemeindeSim_Report.pdf")
+OUT = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "1ne_Report.pdf")
 CHROME = next((p for p in (r"C:\Program Files\Google\Chrome\Application\chrome.exe",
                            r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
                            "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser") if Path(p).exists()), None)
